@@ -1,10 +1,13 @@
 // Runs only after the visitor explicitly invokes their bookmark on the official page.
 // Cookies stay in that browser's official origin and are never read by this script.
-export function runMiyousheBookmark(targetOrigin) {
+export function runMiyousheBookmark(target) {
   const officialOrigin = 'https://act.mihoyo.com';
   const channel = 'duke-miyoushe-web-sync-v1';
   const allowedOrigins = ['https://dukezzz.com', 'https://www.dukezzz.com', 'http://127.0.0.1:8877', 'http://localhost:8877'];
-  if (!allowedOrigins.includes(targetOrigin)) return;
+  const githubBase = 'https://dotty77.github.io/dukezzz-pages-test/';
+  const targetBase = target === githubBase ? githubBase : allowedOrigins.includes(target) ? target + '/' : allowedOrigins.some(origin => target === origin + '/') ? target : '';
+  if (!targetBase) return;
+  const targetOrigin = new URL(targetBase).origin;
   if (location.origin !== officialOrigin || !/^\/zzz\/gt\/character-builder-h\//.test(location.pathname)) {
     alert('请先打开并登录 米游社绝区零养成指南，再点击此书签。\nOpen and sign in to the official Miyoushe ZZZ Upgrade Guides, then use this bookmark.');
     return;
@@ -13,7 +16,7 @@ export function runMiyousheBookmark(targetOrigin) {
   const previous = window.__dukeMiyousheEquipmentBridge;
   let preferred = null;
   if (typeof previous === 'function') {
-    try { preferred = previous.receiver?.(); } catch { /* A closed receiver is not reusable. */ }
+    try { if (previous.targetBase === targetBase) preferred = previous.receiver?.(); } catch { /* A closed receiver is not reusable. */ }
     previous();
   }
   if (!preferred || preferred.closed) preferred = window.opener;
@@ -22,12 +25,14 @@ export function runMiyousheBookmark(targetOrigin) {
   function openPlanner() {
     if (stopped) return;
     clearTimeout(offerTimer); offerTimer = 0;
-    popup = window.open(`${targetOrigin}/disc-planner.html?v=20261114-refresh-launch-1#miyoushe-sync=${nonce}`, '_blank');
+    const plannerUrl = new URL('disc-planner.html', targetBase);
+    plannerUrl.searchParams.set('v', '20261114-direct-tools-1'); plannerUrl.hash = 'miyoushe-sync=' + nonce;
+    popup = window.open(plannerUrl.href, '_blank');
     if (popup) { fallbackButton?.remove(); fallbackButton = null; return; }
     // A browser may block the delayed fallback. A real click restores user activation.
     if (!fallbackButton) {
       fallbackButton = document.createElement('button'); fallbackButton.type = 'button';
-      fallbackButton.textContent = '打开 DUKE 连接页 / Open DUKE';
+      fallbackButton.textContent = targetBase === githubBase ? '打开 DUKE GitHub 连接页 / Open DUKE GitHub' : '打开 DUKE 连接页 / Open DUKE';
       fallbackButton.style.cssText = 'position:fixed;right:24px;top:24px;z-index:2147483647;padding:14px 20px;background:#6579ff;color:white;border:1px solid white;border-radius:10px;font:16px sans-serif;cursor:pointer';
       fallbackButton.onclick = openPlanner; (document.body || document.documentElement).append(fallbackButton);
       alert('无法返回原规划器，请点击官方页面右上角“打开 DUKE 连接页”。\nClick “Open DUKE” at the top right of this official page to open the planner.');
@@ -41,7 +46,7 @@ export function runMiyousheBookmark(targetOrigin) {
   const numeric = x => typeof x === 'number' && Number.isFinite(x) ? x : typeof x === 'string' && /^\d{1,9}$/.test(x) ? x : invalid();
   class OfficialError extends Error { constructor(code) { super(code); this.code = code; } }
   function invalid() { throw new OfficialError('official_data'); }
-  function send(type, fields = {}) { if (!stopped && popup && !popup.closed) popup.postMessage({channel, protocol:2, nonce, type, ...fields}, targetOrigin); }
+  function send(type, fields = {}) { if (!stopped && popup && !popup.closed) popup.postMessage({channel, protocol:2, nonce, targetBase, type, ...fields}, targetOrigin); }
   function touch() { clearTimeout(idleTimer); idleTimer = setTimeout(stop, 600000); }
   function stop() {
     if (stopped) return;
@@ -149,7 +154,7 @@ export function runMiyousheBookmark(targetOrigin) {
   }
   async function receive(event) {
     const message = event.data;
-    if (stopped || event.origin !== targetOrigin || event.source !== popup || !object(message) || message.channel !== channel || message.nonce !== nonce) return;
+    if (stopped || event.origin !== targetOrigin || event.source !== popup || !object(message) || message.channel !== channel || message.nonce !== nonce || message.targetBase !== targetBase) return;
     if (message.type === 'disconnect') { stop(); return; }
     if (!['ready','agents','equipment'].includes(message.type) || !validRequestId(message.requestId)) return;
     const {type, requestId} = message; touch();
@@ -195,6 +200,7 @@ export function runMiyousheBookmark(targetOrigin) {
     finally { busy = false; }
   }
   stop.receiver = () => popup;
+  stop.targetBase = targetBase;
   window.__dukeMiyousheEquipmentBridge = stop;
   window.addEventListener('message', receive); window.addEventListener('pagehide', stop);
   pollTimer = setInterval(() => { if (popup && popup.closed) stop(); }, 1000); touch();
@@ -204,7 +210,8 @@ export function runMiyousheBookmark(targetOrigin) {
   } else openPlanner();
 }
 
-export function createMiyousheBookmark(origin) {
-  if (!['https://dukezzz.com','https://www.dukezzz.com','http://127.0.0.1:8877','http://localhost:8877'].includes(origin)) throw Error('Unsupported planner origin');
-  return `javascript:void (${encodeURIComponent(runMiyousheBookmark.toString())})(${encodeURIComponent(JSON.stringify(origin))})`;
+export function createMiyousheBookmark(target) {
+  const origins = ['https://dukezzz.com', 'https://www.dukezzz.com', 'http://127.0.0.1:8877', 'http://localhost:8877'];
+  if (target !== 'https://dotty77.github.io/dukezzz-pages-test/' && !origins.includes(target) && !origins.some(origin => target === origin + '/')) throw Error('Unsupported planner destination');
+  return `javascript:void (${encodeURIComponent(runMiyousheBookmark.toString())})(${encodeURIComponent(JSON.stringify(target))})`;
 }

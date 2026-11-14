@@ -1,5 +1,5 @@
 import {createAgentPicker} from './sync-agent-picker.js?v=20261107-refresh-launch-1';
-import {createHoyolabBookmark} from './hoyolab-bookmark.js?v=20261114-refresh-launch-1';
+import {createHoyolabBookmark} from './hoyolab-bookmark.js?v=20261114-direct-tools-1';
 
 const OFFICIAL_ORIGIN='https://act.hoyolab.com';
 const CHANNEL='duke-hoyolab-sync-v1';
@@ -8,6 +8,12 @@ const randomId=()=>Array.from(crypto.getRandomValues(new Uint8Array(16)),value=>
 // Equipment travels between the two browser windows; this receiver reads no credentials.
 export function mountHoyolabSync(root,{getAgentId,getAgentName=()=>'',onImport,restoredBuild=false}){
   if(!root)return ()=>{};
+  const githubTest=location.origin==='https://dotty77.github.io'&&location.pathname==='/dukezzz-pages-test/disc-planner.html';
+  const knownOrigin=['https://dukezzz.com', 'https://www.dukezzz.com', 'http://127.0.0.1:8877', 'http://localhost:8877'].includes(location.origin);
+  if(!githubTest&&(!knownOrigin||location.pathname!=='/disc-planner.html'))return ()=>{};
+  const targetBase=githubTest?'https://dotty77.github.io/dukezzz-pages-test/':location.origin+'/';
+  const bookmarkTarget=githubTest?targetBase:location.origin;
+  const matchesTarget=message=>message.targetBase===targetBase||(!githubTest&&message.targetBase===undefined);
   const match=/^#hoyolab-sync=([0-9a-f]{32})$/.exec(location.hash);
   let nonce=match?.[1]||'',sourceWindow=match?window.opener:null,openedOfficial=null;
   if(match)history.replaceState(history.state,'',location.pathname+location.search);
@@ -25,8 +31,9 @@ export function mountHoyolabSync(root,{getAgentId,getAgentName=()=>'',onImport,r
   const steps=node('ol');
   const first=node('li');first.append(label('span','将这个链接拖到浏览器书签栏：','Drag this link to your bookmarks bar: '));
   const localPreview=location.hostname==='localhost'||location.hostname==='127.0.0.1';
-  const bookmark=label('a',localPreview?'DUKE 同步配装 · 本地测试':'DUKE 同步配装 · 正式站',localPreview?'DUKE sync · Local preview':'DUKE sync · Live site','hoyolab-sync-bookmark');bookmark.href=createHoyolabBookmark(location.origin);bookmark.draggable=true;
+  const bookmark=label('a',githubTest?'DUKE 国际服同步 · GitHub 试站':localPreview?'DUKE 同步配装 · 本地测试':'DUKE 同步配装 · 正式站',githubTest?'DUKE Global sync · GitHub test site':localPreview?'DUKE sync · Local preview':'DUKE sync · Live site','hoyolab-sync-bookmark');bookmark.href=createHoyolabBookmark(bookmarkTarget);bookmark.draggable=true;
   bookmark.onclick=event=>{event.preventDefault();say('请将链接拖到书签栏，再到官方页面点击该书签。','Drag the link to your bookmarks bar, then click that bookmark on the official page.');};first.append(bookmark);
+  if(githubTest)first.append(label('p','请从本试站重新保存这份书签；旧正式站书签仍会返回正式站。','Save this bookmark again from the GitHub test site. An old main-site bookmark still returns to the main site.'));
   const second=node('li'),official=label('a','从这里打开官方养成指南并登录 ↗','Open the official character builder from here and sign in ↗');official.href='https://act.hoyolab.com/zzz/gt/character-builder-h/index.html?lang=en-us#/';official.target='_blank';official.rel='opener';official.dataset.action='open-official';
   official.onclick=event=>{
     event.preventDefault();
@@ -56,7 +63,7 @@ export function mountHoyolabSync(root,{getAgentId,getAgentName=()=>'',onImport,r
   function keepAlive(){clearTimeout(idleTimer);idleTimer=setTimeout(()=>endConnection('idle'),600000);}
   function send(message){
     if(disposed||!sourceWindow||!nonce||sourceWindow.closed)return false;
-    try{sourceWindow.postMessage({channel:CHANNEL,nonce,...message},OFFICIAL_ORIGIN);return true;}catch{return false;}
+    try{sourceWindow.postMessage({channel:CHANNEL,nonce,targetBase,...message},OFFICIAL_ORIGIN);return true;}catch{return false;}
   }
   function endConnection(reason,notify=true){
     if(notify)send({type:'disconnect',requestId:randomId()});stopTimers();connected=false;handshakeId='';state='closed';setup.open=true;paint();
@@ -106,7 +113,7 @@ export function mountHoyolabSync(root,{getAgentId,getAgentName=()=>'',onImport,r
   }
   async function receive(event){
     if(disposed||event.origin!==OFFICIAL_ORIGIN)return;
-    const message=event.data;if(!message||typeof message!=='object'||Array.isArray(message)||message.channel!==CHANNEL)return;
+    const message=event.data;if(!message||typeof message!=='object'||Array.isArray(message)||message.channel!==CHANNEL||!matchesTarget(message))return;
     if(message.type==='offer'){
       // The official page must be one this receiver opened or already authenticated.
       if(!event.source||(event.source!==openedOfficial&&event.source!==sourceWindow)||typeof message.nonce!=='string'||!/^([0-9a-f]{32})$/.test(message.nonce)||message.nonce===nonce)return;

@@ -1,3 +1,5 @@
+// Only the published Pages project uses the fixed DUKE API; never read an API host from input.
+const API_ROOT=globalThis.location?.origin==='https://dotty77.github.io'&&globalThis.location.pathname.startsWith('/dukezzz-pages-test/')?'https://dukezzz.com':'';
 import {scoreAgent} from './showcase-analysis.js?v=20260909-version-3-2-1';
 import {SUBSTAT_OPTIONS,CORE_OPTIONS,MAX_CORE_ATTRIBUTES,substatName,referenceSelection,setSelection,selectionBuild,countOccurrences} from './showcase-preferences.js?v=20260909-version-3-2-1';
 import {ARTICLE_REFERENCE,evaluateArticleRules} from './showcase-article-rules.js?v=20260909-version-3-2-1';
@@ -69,7 +71,7 @@ function attributePanel(agent,reference,selection){
   adjust.append(el('p','showcase-reference-note','同一属性只能归入一类，选择补充会取消其核心选择。'),supplementOptions);panel.append(adjust);
   const reasons=reference?.reasons||[];if(reasons.length)panel.append(el('p','showcase-reference-reason',reasons[0]));
   const source=el('p','showcase-reference-source',custom?'本页自选方案，可按队伍调整。':'本站配装参考，可按队伍调整。');
-  const link=el('a','','查看角色依据 ↗');link.href=`agents.html?v=20261114-refresh-launch-1#agent=${agent.id}`;source.append(link);panel.append(source,el('p','showcase-reference-note','选择仅在本页保留；刷新后恢复建议，不保存 UID 或账号资料。'));
+  const link=el('a','','查看角色依据 ↗');link.href=`agents.html?v=20261021-v33-complete-1#agent=${agent.id}`;source.append(link);panel.append(source,el('p','showcase-reference-note','选择仅在本页保留；刷新后恢复建议，不保存 UID 或账号资料。'));
   const status=el('p','showcase-preference-status',preferenceMessages.get(agent.id)||'');status.id='showcase-preference-status';status.setAttribute('role','status');status.setAttribute('aria-live','polite');panel.append(status);
   return panel;
 }
@@ -103,7 +105,7 @@ function renderResult(){
   const info=el('div');info.append(el('p','',guide.faction||'代理人'),el('h2','',agent.name));
   const meta=el('div','showcase-hero-meta');for(const value of [`${agent.rank} 级`,`Lv. ${agent.level}`,guide.element,guide.specialty].filter(Boolean))meta.append(el('span','',value));
   const cinema=el('div','showcase-mindscape');cinema.setAttribute('aria-label',`已解锁 ${agent.mindscape} 层影画`);for(let i=1;i<=6;i++)cinema.append(el('span',i<=agent.mindscape?'active':'',i));
-  info.append(meta,cinema);const link=el('a','showcase-guide-link','查看角色资料与配装 ↗');link.href=`agents.html?v=20261114-refresh-launch-1#agent=${agent.id}`;hero.append(img(agent.icon),info,link);
+  info.append(meta,cinema);const link=el('a','showcase-guide-link','查看角色资料与配装 ↗');link.href=`agents.html?v=20261021-v33-complete-1#agent=${agent.id}`;hero.append(img(agent.icon),info,link);
   if(portraits[agent.id]?.src)hero.append(img(portraits[agent.id].src,'showcase-hero-art'));
   const planner=el('button','primary-button','带入当前配装，规划驱动盘 ↗');planner.type='button';planner.onclick=()=>{try{sessionStorage.setItem('bagel-disc-planner-handoff',JSON.stringify(agent));location.href=`disc-planner.html?agent=${encodeURIComponent(agent.id)}&v=20260916-english-2`;}catch{planner.textContent='浏览器存储受限，请在驱动盘规划页重新读取展柜';}};hero.append(planner);
   const columns=el('div','showcase-columns'),panel=section('代理人属性',agent.statsLabel||'基础装备面板估算');panel.append(statRows(agent.stats,'showcase-stat-grid'),notes('面板计算范围',agent.notes||[]));
@@ -174,10 +176,27 @@ function renderResult(){
   $('showcase-agent-detail').replaceChildren(hero,columns,skills,training,discs);
 }
 function setBusy(value){busy=value;for(const id of ['showcase-query','showcase-demo','showcase-uid'])$(id).disabled=value;$('showcase-query').textContent=value?'读取中…':'查询练度';renderRefresh();}
-async function queryShowcase(uid){message('请使用上方正式站入口查询公开展柜。');}
+async function queryShowcase(uid){
+  if(busy)return;
+  if(!/^[1-9][0-9]{5,9}$/.test(uid)){message('请输入 6–10 位数字的绝区零游戏 UID。','error');return;}
+  if(result&&!isDemo&&String(result.uid)===uid&&cacheSeconds()>0){message(`该展柜的上游缓存还剩 ${cacheSeconds()} 秒，到期后可重新查询；游戏展柜仍需同步。`);renderRefresh();return;}
+  const sameUid=!!result&&!isDemo&&String(result.uid)===uid;
+  setBusy(true);message('正在读取公开展柜…'+(result?' 下方暂时保留上次数据。':''));controller=new AbortController();const timeout=setTimeout(()=>controller.abort(),30000);
+  try{
+    const response=await fetch(API_ROOT+'/api/showcase',{method:'POST',headers:{'Content-Type':'application/json','X-Bagel-Import':'1'},body:JSON.stringify({uid}),signal:controller.signal,credentials:'omit',cache:'no-store',referrerPolicy:'no-referrer'});let data;
+    try{data=await response.json();}catch{throw new Error('展柜服务暂未返回有效资料，请稍后重试。');}
+    if(!response.ok)throw new Error(data.message||'查询暂时失败，请稍后重试。');
+    if(!data||String(data.uid)!==uid||!Array.isArray(data.agents))throw new Error('展柜资料不完整，请稍后重新查询。');
+    result=data;isDemo=false;previousData=false;if(!sameUid)selectedId='';setCacheDeadline(result.ttl);renderResult();
+    message(`已读取 ${result.agents.length} 位公开展示角色。${result.cacheHit?'本次命中缓存，显示此前读取的资料。':'游戏内刚修改的内容可能尚未同步。'}`);
+  }catch(error){
+    previousData=!!result&&!isDemo;renderRefresh();
+    message((error.name==='AbortError'?'查询超时，请检查网络后重试。':error.message)+(result?' 下方保留的是上次读取结果。':''),'error');
+  }finally{clearTimeout(timeout);controller=null;setBusy(false);}
+}
 $('showcase-form').addEventListener('submit',e=>{e.preventDefault();queryShowcase($('showcase-uid').value.trim());});
 $('showcase-refresh').onclick=()=>{if(result&&!isDemo)queryShowcase(String(result.uid));};
-$('showcase-demo').onclick=async()=>{if(busy)return;setBusy(true);try{const response=await fetch('showcase-demo.json?v=20261107-refresh-launch-1');if(!response.ok)throw new Error('示例资料暂未就绪，请稍后刷新。');result=await response.json();isDemo=true;previousData=false;selectedId='';cacheDeadline=0;stopCacheTimer();renderResult();message('正在浏览虚构的练度示例；真实展柜查询请使用正式站。');}catch(error){message(error.message,'error');}finally{setBusy(false);}};
+$('showcase-demo').onclick=async()=>{if(busy)return;setBusy(true);try{const response=await fetch('showcase-demo.json?v=20261107-refresh-launch-1');if(!response.ok)throw new Error('示例资料暂未就绪，请稍后刷新。');result=await response.json();isDemo=true;previousData=false;selectedId='';cacheDeadline=0;stopCacheTimer();renderResult();message('正在浏览虚构的练度示例，可输入 UID 查询自己的公开展柜。');}catch(error){message(error.message,'error');}finally{setBusy(false);}};
 document.addEventListener('visibilitychange',()=>{if(!document.hidden)startCacheTimer();});
 window.addEventListener('pagehide',()=>{controller?.abort();stopCacheTimer();});
 window.addEventListener('pageshow',startCacheTimer);

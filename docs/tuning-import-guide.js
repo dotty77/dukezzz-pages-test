@@ -1,7 +1,8 @@
 const TLS='[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12; ';
-export function getLinkCommand({region='cn',gamePath='',origin=location.origin}={}) {
+export function getLinkCommand({region='cn',gamePath='',origin=location.origin,pathname=globalThis.location?.pathname||'/'}={}) {
   if(!['cn','os'].includes(region))throw new Error('请选择游戏客户端。');
-  const local=new URL('/get-tuning-link-fast.ps1?v=20260914-duke-brand-1',origin);
+  const pages=origin==='https://dotty77.github.io'&&pathname.startsWith('/dukezzz-pages-test/');
+  const local=new URL('/get-tuning-link-fast.ps1',pages?'https://dukezzz.com':origin);
   const permitted=(local.protocol==='https:'&&local.hostname==='dukezzz.com'&&!local.port)||(local.protocol==='http:'&&['localhost','127.0.0.1'].includes(local.hostname));
   if(!permitted||local.username||local.password)throw new Error('获取脚本仅可从本站或本机预览下载。');
   let path=gamePath.trim();
@@ -23,7 +24,7 @@ export function mountRngGuide(host,{status,isBusy}) {
       <button id="rng-tab-android" type="button" role="tab" aria-controls="rng-panel-android" aria-selected="false" tabindex="-1" data-platform="android">Android</button>
     </div>
     <div id="rng-panel-windows" class="rng-panel" role="tabpanel" aria-labelledby="rng-tab-windows">
-      <p class="rng-source-note"><strong>本站优化版</strong> · 在 rng.moe 原版基础上改进缓存读取与链接验证。<a href="tuning-script-notice.txt?v=20260914-duke-brand-1" target="_blank" rel="noreferrer">来源与许可 ↗</a></p>
+      <p class="rng-source-note"><strong>本站优化版</strong> · 在 rng.moe 原版基础上改进缓存读取与链接验证。<a href="tuning-script-notice.txt" target="_blank" rel="noreferrer">来源与许可 ↗</a></p>
       <ol class="link-steps">
         <li>启动电脑版《绝区零》，打开<strong>调频 → 调频记录</strong>，等待列表出现。</li>
         <li>在 Windows 搜索中打开 <strong>Windows PowerShell</strong>。也可按 Win + R，输入 <code>powershell</code> 后回车。</li>
@@ -53,9 +54,9 @@ export function mountRngGuide(host,{status,isBusy}) {
   function updateCommands() {
     const settings=options();
     $('link-command-text').textContent=getLinkCommand(settings);
-    $('rng-script-download').href='get-tuning-link-fast.ps1?v=20260914-duke-brand-1';
+    $('rng-script-download').href='get-tuning-link-fast.ps1';
     const localPreview=['localhost','127.0.0.1'].includes(location.hostname);
-    $('rng-source-hint').textContent='获取脚本直接从本站下载。复制命令后，在 PowerShell 粘贴并按回车。'+(localPreview?' 当前命令连接本机预览，需保持预览服务运行；给其他人使用时请从 dukezzz.com 复制命令。':'');
+    $('rng-source-hint').textContent='获取脚本从 DUKE 下载。复制命令后，在 PowerShell 粘贴并按回车。'+(localPreview?' 当前命令连接本机预览，需保持预览服务运行；给其他人使用时请从 dukezzz.com 复制命令。':'');
     try {const path=$('rng-game-path').value.trim();$('rng-manual-command').textContent=path?getLinkCommand({...settings,gamePath:path}):'先填写上方游戏数据目录，再复制生成的命令。';$('rng-copy-manual').disabled=!path;}
     catch(error){$('rng-manual-command').textContent=error.message;$('rng-copy-manual').disabled=true;}
   }

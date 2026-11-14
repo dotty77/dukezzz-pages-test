@@ -1,6 +1,8 @@
-// Account sync is available on the main site; no bridge is mounted here.
-// Account sync is available on the main site; no bridge is mounted here.
-// Account sync is available on the main site; no bridge is mounted here.
+// Only the published Pages project uses the fixed DUKE API; never read an API host from input.
+const API_ROOT=globalThis.location?.origin==='https://dotty77.github.io'&&globalThis.location.pathname.startsWith('/dukezzz-pages-test/')?'https://dukezzz.com':'';
+import {mountMiyousheBrowserSync} from './mys-browser-sync.js?v=20261114-direct-tools-1';
+import {mountHoyolabSync} from './hoyolab-sync.js?v=20261114-direct-tools-1';
+import {officialToConfiguration} from './official-equipment.js?v=20261107-refresh-launch-1';
 import {scoreDisc,getDiscScoreProfile,SCORE_RULES} from './disc-score.js?v=20261107-refresh-launch-1';
 import {newConfiguration,normalizedToConfiguration,validateConfiguration,calculatePanel,formatProperty,resolveTargets,compareDisc,inspectDiscRolls} from './disc-planner-core.js?v=20261107-refresh-launch-1';
 import {evaluateContext,assessUsable} from './disc-context.js?v=20261027-agents-launch-1';
@@ -540,7 +542,7 @@ function renderEvidence(){
   const activeTeam=planningScope==='team'?team.filter(Boolean):[];
   if(activeTeam.length!==new Set(activeTeam).size)root.append(el('p','disc-warning','两位队友重复，请重新选择。'));
   for(const id of activeTeam){const t=details.agents[id];root.append(sourceDetails(`${t.name} · 核心F参考，队友影画与实际等级需另核对`,t.skills.filter(s=>/核心|额外能力/.test(s.name)).map(s=>[`${s.name}\n`,...skillText(s,{core:6,cinema:0})])));}
-  root.append(sourceDetails('查看当前角色所有招式依据',a.skills.map(s=>[s.name,' · ',`${s.category}\n`,...skillText(s)])),link(`agents.html?v=20261114-refresh-launch-1#agent=${config.id}`,'打开完整角色资料 ↗'));
+  root.append(sourceDetails('查看当前角色所有招式依据',a.skills.map(s=>[s.name,' · ',`${s.category}\n`,...skillText(s)])),link(`agents.html#agent=${config.id}`,'打开完整角色资料 ↗'));
   if(graduation.agents[config.id]?.source?.url)root.append(link(graduation.agents[config.id].source.url,'逐角色攻略原文 ↗'));
   const guideCount=Object.values(graduation.agents||{}).filter(a=>a.status==='author-reference').length,coverageNote=el('p','disc-muted',`${guideCount}位角色已有作者培养参考；具体条件见对应攻略。测试服资料单独展示。`);coverageNote.dataset.i18nEn=`Guide-author build references cover ${guideCount} agents; see each guide for its assumptions. Beta data is shown separately.`;root.append(coverageNote);
 }
@@ -558,7 +560,13 @@ function consumeShowcase(result,isDemo=false){
   for(const a of agents)root.append(button(a.name||details.agents[a.id].name,()=>{setAgent(String(a.id),normalizedToConfiguration(a,data));note();}));
   setAgent(String(agents[0].id),normalizedToConfiguration(agents[0],data));note();
 }
-$('disc-uid-form').onsubmit=e=>{e.preventDefault();setImportStatus('请使用上方正式站入口读取展柜。','Use the main-site link above to read a showcase.');};
+$('disc-uid-form').onsubmit=async e=>{
+  e.preventDefault();if(busy)return;const uid=$('disc-uid').value.trim();if(!/^[1-9][0-9]{5,9}$/.test(uid))return;
+  if(uid===cacheUid&&Date.now()<cacheUntil){$('disc-import-status').textContent=`上游缓存尚余 ${Math.ceil((cacheUntil-Date.now())/1000)} 秒，稍后再试。`;return;}
+  controller=new AbortController();setBusy(true);const timer=setTimeout(()=>controller.abort(),35000);$('disc-import-status').textContent='正在读取公开展柜…';
+  try{const r=await fetch(API_ROOT+'/api/showcase',{method:'POST',headers:{'Content-Type':'application/json','X-Bagel-Import':'1'},body:JSON.stringify({uid}),signal:controller.signal,credentials:'omit',cache:'no-store',referrerPolicy:'no-referrer'});const result=await r.json();if(!r.ok)throw Error(result.message||result.error?.message||'展柜读取失败');if(String(result.uid)!==uid)throw Error('展柜UID与请求不一致');consumeShowcase(result);cacheUid=uid;cacheUntil=Date.now()+Math.max(0,Number(result.ttl)||0)*1000;
+  }catch(e){$('disc-import-status').textContent=e.name==='AbortError'?'读取已取消或超时，原方案保留。':`${e.message}，原方案保留。`;}finally{clearTimeout(timer);setBusy(false);}
+};
 $('disc-cancel').onclick=()=>controller?.abort();
 $('disc-demo').onclick=async()=>{if(busy)return;try{const r=await fetch('showcase-demo.json?v=20261107-refresh-launch-1');if(!r.ok)throw Error('示例暂不可用');consumeShowcase(await r.json(),true);}catch(e){$('disc-import-status').textContent=e.message;}};
 $('disc-reset').onclick=()=>setAgent(config.id);
@@ -577,6 +585,22 @@ try{
   let transferred=false;
   try{const raw=sessionStorage.getItem('bagel-disc-planner-handoff');if(raw){sessionStorage.removeItem('bagel-disc-planner-handoff');const a=JSON.parse(raw);if(data.agents[String(a.id)]){setAgent(String(a.id),normalizedToConfiguration(a,data));transferred=true;setImportStatus('已带入配装（不含UID）；角色与音擎按60级满突破、核心F规划，非来源实测等级。','Build transferred without a UID. Agent and W-Engine target Lv.60 and full promotion, with Core Skill F; these are planning levels, not imported measurements.');}}}catch{}
   planStorageReady=true;if(transferred||Object.hasOwn(data.agents,requested)&&!restore)saveCurrentPlan();
-  // GitHub Pages mirror: official sync remains on dukezzz.com.
+  // Official sync sources mount.
+  const importOfficial=(agent,meta)=>{
+    const imported=maximumPlanningLevels(officialToConfiguration(agent,data));
+    if(String(imported.id)!==String(meta.agentId))throw Error('官方返回角色与所选角色不一致');
+    const errors=validateConfiguration(imported,data);if(errors.length)throw Error(errors.join('；'));
+    setAgent(imported.id,clone(imported));
+    const provider=meta.source==='hoyolab'?'HoYoLAB':'米游社',providerEn=meta.source==='hoyolab'?'HoYoLAB':'Miyoushe';
+    setImportStatus(`已同步${provider}配装；角色与音擎按60级满突破、核心F规划，非来源实测等级。`,`${providerEn} build synced. Agent and W-Engine target Lv.60, full promotion, and Core Skill F; these are planning levels, not imported measurements.`);
+  };
+  mountHoyolabSync($('disc-hoyolab-sync'),{getAgentId:()=>config.id,getAgentName:id=>details.agents[id]?.name||'',onImport:importOfficial,restoredBuild:!!restore&&!transferred});
+  const chinaSection=$('disc-cn-sync');let chinaMounted=false;
+  const chinaOptions=()=>({getAgentId:()=>config.id,getAgentName:id=>details.agents[id]?.name||'',onImport:importOfficial,restoredBuild:!!restore&&!transferred});
+  const mountChina=()=>{if(chinaSection?.open&&!chinaMounted){chinaMounted=true;mountMiyousheBrowserSync($('disc-mys-browser-sync'),chinaOptions());}};
+  chinaSection?.addEventListener('toggle',mountChina);
+  if(/^#miyoushe-sync=[0-9a-f]{32}$/.test(location.hash)&&chinaSection)chinaSection.open=true;
+  mountChina();
+  // End official sync sources mount.
   window.discPlanner={getState:()=>({ready:true,agentId:config.id,tier,alternative,busy,mode:planningMode,scope:planningScope,team:[...team],searching:!!searchTask,allocation:allocation?{met:allocation.met,steps:allocation.steps,blocked:allocation.blocked,guidanceOnly:allocation.guidanceOnly,baselineMet:allocation.baselineMet,changedSlots:allocation.changedSlots,retainedSlots:allocation.retainedSlots,search:allocation.search}:null}),getConfiguration:()=>clone(config),getAllocation:()=>allocation?clone(allocation):null};
 }catch(e){$('disc-import-status').textContent=e.message;$('disc-fetch').disabled=true;}

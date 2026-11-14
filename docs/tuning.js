@@ -1,7 +1,7 @@
 import {POOL_META, IMPORT_LIMITS, parseImport, mergeAccounts, analyzeAccount, exportBackup, exportUIGF, exportCSV} from './tuning-core.js?v=20260914-duke-brand-1';
 import {openStorage, readAccounts, readImportState, updateAccounts, persistent} from './tuning-storage.js?v=20260910-tuning-incremental-1';
 import {rateLuck} from './tuning-rating.js?v=20260914-duke-brand-1';
-import {setupLinkImport} from './tuning-link.js?v=20260914-duke-brand-1';
+import {setupLinkImport} from './tuning-link.js?v=20261114-direct-tools-1';
 import {renderOverview, renderGuarantee, loadBannerData, signalOutcomes} from './tuning-summary.js?v=20261111-refresh-launch-1';
 import {mountExpectation,mountUpPairs,renderUpPairs} from './tuning-targets.js?v=20261111-refresh-launch-1';
 import {cloneData} from './tuning-compat.js?v=20260909-tuning-win11-1';
@@ -199,7 +199,7 @@ function renderCollection(account) {
   $('collection-grid').replaceChildren(...rows.slice(0, collectionLimit).map(r => {
     const card = el('article', 'collection-card'), info = el('div', 'collection-info');
     info.append(el('h3', '', r.name), badge(r.rank), el('p', '', [...r.pools].map(p => labels[p] || `其他池 ${p}`).join(' · ')), el('small', '', `最近获取 ${r.last.slice(0,10)}`));
-    if(kind === 'agent' && metadata(r)?.id) { const link=el('a','collection-agent-link','查看角色资料 ↗'); link.href=`agents.html?v=20261114-refresh-launch-1#agent=${metadata(r).id}`; info.append(link); }
+    if(kind === 'agent' && metadata(r)?.id) { const link=el('a','collection-agent-link','查看角色资料 ↗'); link.href=`agents.html#agent=${metadata(r).id}`; info.append(link); }
     card.append(avatar(r), info, el('strong', 'collection-count', `×${number(r.count)}`)); return card;
   }));
   if (!rows.length) $('collection-grid').append(el('p', 'collection-empty', query ? '没有找到匹配的记录。' : `还没有可识别的${kind === 'agent' ? '代理人' : '音擎'}记录。请导入带 item_id 或 item_type 的文件。`));

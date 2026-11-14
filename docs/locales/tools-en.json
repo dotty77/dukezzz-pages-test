@@ -2722,7 +2722,13 @@
     "核心强化 E 需要角色达到 55 级": "Core Skill E requires Agent Level 55",
     "核心强化 F 需要角色达到 60 级": "Core Skill F requires Agent Level 60",
     "3.3 下半 · 已开放": "Version 3.3 Phase II · Released",
-    "限时频段：11月11日12:00至12月1日14:59（服务器时间）。": "Limited-time channels: November 11 at 12:00 to December 1 at 14:59 (server time)."
+    "限时频段：11月11日12:00至12月1日14:59（服务器时间）。": "Limited-time channels: November 11 at 12:00 to December 1 at 14:59 (server time).",
+    "请从 DUKE 原站或 GitHub 站打开链接导入。": "Open link import on the DUKE main site or GitHub site.",
+    "DUKE 读取服务暂不可用，请稍后重试。": "The DUKE import service is temporarily unavailable. Please try again later.",
+    "链接含临时读取凭证，仅交给 DUKE 读取服务和游戏官方接口，不会写入备份。无需提供账号密码。": "The link contains a temporary access key sent only to the DUKE import service and the official game API. It is not included in backups. No account password is needed.",
+    "获取脚本从 DUKE 下载。复制命令后，在 PowerShell 粘贴并按回车。": "The script is downloaded from DUKE. Copy the command, paste it into PowerShell, and press Enter.",
+    "可以粘贴官方调频记录链接自动读取，或导入 rng.moe 整站备份、UIGF JSON、CSV 文件。rng.moe 备份会先预览账号、时区和记录数量，只合并调频明细。链接导入通过 DUKE 服务访问游戏官方接口，凭证仅临时使用，不写入档案。": "Paste an official signal search history link, or import an rng.moe backup, UIGF JSON, or CSV file. The rng.moe preview shows accounts, time zones and record counts; only search records are merged. Link import uses the DUKE service to access the official game API. Access keys are temporary and are not saved in your archive.",
+    "档案仅保存在当前浏览器；链接读取通过 DUKE 服务连接游戏官方接口，服务不保存链接或记录。请定期导出完整备份，清理浏览器数据或换设备后需重新导入。": "Archives stay in this browser. Link import connects to the official game API through the DUKE service, which does not save links or records. Export complete backups regularly; clearing browser data or changing devices requires importing again."
   },
   "patterns": [
     {

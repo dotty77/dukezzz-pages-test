@@ -1,4 +1,4 @@
-/* The independent Pages test site never carries credentials between origins. */
+/* The switch-site link carries no query strings, fragments or browser state. */
 (() => {
   'use strict';
   const scope = '/dukezzz-pages-test/';
