@@ -1,0 +1,48 @@
+{
+  "gameVersion": "3.3.0",
+  "scope": "Two reviewed existing-navigation corrections only; no full topology or runtime validation.",
+  "source": "Installed OSPRODWin3.3.0 client Persistent block 1973290813; exact Floor.GroupIDList and member/Suite references.",
+  "changes": [
+    {
+      "map": "suburbs",
+      "id": "171200291:207",
+      "action": "removed_from_active_objects_and_native_route_targets",
+      "sourceGroup": "Group_171200291.json",
+      "sourceSha256": "0a4f4a41cdd851580c4cbc65c054684e9a0e7c13e36150c340d45a89678f71f2",
+      "memberAbsent": true,
+      "allSuiteReferencesAbsent": true,
+      "sourceRouteReferences": 0
+    },
+    {
+      "map": "suburbs",
+      "id": "171200066:203",
+      "sourcePointId": "S-B18",
+      "action": "same_id_coordinate_updated",
+      "beforeWorldPosition": {
+        "x": -174.07913,
+        "y": 45.171566,
+        "z": 98.1979
+      },
+      "afterWorldPosition": {
+        "x": -174.45,
+        "y": 45.15,
+        "z": 97.51
+      },
+      "sourceGroup": "Group_171200066.json",
+      "sourceSha256": "900c141589dac5fc13f74ec1b5372583d222937cc42f19d4458ceb2729a8ab98",
+      "sourceMarkerPositionUnchanged": true,
+      "newProjectionErrorPixels": 5.839467,
+      "matchingThresholdPixels": 30.0
+    }
+  ],
+  "preserved": [
+    "All source marker IDs and image x/y",
+    "Previous 3.2 exclusions and conditional activation",
+    "Other member coordinates including client precision-only differences",
+    "Native mesh, transit links and geometric registrations"
+  ],
+  "reviewLimits": [
+    "Other 3.3 static differences are documented in the navigation audit; they are not applied by this narrowly scoped correction.",
+    "Existing conditional doors and boss portals remain conditional; no new automatic gate-open or route-edge assumptions."
+  ]
+}

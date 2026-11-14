@@ -1,0 +1,70 @@
+/* Compact presentation shared by the analysis and budget tasks. */
+.tuning-page .tuning-main{padding-top:24px}
+.tuning-page .tuning-intro{margin:8px 0 22px;gap:20px}
+.tuning-intro .tuning-eyebrow,.tuning-intro .intro-benefits{display:none}
+.tuning-page .tuning-intro h1{font-size:30px;margin:0 0 7px}
+.tuning-page .intro-actions{flex-direction:row;flex-wrap:wrap;align-items:center;gap:8px}
+.tuning-task-switch{display:flex;gap:6px;width:fit-content;padding:5px;border:1px solid var(--line);background:var(--surface-muted);border-radius:12px;margin:0 0 18px}
+.tuning-page .tuning-task-tab{min-height:43px;min-width:136px;padding:10px 22px;border:1px solid transparent;border-radius:8px;background:transparent;color:var(--muted);font-size:14px;font-weight:650}
+#drop-zone .tuning-task-tab[aria-selected=true],#drop-zone .tuning-task-tab[aria-selected=true]:hover{background:var(--theme-accent-bg);border-color:var(--accent);color:var(--accent)}
+.tuning-task-view{min-width:0}.tuning-task-view[hidden]{display:none!important}
+.tuning-page .status-message[data-kind=info]{background:transparent;border:0;padding:0;color:var(--muted);font-size:12px;margin:10px 0 16px}
+.tuning-page .guarantee-hub{padding:20px;margin:18px 0}
+.guarantee-hub-heading .tuning-eyebrow{display:none}
+.tuning-page .guarantee-hub-heading h2{font-size:20px}
+.tuning-page .guarantee-cards{margin-top:14px;gap:12px}
+.tuning-page .guarantee-pool>.guarantee-box{padding:14px;min-height:0}
+.tuning-page .guarantee-pool .guarantee-box>p{font-size:12px;line-height:1.7}
+.tuning-scope-note{font-size:11px;color:var(--muted);line-height:1.7;margin:12px 0 0}
+.tuning-fold{min-width:0;scroll-margin-top:calc(var(--site-header-height) + 20px)}
+.tuning-fold>summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:12px;font-weight:600;color:var(--text);padding:16px 18px;line-height:1.5}
+.tuning-fold>summary::-webkit-details-marker{display:none}
+.tuning-fold>summary:after{content:'＋';color:var(--accent);font-size:17px;margin-left:auto;flex-shrink:0}
+.tuning-fold[open]>summary:after{content:'−'}
+.tuning-fold[open]>summary{border-bottom:1px solid var(--line)}
+.guarantee-help{margin-top:14px;border-top:1px solid var(--line);font-size:12px}
+.guarantee-help>summary{padding:12px 0 0;color:var(--muted);font-size:12px}
+.guarantee-help[open]>summary{padding-bottom:12px}
+.tuning-page .guarantee-help .guarantee-explanation{padding-top:18px;margin-top:0;border-top:0}
+.tuning-page .pool-navigation{margin:18px 0}
+.pool-navigation-heading>p{display:none}
+.tuning-page .pool-navigation-heading h2{font-size:15px}
+.tuning-page .pool-tabs{display:flex;flex-wrap:wrap;gap:8px}
+.tuning-page .pool-tabs button{min-height:44px;min-width:100px;flex-direction:row;gap:8px;padding:9px 12px;border:1px solid var(--line);background:var(--surface);color:var(--muted);box-shadow:none;border-radius:8px}
+.tuning-page .pool-tabs button:before,.tuning-page .pool-tabs .tab-selected-mark,.tuning-page .pool-tabs .tab-unit{display:none}
+.tuning-page .pool-tabs .tab-label{font-size:12px;font-weight:600}
+.tuning-page .pool-tabs .tab-count{font-size:12px;color:var(--muted);font-weight:500}
+.tuning-page .pool-tabs button[aria-pressed=true],.tuning-page .pool-tabs button[aria-pressed=true]:hover{background:var(--theme-accent-bg);border-color:var(--accent);color:var(--accent);box-shadow:none}
+.tuning-page .pool-tabs button:hover{background:var(--surface-muted);border-color:var(--accent)}
+.tuning-page .pool-tabs button[aria-pressed=true] .tab-count{color:var(--accent)}
+.tuning-page .pool-heading{margin-top:22px}
+.tuning-page .history-fold{margin-top:18px;padding:0;overflow:hidden}
+.tuning-page .history-fold .history-panel{margin:0;border:0;box-shadow:none;background:transparent}
+.history-fold .history-heading h3{display:none}
+.tuning-page .tuning-optional{margin:12px 0;padding:0;overflow:hidden}
+.tuning-optional .tuning-overview{margin:16px;border-radius:12px}
+.tuning-page .tuning-optional .luck-panel{margin:0;background:transparent;border:0;box-shadow:none}
+.tuning-page .tuning-empty{min-height:285px;padding:26px 20px;margin:16px 0}
+.tuning-page .empty-signal{width:100px;height:78px;margin:0 0 8px}
+.empty-kicker{display:none}
+.tuning-page .empty-description{max-width:520px;margin-bottom:14px}
+.tuning-page .empty-format{margin-bottom:12px}
+.tuning-page .empty-notes{gap:18px;flex-direction:row;flex-wrap:wrap;justify-content:center}
+.tuning-page .tuning-budget-shortcut{margin-top:16px;font-size:12px}
+.tuning-page #tuning-budget-view .personal-budget{margin-top:16px}
+.tuning-page .tuning-account-settings .export-options{min-width:160px}
+.tuning-page .tuning-account-settings button{width:100%;text-align:left}
+.tuning-page #rng-import-open{display:block;margin-top:14px}
+#guarantee-hub,#target-expectation,#import-guide,#personal-budget{scroll-margin-top:calc(var(--site-header-height) + 20px)}
+@media(max-width:700px){
+ .tuning-page .tuning-intro{display:block;margin-bottom:18px}.tuning-page .intro-actions{margin-top:16px}
+ .tuning-task-switch{width:100%}.tuning-page .tuning-task-tab{flex:1;min-width:0;padding:10px 14px}
+ .tuning-page .guarantee-hub{padding:16px}.tuning-page .guarantee-hub-heading{align-items:flex-start}
+ .tuning-page .pool-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+ .tuning-page .pool-tabs button{min-width:0;min-height:46px;padding:8px 5px;flex-direction:column;gap:3px}
+ .tuning-page .pool-tabs .tab-label{font-size:11px}.tuning-page .pool-tabs .tab-count{font-size:11px}
+ .tuning-fold>summary{padding:14px}.guarantee-help>summary{padding:12px 0 0}
+ .tuning-page .tuning-empty{padding:22px 16px;min-height:280px}
+ .tuning-page .empty-description{max-width:100%}.tuning-page .empty-notes{font-size:10px;gap:10px}
+ .tuning-optional .tuning-overview{margin:10px}
+}

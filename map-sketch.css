@@ -1,0 +1,20 @@
+#map-tools #map-sketch-toggle{border-color:#8e81e8;color:#d5ccff;background:#2a2645;font-weight:650}
+#map-tools #map-sketch-toggle[aria-pressed=true]{background:#6758c8;color:#fff;border-color:#c2b8ff}
+#map-sketch-tools{flex-shrink:0;padding:10px 12px;background:#201e34;border-bottom:1px solid #635c8b;color:#e9e4ff}
+.sketch-actions{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.sketch-actions>button{font-size:11px;min-height:34px;background:#302c49;color:#eeeaff;border-color:#615976}
+.sketch-actions>button:hover{background:#484060}.sketch-actions>button:disabled{opacity:.42}
+.sketch-colors{display:flex;gap:5px;margin-right:5px}#map-sketch-tools .sketch-colors button{background:var(--sketch-color)!important;border:3px solid transparent;box-shadow:inset 0 0 0 1px #0003;border-radius:50%;width:28px;height:28px;padding:0}
+.sketch-colors button:hover{background:var(--sketch-color);filter:brightness(1.12)}.sketch-colors button[aria-pressed=true]{outline:2px solid #f4efff;outline-offset:2px;border-color:#201e34}
+.sketch-visibility{display:flex;align-items:center;gap:4px;font-size:11px;cursor:pointer;margin-left:3px}.sketch-visibility input{accent-color:#9f91ff}
+.sketch-actions #map-sketch-done{margin-left:auto;background:#6758c8;border-color:#a99afc;color:#fff}
+.sketch-caption{display:flex;flex-wrap:wrap;gap:4px 14px;justify-content:space-between;margin-top:9px;color:#c7bedf;font-size:10px;line-height:1.6}
+#map-sketch-status{font-variant-numeric:tabular-nums}#map-canvas.is-sketching,#native-map-canvas.is-sketching{cursor:crosshair!important;touch-action:none}
+html[data-theme=light] #map-tools #map-sketch-toggle{background:#edeaff;color:#5142a9;border-color:#b9aff4}
+html[data-theme=light] #map-tools #map-sketch-toggle[aria-pressed=true]{background:#6758c8;color:#fff;border-color:#6758c8}
+html[data-theme=light] #map-sketch-tools{background:#f0edff;color:#403558;border-color:#c8c0e5}
+html[data-theme=light] .sketch-actions>button{background:#fff;color:#514570;border-color:#c4bbdd}
+html[data-theme=light] .sketch-actions>button:hover{background:#e5def5}
+html[data-theme=light] .sketch-colors button[aria-pressed=true]{outline-color:#6653b6;border-color:#f0edff}
+html[data-theme=light] .sketch-caption{color:#6a5b89}
+@media(max-width:650px){#map-sketch-tools{padding:9px 8px}.sketch-actions{gap:6px}.sketch-actions>button{padding:7px 8px;min-height:36px}.sketch-colors{gap:7px}.sketch-colors button{width:30px;height:30px}.sketch-caption{font-size:10px}.sketch-visibility{font-size:10px}}

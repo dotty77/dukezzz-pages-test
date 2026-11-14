@@ -1,0 +1,1818 @@
+{
+  "edition": {
+    "title": "关圣帝君灵签·一百签",
+    "description": "维基文库转录，参照《关帝灵签》姑苏钮氏藏板清刊本扫描。",
+    "sourceUrl": "https://zh.wikisource.org/zh-hans/關聖帝君靈籤",
+    "scanUrl": "https://zh.wikisource.org/wiki/File:關帝靈籤.姑蘇鈕氏藏板.清刊本.pdf",
+    "provenanceNote": "原签诗为传统文献，来自维基文库各签转录，并保留页面修订号。参照扫描的签序与等级已逐条核对，诗文只作部分校核，已确认的差异在各签校记列明，未宣称全书逐字精校。展示采用网页简体转换，部分异体字保留；第七十九签的乾为八卦专名。白话解签与静心小笺为本站整理，不是古籍原文。游戏点位、出生信息选签及调频玩法均不出自这部古籍。",
+    "scanRepositoryUrl": "https://iiif.lib.harvard.edu/manifests/view/drs:53239458",
+    "catalogUrl": "https://id.lib.harvard.edu/alma/990079333780203941/catalog",
+    "language": "zh-Hans",
+    "sourceLicense": "古签诗为公有领域文献；网页转录来源为维基文库，保留链接与修订号；扫描文件标示 Public Domain。",
+    "editorialCredit": "白话解签、静心小笺：DUKE整理（非原签断语）。",
+    "codeLabel": "签序",
+    "codeNote": "甲甲至癸癸为原签排列标记，不是按出生年月日计算的干支。"
+  },
+  "signs": [
+    {
+      "id": 1,
+      "code": "甲甲",
+      "grade": "大吉",
+      "title": "第一签",
+      "poem": [
+        "巍巍独步向云间",
+        "玉殿千官第一班",
+        "富贵荣华天付汝",
+        "福如东海寿如山"
+      ],
+      "summary": "签诗以登上高位、福寿绵长描写顺遂与志向，气象开阔。可以借它表达对好结果的期待，不必把宏大的祝词当作承诺。",
+      "calmAdvice": "怀着好心情出发，得到喜欢的结果时也记得知足。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/1",
+      "sourceRevision": "2610595",
+      "scanPage": 3,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 2,
+      "code": "甲乙",
+      "grade": "上吉",
+      "title": "第二签",
+      "poem": [
+        "盈虚消息总天时",
+        "自此君当百事宜",
+        "若问前程归缩地",
+        "更须方寸好修为"
+      ],
+      "summary": "月有盈亏，事情也有进退；诗意把时机与内心修养放在一起。与其只问前程，不如先把眼前能做的事做好。",
+      "calmAdvice": "先定好自己的节奏，再从容等候回应。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/2",
+      "sourceRevision": "2376270",
+      "scanPage": 4,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 3,
+      "code": "甲丙",
+      "grade": "中吉",
+      "title": "第三签",
+      "poem": [
+        "衣食自然生处有",
+        "劝君不用苦劳心",
+        "但能孝悌存忠信",
+        "福禄来成祸不侵"
+      ],
+      "summary": "诗中劝人少些劳神，多存孝悌、忠信之心。它重视平常生活里的安定，以及对身边人的诚恳。",
+      "calmAdvice": "选一处熟悉的街角，静下心来，不和别人比较。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/3",
+      "sourceRevision": "2376475",
+      "scanPage": 5,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 4,
+      "code": "甲丁",
+      "grade": "下下",
+      "title": "第四签",
+      "poem": [
+        "去年百事颇相宜",
+        "若较今年时运衰",
+        "好把瓣香告神佛",
+        "莫教福谢悔无追"
+      ],
+      "summary": "去年顺利不等于今年事事照旧，原签提醒人留意变化、珍惜已有。它适合读作收敛急切、及时自省的提醒。",
+      "calmAdvice": "放慢一点，先想清楚今天真正想要什么。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/4",
+      "sourceRevision": "2376477",
+      "scanPage": 6,
+      "transcriptionNote": "等级依扫描作“下下”；网页转录作“下吉”。 列出已确认差异；其余诗文字形依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 5,
+      "code": "甲戊",
+      "grade": "中平",
+      "title": "第五签",
+      "poem": [
+        "子有三般不自由",
+        "门庭萧索冷如秋",
+        "若逢牛鼠交承日",
+        "万事回春不用忧"
+      ],
+      "summary": "门庭冷清如秋，诗末却以回春转折。眼前受限只是这首诗的起点，耐心与重新开始才是它留下的意象。",
+      "calmAdvice": "暂时不顺也可以停一停，给自己留些余地。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/5",
+      "sourceRevision": "2376479",
+      "scanPage": 7,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 6,
+      "code": "甲己",
+      "grade": "下下",
+      "title": "第六签",
+      "poem": [
+        "何劳鼓瑟更吹笙",
+        "寸步如登万里程",
+        "彼此怀疑不相信",
+        "休将私意忆浓情"
+      ],
+      "summary": "奏乐也难拉近彼此的距离，步步艰难源于猜疑与误会。原签劝人不要把一厢情愿当成已经得到的回应。",
+      "calmAdvice": "让期待轻一些，别用猜测替代眼前的事实。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/6",
+      "sourceRevision": "2376481",
+      "scanPage": 8,
+      "transcriptionNote": "等级依扫描作“下下”；网页转录作“下平”。 列出已确认差异；其余诗文字形依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 7,
+      "code": "甲庚",
+      "grade": "大吉",
+      "title": "第七签",
+      "poem": [
+        "仙风道骨本天生",
+        "又遇仙宗为主盟",
+        "指日丹成谢岩谷",
+        "一朝引领向天行"
+      ],
+      "summary": "诗写有天资之人又遇良师，待修习有成才走出山谷。它赞美的是资质、指引与积累共同促成的进步。",
+      "calmAdvice": "先做好准备，再迎接属于自己的那一程。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/7",
+      "sourceRevision": "2376483",
+      "scanPage": 9,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 8,
+      "code": "甲辛",
+      "grade": "上上",
+      "title": "第八签",
+      "poem": [
+        "年来耕稼苦无收",
+        "今岁田畴定有秋",
+        "况遇太平无事日",
+        "士农工贾百无忧"
+      ],
+      "summary": "往年耕作辛苦，诗中转而描绘新一年的收获与太平。可以把它读作辛劳之后向往安稳丰足的祝愿。",
+      "calmAdvice": "珍惜已经拥有的收获，让今天的仪式轻松一些。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/8",
+      "sourceRevision": "2376485",
+      "scanPage": 10,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 9,
+      "code": "甲壬",
+      "grade": "大吉",
+      "title": "第九签",
+      "poem": [
+        "望渠消息向长安",
+        "常把菱花仔细看",
+        "见说文书将入境",
+        "今朝喜色上眉端"
+      ],
+      "summary": "望着远方消息，照镜时已见喜色，诗中充满等候来信的心情。重点在期待与回应，不在保证某个结果。",
+      "calmAdvice": "整理好心情，再打开那份等待中的消息。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/9",
+      "sourceRevision": "2376488",
+      "scanPage": 11,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 10,
+      "code": "甲癸",
+      "grade": "下下",
+      "title": "第十签",
+      "poem": [
+        "病患时时命蹇衰",
+        "何须打瓦共钻龟",
+        "直教重见一阳复",
+        "始可求神仗佛持"
+      ],
+      "summary": "原诗从困顿写到一阳初复，提醒不要在焦虑中反复占问。回转的意象是给自己时间，而非即时求得答案。",
+      "calmAdvice": "累了就先休息，不必靠反复求签获得安心。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/10",
+      "sourceRevision": "814488",
+      "scanPage": 12,
+      "transcriptionNote": "等级依扫描作“下下”；网页转录作“下吉”。 扫描作“直教”，网页转录作“宜教”。 列出已确认差异；其余诗文字形依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 11,
+      "code": "乙甲",
+      "grade": "下下",
+      "title": "第十一签",
+      "poem": [
+        "今年好事一番新",
+        "富贵荣华萃汝身",
+        "谁道机关难料处",
+        "到头独立转伤神"
+      ],
+      "summary": "开篇繁华可喜，结尾却写世事难料、独自伤神。它提醒人顺境也有变化，别只看眼前热闹。",
+      "calmAdvice": "即使兴致正浓，也按事先定好的计划收手。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/11",
+      "sourceRevision": "1496521",
+      "scanPage": 13,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 12,
+      "code": "乙乙",
+      "grade": "中平",
+      "title": "第十二签",
+      "poem": [
+        "营为期望在春前",
+        "谁料秋来又不然",
+        "直遇清江贵公子",
+        "一生活计始安全"
+      ],
+      "summary": "春前有所期待，入秋却未如愿，后来才遇帮助。诗意在于计划会变，转机未必按预想的时间出现。",
+      "calmAdvice": "给等待留出空间，也接受换一种安排。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/12",
+      "sourceRevision": "1496522",
+      "scanPage": 14,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 13,
+      "code": "乙丙",
+      "grade": "中平",
+      "title": "第十三签",
+      "poem": [
+        "君今庚甲未亨通",
+        "且向江头作钓翁",
+        "玉兔重生应发迹",
+        "万人头上逞英雄"
+      ],
+      "summary": "时运未通时，诗中让人暂作江边钓翁；后半转向重见光明、施展所长。可读作暂歇蓄力的劝勉。",
+      "calmAdvice": "找个能安静看风景的位置，不急着证明什么。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/13",
+      "sourceRevision": "1496523",
+      "scanPage": 15,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 14,
+      "code": "乙丁",
+      "grade": "下下",
+      "title": "第十四签",
+      "poem": [
+        "一见佳人便喜欢",
+        "谁知去后有多般",
+        "人情冷暖君休讶",
+        "历涉应知行路难"
+      ],
+      "summary": "初见令人欢喜，后来却有许多变化，原签感叹人情冷暖。它提醒人别只凭第一眼的好感作判断。",
+      "calmAdvice": "把一时心动放一放，再决定今天要不要行动。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/14",
+      "sourceRevision": "1496524",
+      "scanPage": 16,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 15,
+      "code": "乙戊",
+      "grade": "中平",
+      "title": "第十五签",
+      "poem": [
+        "两家门户各相当",
+        "不是姻缘莫较量",
+        "直待春风好消息",
+        "却调琴瑟向兰房"
+      ],
+      "summary": "诗以两家门庭与琴瑟相谐谈相合之缘，劝人别勉强比较。合适与从容，比急着凑成一个结果更重要。",
+      "calmAdvice": "依自己的喜好选择，不必追着别人的目标走。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/15",
+      "sourceRevision": "1496525",
+      "scanPage": 17,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 16,
+      "code": "乙己",
+      "grade": "下下",
+      "title": "第十六签",
+      "poem": [
+        "官事悠悠难辨明",
+        "不如息了且归耕",
+        "傍人煽惑君休信",
+        "此事当谋亲弟兄"
+      ],
+      "summary": "争端久拖难明，诗中劝人退出喧闹，少听旁人煽动。重心是寻求可信的商量，而不是执意争个高下。",
+      "calmAdvice": "关掉让你焦躁的讨论，重新听听自己的想法。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/16",
+      "sourceRevision": "1496526",
+      "scanPage": 18,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 17,
+      "code": "乙庚",
+      "grade": "下下",
+      "title": "第十七签",
+      "poem": [
+        "田园价贯好商量",
+        "事到公庭彼此伤",
+        "纵使机关图得胜",
+        "定为后世子孙殃"
+      ],
+      "summary": "原诗从田园商量写到相争两伤，连侥幸取胜也未必值得。它劝人看长远，别让争胜遮住初衷。",
+      "calmAdvice": "不要为了超过别人而加码，玩得自在更重要。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/17",
+      "sourceRevision": "1496527",
+      "scanPage": 19,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 18,
+      "code": "乙辛",
+      "grade": "中平",
+      "title": "第十八签",
+      "poem": [
+        "知君指拟是空华",
+        "底事茫茫未有涯",
+        "牢把脚根踏实地",
+        "善为善应永无差"
+      ],
+      "summary": "空中之花难以握住，脚踏实地才有着落。原签直白地劝人放下无边猜想，以实在行动代替空望。",
+      "calmAdvice": "先确认自己的目标与安排，再开始今天的调频。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/18",
+      "sourceRevision": "1496528",
+      "scanPage": 20,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 19,
+      "code": "乙壬",
+      "grade": "上吉",
+      "title": "第十九签",
+      "poem": [
+        "嗟子从来未得时",
+        "今年星运颇相宜",
+        "营求动作都如意",
+        "和合婚姻诞贵儿"
+      ],
+      "summary": "原签把久未得时与如今渐顺作对照，末句寄托和合之愿。可以读作等待过后重新振作的祝词。",
+      "calmAdvice": "带着期待出门，也把平常心一同带上。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/19",
+      "sourceRevision": "1496529",
+      "scanPage": 21,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 20,
+      "code": "乙癸",
+      "grade": "下下",
+      "title": "第二十签",
+      "poem": [
+        "一生心事向谁论",
+        "十八滩头说与君",
+        "世事尽从流水去",
+        "功名富贵等浮云"
+      ],
+      "summary": "心事随流水、富贵似浮云，诗的重点是看淡一时得失。它不否定努力，而是劝人别被执念拖着走。",
+      "calmAdvice": "若今天没有回应，就把愿望留给下一次。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/20",
+      "sourceRevision": "1496530",
+      "scanPage": 22,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 21,
+      "code": "丙甲",
+      "grade": "下下",
+      "title": "第二十一签",
+      "poem": [
+        "与君夙昔结成冤",
+        "今日相逢那得缘",
+        "好把经文多讽诵",
+        "祈求户内保婵娟"
+      ],
+      "summary": "诗以旧怨重逢写难解的纠结，劝人静心化解而非继续相争。不要把这种文学写法当作自身确有宿怨。",
+      "calmAdvice": "不顺心时先离开片刻，别带着怨气继续。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/21",
+      "sourceRevision": "1496531",
+      "scanPage": 23,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 22,
+      "code": "丙乙",
+      "grade": "上吉",
+      "title": "第二十二签",
+      "poem": [
+        "碧玉池中开白莲",
+        "庄严色相自天然",
+        "生来骨格超凡俗",
+        "正是人间第一仙"
+      ],
+      "summary": "白莲出于碧池，天然清净而不靠外饰，诗中赞美独有的品格。可以把它理解为保持本色、无需攀比。",
+      "calmAdvice": "选自己真正喜欢的角色，让心愿简单清楚。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/22",
+      "sourceRevision": "1496533",
+      "scanPage": 24,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 23,
+      "code": "丙丙",
+      "grade": "下下",
+      "title": "第二十三签",
+      "poem": [
+        "花开花谢在春风",
+        "贵贱穷通百岁中",
+        "羡子荣华今已矣",
+        "到头万事总成空"
+      ],
+      "summary": "花开花谢都在春风里，原诗以此感叹荣华短暂。它提醒人珍惜眼前，别把全部心情押在一个结果上。",
+      "calmAdvice": "看一眼沿途风景，游戏中的快乐不只这一刻。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/23",
+      "sourceRevision": "1496534",
+      "scanPage": 25,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 24,
+      "code": "丙丁",
+      "grade": "中平",
+      "title": "第二十四签",
+      "poem": [
+        "一春万事苦忧煎",
+        "夏里营求始帖然",
+        "更遇秋成冬至后",
+        "恰如骑鹤与腰缠"
+      ],
+      "summary": "春天忧心、夏日渐安，秋冬又添收获，签诗有循序转好的节奏。它赞美等待，避免把一步当作全程。",
+      "calmAdvice": "按自己的节奏慢慢来，不必一天完成所有期待。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/24",
+      "sourceRevision": "1496535",
+      "scanPage": 26,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 25,
+      "code": "丙戊",
+      "grade": "中平",
+      "title": "第二十五签",
+      "poem": [
+        "寅午戌年多阻滞",
+        "亥子丑月渐亨嘉",
+        "更逢玉兔金鸡会",
+        "枯木逢春自放花"
+      ],
+      "summary": "诗用年、月与枯木逢春描写由阻到通。那些传统时序词属于签诗语言，不应直接换成游戏出金时间表。",
+      "calmAdvice": "把它当作重新振作的提醒，耐心比催促更合宜。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/25",
+      "sourceRevision": "1496536",
+      "scanPage": 27,
+      "transcriptionNote": "扫描作“戌”，网页转录作“戍”。 列出已确认差异；其余诗文字形依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 26,
+      "code": "丙己",
+      "grade": "中吉",
+      "title": "第二十六签",
+      "poem": [
+        "年来丰歉皆天数",
+        "自是今年旱较多",
+        "与子定期三日内",
+        "田畴霑足雨滂沱"
+      ],
+      "summary": "旱田等待雨水，诗中终于出现滂沱甘霖。它写匮乏中的盼望与缓解，具体日数是原诗表达的一部分。",
+      "calmAdvice": "不必赶着兑现签中的日数，照自己的安排游玩。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/26",
+      "sourceRevision": "1496537",
+      "scanPage": 28,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 27,
+      "code": "丙庚",
+      "grade": "下下",
+      "title": "第二十七签",
+      "poem": [
+        "世间万物各有主",
+        "一粒一毫君莫取",
+        "英雄豪杰自天生",
+        "也须步步循规矩"
+      ],
+      "summary": "一粒一毫各有归属，即使英雄也应循规矩。此签重在分寸与正当，劝人别因心急越过自己认同的界线。",
+      "calmAdvice": "守住自己的计划，不为一时冲动破例。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/27",
+      "sourceRevision": "1496538",
+      "scanPage": 29,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 28,
+      "code": "丙辛",
+      "grade": "上吉",
+      "title": "第二十八签",
+      "poem": [
+        "公侯将相本无种",
+        "好把勤劳契上天",
+        "人事尽从天理见",
+        "才高岂得困林泉"
+      ],
+      "summary": "诗说人的成就不只由出身决定，勤劳与才能值得施展。它带有自强的意味，把力量放在可以付出的努力上。",
+      "calmAdvice": "为喜欢的目标做好准备，别被比较消磨心气。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/28",
+      "sourceRevision": "1496539",
+      "scanPage": 30,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 29,
+      "code": "丙壬",
+      "grade": "上上",
+      "title": "第二十九签",
+      "poem": [
+        "祖宗积德几多年",
+        "源远流长庆自然",
+        "若更操修无倦已",
+        "天须还汝旧青毡"
+      ],
+      "summary": "源远流长的善行承接前人积累，仍需后来的自我修习。原签赞美传承，也强调不可就此懈怠。",
+      "calmAdvice": "珍惜一路积攒的心意，得到之后也不忘初衷。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/29",
+      "sourceRevision": "1625654",
+      "scanPage": 31,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 30,
+      "code": "丙癸",
+      "grade": "中吉",
+      "title": "第三十签",
+      "poem": [
+        "奉公谨守莫欺心",
+        "自有亨通吉利临",
+        "目下营求且休矣",
+        "秋期与子定佳音"
+      ],
+      "summary": "谨守本分、不欺本心是全诗的先决条件，眼下不必急求。诗末的佳音寄托的是耐心与守正后的期待。",
+      "calmAdvice": "心里有数便不必催促，按既定节奏等候。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/30",
+      "sourceRevision": "1496541",
+      "scanPage": 32,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 31,
+      "code": "丁甲",
+      "grade": "中吉",
+      "title": "第三十一签",
+      "poem": [
+        "秋冬作事只寻常",
+        "春到门庭渐吉昌",
+        "千里信音符远望",
+        "萱堂快乐未渠央"
+      ],
+      "summary": "秋冬平常，春来渐有喜气，远方音信带来家人欢欣。诗中最温暖的是等待的人终于得到回应。",
+      "calmAdvice": "把今日心愿轻轻记下，也记得与朋友分享喜悦。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/31",
+      "sourceRevision": "1496542",
+      "scanPage": 33,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 32,
+      "code": "丁乙",
+      "grade": "下下",
+      "title": "第三十二签",
+      "poem": [
+        "劳心汨汨竟何归",
+        "疾病兼多是与非",
+        "事到头来浑似梦",
+        "何如休要用心机"
+      ],
+      "summary": "劳心奔忙、是非缠绕，到头来仿佛一场梦。原签劝人减少算计与过度消耗，重新找回安静。",
+      "calmAdvice": "反复纠结时就暂停，把时间还给休息。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/32",
+      "sourceRevision": "1496543",
+      "scanPage": 34,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 33,
+      "code": "丁丙",
+      "grade": "中平",
+      "title": "第三十三签",
+      "poem": [
+        "不分南北与西东",
+        "眼底昏昏耳似聋",
+        "熟读黄庭经一卷",
+        "不论贵贱与穷通"
+      ],
+      "summary": "四方不辨、耳目纷乱时，原诗以静读经卷安顿内心。可读作减少外界干扰，暂且放下得失判断。",
+      "calmAdvice": "找一处安静地方，先让纷杂的念头慢下来。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/33",
+      "sourceRevision": "1496544",
+      "scanPage": 35,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 34,
+      "code": "丁丁",
+      "grade": "中平",
+      "title": "第三十四签",
+      "poem": [
+        "春夏才过秋又冬",
+        "纷纷谋虑搅心胸",
+        "贵人垂手来相援",
+        "休把私心情意浓"
+      ],
+      "summary": "春去冬来仍在反复谋虑，虽有人相助，也应避免私心过重。诗意在于接受帮助，同时摆正自己的期待。",
+      "calmAdvice": "听取可靠的建议，最终按自己的情况决定。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/34",
+      "sourceRevision": "1496545",
+      "scanPage": 36,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 35,
+      "code": "丁戊",
+      "grade": "下下",
+      "title": "第三十五签",
+      "poem": [
+        "一山如画对清江",
+        "门里团圆事事双",
+        "谁料半途分折去",
+        "空帏无语对银缸"
+      ],
+      "summary": "清江与团圆的美景忽然转为孤灯，原签写的是聚散无常。可从中读出珍惜相伴、照顾当下心情的提醒。",
+      "calmAdvice": "珍惜此刻的陪伴，一次结果不必独自挂怀。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/35",
+      "sourceRevision": "1496546",
+      "scanPage": 37,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 36,
+      "code": "丁己",
+      "grade": "上吉",
+      "title": "第三十六签",
+      "poem": [
+        "功名富贵自能为",
+        "偶著仙鞭莫问伊",
+        "万里鹏程君有分",
+        "吴山顶上好钻龟"
+      ],
+      "summary": "诗以仙鞭与鹏程激励人向前，也说成就仍有自己可为之处。与其反复追问，不如整理方向后迈步。",
+      "calmAdvice": "认准喜欢的目标，从容做出自己的选择。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/36",
+      "sourceRevision": "1496548",
+      "scanPage": 38,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 37,
+      "code": "丁庚",
+      "grade": "中平",
+      "title": "第三十七签",
+      "poem": [
+        "焚香来告复何辞",
+        "善恶平分汝自知",
+        "屏却昧公心里事",
+        "出门无碍是通时"
+      ],
+      "summary": "善恶与心事自己最清楚，原签让人先看内心是否坦然。它强调诚实自省，不把判断全交给签上的话。",
+      "calmAdvice": "先问自己是否愿意，再问签文如何说。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/37",
+      "sourceRevision": "1496549",
+      "scanPage": 39,
+      "transcriptionNote": "等级依扫描作“中平”；网页转录作“中平”。 列出已确认差异；其余诗文字形依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 38,
+      "code": "丁辛",
+      "grade": "下下",
+      "title": "第三十八签",
+      "poem": [
+        "蛩吟唧唧守孤帏",
+        "千里悬悬望信归",
+        "等得荣华贵公子",
+        "秋冬括括雨霏霏"
+      ],
+      "summary": "秋虫、孤帏与远方书信交织出漫长等待，风雨又添寂寥。诗意在于盼望不易，不宜把等候无限拉长。",
+      "calmAdvice": "等得疲惫时就歇一歇，照顾好当下的心情。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/38",
+      "sourceRevision": "1496550",
+      "scanPage": 40,
+      "transcriptionNote": "扫描作“等得荣华贵公子”，网页转录作“等得荣华公子到”。 扫描末句作“雨霏霏”，网页转录作“雨靡靡”。 列出已确认差异；其余诗文字形依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 39,
+      "code": "丁壬",
+      "grade": "下下",
+      "title": "第三十九签",
+      "poem": [
+        "北山门下好安居",
+        "若问终时慎厥初",
+        "堪笑包藏许多事",
+        "鳞鸿虽便莫修书"
+      ],
+      "summary": "想安稳到最后，应先谨慎看清开头；诗又劝少添隐秘心事与往来纷扰。它适合读作守静、慎始。",
+      "calmAdvice": "开始之前想好边界，做过决定便少些反复。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/39",
+      "sourceRevision": "1496551",
+      "scanPage": 41,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 40,
+      "code": "丁癸",
+      "grade": "上吉",
+      "title": "第四十签",
+      "poem": [
+        "新来换得好规模",
+        "何用随他步与趋",
+        "只听耳边消息到",
+        "崎岖历尽见亨衢"
+      ],
+      "summary": "已经换了新格局，就不必处处追随他人脚步。诗以走过崎岖而见坦途，鼓励形成自己的方法。",
+      "calmAdvice": "选合自己心意的位置，走自己的节奏。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/40",
+      "sourceRevision": "1496552",
+      "scanPage": 42,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 41,
+      "code": "戊甲",
+      "grade": "中吉",
+      "title": "第四十一签",
+      "poem": [
+        "自南自北自东西",
+        "欲到天涯谁作梯",
+        "遇鼠逢牛三弄笛",
+        "好将名姓榜头题"
+      ],
+      "summary": "四处奔走想登高远，却还需合适的阶梯与机缘。原签提醒志向之外，也要看清现实的路径。",
+      "calmAdvice": "先把能准备的事情备好，再启程也不迟。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/41",
+      "sourceRevision": "1496553",
+      "scanPage": 43,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 42,
+      "code": "戊乙",
+      "grade": "中吉",
+      "title": "第四十二签",
+      "poem": [
+        "我曾许汝事和谐",
+        "谁料修为汝自乖",
+        "但改新图莫依旧",
+        "营谋应得称心怀"
+      ],
+      "summary": "愿望与实际做法不相合时，需要改过旧图，而非照旧重复。诗意是肯调整，事情才可能有不同进展。",
+      "calmAdvice": "若已经不开心，换个安排比勉强继续更合适。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/42",
+      "sourceRevision": "1496554",
+      "scanPage": 44,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 43,
+      "code": "戊丙",
+      "grade": "中吉",
+      "title": "第四十三签",
+      "poem": [
+        "一纸官书火急催",
+        "扁舟速下浪如雷",
+        "虽然目下多惊险",
+        "保汝平安去复回"
+      ],
+      "summary": "官书催行、扁舟疾下，诗中惊涛与平安归返相对。可读作面对变化时认真应对，而不是急流中逞强。",
+      "calmAdvice": "收到新消息先看清楚，再作决定。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/43",
+      "sourceRevision": "1496555",
+      "scanPage": 45,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 44,
+      "code": "戊丁",
+      "grade": "中平",
+      "title": "第四十四签",
+      "poem": [
+        "汝是人中最吉人",
+        "误为误作损精神",
+        "坚牢一念酬香愿",
+        "富贵荣华萃汝身"
+      ],
+      "summary": "本来条件不差，却被反复误作消耗精神，原签劝坚定一念。它强调明确心意，减少无谓折腾。",
+      "calmAdvice": "挑一个真正喜欢的目标，别被临时念头不断牵走。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/44",
+      "sourceRevision": "1496556",
+      "scanPage": 46,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 45,
+      "code": "戊戊",
+      "grade": "中平",
+      "title": "第四十五签",
+      "poem": [
+        "好将心地力耕耘",
+        "彼此山头总是坟",
+        "阴地不如心地好",
+        "修为到底却输君"
+      ],
+      "summary": "与其只比较外在位置好坏，不如耕耘自己的心地。原签直接把修为放在择地之前，重心在人而不在地。",
+      "calmAdvice": "点位只添仪式感，善待自己比站在哪里更重要。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/45",
+      "sourceRevision": "1496557",
+      "scanPage": 47,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 46,
+      "code": "戊己",
+      "grade": "中平",
+      "title": "第四十六签",
+      "poem": [
+        "君是山中万户侯",
+        "信知骑马胜骑牛",
+        "今朝马上看山色",
+        "争似骑牛得自由"
+      ],
+      "summary": "骑马看似胜过骑牛，诗末却问谁更自在。它把体面与自由并置，提醒人别只羡慕表面上的优越。",
+      "calmAdvice": "选择让自己舒服的方式，不必复制别人的排场。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/46",
+      "sourceRevision": "1496558",
+      "scanPage": 48,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 47,
+      "code": "戊庚",
+      "grade": "下下",
+      "title": "第四十七签",
+      "poem": [
+        "与君万语复千言",
+        "祗欲平和雪尔冤",
+        "讼则终凶君记取",
+        "试于清夜把心扪"
+      ],
+      "summary": "千言万语都在劝平和，执着争讼反添困局。清夜自问是诗末的落点，意在止争与反省。",
+      "calmAdvice": "别为证明自己而继续，安静下来再看这件事。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/47",
+      "sourceRevision": "1496559",
+      "scanPage": 49,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 48,
+      "code": "戊辛",
+      "grade": "中平",
+      "title": "第四十八签",
+      "poem": [
+        "登山涉水正天寒",
+        "兄弟姻亲那得安",
+        "幸遇虎头人一唤",
+        "全家遂保汝重欢"
+      ],
+      "summary": "天寒跋涉、亲友难安，后来一声招呼带来团聚。原签描写困顿中的相助，重视人与人之间的照应。",
+      "calmAdvice": "可以邀朋友同行，让等待不必只有自己。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/48",
+      "sourceRevision": "1496560",
+      "scanPage": 50,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 49,
+      "code": "戊壬",
+      "grade": "下下",
+      "title": "第四十九签",
+      "poem": [
+        "彼此家居只一山",
+        "如何似隔鬼门关",
+        "日月如梭人易老",
+        "许多劳碌不如闲"
+      ],
+      "summary": "只隔一山却似天涯，忙碌中光阴又过，原签由此劝人珍惜闲适。它不鼓励用更多奔忙弥补心里的距离。",
+      "calmAdvice": "给自己一点空闲，不必把今天安排得太满。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/49",
+      "sourceRevision": "1496561",
+      "scanPage": 51,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 50,
+      "code": "戊癸",
+      "grade": "上吉",
+      "title": "第五十签",
+      "poem": [
+        "人说今年胜旧年",
+        "也须步步要周旋",
+        "一家和气多生福",
+        "萋菲谗言莫听偏"
+      ],
+      "summary": "即使今年被说成更好，也仍须步步周全；一家和气比偏听谗言更可贵。全诗重在和睦与审慎。",
+      "calmAdvice": "顺心时也保持节奏，别被旁人的话挑动情绪。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/50",
+      "sourceRevision": "1496562",
+      "scanPage": 52,
+      "transcriptionNote": "等级依扫描作“上吉”；网页转录作“上平”。 扫描作“步步”，网页转录作“步多”。 列出已确认差异；其余诗文字形依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 51,
+      "code": "己甲",
+      "grade": "上吉",
+      "title": "第五十一签",
+      "poem": [
+        "君今百事且随缘",
+        "水到渠成听自然",
+        "莫叹年来不如意",
+        "喜逢新运称心田"
+      ],
+      "summary": "水到渠成是此签的核心意象，过去的不如意无需反复叹息。它赞美顺势而为，给自然发生留出空间。",
+      "calmAdvice": "让心愿慢慢靠近，不用不断催问结果。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/51",
+      "sourceRevision": "1496563",
+      "scanPage": 53,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 52,
+      "code": "己乙",
+      "grade": "上吉",
+      "title": "第五十二签",
+      "poem": [
+        "兀坐幽居叹寂寥",
+        "孤灯掩映度清宵",
+        "万金忽报秋光好",
+        "活计扁舟渡北朝"
+      ],
+      "summary": "幽居孤灯先写寂寥，忽来的消息又引出扁舟远行。原诗描绘的是沉静等待之后心境与行程的变化。",
+      "calmAdvice": "安顿好自己，再迎接新的消息。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/52",
+      "sourceRevision": "1496564",
+      "scanPage": 54,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 53,
+      "code": "己丙",
+      "grade": "下下",
+      "title": "第五十三签",
+      "poem": [
+        "艰难险阻路蹊跷",
+        "南鸟孤飞依北巢",
+        "今日贵人曾识面",
+        "相逢却在夏秋交"
+      ],
+      "summary": "险路与孤鸟寄寓漂泊，曾经见过的人带来转机。此签重视旧识相助，也保留了等待相逢的曲折。",
+      "calmAdvice": "路上不妨与熟悉的朋友聊聊，别独自着急。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/53",
+      "sourceRevision": "1496565",
+      "scanPage": 55,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 54,
+      "code": "己丁",
+      "grade": "中平",
+      "title": "第五十四签",
+      "poem": [
+        "万人丛里逞英豪",
+        "便欲飞腾霄汉高",
+        "争奈承流风未便",
+        "青灯黄卷且勤劳"
+      ],
+      "summary": "想在人群中展翅高飞，风向却暂未相合，于是回到青灯书卷。诗意是时机未到时继续积累。",
+      "calmAdvice": "今天可以先做准备，不必急于立刻兑现期待。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/54",
+      "sourceRevision": "1496566",
+      "scanPage": 56,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 55,
+      "code": "己戊",
+      "grade": "中平",
+      "title": "第五十五签",
+      "poem": [
+        "勤耕力作莫蹉跎",
+        "衣食随时安分过",
+        "纵使经商收倍利",
+        "不如逐岁廪禾多"
+      ],
+      "summary": "勤耕力作、安分度日是这首诗推重的生活方式。它用稳定收成对照一时厚利，赞美持续与踏实。",
+      "calmAdvice": "照顾长期的游玩节奏，少追一时的热闹。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/55",
+      "sourceRevision": "1496567",
+      "scanPage": 57,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 56,
+      "code": "己己",
+      "grade": "下下",
+      "title": "第五十六签",
+      "poem": [
+        "心头理曲强词遮",
+        "直欲欺官行路斜",
+        "一旦丑形临月镜",
+        "身投宪网莫咨嗟"
+      ],
+      "summary": "明知理亏却用强词遮掩，终会在镜中显露，原签劝人正视自己。重点是诚实与承担，而不是侥幸过关。",
+      "calmAdvice": "承认真实的心情，不用替冲动寻找借口。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/56",
+      "sourceRevision": "1496568",
+      "scanPage": 58,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 57,
+      "code": "己庚",
+      "grade": "中平",
+      "title": "第五十七签",
+      "poem": [
+        "事端百出虑虽长",
+        "莫听人言自主张",
+        "一著仙机君记取",
+        "纷纷闹里更思量"
+      ],
+      "summary": "事情纷杂时，既不能只听别人，也不宜在喧闹中仓促决定。原签把冷静思量放在自主张之前。",
+      "calmAdvice": "退出讨论片刻，想清楚再按下确认。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/57",
+      "sourceRevision": "1496569",
+      "scanPage": 59,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 58,
+      "code": "己辛",
+      "grade": "上吉",
+      "title": "第五十八签",
+      "poem": [
+        "苏秦三寸足平生",
+        "富贵功名在此行",
+        "更好修为阴骘事",
+        "前程万里自通亨"
+      ],
+      "summary": "诗借苏秦之口才写施展本领，同时不忘劝修善行。它赞美能力的作用，也提醒有成后仍须修身。",
+      "calmAdvice": "发挥自己的长处，得意时仍留一分谦逊。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/58",
+      "sourceRevision": "1496570",
+      "scanPage": 60,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 59,
+      "code": "己壬",
+      "grade": "中平",
+      "title": "第五十九签",
+      "poem": [
+        "门衰户冷苦伶仃",
+        "自叹祈求不一灵",
+        "幸有祖宗阴骘在",
+        "香烟未断续螟蛉"
+      ],
+      "summary": "门庭冷清中的祈愿，最终落在延续与照料的意象上。可把原签读作困境中珍惜已有联系、守护日常。",
+      "calmAdvice": "与关心你的人保持联系，别让等待变成孤单。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/59",
+      "sourceRevision": "1496571",
+      "scanPage": 61,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 60,
+      "code": "己癸",
+      "grade": "上上",
+      "title": "第六十签",
+      "poem": [
+        "羡君兄弟好名声",
+        "只管谦㧑莫自矜",
+        "丹诏槐黄相逼近",
+        "巍巍科甲两同登"
+      ],
+      "summary": "兄弟同得名声与科第，诗中却先叮嘱谦逊、不自夸。共享荣誉与保持平和，是这首签诗的重心。",
+      "calmAdvice": "有了喜讯就一起开心，不拿结果给别人排高低。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/60",
+      "sourceRevision": "1496572",
+      "scanPage": 62,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 61,
+      "code": "庚甲",
+      "grade": "中平",
+      "title": "第六十一签",
+      "poem": [
+        "啸聚山林凶恶俦",
+        "善良无事苦煎忧",
+        "主人大笑出门去",
+        "不用干戈盗贼休"
+      ],
+      "summary": "面对纷扰与威胁，诗里的主人从容出门，不必动用干戈。可读作以镇定化解对立，减少无谓冲突。",
+      "calmAdvice": "遇到让你烦心的话，先不急着回应。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/61",
+      "sourceRevision": "1496573",
+      "scanPage": 63,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 62,
+      "code": "庚乙",
+      "grade": "中平",
+      "title": "第六十二签",
+      "poem": [
+        "百千人面虎狼心",
+        "赖汝干戈用力深",
+        "得胜回时秋渐老",
+        "虎头城里喜相寻"
+      ],
+      "summary": "诗写历经用力与防备，终于归来相会，带着先难后安的结构。它提醒成果并不总在轻松之中取得。",
+      "calmAdvice": "认真对待准备，也给自己安排结束后的放松。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/62",
+      "sourceRevision": "1496574",
+      "scanPage": 64,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 63,
+      "code": "庚丙",
+      "grade": "中平",
+      "title": "第六十三签",
+      "poem": [
+        "曩时败北且图南",
+        "筋力虽衰尚一堪",
+        "欲识生前君大数",
+        "前三三与后三三"
+      ],
+      "summary": "过去失利，不妨换个方向再看；筋力虽衰，仍有可以尝试之处。末句数语是传统隐喻，不是游戏抽数提示。",
+      "calmAdvice": "容许自己重新开始，也尊重当下的精力。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/63",
+      "sourceRevision": "1496575",
+      "scanPage": 65,
+      "transcriptionNote": "移出网页夹入诗行的字词注“曩同昔”；该注不属于七言原诗。 列出已确认差异；其余诗文字形依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 64,
+      "code": "庚丁",
+      "grade": "上上",
+      "title": "第六十四签",
+      "poem": [
+        "吉人相遇本和同",
+        "况有持谋天水翁",
+        "人力不劳公论协",
+        "事成功倍笑谈中"
+      ],
+      "summary": "志同道合的人相遇，又有善谋者相助，事情在商量中顺畅。此签赞美默契、公议与合作的力量。",
+      "calmAdvice": "和合拍的朋友同行，分享心愿也分享好心情。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/64",
+      "sourceRevision": "1496576",
+      "scanPage": 66,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 65,
+      "code": "庚戊",
+      "grade": "上上",
+      "title": "第六十五签",
+      "poem": [
+        "朔风凛凛正穷冬",
+        "多羡门庭喜气浓",
+        "更入新春人事后",
+        "衷言方得信先容"
+      ],
+      "summary": "寒冬里已有门庭喜气，待新春人事往来，诚恳的话才被理解。诗中有耐心等候、以真心相通的意味。",
+      "calmAdvice": "表达真实的期待，不用急着得到每个人认可。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/65",
+      "sourceRevision": "1496577",
+      "scanPage": 67,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 66,
+      "code": "庚己",
+      "grade": "上上",
+      "title": "第六十六签",
+      "poem": [
+        "耕耘只可在乡邦",
+        "何用求谋向外方",
+        "见说今年新运好",
+        "门阑喜气事双双"
+      ],
+      "summary": "耕耘可以留在乡邦，不必总往远处求索，原签赞美熟悉之处的安定。近处也有值得珍惜的相逢。",
+      "calmAdvice": "去你最熟悉的街区，找一个喜欢已久的位置。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/66",
+      "sourceRevision": "1496578",
+      "scanPage": 68,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 67,
+      "code": "庚庚",
+      "grade": "中平",
+      "title": "第六十七签",
+      "poem": [
+        "才发君心天已知",
+        "何须问我决狐疑",
+        "愿子改图从孝悌",
+        "不愁家室不相宜"
+      ],
+      "summary": "心意初起，自己其实已有答案；原诗让人回到孝悌与和睦。与其反复问卜，不如先调整自己的行为。",
+      "calmAdvice": "先照顾现实中的关系，再享受游戏里的片刻仪式。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/67",
+      "sourceRevision": "1496579",
+      "scanPage": 69,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 68,
+      "code": "庚辛",
+      "grade": "中平",
+      "title": "第六十八签",
+      "poem": [
+        "南贩珍珠北贩盐",
+        "年来几倍货财添",
+        "劝君止此求田舍",
+        "心欲多时何日厌"
+      ],
+      "summary": "南北贸易虽有所得，欲望却未必随之满足，诗末劝知止。它关心的是何时足够，而不是如何继续加码。",
+      "calmAdvice": "在开始前写下停止的位置，到了便安心结束。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/68",
+      "sourceRevision": "1496580",
+      "scanPage": 70,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 69,
+      "code": "庚壬",
+      "grade": "下下",
+      "title": "第六十九签",
+      "poem": [
+        "舍舟遵路总相宜",
+        "慎勿嬉游逐贵儿",
+        "一夜樽前兄与弟",
+        "明朝仇敌又相随"
+      ],
+      "summary": "正常赶路本无妨，若沉迷宴饮与攀附，转眼朋友也可能反目。原签提醒交往有分寸，别被热闹带走。",
+      "calmAdvice": "不因起哄临时加码，按自己的意愿游玩。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/69",
+      "sourceRevision": "1496581",
+      "scanPage": 71,
+      "transcriptionNote": "移出网页夹入诗行的字词注“樽指酒杯”；该注不属于七言原诗。 列出已确认差异；其余诗文字形依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 70,
+      "code": "庚癸",
+      "grade": "中平",
+      "title": "第七十签",
+      "poem": [
+        "雷雨风云各有司",
+        "至诚祷告莫生疑",
+        "与君定约为霖日",
+        "正是蕴隆中伏时"
+      ],
+      "summary": "雷雨各有其时，原诗借求雨写诚意与等待。诗中时节属于古人的表达，不代表可据此推算游戏概率。",
+      "calmAdvice": "让期待有耐心，不必追着某一刻求证。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/70",
+      "sourceRevision": "1496582",
+      "scanPage": 72,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 71,
+      "code": "辛甲",
+      "grade": "中平",
+      "title": "第七十一签",
+      "poem": [
+        "喜鹊檐前报好音",
+        "知君千里欲归心",
+        "绣帏重结鸳鸯带",
+        "叶落霜飞寒色侵"
+      ],
+      "summary": "檐前喜鹊报信，远行者想归家，又遇叶落霜飞。欢喜中仍带行程与季节的阻隔，提醒珍惜重逢。",
+      "calmAdvice": "可以把愿望分享给朋友，也照顾好等待中的自己。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/71",
+      "sourceRevision": "1496583",
+      "scanPage": 73,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 72,
+      "code": "辛乙",
+      "grade": "下下",
+      "title": "第七十二签",
+      "poem": [
+        "河渠傍路有高低",
+        "可叹长途日已西",
+        "纵有荣华好时节",
+        "直须猴犬换金鸡"
+      ],
+      "summary": "路途高低不齐，日色渐晚，诗写迟来的机会与长久跋涉。它适合读作量力而行，不必强赶下一程。",
+      "calmAdvice": "如果今天已经疲惫，就把余下心愿留到改日。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/72",
+      "sourceRevision": "1496584",
+      "scanPage": 74,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 73,
+      "code": "辛丙",
+      "grade": "下下",
+      "title": "第七十三签",
+      "poem": [
+        "忆昔兰房分半钗",
+        "而今忽把信音乖",
+        "痴心指望成连理",
+        "到底谁知事不谐"
+      ],
+      "summary": "旧日盟约如今音信不合，一心盼望也未必如愿，原签写的是落差。它提醒尊重实际回应，别困在执念里。",
+      "calmAdvice": "接受今天的结果，喜欢也可以慢慢等待。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/73",
+      "sourceRevision": "1496585",
+      "scanPage": 75,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 74,
+      "code": "辛丁",
+      "grade": "上上",
+      "title": "第七十四签",
+      "poem": [
+        "崔巍崔魏复崔巍",
+        "履险如夷去复来",
+        "身似菩提心似镜",
+        "长江一道放春回"
+      ],
+      "summary": "山势高峻而往来不惧，心如明镜，终见一道春光。此签以澄明之心面对险阻，气象由紧转舒。",
+      "calmAdvice": "先静心，再出发；不让一时紧张替你作决定。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/74",
+      "sourceRevision": "1496586",
+      "scanPage": 76,
+      "transcriptionNote": "等级依扫描作“上上”；网页转录作“上吉”。 扫描作“长江”，网页转录作“长安”。 列出已确认差异；其余诗文字形依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 75,
+      "code": "辛戊",
+      "grade": "中吉",
+      "title": "第七十五签",
+      "poem": [
+        "生前结得好缘姻",
+        "一笑相逢情自亲",
+        "相当人物无高下",
+        "得意休论富与贫"
+      ],
+      "summary": "相逢投契便有亲近之情，得意时也不必比较贫富高下。原签推重平等与相知，而非外在条件。",
+      "calmAdvice": "与朋友各享各的好运，不必互相较量。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/75",
+      "sourceRevision": "1496587",
+      "scanPage": 77,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 76,
+      "code": "辛己",
+      "grade": "中平",
+      "title": "第七十六签",
+      "poem": [
+        "三千法律八千文",
+        "此事何如说与君",
+        "善恶两途君自作",
+        "一生祸福此中分"
+      ],
+      "summary": "法度条文虽多，善恶的选择仍在自己，原签强调行为与责任。可以借它提醒自己守住明确的原则。",
+      "calmAdvice": "把自己的界线记清楚，别为一时兴奋改掉它。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/76",
+      "sourceRevision": "1496588",
+      "scanPage": 78,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 77,
+      "code": "辛庚",
+      "grade": "下下",
+      "title": "第七十七签",
+      "poem": [
+        "木有根荄水有源",
+        "君当自此究其原",
+        "莫随道路人闲话",
+        "讼到终凶是至言"
+      ],
+      "summary": "木有根、水有源，遇事应先查明来由，不跟随路边闲话。全诗劝人求实、止争，重在追根而非附和。",
+      "calmAdvice": "遇到所谓出金秘诀，先看依据，不急着照做。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/77",
+      "sourceRevision": "1496589",
+      "scanPage": 79,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 78,
+      "code": "辛辛",
+      "grade": "下下",
+      "title": "第七十八签",
+      "poem": [
+        "家道豊腴自饱温",
+        "也须肚里立乾坤",
+        "财多害己君当省",
+        "福有胚胎祸有门"
+      ],
+      "summary": "衣食丰足之后更要心中有分寸，原签警惕拥有越多、欲望越重。它把省察与知足放在继续追逐之前。",
+      "calmAdvice": "看看已经获得的快乐，今天也可以到此为止。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/78",
+      "sourceRevision": "1496590",
+      "scanPage": 80,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 79,
+      "code": "辛壬",
+      "grade": "中平",
+      "title": "第七十九签",
+      "poem": [
+        "乾亥来龙仔细看",
+        "坎居午向自当安",
+        "若移丑艮阴阳逆",
+        "门户凋零家道难"
+      ],
+      "summary": "原诗直接使用乾亥、坎午等堪舆方位术语，讲的是特定传统语境下的布局。它不是游戏城市朝向或出金规律。",
+      "calmAdvice": "点位可作寻景线索，实际站位请以游戏指引为准。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/79",
+      "sourceRevision": "1496591",
+      "scanPage": 81,
+      "transcriptionNote": "扫描为八卦“乾”字；网页简体转换显示“干”，此处保留专名“乾”。 列出已确认差异；其余诗文字形依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 80,
+      "code": "辛癸",
+      "grade": "下下",
+      "title": "第八十签",
+      "poem": [
+        "一朝无事忽遭官",
+        "也是门衰坟未安",
+        "改换阴阳移祸福",
+        "劝君莫作等闲看"
+      ],
+      "summary": "原签把突发困局放在古代阴阳堪舆观念中解释，劝人认真看待变化。这里只介绍其传统语境，不据此归因现实遭遇。",
+      "calmAdvice": "把注意力放回眼前能安排的事情，不必因签文自责。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/80",
+      "sourceRevision": "1496592",
+      "scanPage": 82,
+      "transcriptionNote": "等级依扫描作“下下”；网页转录作“中平”。 列出已确认差异；其余诗文字形依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 81,
+      "code": "壬甲",
+      "grade": "中平",
+      "title": "第八十一签",
+      "poem": [
+        "假君财物自当还",
+        "谋赖心欺他自奸",
+        "幸有高台明月镜",
+        "请来对照破机关"
+      ],
+      "summary": "借来的物品应归还，欺瞒终会在明镜前显露，原诗推重诚实守信。它提醒人明白约定，也明白自己的责任。",
+      "calmAdvice": "如实记录结果，不把巧合说成人人适用的方法。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/81",
+      "sourceRevision": "1496593",
+      "scanPage": 83,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 82,
+      "code": "壬乙",
+      "grade": "上吉",
+      "title": "第八十二签",
+      "poem": [
+        "彼亦俦中一辈贤",
+        "劝君特达与周旋",
+        "此时宾主欢相会",
+        "他日王侯却并肩"
+      ],
+      "summary": "相逢之人各有所长，宾主欢会之后还可并肩前行。原签赞美礼遇、结交与彼此成全。",
+      "calmAdvice": "邀请志趣相同的人同行，让仪式多一份温度。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/82",
+      "sourceRevision": "1496594",
+      "scanPage": 84,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 83,
+      "code": "壬丙",
+      "grade": "中平",
+      "title": "第八十三签",
+      "poem": [
+        "随分堂前赴粥𫗴",
+        "何须妄想苦忧煎",
+        "主张门户诚难事",
+        "百岁安闲得几年"
+      ],
+      "summary": "日常一粥一饭已有着落，持家却仍不容易，诗末珍惜难得清闲。它劝少些妄想与煎熬，照顾平实生活。",
+      "calmAdvice": "安心享受眼前的小快乐，不必时时求更多。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/83",
+      "sourceRevision": "1496595",
+      "scanPage": 85,
+      "transcriptionNote": "等级依扫描作“中平”；网页转录作“下下”。 列出已确认差异；其余诗文字形依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 84,
+      "code": "壬丁",
+      "grade": "下下",
+      "title": "第八十四签",
+      "poem": [
+        "个中事绪更纷然",
+        "当局须知一著先",
+        "长舌妇人休酷听",
+        "力行礼义要心坚"
+      ],
+      "summary": "事情头绪纷乱，先看清局面，再守住礼义与本心。原诗含旧时性别措辞，白话只取不偏听闲言的提醒。",
+      "calmAdvice": "面对杂乱建议，先核对事实，再作自己的选择。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/84",
+      "sourceRevision": "1496596",
+      "scanPage": 86,
+      "transcriptionNote": "等级依扫描作“下下”；网页转录作“中平”。 列出已确认差异；其余诗文字形依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 85,
+      "code": "壬戊",
+      "grade": "中平",
+      "title": "第八十五签",
+      "poem": [
+        "一春风雨正潇潇",
+        "千里行人去路遥",
+        "移寡就多君得计",
+        "如何归路转无聊"
+      ],
+      "summary": "风雨中的远行本想求得更多，回程却添惆怅，原签写得失之间的落差。它提醒人看看奔忙是否真合心意。",
+      "calmAdvice": "如果越追越累，不妨回到最初让你开心的玩法。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/85",
+      "sourceRevision": "1496597",
+      "scanPage": 87,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 86,
+      "code": "壬己",
+      "grade": "上上",
+      "title": "第八十六签",
+      "poem": [
+        "一舟行货好招邀",
+        "积少成多自富饶",
+        "常把他人比自己",
+        "管须日后胜今朝"
+      ],
+      "summary": "小船载货、积少成多，诗又让人将他人比作自己。它赞美耐心积累与体谅，而不是一时冒进。",
+      "calmAdvice": "珍惜一点点积攒的心意，也照顾同行者的感受。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/86",
+      "sourceRevision": "1496598",
+      "scanPage": 88,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 87,
+      "code": "壬庚",
+      "grade": "下下",
+      "title": "第八十七签",
+      "poem": [
+        "阴里详看怪尔曹",
+        "舟中敌国笑中刀",
+        "藩篱剖破浑无事",
+        "一种天生惜羽毛"
+      ],
+      "summary": "笑语之下可能藏着隔阂，诗以羽毛喻名声与自重。可以读作谨慎辨人、珍惜品行，少卷入暗中争斗。",
+      "calmAdvice": "保持自己的分寸，不因热闹或挑衅改变计划。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/87",
+      "sourceRevision": "1496599",
+      "scanPage": 89,
+      "transcriptionNote": "扫描作“敌国”，网页转录作“敌图”。 列出已确认差异；其余诗文字形依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 88,
+      "code": "壬辛",
+      "grade": "上吉",
+      "title": "第八十八签",
+      "poem": [
+        "从前作事总徒劳",
+        "才见新春时渐遭",
+        "百计营求都得意",
+        "更须守己莫心高"
+      ],
+      "summary": "从前徒劳，入春渐有转机，原签却在得意处补一句莫心高。顺时守己、不因得失失去平常心，是诗末重点。",
+      "calmAdvice": "开心时也按计划结束，把好心情留下来。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/88",
+      "sourceRevision": "1496600",
+      "scanPage": 90,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 89,
+      "code": "壬壬",
+      "grade": "中平",
+      "title": "第八十九签",
+      "poem": [
+        "樽前无事且高歌",
+        "时未来时奈若何",
+        "白马渡江嘶日暮",
+        "虎头城里看巍峨"
+      ],
+      "summary": "时机未到，且在杯前高歌，后半再以渡江与高城寄托远景。原签让人在等待里暂且安顿，不必催逼。",
+      "calmAdvice": "找个喜欢的风景稍作停留，让今天也有别的乐趣。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/89",
+      "sourceRevision": "1496601",
+      "scanPage": 91,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 90,
+      "code": "壬癸",
+      "grade": "中平",
+      "title": "第九十签",
+      "poem": [
+        "崆峒城里事如麻",
+        "无事如君有几家",
+        "劝汝不须勤致祷",
+        "徒劳生事苦咨嗟"
+      ],
+      "summary": "别人事务纷繁，自己能安然无事已属难得，何必再添多余烦恼。此签劝珍惜清静，不为求问而生事。",
+      "calmAdvice": "没有特别想做的事，今天不调频也很好。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/90",
+      "sourceRevision": "1496602",
+      "scanPage": 92,
+      "transcriptionNote": "扫描末二字作“咨嗟”，网页转录作“咨叹”。 列出已确认差异；其余诗文字形依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 91,
+      "code": "癸甲",
+      "grade": "中平",
+      "title": "第九十一签",
+      "poem": [
+        "佛说淘沙始见金",
+        "只缘君子不劳心",
+        "荣华总得诗书效",
+        "妙里工夫仔细寻"
+      ],
+      "summary": "淘沙见金、诗书见功，原签把收获与细致工夫相连。可以读作耐心学习、反复琢磨，而非等待凭空降临。",
+      "calmAdvice": "把精力花在真正喜欢的内容上，慢慢积累自己的理解。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/91",
+      "sourceRevision": "1496603",
+      "scanPage": 93,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 92,
+      "code": "癸乙",
+      "grade": "下下",
+      "title": "第九十二签",
+      "poem": [
+        "今年禾谷不如前",
+        "物价喧腾倍百年",
+        "灾数流行多疫疠",
+        "一阳复后始安全"
+      ],
+      "summary": "原诗描写歉收与时势艰难，又用一阳来复寄托安定愿望。它属于古人的困境叙事，不能据签判断现实灾病。",
+      "calmAdvice": "给自己留出余地，心绪不佳时先照顾日常生活。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/92",
+      "sourceRevision": "1496604",
+      "scanPage": 94,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 93,
+      "code": "癸丙",
+      "grade": "中平",
+      "title": "第九十三签",
+      "poem": [
+        "春来雨水太连绵",
+        "入夏晴干雨又愆",
+        "节气直交三伏始",
+        "喜逢滂沛足田园"
+      ],
+      "summary": "春雨过多、夏日又旱，直到甘霖才使田园充足，诗意在于由失衡到调和。过程未必顺直，耐心有其位置。",
+      "calmAdvice": "不必用一次起落评价全部经历，慢慢来就好。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/93",
+      "sourceRevision": "1496605",
+      "scanPage": 95,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 94,
+      "code": "癸丁",
+      "grade": "中平",
+      "title": "第九十四签",
+      "poem": [
+        "一般器用与人同",
+        "巧斲轮舆梓匠工",
+        "凡事有缘且随分",
+        "秋冬方遇主人翁"
+      ],
+      "summary": "器物材料看似相同，巧匠仍需手艺，也要等欣赏它的人。原签赞美技艺与合适的相遇，不以暂时无闻自弃。",
+      "calmAdvice": "坚持真正喜欢的东西，不用急着得到外界认可。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/94",
+      "sourceRevision": "1496606",
+      "scanPage": 96,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 95,
+      "code": "癸戊",
+      "grade": "中平",
+      "title": "第九十五签",
+      "poem": [
+        "知君袖内有骊珠",
+        "生不逢辰亦强图",
+        "可叹头颅已如许",
+        "而今方得贵人扶"
+      ],
+      "summary": "袖中藏着珍珠却迟迟未被看见，后来才有相助，原诗写怀才与晚遇。它提醒价值不必由一时际遇决定。",
+      "calmAdvice": "别用今天的结果否定自己，心愿可以慢慢实现。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/95",
+      "sourceRevision": "1496607",
+      "scanPage": 97,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 96,
+      "code": "癸己",
+      "grade": "上吉",
+      "title": "第九十六签",
+      "poem": [
+        "婚姻子息莫嫌迟",
+        "但把精神仗佛持",
+        "四十年前须报应",
+        "功圆行满育馨儿"
+      ],
+      "summary": "原诗以婚姻子息的迟来安慰等待之人，强调耐心与修为。这是传统祝愿，不据此推断现实家庭或生育结果。",
+      "calmAdvice": "容许心愿有自己的节奏，不必拿别人的进度催自己。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/96",
+      "sourceRevision": "1496608",
+      "scanPage": 98,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 97,
+      "code": "癸庚",
+      "grade": "上上",
+      "title": "第九十七签",
+      "poem": [
+        "五十功名心已灰",
+        "那知富贵逼人来",
+        "更行好事存方寸",
+        "寿比冈陵位鼎台"
+      ],
+      "summary": "心灰之后忽遇转机，诗中仍叮嘱多行好事、守住方寸。它以晚来的际遇劝人别过早定论，也别得意忘形。",
+      "calmAdvice": "保持善意与耐心，遇到喜悦就好好珍惜。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/97",
+      "sourceRevision": "1496609",
+      "scanPage": 99,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 98,
+      "code": "癸辛",
+      "grade": "未标",
+      "title": "第九十八签",
+      "poem": [
+        "经营百出费精神",
+        "南北奔驰运未新",
+        "玉兔交时当得意",
+        "恰如枯木再逢春"
+      ],
+      "summary": "经营奔波耗费精神，直到枯木再逢春才有转折。原签让困顿之人保留重新开始的想象，不必把时序当作期限。",
+      "calmAdvice": "疲倦时先停下，重新开始可以从一个小愿望做起。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/98",
+      "sourceRevision": "1496610",
+      "scanPage": 100,
+      "transcriptionNote": "扫描未见等级标注；网页转录作“中平”，本页不将其当作底本等级。 列出已确认差异；其余诗文字形依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 99,
+      "code": "癸壬",
+      "grade": "上上",
+      "title": "第九十九签",
+      "poem": [
+        "贵人遭遇水云乡",
+        "冷淡交情滋味长",
+        "黄阁开时延故客",
+        "骅骝应得骤康庄"
+      ],
+      "summary": "淡淡的旧交经得起时间，得势后仍记故人，诗以骏马康庄写相知相助。它赞美长久情谊，而不是一时热络。",
+      "calmAdvice": "和熟悉的朋友分享心愿，也记得问候对方。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/99",
+      "sourceRevision": "1496611",
+      "scanPage": 101,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    },
+    {
+      "id": 100,
+      "code": "癸癸",
+      "grade": "上上",
+      "title": "第一百签",
+      "poem": [
+        "我本天仙雷雨师",
+        "吉凶祸福我先知",
+        "至诚祷祝皆灵应",
+        "抽得终签百事宜"
+      ],
+      "summary": "末签以神明自述收束全书，寄托至诚与圆满之愿。这里保留的是传统签谱的结尾，不代表对任何结果的保证。",
+      "calmAdvice": "把仪式停在心安之处，带着祝愿回到自己的旅程。",
+      "sourceUrl": "https://zh.wikisource.org/zh-hans/%E9%97%9C%E8%81%96%E5%B8%9D%E5%90%9B%E9%9D%88%E7%B1%A4/100",
+      "sourceRevision": "1496612",
+      "scanPage": 102,
+      "transcriptionNote": "签序与等级已对照扫描；诗文依网页简体转录，未作逐字精校。"
+    }
+  ]
+}

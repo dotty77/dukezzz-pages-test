@@ -1,0 +1,158 @@
+/* Keep the map open and quiet; point details appear only when requested. */
+.map-page {
+  --atlas-soft:var(--theme-accent-bg);
+  --atlas-ink:var(--teal);
+}
+.map-page .right-panel:has(.map-overview) { display:none; }
+.map-page .panel-top { margin-bottom:12px; }
+.map-page .panel-top .eyebrow { margin-bottom:5px; }
+.map-page .panel-top h1 { margin-bottom:4px; font-size:21px; }
+.map-page #count-summary { margin:4px 0 0; font-size:10px; }
+.map-page .side-tabs { margin-bottom:12px; }
+.map-page .search { margin-bottom:12px; }
+.map-page .section-label { margin:14px 0 7px; }
+.map-page .type-row { min-height:34px; padding:6px 5px; gap:8px; }
+.map-page .type-symbol { width:18px; height:18px; border-radius:5px; box-shadow:none; }
+.map-page .side-bottom { margin-top:16px; padding-top:10px; }
+
+/* Classification remains prominent, without an oversized surrounding card. */
+.map-page #spawn-filter-panel { margin:12px 0 14px; padding:10px; border-radius:10px; }
+.map-page .spawn-filter-heading { margin-bottom:8px; }
+.map-page .spawn-filter-heading b { font-size:12px; }
+.map-page #status-filters { gap:6px; }
+.map-page #status-filters button { min-height:44px; padding:8px 7px; font-size:11px; }
+.map-page #source-count-note {
+  margin:0 0 8px; padding:0; border:0; border-radius:0;
+  background:transparent; color:var(--muted); font-size:10px; line-height:1.6;
+}
+.map-page #source-count-note b { color:var(--muted); font-size:10px; font-weight:500; }
+.map-page #source-count-note p { display:inline; margin:0 0 0 4px; }
+.map-page #enemy-source-controls {
+  margin:12px 0; padding:10px; background:var(--surface-muted);
+  border-color:var(--line); color:var(--muted);
+}
+.map-page #enemy-source-controls b { color:var(--text); }
+
+.map-page .atlas-layer-tabs {
+  display:flex; align-items:center; flex-wrap:wrap; gap:4px;
+  min-width:0; padding:3px; border:1px solid var(--line);
+  border-radius:9px; background:var(--surface-muted);
+}
+.map-page .atlas-layer-tabs button {
+  flex:1 1 auto; min-width:0; min-height:32px; padding:6px 10px;
+  border:1px solid transparent; border-radius:6px;
+  background:transparent; color:var(--muted); font-size:11px; line-height:1.4;
+  white-space:nowrap;
+}
+.map-page .atlas-layer-tabs button:hover { color:var(--text); background:var(--theme-hover); }
+.map-page .atlas-layer-tabs button:is(.active,[aria-pressed="true"],[aria-selected="true"]) {
+  color:var(--atlas-ink); background:var(--surface); border-color:var(--line); font-weight:600;
+}
+.map-page .atlas-layer-tabs button:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+.map-page #side-points>.atlas-layer-tabs { margin-bottom:12px; }
+
+.map-page .atlas-filter-more { margin:14px 0; border-top:1px solid var(--line); }
+.map-page .atlas-filter-more>summary {
+  display:flex; align-items:center; justify-content:space-between; gap:8px;
+  min-height:40px; padding:9px 0; color:var(--atlas-ink); font-size:11px;
+  cursor:pointer; list-style:none;
+}
+.map-page .atlas-filter-more>summary::-webkit-details-marker { display:none; }
+.map-page .atlas-filter-more>summary::after { content:"＋"; font-size:15px; }
+.map-page .atlas-filter-more[open]>summary::after { content:"−"; }
+.map-page .atlas-filter-more #configured-locations { margin:12px 0; padding:10px; }
+.map-page .atlas-filter-more .callout { margin:12px 0; }
+
+/* Use the established blue and purple palette for map chrome in both themes. */
+.map-page #map-tools { gap:5px; padding:7px 10px; background:var(--surface); border-color:var(--line); }
+.map-page #map-tools button,.map-page #map-tools summary { min-height:32px; padding:6px 8px; font-size:10px; }
+html .map-page #map-tools button.active { background:var(--atlas-soft); border-color:var(--accent); color:var(--atlas-ink); }
+.map-page #map-tools-help { padding:3px 10px; font-size:9px; background:var(--surface-muted); color:var(--muted); }
+html .map-page .stage-tag { background:var(--surface); color:var(--muted); border-color:var(--line); padding:6px 9px; box-shadow:none; }
+.map-page .map-footer { height:28px; }
+.map-page .detail-title { font-size:18px; margin-top:10px; }
+.map-page .detail-meta { margin:16px 0; padding:12px 0; gap:8px 4px; }
+.map-page .atlas-type-symbol { background:#292c3b; border-radius:4px; }
+.map-page .atlas-type-symbol svg { width:17px; height:17px; }
+.map-page .atlas-detail-more { border-top:1px solid var(--line); padding:12px 0; }
+.map-page .atlas-detail-more summary { cursor:pointer; color:var(--teal); font-size:12px; }
+.map-page .author-enemy-note { padding:10px 12px; background:var(--surface-muted); border-radius:8px; font-size:11px; line-height:1.7; }
+.map-page .author-enemy-note p { margin:5px 0; }
+.map-page .atlas-enemy-legend { display:flex; flex-wrap:wrap; gap:6px 12px; margin:8px 0 0; font-size:10px; }
+.map-page .atlas-enemy-legend span { display:inline-flex; align-items:center; gap:4px; }
+.map-page .atlas-enemy-legend i { width:7px; height:7px; border:2px solid #46bdc9; border-radius:2px; }
+
+/* A small map companion and softer controls, leaving the map itself uncluttered. */
+.map-page .panel-top { position:relative; padding-right:40px; }
+.map-page .atlas-map-pal { position:absolute; top:5px; right:-3px; width:48px; height:48px; transform:rotate(5deg); }
+.map-page .atlas-map-pal img { display:block; width:100%; height:100%; }
+.map-page .panel-top h1 { font-size:20px; letter-spacing:0; }
+.map-page #count-summary { width:calc(100% + 40px); }
+.map-page .atlas-layer-tabs { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); border-radius:14px; padding:4px; gap:3px; }
+.map-page .atlas-layer-tabs button { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; min-height:52px; border-radius:10px; padding:6px 2px; font-size:10px; }
+.map-page .atlas-layer-icon { display:inline-flex; width:14px; height:14px; align-items:center; justify-content:center; }
+.map-page .atlas-layer-icon svg { width:14px; height:14px; }
+.map-page .atlas-layer-tabs button.active { color:#5269b0; background:#e9eeff; border-color:#c6d0f2; }
+html[data-theme="dark"] .map-page .atlas-layer-tabs button.active { color:#d0d9ff; background:#354365; border-color:#647db0; }
+.map-page #spawn-filter-panel { border-radius:15px; }
+.map-page #status-filters button { border-radius:10px; }
+.map-page #status-filters button.active { background:#536ac1; border-color:#6b80d2; }
+.map-page .side-tabs { border-radius:13px; }
+.map-page .side-tabs button { border-radius:9px; }
+.map-page .toolbar button,.map-page #map-tools button,.map-page #map-tools summary { border-radius:10px; }
+.map-page .stage-tag { border-radius:11px; }
+.map-page .zoom-tools button { border-radius:13px; }
+html[data-theme] .map-page #map-stage { background-image:radial-gradient(#8996bc24 .8px,transparent .8px); background-size:20px 20px; }
+.map-page .author-enemy-note,.map-page #enemy-source-controls { border-radius:12px; }
+@media(max-width:570px) { .map-page .atlas-layer-tabs button { gap:4px; font-size:11px; min-height:54px; } }
+
+@media(min-width:701px) {
+  .map-page { --site-header-height:64px; --map-context-height:50px; }
+  .map-page .site-header { padding-left:20px; padding-right:20px; gap:24px; }
+  .map-page .map-context-bar { padding-left:18px; padding-right:18px; }
+  .map-page main { padding:0 16px 12px; gap:12px; }
+  .map-page .left-panel { padding:16px 14px 12px; }
+  .map-page .right-panel { padding:18px 16px; }
+  .map-page .toolbar { height:46px; padding:0 10px; }
+}
+@media(min-width:1001px) {
+  .map-page main { grid-template-columns:244px minmax(260px,1fr) 264px; }
+  .map-page main:has(.right-panel .map-overview) { grid-template-columns:244px minmax(260px,1fr); }
+}
+@media(min-width:1800px) {
+  .map-page main { grid-template-columns:260px minmax(400px,1fr) 284px; }
+  .map-page main:has(.right-panel .map-overview) { grid-template-columns:260px minmax(400px,1fr); }
+}
+
+/* A single scrollable tool strip saves map height on small screens. */
+@media(max-width:700px) {
+  .map-page #map-tools {
+    flex-wrap:nowrap; overflow-x:auto; gap:5px; padding:5px 8px;
+    scrollbar-width:thin; scrollbar-color:var(--line) transparent;
+    scroll-padding:8px; overscroll-behavior-x:contain;
+  }
+  .map-page #map-tools>* { flex-shrink:0; }
+  .map-page #map-tools button,.map-page #map-tools summary { min-height:44px; padding:8px 10px; }
+  .map-page #map-tools .map-rotation-tools button { min-width:44px; }
+  .map-page .map-personal-toggle { min-height:44px; padding:0 5px; }
+  .map-page .map-backup-tools>div { position:fixed; top:auto; right:12px; bottom:16px; z-index:40; }
+  .map-page .atlas-layer-tabs button { min-height:44px; padding:8px; }
+  .map-page .atlas-filter-more>summary { min-height:44px; }
+  .map-page .type-row { min-height:44px; }
+  .map-page .toolbar button,.map-page .mobile-drawer-close { min-height:44px; }
+  .map-page .zoom-tools button { width:44px; height:44px; }
+}
+@media(max-width:570px) {
+  .map-page .toolbar { height:auto; min-height:51px; flex-wrap:wrap; padding:4px 8px; gap:4px; }
+  .map-page .toolbar-actions { gap:3px; }
+  .map-page .toolbar-actions #toggle-labels { display:inline-flex; align-items:center; justify-content:center; }
+  .map-page .site-header .site-navigation { min-width:0; max-width:100%; overflow-x:auto; scrollbar-width:none; justify-content:flex-start; }
+  .map-page .site-header .site-navigation a { flex:0 0 auto; }
+  .map-page .atlas-source-wide { display:none; }
+  .map-page .atlas-source-short { display:inline; }
+  .map-page .left-panel { padding:14px; }
+  .map-page .panel-top h1 { font-size:20px; }
+  .map-page .atlas-layer-tabs { gap:2px; }
+  .map-page .atlas-layer-tabs button { font-size:10px; padding-left:6px; padding-right:6px; }
+}
+@media(min-width:571px) { .map-page .atlas-source-short { display:none; } }

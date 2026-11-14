@@ -1,0 +1,31 @@
+DUKE：调频链接获取脚本优化版
+
+File: get-tuning-link-fast.ps1
+Copyright 2026 rng.moe
+Modifications Copyright 2026 DUKE
+Licensed under the Apache License, Version 2.0.
+Full license: vendor/rng-moe/LICENSE.txt
+
+Based on the signal-history link scripts published by rng.moe:
+  get_signal_link_cn.ps1
+  get_signal_link_os.ps1
+Pinned upstream revision: d0f2ad962539e52ed56bdcf6972943e9cae6d182
+Original tutorial: https://zzz.rng.moe/zh/tracker/import
+Original source attribution: vendor/rng-moe/NOTICE.txt
+
+This is a modified version, not the byte-for-byte upstream script.
+Changes include shared read access with a temporary-copy fallback,
+chunked cache scanning, deduplicated official URL validation with timeouts,
+UTF-8 log handling, version-directory fallback, and clearer progress and
+clipboard failure reporting. It is maintained by DUKE and is not endorsed
+by rng.moe. The original scripts and their attribution remain unchanged
+under vendor/rng-moe/.
+
+For manual use in Windows PowerShell:
+  .\get-tuning-link-fast.ps1 -Client cn
+  .\get-tuning-link-fast.ps1 -Client os
+Optional: -GamePath "C:\path\to\ZenlessZoneZero_Data"
+Optional: -NoClipboard
+
+The script retrieves a temporary official history URL. It does not import
+the complete history; paste the verified URL into the site's import form.

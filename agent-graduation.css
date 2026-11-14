@@ -1,0 +1,64 @@
+.agent-detail-tabs button[data-tab=graduation]{color:var(--teal);font-weight:700}
+.graduation-panel{--grad-accent:var(--teal);font-variant-numeric:tabular-nums}
+.graduation-panel>h3{margin-top:0}
+.graduation-baseline{font-size:11px;color:var(--muted);line-height:1.7;margin:7px 0 18px}
+.graduation-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;padding:17px 19px;border:1px solid var(--line);background:var(--surface-muted);border-radius:12px;margin:18px 0 24px}
+.graduation-controls label{display:flex;flex-direction:column;gap:8px;min-width:0;font-size:12px;color:var(--muted)}
+.graduation-controls select{width:100%;min-width:0;min-height:42px;padding:9px 12px;border-radius:8px;font:inherit;font-weight:600;color:var(--text);background:var(--surface);border:1px solid var(--line)}
+.graduation-controls select:focus-visible,.graduation-planner:focus-visible,.graduation-panel summary:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+.graduation-reading{font-size:12px;color:var(--muted);line-height:1.7;margin:8px 0 12px}
+.graduation-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0}
+.graduation-heading h4,.graduation-thresholds h4,.graduation-weapon h4{margin:0;font-size:15px}
+.graduation-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:15px 0 20px}
+.graduation-stat{position:relative;min-width:0;padding:18px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.graduation-stat-label{font-size:13px;font-weight:650;line-height:1.5;color:var(--text)}
+.graduation-kind{display:inline-block;font-size:10px;color:var(--muted);margin-top:4px}
+.graduation-target{display:block;font-size:clamp(24px,2.4vw,34px);font-weight:750;line-height:1.25;letter-spacing:-.5px;color:var(--teal);margin:13px 0 9px;overflow-wrap:anywhere}
+.graduation-context{display:block;font-size:11px;color:var(--muted);line-height:1.6}
+.graduation-condition{font-size:11px;line-height:1.7;margin:9px 0 0;color:var(--text)}
+.graduation-stat.is-conditional{border-style:dashed;background:var(--surface-muted)}
+.graduation-stat.is-conditional .graduation-target{font-size:23px;letter-spacing:0;color:var(--muted)}
+.graduation-stat-details{margin-top:13px;padding-top:11px;border-top:1px solid var(--line);font-size:11px;color:var(--muted)}
+.graduation-stat-details summary{color:var(--teal)}
+.graduation-stat-details p{line-height:1.8;overflow-wrap:anywhere;margin:10px 0 0}
+.graduation-original{font-size:10px}
+.graduation-panel summary{cursor:pointer;line-height:1.7}
+.graduation-planner{display:flex;flex-direction:column;gap:5px;padding:15px 18px;margin:18px 0 20px;border:1px solid color-mix(in srgb,var(--teal) 40%,var(--line));border-radius:10px;background:var(--theme-accent-bg);color:var(--text)!important;text-decoration:none}
+.graduation-planner strong{color:var(--teal);font-size:13px;line-height:1.6}
+.graduation-planner span{font-size:11px;line-height:1.6;color:var(--muted)}
+.graduation-extra{font-size:12px;padding:15px 0;border-bottom:1px solid var(--line);color:var(--muted)}
+.graduation-extra>summary{font-weight:600;color:var(--text)}
+.graduation-extra p{line-height:1.8}
+.graduation-extra .graduation-grid{margin-bottom:0}
+.graduation-extra .graduation-target{font-size:25px}
+.graduation-thresholds{padding:19px;border:1px solid var(--line);border-radius:12px;background:var(--surface-muted);margin:22px 0 10px}
+.graduation-threshold{border-top:1px solid var(--line);padding:12px 0;font-size:12px;color:var(--text)}
+.graduation-threshold:last-child{padding-bottom:0}
+.graduation-threshold p{line-height:1.8;margin:9px 0 0;color:var(--muted)}
+.graduation-threshold .graduation-formula{color:var(--text);overflow-wrap:anywhere}
+.graduation-empty{padding:17px 18px;border:1px dashed var(--line);border-radius:12px;background:var(--surface-muted);font-size:13px}
+.graduation-empty p{font-size:12px;color:var(--muted);line-height:1.7;margin:7px 0 0}
+.graduation-notes{padding-left:19px;font-size:12px;line-height:1.8;margin:15px 0}
+.graduation-notes li+li{margin-top:7px}
+.graduation-effect{padding:11px 0;border-top:1px solid var(--line)}
+.graduation-effect .agent-prose{margin:10px 0 0;font-size:12px}
+.graduation-weapon{padding:15px;border:1px solid var(--line);border-radius:10px;background:var(--surface-muted);margin-top:12px}
+.graduation-weapon .agent-prose{font-size:12px;margin:10px 0 0}
+.graduation-sources{font-size:11px}
+.graduation-sources p{margin:12px 0 5px}
+.graduation-sources a{display:inline-block;color:var(--teal);margin-top:3px}
+@media(max-width:700px){
+  .graduation-controls{gap:12px;padding:14px;margin-bottom:21px}
+  .graduation-controls label{font-size:11px}
+  .graduation-controls select{padding:8px;font-size:12px}
+  .graduation-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+  .graduation-stat{padding:13px}
+  .graduation-target{font-size:27px}
+  .graduation-stat.is-wide-target{grid-column:1/-1}
+  .graduation-stat.is-wide-target .graduation-target{font-size:31px}
+  .graduation-stat-label{font-size:12px}
+  .graduation-kind,.graduation-context{font-size:10px}
+  .graduation-stat.is-conditional .graduation-target{font-size:19px}
+  .graduation-planner{padding:13px 14px}
+  .graduation-thresholds{padding:15px}
+}

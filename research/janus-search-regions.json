@@ -1,0 +1,5230 @@
+{
+  "schemaVersion": 1,
+  "map": "janus",
+  "reviewedAt": "2026-09-19",
+  "coordinateSpace": "source-world",
+  "purpose": "既有真实目标的编辑搜索阶段归类；只调整访问顺序，不创建坐标、通路或游戏区域边界。",
+  "regions": [
+    {
+      "id": "construction",
+      "label": "白鸽工地"
+    },
+    {
+      "id": "street",
+      "label": "六昏街"
+    },
+    {
+      "id": "lumina",
+      "label": "光映中心"
+    }
+  ],
+  "preferredOrders": [
+    {
+      "id": "construction-street-lumina",
+      "startIds": [
+        "janus-entry-04",
+        "janus-entry-05"
+      ],
+      "finishIds": [
+        "janus-exit-07"
+      ],
+      "regions": [
+        "construction",
+        "street",
+        "lumina"
+      ],
+      "evidence": [
+        {
+          "file": "app.js",
+          "path": "MAPS.janus.routes[name=从工地开始]",
+          "type": "existing_editorial_preset"
+        },
+        {
+          "type": "user_route_preference",
+          "date": "2026-09-19",
+          "note": "用户要求中部出生区域先搜，再搜北侧街区，最后前往南侧光映区域撤离。"
+        }
+      ],
+      "limitations": [
+        "这是搜索顺序偏好，不声明最优收益或最快撤离；每一段仍须通过现有真实路网验证。"
+      ]
+    }
+  ],
+  "policy": {
+    "officialRegionBoundaries": false,
+    "createsRouteEdges": false,
+    "changesWorldPositions": false,
+    "infersFloors": false,
+    "confirmsRuntimePresence": false,
+    "positionValidation": "使用前应以 id 及原始 worldPosition.X/Y/Z 三轴一致核验；不匹配或新增目标不得静默套用旧区域。",
+    "unmappedPolicy": "未收录或区域冲突的目标保留未知；分区模式须说明未按区域安排，不能默认为终点区域。",
+    "inference": "24 个无既有 ID 区域关联的电子箱采用已配准资料图最近三个标记的一致区域，仅作编辑归类。",
+    "inferenceReviewGuards": {
+      "nearestAnnotationMaxPixels": 60,
+      "nearestOtherRegionMarginMinPixels": 100,
+      "nearestThreeMustAgree": true,
+      "meaning": "本次保守人工复核门槛，不是地图官方边界或通用定位精度。"
+    },
+    "locksAndConditions": "继续保留缺房卡限制、Suite 互斥、条件通路开关与返程可达性；同一区不绕过门禁或楼层连接。"
+  },
+  "counts": {
+    "total": 100,
+    "byKind": {
+      "electronic": 83,
+      "keyroom": 5,
+      "spawn": 5,
+      "exit": 7
+    },
+    "byRegion": {
+      "lumina": 34,
+      "street": 36,
+      "construction": 30
+    },
+    "electronicByRegion": {
+      "lumina": 30,
+      "street": 29,
+      "construction": 24
+    },
+    "electronicByEvidenceMethod": {
+      "existing_source_choice_id_region_consensus": 59,
+      "editorial_registered_image_nearest_three_agree": 24
+    }
+  },
+  "worldPositionValidation": {
+    "allMatchedExistingProductDataExactly": true,
+    "checked": 100,
+    "unmodifiedCoordinateAxes": [
+      "x",
+      "y",
+      "z"
+    ]
+  },
+  "inputSha256": {
+    "gameplay-points-compact.json": "422ee8369060c8580231d243718b191070432ae7ba8590431272d18df200cf59",
+    "janus-data.json": "0ac05202ee6ba76d51510a79005ef12b065b61d27a4654b1b58eb45d2e47507b",
+    "research/source-route-endpoints.json": "159f52a7423a07ffeab18d447d1c61035ab0d355d86c5997a43fec53bf80f779",
+    "research/janus-source-registration.json": "131e4deec5d48b26166d17fd01a69462a4554f2c10f035f2173d6557e1573a9f",
+    "research/janus-source-locations.json": "961ed784f3d831fdd92a3897d6969b811a9dd0a544c74641af245a2c4733276c",
+    "research/spawn-exit-locations.json": "0d1d3e1709d971a467fa3f3280b358b23973e82b271a8cde26cdd9f01f2e2653",
+    "research/assault-keyrooms.json": "76579d0ec954a331fdc344ff42e4d0e9d231e43dafde5304082b3855a7a6ae8a",
+    "extraction/navmesh-research/janus-navmesh.json": "ee26f31f190d86d44c8579b5e4ae2e21f0b26ee9b1f1df9ed4e446987707224a",
+    "research/native-route-links.json": "9f6affa96d801bc94c98ac4ff498aa96b5b8d2bdf4f1956799c6ebb8a5eee5ec",
+    "research/lumina-elevator-links.json": "9324acb197d4d396e5f927c15de1b67913ad20b8a27e55e274b7dc6781f3baf6"
+  },
+  "regionMap": {
+    "171300007:201": "lumina",
+    "171300040:201": "lumina",
+    "171300047:201": "lumina",
+    "171300047:202": "lumina",
+    "171300047:203": "lumina",
+    "171300184:214": "lumina",
+    "171300280:202": "street",
+    "171300281:201": "street",
+    "171300330:201": "street",
+    "171300330:202": "street",
+    "171300330:203": "street",
+    "171300331:202": "street",
+    "171300331:204": "street",
+    "171300331:205": "street",
+    "171300331:206": "street",
+    "171300332:201": "street",
+    "171300332:202": "street",
+    "171300332:203": "street",
+    "171300333:201": "street",
+    "171300334:201": "street",
+    "171300334:203": "street",
+    "171300335:201": "street",
+    "171300335:202": "street",
+    "171300335:203": "street",
+    "171300336:201": "street",
+    "171300337:201": "street",
+    "171300338:201": "street",
+    "171300338:202": "street",
+    "171300338:203": "street",
+    "171300339:201": "street",
+    "171300339:202": "street",
+    "171300339:203": "street",
+    "171300340:201": "street",
+    "171300340:202": "street",
+    "171300340:203": "street",
+    "171300341:201": "construction",
+    "171300341:202": "construction",
+    "171300341:203": "construction",
+    "171300342:201": "construction",
+    "171300342:202": "construction",
+    "171300342:203": "construction",
+    "171300343:201": "construction",
+    "171300343:202": "construction",
+    "171300343:203": "construction",
+    "171300344:201": "construction",
+    "171300344:202": "construction",
+    "171300344:203": "construction",
+    "171300345:201": "construction",
+    "171300345:202": "construction",
+    "171300345:203": "construction",
+    "171300346:201": "construction",
+    "171300346:202": "construction",
+    "171300346:203": "construction",
+    "171300347:201": "construction",
+    "171300347:203": "construction",
+    "171300348:201": "construction",
+    "171300348:202": "construction",
+    "171300348:203": "construction",
+    "171300349:201": "lumina",
+    "171300349:202": "lumina",
+    "171300349:203": "lumina",
+    "171300350:202": "lumina",
+    "171300350:203": "lumina",
+    "171300351:201": "lumina",
+    "171300352:201": "lumina",
+    "171300352:202": "lumina",
+    "171300353:201": "lumina",
+    "171300354:201": "lumina",
+    "171300354:202": "lumina",
+    "171300354:203": "lumina",
+    "171300355:201": "lumina",
+    "171300388:201": "lumina",
+    "171300389:201": "lumina",
+    "171300389:202": "lumina",
+    "171300389:203": "lumina",
+    "171300411:201": "lumina",
+    "171300412:201": "construction",
+    "171300415:201": "lumina",
+    "171300415:202": "lumina",
+    "171300415:203": "lumina",
+    "171300416:202": "lumina",
+    "171300416:204": "lumina",
+    "171300416:205": "lumina",
+    "171300119:202": "street",
+    "171300126:202": "construction",
+    "171300130:202": "lumina",
+    "171300131:202": "lumina",
+    "171300129:202": "lumina",
+    "janus-entry-01": "street",
+    "janus-entry-02": "street",
+    "janus-entry-03": "street",
+    "janus-entry-04": "construction",
+    "janus-entry-05": "construction",
+    "janus-exit-01": "street",
+    "janus-exit-02": "street",
+    "janus-exit-03": "street",
+    "janus-exit-04": "construction",
+    "janus-exit-05": "construction",
+    "janus-exit-06": "construction",
+    "janus-exit-07": "lumina"
+  },
+  "points": [
+    {
+      "id": "171300007:201",
+      "kind": "electronic",
+      "region": "lumina",
+      "worldPosition": {
+        "x": 169.18669,
+        "y": 64.06001,
+        "z": 315.75266
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E37"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300007:201].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E37",
+            "region": "lumina",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E37",
+            "region": "lumina",
+            "pixels": 7.758770754499789
+          },
+          {
+            "sourceId": "J-T07",
+            "region": "lumina",
+            "pixels": 25.13951928197051
+          },
+          {
+            "sourceId": "J-T06",
+            "region": "lumina",
+            "pixels": 31.52537302436867
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-E29",
+          "region": "construction",
+          "pixels": 550.0543750358662
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300040:201",
+      "kind": "electronic",
+      "region": "lumina",
+      "worldPosition": {
+        "x": 114.308075,
+        "y": 59.677444,
+        "z": 379.43414
+      },
+      "evidenceMethod": "editorial_registered_image_nearest_three_agree",
+      "sourcePointIds": [
+        "J-K05",
+        "J-E41",
+        "J-D04"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300040:201].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-K05",
+            "region": "lumina",
+            "pixels": 14.833936772462438
+          },
+          {
+            "sourceId": "J-E41",
+            "region": "lumina",
+            "pixels": 35.175855022434945
+          },
+          {
+            "sourceId": "J-D04",
+            "region": "lumina",
+            "pixels": 35.175855022434945
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-E29",
+          "region": "construction",
+          "pixels": 680.7760865106279
+        }
+      },
+      "limitations": [
+        "将原始 X/Z 投影至已配准资料图，最近三个已有标记属于同一区；仅作为搜索阶段归类，不是官方区域边界、实体对应、楼层或通路证据。"
+      ]
+    },
+    {
+      "id": "171300047:201",
+      "kind": "electronic",
+      "region": "lumina",
+      "worldPosition": {
+        "x": 109.974754,
+        "y": 83.484856,
+        "z": 344.646
+      },
+      "evidenceMethod": "editorial_registered_image_nearest_three_agree",
+      "sourcePointIds": [
+        "J-K04",
+        "J-T13",
+        "J-E41"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300047:201].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-K04",
+            "region": "lumina",
+            "pixels": 26.254650720314995
+          },
+          {
+            "sourceId": "J-T13",
+            "region": "lumina",
+            "pixels": 32.14738271638923
+          },
+          {
+            "sourceId": "J-E41",
+            "region": "lumina",
+            "pixels": 39.55325353191396
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-E29",
+          "region": "construction",
+          "pixels": 607.6026924915947
+        }
+      },
+      "limitations": [
+        "将原始 X/Z 投影至已配准资料图，最近三个已有标记属于同一区；仅作为搜索阶段归类，不是官方区域边界、实体对应、楼层或通路证据。"
+      ]
+    },
+    {
+      "id": "171300047:202",
+      "kind": "electronic",
+      "region": "lumina",
+      "worldPosition": {
+        "x": 109.51697,
+        "y": 83.484856,
+        "z": 347.79636
+      },
+      "evidenceMethod": "editorial_registered_image_nearest_three_agree",
+      "sourcePointIds": [
+        "J-K04",
+        "J-E41",
+        "J-D04"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300047:202].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-K04",
+            "region": "lumina",
+            "pixels": 21.338601896965663
+          },
+          {
+            "sourceId": "J-E41",
+            "region": "lumina",
+            "pixels": 33.018251352521084
+          },
+          {
+            "sourceId": "J-D04",
+            "region": "lumina",
+            "pixels": 33.018251352521084
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-E29",
+          "region": "construction",
+          "pixels": 614.3487076225505
+        }
+      },
+      "limitations": [
+        "将原始 X/Z 投影至已配准资料图，最近三个已有标记属于同一区；仅作为搜索阶段归类，不是官方区域边界、实体对应、楼层或通路证据。"
+      ]
+    },
+    {
+      "id": "171300047:203",
+      "kind": "electronic",
+      "region": "lumina",
+      "worldPosition": {
+        "x": 109.59322,
+        "y": 83.484856,
+        "z": 348.90814
+      },
+      "evidenceMethod": "editorial_registered_image_nearest_three_agree",
+      "sourcePointIds": [
+        "J-K04",
+        "J-E41",
+        "J-D04"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300047:203].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-K04",
+            "region": "lumina",
+            "pixels": 19.498234398926837
+          },
+          {
+            "sourceId": "J-E41",
+            "region": "lumina",
+            "pixels": 30.652082029232766
+          },
+          {
+            "sourceId": "J-D04",
+            "region": "lumina",
+            "pixels": 30.652082029232766
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-E29",
+          "region": "construction",
+          "pixels": 616.6912121988049
+        }
+      },
+      "limitations": [
+        "将原始 X/Z 投影至已配准资料图，最近三个已有标记属于同一区；仅作为搜索阶段归类，不是官方区域边界、实体对应、楼层或通路证据。"
+      ]
+    },
+    {
+      "id": "171300184:214",
+      "kind": "electronic",
+      "region": "lumina",
+      "worldPosition": {
+        "x": 105.77483,
+        "y": 59.73432,
+        "z": 359.19174
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E41",
+        "J-E42"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300184:214].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E41",
+            "region": "lumina",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          },
+          {
+            "sourceId": "J-E42",
+            "region": "lumina",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E42",
+            "region": "lumina",
+            "pixels": 14.044226906160963
+          },
+          {
+            "sourceId": "J-E41",
+            "region": "lumina",
+            "pixels": 15.112023223134115
+          },
+          {
+            "sourceId": "J-D04",
+            "region": "lumina",
+            "pixels": 15.112023223134115
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-E29",
+          "region": "construction",
+          "pixels": 639.112470844035
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300280:202",
+      "kind": "electronic",
+      "region": "street",
+      "worldPosition": {
+        "x": -257.99835,
+        "y": -13.781324,
+        "z": -65.14016
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E08"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300280:202].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E08",
+            "region": "street",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E08",
+            "region": "street",
+            "pixels": 15.637517016814462
+          },
+          {
+            "sourceId": "J-H03",
+            "region": "street",
+            "pixels": 79.87330850591155
+          },
+          {
+            "sourceId": "J-M05",
+            "region": "street",
+            "pixels": 109.51718315621365
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M12",
+          "region": "construction",
+          "pixels": 482.87639191064
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300281:201",
+      "kind": "electronic",
+      "region": "street",
+      "worldPosition": {
+        "x": -257.5493,
+        "y": -13.831325,
+        "z": -65.23749
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E08"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300281:201].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E08",
+            "region": "street",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E08",
+            "region": "street",
+            "pixels": 14.760617373343525
+          },
+          {
+            "sourceId": "J-H03",
+            "region": "street",
+            "pixels": 79.02459386922307
+          },
+          {
+            "sourceId": "J-M05",
+            "region": "street",
+            "pixels": 108.6970643497698
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M12",
+          "region": "construction",
+          "pixels": 481.97356951512086
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300330:201",
+      "kind": "electronic",
+      "region": "street",
+      "worldPosition": {
+        "x": -8.438555,
+        "y": 5.5104628,
+        "z": -195.89096
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E01"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300330:201].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E01",
+            "region": "street",
+            "mappingStatus": "matched",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E01",
+            "region": "street",
+            "pixels": 6.453874770931511
+          },
+          {
+            "sourceId": "J-B01",
+            "region": "street",
+            "pixels": 84.48911844237689
+          },
+          {
+            "sourceId": "J-H01",
+            "region": "street",
+            "pixels": 90.5222945312795
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-E17",
+          "region": "construction",
+          "pixels": 351.3905304347369
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300330:202",
+      "kind": "electronic",
+      "region": "street",
+      "worldPosition": {
+        "x": -20.687218,
+        "y": 5.4623775,
+        "z": -204.75108
+      },
+      "evidenceMethod": "editorial_registered_image_nearest_three_agree",
+      "sourcePointIds": [
+        "J-E01",
+        "J-B01",
+        "J-H01"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300330:202].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E01",
+            "region": "street",
+            "pixels": 32.828115311318264
+          },
+          {
+            "sourceId": "J-B01",
+            "region": "street",
+            "pixels": 85.63529007410384
+          },
+          {
+            "sourceId": "J-H01",
+            "region": "street",
+            "pixels": 103.254019425188
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-E17",
+          "region": "construction",
+          "pixels": 371.2822537454783
+        }
+      },
+      "limitations": [
+        "将原始 X/Z 投影至已配准资料图，最近三个已有标记属于同一区；仅作为搜索阶段归类，不是官方区域边界、实体对应、楼层或通路证据。"
+      ]
+    },
+    {
+      "id": "171300330:203",
+      "kind": "electronic",
+      "region": "street",
+      "worldPosition": {
+        "x": -31.533884,
+        "y": 5.4623775,
+        "z": -198.11331
+      },
+      "evidenceMethod": "editorial_registered_image_nearest_three_agree",
+      "sourcePointIds": [
+        "J-E01",
+        "J-B01",
+        "J-H01"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300330:203].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E01",
+            "region": "street",
+            "pixels": 46.19702259689322
+          },
+          {
+            "sourceId": "J-B01",
+            "region": "street",
+            "pixels": 65.66512052202356
+          },
+          {
+            "sourceId": "J-H01",
+            "region": "street",
+            "pixels": 90.25840996033673
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M12",
+          "region": "construction",
+          "pixels": 359.0363121590003
+        }
+      },
+      "limitations": [
+        "将原始 X/Z 投影至已配准资料图，最近三个已有标记属于同一区；仅作为搜索阶段归类，不是官方区域边界、实体对应、楼层或通路证据。"
+      ]
+    },
+    {
+      "id": "171300331:202",
+      "kind": "electronic",
+      "region": "street",
+      "worldPosition": {
+        "x": -197.9558,
+        "y": 8.3548,
+        "z": -139.88943
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E04"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300331:202].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E04",
+            "region": "street",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E04",
+            "region": "street",
+            "pixels": 15.637728289124052
+          },
+          {
+            "sourceId": "J-T01",
+            "region": "street",
+            "pixels": 16.373108086698284
+          },
+          {
+            "sourceId": "J-B04",
+            "region": "street",
+            "pixels": 31.30918807966168
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M12",
+          "region": "construction",
+          "pixels": 423.3793218126346
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300331:204",
+      "kind": "electronic",
+      "region": "street",
+      "worldPosition": {
+        "x": -179.75648,
+        "y": 8.29,
+        "z": -135.72142
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E02",
+        "J-E03"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300331:204].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E02",
+            "region": "street",
+            "mappingStatus": "ambiguous",
+            "confidence": "low"
+          },
+          {
+            "sourceId": "J-E03",
+            "region": "street",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E03",
+            "region": "street",
+            "pixels": 7.577601905812394
+          },
+          {
+            "sourceId": "J-E02",
+            "region": "street",
+            "pixels": 21.255650265254474
+          },
+          {
+            "sourceId": "J-E04",
+            "region": "street",
+            "pixels": 30.274394839269295
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M12",
+          "region": "construction",
+          "pixels": 386.57444921096237
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300331:205",
+      "kind": "electronic",
+      "region": "street",
+      "worldPosition": {
+        "x": -193.33238,
+        "y": 8.396371,
+        "z": -128.3955
+      },
+      "evidenceMethod": "editorial_registered_image_nearest_three_agree",
+      "sourcePointIds": [
+        "J-E03",
+        "J-E04",
+        "J-T01"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300331:205].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E03",
+            "region": "street",
+            "pixels": 26.811262329533907
+          },
+          {
+            "sourceId": "J-E04",
+            "region": "street",
+            "pixels": 32.55443677865522
+          },
+          {
+            "sourceId": "J-T01",
+            "region": "street",
+            "pixels": 34.38160762978115
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M12",
+          "region": "construction",
+          "pixels": 401.63662510185173
+        }
+      },
+      "limitations": [
+        "将原始 X/Z 投影至已配准资料图，最近三个已有标记属于同一区；仅作为搜索阶段归类，不是官方区域边界、实体对应、楼层或通路证据。"
+      ]
+    },
+    {
+      "id": "171300331:206",
+      "kind": "electronic",
+      "region": "street",
+      "worldPosition": {
+        "x": -195.33464,
+        "y": 8.270002,
+        "z": -148.17798
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E04"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300331:206].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E04",
+            "region": "street",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E04",
+            "region": "street",
+            "pixels": 12.674564014564252
+          },
+          {
+            "sourceId": "J-T01",
+            "region": "street",
+            "pixels": 29.344600314618194
+          },
+          {
+            "sourceId": "J-E03",
+            "region": "street",
+            "pixels": 36.25517941194539
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M12",
+          "region": "construction",
+          "pixels": 429.13180887334823
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300332:201",
+      "kind": "electronic",
+      "region": "street",
+      "worldPosition": {
+        "x": -197.69144,
+        "y": 8.3548,
+        "z": -138.96852
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E04"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300332:201].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E04",
+            "region": "street",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E04",
+            "region": "street",
+            "pixels": 16.247580519477644
+          },
+          {
+            "sourceId": "J-T01",
+            "region": "street",
+            "pixels": 16.79616296002226
+          },
+          {
+            "sourceId": "J-B04",
+            "region": "street",
+            "pixels": 31.059492088526365
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M12",
+          "region": "construction",
+          "pixels": 421.8044428989223
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300332:202",
+      "kind": "electronic",
+      "region": "street",
+      "worldPosition": {
+        "x": -175.519,
+        "y": 8.29,
+        "z": -143.263
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E02",
+        "J-E03"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300332:202].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E02",
+            "region": "street",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          },
+          {
+            "sourceId": "J-E03",
+            "region": "street",
+            "mappingStatus": "ambiguous",
+            "confidence": "low"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E02",
+            "region": "street",
+            "pixels": 4.230377221047111
+          },
+          {
+            "sourceId": "J-E03",
+            "region": "street",
+            "pixels": 22.078699283615784
+          },
+          {
+            "sourceId": "J-E04",
+            "region": "street",
+            "pixels": 33.92761064673166
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M12",
+          "region": "construction",
+          "pixels": 389.30395170530807
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300332:203",
+      "kind": "electronic",
+      "region": "street",
+      "worldPosition": {
+        "x": -189.11116,
+        "y": 8.29,
+        "z": -133.76527
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E03",
+        "J-E04"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300332:203].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E03",
+            "region": "street",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          },
+          {
+            "sourceId": "J-E04",
+            "region": "street",
+            "mappingStatus": "ambiguous",
+            "confidence": "low"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E03",
+            "region": "street",
+            "pixels": 13.31387700890892
+          },
+          {
+            "sourceId": "J-E04",
+            "region": "street",
+            "pixels": 21.65940738284828
+          },
+          {
+            "sourceId": "J-T01",
+            "region": "street",
+            "pixels": 36.70081694268037
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M12",
+          "region": "construction",
+          "pixels": 400.42037456877847
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300333:201",
+      "kind": "electronic",
+      "region": "street",
+      "worldPosition": {
+        "x": -227.48936,
+        "y": 8.294371,
+        "z": -111.25596
+      },
+      "evidenceMethod": "editorial_registered_image_nearest_three_agree",
+      "sourcePointIds": [
+        "J-M04",
+        "J-M03",
+        "J-M05"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300333:201].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-M04",
+            "region": "street",
+            "pixels": 11.865975314186612
+          },
+          {
+            "sourceId": "J-M03",
+            "region": "street",
+            "pixels": 25.125230647333215
+          },
+          {
+            "sourceId": "J-M05",
+            "region": "street",
+            "pixels": 26.12091913810847
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M12",
+          "region": "construction",
+          "pixels": 448.8919441416282
+        }
+      },
+      "limitations": [
+        "将原始 X/Z 投影至已配准资料图，最近三个已有标记属于同一区；仅作为搜索阶段归类，不是官方区域边界、实体对应、楼层或通路证据。"
+      ]
+    },
+    {
+      "id": "171300334:201",
+      "kind": "electronic",
+      "region": "street",
+      "worldPosition": {
+        "x": -199.95119,
+        "y": 13.98541,
+        "z": -89.242226
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E05"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300334:201].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E05",
+            "region": "street",
+            "mappingStatus": "matched",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E05",
+            "region": "street",
+            "pixels": 5.43737930369515
+          },
+          {
+            "sourceId": "J-M06",
+            "region": "street",
+            "pixels": 15.66320233723663
+          },
+          {
+            "sourceId": "J-B05",
+            "region": "street",
+            "pixels": 49.738630839196695
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M12",
+          "region": "construction",
+          "pixels": 376.9132639351979
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300334:203",
+      "kind": "electronic",
+      "region": "street",
+      "worldPosition": {
+        "x": -180.40166,
+        "y": 8.615498,
+        "z": -66.54665
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E07"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300334:203].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E07",
+            "region": "street",
+            "mappingStatus": "matched",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E07",
+            "region": "street",
+            "pixels": 0.794306038973883
+          },
+          {
+            "sourceId": "J-H02",
+            "region": "street",
+            "pixels": 24.422487458094764
+          },
+          {
+            "sourceId": "J-G02",
+            "region": "street",
+            "pixels": 24.44871142225206
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M12",
+          "region": "construction",
+          "pixels": 322.4951678584259
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300335:201",
+      "kind": "electronic",
+      "region": "street",
+      "worldPosition": {
+        "x": -199.11609,
+        "y": 8.290003,
+        "z": -41.5391
+      },
+      "evidenceMethod": "editorial_registered_image_nearest_three_agree",
+      "sourcePointIds": [
+        "J-G02",
+        "J-B05",
+        "J-H03"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300335:201].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-G02",
+            "region": "street",
+            "pixels": 48.77436211343423
+          },
+          {
+            "sourceId": "J-B05",
+            "region": "street",
+            "pixels": 51.83263629891715
+          },
+          {
+            "sourceId": "J-H03",
+            "region": "street",
+            "pixels": 56.016280879042114
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M12",
+          "region": "construction",
+          "pixels": 352.41302465098283
+        }
+      },
+      "limitations": [
+        "将原始 X/Z 投影至已配准资料图，最近三个已有标记属于同一区；仅作为搜索阶段归类，不是官方区域边界、实体对应、楼层或通路证据。"
+      ]
+    },
+    {
+      "id": "171300335:202",
+      "kind": "electronic",
+      "region": "street",
+      "worldPosition": {
+        "x": -194.84004,
+        "y": 8.290001,
+        "z": -63.262226
+      },
+      "evidenceMethod": "editorial_registered_image_nearest_three_agree",
+      "sourcePointIds": [
+        "J-B05",
+        "J-E07",
+        "J-G02"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300335:202].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-B05",
+            "region": "street",
+            "pixels": 9.803743858939225
+          },
+          {
+            "sourceId": "J-E07",
+            "region": "street",
+            "pixels": 31.87906817166963
+          },
+          {
+            "sourceId": "J-G02",
+            "region": "street",
+            "pixels": 35.60315936771754
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M12",
+          "region": "construction",
+          "pixels": 350.59584147159353
+        }
+      },
+      "limitations": [
+        "将原始 X/Z 投影至已配准资料图，最近三个已有标记属于同一区；仅作为搜索阶段归类，不是官方区域边界、实体对应、楼层或通路证据。"
+      ]
+    },
+    {
+      "id": "171300335:203",
+      "kind": "electronic",
+      "region": "street",
+      "worldPosition": {
+        "x": -183.86694,
+        "y": 8.335,
+        "z": -45.257298
+      },
+      "evidenceMethod": "editorial_registered_image_nearest_three_agree",
+      "sourcePointIds": [
+        "J-G02",
+        "J-H04",
+        "J-E07"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300335:203].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-G02",
+            "region": "street",
+            "pixels": 22.053610887766812
+          },
+          {
+            "sourceId": "J-H04",
+            "region": "street",
+            "pixels": 43.6993200777419
+          },
+          {
+            "sourceId": "J-E07",
+            "region": "street",
+            "pixels": 46.44816997074945
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M12",
+          "region": "construction",
+          "pixels": 321.0861753423716
+        }
+      },
+      "limitations": [
+        "将原始 X/Z 投影至已配准资料图，最近三个已有标记属于同一区；仅作为搜索阶段归类，不是官方区域边界、实体对应、楼层或通路证据。"
+      ]
+    },
+    {
+      "id": "171300336:201",
+      "kind": "electronic",
+      "region": "street",
+      "worldPosition": {
+        "x": -153.35962,
+        "y": 8.355954,
+        "z": -25.397306
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E15"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300336:201].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E15",
+            "region": "street",
+            "mappingStatus": "matched",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-B07",
+            "region": "street",
+            "pixels": 2.087245156118841
+          },
+          {
+            "sourceId": "J-E15",
+            "region": "street",
+            "pixels": 5.210890155163822
+          },
+          {
+            "sourceId": "J-M10",
+            "region": "street",
+            "pixels": 12.721700874772742
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M12",
+          "region": "construction",
+          "pixels": 254.22611456357654
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300337:201",
+      "kind": "electronic",
+      "region": "street",
+      "worldPosition": {
+        "x": -125.74461,
+        "y": 8.3550005,
+        "z": -21.944216
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E16"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300337:201].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E16",
+            "region": "street",
+            "mappingStatus": "matched",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E16",
+            "region": "street",
+            "pixels": 4.323980634859705
+          },
+          {
+            "sourceId": "J-M09",
+            "region": "street",
+            "pixels": 6.266359494747751
+          },
+          {
+            "sourceId": "J-M08",
+            "region": "street",
+            "pixels": 31.593993056141077
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M12",
+          "region": "construction",
+          "pixels": 196.15133966865633
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300338:201",
+      "kind": "electronic",
+      "region": "street",
+      "worldPosition": {
+        "x": -106.176796,
+        "y": 8.351585,
+        "z": -35.258846
+      },
+      "evidenceMethod": "editorial_registered_image_nearest_three_agree",
+      "sourcePointIds": [
+        "J-E10",
+        "J-B09",
+        "J-K02"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300338:201].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E10",
+            "region": "street",
+            "pixels": 6.354213520187795
+          },
+          {
+            "sourceId": "J-B09",
+            "region": "street",
+            "pixels": 18.77715834365344
+          },
+          {
+            "sourceId": "J-K02",
+            "region": "street",
+            "pixels": 20.12199243063199
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M12",
+          "region": "construction",
+          "pixels": 155.04432684777484
+        }
+      },
+      "limitations": [
+        "将原始 X/Z 投影至已配准资料图，最近三个已有标记属于同一区；仅作为搜索阶段归类，不是官方区域边界、实体对应、楼层或通路证据。"
+      ]
+    },
+    {
+      "id": "171300338:202",
+      "kind": "electronic",
+      "region": "street",
+      "worldPosition": {
+        "x": -113.388794,
+        "y": 8.34,
+        "z": -54.4772
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E09"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300338:202].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E09",
+            "region": "street",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E09",
+            "region": "street",
+            "pixels": 12.300368105054233
+          },
+          {
+            "sourceId": "J-E10",
+            "region": "street",
+            "pixels": 37.779271210505975
+          },
+          {
+            "sourceId": "J-M08",
+            "region": "street",
+            "pixels": 42.46585949221722
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M12",
+          "region": "construction",
+          "pixels": 178.61051094658822
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300338:203",
+      "kind": "electronic",
+      "region": "street",
+      "worldPosition": {
+        "x": -104.766,
+        "y": 8.34,
+        "z": -50.252
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E09"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300338:203].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E09",
+            "region": "street",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E09",
+            "region": "street",
+            "pixels": 10.577106771558206
+          },
+          {
+            "sourceId": "J-E10",
+            "region": "street",
+            "pixels": 25.735585092547755
+          },
+          {
+            "sourceId": "J-M08",
+            "region": "street",
+            "pixels": 43.30390917568998
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M12",
+          "region": "construction",
+          "pixels": 158.40820416862968
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300339:201",
+      "kind": "electronic",
+      "region": "street",
+      "worldPosition": {
+        "x": -90.406815,
+        "y": 8.33,
+        "z": -17.827896
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E11",
+        "J-E12"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300339:201].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E11",
+            "region": "street",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          },
+          {
+            "sourceId": "J-E12",
+            "region": "street",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E12",
+            "region": "street",
+            "pixels": 12.575136065116986
+          },
+          {
+            "sourceId": "J-E11",
+            "region": "street",
+            "pixels": 14.752111821157065
+          },
+          {
+            "sourceId": "J-K02",
+            "region": "street",
+            "pixels": 30.12342412371205
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M12",
+          "region": "construction",
+          "pixels": 123.03348656241874
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300339:202",
+      "kind": "electronic",
+      "region": "street",
+      "worldPosition": {
+        "x": -92.46472,
+        "y": 8.361983,
+        "z": 7.4035873
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E14"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300339:202].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E14",
+            "region": "street",
+            "mappingStatus": "matched",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E14",
+            "region": "street",
+            "pixels": 8.087531732321862
+          },
+          {
+            "sourceId": "J-E13",
+            "region": "street",
+            "pixels": 37.063825961724994
+          },
+          {
+            "sourceId": "J-E12",
+            "region": "street",
+            "pixels": 45.49956412097281
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-G03",
+          "region": "construction",
+          "pixels": 145.16931570650183
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300339:203",
+      "kind": "electronic",
+      "region": "street",
+      "worldPosition": {
+        "x": -106.55929,
+        "y": 8.290002,
+        "z": -9.043032
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E13"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300339:203].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E13",
+            "region": "street",
+            "mappingStatus": "matched",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E13",
+            "region": "street",
+            "pixels": 10.097595503401738
+          },
+          {
+            "sourceId": "J-E12",
+            "region": "street",
+            "pixels": 26.677208965813406
+          },
+          {
+            "sourceId": "J-E14",
+            "region": "street",
+            "pixels": 41.26912945728192
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M12",
+          "region": "construction",
+          "pixels": 160.39902035475987
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300340:201",
+      "kind": "electronic",
+      "region": "street",
+      "worldPosition": {
+        "x": -91.606,
+        "y": 8.29,
+        "z": -16.696
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E11",
+        "J-E12"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300340:201].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E11",
+            "region": "street",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          },
+          {
+            "sourceId": "J-E12",
+            "region": "street",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E12",
+            "region": "street",
+            "pixels": 9.103457695438756
+          },
+          {
+            "sourceId": "J-E11",
+            "region": "street",
+            "pixels": 15.797068813731478
+          },
+          {
+            "sourceId": "J-K02",
+            "region": "street",
+            "pixels": 30.3851561066678
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M12",
+          "region": "construction",
+          "pixels": 125.97746035595713
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300340:202",
+      "kind": "electronic",
+      "region": "street",
+      "worldPosition": {
+        "x": -80.09466,
+        "y": 8.33,
+        "z": -20.209469
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E11"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300340:202].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E11",
+            "region": "street",
+            "mappingStatus": "ambiguous",
+            "confidence": "low"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E11",
+            "region": "street",
+            "pixels": 16.614453819146416
+          },
+          {
+            "sourceId": "J-M11",
+            "region": "street",
+            "pixels": 21.72191059931545
+          },
+          {
+            "sourceId": "J-E12",
+            "region": "street",
+            "pixels": 33.853659156385305
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M12",
+          "region": "construction",
+          "pixels": 100.70865964858356
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300340:203",
+      "kind": "electronic",
+      "region": "street",
+      "worldPosition": {
+        "x": -87.232,
+        "y": 8.29,
+        "z": -16.620003
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E11",
+        "J-E12"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300340:203].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E11",
+            "region": "street",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          },
+          {
+            "sourceId": "J-E12",
+            "region": "street",
+            "mappingStatus": "ambiguous",
+            "confidence": "low"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E11",
+            "region": "street",
+            "pixels": 7.940581139105803
+          },
+          {
+            "sourceId": "J-E12",
+            "region": "street",
+            "pixels": 17.08210660296518
+          },
+          {
+            "sourceId": "J-M11",
+            "region": "street",
+            "pixels": 35.414998715972814
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M12",
+          "region": "construction",
+          "pixels": 116.98106948037136
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300341:201",
+      "kind": "electronic",
+      "region": "construction",
+      "worldPosition": {
+        "x": -11.734455,
+        "y": 7.250001,
+        "z": -35.344425
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E17"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300341:201].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E17",
+            "region": "construction",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E17",
+            "region": "construction",
+            "pixels": 10.685382810206212
+          },
+          {
+            "sourceId": "J-B10",
+            "region": "construction",
+            "pixels": 41.839059083868
+          },
+          {
+            "sourceId": "J-M12",
+            "region": "construction",
+            "pixels": 47.189570800683995
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M11",
+          "region": "street",
+          "pixels": 138.67817688292433
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300341:202",
+      "kind": "electronic",
+      "region": "construction",
+      "worldPosition": {
+        "x": -1.2483952,
+        "y": 7.250001,
+        "z": -9.222005
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E18"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300341:202].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E18",
+            "region": "construction",
+            "mappingStatus": "matched",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E18",
+            "region": "construction",
+            "pixels": 4.865669414721293
+          },
+          {
+            "sourceId": "J-B11",
+            "region": "construction",
+            "pixels": 26.56681650866169
+          },
+          {
+            "sourceId": "J-H05",
+            "region": "construction",
+            "pixels": 30.58961168274886
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M11",
+          "region": "street",
+          "pixels": 167.17695573130513
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300341:203",
+      "kind": "electronic",
+      "region": "construction",
+      "worldPosition": {
+        "x": 2.7388735,
+        "y": 7.253274,
+        "z": -47.540386
+      },
+      "evidenceMethod": "editorial_registered_image_nearest_three_agree",
+      "sourcePointIds": [
+        "J-E17",
+        "J-E19",
+        "J-B11"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300341:203].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E17",
+            "region": "construction",
+            "pixels": 44.616940195858795
+          },
+          {
+            "sourceId": "J-E19",
+            "region": "construction",
+            "pixels": 63.78553591801708
+          },
+          {
+            "sourceId": "J-B11",
+            "region": "construction",
+            "pixels": 80.79040620443818
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M11",
+          "region": "street",
+          "pixels": 172.54489164139824
+        }
+      },
+      "limitations": [
+        "将原始 X/Z 投影至已配准资料图，最近三个已有标记属于同一区；仅作为搜索阶段归类，不是官方区域边界、实体对应、楼层或通路证据。"
+      ]
+    },
+    {
+      "id": "171300342:201",
+      "kind": "electronic",
+      "region": "construction",
+      "worldPosition": {
+        "x": -12.242216,
+        "y": 7.250001,
+        "z": -31.155916
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E17"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300342:201].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E17",
+            "region": "construction",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E17",
+            "region": "construction",
+            "pixels": 4.865114572350487
+          },
+          {
+            "sourceId": "J-B10",
+            "region": "construction",
+            "pixels": 35.53540846204488
+          },
+          {
+            "sourceId": "J-G03",
+            "region": "construction",
+            "pixels": 42.55180360307127
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M11",
+          "region": "street",
+          "pixels": 137.29141740293736
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300342:202",
+      "kind": "electronic",
+      "region": "construction",
+      "worldPosition": {
+        "x": 18.792776,
+        "y": 7.2685933,
+        "z": -21.444529
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E19"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300342:202].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E19",
+            "region": "construction",
+            "mappingStatus": "matched",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E19",
+            "region": "construction",
+            "pixels": 13.653278028145635
+          },
+          {
+            "sourceId": "J-B11",
+            "region": "construction",
+            "pixels": 27.8169384845815
+          },
+          {
+            "sourceId": "J-H05",
+            "region": "construction",
+            "pixels": 37.3303689235399
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M11",
+          "region": "street",
+          "pixels": 204.08118533371572
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300342:203",
+      "kind": "electronic",
+      "region": "construction",
+      "worldPosition": {
+        "x": 6.8666267,
+        "y": 7.250001,
+        "z": -43.06459
+      },
+      "evidenceMethod": "editorial_registered_image_nearest_three_agree",
+      "sourcePointIds": [
+        "J-E17",
+        "J-E19",
+        "J-B11"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300342:203].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E17",
+            "region": "construction",
+            "pixels": 44.113361722122356
+          },
+          {
+            "sourceId": "J-E19",
+            "region": "construction",
+            "pixels": 52.04940551336118
+          },
+          {
+            "sourceId": "J-B11",
+            "region": "construction",
+            "pixels": 69.73240114540666
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M11",
+          "region": "street",
+          "pixels": 179.50692971009747
+        }
+      },
+      "limitations": [
+        "将原始 X/Z 投影至已配准资料图，最近三个已有标记属于同一区；仅作为搜索阶段归类，不是官方区域边界、实体对应、楼层或通路证据。"
+      ]
+    },
+    {
+      "id": "171300343:201",
+      "kind": "electronic",
+      "region": "construction",
+      "worldPosition": {
+        "x": 48.417892,
+        "y": 8.625887,
+        "z": -17.185472
+      },
+      "evidenceMethod": "editorial_registered_image_nearest_three_agree",
+      "sourcePointIds": [
+        "J-E20",
+        "J-E21",
+        "J-G04"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300343:201].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E20",
+            "region": "construction",
+            "pixels": 52.542881036624536
+          },
+          {
+            "sourceId": "J-E21",
+            "region": "construction",
+            "pixels": 58.04063556822674
+          },
+          {
+            "sourceId": "J-G04",
+            "region": "construction",
+            "pixels": 71.47200474310333
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M11",
+          "region": "street",
+          "pixels": 267.5020019291912
+        }
+      },
+      "limitations": [
+        "将原始 X/Z 投影至已配准资料图，最近三个已有标记属于同一区；仅作为搜索阶段归类，不是官方区域边界、实体对应、楼层或通路证据。"
+      ]
+    },
+    {
+      "id": "171300343:202",
+      "kind": "electronic",
+      "region": "construction",
+      "worldPosition": {
+        "x": 79.37476,
+        "y": 8.625887,
+        "z": -8.630624
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E20"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300343:202].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E20",
+            "region": "construction",
+            "mappingStatus": "matched",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E20",
+            "region": "construction",
+            "pixels": 16.202673513734087
+          },
+          {
+            "sourceId": "J-E21",
+            "region": "construction",
+            "pixels": 29.193883563606953
+          },
+          {
+            "sourceId": "J-B13",
+            "region": "construction",
+            "pixels": 69.31939177940808
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M11",
+          "region": "street",
+          "pixels": 335.0011634559329
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300343:203",
+      "kind": "electronic",
+      "region": "construction",
+      "worldPosition": {
+        "x": 74.74,
+        "y": 8.625887,
+        "z": 3.63
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E21"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300343:203].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E21",
+            "region": "construction",
+            "mappingStatus": "matched",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E21",
+            "region": "construction",
+            "pixels": 13.88935634628414
+          },
+          {
+            "sourceId": "J-E20",
+            "region": "construction",
+            "pixels": 27.7991180929175
+          },
+          {
+            "sourceId": "J-B14",
+            "region": "construction",
+            "pixels": 62.60864557786288
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M11",
+          "region": "street",
+          "pixels": 330.31103815876276
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300344:201",
+      "kind": "electronic",
+      "region": "construction",
+      "worldPosition": {
+        "x": 113.68,
+        "y": 22.714714,
+        "z": -25.493
+      },
+      "evidenceMethod": "editorial_registered_image_nearest_three_agree",
+      "sourcePointIds": [
+        "J-B13",
+        "J-B12",
+        "J-M13"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300344:201].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-B13",
+            "region": "construction",
+            "pixels": 28.307781547573438
+          },
+          {
+            "sourceId": "J-B12",
+            "region": "construction",
+            "pixels": 29.238607555151667
+          },
+          {
+            "sourceId": "J-M13",
+            "region": "construction",
+            "pixels": 31.122863286342987
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M11",
+          "region": "street",
+          "pixels": 404.109124478286
+        }
+      },
+      "limitations": [
+        "将原始 X/Z 投影至已配准资料图，最近三个已有标记属于同一区；仅作为搜索阶段归类，不是官方区域边界、实体对应、楼层或通路证据。"
+      ]
+    },
+    {
+      "id": "171300344:202",
+      "kind": "electronic",
+      "region": "construction",
+      "worldPosition": {
+        "x": 100.02704,
+        "y": 22.714714,
+        "z": -25.381918
+      },
+      "evidenceMethod": "editorial_registered_image_nearest_three_agree",
+      "sourcePointIds": [
+        "J-B13",
+        "J-M13",
+        "J-B12"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300344:202].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-B13",
+            "region": "construction",
+            "pixels": 15.33208395971462
+          },
+          {
+            "sourceId": "J-M13",
+            "region": "construction",
+            "pixels": 18.704707935101567
+          },
+          {
+            "sourceId": "J-B12",
+            "region": "construction",
+            "pixels": 31.460136784929343
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M11",
+          "region": "street",
+          "pixels": 375.22726960944505
+        }
+      },
+      "limitations": [
+        "将原始 X/Z 投影至已配准资料图，最近三个已有标记属于同一区；仅作为搜索阶段归类，不是官方区域边界、实体对应、楼层或通路证据。"
+      ]
+    },
+    {
+      "id": "171300344:203",
+      "kind": "electronic",
+      "region": "construction",
+      "worldPosition": {
+        "x": 98.885185,
+        "y": 22.72052,
+        "z": -12.910464
+      },
+      "evidenceMethod": "editorial_registered_image_nearest_three_agree",
+      "sourcePointIds": [
+        "J-B13",
+        "J-M13",
+        "J-E23"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300344:203].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-B13",
+            "region": "construction",
+            "pixels": 41.68733998430788
+          },
+          {
+            "sourceId": "J-M13",
+            "region": "construction",
+            "pixels": 45.22783480682833
+          },
+          {
+            "sourceId": "J-E23",
+            "region": "construction",
+            "pixels": 49.49390056838506
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M11",
+          "region": "street",
+          "pixels": 374.835821884959
+        }
+      },
+      "limitations": [
+        "将原始 X/Z 投影至已配准资料图，最近三个已有标记属于同一区；仅作为搜索阶段归类，不是官方区域边界、实体对应、楼层或通路证据。"
+      ]
+    },
+    {
+      "id": "171300345:201",
+      "kind": "electronic",
+      "region": "construction",
+      "worldPosition": {
+        "x": 118.768585,
+        "y": 28.750507,
+        "z": -2.554268
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E23",
+        "J-E25"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300345:201].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E23",
+            "region": "construction",
+            "mappingStatus": "ambiguous",
+            "confidence": "low"
+          },
+          {
+            "sourceId": "J-E25",
+            "region": "construction",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E25",
+            "region": "construction",
+            "pixels": 10.050549878537112
+          },
+          {
+            "sourceId": "J-E23",
+            "region": "construction",
+            "pixels": 20.012430424870136
+          },
+          {
+            "sourceId": "J-E24",
+            "region": "construction",
+            "pixels": 27.909477527461252
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M11",
+          "region": "street",
+          "pixels": 419.5595225725802
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300345:202",
+      "kind": "electronic",
+      "region": "construction",
+      "worldPosition": {
+        "x": 123.06232,
+        "y": 28.750507,
+        "z": 6.2490544
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E24",
+        "J-E25"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300345:202].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E24",
+            "region": "construction",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          },
+          {
+            "sourceId": "J-E25",
+            "region": "construction",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E25",
+            "region": "construction",
+            "pixels": 12.36415506593659
+          },
+          {
+            "sourceId": "J-E24",
+            "region": "construction",
+            "pixels": 14.993584233846967
+          },
+          {
+            "sourceId": "J-D03",
+            "region": "construction",
+            "pixels": 31.617403566660514
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M11",
+          "region": "street",
+          "pixels": 431.7792199117392
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300345:203",
+      "kind": "electronic",
+      "region": "construction",
+      "worldPosition": {
+        "x": 127.915985,
+        "y": 28.770277,
+        "z": -22.292377
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E22"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300345:203].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E22",
+            "region": "construction",
+            "mappingStatus": "matched",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E22",
+            "region": "construction",
+            "pixels": 5.597134385623078
+          },
+          {
+            "sourceId": "J-E23",
+            "region": "construction",
+            "pixels": 26.032077460804256
+          },
+          {
+            "sourceId": "J-D03",
+            "region": "construction",
+            "pixels": 37.6521832987382
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-H01",
+          "region": "street",
+          "pixels": 433.98777994932027
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300346:201",
+      "kind": "electronic",
+      "region": "construction",
+      "worldPosition": {
+        "x": 118.583405,
+        "y": 28.750507,
+        "z": -5.620588
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E23",
+        "J-E25"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300346:201].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E23",
+            "region": "construction",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          },
+          {
+            "sourceId": "J-E25",
+            "region": "construction",
+            "mappingStatus": "ambiguous",
+            "confidence": "low"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E23",
+            "region": "construction",
+            "pixels": 14.333140352572654
+          },
+          {
+            "sourceId": "J-E25",
+            "region": "construction",
+            "pixels": 16.588443034822646
+          },
+          {
+            "sourceId": "J-D03",
+            "region": "construction",
+            "pixels": 29.785331365358438
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M11",
+          "region": "street",
+          "pixels": 418.21867503218743
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300346:202",
+      "kind": "electronic",
+      "region": "construction",
+      "worldPosition": {
+        "x": 123.24609,
+        "y": 28.768595,
+        "z": 5.9269295
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E24",
+        "J-E25"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300346:202].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E24",
+            "region": "construction",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          },
+          {
+            "sourceId": "J-E25",
+            "region": "construction",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E25",
+            "region": "construction",
+            "pixels": 12.176136599480909
+          },
+          {
+            "sourceId": "J-E24",
+            "region": "construction",
+            "pixels": 14.451937375485054
+          },
+          {
+            "sourceId": "J-D03",
+            "region": "construction",
+            "pixels": 30.847002073369758
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M11",
+          "region": "street",
+          "pixels": 432.0304541398953
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300346:203",
+      "kind": "electronic",
+      "region": "construction",
+      "worldPosition": {
+        "x": 118.39499,
+        "y": 28.750507,
+        "z": 0.7859224
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E25"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300346:203].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E25",
+            "region": "construction",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E25",
+            "region": "construction",
+            "pixels": 3.1866943351235526
+          },
+          {
+            "sourceId": "J-E24",
+            "region": "construction",
+            "pixels": 25.59343131667601
+          },
+          {
+            "sourceId": "J-E23",
+            "region": "construction",
+            "pixels": 26.971615871685653
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M11",
+          "region": "street",
+          "pixels": 419.92786907494286
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300347:201",
+      "kind": "electronic",
+      "region": "construction",
+      "worldPosition": {
+        "x": 145.8735,
+        "y": 28.73,
+        "z": 25.03048
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E26"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300347:201].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E26",
+            "region": "construction",
+            "mappingStatus": "matched",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E26",
+            "region": "construction",
+            "pixels": 7.677193532668792
+          },
+          {
+            "sourceId": "J-K01",
+            "region": "construction",
+            "pixels": 34.39748370507743
+          },
+          {
+            "sourceId": "J-E27",
+            "region": "construction",
+            "pixels": 48.18342283958247
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M11",
+          "region": "street",
+          "pixels": 487.95166411263835
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300347:203",
+      "kind": "electronic",
+      "region": "construction",
+      "worldPosition": {
+        "x": 145.29816,
+        "y": 28.660002,
+        "z": 56.304485
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E27",
+        "J-E28",
+        "J-E29"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300347:203].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E27",
+            "region": "construction",
+            "mappingStatus": "ambiguous",
+            "confidence": "low"
+          },
+          {
+            "sourceId": "J-E28",
+            "region": "construction",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          },
+          {
+            "sourceId": "J-E29",
+            "region": "construction",
+            "mappingStatus": "ambiguous",
+            "confidence": "low"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E28",
+            "region": "construction",
+            "pixels": 11.982828358786715
+          },
+          {
+            "sourceId": "J-B15",
+            "region": "construction",
+            "pixels": 12.681310856664016
+          },
+          {
+            "sourceId": "J-E27",
+            "region": "construction",
+            "pixels": 19.704128280285847
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-E30",
+          "region": "lumina",
+          "pixels": 424.50309055688854
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300348:201",
+      "kind": "electronic",
+      "region": "construction",
+      "worldPosition": {
+        "x": 132.96788,
+        "y": 17.82582,
+        "z": 58.57584
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E28",
+        "J-E29"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300348:201].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E28",
+            "region": "construction",
+            "mappingStatus": "ambiguous",
+            "confidence": "low"
+          },
+          {
+            "sourceId": "J-E29",
+            "region": "construction",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E29",
+            "region": "construction",
+            "pixels": 6.5673125148352565
+          },
+          {
+            "sourceId": "J-E28",
+            "region": "construction",
+            "pixels": 16.37793150631056
+          },
+          {
+            "sourceId": "J-E27",
+            "region": "construction",
+            "pixels": 30.872831502565123
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-E30",
+          "region": "lumina",
+          "pixels": 413.463401530583
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300348:202",
+      "kind": "electronic",
+      "region": "construction",
+      "worldPosition": {
+        "x": 139.21384,
+        "y": 17.82582,
+        "z": 62.093998
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E28",
+        "J-E29"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300348:202].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E28",
+            "region": "construction",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          },
+          {
+            "sourceId": "J-E29",
+            "region": "construction",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E29",
+            "region": "construction",
+            "pixels": 8.81191072402607
+          },
+          {
+            "sourceId": "J-E28",
+            "region": "construction",
+            "pixels": 15.294431822548416
+          },
+          {
+            "sourceId": "J-B15",
+            "region": "construction",
+            "pixels": 29.279744739807366
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-E30",
+          "region": "lumina",
+          "pixels": 409.3001296824866
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300348:203",
+      "kind": "electronic",
+      "region": "construction",
+      "worldPosition": {
+        "x": 146.88004,
+        "y": 17.88129,
+        "z": 46.704277
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E27",
+        "J-E28"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300348:203].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E27",
+            "region": "construction",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          },
+          {
+            "sourceId": "J-E28",
+            "region": "construction",
+            "mappingStatus": "ambiguous",
+            "confidence": "low"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-B15",
+            "region": "construction",
+            "pixels": 8.14784950547473
+          },
+          {
+            "sourceId": "J-E27",
+            "region": "construction",
+            "pixels": 9.294630036771226
+          },
+          {
+            "sourceId": "J-E28",
+            "region": "construction",
+            "pixels": 22.811044557233153
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-E30",
+          "region": "lumina",
+          "pixels": 444.9866243496579
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300349:201",
+      "kind": "electronic",
+      "region": "lumina",
+      "worldPosition": {
+        "x": 167.06584,
+        "y": 64.1389,
+        "z": 293.97855
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E36"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300349:201].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E36",
+            "region": "lumina",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-M16",
+            "region": "lumina",
+            "pixels": 12.896115297251926
+          },
+          {
+            "sourceId": "J-E36",
+            "region": "lumina",
+            "pixels": 15.654995294249462
+          },
+          {
+            "sourceId": "J-M17",
+            "region": "lumina",
+            "pixels": 37.965404535146696
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-E29",
+          "region": "construction",
+          "pixels": 503.49191253201946
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300349:202",
+      "kind": "electronic",
+      "region": "lumina",
+      "worldPosition": {
+        "x": 171.07368,
+        "y": 64.1389,
+        "z": 305.56418
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E36",
+        "J-E37"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300349:202].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E36",
+            "region": "lumina",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          },
+          {
+            "sourceId": "J-E37",
+            "region": "lumina",
+            "mappingStatus": "ambiguous",
+            "confidence": "low"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E36",
+            "region": "lumina",
+            "pixels": 10.786308400770238
+          },
+          {
+            "sourceId": "J-M17",
+            "region": "lumina",
+            "pixels": 20.45188064251811
+          },
+          {
+            "sourceId": "J-E37",
+            "region": "lumina",
+            "pixels": 24.00516113641451
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-E29",
+          "region": "construction",
+          "pixels": 529.1787533881957
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300349:203",
+      "kind": "electronic",
+      "region": "lumina",
+      "worldPosition": {
+        "x": 185.86768,
+        "y": 64.1389,
+        "z": 302.083
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E35"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300349:203].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E35",
+            "region": "lumina",
+            "mappingStatus": "matched",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E35",
+            "region": "lumina",
+            "pixels": 9.921696149276578
+          },
+          {
+            "sourceId": "J-M17",
+            "region": "lumina",
+            "pixels": 12.797110832712944
+          },
+          {
+            "sourceId": "J-T06",
+            "region": "lumina",
+            "pixels": 22.162940613303224
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-E29",
+          "region": "construction",
+          "pixels": 527.6829810759568
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300350:202",
+      "kind": "electronic",
+      "region": "lumina",
+      "worldPosition": {
+        "x": 88.81236,
+        "y": 64.27922,
+        "z": 264.6618
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E31"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300350:202].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E31",
+            "region": "lumina",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E31",
+            "region": "lumina",
+            "pixels": 2.0374495066202756
+          },
+          {
+            "sourceId": "J-T03",
+            "region": "lumina",
+            "pixels": 21.23961430708788
+          },
+          {
+            "sourceId": "J-T02",
+            "region": "lumina",
+            "pixels": 28.999110529291713
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-E29",
+          "region": "construction",
+          "pixels": 445.63420569685746
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300350:203",
+      "kind": "electronic",
+      "region": "lumina",
+      "worldPosition": {
+        "x": 88.536736,
+        "y": 64.29461,
+        "z": 248.99774
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E30"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300350:203].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E30",
+            "region": "lumina",
+            "mappingStatus": "matched",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E30",
+            "region": "lumina",
+            "pixels": 1.6800639832778907
+          },
+          {
+            "sourceId": "J-T02",
+            "region": "lumina",
+            "pixels": 4.34263314029098
+          },
+          {
+            "sourceId": "J-T03",
+            "region": "lumina",
+            "pixels": 34.62551263151981
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-E29",
+          "region": "construction",
+          "pixels": 413.362248720363
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300351:201",
+      "kind": "electronic",
+      "region": "lumina",
+      "worldPosition": {
+        "x": 7.0163264,
+        "y": 64.15741,
+        "z": 348.98444
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E38"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300351:201].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E38",
+            "region": "lumina",
+            "mappingStatus": "matched",
+            "confidence": "low"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-M20",
+            "region": "lumina",
+            "pixels": 7.82952080358638
+          },
+          {
+            "sourceId": "J-E38",
+            "region": "lumina",
+            "pixels": 19.102446992542074
+          },
+          {
+            "sourceId": "J-T16",
+            "region": "lumina",
+            "pixels": 65.3202037507467
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-E29",
+          "region": "construction",
+          "pixels": 669.2499681072127
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300352:201",
+      "kind": "electronic",
+      "region": "lumina",
+      "worldPosition": {
+        "x": 22.35194,
+        "y": 64.18081,
+        "z": 414.17212
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E43"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300352:201].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E43",
+            "region": "lumina",
+            "mappingStatus": "matched",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E43",
+            "region": "lumina",
+            "pixels": 14.341033219796984
+          },
+          {
+            "sourceId": "J-M22",
+            "region": "lumina",
+            "pixels": 41.5302140370954
+          },
+          {
+            "sourceId": "J-M21",
+            "region": "lumina",
+            "pixels": 43.46128293147164
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-E29",
+          "region": "construction",
+          "pixels": 787.8088958248878
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300352:202",
+      "kind": "electronic",
+      "region": "lumina",
+      "worldPosition": {
+        "x": 16.349,
+        "y": 64.06001,
+        "z": 433.457
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E44"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300352:202].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E44",
+            "region": "lumina",
+            "mappingStatus": "matched",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E44",
+            "region": "lumina",
+            "pixels": 9.983245551226887
+          },
+          {
+            "sourceId": "J-E43",
+            "region": "lumina",
+            "pixels": 36.6759018378679
+          },
+          {
+            "sourceId": "J-M22",
+            "region": "lumina",
+            "pixels": 58.286881142899745
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-E29",
+          "region": "construction",
+          "pixels": 830.5676646730138
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300353:201",
+      "kind": "electronic",
+      "region": "lumina",
+      "worldPosition": {
+        "x": 172.58206,
+        "y": 71.28627,
+        "z": 362.19016
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E40"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300353:201].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E40",
+            "region": "lumina",
+            "mappingStatus": "ambiguous",
+            "confidence": "low"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-K03",
+            "region": "lumina",
+            "pixels": 5.755163330788966
+          },
+          {
+            "sourceId": "J-E40",
+            "region": "lumina",
+            "pixels": 19.428588501781707
+          },
+          {
+            "sourceId": "J-T15",
+            "region": "lumina",
+            "pixels": 43.6271189891706
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-E29",
+          "region": "construction",
+          "pixels": 649.0457130733223
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300354:201",
+      "kind": "electronic",
+      "region": "lumina",
+      "worldPosition": {
+        "x": 161.16492,
+        "y": 71.287445,
+        "z": 361.826
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E40"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300354:201].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E40",
+            "region": "lumina",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E40",
+            "region": "lumina",
+            "pixels": 4.794086974039578
+          },
+          {
+            "sourceId": "J-T15",
+            "region": "lumina",
+            "pixels": 22.216766780777224
+          },
+          {
+            "sourceId": "J-K03",
+            "region": "lumina",
+            "pixels": 24.734109311600836
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-E29",
+          "region": "construction",
+          "pixels": 645.4735270945778
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300354:202",
+      "kind": "electronic",
+      "region": "lumina",
+      "worldPosition": {
+        "x": 108.21071,
+        "y": 64.03367,
+        "z": 370.7489
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E41",
+        "J-E42"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300354:202].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E41",
+            "region": "lumina",
+            "mappingStatus": "ambiguous",
+            "confidence": "low"
+          },
+          {
+            "sourceId": "J-E42",
+            "region": "lumina",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E42",
+            "region": "lumina",
+            "pixels": 15.609382915157072
+          },
+          {
+            "sourceId": "J-E41",
+            "region": "lumina",
+            "pixels": 17.636732777723743
+          },
+          {
+            "sourceId": "J-D04",
+            "region": "lumina",
+            "pixels": 17.636732777723743
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-E29",
+          "region": "construction",
+          "pixels": 663.1736901529525
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300354:203",
+      "kind": "electronic",
+      "region": "lumina",
+      "worldPosition": {
+        "x": 136.134,
+        "y": 83.38774,
+        "z": 359.036
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E39"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300354:203].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E39",
+            "region": "lumina",
+            "mappingStatus": "matched",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E39",
+            "region": "lumina",
+            "pixels": 6.743463093812099
+          },
+          {
+            "sourceId": "J-B18",
+            "region": "lumina",
+            "pixels": 20.9954280948398
+          },
+          {
+            "sourceId": "J-T15",
+            "region": "lumina",
+            "pixels": 40.638784903792484
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-E29",
+          "region": "construction",
+          "pixels": 636.5403325375786
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300355:201",
+      "kind": "electronic",
+      "region": "lumina",
+      "worldPosition": {
+        "x": 91.24476,
+        "y": 62.6099,
+        "z": 324.0232
+      },
+      "evidenceMethod": "editorial_registered_image_nearest_three_agree",
+      "sourcePointIds": [
+        "J-T13",
+        "J-T09",
+        "J-E33"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300355:201].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-T13",
+            "region": "lumina",
+            "pixels": 32.359723958046246
+          },
+          {
+            "sourceId": "J-T09",
+            "region": "lumina",
+            "pixels": 38.109903000979116
+          },
+          {
+            "sourceId": "J-E33",
+            "region": "lumina",
+            "pixels": 45.39063400583287
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-E29",
+          "region": "construction",
+          "pixels": 568.5850952174183
+        }
+      },
+      "limitations": [
+        "将原始 X/Z 投影至已配准资料图，最近三个已有标记属于同一区；仅作为搜索阶段归类，不是官方区域边界、实体对应、楼层或通路证据。"
+      ]
+    },
+    {
+      "id": "171300388:201",
+      "kind": "electronic",
+      "region": "lumina",
+      "worldPosition": {
+        "x": 118.73216,
+        "y": 59.64058,
+        "z": 379.2691
+      },
+      "evidenceMethod": "editorial_registered_image_nearest_three_agree",
+      "sourcePointIds": [
+        "J-K05",
+        "J-B18",
+        "J-E41"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300388:201].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-K05",
+            "region": "lumina",
+            "pixels": 14.843163784797712
+          },
+          {
+            "sourceId": "J-B18",
+            "region": "lumina",
+            "pixels": 37.25821605788355
+          },
+          {
+            "sourceId": "J-E41",
+            "region": "lumina",
+            "pixels": 37.62318472883335
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-E29",
+          "region": "construction",
+          "pixels": 679.9988924166241
+        }
+      },
+      "limitations": [
+        "将原始 X/Z 投影至已配准资料图，最近三个已有标记属于同一区；仅作为搜索阶段归类，不是官方区域边界、实体对应、楼层或通路证据。"
+      ]
+    },
+    {
+      "id": "171300389:201",
+      "kind": "electronic",
+      "region": "lumina",
+      "worldPosition": {
+        "x": 110.08044,
+        "y": 83.48461,
+        "z": 346.93283
+      },
+      "evidenceMethod": "editorial_registered_image_nearest_three_agree",
+      "sourcePointIds": [
+        "J-K04",
+        "J-E41",
+        "J-D04"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300389:201].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-K04",
+            "region": "lumina",
+            "pixels": 22.029923582148715
+          },
+          {
+            "sourceId": "J-E41",
+            "region": "lumina",
+            "pixels": 34.686800242173504
+          },
+          {
+            "sourceId": "J-D04",
+            "region": "lumina",
+            "pixels": 34.686800242173504
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-E29",
+          "region": "construction",
+          "pixels": 612.4297741025794
+        }
+      },
+      "limitations": [
+        "将原始 X/Z 投影至已配准资料图，最近三个已有标记属于同一区；仅作为搜索阶段归类，不是官方区域边界、实体对应、楼层或通路证据。"
+      ]
+    },
+    {
+      "id": "171300389:202",
+      "kind": "electronic",
+      "region": "lumina",
+      "worldPosition": {
+        "x": 110.072235,
+        "y": 83.48786,
+        "z": 348.9827
+      },
+      "evidenceMethod": "editorial_registered_image_nearest_three_agree",
+      "sourcePointIds": [
+        "J-K04",
+        "J-E41",
+        "J-D04"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300389:202].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-K04",
+            "region": "lumina",
+            "pixels": 18.666379555795732
+          },
+          {
+            "sourceId": "J-E41",
+            "region": "lumina",
+            "pixels": 30.35239615676462
+          },
+          {
+            "sourceId": "J-D04",
+            "region": "lumina",
+            "pixels": 30.35239615676462
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-E29",
+          "region": "construction",
+          "pixels": 616.7733446779821
+        }
+      },
+      "limitations": [
+        "将原始 X/Z 投影至已配准资料图，最近三个已有标记属于同一区；仅作为搜索阶段归类，不是官方区域边界、实体对应、楼层或通路证据。"
+      ]
+    },
+    {
+      "id": "171300389:203",
+      "kind": "electronic",
+      "region": "lumina",
+      "worldPosition": {
+        "x": 117.543,
+        "y": 83.48834,
+        "z": 350.539
+      },
+      "evidenceMethod": "editorial_registered_image_nearest_three_agree",
+      "sourcePointIds": [
+        "J-K04",
+        "J-E41",
+        "J-D04"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300389:203].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-K04",
+            "region": "lumina",
+            "pixels": 10.470832356769735
+          },
+          {
+            "sourceId": "J-E41",
+            "region": "lumina",
+            "pixels": 29.40584166243948
+          },
+          {
+            "sourceId": "J-D04",
+            "region": "lumina",
+            "pixels": 29.40584166243948
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-E29",
+          "region": "construction",
+          "pixels": 619.1094874977508
+        }
+      },
+      "limitations": [
+        "将原始 X/Z 投影至已配准资料图，最近三个已有标记属于同一区；仅作为搜索阶段归类，不是官方区域边界、实体对应、楼层或通路证据。"
+      ]
+    },
+    {
+      "id": "171300411:201",
+      "kind": "electronic",
+      "region": "lumina",
+      "worldPosition": {
+        "x": 101.75291,
+        "y": 83.38774,
+        "z": 378.33627
+      },
+      "evidenceMethod": "editorial_registered_image_nearest_three_agree",
+      "sourcePointIds": [
+        "J-E42",
+        "J-M19",
+        "J-K05"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300411:201].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E42",
+            "region": "lumina",
+            "pixels": 27.75924181601953
+          },
+          {
+            "sourceId": "J-M19",
+            "region": "lumina",
+            "pixels": 31.258750332088635
+          },
+          {
+            "sourceId": "J-K05",
+            "region": "lumina",
+            "pixels": 32.97427091983004
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-E29",
+          "region": "construction",
+          "pixels": 680.3637854979198
+        }
+      },
+      "limitations": [
+        "将原始 X/Z 投影至已配准资料图，最近三个已有标记属于同一区；仅作为搜索阶段归类，不是官方区域边界、实体对应、楼层或通路证据。"
+      ]
+    },
+    {
+      "id": "171300412:201",
+      "kind": "electronic",
+      "region": "construction",
+      "worldPosition": {
+        "x": 118.583405,
+        "y": 28.750507,
+        "z": -9.927804
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E23"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300412:201].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E23",
+            "region": "construction",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E23",
+            "region": "construction",
+            "pixels": 8.196714351199605
+          },
+          {
+            "sourceId": "J-E25",
+            "region": "construction",
+            "pixels": 25.741615569208832
+          },
+          {
+            "sourceId": "J-D03",
+            "region": "construction",
+            "pixels": 31.491764458176423
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-M11",
+          "region": "street",
+          "pixels": 417.04902550879524
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300415:201",
+      "kind": "electronic",
+      "region": "lumina",
+      "worldPosition": {
+        "x": 88.385,
+        "y": 64.13452,
+        "z": 293.458
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E32"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300415:201].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E32",
+            "region": "lumina",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E32",
+            "region": "lumina",
+            "pixels": 6.537038310826702
+          },
+          {
+            "sourceId": "J-B16",
+            "region": "lumina",
+            "pixels": 19.2318373600083
+          },
+          {
+            "sourceId": "J-E33",
+            "region": "lumina",
+            "pixels": 33.30640858963355
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-E29",
+          "region": "construction",
+          "pixels": 505.6796818204894
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300415:202",
+      "kind": "electronic",
+      "region": "lumina",
+      "worldPosition": {
+        "x": 99.7289,
+        "y": 64.134514,
+        "z": 307.62277
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E33",
+        "J-E34"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300415:202].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E33",
+            "region": "lumina",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          },
+          {
+            "sourceId": "J-E34",
+            "region": "lumina",
+            "mappingStatus": "ambiguous",
+            "confidence": "low"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E33",
+            "region": "lumina",
+            "pixels": 7.166435904565573
+          },
+          {
+            "sourceId": "J-T09",
+            "region": "lumina",
+            "pixels": 15.75150293274129
+          },
+          {
+            "sourceId": "J-E34",
+            "region": "lumina",
+            "pixels": 21.353847669222294
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-E29",
+          "region": "construction",
+          "pixels": 531.6012835988666
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300415:203",
+      "kind": "electronic",
+      "region": "lumina",
+      "worldPosition": {
+        "x": 103.58,
+        "y": 64.134514,
+        "z": 307.673
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E33",
+        "J-E34"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300415:203].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E33",
+            "region": "lumina",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          },
+          {
+            "sourceId": "J-E34",
+            "region": "lumina",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-T09",
+            "region": "lumina",
+            "pixels": 10.956963194948601
+          },
+          {
+            "sourceId": "J-E33",
+            "region": "lumina",
+            "pixels": 11.164694553839565
+          },
+          {
+            "sourceId": "J-E34",
+            "region": "lumina",
+            "pixels": 14.010315686747251
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-E29",
+          "region": "construction",
+          "pixels": 530.7142684623219
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300416:202",
+      "kind": "electronic",
+      "region": "lumina",
+      "worldPosition": {
+        "x": 99.751,
+        "y": 64.134514,
+        "z": 307.674
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E33",
+        "J-E34"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300416:202].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E33",
+            "region": "lumina",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          },
+          {
+            "sourceId": "J-E34",
+            "region": "lumina",
+            "mappingStatus": "ambiguous",
+            "confidence": "low"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E33",
+            "region": "lumina",
+            "pixels": 7.277575743401494
+          },
+          {
+            "sourceId": "J-T09",
+            "region": "lumina",
+            "pixels": 15.643157835846319
+          },
+          {
+            "sourceId": "J-E34",
+            "region": "lumina",
+            "pixels": 21.345477461652415
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-E29",
+          "region": "construction",
+          "pixels": 531.7030553136948
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300416:204",
+      "kind": "electronic",
+      "region": "lumina",
+      "worldPosition": {
+        "x": 103.53,
+        "y": 64.150665,
+        "z": 307.57
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E33",
+        "J-E34"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300416:204].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E33",
+            "region": "lumina",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          },
+          {
+            "sourceId": "J-E34",
+            "region": "lumina",
+            "mappingStatus": "ambiguous",
+            "confidence": "medium"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E33",
+            "region": "lumina",
+            "pixels": 10.93979740609933
+          },
+          {
+            "sourceId": "J-T09",
+            "region": "lumina",
+            "pixels": 11.199807072161393
+          },
+          {
+            "sourceId": "J-E34",
+            "region": "lumina",
+            "pixels": 13.990893467015749
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-E29",
+          "region": "construction",
+          "pixels": 530.5091423739449
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300416:205",
+      "kind": "electronic",
+      "region": "lumina",
+      "worldPosition": {
+        "x": 100.91143,
+        "y": 64.13452,
+        "z": 292.544
+      },
+      "evidenceMethod": "existing_source_choice_id_region_consensus",
+      "sourcePointIds": [
+        "J-E32"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300416:205].worldPosition",
+        "regionFile": "janus-data.json",
+        "sourceMappingFile": "research/source-route-endpoints.json",
+        "sourceRefs": [
+          {
+            "sourceId": "J-E32",
+            "region": "lumina",
+            "mappingStatus": "ambiguous",
+            "confidence": "low"
+          }
+        ],
+        "registrationFile": "research/janus-source-registration.json",
+        "nearestAnnotations": [
+          {
+            "sourceId": "J-E32",
+            "region": "lumina",
+            "pixels": 21.679885054687155
+          },
+          {
+            "sourceId": "J-B16",
+            "region": "lumina",
+            "pixels": 22.893009369241206
+          },
+          {
+            "sourceId": "J-E33",
+            "region": "lumina",
+            "pixels": 25.017204583779915
+          }
+        ],
+        "nearestOtherRegion": {
+          "sourceId": "J-E29",
+          "region": "construction",
+          "pixels": 499.5469396413402
+        }
+      },
+      "limitations": [
+        "既有资料图配准候选的区域一致；不是原作者提供的游戏实体 ID 对照，也不确认该箱本局刷新。"
+      ]
+    },
+    {
+      "id": "171300119:202",
+      "kind": "keyroom",
+      "region": "street",
+      "worldPosition": {
+        "x": -103.63438,
+        "y": 9.794724,
+        "z": -26.78787
+      },
+      "evidenceMethod": "named_keycard_room_region",
+      "sourcePointIds": [],
+      "confidence": "named_room_reference",
+      "evidence": {
+        "file": "research/assault-keyrooms.json",
+        "path": "maps[map=janus].points[id=171300119:202]",
+        "cardItemId": 4340206,
+        "cardName": "六昏街录像店一楼",
+        "cardUsage": "使用后，可解除六昏街-录像店一楼房间的门禁获得大量物资。",
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300119:202].worldPosition"
+      },
+      "limitations": [
+        "区域来自已关联房卡的房间名称；保留原始读卡器高度，区域相同不表示同楼层或已解锁。"
+      ]
+    },
+    {
+      "id": "171300126:202",
+      "kind": "keyroom",
+      "region": "construction",
+      "worldPosition": {
+        "x": 128.46957,
+        "y": 30.202267,
+        "z": 29.874043
+      },
+      "evidenceMethod": "named_keycard_room_region",
+      "sourcePointIds": [],
+      "confidence": "named_room_reference",
+      "evidence": {
+        "file": "research/assault-keyrooms.json",
+        "path": "maps[map=janus].points[id=171300126:202]",
+        "cardItemId": 4340207,
+        "cardName": "白鸽二期工程顶层",
+        "cardUsage": "使用后，可解除工业园-二期工程-顶层房间的门禁获得大量物资。",
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300126:202].worldPosition"
+      },
+      "limitations": [
+        "区域来自已关联房卡的房间名称；保留原始读卡器高度，区域相同不表示同楼层或已解锁。"
+      ]
+    },
+    {
+      "id": "171300130:202",
+      "kind": "keyroom",
+      "region": "lumina",
+      "worldPosition": {
+        "x": 166.36223,
+        "y": 72.770744,
+        "z": 353.30377
+      },
+      "evidenceMethod": "named_keycard_room_region",
+      "sourcePointIds": [],
+      "confidence": "named_room_reference",
+      "evidence": {
+        "file": "research/assault-keyrooms.json",
+        "path": "maps[map=janus].points[id=171300130:202]",
+        "cardItemId": 4340208,
+        "cardName": "光映中心二层会客室",
+        "cardUsage": "使用后，可解除光映中心二层-会客室一的门禁获得大量物资。",
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300130:202].worldPosition"
+      },
+      "limitations": [
+        "区域来自已关联房卡的房间名称；保留原始读卡器高度，区域相同不表示同楼层或已解锁。"
+      ]
+    },
+    {
+      "id": "171300131:202",
+      "kind": "keyroom",
+      "region": "lumina",
+      "worldPosition": {
+        "x": 122.992516,
+        "y": 60.56231,
+        "z": 366.87103
+      },
+      "evidenceMethod": "named_keycard_room_region",
+      "sourcePointIds": [],
+      "confidence": "named_room_reference",
+      "evidence": {
+        "file": "research/assault-keyrooms.json",
+        "path": "maps[map=janus].points[id=171300131:202]",
+        "cardItemId": 4340209,
+        "cardName": "光映中心一层休息室",
+        "cardUsage": "使用后，可解除光映中心一层-休息室的门禁获得大量物资。",
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300131:202].worldPosition"
+      },
+      "limitations": [
+        "区域来自已关联房卡的房间名称；保留原始读卡器高度，区域相同不表示同楼层或已解锁。"
+      ]
+    },
+    {
+      "id": "171300129:202",
+      "kind": "keyroom",
+      "region": "lumina",
+      "worldPosition": {
+        "x": 119.059326,
+        "y": 84.8013,
+        "z": 350.11813
+      },
+      "evidenceMethod": "named_keycard_room_region",
+      "sourcePointIds": [],
+      "confidence": "named_room_reference",
+      "evidence": {
+        "file": "research/assault-keyrooms.json",
+        "path": "maps[map=janus].points[id=171300129:202]",
+        "cardItemId": 4340302,
+        "cardName": "光映中心顶层会议室",
+        "cardUsage": "使用后，可解除光映中心-顶层会议室的门禁获得大量物资。",
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].objects[id=171300129:202].worldPosition"
+      },
+      "limitations": [
+        "区域来自已关联房卡的房间名称；保留原始读卡器高度，区域相同不表示同楼层或已解锁。"
+      ]
+    },
+    {
+      "id": "janus-entry-01",
+      "kind": "spawn",
+      "region": "street",
+      "worldPosition": {
+        "x": -21.475843,
+        "y": 5.4623775,
+        "z": -199.83029
+      },
+      "evidenceMethod": "existing_registered_spawn_exit_region",
+      "sourcePointIds": [
+        "janus-entry-01"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "file": "research/janus-source-locations.json",
+        "path": "points[id=janus-entry-01]",
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].configuredHighRiskEntryCandidates[id=janus-entry-01].worldPosition"
+      },
+      "limitations": [
+        "沿用已配准的出生/撤离位置区域；本局出生与已开放撤离点仍由用户选择。"
+      ]
+    },
+    {
+      "id": "janus-entry-02",
+      "kind": "spawn",
+      "region": "street",
+      "worldPosition": {
+        "x": -112.46582,
+        "y": 8.335,
+        "z": -67.767586
+      },
+      "evidenceMethod": "existing_registered_spawn_exit_region",
+      "sourcePointIds": [
+        "janus-entry-02"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "file": "research/janus-source-locations.json",
+        "path": "points[id=janus-entry-02]",
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].configuredHighRiskEntryCandidates[id=janus-entry-02].worldPosition"
+      },
+      "limitations": [
+        "沿用已配准的出生/撤离位置区域；本局出生与已开放撤离点仍由用户选择。"
+      ]
+    },
+    {
+      "id": "janus-entry-03",
+      "kind": "spawn",
+      "region": "street",
+      "worldPosition": {
+        "x": -187.3646,
+        "y": 8.371792,
+        "z": -18.812172
+      },
+      "evidenceMethod": "existing_registered_spawn_exit_region",
+      "sourcePointIds": [
+        "janus-entry-03"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "file": "research/janus-source-locations.json",
+        "path": "points[id=janus-entry-03]",
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].configuredHighRiskEntryCandidates[id=janus-entry-03].worldPosition"
+      },
+      "limitations": [
+        "沿用已配准的出生/撤离位置区域；本局出生与已开放撤离点仍由用户选择。"
+      ]
+    },
+    {
+      "id": "janus-entry-04",
+      "kind": "spawn",
+      "region": "construction",
+      "worldPosition": {
+        "x": 87.14622,
+        "y": 8.662291,
+        "z": -32.833275
+      },
+      "evidenceMethod": "existing_registered_spawn_exit_region",
+      "sourcePointIds": [
+        "janus-entry-04"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "file": "research/janus-source-locations.json",
+        "path": "points[id=janus-entry-04]",
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].configuredHighRiskEntryCandidates[id=janus-entry-04].worldPosition"
+      },
+      "limitations": [
+        "沿用已配准的出生/撤离位置区域；本局出生与已开放撤离点仍由用户选择。"
+      ]
+    },
+    {
+      "id": "janus-entry-05",
+      "kind": "spawn",
+      "region": "construction",
+      "worldPosition": {
+        "x": 122.67518,
+        "y": 20.593235,
+        "z": 132.16776
+      },
+      "evidenceMethod": "existing_registered_spawn_exit_region",
+      "sourcePointIds": [
+        "janus-entry-05"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "file": "research/janus-source-locations.json",
+        "path": "points[id=janus-entry-05]",
+        "worldPositionFile": "gameplay-points-compact.json",
+        "worldPositionPath": "maps[map=janus].configuredHighRiskEntryCandidates[id=janus-entry-05].worldPosition"
+      },
+      "limitations": [
+        "沿用已配准的出生/撤离位置区域；本局出生与已开放撤离点仍由用户选择。"
+      ]
+    },
+    {
+      "id": "janus-exit-01",
+      "kind": "exit",
+      "region": "street",
+      "worldPosition": {
+        "x": -128.29562,
+        "y": 8.2986765,
+        "z": 24.974064
+      },
+      "evidenceMethod": "existing_registered_spawn_exit_region",
+      "sourcePointIds": [
+        "janus-exit-01"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "file": "research/janus-source-locations.json",
+        "path": "points[id=janus-exit-01]",
+        "worldPositionFile": "research/spawn-exit-locations.json",
+        "worldPositionPath": "maps[map=janus].candidates[id=janus-exit-01].worldPosition"
+      },
+      "limitations": [
+        "沿用已配准的出生/撤离位置区域；本局出生与已开放撤离点仍由用户选择。"
+      ]
+    },
+    {
+      "id": "janus-exit-02",
+      "kind": "exit",
+      "region": "street",
+      "worldPosition": {
+        "x": -259.69983,
+        "y": -13.831325,
+        "z": -75.14769
+      },
+      "evidenceMethod": "existing_registered_spawn_exit_region",
+      "sourcePointIds": [
+        "janus-exit-02"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "file": "research/janus-source-locations.json",
+        "path": "points[id=janus-exit-02]",
+        "worldPositionFile": "research/spawn-exit-locations.json",
+        "worldPositionPath": "maps[map=janus].candidates[id=janus-exit-02].worldPosition"
+      },
+      "limitations": [
+        "沿用已配准的出生/撤离位置区域；本局出生与已开放撤离点仍由用户选择。"
+      ]
+    },
+    {
+      "id": "janus-exit-03",
+      "kind": "exit",
+      "region": "street",
+      "worldPosition": {
+        "x": -210.34865,
+        "y": 1.0553036,
+        "z": -9.234948
+      },
+      "evidenceMethod": "existing_registered_spawn_exit_region",
+      "sourcePointIds": [
+        "janus-exit-03"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "file": "research/janus-source-locations.json",
+        "path": "points[id=janus-exit-03]",
+        "worldPositionFile": "research/spawn-exit-locations.json",
+        "worldPositionPath": "maps[map=janus].candidates[id=janus-exit-03].worldPosition"
+      },
+      "limitations": [
+        "沿用已配准的出生/撤离位置区域；本局出生与已开放撤离点仍由用户选择。"
+      ]
+    },
+    {
+      "id": "janus-exit-04",
+      "kind": "exit",
+      "region": "construction",
+      "worldPosition": {
+        "x": 20.107643,
+        "y": 3.3458023,
+        "z": 17.894585
+      },
+      "evidenceMethod": "existing_registered_spawn_exit_region",
+      "sourcePointIds": [
+        "janus-exit-04"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "file": "research/janus-source-locations.json",
+        "path": "points[id=janus-exit-04]",
+        "worldPositionFile": "research/spawn-exit-locations.json",
+        "worldPositionPath": "maps[map=janus].candidates[id=janus-exit-04].worldPosition"
+      },
+      "limitations": [
+        "沿用已配准的出生/撤离位置区域；本局出生与已开放撤离点仍由用户选择。"
+      ]
+    },
+    {
+      "id": "janus-exit-05",
+      "kind": "exit",
+      "region": "construction",
+      "worldPosition": {
+        "x": 122.424484,
+        "y": 17.878223,
+        "z": 116.55489
+      },
+      "evidenceMethod": "existing_registered_spawn_exit_region",
+      "sourcePointIds": [
+        "janus-exit-05"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "file": "research/janus-source-locations.json",
+        "path": "points[id=janus-exit-05]",
+        "worldPositionFile": "research/spawn-exit-locations.json",
+        "worldPositionPath": "maps[map=janus].candidates[id=janus-exit-05].worldPosition"
+      },
+      "limitations": [
+        "沿用已配准的出生/撤离位置区域；本局出生与已开放撤离点仍由用户选择。"
+      ]
+    },
+    {
+      "id": "janus-exit-06",
+      "kind": "exit",
+      "region": "construction",
+      "worldPosition": {
+        "x": 175.59,
+        "y": 17.707867,
+        "z": 101.15
+      },
+      "evidenceMethod": "existing_registered_spawn_exit_region",
+      "sourcePointIds": [
+        "janus-exit-06"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "file": "research/janus-source-locations.json",
+        "path": "points[id=janus-exit-06]",
+        "worldPositionFile": "research/spawn-exit-locations.json",
+        "worldPositionPath": "maps[map=janus].candidates[id=janus-exit-06].worldPosition"
+      },
+      "limitations": [
+        "沿用已配准的出生/撤离位置区域；本局出生与已开放撤离点仍由用户选择。"
+      ]
+    },
+    {
+      "id": "janus-exit-07",
+      "kind": "exit",
+      "region": "lumina",
+      "worldPosition": {
+        "x": 70.06825,
+        "y": 64.060005,
+        "z": 437.24524
+      },
+      "evidenceMethod": "existing_registered_spawn_exit_region",
+      "sourcePointIds": [
+        "janus-exit-07"
+      ],
+      "confidence": "editorial_area_reference",
+      "evidence": {
+        "file": "research/janus-source-locations.json",
+        "path": "points[id=janus-exit-07]",
+        "worldPositionFile": "research/spawn-exit-locations.json",
+        "worldPositionPath": "maps[map=janus].candidates[id=janus-exit-07].worldPosition"
+      },
+      "limitations": [
+        "沿用已配准的出生/撤离位置区域；本局出生与已开放撤离点仍由用户选择。"
+      ]
+    }
+  ]
+}

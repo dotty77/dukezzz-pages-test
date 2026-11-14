@@ -1,0 +1,27 @@
+.site-header-actions .language-switch{display:inline-flex;align-items:center;gap:5px;flex-shrink:0;min-height:34px;padding:0 6px 0 10px;border:1px solid var(--line);border-radius:9px;background:var(--surface-muted);color:var(--muted)}
+.language-switch>span{font-size:18px;line-height:1;pointer-events:none}
+.language-switch select{font-size:11px;min-height:32px;width:auto;max-width:104px;padding:4px 3px;background:transparent;border:0;color:var(--text);cursor:pointer}
+.language-switch:focus-within{outline:2px solid var(--accent,#7c88ff);outline-offset:3px}
+/* The surrounding control owns the visible focus ring. */
+.language-switch select:focus{outline:0;box-shadow:none}
+.language-status{position:fixed;z-index:1200;right:18px;bottom:18px;max-width:min(440px,calc(100vw - 36px));padding:12px 17px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--text);box-shadow:0 8px 35px #0002;font:13px/1.6 system-ui,sans-serif}
+.language-status[hidden]{display:none}.language-status.is-error{border-color:#d99b49}
+html[lang=en] body{font-family:Inter,"Segoe UI",Arial,sans-serif}
+html[lang=en] .site-brand small{letter-spacing:0;font-size:8px}
+html[lang=en] .site-header{gap:18px}
+html[lang=en] .site-navigation{gap:4px;margin-left:0}
+html[lang=en] .site-navigation a{padding-left:10px;padding-right:10px;font-size:13px}
+html[lang=en] :is(h1,h2,h3,h4,p,label,button,.agent-page-switch a){overflow-wrap:break-word}
+html[lang=en] .disc-hero h1{font-size:clamp(27px,3vw,42px);line-height:1.2}
+html[lang=en] .disc-control-grid,html[lang=en] .disc-slot-fields{align-items:end}
+html[lang=en] .disc-field{line-height:1.5}
+html[lang=en] .disc-sub-row{grid-template-columns:minmax(0,1fr) 92px 66px}
+html[lang=en] .disc-table th{white-space:normal;min-width:85px}
+html[lang=en] .map-page .side-tabs button{font-size:12px;padding-left:7px;padding-right:7px}
+html[lang=en] .map-page .type-row{font-size:11px}
+html[lang=en] .map-page .toolbar-note{font-size:10px}
+@media(max-width:1100px){.site-header-actions .language-switch{gap:2px;padding-left:6px}.language-switch select{font-size:10px;max-width:92px}html[lang=en] .site-navigation a{padding-left:8px;padding-right:8px;font-size:12px}}
+@media(max-width:700px){.language-switch>span{display:none}.site-header-actions .language-switch{padding:0 4px;min-height:30px}.language-switch select{min-height:28px;font-size:10px;max-width:81px}html[lang=en] .site-header{gap:8px}html[lang=en] .site-navigation a{font-size:11px;padding-left:8px;padding-right:8px}html[lang=en] .site-brand small{max-width:125px;font-size:7px}html[lang=en] .disc-sub-row{grid-template-columns:minmax(0,1fr) 70px 51px}html[lang=en] .disc-sub-value{font-size:10px}}
+.i18n-english-only{display:none}html[lang=en] .i18n-english-only{display:block}
+@media(max-width:570px){html[lang=en] .site-header .preview-badge:before{content:"Preview"}}
+@media(max-width:700px){html[lang=en] .agent-page-switch{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;max-width:100%;gap:3px;box-sizing:border-box}html[lang=en] .agent-page-switch a{display:flex;align-items:center;justify-content:center;text-align:center;padding:9px 7px;font-size:11px;line-height:1.45;min-width:0}}

@@ -1,0 +1,1567 @@
+{
+  "metadata": {
+    "checkedVersion": "3.2.0",
+    "updatedAt": "2026-09-12",
+    "scope": "仅整理地图内搜寻与掉落来源，不包含撤离后随机奖励。",
+    "notice": "非官方掉落表。实机、玩家取得报告、用户补充和攻略说法分开标注；单图记录不代表独占。",
+    "videoLimitation": "公开视频存在剪辑；实机观察仅表示片段中可核对物品与地图，不表示未剪辑的完整原始记录。",
+    "valueRule": "尚无充分证据支持按300000价值划分地图，未据价格、物品编号或同类物品推断来源。",
+    "newItems": 22,
+    "newItemsWithMapInformation": 17,
+    "newItemsPending": 5,
+    "existingItemsSupplemented": 3,
+    "evidenceKinds": {
+      "observed_named": "实机出现完整物品名，并有具名地图画面。",
+      "observed_icon": "实机物品图标与客户端素材核对，有具名地图画面，但未显示物品全名。",
+      "player_report": "地图依赖玩家自述或作者说明，辅以持有图、收藏图标或实机物品。",
+      "user_report": "本站用户补充，尚无公开实机材料核对。",
+      "unverified": "文字简称、讲解或无法确定地图的片段，仅保留为线索，不纳入主地图结论。",
+      "community_guide": "攻略作者汇总的地图说法，未逐件展示取得过程；与具体取得记录分开展示。"
+    },
+    "newItemsWithCommunityGuide": 22,
+    "newItemsGuideOnly": 5,
+    "newItemsWithAnyMapInformation": 22,
+    "coverageMeaning": "地图信息与待补计数按具体实机、玩家取得报告或用户补充统计；攻略说法另列，不能算作已实机核实。",
+    "communityGuideSources": [
+      {
+        "sourceId": "bili-BV1HeYu62EnK",
+        "author": "P-51-513",
+        "version": "3.2.0",
+        "publishedAt": "2026-09-10T11:16:14Z",
+        "updatedAt": "2026-09-12",
+        "kind": "community_guide",
+        "title": "【绝】贝果计划II（S2）贵重物品/武备/棱镜/保本信标/ 新增图鉴收集攻略",
+        "note": "攻略与置顶讨论3.2新增贵重物品的局内来源；概率分组为作者经验，结算奖励不计入地图获取。",
+        "limitation": "未逐件核验两图拾取，未以统计验证概率差异；三种30万变身器的排他性说法尚未独立证实。",
+        "links": [
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/",
+            "title": "P-51-513 · 贝果计划II图鉴攻略"
+          },
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?comment_on=1&comment_root_id=313553842529",
+            "title": "作者置顶 · 来源与地图差异说明"
+          }
+        ]
+      }
+    ]
+  },
+  "items": {
+    "4360047": {
+      "itemId": 4360047,
+      "name": "星徽骑士变身器·雷欧",
+      "checkedVersion": "3.2.0",
+      "updatedAt": "2026-09-12",
+      "exclusive": false,
+      "mapEvidence": [
+        {
+          "id": "mys-78082375-4360047-suburbs",
+          "map": "suburbs",
+          "kind": "player_report",
+          "label": "玩家自述 · 地图与物品图佐证",
+          "note": "作者称城郊开局取得雷欧；帖子有具名高危城郊结算和对应物品图标。没有拾取瞬间，结算随机奖励不作掉落证据。",
+          "difficulty": "high-risk",
+          "links": [
+            {
+              "url": "https://www.miyoushe.com/zzz/article/78082375",
+              "title": "长梦终常世 · 城郊开局取得自述"
+            }
+          ],
+          "author": "长梦终常世",
+          "publishedAt": "2026-09-10T23:03:13+08:00"
+        },
+        {
+          "id": "bili-BV1HeYu62EnK-r313603635601-4360047-suburbs",
+          "map": "suburbs",
+          "kind": "player_report",
+          "label": "作者本人取得自述",
+          "note": "作者9月11日在回复中称前一天自己于城郊取得雷欧；未附这次拾取画面。同条雅努斯说法为转述他人反馈。",
+          "difficulty": "unknown",
+          "links": [
+            {
+              "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?comment_on=1&comment_root_id=313602271745&comment_secondary_id=313603635601",
+              "title": "P-51-513 · 雷欧城郊取得回复"
+            }
+          ],
+          "author": "P-51-513",
+          "publishedAt": "2026-09-11T14:27:27+08:00"
+        }
+      ],
+      "leads": [
+        {
+          "map": "both",
+          "kind": "unverified",
+          "label": "作者讲解 · 待核实",
+          "note": "作者称两张地图都能获得；片段只有收藏展示和说明字幕，没有展示对应地图内的获取过程。",
+          "difficulty": "unknown",
+          "links": [
+            {
+              "url": "https://www.bilibili.com/video/BV184Y46LEQc/?t=6",
+              "title": "作者讲解 · 收藏展示"
+            }
+          ]
+        }
+      ],
+      "guideReference": {
+        "sourceId": "bili-BV1HeYu62EnK",
+        "author": "P-51-513",
+        "version": "3.2.0",
+        "publishedAt": "2026-09-10T11:16:14Z",
+        "updatedAt": "2026-09-12",
+        "kind": "community_guide",
+        "maps": [
+          "janus",
+          "suburbs"
+        ],
+        "note": "作者攻略称两张地图高危调查均可搜得；这是社区经验汇总，尚未逐件核验双图取得。",
+        "limitation": "没有逐件双图拾取画面或概率样本，不以单图记录推定地图独占。",
+        "links": [
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?t=32",
+            "title": "攻略对应片段 · 32秒"
+          },
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?comment_on=1&comment_root_id=313553842529",
+            "title": "作者置顶 · 社区经验说明"
+          }
+        ]
+      }
+    },
+    "4360048": {
+      "itemId": 4360048,
+      "name": "午后茶歇·小咪发箍",
+      "checkedVersion": "3.2.0",
+      "updatedAt": "2026-09-12",
+      "exclusive": false,
+      "mapEvidence": [],
+      "leads": [
+        {
+          "map": "janus",
+          "kind": "unverified",
+          "label": "玩家文字线索 · 待核实",
+          "note": "日本玩家称在雅努斯获得价值50万的“千夏发箍”；使用简称且没有图片，尚不能确认为完整物品与地图证据。",
+          "difficulty": "unknown",
+          "links": [
+            {
+              "url": "https://z.wikiwiki.jp/zenless/topic/124/3178",
+              "title": "日本 Zawazawa · 玩家回复 3178"
+            }
+          ]
+        },
+        {
+          "id": "mys-78092040-4360048-map-unknown",
+          "map": "unknown",
+          "kind": "unverified",
+          "label": "具名物品线索 · 地图未明",
+          "note": "作者称本局取得小咪发箍，战后背包有具名物品卡；未说明地图，不能用同包物品推断产地。",
+          "difficulty": "unknown",
+          "links": [
+            {
+              "url": "https://www.miyoushe.com/zzz/article/78092040",
+              "title": "ChiKa噜 · 小咪发箍具名图片"
+            }
+          ],
+          "author": "ChiKa噜",
+          "publishedAt": "2026-09-11T17:27:18+08:00"
+        },
+        {
+          "id": "mys-78082042-4360048-map-unknown",
+          "map": "unknown",
+          "kind": "unverified",
+          "label": "具名物品线索 · 地图未明",
+          "note": "战后整理背包的安全箱内显示小咪发箍全名；只确认持有，尚不能判断是哪张地图取得。",
+          "difficulty": "unknown",
+          "links": [
+            {
+              "url": "https://www.miyoushe.com/zzz/article/78082042",
+              "title": "0v0星星0v0 · 小咪发箍具名图片"
+            }
+          ],
+          "author": "0v0星星0v0",
+          "publishedAt": "2026-09-10T22:45:39+08:00"
+        },
+        {
+          "id": "mys-78052659-4360048-map-unknown",
+          "map": "unknown",
+          "kind": "unverified",
+          "label": "玩家文字与图标线索 · 地图未明",
+          "note": "作者称取得的猫耳发箍被大狗打掉，附对应图标裁剪；缺少地图和容器画面，仅保留未定位的玩家自述。",
+          "difficulty": "unknown",
+          "links": [
+            {
+              "url": "https://www.miyoushe.com/zzz/article/78052659",
+              "title": "可达Wa · 发箍局内相关自述"
+            }
+          ],
+          "author": "可达Wa",
+          "publishedAt": "2026-09-09T00:02:13+08:00"
+        }
+      ],
+      "guideReference": {
+        "sourceId": "bili-BV1HeYu62EnK",
+        "author": "P-51-513",
+        "version": "3.2.0",
+        "publishedAt": "2026-09-10T11:16:14Z",
+        "updatedAt": "2026-09-12",
+        "kind": "community_guide",
+        "maps": [
+          "janus",
+          "suburbs"
+        ],
+        "note": "作者攻略称两张地图高危调查均可搜得；这是社区经验汇总，尚未逐件核验双图取得。",
+        "limitation": "没有逐件双图拾取画面或概率样本，不以单图记录推定地图独占。",
+        "links": [
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?t=38",
+            "title": "攻略对应片段 · 38秒"
+          },
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?comment_on=1&comment_root_id=313553842529",
+            "title": "作者置顶 · 社区经验说明"
+          }
+        ],
+        "reportedMoreOftenMap": "janus",
+        "reportedMoreOftenNote": "作者个人感觉在雅努斯较常见；没有样本统计，也不表示另一图不能获得。"
+      }
+    },
+    "4360049": {
+      "itemId": 4360049,
+      "name": "绯红摇滚·天琴座之星",
+      "checkedVersion": "3.2.0",
+      "updatedAt": "2026-09-12",
+      "exclusive": false,
+      "mapEvidence": [],
+      "leads": [],
+      "guideReference": {
+        "sourceId": "bili-BV1HeYu62EnK",
+        "author": "P-51-513",
+        "version": "3.2.0",
+        "publishedAt": "2026-09-10T11:16:14Z",
+        "updatedAt": "2026-09-12",
+        "kind": "community_guide",
+        "maps": [
+          "janus",
+          "suburbs"
+        ],
+        "note": "作者攻略称两张地图高危调查均可搜得；这是社区经验汇总，尚未逐件核验双图取得。",
+        "limitation": "没有逐件双图拾取画面或概率样本，不以单图记录推定地图独占。",
+        "links": [
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?t=38",
+            "title": "攻略对应片段 · 38秒"
+          },
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?comment_on=1&comment_root_id=313553842529",
+            "title": "作者置顶 · 社区经验说明"
+          }
+        ],
+        "reportedMoreOftenMap": "janus",
+        "reportedMoreOftenNote": "作者个人感觉在雅努斯较常见；没有样本统计，也不表示另一图不能获得。"
+      }
+    },
+    "4360050": {
+      "itemId": 4360050,
+      "name": "月夜密语·柔声面纱",
+      "checkedVersion": "3.2.0",
+      "updatedAt": "2026-09-12",
+      "exclusive": false,
+      "mapEvidence": [],
+      "leads": [
+        {
+          "map": "unknown",
+          "kind": "unverified",
+          "label": "拾取片段 · 地图待核实",
+          "note": "片段可核对搜出图标，完整名称来自作者插入的物品卡；画面未明确地图名称。",
+          "difficulty": "unknown",
+          "links": [
+            {
+              "url": "https://www.bilibili.com/video/BV125Yx6eE4T/?t=12",
+              "title": "实机片段 · 地图未明确"
+            }
+          ]
+        }
+      ],
+      "guideReference": {
+        "sourceId": "bili-BV1HeYu62EnK",
+        "author": "P-51-513",
+        "version": "3.2.0",
+        "publishedAt": "2026-09-10T11:16:14Z",
+        "updatedAt": "2026-09-12",
+        "kind": "community_guide",
+        "maps": [
+          "janus",
+          "suburbs"
+        ],
+        "note": "作者攻略称两张地图高危调查均可搜得；这是社区经验汇总，尚未逐件核验双图取得。",
+        "limitation": "没有逐件双图拾取画面或概率样本，不以单图记录推定地图独占。",
+        "links": [
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?t=38",
+            "title": "攻略对应片段 · 38秒"
+          },
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?comment_on=1&comment_root_id=313553842529",
+            "title": "作者置顶 · 社区经验说明"
+          }
+        ],
+        "reportedMoreOftenMap": "suburbs",
+        "reportedMoreOftenNote": "作者个人感觉在城郊较常见；没有样本统计，也不表示另一图不能获得。"
+      }
+    },
+    "4360051": {
+      "itemId": 4360051,
+      "name": "绒耳寒枝·叮铃踝环",
+      "checkedVersion": "3.2.0",
+      "updatedAt": "2026-09-12",
+      "exclusive": false,
+      "mapEvidence": [],
+      "leads": [
+        {
+          "id": "mys-78069965-4360051-map-unknown",
+          "map": "unknown",
+          "kind": "unverified",
+          "label": "具名物品线索 · 地图未明",
+          "note": "作者称取得新物品，收藏图可核对叮铃踝环全名；只有收藏解锁，地图与具体取得方式尚不明确。",
+          "difficulty": "unknown",
+          "links": [
+            {
+              "url": "https://www.miyoushe.com/zzz/article/78069965",
+              "title": "祁染1551 · 叮铃踝环具名收藏图"
+            }
+          ],
+          "author": "祁染1551",
+          "publishedAt": "2026-09-10T01:10:29+08:00"
+        }
+      ],
+      "guideReference": {
+        "sourceId": "bili-BV1HeYu62EnK",
+        "author": "P-51-513",
+        "version": "3.2.0",
+        "publishedAt": "2026-09-10T11:16:14Z",
+        "updatedAt": "2026-09-12",
+        "kind": "community_guide",
+        "maps": [
+          "janus",
+          "suburbs"
+        ],
+        "note": "作者攻略称两张地图高危调查均可搜得；这是社区经验汇总，尚未逐件核验双图取得。",
+        "limitation": "没有逐件双图拾取画面或概率样本，不以单图记录推定地图独占。",
+        "links": [
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?t=38",
+            "title": "攻略对应片段 · 38秒"
+          },
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?comment_on=1&comment_root_id=313553842529",
+            "title": "作者置顶 · 社区经验说明"
+          }
+        ],
+        "reportedMoreOftenMap": "suburbs",
+        "reportedMoreOftenNote": "作者个人感觉在城郊较常见；没有样本统计，也不表示另一图不能获得。"
+      }
+    },
+    "4360052": {
+      "itemId": 4360052,
+      "name": "纪念邮票·丹",
+      "checkedVersion": "3.2.0",
+      "updatedAt": "2026-09-19",
+      "exclusive": false,
+      "mapEvidence": [
+        {
+          "map": "janus",
+          "kind": "observed_named",
+          "label": "实机观察 · 物品与地图具名",
+          "note": "6秒显示纪念邮票·丹全名，物品仍在机械保险箱搜索结果中；74秒结算显示高危雅努斯幻境。结算仅核对地图，物品来自此前局内搜索。视频有剪辑，不据此断言地图或容器独占。",
+          "difficulty": "high-risk",
+          "links": [
+            {
+              "url": "https://www.bilibili.com/video/BV17eYN6cE9b/?t=6",
+              "title": "实机视频 · 6秒物品 / 74秒地图"
+            }
+          ]
+        },
+        {
+          "id": "hyl-46635357-4360052-janus",
+          "map": "janus",
+          "kind": "player_report",
+          "label": "作者地图标注 · 已解锁收藏图",
+          "note": "作者将已着色收藏图标标为雅努斯取得；这是个人地图记录，没有局内搜出画面，不表示另一图不能获得。",
+          "difficulty": "unknown",
+          "links": [
+            {
+              "url": "https://www.hoyolab.com/article/46635357",
+              "title": "pae3toon · 3.2贵重品地图标注"
+            }
+          ],
+          "author": "pae3toon",
+          "publishedAt": "2026-09-10T07:23:04Z",
+          "modifiedAt": "2026-09-11T14:07:05Z"
+        }
+      ],
+      "leads": [
+        {
+          "map": "suburbs",
+          "kind": "unverified",
+          "label": "旧汇总线索 · 已移出地图结论",
+          "note": "此前整理曾将双图可得的泛化说法计入这件邮票；未有该物品在此图的逐件实机依据，本次移出地图结论，保留线索待核。",
+          "difficulty": "unknown",
+          "links": [],
+          "excludeFromMapSummary": true
+        },
+        {
+          "id": "mys-78123895-4360052-map-claim",
+          "map": "unknown",
+          "kind": "unverified",
+          "label": "地图分开说法 · 玩家攻略待核",
+          "note": "作者攻略称两件邮票分别属于两张地图，但没有逐件演示，也未在该句明确对应哪件邮票。与原双图攻略说法有冲突，暂不作为地图独占结论。",
+          "difficulty": "unknown",
+          "author": "鱼干不干a",
+          "publishedAt": "2026-09-12T23:25:08+08:00",
+          "links": [
+            {
+              "url": "https://www.miyoushe.com/zzz/article/78123895",
+              "title": "贝果计划2攻略"
+            }
+          ]
+        },
+        {
+          "id": "mys-78138657-4360052-boss-lead",
+          "map": "unknown",
+          "kind": "unverified",
+          "label": "最终首领奖励线索 · 物品对应待核",
+          "note": "作者称两张邮票中，一张在雅努斯箱子取得，另一张由名可名战后容器取得；正文未明确哪件对应哪种来源，本次未核到完整搜出过程。暂不将这条线索分配为任一邮票的另一地图来源，也不据此宣称普通箱子双图可得。",
+          "difficulty": "unknown",
+          "author": "给小光做桂花糕",
+          "publishedAt": "2026-09-13T13:17:02+08:00",
+          "links": [
+            {
+              "url": "https://www.miyoushe.com/zzz/article/78138657",
+              "title": "两张邮票一起来"
+            }
+          ]
+        }
+      ],
+      "guideReference": {
+        "sourceId": "bili-BV1HeYu62EnK",
+        "author": "P-51-513",
+        "version": "3.2.0",
+        "publishedAt": "2026-09-10T11:16:14Z",
+        "updatedAt": "2026-09-19",
+        "kind": "community_guide",
+        "maps": [
+          "janus",
+          "suburbs"
+        ],
+        "note": "原攻略及置顶称两件邮票双图均可取得、只存在出现频率差异；另有玩家攻略称两件邮票分别在不同地图搜索取得。两种说法有冲突，本条保留为争议资料，不纳入上方地图结论。",
+        "limitation": "未有逐件双图搜索实机、完整地图奖励链或概率样本。普通箱子、最终首领奖励和撤离后的额外奖励不能混为同一来源，现有材料不足以认定另一地图完全不能产出。",
+        "links": [
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?t=43",
+            "title": "攻略对应片段 · 43秒"
+          },
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?comment_on=1&comment_root_id=313553842529",
+            "title": "作者置顶 · 社区经验说明"
+          }
+        ],
+        "reportedMoreOftenMap": null,
+        "excludeFromMapSummary": true
+      },
+      "summaryNote": "已核对雅努斯幻境的局内搜出片段；城郊幻境是否能通过地图内搜索取得仍待核实。普通箱子、最终首领奖励与撤离后奖励分别核对，暂不认定地图独占。"
+    },
+    "4360053": {
+      "itemId": 4360053,
+      "name": "纪念邮票·维克",
+      "checkedVersion": "3.2.0",
+      "updatedAt": "2026-09-19",
+      "exclusive": false,
+      "mapEvidence": [
+        {
+          "map": "suburbs",
+          "kind": "observed_named",
+          "label": "实机观察 · 物品与地图具名",
+          "note": "10秒显示纪念邮票·维克全名，物品仍在电子保险箱搜索结果中；136秒结算显示高危城郊幻境。结算仅核对地图，物品来自此前局内搜索。视频有剪辑，不据此断言地图或容器独占。",
+          "difficulty": "high-risk",
+          "links": [
+            {
+              "url": "https://www.bilibili.com/video/BV1iFYT6wEtp/?t=10",
+              "title": "实机视频 · 10秒物品 / 136秒地图"
+            }
+          ]
+        },
+        {
+          "id": "mys-78170852-4360053-suburbs",
+          "map": "suburbs",
+          "kind": "player_report",
+          "label": "玩家取得自述 · 具名地点",
+          "note": "作者自述维克邮票来自图一加油站保险箱；按其具名地点对应城郊幻境。未见该次局内搜出过程，仅记玩家取得报告，不推断箱子或地图独占。",
+          "difficulty": "unknown",
+          "author": "幻梦澪",
+          "publishedAt": "2026-09-14T22:52:44+08:00",
+          "links": [
+            {
+              "url": "https://www.miyoushe.com/zzz/article/78170852",
+              "title": "有没有出过代理人限定红的互相分享一下位置"
+            }
+          ]
+        },
+        {
+          "id": "mys-78128516-4360053-suburbs",
+          "map": "suburbs",
+          "kind": "player_report",
+          "label": "玩家取得自述 · 具名地点",
+          "note": "作者自述在巴哈姆特二楼门禁房的大保险中取得维克邮票，该具名地点对应城郊幻境。属于取得自述，不能以开箱数量计算掉率，也不据此限定为门禁房产出。",
+          "difficulty": "unknown",
+          "author": "一品放心肉",
+          "publishedAt": "2026-09-13T01:49:18+08:00",
+          "links": [
+            {
+              "url": "https://www.miyoushe.com/zzz/article/78128516",
+              "title": "搜打撤房卡真的能出代理人特殊红吗？"
+            }
+          ]
+        }
+      ],
+      "leads": [
+        {
+          "map": "janus",
+          "kind": "unverified",
+          "label": "旧汇总线索 · 已移出地图结论",
+          "note": "此前整理曾将双图可得的泛化说法计入这件邮票；未有该物品在此图的逐件实机依据，本次移出地图结论，保留线索待核。",
+          "difficulty": "unknown",
+          "links": [],
+          "excludeFromMapSummary": true
+        },
+        {
+          "id": "mys-78123895-4360053-map-claim",
+          "map": "unknown",
+          "kind": "unverified",
+          "label": "地图分开说法 · 玩家攻略待核",
+          "note": "作者攻略称两件邮票分别属于两张地图，但没有逐件演示，也未在该句明确对应哪件邮票。与原双图攻略说法有冲突，暂不作为地图独占结论。",
+          "difficulty": "unknown",
+          "author": "鱼干不干a",
+          "publishedAt": "2026-09-12T23:25:08+08:00",
+          "links": [
+            {
+              "url": "https://www.miyoushe.com/zzz/article/78123895",
+              "title": "贝果计划2攻略"
+            }
+          ]
+        },
+        {
+          "id": "mys-78138657-4360053-boss-lead",
+          "map": "unknown",
+          "kind": "unverified",
+          "label": "最终首领奖励线索 · 物品对应待核",
+          "note": "作者称两张邮票中，一张在雅努斯箱子取得，另一张由名可名战后容器取得；正文未明确哪件对应哪种来源，本次未核到完整搜出过程。暂不将这条线索分配为任一邮票的另一地图来源，也不据此宣称普通箱子双图可得。",
+          "difficulty": "unknown",
+          "author": "给小光做桂花糕",
+          "publishedAt": "2026-09-13T13:17:02+08:00",
+          "links": [
+            {
+              "url": "https://www.miyoushe.com/zzz/article/78138657",
+              "title": "两张邮票一起来"
+            }
+          ]
+        }
+      ],
+      "guideReference": {
+        "sourceId": "bili-BV1HeYu62EnK",
+        "author": "P-51-513",
+        "version": "3.2.0",
+        "publishedAt": "2026-09-10T11:16:14Z",
+        "updatedAt": "2026-09-19",
+        "kind": "community_guide",
+        "maps": [
+          "janus",
+          "suburbs"
+        ],
+        "note": "原攻略及置顶称两件邮票双图均可取得、只存在出现频率差异；另有玩家攻略称两件邮票分别在不同地图搜索取得。两种说法有冲突，本条保留为争议资料，不纳入上方地图结论。",
+        "limitation": "未有逐件双图搜索实机、完整地图奖励链或概率样本。普通箱子、最终首领奖励和撤离后的额外奖励不能混为同一来源，现有材料不足以认定另一地图完全不能产出。",
+        "links": [
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?t=43",
+            "title": "攻略对应片段 · 43秒"
+          },
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?comment_on=1&comment_root_id=313553842529",
+            "title": "作者置顶 · 社区经验说明"
+          }
+        ],
+        "reportedMoreOftenMap": null,
+        "excludeFromMapSummary": true
+      },
+      "summaryNote": "已核对城郊幻境的局内搜出片段；雅努斯幻境是否能通过地图内搜索取得仍待核实。普通箱子、最终首领奖励与撤离后奖励分别核对，暂不认定地图独占。"
+    },
+    "4360054": {
+      "itemId": 4360054,
+      "name": "星徽骑士变身器·金牛",
+      "checkedVersion": "3.2.0",
+      "updatedAt": "2026-09-12",
+      "exclusive": false,
+      "mapEvidence": [
+        {
+          "map": "suburbs",
+          "kind": "player_report",
+          "label": "实机物品 · 地图据作者说明",
+          "note": "视频能核对金牛变身器全名。地图依据作者标题及场景地标，未取得同段具名地图画面。",
+          "difficulty": "unknown",
+          "links": [
+            {
+              "url": "https://www.bilibili.com/video/BV1RUYu6TESN/?t=62",
+              "title": "实机视频 · 62秒物品 / 标题说明地图"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=YdCcjWGt7Gk&t=47s",
+              "title": "另一实机片段 · 51秒物品与场景"
+            }
+          ]
+        },
+        {
+          "id": "bili-BV1HeYu62EnK-t110-4360054-suburbs",
+          "map": "suburbs",
+          "kind": "observed_named",
+          "label": "实机观察 · 物品与地图具名",
+          "note": "76秒显示高危城郊地图；110秒在比利事件残骸容器的搜索结果中显示金牛全名及30万价值。记录本次局内搜出，不据此证明其他地图不能获得。",
+          "difficulty": "high-risk",
+          "links": [
+            {
+              "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?t=110",
+              "title": "实机视频 · 110秒金牛搜索结果"
+            },
+            {
+              "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?t=76",
+              "title": "同段视频 · 76秒高危城郊地图"
+            }
+          ],
+          "author": "P-51-513",
+          "publishedAt": "2026-09-10T11:16:14Z"
+        }
+      ],
+      "leads": [],
+      "guideReference": {
+        "sourceId": "bili-BV1HeYu62EnK",
+        "author": "P-51-513",
+        "version": "3.2.0",
+        "publishedAt": "2026-09-10T11:16:14Z",
+        "updatedAt": "2026-09-12",
+        "kind": "community_guide",
+        "maps": [
+          "suburbs"
+        ],
+        "note": "作者将其来源归于城郊拟态比利事件；此处列出攻略所指地图，不代表已证实独占。",
+        "limitation": "作者称三种30万变身器仅由城郊比利掉落；本条为攻略参考，尚未独立排除其他来源，也不保证每次掉落。",
+        "links": [
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?t=65",
+            "title": "攻略对应片段 · 65秒"
+          },
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?comment_on=1&comment_root_id=313553842529",
+            "title": "作者置顶 · 社区经验说明"
+          }
+        ]
+      }
+    },
+    "4360055": {
+      "itemId": 4360055,
+      "name": "星徽骑士变身器·射手",
+      "checkedVersion": "3.2.0",
+      "updatedAt": "2026-09-12",
+      "exclusive": false,
+      "mapEvidence": [
+        {
+          "id": "hyl-46648374-4360055-suburbs",
+          "map": "suburbs",
+          "kind": "player_report",
+          "label": "玩家自述 · 具名收藏图与场景佐证",
+          "note": "作者称在城郊最高难度击败拟态比利后取得射手；配图有电梯旁场景及具名收藏。未展示搜出瞬间，不证明独占或必掉。",
+          "difficulty": "high-risk",
+          "links": [
+            {
+              "url": "https://www.hoyolab.com/article/46648374",
+              "title": "ALF107 · 射手变身器取得记录"
+            }
+          ],
+          "author": "ALF107",
+          "publishedAt": "2026-09-11T14:10:48Z"
+        },
+        {
+          "id": "hyl-46631934-4360055-suburbs",
+          "map": "suburbs",
+          "kind": "player_report",
+          "label": "玩家自述 · 对应物品图标",
+          "note": "作者称在旅馆通往海滩的电梯比利事件取得图示物品；图标已与具名射手图核对。地图据地标叙述，图片为库存，未展示局内拾取。",
+          "difficulty": "unknown",
+          "links": [
+            {
+              "url": "https://www.hoyolab.com/article/46631934?lang=ru-ru",
+              "title": "TOWFYM · 城郊比利事件记录"
+            }
+          ],
+          "author": "TOWFYM",
+          "publishedAt": "2026-09-09T20:22:42Z"
+        }
+      ],
+      "leads": [],
+      "guideReference": {
+        "sourceId": "bili-BV1HeYu62EnK",
+        "author": "P-51-513",
+        "version": "3.2.0",
+        "publishedAt": "2026-09-10T11:16:14Z",
+        "updatedAt": "2026-09-12",
+        "kind": "community_guide",
+        "maps": [
+          "suburbs"
+        ],
+        "note": "作者将其来源归于城郊拟态比利事件；此处列出攻略所指地图，不代表已证实独占。",
+        "limitation": "作者称三种30万变身器仅由城郊比利掉落；本条为攻略参考，尚未独立排除其他来源，也不保证每次掉落。",
+        "links": [
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?t=65",
+            "title": "攻略对应片段 · 65秒"
+          },
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?comment_on=1&comment_root_id=313553842529",
+            "title": "作者置顶 · 社区经验说明"
+          }
+        ]
+      }
+    },
+    "4360056": {
+      "itemId": 4360056,
+      "name": "星徽骑士变身器·？黑洞？",
+      "checkedVersion": "3.2.0",
+      "updatedAt": "2026-09-12",
+      "exclusive": false,
+      "mapEvidence": [
+        {
+          "map": "suburbs",
+          "kind": "observed_named",
+          "label": "实机观察 · 物品与地图具名",
+          "note": "145秒为高危入场界面，150秒载入画面明确城郊幻境；422秒显示物品全名与价值，425秒放入保险箱。",
+          "difficulty": "high-risk",
+          "links": [
+            {
+              "url": "https://www.bilibili.com/video/BV1TFYg6fEyu/?t=422",
+              "title": "实机视频 · 422秒物品 / 150秒地图"
+            }
+          ]
+        }
+      ],
+      "leads": [],
+      "guideReference": {
+        "sourceId": "bili-BV1HeYu62EnK",
+        "author": "P-51-513",
+        "version": "3.2.0",
+        "publishedAt": "2026-09-10T11:16:14Z",
+        "updatedAt": "2026-09-12",
+        "kind": "community_guide",
+        "maps": [
+          "suburbs"
+        ],
+        "note": "作者将其来源归于城郊拟态比利事件；此处列出攻略所指地图，不代表已证实独占。",
+        "limitation": "作者称三种30万变身器仅由城郊比利掉落；本条为攻略参考，尚未独立排除其他来源，也不保证每次掉落。",
+        "links": [
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?t=65",
+            "title": "攻略对应片段 · 65秒"
+          },
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?comment_on=1&comment_root_id=313553842529",
+            "title": "作者置顶 · 社区经验说明"
+          }
+        ]
+      }
+    },
+    "4360057": {
+      "itemId": 4360057,
+      "name": "红烧牛肉布摆件",
+      "checkedVersion": "3.2.0",
+      "updatedAt": "2026-09-12",
+      "exclusive": false,
+      "mapEvidence": [
+        {
+          "map": "suburbs",
+          "kind": "observed_named",
+          "label": "实机观察 · 物品与地图具名",
+          "note": "30秒显示物品全名，34秒放入背包；186秒结算画面明确高危城郊幻境。结算仅用于识别地图，不计撤离后随机奖励。",
+          "difficulty": "high-risk",
+          "links": [
+            {
+              "url": "https://www.bilibili.com/video/BV1yjYx6AEov/?t=30",
+              "title": "实机视频 · 30秒物品 / 186秒地图"
+            }
+          ]
+        }
+      ],
+      "leads": [],
+      "guideReference": {
+        "sourceId": "bili-BV1HeYu62EnK",
+        "author": "P-51-513",
+        "version": "3.2.0",
+        "publishedAt": "2026-09-10T11:16:14Z",
+        "updatedAt": "2026-09-12",
+        "kind": "community_guide",
+        "maps": [
+          "janus",
+          "suburbs"
+        ],
+        "note": "作者攻略称两图困难或高危调查均可获取；分组表示个人感觉的常见地图。",
+        "limitation": "没有逐件双图拾取画面或概率样本；地图分组不表示另一图不能获得。",
+        "links": [
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?t=150",
+            "title": "攻略对应片段 · 150秒"
+          },
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?comment_on=1&comment_root_id=313553842529",
+            "title": "作者置顶 · 社区经验说明"
+          }
+        ],
+        "reportedMoreOftenMap": "suburbs",
+        "reportedMoreOftenNote": "作者个人感觉在城郊较常见；没有样本统计，也不表示另一图不能获得。"
+      }
+    },
+    "4360058": {
+      "itemId": 4360058,
+      "name": "鲜虾鱼板布摆件",
+      "checkedVersion": "3.2.0",
+      "updatedAt": "2026-09-12",
+      "exclusive": false,
+      "mapEvidence": [
+        {
+          "map": "janus",
+          "kind": "player_report",
+          "label": "玩家报告 · 收藏图标核对",
+          "note": "作者称为避免混淆只刷雅努斯，并展示收藏页面；依据正文与所勾选的鲜虾鱼板布图标核对，未展示局内拾取。",
+          "difficulty": "unknown",
+          "links": [
+            {
+              "url": "https://gall.dcinside.com/mgallery/board/view/?id=zenless_zone_zero&no=2900576",
+              "title": "韩国 DCInside · 玩家原帖"
+            }
+          ]
+        },
+        {
+          "id": "hyl-46635357-4360058-janus",
+          "map": "janus",
+          "kind": "player_report",
+          "label": "作者地图标注 · 已解锁收藏图",
+          "note": "作者将已着色收藏图标标为雅努斯取得；这是个人地图记录，没有局内搜出画面，不表示另一图不能获得。",
+          "difficulty": "unknown",
+          "links": [
+            {
+              "url": "https://www.hoyolab.com/article/46635357",
+              "title": "pae3toon · 3.2贵重品地图标注"
+            }
+          ],
+          "author": "pae3toon",
+          "publishedAt": "2026-09-10T07:23:04Z",
+          "modifiedAt": "2026-09-11T14:07:05Z"
+        }
+      ],
+      "leads": [],
+      "guideReference": {
+        "sourceId": "bili-BV1HeYu62EnK",
+        "author": "P-51-513",
+        "version": "3.2.0",
+        "publishedAt": "2026-09-10T11:16:14Z",
+        "updatedAt": "2026-09-12",
+        "kind": "community_guide",
+        "maps": [
+          "janus",
+          "suburbs"
+        ],
+        "note": "作者攻略称两图困难或高危调查均可获取；分组表示个人感觉的常见地图。",
+        "limitation": "没有逐件双图拾取画面或概率样本；地图分组不表示另一图不能获得。",
+        "links": [
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?t=150",
+            "title": "攻略对应片段 · 150秒"
+          },
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?comment_on=1&comment_root_id=313553842529",
+            "title": "作者置顶 · 社区经验说明"
+          }
+        ],
+        "reportedMoreOftenMap": "janus",
+        "reportedMoreOftenNote": "作者个人感觉在雅努斯较常见；没有样本统计，也不表示另一图不能获得。"
+      }
+    },
+    "4360059": {
+      "itemId": 4360059,
+      "name": "香菇炖鸡布摆件",
+      "checkedVersion": "3.2.0",
+      "updatedAt": "2026-09-12",
+      "exclusive": false,
+      "mapEvidence": [
+        {
+          "map": "suburbs",
+          "kind": "player_report",
+          "label": "玩家报告 · 收藏图标核对",
+          "note": "作者称展示物品均在城郊取得；收藏页面可核对香菇炖鸡布图标，地图来自作者自述，未展示局内拾取。",
+          "difficulty": "unknown",
+          "links": [
+            {
+              "url": "https://gall.dcinside.com/mgallery/board/view/?id=zenless_zone_zero&no=2896780",
+              "title": "韩国 DCInside · 玩家原帖"
+            }
+          ]
+        },
+        {
+          "id": "hyl-46635357-4360059-suburbs",
+          "map": "suburbs",
+          "kind": "player_report",
+          "label": "作者地图标注 · 已解锁收藏图",
+          "note": "作者将已着色收藏图标标为城郊取得；这是个人地图记录，没有局内搜出画面，不表示另一图不能获得。",
+          "difficulty": "unknown",
+          "links": [
+            {
+              "url": "https://www.hoyolab.com/article/46635357",
+              "title": "pae3toon · 3.2贵重品地图标注"
+            }
+          ],
+          "author": "pae3toon",
+          "publishedAt": "2026-09-10T07:23:04Z",
+          "modifiedAt": "2026-09-11T14:07:05Z"
+        }
+      ],
+      "leads": [],
+      "guideReference": {
+        "sourceId": "bili-BV1HeYu62EnK",
+        "author": "P-51-513",
+        "version": "3.2.0",
+        "publishedAt": "2026-09-10T11:16:14Z",
+        "updatedAt": "2026-09-12",
+        "kind": "community_guide",
+        "maps": [
+          "janus",
+          "suburbs"
+        ],
+        "note": "作者攻略称两图困难或高危调查均可获取；分组表示个人感觉的常见地图。",
+        "limitation": "没有逐件双图拾取画面或概率样本；地图分组不表示另一图不能获得。",
+        "links": [
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?t=150",
+            "title": "攻略对应片段 · 150秒"
+          },
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?comment_on=1&comment_root_id=313553842529",
+            "title": "作者置顶 · 社区经验说明"
+          }
+        ],
+        "reportedMoreOftenMap": "suburbs",
+        "reportedMoreOftenNote": "作者个人感觉在城郊较常见；没有样本统计，也不表示另一图不能获得。"
+      }
+    },
+    "4360060": {
+      "itemId": 4360060,
+      "name": "酸菜布摆件",
+      "checkedVersion": "3.2.0",
+      "updatedAt": "2026-09-12",
+      "exclusive": false,
+      "mapEvidence": [
+        {
+          "map": "janus",
+          "kind": "player_report",
+          "label": "玩家报告 · 具名持有图",
+          "note": "帖子说明在雅努斯取得，并附可核对韩文完整名称的持有图；图片不是局内拾取画面。",
+          "difficulty": "unknown",
+          "links": [
+            {
+              "url": "https://gall.dcinside.com/mgallery/board/view/?id=zenless_zone_zero&no=2899283",
+              "title": "韩国 DCInside · 玩家原帖"
+            }
+          ]
+        },
+        {
+          "id": "hyl-46635357-4360060-janus",
+          "map": "janus",
+          "kind": "player_report",
+          "label": "作者地图标注 · 已解锁收藏图",
+          "note": "作者将已着色收藏图标标为雅努斯取得；这是个人地图记录，没有局内搜出画面，不表示另一图不能获得。",
+          "difficulty": "unknown",
+          "links": [
+            {
+              "url": "https://www.hoyolab.com/article/46635357",
+              "title": "pae3toon · 3.2贵重品地图标注"
+            }
+          ],
+          "author": "pae3toon",
+          "publishedAt": "2026-09-10T07:23:04Z",
+          "modifiedAt": "2026-09-11T14:07:05Z"
+        }
+      ],
+      "leads": [],
+      "guideReference": {
+        "sourceId": "bili-BV1HeYu62EnK",
+        "author": "P-51-513",
+        "version": "3.2.0",
+        "publishedAt": "2026-09-10T11:16:14Z",
+        "updatedAt": "2026-09-12",
+        "kind": "community_guide",
+        "maps": [
+          "janus",
+          "suburbs"
+        ],
+        "note": "作者攻略称两图困难或高危调查均可获取；分组表示个人感觉的常见地图。",
+        "limitation": "没有逐件双图拾取画面或概率样本；地图分组不表示另一图不能获得。",
+        "links": [
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?t=150",
+            "title": "攻略对应片段 · 150秒"
+          },
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?comment_on=1&comment_root_id=313553842529",
+            "title": "作者置顶 · 社区经验说明"
+          }
+        ],
+        "reportedMoreOftenMap": "janus",
+        "reportedMoreOftenNote": "作者个人感觉在雅努斯较常见；没有样本统计，也不表示另一图不能获得。"
+      }
+    },
+    "4360061": {
+      "itemId": 4360061,
+      "name": "祖母绿",
+      "checkedVersion": "3.2.0",
+      "updatedAt": "2026-09-12",
+      "exclusive": false,
+      "mapEvidence": [
+        {
+          "map": "suburbs",
+          "kind": "player_report",
+          "label": "玩家报告 · 收藏图标核对",
+          "note": "作者称展示物品均在城郊取得；收藏页面可核对祖母绿图标，地图来自作者自述。",
+          "difficulty": "unknown",
+          "links": [
+            {
+              "url": "https://gall.dcinside.com/mgallery/board/view/?id=zenless_zone_zero&no=2896780",
+              "title": "韩国 DCInside · 玩家原帖"
+            }
+          ]
+        }
+      ],
+      "leads": [],
+      "guideReference": {
+        "sourceId": "bili-BV1HeYu62EnK",
+        "author": "P-51-513",
+        "version": "3.2.0",
+        "publishedAt": "2026-09-10T11:16:14Z",
+        "updatedAt": "2026-09-12",
+        "kind": "community_guide",
+        "maps": [
+          "janus",
+          "suburbs"
+        ],
+        "note": "作者攻略称两张地图高危调查均可搜得；这是社区经验汇总，尚未逐件核验双图取得。",
+        "limitation": "没有逐件双图拾取画面或概率样本，不以单图记录推定地图独占。",
+        "links": [
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?t=43",
+            "title": "攻略对应片段 · 43秒"
+          },
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?comment_on=1&comment_root_id=313553842529",
+            "title": "作者置顶 · 社区经验说明"
+          }
+        ],
+        "reportedMoreOftenMap": "suburbs",
+        "reportedMoreOftenNote": "作者个人感觉在城郊较常见；没有样本统计，也不表示另一图不能获得。"
+      }
+    },
+    "4360062": {
+      "itemId": 4360062,
+      "name": "黄玉",
+      "checkedVersion": "3.2.0",
+      "updatedAt": "2026-09-12",
+      "exclusive": false,
+      "mapEvidence": [
+        {
+          "map": "janus",
+          "kind": "player_report",
+          "label": "玩家报告 · 收藏图标核对",
+          "note": "作者称只刷雅努斯，收藏页面黄玉图标被勾选；判断结合正文与图标，不是局内拾取证据。",
+          "difficulty": "unknown",
+          "links": [
+            {
+              "url": "https://gall.dcinside.com/mgallery/board/view/?id=zenless_zone_zero&no=2900576",
+              "title": "韩国 DCInside · 玩家原帖"
+            }
+          ]
+        }
+      ],
+      "leads": [],
+      "guideReference": {
+        "sourceId": "bili-BV1HeYu62EnK",
+        "author": "P-51-513",
+        "version": "3.2.0",
+        "publishedAt": "2026-09-10T11:16:14Z",
+        "updatedAt": "2026-09-12",
+        "kind": "community_guide",
+        "maps": [
+          "janus",
+          "suburbs"
+        ],
+        "note": "作者攻略称两张地图高危调查均可搜得；这是社区经验汇总，尚未逐件核验双图取得。",
+        "limitation": "没有逐件双图拾取画面或概率样本，不以单图记录推定地图独占。",
+        "links": [
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?t=43",
+            "title": "攻略对应片段 · 43秒"
+          },
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?comment_on=1&comment_root_id=313553842529",
+            "title": "作者置顶 · 社区经验说明"
+          }
+        ],
+        "reportedMoreOftenMap": "janus",
+        "reportedMoreOftenNote": "作者个人感觉在雅努斯较常见；没有样本统计，也不表示另一图不能获得。"
+      }
+    },
+    "4360063": {
+      "itemId": 4360063,
+      "name": "红宝石",
+      "checkedVersion": "3.2.0",
+      "updatedAt": "2026-09-12",
+      "exclusive": false,
+      "mapEvidence": [
+        {
+          "map": "suburbs",
+          "kind": "player_report",
+          "label": "玩家报告 · 收藏图标核对",
+          "note": "作者称展示物品均在城郊取得；收藏页面可核对红宝石图标，未展示同局地图与拾取过程。",
+          "difficulty": "unknown",
+          "links": [
+            {
+              "url": "https://gall.dcinside.com/mgallery/board/view/?id=zenless_zone_zero&no=2896780",
+              "title": "韩国 DCInside · 玩家原帖"
+            }
+          ]
+        }
+      ],
+      "leads": [
+        {
+          "map": "janus",
+          "kind": "unverified",
+          "label": "玩家文字线索 · 待核实",
+          "note": "另一帖评论提到在雅努斯取得“红色宝石”，没有完整名称与图片，暂不据此标为两图。",
+          "difficulty": "unknown",
+          "links": [
+            {
+              "url": "https://gall.dcinside.com/mgallery/board/view/?id=zenless_zone_zero&no=2900576",
+              "title": "韩国 DCInside · 玩家原帖"
+            }
+          ]
+        },
+        {
+          "map": "unknown",
+          "kind": "unverified",
+          "label": "具名拾取 · 地图待核实",
+          "note": "约65秒可核对红宝石全名；前后有剪辑，不能借用另一段场景确定地图。",
+          "difficulty": "unknown",
+          "links": [
+            {
+              "url": "https://www.bilibili.com/video/BV1ELYb6hE2F/?t=65",
+              "title": "实机视频 · 65秒物品 / 地图未明确"
+            }
+          ]
+        }
+      ],
+      "guideReference": {
+        "sourceId": "bili-BV1HeYu62EnK",
+        "author": "P-51-513",
+        "version": "3.2.0",
+        "publishedAt": "2026-09-10T11:16:14Z",
+        "updatedAt": "2026-09-12",
+        "kind": "community_guide",
+        "maps": [
+          "janus",
+          "suburbs"
+        ],
+        "note": "作者攻略称两张地图高危调查均可搜得；这是社区经验汇总，尚未逐件核验双图取得。",
+        "limitation": "没有逐件双图拾取画面或概率样本，不以单图记录推定地图独占。",
+        "links": [
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?t=43",
+            "title": "攻略对应片段 · 43秒"
+          },
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?comment_on=1&comment_root_id=313553842529",
+            "title": "作者置顶 · 社区经验说明"
+          }
+        ],
+        "reportedMoreOftenMap": "suburbs",
+        "reportedMoreOftenNote": "作者个人感觉在城郊较常见；没有样本统计，也不表示另一图不能获得。"
+      }
+    },
+    "4360064": {
+      "itemId": 4360064,
+      "name": "海蓝宝石",
+      "checkedVersion": "3.2.0",
+      "updatedAt": "2026-09-12",
+      "exclusive": false,
+      "mapEvidence": [
+        {
+          "map": "janus",
+          "kind": "observed_icon",
+          "label": "实机观察 · 物品图标核对",
+          "note": "约99秒拾取图标与海蓝宝石相符；约344秒地图显示雅努斯对应站点。物品未悬停显示全名，依据图标核对。",
+          "difficulty": "unknown",
+          "links": [
+            {
+              "url": "https://www.youtube.com/watch?v=iFsLwa-xFQU&t=96s",
+              "title": "实机视频 · 99秒图标 / 344秒地图"
+            }
+          ]
+        },
+        {
+          "map": "janus",
+          "kind": "player_report",
+          "label": "玩家报告 · 具名持有图",
+          "note": "作者称在雅努斯取得，并展示可核对韩文完整名称的海蓝宝石持有图。未采用帖内捐款奖励截图。",
+          "difficulty": "unknown",
+          "links": [
+            {
+              "url": "https://gall.dcinside.com/mgallery/board/view/?id=zenless_zone_zero&no=2900697",
+              "title": "韩国 DCInside · 玩家原帖"
+            }
+          ]
+        }
+      ],
+      "leads": [],
+      "guideReference": {
+        "sourceId": "bili-BV1HeYu62EnK",
+        "author": "P-51-513",
+        "version": "3.2.0",
+        "publishedAt": "2026-09-10T11:16:14Z",
+        "updatedAt": "2026-09-12",
+        "kind": "community_guide",
+        "maps": [
+          "janus",
+          "suburbs"
+        ],
+        "note": "作者攻略称两张地图高危调查均可搜得；这是社区经验汇总，尚未逐件核验双图取得。",
+        "limitation": "没有逐件双图拾取画面或概率样本，不以单图记录推定地图独占。",
+        "links": [
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?t=43",
+            "title": "攻略对应片段 · 43秒"
+          },
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?comment_on=1&comment_root_id=313553842529",
+            "title": "作者置顶 · 社区经验说明"
+          }
+        ],
+        "reportedMoreOftenMap": "janus",
+        "reportedMoreOftenNote": "作者个人感觉在雅努斯较常见；没有样本统计，也不表示另一图不能获得。"
+      }
+    },
+    "4360065": {
+      "itemId": 4360065,
+      "name": "封存资料·帕帕戈",
+      "checkedVersion": "3.2.0",
+      "updatedAt": "2026-09-12",
+      "exclusive": false,
+      "mapEvidence": [],
+      "leads": [],
+      "guideReference": {
+        "sourceId": "bili-BV1HeYu62EnK",
+        "author": "P-51-513",
+        "version": "3.2.0",
+        "publishedAt": "2026-09-10T11:16:14Z",
+        "updatedAt": "2026-09-12",
+        "kind": "community_guide",
+        "maps": [
+          "janus",
+          "suburbs"
+        ],
+        "note": "作者攻略称两图困难或高危调查均可获取；分组表示个人感觉的常见地图。",
+        "limitation": "没有逐件双图拾取画面或概率样本；地图分组不表示另一图不能获得。",
+        "links": [
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?t=150",
+            "title": "攻略对应片段 · 150秒"
+          },
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?comment_on=1&comment_root_id=313553842529",
+            "title": "作者置顶 · 社区经验说明"
+          }
+        ],
+        "reportedMoreOftenMap": "suburbs",
+        "reportedMoreOftenNote": "作者个人感觉在城郊较常见；没有样本统计，也不表示另一图不能获得。"
+      }
+    },
+    "4360066": {
+      "itemId": 4360066,
+      "name": "封存资料·黑水基地",
+      "checkedVersion": "3.2.0",
+      "updatedAt": "2026-09-12",
+      "exclusive": false,
+      "mapEvidence": [
+        {
+          "map": "janus",
+          "kind": "player_report",
+          "label": "玩家报告 · 具名持有图",
+          "note": "作者称在雅努斯取得，并展示可核对韩文完整名称的持有图；未采用帖内捐款奖励截图。",
+          "difficulty": "unknown",
+          "links": [
+            {
+              "url": "https://gall.dcinside.com/mgallery/board/view/?id=zenless_zone_zero&no=2900697",
+              "title": "韩国 DCInside · 玩家原帖"
+            }
+          ]
+        },
+        {
+          "id": "hyl-46635357-4360066-janus",
+          "map": "janus",
+          "kind": "player_report",
+          "label": "作者地图标注 · 已解锁收藏图",
+          "note": "作者将已着色收藏图标标为雅努斯取得；这是个人地图记录，没有局内搜出画面，不表示另一图不能获得。",
+          "difficulty": "unknown",
+          "links": [
+            {
+              "url": "https://www.hoyolab.com/article/46635357",
+              "title": "pae3toon · 3.2贵重品地图标注"
+            }
+          ],
+          "author": "pae3toon",
+          "publishedAt": "2026-09-10T07:23:04Z",
+          "modifiedAt": "2026-09-11T14:07:05Z"
+        }
+      ],
+      "leads": [],
+      "guideReference": {
+        "sourceId": "bili-BV1HeYu62EnK",
+        "author": "P-51-513",
+        "version": "3.2.0",
+        "publishedAt": "2026-09-10T11:16:14Z",
+        "updatedAt": "2026-09-12",
+        "kind": "community_guide",
+        "maps": [
+          "janus",
+          "suburbs"
+        ],
+        "note": "作者攻略称两图困难或高危调查均可获取；分组表示个人感觉的常见地图。",
+        "limitation": "没有逐件双图拾取画面或概率样本；地图分组不表示另一图不能获得。",
+        "links": [
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?t=150",
+            "title": "攻略对应片段 · 150秒"
+          },
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?comment_on=1&comment_root_id=313553842529",
+            "title": "作者置顶 · 社区经验说明"
+          }
+        ],
+        "reportedMoreOftenMap": "janus",
+        "reportedMoreOftenNote": "作者个人感觉在雅努斯较常见；没有样本统计，也不表示另一图不能获得。"
+      }
+    },
+    "4360067": {
+      "itemId": 4360067,
+      "name": "封存资料·以骸机械",
+      "checkedVersion": "3.2.0",
+      "updatedAt": "2026-09-12",
+      "exclusive": false,
+      "mapEvidence": [
+        {
+          "map": "suburbs",
+          "kind": "observed_named",
+          "label": "实机观察 · 物品与地图具名",
+          "note": "43秒显示物品全名，44秒放入保险箱；186秒结算画面显示高危城郊幻境。",
+          "difficulty": "high-risk",
+          "links": [
+            {
+              "url": "https://www.bilibili.com/video/BV1yjYx6AEov/?t=43",
+              "title": "实机视频 · 43秒物品 / 186秒地图"
+            }
+          ]
+        },
+        {
+          "id": "hyl-46635357-4360067-suburbs",
+          "map": "suburbs",
+          "kind": "player_report",
+          "label": "作者地图标注 · 已解锁收藏图",
+          "note": "作者将已着色收藏图标标为城郊取得；这是个人地图记录，没有局内搜出画面，不表示另一图不能获得。",
+          "difficulty": "unknown",
+          "links": [
+            {
+              "url": "https://www.hoyolab.com/article/46635357",
+              "title": "pae3toon · 3.2贵重品地图标注"
+            }
+          ],
+          "author": "pae3toon",
+          "publishedAt": "2026-09-10T07:23:04Z",
+          "modifiedAt": "2026-09-11T14:07:05Z"
+        }
+      ],
+      "leads": [],
+      "guideReference": {
+        "sourceId": "bili-BV1HeYu62EnK",
+        "author": "P-51-513",
+        "version": "3.2.0",
+        "publishedAt": "2026-09-10T11:16:14Z",
+        "updatedAt": "2026-09-12",
+        "kind": "community_guide",
+        "maps": [
+          "janus",
+          "suburbs"
+        ],
+        "note": "作者攻略称两图困难或高危调查均可获取；分组表示个人感觉的常见地图。",
+        "limitation": "没有逐件双图拾取画面或概率样本；地图分组不表示另一图不能获得。",
+        "links": [
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?t=150",
+            "title": "攻略对应片段 · 150秒"
+          },
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?comment_on=1&comment_root_id=313553842529",
+            "title": "作者置顶 · 社区经验说明"
+          }
+        ],
+        "reportedMoreOftenMap": "suburbs",
+        "reportedMoreOftenNote": "作者个人感觉在城郊较常见；没有样本统计，也不表示另一图不能获得。"
+      }
+    },
+    "4360068": {
+      "itemId": 4360068,
+      "name": "封存资料·绝密",
+      "checkedVersion": "3.2.0",
+      "updatedAt": "2026-09-12",
+      "exclusive": false,
+      "mapEvidence": [
+        {
+          "map": "janus",
+          "kind": "player_report",
+          "label": "玩家报告 · 具名持有图",
+          "note": "帖子说明在雅努斯取得，并附可核对韩文完整名称的持有图；地图依据作者自述。",
+          "difficulty": "unknown",
+          "links": [
+            {
+              "url": "https://gall.dcinside.com/mgallery/board/view/?id=zenless_zone_zero&no=2899283",
+              "title": "韩国 DCInside · 玩家原帖"
+            }
+          ]
+        },
+        {
+          "id": "hyl-46635357-4360068-janus",
+          "map": "janus",
+          "kind": "player_report",
+          "label": "作者地图标注 · 已解锁收藏图",
+          "note": "作者将已着色收藏图标标为雅努斯取得；这是个人地图记录，没有局内搜出画面，不表示另一图不能获得。",
+          "difficulty": "unknown",
+          "links": [
+            {
+              "url": "https://www.hoyolab.com/article/46635357",
+              "title": "pae3toon · 3.2贵重品地图标注"
+            }
+          ],
+          "author": "pae3toon",
+          "publishedAt": "2026-09-10T07:23:04Z",
+          "modifiedAt": "2026-09-11T14:07:05Z"
+        }
+      ],
+      "leads": [],
+      "guideReference": {
+        "sourceId": "bili-BV1HeYu62EnK",
+        "author": "P-51-513",
+        "version": "3.2.0",
+        "publishedAt": "2026-09-10T11:16:14Z",
+        "updatedAt": "2026-09-12",
+        "kind": "community_guide",
+        "maps": [
+          "janus",
+          "suburbs"
+        ],
+        "note": "作者攻略称两图困难或高危调查均可获取；分组表示个人感觉的常见地图。",
+        "limitation": "没有逐件双图拾取画面或概率样本；地图分组不表示另一图不能获得。",
+        "links": [
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?t=150",
+            "title": "攻略对应片段 · 150秒"
+          },
+          {
+            "url": "https://www.bilibili.com/video/BV1HeYu62EnK/?comment_on=1&comment_root_id=313553842529",
+            "title": "作者置顶 · 社区经验说明"
+          }
+        ],
+        "reportedMoreOftenMap": "janus",
+        "reportedMoreOftenNote": "作者个人感觉在雅努斯较常见；没有样本统计，也不表示另一图不能获得。"
+      }
+    },
+    "4360033": {
+      "itemId": 4360033,
+      "name": "奶油布丁摆件",
+      "checkedVersion": "3.2.0",
+      "updatedAt": "2026-09-11",
+      "exclusive": false,
+      "mapEvidence": [
+        {
+          "map": "janus",
+          "kind": "observed_icon",
+          "label": "实机观察 · 物品图标核对",
+          "note": "约243秒搜出图标与奶油布丁摆件一致，约344秒地图显示雅努斯对应站点；未显示物品全名。",
+          "difficulty": "unknown",
+          "links": [
+            {
+              "url": "https://www.youtube.com/watch?v=iFsLwa-xFQU&t=240s",
+              "title": "实机视频 · 243秒图标 / 344秒地图"
+            }
+          ]
+        }
+      ],
+      "leads": []
+    },
+    "4360021": {
+      "itemId": 4360021,
+      "name": "金摆件·王下一桶",
+      "checkedVersion": "3.2.0",
+      "updatedAt": "2026-09-12",
+      "exclusive": false,
+      "mapEvidence": [
+        {
+          "map": "janus",
+          "kind": "user_report",
+          "label": "用户补充 · 垃圾桶产出",
+          "note": "本站用户补充：王下一桶可从雅努斯幻境的垃圾桶中获得。未限定具体难度或掉落概率。",
+          "difficulty": "unknown",
+          "links": [],
+          "containerTypes": [
+            "trash"
+          ]
+        },
+        {
+          "map": "suburbs",
+          "kind": "user_report",
+          "label": "用户补充 · 垃圾桶产出",
+          "note": "本站用户补充：王下一桶可从城郊幻境的垃圾桶中获得。未限定具体难度或掉落概率。",
+          "difficulty": "unknown",
+          "links": [],
+          "containerTypes": [
+            "trash"
+          ]
+        }
+      ],
+      "leads": []
+    },
+    "4360020": {
+      "itemId": 4360020,
+      "name": "猎犬遗骸",
+      "checkedVersion": "3.2.0",
+      "updatedAt": "2026-09-12",
+      "exclusive": false,
+      "mapEvidence": [],
+      "leads": [],
+      "acquisitionRequirement": {
+        "kind": "user_report",
+        "label": "用户补充",
+        "title": "进入大狗领域并击杀大狗",
+        "note": "需要进入大狗的领域，并击杀大狗后才能获得猎犬遗骸。",
+        "limitation": "这是获取的必要条件，尚未注明掉落概率。",
+        "updatedAt": "2026-09-12",
+        "links": []
+      }
+    }
+  }
+}

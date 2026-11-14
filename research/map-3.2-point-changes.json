@@ -1,0 +1,700 @@
+{
+  "gameVersion": "3.2.0",
+  "scope": "Exact group/config IDs and before/after coordinates only. No live-map playtest, navmesh or dynamic-gate validation.",
+  "source": "Installed formal 3.2 client static configuration; see version-3.2-update/items/map-config-diff.json",
+  "changes": [
+    {
+      "map": "suburbs",
+      "id": "171200130:101",
+      "memberType": "Monster",
+      "recorded": false,
+      "beforePosition": {
+        "x": 126.28157,
+        "y": 41.709927,
+        "z": 99.60124
+      },
+      "afterPosition": {
+        "x": 131.35513,
+        "y": 41.709927,
+        "z": 96.33058
+      },
+      "beforeViewObjectId": 1000089,
+      "afterViewObjectId": 1000089,
+      "interactionDisabled": false,
+      "rewardDisabled": false,
+      "source": "research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171200130.json",
+      "sourceSha256": "9c36635080ecbf207c8e45a469562fb4d2bfb28305f9375f967960ec2ff0f541",
+      "sourcePath": "Group.Members[ConfigID=101]",
+      "changedFields": [
+        "MemberPosition"
+      ],
+      "action": "not_in_published_points"
+    },
+    {
+      "map": "suburbs",
+      "id": "171200130:201",
+      "memberType": "Gadget",
+      "recorded": false,
+      "beforePosition": {
+        "x": 136.22952,
+        "y": 49.338444,
+        "z": 97.53488
+      },
+      "afterPosition": {
+        "x": 131.35513,
+        "y": 41.709927,
+        "z": 96.33058
+      },
+      "beforeViewObjectId": 2000066,
+      "afterViewObjectId": 2000066,
+      "interactionDisabled": false,
+      "rewardDisabled": false,
+      "source": "research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171200130.json",
+      "sourceSha256": "9c36635080ecbf207c8e45a469562fb4d2bfb28305f9375f967960ec2ff0f541",
+      "sourcePath": "Group.Members[ConfigID=201]",
+      "changedFields": [
+        "MemberPosition"
+      ],
+      "action": "not_in_published_points"
+    },
+    {
+      "map": "suburbs",
+      "id": "171200180:203",
+      "memberType": "Gadget",
+      "recorded": true,
+      "beforePosition": {
+        "x": -261.11337,
+        "y": 45.161163,
+        "z": 145.81021
+      },
+      "afterPosition": {
+        "x": -264.27957,
+        "y": 45.161163,
+        "z": 149.1139
+      },
+      "beforeViewObjectId": 2001282,
+      "afterViewObjectId": 2001282,
+      "interactionDisabled": false,
+      "rewardDisabled": false,
+      "source": "research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171200180.json",
+      "sourceSha256": "207bd2ac0776345a6ca431d6b5a8703774a163111c7428f7f7a26dcf050165c2",
+      "sourcePath": "Group.Members[ConfigID=203]",
+      "changedFields": [
+        "MemberPosition",
+        "MemberEuler"
+      ],
+      "action": "updated_world_position_and_rotation",
+      "publishedType": "gear",
+      "publishedLabel": "武备箱"
+    },
+    {
+      "map": "suburbs",
+      "id": "171200291:202",
+      "memberType": "Gadget",
+      "recorded": true,
+      "beforePosition": {
+        "x": 87.86,
+        "y": 52.766644,
+        "z": -92.003
+      },
+      "afterPosition": {
+        "x": 87.708,
+        "y": 52.790955,
+        "z": -92.011
+      },
+      "beforeViewObjectId": 2000092,
+      "afterViewObjectId": 2001097,
+      "interactionDisabled": true,
+      "rewardDisabled": true,
+      "source": "research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171200291.json",
+      "sourceSha256": "68c9f8a7fd54e1153e7e7fb602a232c043e7465c0aeb2dee0b9e55f605ca6a3f",
+      "sourcePath": "Group.Members[ConfigID=202]",
+      "changedFields": [
+        "VisionLevel",
+        "GadgetServerMetadata",
+        "MemberPosition",
+        "MemberEuler",
+        "ViewObjectID",
+        "ViewObjectOverrideMap"
+      ],
+      "action": "quarantined_from_interactive_objects",
+      "suiteReferences": [
+        {
+          "suite": 1,
+          "interactionDisabled": true,
+          "rewardDisabled": true
+        },
+        {
+          "suite": 2,
+          "interactionDisabled": true,
+          "rewardDisabled": true
+        }
+      ],
+      "runtimeReenableStatus": "not_verified; current 3.2 DFScript graphs have not been extracted, so this is a conservative quarantine, not permanent-unavailability proof",
+      "publishedType": "container_untranslated",
+      "publishedLabel": "侵蚀秽迹"
+    },
+    {
+      "map": "suburbs",
+      "id": "171200291:205",
+      "memberType": "Gadget",
+      "recorded": true,
+      "beforePosition": {
+        "x": 106.3,
+        "y": 52.790955,
+        "z": -94.76473
+      },
+      "afterPosition": {
+        "x": 94.83,
+        "y": 52.775955,
+        "z": -80.456
+      },
+      "beforeViewObjectId": 2000092,
+      "afterViewObjectId": 2001097,
+      "interactionDisabled": true,
+      "rewardDisabled": true,
+      "source": "research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171200291.json",
+      "sourceSha256": "68c9f8a7fd54e1153e7e7fb602a232c043e7465c0aeb2dee0b9e55f605ca6a3f",
+      "sourcePath": "Group.Members[ConfigID=205]",
+      "changedFields": [
+        "VisionLevel",
+        "GadgetServerMetadata",
+        "MemberPosition",
+        "MemberEuler",
+        "ViewObjectID",
+        "ViewObjectOverrideMap"
+      ],
+      "action": "quarantined_from_interactive_objects",
+      "suiteReferences": [
+        {
+          "suite": 1,
+          "interactionDisabled": true,
+          "rewardDisabled": true
+        },
+        {
+          "suite": 2,
+          "interactionDisabled": true,
+          "rewardDisabled": true
+        }
+      ],
+      "runtimeReenableStatus": "not_verified; current 3.2 DFScript graphs have not been extracted, so this is a conservative quarantine, not permanent-unavailability proof",
+      "publishedType": "container_untranslated",
+      "publishedLabel": "侵蚀秽迹"
+    },
+    {
+      "map": "suburbs",
+      "id": "171200291:206",
+      "memberType": "Gadget",
+      "recorded": true,
+      "beforePosition": {
+        "x": 94.88,
+        "y": 52.775955,
+        "z": -80.57
+      },
+      "afterPosition": {
+        "x": 106.334,
+        "y": 52.797,
+        "z": -94.718
+      },
+      "beforeViewObjectId": 2000092,
+      "afterViewObjectId": 2001097,
+      "interactionDisabled": true,
+      "rewardDisabled": true,
+      "source": "research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171200291.json",
+      "sourceSha256": "68c9f8a7fd54e1153e7e7fb602a232c043e7465c0aeb2dee0b9e55f605ca6a3f",
+      "sourcePath": "Group.Members[ConfigID=206]",
+      "changedFields": [
+        "VisionLevel",
+        "GadgetServerMetadata",
+        "MemberPosition",
+        "MemberEuler",
+        "ViewObjectID",
+        "ViewObjectOverrideMap"
+      ],
+      "action": "quarantined_from_interactive_objects",
+      "suiteReferences": [
+        {
+          "suite": 1,
+          "interactionDisabled": true,
+          "rewardDisabled": true
+        },
+        {
+          "suite": 2,
+          "interactionDisabled": true,
+          "rewardDisabled": true
+        }
+      ],
+      "runtimeReenableStatus": "not_verified; current 3.2 DFScript graphs have not been extracted, so this is a conservative quarantine, not permanent-unavailability proof",
+      "publishedType": "container_untranslated",
+      "publishedLabel": "侵蚀秽迹"
+    },
+    {
+      "map": "suburbs",
+      "id": "171200291:207",
+      "memberType": "Gadget",
+      "recorded": true,
+      "beforePosition": {
+        "x": 106.3,
+        "y": 53.85,
+        "z": -94.76473
+      },
+      "afterPosition": {
+        "x": 106.329,
+        "y": 53.868,
+        "z": -94.697
+      },
+      "beforeViewObjectId": 2001092,
+      "afterViewObjectId": 2001092,
+      "interactionDisabled": false,
+      "rewardDisabled": false,
+      "source": "research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171200291.json",
+      "sourceSha256": "68c9f8a7fd54e1153e7e7fb602a232c043e7465c0aeb2dee0b9e55f605ca6a3f",
+      "sourcePath": "Group.Members[ConfigID=207]",
+      "changedFields": [
+        "MemberPosition"
+      ],
+      "action": "updated_world_position_and_rotation",
+      "publishedType": "container",
+      "publishedLabel": "工具箱"
+    }
+  ],
+  "removedMembers": [
+    {
+      "map": "janus",
+      "id": "171300073:207",
+      "label": "机械保险箱",
+      "beforeWorldPosition": {
+        "x": -103.854645,
+        "y": 8.477106,
+        "z": -22.223385
+      },
+      "beforeViewObjectId": 2001331,
+      "source": "research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171300073.json",
+      "sourceSha256": "f203c993335b9f552c9240131e0e92c4bfb8f7ccd389042165cd43f2abd08cd8",
+      "action": "old_member_id_removed_from_3.2_group; replacement_group_activation_not_verified"
+    },
+    {
+      "map": "janus",
+      "id": "171300073:204",
+      "label": "机械保险箱",
+      "beforeWorldPosition": {
+        "x": -97.278244,
+        "y": 8.494744,
+        "z": -25.253683
+      },
+      "beforeViewObjectId": 2001331,
+      "source": "research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171300073.json",
+      "sourceSha256": "f203c993335b9f552c9240131e0e92c4bfb8f7ccd389042165cd43f2abd08cd8",
+      "action": "old_member_id_removed_from_3.2_group; replacement_group_activation_not_verified"
+    },
+    {
+      "map": "janus",
+      "id": "171300073:203",
+      "label": "电子保险箱",
+      "beforeWorldPosition": {
+        "x": -101.366,
+        "y": 8.484402,
+        "z": -30.152
+      },
+      "beforeViewObjectId": 2001090,
+      "source": "research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171300073.json",
+      "sourceSha256": "f203c993335b9f552c9240131e0e92c4bfb8f7ccd389042165cd43f2abd08cd8",
+      "action": "old_member_id_removed_from_3.2_group; replacement_group_activation_not_verified"
+    },
+    {
+      "map": "janus",
+      "id": "171300077:204",
+      "label": "机械保险箱",
+      "beforeWorldPosition": {
+        "x": 124.92232,
+        "y": 28.706,
+        "z": 28.615696
+      },
+      "beforeViewObjectId": 2001331,
+      "source": "research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171300077.json",
+      "sourceSha256": "c920ab3f0d43977e954c46aed111356d7fa2ef99af2641b248961b1263677ed8",
+      "action": "old_member_id_removed_from_3.2_group; replacement_group_activation_not_verified"
+    },
+    {
+      "map": "janus",
+      "id": "171300077:203",
+      "label": "电子保险箱",
+      "beforeWorldPosition": {
+        "x": 123.630875,
+        "y": 28.706,
+        "z": 31.18738
+      },
+      "beforeViewObjectId": 2001090,
+      "source": "research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171300077.json",
+      "sourceSha256": "c920ab3f0d43977e954c46aed111356d7fa2ef99af2641b248961b1263677ed8",
+      "action": "old_member_id_removed_from_3.2_group; replacement_group_activation_not_verified"
+    },
+    {
+      "map": "janus",
+      "id": "171300347:202",
+      "label": "电子保险箱",
+      "beforeWorldPosition": {
+        "x": 126.65179,
+        "y": 28.716373,
+        "z": 28.174984
+      },
+      "beforeViewObjectId": 2001090,
+      "source": "research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171300347.json",
+      "sourceSha256": "ab07e3789433b5d4a7c3a1a609aea7a91bc7f852128313319cfac334026fc67b",
+      "action": "old_member_id_removed_from_3.2_group; replacement_group_activation_not_verified"
+    }
+  ],
+  "mapSummary": [
+    {
+      "map": "suburbs",
+      "oldGroupCount": 399,
+      "newGroupCount": 400,
+      "floorPointsChanged": false,
+      "addedGroups": [
+        171200407
+      ],
+      "removedGroups": [],
+      "summary": {
+        "changedGroups": 39,
+        "changedMembers": 121,
+        "positionChanges": 7,
+        "suiteChangedGroups": 10
+      }
+    },
+    {
+      "map": "janus",
+      "oldGroupCount": 401,
+      "newGroupCount": 403,
+      "floorPointsChanged": false,
+      "addedGroups": [
+        171300420,
+        171300421
+      ],
+      "removedGroups": [],
+      "summary": {
+        "changedGroups": 26,
+        "changedMembers": 62,
+        "positionChanges": 0,
+        "suiteChangedGroups": 4
+      }
+    }
+  ],
+  "sourceRouteChanges": [
+    {
+      "map": "janus",
+      "sourcePointId": "J-E10",
+      "action": "suspended_pending_3.2_group_review",
+      "oldMemberIds": [
+        "171300073:203"
+      ],
+      "sourcePositionUnchanged": true
+    },
+    {
+      "map": "janus",
+      "sourcePointId": "J-M14",
+      "action": "suspended_pending_3.2_group_review",
+      "oldMemberIds": [
+        "171300077:204"
+      ],
+      "sourcePositionUnchanged": true
+    },
+    {
+      "map": "suburbs",
+      "sourcePointId": "S-G04",
+      "memberId": "171200180:203",
+      "newWorldPosition": {
+        "x": -264.27957,
+        "y": 45.161163,
+        "z": 149.1139
+      },
+      "newProjectionErrorPixels": 17.11546,
+      "sourcePositionUnchanged": true
+    }
+  ],
+  "unresolved": [
+    "Only Floor named PointMap and exact member diffs reviewed; no full-map gameplay test.",
+    "New groups 171200407 / 171300420 / 171300421 need runtime-script validation before new interactive markers are added. Five removed Janus members have exact same-view/same-XYZ new-group candidates; proximity alone does not identify the sixth.",
+    "Suite and script changes may alter activation and gates; current routes already state that dynamic gates and obstacles are not applied.",
+    "Native navmesh geometry and Scene.NavMeshLinks were not proven changed by Group/Floor diffs, so remain untouched.",
+    "Source-image author marks and the old geometric registration/control points remain unchanged; old diagnostic entries are historical evidence."
+  ],
+  "additionalStaticReview": {
+    "doorScriptReferences": [
+      {
+        "map": "suburbs",
+        "id": "171200048:204",
+        "label": "电子保险箱",
+        "doorReference": "171200333:201",
+        "doorIsPublished": true,
+        "interpretation": "Explicit DFScript input association; does not establish open state, cost, or traversability."
+      },
+      {
+        "map": "suburbs",
+        "id": "171200048:205",
+        "label": "机械保险箱",
+        "doorReference": "171200333:201",
+        "doorIsPublished": true,
+        "interpretation": "Explicit DFScript input association; does not establish open state, cost, or traversability."
+      },
+      {
+        "map": "suburbs",
+        "id": "171200048:206",
+        "label": "公文包",
+        "doorReference": "171200333:201",
+        "doorIsPublished": true,
+        "interpretation": "Explicit DFScript input association; does not establish open state, cost, or traversability."
+      },
+      {
+        "map": "suburbs",
+        "id": "171200179:204",
+        "label": "电子保险箱",
+        "doorReference": "171200325:201",
+        "doorIsPublished": true,
+        "interpretation": "Explicit DFScript input association; does not establish open state, cost, or traversability."
+      },
+      {
+        "map": "suburbs",
+        "id": "171200179:205",
+        "label": "电子保险箱",
+        "doorReference": "171200325:201",
+        "doorIsPublished": true,
+        "interpretation": "Explicit DFScript input association; does not establish open state, cost, or traversability."
+      },
+      {
+        "map": "suburbs",
+        "id": "171200179:206",
+        "label": "电子保险箱",
+        "doorReference": "171200325:201",
+        "doorIsPublished": true,
+        "interpretation": "Explicit DFScript input association; does not establish open state, cost, or traversability."
+      },
+      {
+        "map": "suburbs",
+        "id": "171200179:207",
+        "label": "电子保险箱",
+        "doorReference": "171200325:201",
+        "doorIsPublished": true,
+        "interpretation": "Explicit DFScript input association; does not establish open state, cost, or traversability."
+      },
+      {
+        "map": "suburbs",
+        "id": "171200263:201",
+        "label": "电子保险箱",
+        "doorReference": "171200330:201",
+        "doorIsPublished": true,
+        "interpretation": "Explicit DFScript input association; does not establish open state, cost, or traversability."
+      },
+      {
+        "map": "suburbs",
+        "id": "171200263:202",
+        "label": "机械保险箱",
+        "doorReference": "171200330:201",
+        "doorIsPublished": true,
+        "interpretation": "Explicit DFScript input association; does not establish open state, cost, or traversability."
+      },
+      {
+        "map": "suburbs",
+        "id": "171200263:203",
+        "label": "机械保险箱",
+        "doorReference": "171200330:201",
+        "doorIsPublished": true,
+        "interpretation": "Explicit DFScript input association; does not establish open state, cost, or traversability."
+      },
+      {
+        "map": "suburbs",
+        "id": "171200375:201",
+        "label": "电子保险箱",
+        "doorReference": "171200337:201",
+        "doorIsPublished": true,
+        "interpretation": "Explicit DFScript input association; does not establish open state, cost, or traversability."
+      },
+      {
+        "map": "suburbs",
+        "id": "171200375:202",
+        "label": "机械保险箱",
+        "doorReference": "171200337:201",
+        "doorIsPublished": true,
+        "interpretation": "Explicit DFScript input association; does not establish open state, cost, or traversability."
+      },
+      {
+        "map": "suburbs",
+        "id": "171200376:201",
+        "label": "电子保险箱",
+        "doorReference": "171200338:201",
+        "doorIsPublished": true,
+        "interpretation": "Explicit DFScript input association; does not establish open state, cost, or traversability."
+      },
+      {
+        "map": "suburbs",
+        "id": "171200376:202",
+        "label": "机械保险箱",
+        "doorReference": "171200338:201",
+        "doorIsPublished": true,
+        "interpretation": "Explicit DFScript input association; does not establish open state, cost, or traversability."
+      },
+      {
+        "map": "suburbs",
+        "id": "171200376:203",
+        "label": "机械保险箱",
+        "doorReference": "171200338:201",
+        "doorIsPublished": true,
+        "interpretation": "Explicit DFScript input association; does not establish open state, cost, or traversability."
+      },
+      {
+        "map": "janus",
+        "id": "171300353:201",
+        "label": "电子保险箱",
+        "doorReference": "171300130:201",
+        "doorIsPublished": true,
+        "interpretation": "Explicit DFScript input association; does not establish open state, cost, or traversability."
+      },
+      {
+        "map": "janus",
+        "id": "171300353:202",
+        "label": "机械保险箱",
+        "doorReference": "171300130:201",
+        "doorIsPublished": true,
+        "interpretation": "Explicit DFScript input association; does not establish open state, cost, or traversability."
+      },
+      {
+        "map": "janus",
+        "id": "171300388:201",
+        "label": "电子保险箱",
+        "doorReference": "171300131:201",
+        "doorIsPublished": true,
+        "interpretation": "Explicit DFScript input association; does not establish open state, cost, or traversability."
+      },
+      {
+        "map": "janus",
+        "id": "171300388:202",
+        "label": "机械保险箱",
+        "doorReference": "171300131:201",
+        "doorIsPublished": true,
+        "interpretation": "Explicit DFScript input association; does not establish open state, cost, or traversability."
+      },
+      {
+        "map": "janus",
+        "id": "171300388:203",
+        "label": "机械保险箱",
+        "doorReference": "171300131:201",
+        "doorIsPublished": true,
+        "interpretation": "Explicit DFScript input association; does not establish open state, cost, or traversability."
+      },
+      {
+        "map": "janus",
+        "id": "171300389:201",
+        "label": "电子保险箱",
+        "doorReference": "171300129:201",
+        "doorIsPublished": true,
+        "interpretation": "Explicit DFScript input association; does not establish open state, cost, or traversability."
+      },
+      {
+        "map": "janus",
+        "id": "171300389:202",
+        "label": "电子保险箱",
+        "doorReference": "171300129:201",
+        "doorIsPublished": true,
+        "interpretation": "Explicit DFScript input association; does not establish open state, cost, or traversability."
+      },
+      {
+        "map": "janus",
+        "id": "171300389:203",
+        "label": "电子保险箱",
+        "doorReference": "171300129:201",
+        "doorIsPublished": true,
+        "interpretation": "Explicit DFScript input association; does not establish open state, cost, or traversability."
+      },
+      {
+        "map": "janus",
+        "id": "171300389:204",
+        "label": "机械保险箱",
+        "doorReference": "171300129:201",
+        "doorIsPublished": true,
+        "interpretation": "Explicit DFScript input association; does not establish open state, cost, or traversability."
+      }
+    ],
+    "mapIconOnlyChanges": [
+      {
+        "map": "janus",
+        "id": "171300007:201",
+        "fields": [
+          "MapIconTrait.GameplayTag",
+          "MapIconTrait.isDisable"
+        ]
+      },
+      {
+        "map": "janus",
+        "id": "171300071:203",
+        "fields": [
+          "MapIconTrait.GameplayTag",
+          "MapIconTrait.isDisable"
+        ]
+      },
+      {
+        "map": "janus",
+        "id": "171300184:214",
+        "fields": [
+          "MapIconTrait.GameplayTag",
+          "MapIconTrait.isDisable"
+        ]
+      },
+      {
+        "map": "janus",
+        "id": "171300281:201",
+        "fields": [
+          "MapIconTrait.GameplayTag",
+          "MapIconTrait.isDisable"
+        ]
+      }
+    ],
+    "addedGroups": [
+      {
+        "map": "suburbs",
+        "groupId": 171200407,
+        "members": 3,
+        "memberTypes": {
+          "Gadget": 3
+        },
+        "suiteCount": 7,
+        "viewObjectIds": [
+          2000066,
+          2001091
+        ]
+      },
+      {
+        "map": "janus",
+        "groupId": 171300420,
+        "members": 3,
+        "memberTypes": {
+          "Gadget": 3
+        },
+        "suiteCount": 0,
+        "viewObjectIds": [
+          2001090,
+          2001331
+        ]
+      },
+      {
+        "map": "janus",
+        "groupId": 171300421,
+        "members": 3,
+        "memberTypes": {
+          "Gadget": 3
+        },
+        "suiteCount": 6,
+        "viewObjectIds": [
+          2001090,
+          2001331
+        ]
+      }
+    ],
+    "preexistingDisabledNonContainerPoints": [
+      "171200183:206",
+      "171200185:207",
+      "171300151:201",
+      "171300158:207",
+      "171300205:205"
+    ],
+    "policy": "Existing conditional doors/boss portals retained; map icons alone do not establish interaction state; no automatic gate-open or route-edge inference."
+  }
+}

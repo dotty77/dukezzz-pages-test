@@ -1,0 +1,1110 @@
+[
+  {
+    "code": "000",
+    "name": "通用COLLECTION待展示屏幕",
+    "nameEn": "Collection standby",
+    "price": null,
+    "itemId": null,
+    "priceSource": "generic collection screen; no item price",
+    "video": "assets/tv-wall/000.mp4",
+    "poster": "assets/tv-wall/posters/000.jpg"
+  },
+  {
+    "code": "002",
+    "name": "稳压分流器",
+    "nameEn": "Stable Voltage Divider",
+    "price": 100000,
+    "itemId": 4360002,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/002.mp4",
+    "poster": "assets/tv-wall/posters/002.jpg"
+  },
+  {
+    "code": "003",
+    "name": "辉瓷戒指",
+    "nameEn": "Porcelume Rings",
+    "price": 500000,
+    "itemId": 4360003,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/003.mp4",
+    "poster": "assets/tv-wall/posters/003.jpg"
+  },
+  {
+    "code": "006",
+    "name": "信号探测器",
+    "nameEn": "Signal Detector",
+    "price": 100000,
+    "itemId": 4360006,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/006.mp4",
+    "poster": "assets/tv-wall/posters/006.jpg"
+  },
+  {
+    "code": "007",
+    "name": "界限测量仪",
+    "nameEn": "Limit Gauge",
+    "price": 100000,
+    "itemId": 4360007,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/007.mp4",
+    "poster": "assets/tv-wall/posters/007.jpg"
+  },
+  {
+    "code": "008",
+    "name": "机密资料",
+    "nameEn": "Classified Intel",
+    "price": 100000,
+    "itemId": 4360008,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/008.mp4",
+    "poster": "assets/tv-wall/posters/008.jpg"
+  },
+  {
+    "code": "009",
+    "name": "战术电脑",
+    "nameEn": "Tactical Computer",
+    "price": 100000,
+    "itemId": 4360009,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/009.mp4",
+    "poster": "assets/tv-wall/posters/009.jpg"
+  },
+  {
+    "code": "010",
+    "name": "观测数据球",
+    "nameEn": "Observation Data Orb",
+    "price": 300000,
+    "itemId": 4360010,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/010.mp4",
+    "poster": "assets/tv-wall/posters/010.jpg"
+  },
+  {
+    "code": "011",
+    "name": "《星徽骑士典藏版》",
+    "nameEn": "Starlight Knight Collector's Edition",
+    "price": 200000,
+    "itemId": 4360011,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/011.mp4",
+    "poster": "assets/tv-wall/posters/011.jpg"
+  },
+  {
+    "code": "012",
+    "name": "《杜拉罕的微笑》",
+    "nameEn": "Mona Dullahana",
+    "price": 500000,
+    "itemId": 4360012,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/012.mp4",
+    "poster": "assets/tv-wall/posters/012.jpg"
+  },
+  {
+    "code": "013",
+    "name": "《苦情慢歌》",
+    "nameEn": "Heartbreak Ballad",
+    "price": 200000,
+    "itemId": 4360013,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/013.mp4",
+    "poster": "assets/tv-wall/posters/013.jpg"
+  },
+  {
+    "code": "014",
+    "name": "挂饰「蝉」",
+    "nameEn": "Chan Accessory",
+    "price": 500000,
+    "itemId": 4360014,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/014.mp4",
+    "poster": "assets/tv-wall/posters/014.jpg"
+  },
+  {
+    "code": "015",
+    "name": "调频电视",
+    "nameEn": "Signal Search TV",
+    "price": 200000,
+    "itemId": 4360015,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/015.mp4",
+    "poster": "assets/tv-wall/posters/015.jpg"
+  },
+  {
+    "code": "016",
+    "name": "金卡带游戏机",
+    "nameEn": "Golden Cartridge Game Console",
+    "price": 300000,
+    "itemId": 4360016,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/016.mp4",
+    "poster": "assets/tv-wall/posters/016.jpg"
+  },
+  {
+    "code": "017",
+    "name": "金摆件·布思考",
+    "nameEn": "Golden Trinket: Boobrain",
+    "price": 1000000,
+    "itemId": 4360017,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/017.mp4",
+    "poster": "assets/tv-wall/posters/017.jpg"
+  },
+  {
+    "code": "018",
+    "name": "金摆件·思考布",
+    "nameEn": "Golden Trinket: Boorainy",
+    "price": 1000000,
+    "itemId": 4360018,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/018.mp4",
+    "poster": "assets/tv-wall/posters/018.jpg"
+  },
+  {
+    "code": "019",
+    "name": "纯金冰淇淋",
+    "nameEn": "Golden Ice Cream",
+    "price": 3000000,
+    "itemId": 4360019,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/019.mp4",
+    "poster": "assets/tv-wall/posters/019.jpg"
+  },
+  {
+    "code": "021",
+    "name": "稳定萝卜",
+    "nameEn": "Stable Carrot",
+    "price": 500000,
+    "itemId": 4363502,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/021.mp4",
+    "poster": "assets/tv-wall/posters/021.jpg"
+  },
+  {
+    "code": "023",
+    "name": "猎犬遗骸",
+    "nameEn": "Hound Hunting Trophy",
+    "price": 200000,
+    "itemId": 4360020,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/023.mp4",
+    "poster": "assets/tv-wall/posters/023.jpg"
+  },
+  {
+    "code": "024",
+    "name": "金摆件·王下一桶",
+    "nameEn": "Gold Trinket: Lordly Trashcan",
+    "price": 666666,
+    "itemId": 4360021,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/024.mp4",
+    "poster": "assets/tv-wall/posters/024.jpg"
+  },
+  {
+    "code": "025",
+    "name": "菠萝布摆件",
+    "nameEn": "Boonapple Ornament",
+    "price": 150000,
+    "itemId": 4360025,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/025.mp4",
+    "poster": "assets/tv-wall/posters/025.jpg"
+  },
+  {
+    "code": "026",
+    "name": "椰布摆件",
+    "nameEn": "Booboonut Ornament",
+    "price": 150000,
+    "itemId": 4360026,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/026.mp4",
+    "poster": "assets/tv-wall/posters/026.jpg"
+  },
+  {
+    "code": "027",
+    "name": "西瓜布摆件",
+    "nameEn": "Watermel-en Ornament",
+    "price": 150000,
+    "itemId": 4360027,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/027.mp4",
+    "poster": "assets/tv-wall/posters/027.jpg"
+  },
+  {
+    "code": "028",
+    "name": "茄子布摆件",
+    "nameEn": "Auboogine Ornament",
+    "price": 150000,
+    "itemId": 4360023,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/028.mp4",
+    "poster": "assets/tv-wall/posters/028.jpg"
+  },
+  {
+    "code": "029",
+    "name": "萝布摆件",
+    "nameEn": "Boonip Ornament",
+    "price": 150000,
+    "itemId": 4360024,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/029.mp4",
+    "poster": "assets/tv-wall/posters/029.jpg"
+  },
+  {
+    "code": "030",
+    "name": "白菜布摆件",
+    "nameEn": "Cabbooge Ornament",
+    "price": 150000,
+    "itemId": 4360022,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/030.mp4",
+    "poster": "assets/tv-wall/posters/030.jpg"
+  },
+  {
+    "code": "031",
+    "name": "番茄布摆件",
+    "nameEn": "Boomato Ornament",
+    "price": 150000,
+    "itemId": 4360029,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/031.mp4",
+    "poster": "assets/tv-wall/posters/031.jpg"
+  },
+  {
+    "code": "032",
+    "name": "玉米布摆件",
+    "nameEn": "Corn Cobboo Ornament",
+    "price": 150000,
+    "itemId": 4360030,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/032.mp4",
+    "poster": "assets/tv-wall/posters/032.jpg",
+    "frameTextNote": {
+      "zh": "画面文字写作 BOOBOONUT TRINKET（椰布摆件），是游戏素材原文；名称与金额按物资图鉴。",
+      "en": "The on-screen text reads BOOBOONUT TRINKET (the coconut ornament), as in the game files; the name and value follow the item archive."
+    }
+  },
+  {
+    "code": "033",
+    "name": "西蓝布摆件",
+    "nameEn": "Boorocoli Ornament",
+    "price": 150000,
+    "itemId": 4360028,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/033.mp4",
+    "poster": "assets/tv-wall/posters/033.jpg"
+  },
+  {
+    "code": "034",
+    "name": "燃油汽水摆件",
+    "nameEn": "Nitro-Fuel Soda Ornament",
+    "price": 200000,
+    "itemId": 4360031,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/034.mp4",
+    "poster": "assets/tv-wall/posters/034.jpg"
+  },
+  {
+    "code": "035",
+    "name": "脆皮煎饺摆件",
+    "nameEn": "Crispy Pan-Fried Dumpling Ornament",
+    "price": 200000,
+    "itemId": 4360032,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/035.mp4",
+    "poster": "assets/tv-wall/posters/035.jpg"
+  },
+  {
+    "code": "036",
+    "name": "奶油布丁摆件",
+    "nameEn": "Cream Pudding Ornament",
+    "price": 200000,
+    "itemId": 4360033,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/036.mp4",
+    "poster": "assets/tv-wall/posters/036.jpg"
+  },
+  {
+    "code": "037",
+    "name": "邦哥大（檀木黑）",
+    "nameEn": "Boo-rick Phone (Ebony Black)",
+    "price": 300000,
+    "itemId": 4360036,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/037.mp4",
+    "poster": "assets/tv-wall/posters/037.jpg"
+  },
+  {
+    "code": "038",
+    "name": "邦哥大（象牙白）",
+    "nameEn": "Boo-rick Phone (Ivory White)",
+    "price": 300000,
+    "itemId": 4360037,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/038.mp4",
+    "poster": "assets/tv-wall/posters/038.jpg"
+  },
+  {
+    "code": "039",
+    "name": "嗯呢钟（午夜黑）",
+    "nameEn": "En O'Clock (Midnight Black)",
+    "price": 300000,
+    "itemId": 4360034,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/039.mp4",
+    "poster": "assets/tv-wall/posters/039.jpg"
+  },
+  {
+    "code": "040",
+    "name": "嗯呢钟（白昼橙）",
+    "nameEn": "En O'Clock (Daylight Orange)",
+    "price": 300000,
+    "itemId": 4360035,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/040.mp4",
+    "poster": "assets/tv-wall/posters/040.jpg"
+  },
+  {
+    "code": "042",
+    "name": "红宝石戒指",
+    "nameEn": "Ruby Ring",
+    "price": 500000,
+    "itemId": 4360041,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/042.mp4",
+    "poster": "assets/tv-wall/posters/042.jpg"
+  },
+  {
+    "code": "043",
+    "name": "挂饰「血蝉」",
+    "nameEn": "Blood Cicada Pendant",
+    "price": 500000,
+    "itemId": 4360042,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/043.mp4",
+    "poster": "assets/tv-wall/posters/043.jpg"
+  },
+  {
+    "code": "044",
+    "name": "嗯呢钟（霜晓白）",
+    "nameEn": "En O'Clock (Icedawn White)",
+    "price": 300000,
+    "itemId": 4360043,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/044.mp4",
+    "poster": "assets/tv-wall/posters/044.jpg"
+  },
+  {
+    "code": "045",
+    "name": "邦哥大（琥珀橙）",
+    "nameEn": "Boo-rick Phone (Amber Orange)",
+    "price": 300000,
+    "itemId": 4360044,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/045.mp4",
+    "poster": "assets/tv-wall/posters/045.jpg"
+  },
+  {
+    "code": "046",
+    "name": "闭路电视",
+    "nameEn": "CCTV",
+    "price": 200000,
+    "itemId": 4360045,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/046.mp4",
+    "poster": "assets/tv-wall/posters/046.jpg"
+  },
+  {
+    "code": "047",
+    "name": "纪念邮票·丹",
+    "nameEn": "Commemoration Stamp: Dan",
+    "price": 300000,
+    "itemId": 4360052,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/047.mp4",
+    "poster": "assets/tv-wall/posters/047.jpg"
+  },
+  {
+    "code": "048",
+    "name": "纪念邮票·维克",
+    "nameEn": "Commemoration Stamp: Vike",
+    "price": 300000,
+    "itemId": 4360053,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/048.mp4",
+    "poster": "assets/tv-wall/posters/048.jpg"
+  },
+  {
+    "code": "054",
+    "name": "祖母绿",
+    "nameEn": "Emerald",
+    "price": 200000,
+    "itemId": 4360061,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/054.mp4",
+    "poster": "assets/tv-wall/posters/054.jpg"
+  },
+  {
+    "code": "055",
+    "name": "黄玉",
+    "nameEn": "Topaz",
+    "price": 200000,
+    "itemId": 4360062,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/055.mp4",
+    "poster": "assets/tv-wall/posters/055.jpg"
+  },
+  {
+    "code": "056",
+    "name": "红宝石",
+    "nameEn": "Ruby",
+    "price": 200000,
+    "itemId": 4360063,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/056.mp4",
+    "poster": "assets/tv-wall/posters/056.jpg"
+  },
+  {
+    "code": "057",
+    "name": "海蓝宝石",
+    "nameEn": "Aquamarine",
+    "price": 200000,
+    "itemId": 4360064,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/057.mp4",
+    "poster": "assets/tv-wall/posters/057.jpg"
+  },
+  {
+    "code": "058",
+    "name": "辉瓷盘摆件·清正有节",
+    "nameEn": "Porcelume Plate Decoration: Integrity and Poise",
+    "price": 200000,
+    "itemId": 4360104,
+    "priceSource": "client ZKItemTemplateTb 3.3.0: fd6cb326c07c75f39b0b05845d204302c451ec34",
+    "video": "assets/tv-wall/058.mp4",
+    "poster": "assets/tv-wall/posters/058.jpg",
+    "introducedVersion": "3.3.0",
+    "provenance": {
+      "clientBuild": "OSPRODWin3.3.0",
+      "configurationCommit": "fd6cb326c07c75f39b0b05845d204302c451ec34",
+      "nameTextKey": "ZKItem_4360104_Name",
+      "resourceName": "Zenkov_Collection_058_Pro",
+      "cab": "CAB-287a94d3db4a43762d507a5461154b1f",
+      "pathId": "3839433815054723369",
+      "source": "client/ZenlessZoneZero_Data/Persistent/Blocks/960086388.blk",
+      "sourceSha256": "c50f23104191a8bbe9761516bd1b4deabec57c07c22445ff341f1c8a1ba7bddc",
+      "sourcePngSha256": "3ff9663b5576f681759d3065178d80252ad28253f181fb1a86045b8dac1425e7",
+      "grid": [
+        12,
+        16
+      ],
+      "frames": 192,
+      "previewFps": 24,
+      "gameFpsVerified": false
+    }
+  },
+  {
+    "code": "059",
+    "name": "辉瓷盘摆件·空谷幽兰",
+    "nameEn": "Porcelume Plate Decoration: Hidden Valley Orchid",
+    "price": 200000,
+    "itemId": 4360105,
+    "priceSource": "client ZKItemTemplateTb 3.3.0: fd6cb326c07c75f39b0b05845d204302c451ec34",
+    "video": "assets/tv-wall/059.mp4",
+    "poster": "assets/tv-wall/posters/059.jpg",
+    "introducedVersion": "3.3.0",
+    "provenance": {
+      "clientBuild": "OSPRODWin3.3.0",
+      "configurationCommit": "fd6cb326c07c75f39b0b05845d204302c451ec34",
+      "nameTextKey": "ZKItem_4360105_Name",
+      "resourceName": "Zenkov_Collection_059_Pro",
+      "cab": "CAB-d192cf7f68a85f2f55f4df9292277830",
+      "pathId": "-8956038592868527210",
+      "source": "client/ZenlessZoneZero_Data/Persistent/Blocks/3187347827.blk",
+      "sourceSha256": "d12b5f8f4ce0af4249fc6080e8f8ba0acf821c2e7e4a1131628791269165e972",
+      "sourcePngSha256": "2d86cd644800fb2c7a61d5a95477c118e698a828238277628afee4678dabd659",
+      "grid": [
+        12,
+        16
+      ],
+      "frames": 192,
+      "previewFps": 24,
+      "gameFpsVerified": false
+    }
+  },
+  {
+    "code": "060",
+    "name": "辉瓷盘摆件·傲雪凌霜",
+    "nameEn": "Porcelume Plate Decoration: Unbowed by Frost",
+    "price": 200000,
+    "itemId": 4360106,
+    "priceSource": "client ZKItemTemplateTb 3.3.0: fd6cb326c07c75f39b0b05845d204302c451ec34",
+    "video": "assets/tv-wall/060.mp4",
+    "poster": "assets/tv-wall/posters/060.jpg",
+    "introducedVersion": "3.3.0",
+    "provenance": {
+      "clientBuild": "OSPRODWin3.3.0",
+      "configurationCommit": "fd6cb326c07c75f39b0b05845d204302c451ec34",
+      "nameTextKey": "ZKItem_4360106_Name",
+      "resourceName": "Zenkov_Collection_060_Pro",
+      "cab": "CAB-3fbc6729aa8db5a8e281d56481e45987",
+      "pathId": "4529578671087817041",
+      "source": "client/ZenlessZoneZero_Data/Persistent/Blocks/3567894054.blk",
+      "sourceSha256": "506a03a8050ac288c227a7acb818515a47220f1d4ed76a4f82f2e65988776b88",
+      "sourcePngSha256": "49799209d820242a418b6101aa4112d310f18a199b622e1b5dc159ae183a92be",
+      "grid": [
+        12,
+        16
+      ],
+      "frames": 192,
+      "previewFps": 24,
+      "gameFpsVerified": false
+    }
+  },
+  {
+    "code": "061",
+    "name": "辉瓷盘摆件·孤芳自赏",
+    "nameEn": "Porcelume Plate Decoration: Solitary Bloom",
+    "price": 200000,
+    "itemId": 4360107,
+    "priceSource": "client ZKItemTemplateTb 3.3.0: fd6cb326c07c75f39b0b05845d204302c451ec34",
+    "video": "assets/tv-wall/061.mp4",
+    "poster": "assets/tv-wall/posters/061.jpg",
+    "introducedVersion": "3.3.0",
+    "provenance": {
+      "clientBuild": "OSPRODWin3.3.0",
+      "configurationCommit": "fd6cb326c07c75f39b0b05845d204302c451ec34",
+      "nameTextKey": "ZKItem_4360107_Name",
+      "resourceName": "Zenkov_Collection_061_Pro",
+      "cab": "CAB-f1d5dece2798ac9a49248933bd468aa2",
+      "pathId": "-7800907310514940512",
+      "source": "client/ZenlessZoneZero_Data/Persistent/Blocks/246925863.blk",
+      "sourceSha256": "aac7adb190a381c1a31122ed2776dc607c853118f07049106116b5e508ba5453",
+      "sourcePngSha256": "748d7e29028e2a61a0ebb20bb865f3b6736eede5b1816fd4db619457207d04d2",
+      "grid": [
+        12,
+        16
+      ],
+      "frames": 192,
+      "previewFps": 24,
+      "gameFpsVerified": false
+    }
+  },
+  {
+    "code": "070",
+    "name": "惰性单质·X",
+    "nameEn": "Inert Substance X",
+    "price": 100000,
+    "itemId": 4360116,
+    "priceSource": "client ZKItemTemplateTb 3.3.0: fd6cb326c07c75f39b0b05845d204302c451ec34",
+    "video": "assets/tv-wall/070.mp4",
+    "poster": "assets/tv-wall/posters/070.jpg",
+    "introducedVersion": "3.3.0",
+    "provenance": {
+      "clientBuild": "OSPRODWin3.3.0",
+      "configurationCommit": "fd6cb326c07c75f39b0b05845d204302c451ec34",
+      "nameTextKey": "ZKItem_4360116_Name",
+      "resourceName": "Zenkov_Collection_070_Pro",
+      "cab": "CAB-8a6555ee84a4c6de58424b52cd885819",
+      "pathId": "9214066562362659619",
+      "source": "client/ZenlessZoneZero_Data/Persistent/Blocks/2214662708.blk",
+      "sourceSha256": "81cc7783446bcd045d5ca834613248e48de344655428998dca40d6a50d656c37",
+      "sourcePngSha256": "40eb2d8651767c185a4b6befa96dc12523c80e216c7b3a0e46f0ec8971665d3b",
+      "grid": [
+        12,
+        16
+      ],
+      "frames": 192,
+      "previewFps": 24,
+      "gameFpsVerified": false
+    }
+  },
+  {
+    "code": "071",
+    "name": "惰性单质·Y",
+    "nameEn": "Inert Substance Y",
+    "price": 100000,
+    "itemId": 4360117,
+    "priceSource": "client ZKItemTemplateTb 3.3.0: fd6cb326c07c75f39b0b05845d204302c451ec34",
+    "video": "assets/tv-wall/071.mp4",
+    "poster": "assets/tv-wall/posters/071.jpg",
+    "introducedVersion": "3.3.0",
+    "provenance": {
+      "clientBuild": "OSPRODWin3.3.0",
+      "configurationCommit": "fd6cb326c07c75f39b0b05845d204302c451ec34",
+      "nameTextKey": "ZKItem_4360117_Name",
+      "resourceName": "Zenkov_Collection_071_Pro",
+      "cab": "CAB-6d34bad35d0b09165908436f6f45562c",
+      "pathId": "-275789236628109146",
+      "source": "client/ZenlessZoneZero_Data/Persistent/Blocks/3199411313.blk",
+      "sourceSha256": "5adb2916e2d9699bd5b43234bf1399271c43be4f9fe07387d3c0eb44d550fdc5",
+      "sourcePngSha256": "5967b6d11384012603f4aa6cd7d8e7899b29f110ee74b95129210e206b2b862e",
+      "grid": [
+        12,
+        16
+      ],
+      "frames": 192,
+      "previewFps": 24,
+      "gameFpsVerified": false,
+      "mappingNote": "Pro071/072 embedded English labels and object colors identify Y/Z respectively. ZKItem Idle/Bag resource numbers are reversed; TV mapping is independently verified against the original Pro frames."
+    }
+  },
+  {
+    "code": "072",
+    "name": "惰性单质·Z",
+    "nameEn": "Inert Substance Z",
+    "price": 100000,
+    "itemId": 4360118,
+    "priceSource": "client ZKItemTemplateTb 3.3.0: fd6cb326c07c75f39b0b05845d204302c451ec34",
+    "video": "assets/tv-wall/072.mp4",
+    "poster": "assets/tv-wall/posters/072.jpg",
+    "introducedVersion": "3.3.0",
+    "provenance": {
+      "clientBuild": "OSPRODWin3.3.0",
+      "configurationCommit": "fd6cb326c07c75f39b0b05845d204302c451ec34",
+      "nameTextKey": "ZKItem_4360118_Name",
+      "resourceName": "Zenkov_Collection_072_Pro",
+      "cab": "CAB-5119c023a8498e3dfed60b9397b4ab51",
+      "pathId": "1082973877624502334",
+      "source": "client/ZenlessZoneZero_Data/Persistent/Blocks/95812765.blk",
+      "sourceSha256": "e7ad679ea139d5e8d44561af63f7421560c127ab49d0df41b85ecbf3da320016",
+      "sourcePngSha256": "39f3e29d00938e856e1a5a458f5274de05a660d228ed5a604c889368e515baff",
+      "grid": [
+        12,
+        16
+      ],
+      "frames": 192,
+      "previewFps": 24,
+      "gameFpsVerified": false,
+      "mappingNote": "Pro071/072 embedded English labels and object colors identify Y/Z respectively. ZKItem Idle/Bag resource numbers are reversed; TV mapping is independently verified against the original Pro frames."
+    }
+  },
+  {
+    "code": "073",
+    "name": "邦布牌·恶魔",
+    "nameEn": "Bangboo Card: Devil",
+    "price": 1000000,
+    "itemId": 4360119,
+    "priceSource": "client ZKItemTemplateTb 3.3.0: fd6cb326c07c75f39b0b05845d204302c451ec34",
+    "video": "assets/tv-wall/073.mp4",
+    "poster": "assets/tv-wall/posters/073.jpg",
+    "introducedVersion": "3.3.0",
+    "provenance": {
+      "clientBuild": "OSPRODWin3.3.0",
+      "configurationCommit": "fd6cb326c07c75f39b0b05845d204302c451ec34",
+      "nameTextKey": "ZKItem_4360119_Name",
+      "resourceName": "Zenkov_Collection_073_Pro",
+      "cab": "CAB-fec64d0d41f936eab300123f807198c7",
+      "pathId": "-9085975130944894292",
+      "source": "client/ZenlessZoneZero_Data/Persistent/Blocks/3508121104.blk",
+      "sourceSha256": "64afbb51987298f59add01104ebdde4d612006a3387f97821fc4b4a2e5bff8ba",
+      "sourcePngSha256": "2a971228bf58f36f12cca58ab381419b940b347fcad6944452a36c625f163d65",
+      "grid": [
+        12,
+        16
+      ],
+      "frames": 192,
+      "previewFps": 24,
+      "gameFpsVerified": false
+    }
+  },
+  {
+    "code": "074",
+    "name": "红烧牛肉布摆件",
+    "nameEn": "Braised Beef Boodles Ornament",
+    "price": 200000,
+    "itemId": 4360057,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/074.mp4",
+    "poster": "assets/tv-wall/posters/074.jpg"
+  },
+  {
+    "code": "075",
+    "name": "鲜虾鱼板布摆件",
+    "nameEn": "Shrimp Boodles Ornament",
+    "price": 200000,
+    "itemId": 4360058,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/075.mp4",
+    "poster": "assets/tv-wall/posters/075.jpg"
+  },
+  {
+    "code": "076",
+    "name": "香菇炖鸡布摆件",
+    "nameEn": "Mushroom Chicken Boodles Ornament",
+    "price": 200000,
+    "itemId": 4360059,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/076.mp4",
+    "poster": "assets/tv-wall/posters/076.jpg"
+  },
+  {
+    "code": "077",
+    "name": "酸菜布摆件",
+    "nameEn": "Pickled Cabbage Boodles Ornament",
+    "price": 200000,
+    "itemId": 4360060,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/077.mp4",
+    "poster": "assets/tv-wall/posters/077.jpg"
+  },
+  {
+    "code": "078",
+    "name": "封存资料·帕帕戈",
+    "nameEn": "Sealed Files: Papago",
+    "price": 200000,
+    "itemId": 4360065,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/078.mp4",
+    "poster": "assets/tv-wall/posters/078.jpg"
+  },
+  {
+    "code": "079",
+    "name": "封存资料·黑水基地",
+    "nameEn": "Sealed Files: Darkwater Research Center",
+    "price": 200000,
+    "itemId": 4360066,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/079.mp4",
+    "poster": "assets/tv-wall/posters/079.jpg"
+  },
+  {
+    "code": "080",
+    "name": "封存资料·以骸机械",
+    "nameEn": "Sealed Files: Ethereal Machines",
+    "price": 200000,
+    "itemId": 4360067,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/080.mp4",
+    "poster": "assets/tv-wall/posters/080.jpg"
+  },
+  {
+    "code": "081",
+    "name": "封存资料·绝密",
+    "nameEn": "Sealed Files: Classified",
+    "price": 200000,
+    "itemId": 4360068,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/081.mp4",
+    "poster": "assets/tv-wall/posters/081.jpg"
+  },
+  {
+    "code": "082",
+    "name": "星徽骑士变身器·雷欧",
+    "nameEn": "Starlight Knight Transmorpher: Leo",
+    "price": 500000,
+    "itemId": 4360047,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/082.mp4",
+    "poster": "assets/tv-wall/posters/082.jpg"
+  },
+  {
+    "code": "083",
+    "name": "星徽骑士变身器·金牛",
+    "nameEn": "Starlight Knight Transmorpher: Taurus",
+    "price": 300000,
+    "itemId": 4360054,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/083.mp4",
+    "poster": "assets/tv-wall/posters/083.jpg",
+    "frameTextNote": {
+      "zh": "画面文字写作 SAGITTARIUS（射手），是游戏素材原文；名称与金额按物资图鉴。",
+      "en": "The on-screen text reads SAGITTARIUS, as in the game files; the name and value follow the item archive."
+    }
+  },
+  {
+    "code": "084",
+    "name": "星徽骑士变身器·射手",
+    "nameEn": "Starlight Knight Transmorpher: Sagittarius",
+    "price": 300000,
+    "itemId": 4360055,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/084.mp4",
+    "poster": "assets/tv-wall/posters/084.jpg",
+    "frameTextNote": {
+      "zh": "画面文字写作 TAURUS（金牛），是游戏素材原文；名称与金额按物资图鉴。",
+      "en": "The on-screen text reads TAURUS, as in the game files; the name and value follow the item archive."
+    }
+  },
+  {
+    "code": "085",
+    "name": "星徽骑士变身器·？黑洞？",
+    "nameEn": "Starlight Knight Transmorpher? Black Hole?",
+    "price": 300000,
+    "itemId": 4360056,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/085.mp4",
+    "poster": "assets/tv-wall/posters/085.jpg"
+  },
+  {
+    "code": "086",
+    "name": "午后茶歇·小咪发箍",
+    "nameEn": "Afternoon Tea Break: Kitty Hairband",
+    "price": 500000,
+    "itemId": 4360048,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/086.mp4",
+    "poster": "assets/tv-wall/posters/086.jpg"
+  },
+  {
+    "code": "087",
+    "name": "绯红摇滚·天琴座之星",
+    "nameEn": "Scarlet Rock: Stars of Lyra",
+    "price": 500000,
+    "itemId": 4360049,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/087.mp4",
+    "poster": "assets/tv-wall/posters/087.jpg"
+  },
+  {
+    "code": "088",
+    "name": "月夜密语·柔声面纱",
+    "nameEn": "Moonlight Whispers: Silk-Soft Veil",
+    "price": 500000,
+    "itemId": 4360050,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/088.mp4",
+    "poster": "assets/tv-wall/posters/088.jpg"
+  },
+  {
+    "code": "089",
+    "name": "绒耳寒枝·叮铃踝环",
+    "nameEn": "Cuddly Executor: Jingling Anklet",
+    "price": 500000,
+    "itemId": 4360051,
+    "priceSource": "client item mapping: pro-item-mapping.json",
+    "video": "assets/tv-wall/089.mp4",
+    "poster": "assets/tv-wall/posters/089.jpg"
+  },
+  {
+    "code": "091",
+    "name": "邦布牌·天使",
+    "nameEn": "Bangboo Card: Angel",
+    "price": 500000,
+    "itemId": 4360120,
+    "priceSource": "client ZKItemTemplateTb 3.3.0: fd6cb326c07c75f39b0b05845d204302c451ec34",
+    "video": "assets/tv-wall/091.mp4",
+    "poster": "assets/tv-wall/posters/091.jpg",
+    "introducedVersion": "3.3.0",
+    "provenance": {
+      "clientBuild": "OSPRODWin3.3.0",
+      "configurationCommit": "fd6cb326c07c75f39b0b05845d204302c451ec34",
+      "nameTextKey": "ZKItem_4360120_Name",
+      "resourceName": "Zenkov_Collection_091_Pro",
+      "cab": "CAB-7730a85d1d3f7070cefa7fa1f89860e5",
+      "pathId": "-8067945220210261699",
+      "source": "client/ZenlessZoneZero_Data/Persistent/Blocks/3851885966.blk",
+      "sourceSha256": "82931657fff94aea05a56a15164a1506d14e2bd37672ef8d87422317ca16026b",
+      "sourcePngSha256": "786160bb00d5d6404499fecd403817e58bbc2b37bd6161280803783506604adf",
+      "grid": [
+        12,
+        16
+      ],
+      "frames": 192,
+      "previewFps": 24,
+      "gameFpsVerified": false
+    }
+  },
+  {
+    "code": "092",
+    "name": "摆件·恶魔布",
+    "nameEn": "Trinket: Devilboo",
+    "price": 200000,
+    "itemId": 4360121,
+    "priceSource": "client ZKItemTemplateTb 3.3.0: fd6cb326c07c75f39b0b05845d204302c451ec34",
+    "video": "assets/tv-wall/092.mp4",
+    "poster": "assets/tv-wall/posters/092.jpg",
+    "introducedVersion": "3.3.0",
+    "provenance": {
+      "clientBuild": "OSPRODWin3.3.0",
+      "configurationCommit": "fd6cb326c07c75f39b0b05845d204302c451ec34",
+      "nameTextKey": "ZKItem_4360121_Name",
+      "resourceName": "Zenkov_Collection_092_Pro",
+      "cab": "CAB-1e8a140cf35f44f9ba74c3a3ef042f94",
+      "pathId": "-4095506059514853172",
+      "source": "client/ZenlessZoneZero_Data/Persistent/Blocks/1738358085.blk",
+      "sourceSha256": "faec24a5b6f93d4be42eca4b81fa91579ee68f5615053fd7e763c7802cffa0de",
+      "sourcePngSha256": "b2d9554ce6103ed1adee3d2eaefe88c866ab04c3497969ddee0abe3ab664ad60",
+      "grid": [
+        12,
+        16
+      ],
+      "frames": 192,
+      "previewFps": 24,
+      "gameFpsVerified": false
+    }
+  },
+  {
+    "code": "093",
+    "name": "摆件·天使布",
+    "nameEn": "Trinket: Angelboo",
+    "price": 200000,
+    "itemId": 4360122,
+    "priceSource": "client ZKItemTemplateTb 3.3.0: fd6cb326c07c75f39b0b05845d204302c451ec34",
+    "video": "assets/tv-wall/093.mp4",
+    "poster": "assets/tv-wall/posters/093.jpg",
+    "introducedVersion": "3.3.0",
+    "provenance": {
+      "clientBuild": "OSPRODWin3.3.0",
+      "configurationCommit": "fd6cb326c07c75f39b0b05845d204302c451ec34",
+      "nameTextKey": "ZKItem_4360122_Name",
+      "resourceName": "Zenkov_Collection_093_Pro",
+      "cab": "CAB-ca7b2a3530f5e788055ea380acdaad8b",
+      "pathId": "-1280383816739277356",
+      "source": "client/ZenlessZoneZero_Data/Persistent/Blocks/4169976033.blk",
+      "sourceSha256": "8ebe719afb3fc43f12bd241355b2ad260811f9a54e651a39373d3e9e42b155f9",
+      "sourcePngSha256": "bb0609e45714fd676ed69ed886732b361a79b5f57c386ea520e616c723dd716d",
+      "grid": [
+        12,
+        16
+      ],
+      "frames": 192,
+      "previewFps": 24,
+      "gameFpsVerified": false
+    }
+  },
+  {
+    "code": "094",
+    "name": "摆件·胆小布",
+    "nameEn": "Trinket: Timidboo",
+    "price": 200000,
+    "itemId": 4360123,
+    "priceSource": "client ZKItemTemplateTb 3.3.0: fd6cb326c07c75f39b0b05845d204302c451ec34",
+    "video": "assets/tv-wall/094.mp4",
+    "poster": "assets/tv-wall/posters/094.jpg",
+    "introducedVersion": "3.3.0",
+    "provenance": {
+      "clientBuild": "OSPRODWin3.3.0",
+      "configurationCommit": "fd6cb326c07c75f39b0b05845d204302c451ec34",
+      "nameTextKey": "ZKItem_4360123_Name",
+      "resourceName": "Zenkov_Collection_094_Pro",
+      "cab": "CAB-f50d9776819034963e605ccd7457c451",
+      "pathId": "3347581596914900671",
+      "source": "client/ZenlessZoneZero_Data/Persistent/Blocks/3545772432.blk",
+      "sourceSha256": "09fd25a040e009d29dcfc293a16f724f524fabeaceacd352c25470ac3ff630d0",
+      "sourcePngSha256": "ee2ccccb81634c5ddc4ef64112ed46966c231b960abe5e79be400d5b0d0269ba",
+      "grid": [
+        12,
+        16
+      ],
+      "frames": 192,
+      "previewFps": 24,
+      "gameFpsVerified": false
+    }
+  },
+  {
+    "code": "095",
+    "name": "摆件·古怪萝卜",
+    "nameEn": "Trinket: Quirky Carrot",
+    "price": 500000,
+    "itemId": 4360124,
+    "priceSource": "client ZKItemTemplateTb 3.3.0: fd6cb326c07c75f39b0b05845d204302c451ec34",
+    "video": "assets/tv-wall/095.mp4",
+    "poster": "assets/tv-wall/posters/095.jpg",
+    "introducedVersion": "3.3.0",
+    "provenance": {
+      "clientBuild": "OSPRODWin3.3.0",
+      "configurationCommit": "fd6cb326c07c75f39b0b05845d204302c451ec34",
+      "nameTextKey": "ZKItem_4360124_Name",
+      "resourceName": "Zenkov_Collection_095_Pro",
+      "cab": "CAB-84e08bc8be4d6a4e5a06fd4e48d55633",
+      "pathId": "-7154590672102161200",
+      "source": "client/ZenlessZoneZero_Data/Persistent/Blocks/3049068756.blk",
+      "sourceSha256": "7dcf9b243f14429c193495f99681dcad5fd36d417c69787ea6bb3b5bb678c90d",
+      "sourcePngSha256": "16a7667319e868cf9599accc683ae060a12faf95508069c856dd619cb0ce638e",
+      "grid": [
+        12,
+        16
+      ],
+      "frames": 192,
+      "previewFps": 24,
+      "gameFpsVerified": false
+    }
+  },
+  {
+    "code": "096",
+    "name": "挂饰·百兽之王",
+    "nameEn": "Trinket: King of Beasts",
+    "price": 300000,
+    "itemId": 4360125,
+    "priceSource": "client ZKItemTemplateTb 3.3.0: fd6cb326c07c75f39b0b05845d204302c451ec34",
+    "video": "assets/tv-wall/096.mp4",
+    "poster": "assets/tv-wall/posters/096.jpg",
+    "introducedVersion": "3.3.0",
+    "provenance": {
+      "clientBuild": "OSPRODWin3.3.0",
+      "configurationCommit": "fd6cb326c07c75f39b0b05845d204302c451ec34",
+      "nameTextKey": "ZKItem_4360125_Name",
+      "resourceName": "Zenkov_Collection_096_Pro",
+      "cab": "CAB-a13424e4ed00382328f79c607b532385",
+      "pathId": "-3406771327295876584",
+      "source": "client/ZenlessZoneZero_Data/Persistent/Blocks/1598358156.blk",
+      "sourceSha256": "8aa009a7d4c16b1f2ad3eb2f252468f2c64ec6867373694ca07eb61136f160ab",
+      "sourcePngSha256": "ace01a394e35a27b03b34cb0a714f0a9f428e13cd8333ce50136464f3165c432",
+      "grid": [
+        12,
+        16
+      ],
+      "frames": 192,
+      "previewFps": 24,
+      "gameFpsVerified": false
+    }
+  },
+  {
+    "code": "097",
+    "name": "玩偶·小光布",
+    "nameEn": "Plushie: Xiao'Guangboo",
+    "price": 300000,
+    "itemId": 4360126,
+    "priceSource": "client ZKItemTemplateTb 3.3.0: fd6cb326c07c75f39b0b05845d204302c451ec34",
+    "video": "assets/tv-wall/097.mp4",
+    "poster": "assets/tv-wall/posters/097.jpg",
+    "introducedVersion": "3.3.0",
+    "provenance": {
+      "clientBuild": "OSPRODWin3.3.0",
+      "configurationCommit": "fd6cb326c07c75f39b0b05845d204302c451ec34",
+      "nameTextKey": "ZKItem_4360126_Name",
+      "resourceName": "Zenkov_Collection_097_Pro",
+      "cab": "CAB-2976b7889871d1c8459f079be6f84d20",
+      "pathId": "6038800338939961532",
+      "source": "client/ZenlessZoneZero_Data/Persistent/Blocks/4023507787.blk",
+      "sourceSha256": "dbc12fb1032fab4c88fd7e49a36ea600d40c105a4075568190d8443bd581642a",
+      "sourcePngSha256": "89010d35ef041d78840422dda0a1408bf691e8585c47b5bddf36a98ec1b581a9",
+      "grid": [
+        12,
+        16
+      ],
+      "frames": 192,
+      "previewFps": 24,
+      "gameFpsVerified": false
+    }
+  },
+  {
+    "code": "098",
+    "name": "玩偶·仪玄布",
+    "nameEn": "Plushie: Yixuanboo",
+    "price": 300000,
+    "itemId": 4360127,
+    "priceSource": "client ZKItemTemplateTb 3.3.0: fd6cb326c07c75f39b0b05845d204302c451ec34",
+    "video": "assets/tv-wall/098.mp4",
+    "poster": "assets/tv-wall/posters/098.jpg",
+    "introducedVersion": "3.3.0",
+    "provenance": {
+      "clientBuild": "OSPRODWin3.3.0",
+      "configurationCommit": "fd6cb326c07c75f39b0b05845d204302c451ec34",
+      "nameTextKey": "ZKItem_4360127_Name",
+      "resourceName": "Zenkov_Collection_098_Pro",
+      "cab": "CAB-82a19d6f9a3cc40c02588ae2fd43921f",
+      "pathId": "6481583530258604981",
+      "source": "client/ZenlessZoneZero_Data/Persistent/Blocks/4051090774.blk",
+      "sourceSha256": "5c4a3ae4cc8746d83a60731b0e187007d9ab657869a1ad31b014a7fd0a800645",
+      "sourcePngSha256": "1b45798c358dc321289d0a18d9d79982bb633e89696b23968e3d4a697b8cdaf8",
+      "grid": [
+        12,
+        16
+      ],
+      "frames": 192,
+      "previewFps": 24,
+      "gameFpsVerified": false
+    }
+  }
+]

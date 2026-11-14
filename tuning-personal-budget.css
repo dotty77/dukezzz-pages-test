@@ -1,0 +1,37 @@
+.personal-budget{margin:24px 0;padding:26px;scroll-margin-top:100px;overflow:hidden}
+.personal-budget-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}
+.personal-budget-heading h2{font-size:25px;margin:0 0 8px}.personal-budget-heading .quiet-button{flex-shrink:0}
+.personal-budget-heading .personal-budget-note{margin:0 0 8px}
+.personal-budget-scope{font-size:12px;line-height:1.65;color:var(--muted);margin:0;overflow-wrap:anywhere}
+.personal-budget-context{display:inline-block;font-size:12px;color:var(--accent);padding:8px 12px;border-radius:8px;background:var(--theme-accent-bg);margin:8px 0 22px}
+.personal-budget-note{font-size:12px;line-height:1.85;color:var(--muted);overflow-wrap:anywhere;margin:10px 0}
+.personal-budget-input-grid,.personal-budget-pools,.personal-budget-breakdown{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.personal-budget-group{min-width:0;border:1px solid var(--line);border-radius:12px;padding:18px;margin:0;background:var(--bg)}
+.personal-budget-group legend{padding:0 8px;font-size:14px;font-weight:650;color:var(--text)}
+.personal-budget-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.personal-budget-field{display:flex;flex-direction:column;gap:8px;min-width:0;font-size:12px;color:var(--muted)}
+.tuning-page .personal-budget-field input,.tuning-page .personal-budget-field select{width:100%;min-width:0;min-height:44px;background:var(--surface);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:10px;font-size:13px}
+.personal-budget-field input[aria-invalid="true"]{outline:2px solid var(--tuning-danger,#ec8992);outline-offset:1px}
+.personal-budget-fold{margin-top:14px;font-size:12px;line-height:1.75;color:var(--muted)}
+.personal-budget-fold>summary{cursor:pointer;color:var(--accent);font-weight:600;overflow-wrap:anywhere;padding:4px 0}
+.personal-budget-fold>summary:focus-visible,.personal-budget-method>summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+.personal-budget-fold>.personal-budget-note:last-child{margin-bottom:0}
+.personal-budget-owned{border-top:1px solid var(--line);padding-top:10px}.personal-budget-owned[open]>.personal-budget-fields{margin-top:12px}
+.personal-budget-calculation{border:1px solid var(--line);border-radius:10px;padding:10px 15px;background:var(--bg)}
+.personal-budget-calculation[open]>.personal-budget-breakdown{margin-top:14px}
+.personal-budget-history{margin:24px 0}.personal-budget-history h3{font-size:17px;margin:0 0 14px}
+.personal-budget-read{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.personal-budget-confirm{display:flex;gap:10px;align-items:flex-start;font-size:12px;line-height:1.7;color:var(--muted)}
+.personal-budget-confirm input{margin-top:3px;flex-shrink:0;width:17px;height:17px;accent-color:var(--accent)}
+.personal-budget-read button{flex-shrink:0}.personal-budget-pools{margin-top:20px}.personal-budget-pools .personal-budget-fields{grid-template-columns:1fr 1.35fr}
+.personal-budget-warning,.personal-budget-notice,.personal-budget-covered{padding:12px 15px;border-radius:8px;font-size:12px;line-height:1.8;background:var(--tuning-gold-bg);color:var(--tuning-gold)}
+.personal-budget-notice,.personal-budget-covered{background:var(--theme-accent-bg);color:var(--accent)}
+.personal-budget-result-hero{padding:24px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(115deg,var(--theme-accent-bg),var(--surface))}
+.personal-budget-eyebrow{display:block;font-size:13px;color:var(--muted)}.personal-budget-result-hero>strong{display:block;font-size:40px;line-height:1.5;color:var(--accent);font-variant-numeric:tabular-nums;margin:5px 0}
+.personal-budget-result-hero p{font-size:12px;color:var(--muted);line-height:1.85;margin:0;max-width:900px}
+.personal-budget-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0}
+.personal-budget-stat{background:var(--bg);padding:17px;border:1px solid var(--line);border-radius:10px;min-width:0}.personal-budget-stat>span{display:block;font-size:12px;line-height:1.6;color:var(--muted)}.personal-budget-stat>strong{display:block;font-size:25px;margin-top:8px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}.personal-budget-stat.is-covered strong{color:var(--accent)}
+.personal-budget-breakdown-pool{padding:15px 18px;background:var(--bg);border-radius:10px;min-width:0;font-size:12px;line-height:1.8}.personal-budget-breakdown-pool h4{font-size:14px;margin:0 0 10px}.personal-budget-breakdown-pool p{margin:7px 0}.personal-budget-scenario{padding:7px 10px;border-left:2px solid var(--accent);color:var(--text);background:var(--surface)}
+.personal-budget-method{border-top:1px solid var(--line);margin:22px 0 14px;padding-top:16px;font-size:12px;line-height:1.9;color:var(--muted)}.personal-budget-method summary{cursor:pointer;color:var(--accent);font-weight:600}.personal-budget-sources{display:flex;gap:12px;flex-wrap:wrap}.personal-budget-method a{color:var(--accent)}
+@media(max-width:1050px){.personal-budget-input-grid,.personal-budget-pools{grid-template-columns:1fr}.personal-budget-read{align-items:flex-start;flex-direction:column}}
+@media(max-width:620px){.personal-budget{padding:18px 14px}.personal-budget-heading{flex-wrap:wrap;gap:5px}.personal-budget-heading h2{font-size:22px}.personal-budget-group{padding:14px}.personal-budget-fields,.personal-budget-pools .personal-budget-fields,.personal-budget-breakdown{grid-template-columns:1fr}.personal-budget-metrics{grid-template-columns:1fr 1fr}.personal-budget-stat:last-child{grid-column:1/-1}.personal-budget-result-hero{padding:17px}.personal-budget-result-hero>strong{font-size:32px}.personal-budget-read button{max-width:100%;white-space:normal;text-align:left}.personal-budget-stat>strong{font-size:23px}}

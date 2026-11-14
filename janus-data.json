@@ -1,0 +1,3549 @@
+{
+  "map": "janus",
+  "title": "Janus Illusion / 雅努斯地图",
+  "sourceAuthor": "@KELZERO",
+  "requestedDifficulty": "高危",
+  "sourceDifficultyConfirmed": false,
+  "coordinateSystem": {
+    "type": "image_normalized",
+    "xDirection": "right",
+    "yDirection": "down",
+    "referenceWidth": 1616,
+    "referenceHeight": 1629,
+    "worldPositionAvailable": false,
+    "warning": "x、y 为原图归一化图像坐标，不是游戏世界坐标；真实三维地图需另行获取场景资产并做空间配准。",
+    "positionalAccuracy": "由图标中心转录，不能代表开箱交互位置的精确坐标；重叠图标经原作者排版偏移。"
+  },
+  "sources": [
+    {
+      "sourceImage": 1,
+      "version": "V6",
+      "date": "2026-09-04",
+      "content": "保险箱、装备箱、医疗站、传送门"
+    },
+    {
+      "sourceImage": 3,
+      "version": "V4",
+      "date": "2026-09-01",
+      "content": "公文包、垃圾桶、拟态敌人"
+    },
+    {
+      "sourceImage": 5,
+      "version": "V4",
+      "date": "2026-09-01",
+      "content": "门禁房与房内箱数"
+    },
+    {
+      "sourceImage": 16,
+      "version": "V7",
+      "date": "2026-09-22",
+      "content": "新增电子箱与分层图标修正",
+      "path": "assets/map-sources/kelzero-20260923/kelzero-08-qqFaT7t.png"
+    },
+    {
+      "sourceImage": 18,
+      "version": "V6",
+      "date": "2026-09-22",
+      "content": "公文包真伪分类、工地楼层与拟态位置修正",
+      "path": "assets/map-sources/kelzero-20260923/kelzero-10-0cU5102.png"
+    }
+  ],
+  "statusDefinitions": {
+    "fixed_source": "原图非随机图例标注；尚非官方或多局实测的必刷保证。",
+    "random_source": "原图明确有问号随机标记。",
+    "unknown": "图例未交代或图标重叠无法可靠辨认。",
+    "conditional": "存在门禁卡等前置条件；不代表入房后物资逐局必刷。"
+  },
+  "limitations": [
+    "用户要求高危难度，但提供的图片没有明确难度标签，不能以此证明高危专属刷新规律。",
+    "空 floors 表示原图未明确标楼层，不应自动解释为一楼。",
+    "原图传送门不是玩家出生点；玩家出生点数据暂缺。",
+    "两张点位图版本日期不同，数据为对各图的忠实转录，尚未实机验证版本一致性。",
+    "门禁图列出的箱子总数是房间级汇总，可能与图 1 的点位重叠，不能与独立图标数直接相加。",
+    "原图未提供逐层路网、实际高度、楼梯、电梯拓扑或场景模型，不能据此重建可自由游览的真实三维场景。",
+    "公文包按 KELZERO 2026-10-26 更新日志及单色图标修订；作者图页脚仍残留旧真假说明，修订依据与旧记录保留。作者观察不保证本局刷新或掉落。"
+  ],
+  "points": [
+    {
+      "id": "J-E01",
+      "type": "electronic",
+      "x": 0.607673,
+      "y": 0.063843,
+      "pixelPosition": {
+        "x": 982,
+        "y": 104,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "random_source",
+      "label": "街区北端电子箱",
+      "region": "street",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-E02",
+      "type": "electronic",
+      "x": 0.837252,
+      "y": 0.133211,
+      "pixelPosition": {
+        "x": 1353,
+        "y": 217,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "random_source",
+      "label": "北侧转角电子箱 A",
+      "region": "street",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-E03",
+      "type": "electronic",
+      "x": 0.850866,
+      "y": 0.143646,
+      "pixelPosition": {
+        "x": 1375,
+        "y": 234,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "random_source",
+      "label": "北侧转角电子箱 B",
+      "region": "street",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-E04",
+      "type": "electronic",
+      "x": 0.862624,
+      "y": 0.133211,
+      "pixelPosition": {
+        "x": 1394,
+        "y": 217,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "random_source",
+      "label": "北侧转角电子箱 C",
+      "region": "street",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-E05",
+      "type": "electronic",
+      "x": 0.870668,
+      "y": 0.211786,
+      "pixelPosition": {
+        "x": 1407,
+        "y": 345,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "random_source",
+      "label": "东侧台阶电子箱",
+      "region": "street",
+      "note": "图标下半部被二楼机械箱图标遮挡，顶部问号可见；二楼标记只紧邻机械箱，未移用到此箱。",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-E06",
+      "type": "electronic",
+      "x": 0.816832,
+      "y": 0.243708,
+      "pixelPosition": {
+        "x": 1320,
+        "y": 397,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "街区中东部电子箱",
+      "region": "street",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-E07",
+      "type": "electronic",
+      "x": 0.845297,
+      "y": 0.241252,
+      "pixelPosition": {
+        "x": 1366,
+        "y": 393,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "random_source",
+      "label": "东侧庭院电子箱",
+      "region": "street",
+      "note": "下方的二楼标记属于装备箱。",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-E08",
+      "type": "electronic",
+      "x": 0.944926,
+      "y": 0.245549,
+      "pixelPosition": {
+        "x": 1527,
+        "y": 400,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "最东端电子箱",
+      "region": "street",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-E09",
+      "type": "electronic",
+      "x": 0.745668,
+      "y": 0.265193,
+      "pixelPosition": {
+        "x": 1205,
+        "y": 432,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "random_source",
+      "label": "街区中部北侧电子箱",
+      "region": "street",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-E10",
+      "type": "electronic",
+      "x": 0.740718,
+      "y": 0.281768,
+      "pixelPosition": {
+        "x": 1197,
+        "y": 459,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "random_source",
+      "label": "门禁房北侧电子箱",
+      "region": "street",
+      "note": "与门禁图标相邻，不能仅凭平面距离确认在门禁房内。",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-E11",
+      "type": "electronic",
+      "x": 0.709777,
+      "y": 0.316145,
+      "pixelPosition": {
+        "x": 1147,
+        "y": 515,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "random_source",
+      "label": "门禁房西南侧电子箱 A",
+      "region": "street",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-E12",
+      "type": "electronic",
+      "x": 0.72401,
+      "y": 0.316145,
+      "pixelPosition": {
+        "x": 1170,
+        "y": 515,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "random_source",
+      "label": "门禁房西南侧电子箱 B",
+      "region": "street",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-E13",
+      "type": "electronic",
+      "x": 0.73453,
+      "y": 0.325967,
+      "pixelPosition": {
+        "x": 1187,
+        "y": 531,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "random_source",
+      "label": "门禁房南侧电子箱 A",
+      "region": "street",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-E14",
+      "type": "electronic",
+      "x": 0.719678,
+      "y": 0.3407,
+      "pixelPosition": {
+        "x": 1163,
+        "y": 555,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "random_source",
+      "label": "门禁房南侧电子箱 B",
+      "region": "street",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-E15",
+      "type": "electronic",
+      "x": 0.805074,
+      "y": 0.30264,
+      "pixelPosition": {
+        "x": 1301,
+        "y": 493,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "random_source",
+      "label": "街区东南电子箱",
+      "region": "street",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-E16",
+      "type": "electronic",
+      "x": 0.766089,
+      "y": 0.306937,
+      "pixelPosition": {
+        "x": 1238,
+        "y": 500,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "unknown",
+      "label": "机械箱后方重叠电子箱",
+      "region": "street",
+      "note": "紫色电子箱图标可见，但问号大部被机械箱遮挡；无法可靠判定固定或随机。",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-E17",
+      "type": "electronic",
+      "x": 0.604579,
+      "y": 0.292818,
+      "pixelPosition": {
+        "x": 977,
+        "y": 477,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "random_source",
+      "label": "工地东侧上方电子箱",
+      "region": "construction",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-E18",
+      "type": "electronic",
+      "x": 0.594059,
+      "y": 0.325353,
+      "pixelPosition": {
+        "x": 960,
+        "y": 530,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "random_source",
+      "label": "工地东侧下方电子箱",
+      "region": "construction",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-E19",
+      "type": "electronic",
+      "x": 0.572401,
+      "y": 0.308778,
+      "pixelPosition": {
+        "x": 925,
+        "y": 503,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "random_source",
+      "label": "工地东侧医疗站附近电子箱",
+      "region": "construction",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-E20",
+      "type": "electronic",
+      "x": 0.488861,
+      "y": 0.323511,
+      "pixelPosition": {
+        "x": 790,
+        "y": 527,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "random_source",
+      "label": "工地中部电子箱 A",
+      "region": "construction",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-E21",
+      "type": "electronic",
+      "x": 0.492574,
+      "y": 0.337017,
+      "pixelPosition": {
+        "x": 796,
+        "y": 549,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "random_source",
+      "label": "工地中部电子箱 B",
+      "region": "construction",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-E22",
+      "type": "electronic",
+      "x": 0.406559,
+      "y": 0.306323,
+      "pixelPosition": {
+        "x": 657,
+        "y": 499,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [
+        3
+      ],
+      "floorEvidence": "explicit",
+      "status": "random_source",
+      "label": "工地西楼北侧三楼电子箱 A",
+      "region": "construction",
+      "note": "新版将原来 2/3 共用符号分成两个楼层位置；本旧编号保留三楼图标，二楼另列。不是新增刷新数量的断言。",
+      "sourceImage": 16,
+      "previousEvidence": {
+        "sourceImage": 1,
+        "floors": [
+          2,
+          3
+        ],
+        "note": "原图同一图标标注 2/3，记录为同一平面位置覆盖两层；不据此推断两层同时出现。",
+        "x": 0.406559,
+        "y": 0.306937
+      },
+      "sourceDate": "2026-09-22"
+    },
+    {
+      "id": "J-E23",
+      "type": "electronic",
+      "x": 0.418936,
+      "y": 0.320442,
+      "pixelPosition": {
+        "x": 677,
+        "y": 522,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [
+        3
+      ],
+      "floorEvidence": "explicit",
+      "status": "random_source",
+      "label": "工地西楼北侧三楼电子箱 B",
+      "region": "construction",
+      "note": "新版将原来 2/3 共用符号分成两个楼层位置；本旧编号保留三楼图标，二楼另列。不是新增刷新数量的断言。",
+      "sourceImage": 16,
+      "previousEvidence": {
+        "sourceImage": 1,
+        "floors": [
+          2,
+          3
+        ],
+        "note": "原图同一图标标注 2/3，记录为同一平面位置覆盖两层；不据此推断两层同时出现。",
+        "x": 0.417698,
+        "y": 0.320442
+      },
+      "sourceDate": "2026-09-22"
+    },
+    {
+      "id": "J-E24",
+      "type": "electronic",
+      "x": 0.406559,
+      "y": 0.342541,
+      "pixelPosition": {
+        "x": 657,
+        "y": 558,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [
+        3
+      ],
+      "floorEvidence": "explicit",
+      "status": "random_source",
+      "label": "工地西楼中段三楼电子箱 A",
+      "region": "construction",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-E25",
+      "type": "electronic",
+      "x": 0.42203,
+      "y": 0.339472,
+      "pixelPosition": {
+        "x": 682,
+        "y": 553,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [
+        3
+      ],
+      "floorEvidence": "explicit",
+      "status": "random_source",
+      "label": "工地西楼中段三楼电子箱 B",
+      "region": "construction",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-E26",
+      "type": "electronic",
+      "x": 0.387995,
+      "y": 0.374463,
+      "pixelPosition": {
+        "x": 627,
+        "y": 610,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [
+        3
+      ],
+      "floorEvidence": "explicit",
+      "status": "random_source",
+      "label": "工地顶层门禁西侧电子箱",
+      "region": "construction",
+      "note": "图标与门禁图标重叠。",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-E27",
+      "type": "electronic",
+      "x": 0.387995,
+      "y": 0.403315,
+      "pixelPosition": {
+        "x": 627,
+        "y": 657,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "random_source",
+      "label": "工地西楼南侧电子箱 A",
+      "region": "construction",
+      "note": "三枚图标堆叠，楼层标记仅能明确归属中间图标。",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-E28",
+      "type": "electronic",
+      "x": 0.391708,
+      "y": 0.413751,
+      "pixelPosition": {
+        "x": 633,
+        "y": 674,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [
+        3
+      ],
+      "floorEvidence": "explicit",
+      "status": "random_source",
+      "label": "工地西楼南侧电子箱 B",
+      "region": "construction",
+      "note": "三枚图标堆叠，原图 3 贴于中间图标。",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-E29",
+      "type": "electronic",
+      "x": 0.397277,
+      "y": 0.420503,
+      "pixelPosition": {
+        "x": 642,
+        "y": 685,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "random_source",
+      "label": "工地西楼南侧电子箱 C",
+      "region": "construction",
+      "note": "三枚图标堆叠，楼层标记仅能明确归属中间图标。",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-E30",
+      "type": "electronic",
+      "x": 0.461634,
+      "y": 0.685697,
+      "pixelPosition": {
+        "x": 746,
+        "y": 1117,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "random_source",
+      "label": "中央广场北侧电子箱 A",
+      "region": "lumina",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-E31",
+      "type": "electronic",
+      "x": 0.461015,
+      "y": 0.709638,
+      "pixelPosition": {
+        "x": 745,
+        "y": 1156,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "random_source",
+      "label": "中央广场北侧电子箱 B",
+      "region": "lumina",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-E32",
+      "type": "electronic",
+      "x": 0.456683,
+      "y": 0.751381,
+      "pixelPosition": {
+        "x": 738,
+        "y": 1224,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "random_source",
+      "label": "中央广场中北电子箱",
+      "region": "lumina",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-E33",
+      "type": "electronic",
+      "x": 0.444307,
+      "y": 0.764273,
+      "pixelPosition": {
+        "x": 718,
+        "y": 1245,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "random_source",
+      "label": "中央广场横街电子箱 A",
+      "region": "lumina",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-E34",
+      "type": "electronic",
+      "x": 0.430693,
+      "y": 0.764273,
+      "pixelPosition": {
+        "x": 696,
+        "y": 1245,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "random_source",
+      "label": "中央广场横街电子箱 B",
+      "region": "lumina",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-E35",
+      "type": "electronic",
+      "x": 0.318688,
+      "y": 0.756292,
+      "pixelPosition": {
+        "x": 515,
+        "y": 1232,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "random_source",
+      "label": "中央广场西侧电子箱 A",
+      "region": "lumina",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-E36",
+      "type": "electronic",
+      "x": 0.344678,
+      "y": 0.759362,
+      "pixelPosition": {
+        "x": 557,
+        "y": 1237,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "random_source",
+      "label": "中央广场西侧电子箱 B",
+      "region": "lumina",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-E37",
+      "type": "electronic",
+      "x": 0.340965,
+      "y": 0.782075,
+      "pixelPosition": {
+        "x": 551,
+        "y": 1274,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "中央广场西侧电子箱 C",
+      "region": "lumina",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-E38",
+      "type": "electronic",
+      "x": 0.586015,
+      "y": 0.821977,
+      "pixelPosition": {
+        "x": 947,
+        "y": 1339,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "random_source",
+      "label": "中央广场东侧电子箱",
+      "region": "lumina",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-E39",
+      "type": "electronic",
+      "x": 0.391708,
+      "y": 0.845918,
+      "pixelPosition": {
+        "x": 633,
+        "y": 1378,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [
+        3
+      ],
+      "floorEvidence": "explicit",
+      "status": "random_source",
+      "label": "中央广场南楼三楼电子箱",
+      "region": "lumina",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-E40",
+      "type": "electronic",
+      "x": 0.353342,
+      "y": 0.845918,
+      "pixelPosition": {
+        "x": 571,
+        "y": 1378,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [
+        2
+      ],
+      "floorEvidence": "explicit",
+      "status": "fixed_source",
+      "label": "二楼接待室旁电子箱",
+      "region": "lumina",
+      "note": "图标部分被二楼门禁标记遮挡；无问号紫色方块可见。平面相邻不证明属于该门禁房。",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-E41",
+      "type": "electronic",
+      "x": 0.426361,
+      "y": 0.847145,
+      "pixelPosition": {
+        "x": 689,
+        "y": 1380,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "南楼门禁后方电子箱",
+      "region": "lumina",
+      "note": "图标被上方门禁标记部分遮挡；无问号紫色方块可见。三楼数字贴于门禁，不据此判定本箱楼层。",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-E42",
+      "type": "electronic",
+      "x": 0.438119,
+      "y": 0.850215,
+      "pixelPosition": {
+        "x": 708,
+        "y": 1385,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "random_source",
+      "label": "南楼门禁东侧电子箱",
+      "region": "lumina",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-E43",
+      "type": "electronic",
+      "x": 0.560644,
+      "y": 0.921424,
+      "pixelPosition": {
+        "x": 906,
+        "y": 1501,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "random_source",
+      "label": "中央广场东南电子箱 A",
+      "region": "lumina",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-E44",
+      "type": "electronic",
+      "x": 0.564975,
+      "y": 0.949662,
+      "pixelPosition": {
+        "x": 913,
+        "y": 1547,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "random_source",
+      "label": "中央广场东南电子箱 B",
+      "region": "lumina",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-M01",
+      "type": "mechanical",
+      "x": 0.737005,
+      "y": 0.097606,
+      "pixelPosition": {
+        "x": 1191,
+        "y": 159,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "街区北侧通道机械箱",
+      "region": "street",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-M02",
+      "type": "mechanical",
+      "x": 0.785891,
+      "y": 0.157766,
+      "pixelPosition": {
+        "x": 1270,
+        "y": 257,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "街区北侧弯道机械箱",
+      "region": "street",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-M03",
+      "type": "mechanical",
+      "x": 0.899752,
+      "y": 0.168201,
+      "pixelPosition": {
+        "x": 1454,
+        "y": 274,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "random_source",
+      "label": "街区东北机械箱 A",
+      "region": "street",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-M04",
+      "type": "mechanical",
+      "x": 0.905322,
+      "y": 0.181093,
+      "pixelPosition": {
+        "x": 1463,
+        "y": 295,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "random_source",
+      "label": "街区东北机械箱 B",
+      "region": "street",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-M05",
+      "type": "mechanical",
+      "x": 0.902847,
+      "y": 0.192756,
+      "pixelPosition": {
+        "x": 1459,
+        "y": 314,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "街区东北机械箱 C",
+      "region": "street",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-M06",
+      "type": "mechanical",
+      "x": 0.871287,
+      "y": 0.219767,
+      "pixelPosition": {
+        "x": 1408,
+        "y": 358,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [
+        2
+      ],
+      "floorEvidence": "explicit",
+      "status": "fixed_source",
+      "label": "街区东侧二楼机械箱",
+      "region": "street",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-M07",
+      "type": "mechanical",
+      "x": 0.784035,
+      "y": 0.263352,
+      "pixelPosition": {
+        "x": 1267,
+        "y": 429,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "街区中部机械箱",
+      "region": "street",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-M08",
+      "type": "mechanical",
+      "x": 0.758045,
+      "y": 0.286065,
+      "pixelPosition": {
+        "x": 1225,
+        "y": 466,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "街区门禁东侧机械箱",
+      "region": "street",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-M09",
+      "type": "mechanical",
+      "x": 0.770421,
+      "y": 0.301412,
+      "pixelPosition": {
+        "x": 1245,
+        "y": 491,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "random_source",
+      "label": "街区门禁东南机械箱",
+      "region": "street",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-M10",
+      "type": "mechanical",
+      "x": 0.813119,
+      "y": 0.294045,
+      "pixelPosition": {
+        "x": 1314,
+        "y": 479,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "random_source",
+      "label": "街区东南机械箱",
+      "region": "street",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-M11",
+      "type": "mechanical",
+      "x": 0.699257,
+      "y": 0.293432,
+      "pixelPosition": {
+        "x": 1130,
+        "y": 478,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "街区西南机械箱",
+      "region": "street",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-M12",
+      "type": "mechanical",
+      "x": 0.637376,
+      "y": 0.294659,
+      "pixelPosition": {
+        "x": 1030,
+        "y": 480,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [
+        3
+      ],
+      "floorEvidence": "explicit",
+      "status": "fixed_source",
+      "label": "工地东侧三楼机械箱",
+      "region": "construction",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-M13",
+      "type": "mechanical",
+      "x": 0.446782,
+      "y": 0.288521,
+      "pixelPosition": {
+        "x": 722,
+        "y": 470,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [
+        1
+      ],
+      "floorEvidence": "explicit_author_floor_inset",
+      "status": "fixed_source",
+      "label": "工地北侧机械箱",
+      "region": "construction",
+      "note": "新版作者图在工地楼层拆分中明确标为 1F；保留原主图位置和刷新标识。此处补充楼层依据，不代表本局必刷或确定掉落。",
+      "sourceImage": 30,
+      "previousEvidence20261021": {
+        "sourceImage": 1,
+        "floors": [],
+        "floorEvidence": "unlabelled",
+        "note": ""
+      },
+      "sourceDate": "2026-10-11",
+      "authorReview": {
+        "id": "J-M13",
+        "newEvidenceId": 30,
+        "oldPixel": [
+          722,
+          470
+        ],
+        "evidencePixel": [
+          557,
+          397
+        ],
+        "floors": [
+          1
+        ],
+        "status": "floor-explicit-in-author-inset",
+        "reason": "工地北部唯一机械箱转入1F图；另一机械箱仍在3F门禁处，旧ID与主图坐标不变。"
+      },
+      "noteEn": "The updated author map explicitly places this marker on 1F in the construction-site floor inset. Its original main-map position and spawn classification are retained. This clarifies the floor; it does not guarantee a spawn or drop in your run."
+    },
+    {
+      "id": "J-M14",
+      "type": "mechanical",
+      "x": 0.419554,
+      "y": 0.38674,
+      "pixelPosition": {
+        "x": 678,
+        "y": 630,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [
+        3
+      ],
+      "floorEvidence": "explicit",
+      "status": "fixed_source",
+      "label": "工地顶层门禁附近机械箱",
+      "region": "construction",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-M15",
+      "type": "mechanical",
+      "x": 0.309406,
+      "y": 0.691835,
+      "pixelPosition": {
+        "x": 500,
+        "y": 1127,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "中央广场西北入口机械箱",
+      "region": "lumina",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-M16",
+      "type": "mechanical",
+      "x": 0.349629,
+      "y": 0.741559,
+      "pixelPosition": {
+        "x": 565,
+        "y": 1208,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [
+        2
+      ],
+      "floorEvidence": "explicit",
+      "status": "fixed_source",
+      "label": "中央广场西侧二楼机械箱",
+      "region": "lumina",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-M17",
+      "type": "mechanical",
+      "x": 0.329827,
+      "y": 0.766114,
+      "pixelPosition": {
+        "x": 533,
+        "y": 1248,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "中央广场西侧横街机械箱",
+      "region": "lumina",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-M18",
+      "type": "mechanical",
+      "x": 0.48453,
+      "y": 0.753837,
+      "pixelPosition": {
+        "x": 783,
+        "y": 1228,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "中央广场中北机械箱",
+      "region": "lumina",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-M19",
+      "type": "mechanical",
+      "x": 0.455446,
+      "y": 0.854512,
+      "pixelPosition": {
+        "x": 736,
+        "y": 1392,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [
+        2
+      ],
+      "floorEvidence": "explicit",
+      "status": "fixed_source",
+      "label": "中央广场南楼二楼机械箱",
+      "region": "lumina",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-M20",
+      "type": "mechanical",
+      "x": 0.572401,
+      "y": 0.821977,
+      "pixelPosition": {
+        "x": 925,
+        "y": 1339,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "random_source",
+      "label": "中央广场东侧随机机械箱",
+      "region": "lumina",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-M21",
+      "type": "mechanical",
+      "x": 0.5625,
+      "y": 0.891958,
+      "pixelPosition": {
+        "x": 909,
+        "y": 1453,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "中央广场东南机械箱",
+      "region": "lumina",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-M22",
+      "type": "mechanical",
+      "x": 0.525371,
+      "y": 0.927563,
+      "pixelPosition": {
+        "x": 849,
+        "y": 1511,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "中央广场南侧机械箱",
+      "region": "lumina",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-M23",
+      "type": "mechanical",
+      "x": 0.47896,
+      "y": 0.949662,
+      "pixelPosition": {
+        "x": 774,
+        "y": 1547,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "中央广场最南机械箱",
+      "region": "lumina",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-G01",
+      "type": "gear",
+      "x": 0.757426,
+      "y": 0.23143,
+      "pixelPosition": {
+        "x": 1224,
+        "y": 377,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "街区中心北侧装备箱",
+      "region": "street",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-G02",
+      "type": "gear",
+      "x": 0.845297,
+      "y": 0.257827,
+      "pixelPosition": {
+        "x": 1366,
+        "y": 420,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [
+        2
+      ],
+      "floorEvidence": "explicit",
+      "status": "fixed_source",
+      "label": "街区东侧二楼装备箱",
+      "region": "street",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-G03",
+      "type": "gear",
+      "x": 0.634282,
+      "y": 0.302026,
+      "pixelPosition": {
+        "x": 1025,
+        "y": 492,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [
+        2
+      ],
+      "floorEvidence": "explicit",
+      "status": "fixed_source",
+      "label": "工地东侧二楼装备箱",
+      "region": "construction",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-G04",
+      "type": "gear",
+      "x": 0.490718,
+      "y": 0.276243,
+      "pixelPosition": {
+        "x": 793,
+        "y": 450,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "工地北侧装备箱",
+      "region": "construction",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-H01",
+      "type": "medical",
+      "x": 0.627475,
+      "y": 0.116022,
+      "pixelPosition": {
+        "x": 1014,
+        "y": 189,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "街区北端医疗站",
+      "region": "street",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-H02",
+      "type": "medical",
+      "x": 0.829827,
+      "y": 0.245549,
+      "pixelPosition": {
+        "x": 1341,
+        "y": 400,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "街区中东医疗站",
+      "region": "street",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-H03",
+      "type": "medical",
+      "x": 0.904084,
+      "y": 0.258441,
+      "pixelPosition": {
+        "x": 1461,
+        "y": 421,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [
+        2
+      ],
+      "floorEvidence": "explicit",
+      "status": "fixed_source",
+      "label": "街区东侧二楼医疗站",
+      "region": "street",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-H04",
+      "type": "medical",
+      "x": 0.835396,
+      "y": 0.296501,
+      "pixelPosition": {
+        "x": 1350,
+        "y": 483,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "街区东南医疗站",
+      "region": "street",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-H05",
+      "type": "medical",
+      "x": 0.572401,
+      "y": 0.329036,
+      "pixelPosition": {
+        "x": 925,
+        "y": 536,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "工地东侧医疗站",
+      "region": "construction",
+      "note": "",
+      "sourceImage": 1
+    },
+    {
+      "id": "J-B01",
+      "type": "briefcase",
+      "x": 0.644802,
+      "y": 0.100061,
+      "pixelPosition": {
+        "x": 1042,
+        "y": 163,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "街区北端公文包",
+      "region": "street",
+      "note": "KELZERO 10月26日更新日志及新版图标已将此处标为可交互公文包；按作者资料更正，不保证本局出现或掉落特定物品。",
+      "sourceImage": 41,
+      "previousEvidence": {
+        "sourceImage": 3,
+        "status": "fixed_source",
+        "label": "街区北端公文包",
+        "note": ""
+      },
+      "briefcaseNature": "real",
+      "lootEligible": true,
+      "sourceDate": "2026-10-26",
+      "labelEn": "North end of Six Dusk Street briefcase",
+      "previousEvidence20261106": {
+        "briefcaseNature": "fake",
+        "lootEligible": false,
+        "label": "街区北端假公文包",
+        "status": "fixed_source",
+        "note": "新版灰粉色图例为假公文包，不计作可掉落 Break-Even Beacon 的真公文包；保留旧编号供定位。",
+        "sourceImage": 18,
+        "sourceDate": "2026-09-22"
+      },
+      "sourceUrl": "https://imgur.com/a/cTlwhvc",
+      "noteEn": "KELZERO’s Oct 26 changelog and revised symbols identify this as an interactable briefcase. This author-based correction does not guarantee a spawn or a particular drop."
+    },
+    {
+      "id": "J-B02",
+      "type": "briefcase",
+      "x": 0.725248,
+      "y": 0.090239,
+      "pixelPosition": {
+        "x": 1172,
+        "y": 147,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "街区北侧通道公文包",
+      "region": "street",
+      "note": "KELZERO 10月26日更新日志及新版图标已将此处标为可交互公文包；按作者资料更正，不保证本局出现或掉落特定物品。",
+      "sourceImage": 41,
+      "previousEvidence": {
+        "sourceImage": 3,
+        "status": "fixed_source",
+        "label": "街区北侧通道公文包",
+        "note": ""
+      },
+      "briefcaseNature": "real",
+      "lootEligible": true,
+      "sourceDate": "2026-10-26",
+      "labelEn": "Northern street passage briefcase",
+      "previousEvidence20261106": {
+        "briefcaseNature": "fake",
+        "lootEligible": false,
+        "label": "街区北侧通道假公文包",
+        "status": "fixed_source",
+        "note": "新版灰粉色图例为假公文包，不计作可掉落 Break-Even Beacon 的真公文包；保留旧编号供定位。",
+        "sourceImage": 18,
+        "sourceDate": "2026-09-22"
+      },
+      "sourceUrl": "https://imgur.com/a/cTlwhvc",
+      "noteEn": "KELZERO’s Oct 26 changelog and revised symbols identify this as an interactable briefcase. This author-based correction does not guarantee a spawn or a particular drop."
+    },
+    {
+      "id": "J-B03",
+      "type": "briefcase",
+      "x": 0.834158,
+      "y": 0.106814,
+      "pixelPosition": {
+        "x": 1348,
+        "y": 174,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "街区东北真公文包",
+      "region": "street",
+      "note": "KELZERO 10月26日更新日志及新版图标已将此处标为可交互公文包；按作者资料更正，不保证本局出现或掉落特定物品。",
+      "sourceImage": 41,
+      "previousEvidence": {
+        "sourceImage": 3,
+        "status": "fixed_source",
+        "label": "街区东北公文包",
+        "note": ""
+      },
+      "briefcaseNature": "real",
+      "lootEligible": true,
+      "sourceDate": "2026-10-26",
+      "previousEvidence20261106": {
+        "briefcaseNature": "real",
+        "lootEligible": true,
+        "label": "街区东北真公文包",
+        "status": "fixed_source",
+        "note": "新版棕色图例为真公文包；原作者说明只有真公文包掉落 Break-Even Beacon。不据此断言高危必刷。",
+        "sourceImage": 18,
+        "sourceDate": "2026-09-22"
+      },
+      "sourceUrl": "https://imgur.com/a/cTlwhvc",
+      "noteEn": "KELZERO’s Oct 26 changelog and revised symbols identify this as an interactable briefcase. This author-based correction does not guarantee a spawn or a particular drop."
+    },
+    {
+      "id": "J-B04",
+      "type": "briefcase",
+      "x": 0.89047,
+      "y": 0.14733,
+      "pixelPosition": {
+        "x": 1439,
+        "y": 240,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "街区东北转角公文包",
+      "region": "street",
+      "note": "KELZERO 10月26日更新日志及新版图标已将此处标为可交互公文包；按作者资料更正，不保证本局出现或掉落特定物品。",
+      "sourceImage": 41,
+      "previousEvidence": {
+        "sourceImage": 3,
+        "status": "fixed_source",
+        "label": "街区东北转角公文包",
+        "note": ""
+      },
+      "briefcaseNature": "real",
+      "lootEligible": true,
+      "sourceDate": "2026-10-26",
+      "labelEn": "Northeast street corner briefcase",
+      "previousEvidence20261106": {
+        "briefcaseNature": "spawn_dependent",
+        "lootEligible": true,
+        "label": "街区东北转角公文包 · 真伪随出生点变化",
+        "status": "conditional",
+        "note": "新版双色图例：真假随玩家出生位置变化；作者未提供实测概率，不能把图例 50/50 当作掉率。只有真公文包掉落 Break-Even Beacon。",
+        "sourceImage": 18,
+        "sourceDate": "2026-09-22"
+      },
+      "sourceUrl": "https://imgur.com/a/cTlwhvc",
+      "noteEn": "KELZERO’s Oct 26 changelog and revised symbols identify this as an interactable briefcase. This author-based correction does not guarantee a spawn or a particular drop."
+    },
+    {
+      "id": "J-B05",
+      "type": "briefcase",
+      "x": 0.871287,
+      "y": 0.24248,
+      "pixelPosition": {
+        "x": 1408,
+        "y": 395,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "街区东侧台阶公文包",
+      "region": "street",
+      "note": "KELZERO 10月26日更新日志及新版图标已将此处标为可交互公文包；按作者资料更正，不保证本局出现或掉落特定物品。",
+      "sourceImage": 41,
+      "previousEvidence": {
+        "sourceImage": 3,
+        "status": "fixed_source",
+        "label": "街区东侧台阶公文包",
+        "note": ""
+      },
+      "briefcaseNature": "real",
+      "lootEligible": true,
+      "sourceDate": "2026-10-26",
+      "labelEn": "Eastern street steps briefcase",
+      "previousEvidence20261106": {
+        "briefcaseNature": "spawn_dependent",
+        "lootEligible": true,
+        "label": "街区东侧台阶公文包 · 真伪随出生点变化",
+        "status": "conditional",
+        "note": "新版双色图例：真假随玩家出生位置变化；作者未提供实测概率，不能把图例 50/50 当作掉率。只有真公文包掉落 Break-Even Beacon。",
+        "sourceImage": 18,
+        "sourceDate": "2026-09-22"
+      },
+      "sourceUrl": "https://imgur.com/a/cTlwhvc",
+      "noteEn": "KELZERO’s Oct 26 changelog and revised symbols identify this as an interactable briefcase. This author-based correction does not guarantee a spawn or a particular drop."
+    },
+    {
+      "id": "J-B06",
+      "type": "briefcase",
+      "x": 0.793936,
+      "y": 0.252916,
+      "pixelPosition": {
+        "x": 1283,
+        "y": 412,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "街区中部真公文包",
+      "region": "street",
+      "note": "KELZERO 10月26日更新日志及新版图标已将此处标为可交互公文包；按作者资料更正，不保证本局出现或掉落特定物品。",
+      "sourceImage": 41,
+      "previousEvidence": {
+        "sourceImage": 3,
+        "status": "fixed_source",
+        "label": "街区中部公文包",
+        "note": ""
+      },
+      "briefcaseNature": "real",
+      "lootEligible": true,
+      "sourceDate": "2026-10-26",
+      "previousEvidence20261106": {
+        "briefcaseNature": "real",
+        "lootEligible": true,
+        "label": "街区中部真公文包",
+        "status": "fixed_source",
+        "note": "新版棕色图例为真公文包；原作者说明只有真公文包掉落 Break-Even Beacon。不据此断言高危必刷。",
+        "sourceImage": 18,
+        "sourceDate": "2026-09-22"
+      },
+      "sourceUrl": "https://imgur.com/a/cTlwhvc",
+      "noteEn": "KELZERO’s Oct 26 changelog and revised symbols identify this as an interactable briefcase. This author-based correction does not guarantee a spawn or a particular drop."
+    },
+    {
+      "id": "J-B07",
+      "type": "briefcase",
+      "x": 0.806312,
+      "y": 0.298343,
+      "pixelPosition": {
+        "x": 1303,
+        "y": 486,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "街区东南公文包 A",
+      "region": "street",
+      "note": "KELZERO 10月26日更新日志及新版图标已将此处标为可交互公文包；按作者资料更正，不保证本局出现或掉落特定物品。",
+      "sourceImage": 41,
+      "previousEvidence": {
+        "sourceImage": 3,
+        "status": "fixed_source",
+        "label": "街区东南公文包 A",
+        "note": ""
+      },
+      "briefcaseNature": "real",
+      "lootEligible": true,
+      "sourceDate": "2026-10-26",
+      "labelEn": "Southeast street briefcase A",
+      "previousEvidence20261106": {
+        "briefcaseNature": "fake",
+        "lootEligible": false,
+        "label": "街区东南假公文包 A",
+        "status": "fixed_source",
+        "note": "新版灰粉色图例为假公文包，不计作可掉落 Break-Even Beacon 的真公文包；保留旧编号供定位。",
+        "sourceImage": 18,
+        "sourceDate": "2026-09-22"
+      },
+      "sourceUrl": "https://imgur.com/a/cTlwhvc",
+      "noteEn": "KELZERO’s Oct 26 changelog and revised symbols identify this as an interactable briefcase. This author-based correction does not guarantee a spawn or a particular drop."
+    },
+    {
+      "id": "J-B08",
+      "type": "briefcase",
+      "x": 0.852723,
+      "y": 0.311848,
+      "pixelPosition": {
+        "x": 1378,
+        "y": 508,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "街区东南公文包 B",
+      "region": "street",
+      "note": "KELZERO 10月26日更新日志及新版图标已将此处标为可交互公文包；按作者资料更正，不保证本局出现或掉落特定物品。",
+      "sourceImage": 41,
+      "previousEvidence": {
+        "sourceImage": 3,
+        "status": "fixed_source",
+        "label": "街区东南公文包 B",
+        "note": ""
+      },
+      "briefcaseNature": "real",
+      "lootEligible": true,
+      "sourceDate": "2026-10-26",
+      "labelEn": "Southeast street briefcase B",
+      "previousEvidence20261106": {
+        "briefcaseNature": "spawn_dependent",
+        "lootEligible": true,
+        "label": "街区东南公文包 · 真伪随出生点变化 B",
+        "status": "conditional",
+        "note": "新版双色图例：真假随玩家出生位置变化；作者未提供实测概率，不能把图例 50/50 当作掉率。只有真公文包掉落 Break-Even Beacon。",
+        "sourceImage": 18,
+        "sourceDate": "2026-09-22"
+      },
+      "sourceUrl": "https://imgur.com/a/cTlwhvc",
+      "noteEn": "KELZERO’s Oct 26 changelog and revised symbols identify this as an interactable briefcase. This author-based correction does not guarantee a spawn or a particular drop."
+    },
+    {
+      "id": "J-B09",
+      "type": "briefcase",
+      "x": 0.741337,
+      "y": 0.292818,
+      "pixelPosition": {
+        "x": 1198,
+        "y": 477,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [
+        2
+      ],
+      "floorEvidence": "explicit",
+      "status": "fixed_source",
+      "label": "街区门禁上方二楼真公文包",
+      "region": "street",
+      "note": "KELZERO 10月26日更新日志及新版图标已将此处标为可交互公文包；按作者资料更正，不保证本局出现或掉落特定物品。",
+      "sourceImage": 41,
+      "previousEvidence": {
+        "sourceImage": 3,
+        "status": "fixed_source",
+        "label": "街区门禁上方二楼公文包",
+        "note": ""
+      },
+      "briefcaseNature": "real",
+      "lootEligible": true,
+      "sourceDate": "2026-10-26",
+      "authorReview": {
+        "id": "J-B09",
+        "newEvidenceId": 32,
+        "oldPixel": [
+          1198,
+          477
+        ],
+        "evidencePixel": [
+          1119,
+          346
+        ],
+        "floors": [
+          2
+        ],
+        "status": "floor-explicit-in-author-inset",
+        "reason": "六昏街原录像店附近真公文包移入新2F小插图；其他街区公文包仍在原处。"
+      },
+      "currentReviewImage": 32,
+      "previousEvidence20261106": {
+        "briefcaseNature": "real",
+        "lootEligible": true,
+        "label": "街区门禁上方二楼真公文包",
+        "status": "fixed_source",
+        "note": "新版棕色图例为真公文包；原作者说明只有真公文包掉落 Break-Even Beacon。不据此断言高危必刷。坐标按新版图标中心修正。",
+        "sourceImage": 18,
+        "sourceDate": "2026-09-22"
+      },
+      "sourceUrl": "https://imgur.com/a/cTlwhvc",
+      "noteEn": "KELZERO’s Oct 26 changelog and revised symbols identify this as an interactable briefcase. This author-based correction does not guarantee a spawn or a particular drop."
+    },
+    {
+      "id": "J-B10",
+      "type": "briefcase",
+      "x": 0.627475,
+      "y": 0.305095,
+      "pixelPosition": {
+        "x": 1014,
+        "y": 497,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [
+        2
+      ],
+      "floorEvidence": "explicit",
+      "status": "fixed_source",
+      "label": "工地东端二楼公文包",
+      "region": "construction",
+      "note": "KELZERO 10月26日更新日志及新版图标已将此处标为可交互公文包；按作者资料更正，不保证本局出现或掉落特定物品。",
+      "sourceImage": 41,
+      "previousEvidence": {
+        "sourceImage": 3,
+        "status": "fixed_source",
+        "label": "工地东端二楼公文包",
+        "note": ""
+      },
+      "briefcaseNature": "real",
+      "lootEligible": true,
+      "sourceDate": "2026-10-26",
+      "labelEn": "Construction site east end 2F briefcase",
+      "previousEvidence20261106": {
+        "briefcaseNature": "spawn_dependent",
+        "lootEligible": true,
+        "label": "工地东端二楼公文包 · 真伪随出生点变化",
+        "status": "conditional",
+        "note": "新版双色图例：真假随玩家出生位置变化；作者未提供实测概率，不能把图例 50/50 当作掉率。只有真公文包掉落 Break-Even Beacon。",
+        "sourceImage": 18,
+        "sourceDate": "2026-09-22"
+      },
+      "sourceUrl": "https://imgur.com/a/cTlwhvc",
+      "noteEn": "KELZERO’s Oct 26 changelog and revised symbols identify this as an interactable briefcase. This author-based correction does not guarantee a spawn or a particular drop."
+    },
+    {
+      "id": "J-B11",
+      "type": "briefcase",
+      "x": 0.574257,
+      "y": 0.321056,
+      "pixelPosition": {
+        "x": 928,
+        "y": 523,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [
+        2
+      ],
+      "floorEvidence": "explicit",
+      "status": "fixed_source",
+      "label": "工地东侧二楼公文包",
+      "region": "construction",
+      "note": "KELZERO 10月26日更新日志及新版图标已将此处标为可交互公文包；按作者资料更正，不保证本局出现或掉落特定物品。",
+      "sourceImage": 41,
+      "previousEvidence": {
+        "sourceImage": 3,
+        "status": "fixed_source",
+        "label": "工地东侧二楼公文包",
+        "note": ""
+      },
+      "briefcaseNature": "real",
+      "lootEligible": true,
+      "sourceDate": "2026-10-26",
+      "labelEn": "Construction site east side 2F briefcase",
+      "previousEvidence20261106": {
+        "briefcaseNature": "spawn_dependent",
+        "lootEligible": true,
+        "label": "工地东侧二楼公文包 · 真伪随出生点变化",
+        "status": "conditional",
+        "note": "新版双色图例：真假随玩家出生位置变化；作者未提供实测概率，不能把图例 50/50 当作掉率。只有真公文包掉落 Break-Even Beacon。",
+        "sourceImage": 18,
+        "sourceDate": "2026-09-22"
+      },
+      "sourceUrl": "https://imgur.com/a/cTlwhvc",
+      "noteEn": "KELZERO’s Oct 26 changelog and revised symbols identify this as an interactable briefcase. This author-based correction does not guarantee a spawn or a particular drop."
+    },
+    {
+      "id": "J-B12",
+      "type": "briefcase",
+      "x": 0.438119,
+      "y": 0.282996,
+      "pixelPosition": {
+        "x": 708,
+        "y": 461,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [
+        2
+      ],
+      "floorEvidence": "explicit",
+      "status": "fixed_source",
+      "label": "工地北侧二楼真公文包",
+      "region": "construction",
+      "note": "KELZERO 10月26日更新日志及新版图标已将此处标为可交互公文包；按作者资料更正，不保证本局出现或掉落特定物品。",
+      "sourceImage": 41,
+      "previousEvidence": {
+        "sourceImage": 3,
+        "status": "fixed_source",
+        "label": "工地北侧二楼公文包",
+        "note": ""
+      },
+      "briefcaseNature": "real",
+      "lootEligible": true,
+      "sourceDate": "2026-10-26",
+      "previousEvidence20261106": {
+        "briefcaseNature": "real",
+        "lootEligible": true,
+        "label": "工地北侧二楼真公文包",
+        "status": "fixed_source",
+        "note": "新版棕色图例为真公文包；原作者说明只有真公文包掉落 Break-Even Beacon。不据此断言高危必刷。",
+        "sourceImage": 18,
+        "sourceDate": "2026-09-22"
+      },
+      "sourceUrl": "https://imgur.com/a/cTlwhvc",
+      "noteEn": "KELZERO’s Oct 26 changelog and revised symbols identify this as an interactable briefcase. This author-based correction does not guarantee a spawn or a particular drop."
+    },
+    {
+      "id": "J-B13",
+      "type": "briefcase",
+      "x": 0.446163,
+      "y": 0.290976,
+      "pixelPosition": {
+        "x": 721,
+        "y": 474,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [
+        1
+      ],
+      "floorEvidence": "explicit_author_floor_inset",
+      "status": "fixed_source",
+      "label": "工地北侧真公文包",
+      "region": "construction",
+      "note": "KELZERO 10月26日更新日志及新版图标已将此处标为可交互公文包；按作者资料更正，不保证本局出现或掉落特定物品。",
+      "sourceImage": 41,
+      "previousEvidence": {
+        "sourceImage": 3,
+        "status": "fixed_source",
+        "label": "工地北侧公文包",
+        "note": ""
+      },
+      "briefcaseNature": "real",
+      "lootEligible": true,
+      "sourceDate": "2026-10-26",
+      "previousEvidence20261021": {
+        "sourceImage": 18,
+        "floors": [],
+        "floorEvidence": "unlabelled",
+        "note": "新版棕色图例为真公文包；原作者说明只有真公文包掉落 Break-Even Beacon。不据此断言高危必刷。"
+      },
+      "authorReview": {
+        "id": "J-B13",
+        "newEvidenceId": 32,
+        "oldPixel": [
+          721,
+          474
+        ],
+        "evidencePixel": [
+          562,
+          411
+        ],
+        "floors": [
+          1
+        ],
+        "status": "floor-explicit-in-author-inset",
+        "reason": "工地北部两只真公文包分别画入2F与1F；原已明确2F者仍在2F。"
+      },
+      "noteEn": "KELZERO’s Oct 26 changelog and revised symbols identify this as an interactable briefcase. This author-based correction does not guarantee a spawn or a particular drop.",
+      "previousEvidence20261106": {
+        "briefcaseNature": "real",
+        "lootEligible": true,
+        "label": "工地北侧真公文包",
+        "status": "fixed_source",
+        "note": "新版作者图在工地楼层拆分中明确标为 1F；保留原主图位置和刷新标识。此处补充楼层依据，不代表本局必刷或确定掉落。",
+        "sourceImage": 32,
+        "sourceDate": "2026-10-11"
+      },
+      "sourceUrl": "https://imgur.com/a/cTlwhvc"
+    },
+    {
+      "id": "J-B14",
+      "type": "briefcase",
+      "x": 0.506807,
+      "y": 0.376304,
+      "pixelPosition": {
+        "x": 819,
+        "y": 613,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "工地东南真公文包",
+      "region": "construction",
+      "note": "KELZERO 10月26日更新日志及新版图标已将此处标为可交互公文包；按作者资料更正，不保证本局出现或掉落特定物品。",
+      "sourceImage": 41,
+      "previousEvidence": {
+        "sourceImage": 3,
+        "status": "fixed_source",
+        "label": "工地东南公文包",
+        "note": ""
+      },
+      "briefcaseNature": "real",
+      "lootEligible": true,
+      "sourceDate": "2026-10-26",
+      "previousEvidence20261106": {
+        "briefcaseNature": "real",
+        "lootEligible": true,
+        "label": "工地东南真公文包",
+        "status": "fixed_source",
+        "note": "新版棕色图例为真公文包；原作者说明只有真公文包掉落 Break-Even Beacon。不据此断言高危必刷。",
+        "sourceImage": 18,
+        "sourceDate": "2026-09-22"
+      },
+      "sourceUrl": "https://imgur.com/a/cTlwhvc",
+      "noteEn": "KELZERO’s Oct 26 changelog and revised symbols identify this as an interactable briefcase. This author-based correction does not guarantee a spawn or a particular drop."
+    },
+    {
+      "id": "J-B15",
+      "type": "briefcase",
+      "x": 0.380569,
+      "y": 0.408226,
+      "pixelPosition": {
+        "x": 615,
+        "y": 665,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [
+        3
+      ],
+      "floorEvidence": "explicit",
+      "status": "fixed_source",
+      "label": "工地西楼南侧公文包",
+      "region": "construction",
+      "note": "KELZERO 10月26日更新日志及新版图标已将此处标为可交互公文包；按作者资料更正，不保证本局出现或掉落特定物品。",
+      "sourceImage": 41,
+      "previousEvidence": {
+        "sourceImage": 3,
+        "status": "fixed_source",
+        "label": "工地西楼南侧公文包",
+        "note": ""
+      },
+      "briefcaseNature": "real",
+      "lootEligible": true,
+      "sourceDate": "2026-10-26",
+      "labelEn": "Construction site west building south 3F briefcase",
+      "previousEvidence20261106": {
+        "briefcaseNature": "spawn_dependent",
+        "lootEligible": true,
+        "label": "工地西楼南侧公文包 · 真伪随出生点变化",
+        "status": "conditional",
+        "note": "新版双色图例：真假随玩家出生位置变化；作者未提供实测概率，不能把图例 50/50 当作掉率。只有真公文包掉落 Break-Even Beacon。新版明确标注三楼。",
+        "sourceImage": 18,
+        "sourceDate": "2026-09-22"
+      },
+      "sourceUrl": "https://imgur.com/a/cTlwhvc",
+      "noteEn": "KELZERO’s Oct 26 changelog and revised symbols identify this as an interactable briefcase. This author-based correction does not guarantee a spawn or a particular drop."
+    },
+    {
+      "id": "J-B16",
+      "type": "briefcase",
+      "x": 0.454208,
+      "y": 0.737876,
+      "pixelPosition": {
+        "x": 734,
+        "y": 1202,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "中央广场中北真公文包",
+      "region": "lumina",
+      "note": "KELZERO 10月26日更新日志及新版图标已将此处标为可交互公文包；按作者资料更正，不保证本局出现或掉落特定物品。",
+      "sourceImage": 41,
+      "previousEvidence": {
+        "sourceImage": 3,
+        "status": "fixed_source",
+        "label": "中央广场中北公文包",
+        "note": ""
+      },
+      "briefcaseNature": "real",
+      "lootEligible": true,
+      "sourceDate": "2026-10-26",
+      "previousEvidence20261106": {
+        "briefcaseNature": "real",
+        "lootEligible": true,
+        "label": "中央广场中北真公文包",
+        "status": "fixed_source",
+        "note": "新版棕色图例为真公文包；原作者说明只有真公文包掉落 Break-Even Beacon。不据此断言高危必刷。",
+        "sourceImage": 18,
+        "sourceDate": "2026-09-22"
+      },
+      "sourceUrl": "https://imgur.com/a/cTlwhvc",
+      "noteEn": "KELZERO’s Oct 26 changelog and revised symbols identify this as an interactable briefcase. This author-based correction does not guarantee a spawn or a particular drop."
+    },
+    {
+      "id": "J-B17",
+      "type": "briefcase",
+      "x": 0.480198,
+      "y": 0.767342,
+      "pixelPosition": {
+        "x": 776,
+        "y": 1250,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "中央广场横街真公文包",
+      "region": "lumina",
+      "note": "KELZERO 10月26日更新日志及新版图标已将此处标为可交互公文包；按作者资料更正，不保证本局出现或掉落特定物品。",
+      "sourceImage": 41,
+      "previousEvidence": {
+        "sourceImage": 3,
+        "status": "fixed_source",
+        "label": "中央广场横街公文包",
+        "note": ""
+      },
+      "briefcaseNature": "real",
+      "lootEligible": true,
+      "sourceDate": "2026-10-26",
+      "previousEvidence20261106": {
+        "briefcaseNature": "real",
+        "lootEligible": true,
+        "label": "中央广场横街真公文包",
+        "status": "fixed_source",
+        "note": "新版棕色图例为真公文包；原作者说明只有真公文包掉落 Break-Even Beacon。不据此断言高危必刷。",
+        "sourceImage": 18,
+        "sourceDate": "2026-09-22"
+      },
+      "sourceUrl": "https://imgur.com/a/cTlwhvc",
+      "noteEn": "KELZERO’s Oct 26 changelog and revised symbols identify this as an interactable briefcase. This author-based correction does not guarantee a spawn or a particular drop."
+    },
+    {
+      "id": "J-B18",
+      "type": "briefcase",
+      "x": 0.396658,
+      "y": 0.854512,
+      "pixelPosition": {
+        "x": 641,
+        "y": 1392,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [
+        2
+      ],
+      "floorEvidence": "explicit",
+      "status": "fixed_source",
+      "label": "中央广场南楼二楼真公文包",
+      "region": "lumina",
+      "note": "KELZERO 10月26日更新日志及新版图标已将此处标为可交互公文包；按作者资料更正，不保证本局出现或掉落特定物品。",
+      "sourceImage": 41,
+      "previousEvidence": {
+        "sourceImage": 3,
+        "status": "fixed_source",
+        "label": "中央广场南楼二楼公文包",
+        "note": ""
+      },
+      "briefcaseNature": "real",
+      "lootEligible": true,
+      "sourceDate": "2026-10-26",
+      "previousEvidence20261106": {
+        "briefcaseNature": "real",
+        "lootEligible": true,
+        "label": "中央广场南楼二楼真公文包",
+        "status": "fixed_source",
+        "note": "新版棕色图例为真公文包；原作者说明只有真公文包掉落 Break-Even Beacon。不据此断言高危必刷。",
+        "sourceImage": 18,
+        "sourceDate": "2026-09-22"
+      },
+      "sourceUrl": "https://imgur.com/a/cTlwhvc",
+      "noteEn": "KELZERO’s Oct 26 changelog and revised symbols identify this as an interactable briefcase. This author-based correction does not guarantee a spawn or a particular drop."
+    },
+    {
+      "id": "J-B19",
+      "type": "briefcase",
+      "x": 0.521658,
+      "y": 0.92388,
+      "pixelPosition": {
+        "x": 843,
+        "y": 1505,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "中央广场南侧真公文包",
+      "region": "lumina",
+      "note": "KELZERO 10月26日更新日志及新版图标已将此处标为可交互公文包；按作者资料更正，不保证本局出现或掉落特定物品。",
+      "sourceImage": 41,
+      "previousEvidence": {
+        "sourceImage": 3,
+        "status": "fixed_source",
+        "label": "中央广场南侧公文包",
+        "note": ""
+      },
+      "briefcaseNature": "real",
+      "lootEligible": true,
+      "sourceDate": "2026-10-26",
+      "previousEvidence20261106": {
+        "briefcaseNature": "real",
+        "lootEligible": true,
+        "label": "中央广场南侧真公文包",
+        "status": "fixed_source",
+        "note": "新版棕色图例为真公文包；原作者说明只有真公文包掉落 Break-Even Beacon。不据此断言高危必刷。",
+        "sourceImage": 18,
+        "sourceDate": "2026-09-22"
+      },
+      "sourceUrl": "https://imgur.com/a/cTlwhvc",
+      "noteEn": "KELZERO’s Oct 26 changelog and revised symbols identify this as an interactable briefcase. This author-based correction does not guarantee a spawn or a particular drop."
+    },
+    {
+      "id": "J-B20",
+      "type": "briefcase",
+      "x": 0.602104,
+      "y": 0.904236,
+      "pixelPosition": {
+        "x": 973,
+        "y": 1473,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "中央广场东南真公文包",
+      "region": "lumina",
+      "note": "KELZERO 10月26日更新日志及新版图标已将此处标为可交互公文包；按作者资料更正，不保证本局出现或掉落特定物品。",
+      "sourceImage": 41,
+      "previousEvidence": {
+        "sourceImage": 3,
+        "status": "fixed_source",
+        "label": "中央广场东南公文包",
+        "note": ""
+      },
+      "briefcaseNature": "real",
+      "lootEligible": true,
+      "sourceDate": "2026-10-26",
+      "previousEvidence20261106": {
+        "briefcaseNature": "real",
+        "lootEligible": true,
+        "label": "中央广场东南真公文包",
+        "status": "fixed_source",
+        "note": "新版棕色图例为真公文包；原作者说明只有真公文包掉落 Break-Even Beacon。不据此断言高危必刷。",
+        "sourceImage": 18,
+        "sourceDate": "2026-09-22"
+      },
+      "sourceUrl": "https://imgur.com/a/cTlwhvc",
+      "noteEn": "KELZERO’s Oct 26 changelog and revised symbols identify this as an interactable briefcase. This author-based correction does not guarantee a spawn or a particular drop."
+    },
+    {
+      "id": "J-T01",
+      "type": "trash",
+      "x": 0.882426,
+      "y": 0.139963,
+      "pixelPosition": {
+        "x": 1426,
+        "y": 228,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "街区东北垃圾桶",
+      "region": "street",
+      "note": "",
+      "sourceImage": 3
+    },
+    {
+      "id": "J-T02",
+      "type": "trash",
+      "x": 0.461015,
+      "y": 0.68938,
+      "pixelPosition": {
+        "x": 745,
+        "y": 1123,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "中央广场北侧垃圾桶 A",
+      "region": "lumina",
+      "note": "",
+      "sourceImage": 3
+    },
+    {
+      "id": "J-T03",
+      "type": "trash",
+      "x": 0.47401,
+      "y": 0.705341,
+      "pixelPosition": {
+        "x": 766,
+        "y": 1149,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "中央广场北侧垃圾桶 B",
+      "region": "lumina",
+      "note": "",
+      "sourceImage": 3
+    },
+    {
+      "id": "J-T04",
+      "type": "trash",
+      "x": 0.476485,
+      "y": 0.728054,
+      "pixelPosition": {
+        "x": 770,
+        "y": 1186,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "中央广场中北垃圾桶 A",
+      "region": "lumina",
+      "note": "",
+      "sourceImage": 3
+    },
+    {
+      "id": "J-T05",
+      "type": "trash",
+      "x": 0.511757,
+      "y": 0.737876,
+      "pixelPosition": {
+        "x": 827,
+        "y": 1202,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "中央广场中北垃圾桶 B",
+      "region": "lumina",
+      "note": "",
+      "sourceImage": 3
+    },
+    {
+      "id": "J-T06",
+      "type": "trash",
+      "x": 0.325495,
+      "y": 0.775936,
+      "pixelPosition": {
+        "x": 526,
+        "y": 1264,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "中央广场西侧垃圾桶 1",
+      "region": "lumina",
+      "note": "",
+      "sourceImage": 3
+    },
+    {
+      "id": "J-T07",
+      "type": "trash",
+      "x": 0.362005,
+      "y": 0.775936,
+      "pixelPosition": {
+        "x": 585,
+        "y": 1264,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "中央广场西侧垃圾桶 2",
+      "region": "lumina",
+      "note": "",
+      "sourceImage": 3
+    },
+    {
+      "id": "J-T08",
+      "type": "trash",
+      "x": 0.394802,
+      "y": 0.772253,
+      "pixelPosition": {
+        "x": 638,
+        "y": 1258,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "中央广场横街垃圾桶 3",
+      "region": "lumina",
+      "note": "",
+      "sourceImage": 3
+    },
+    {
+      "id": "J-T09",
+      "type": "trash",
+      "x": 0.436262,
+      "y": 0.775936,
+      "pixelPosition": {
+        "x": 705,
+        "y": 1264,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "中央广场横街垃圾桶 4",
+      "region": "lumina",
+      "note": "",
+      "sourceImage": 3
+    },
+    {
+      "id": "J-T10",
+      "type": "trash",
+      "x": 0.325495,
+      "y": 0.801105,
+      "pixelPosition": {
+        "x": 526,
+        "y": 1305,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "中央广场西侧垃圾桶 5",
+      "region": "lumina",
+      "note": "",
+      "sourceImage": 3
+    },
+    {
+      "id": "J-T11",
+      "type": "trash",
+      "x": 0.362005,
+      "y": 0.801105,
+      "pixelPosition": {
+        "x": 585,
+        "y": 1305,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "中央广场西侧垃圾桶 6",
+      "region": "lumina",
+      "note": "",
+      "sourceImage": 3
+    },
+    {
+      "id": "J-T12",
+      "type": "trash",
+      "x": 0.399134,
+      "y": 0.801105,
+      "pixelPosition": {
+        "x": 645,
+        "y": 1305,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "中央广场横街垃圾桶 7",
+      "region": "lumina",
+      "note": "",
+      "sourceImage": 3
+    },
+    {
+      "id": "J-T13",
+      "type": "trash",
+      "x": 0.436262,
+      "y": 0.801105,
+      "pixelPosition": {
+        "x": 705,
+        "y": 1305,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "中央广场横街垃圾桶 8",
+      "region": "lumina",
+      "note": "",
+      "sourceImage": 3
+    },
+    {
+      "id": "J-T14",
+      "type": "trash",
+      "x": 0.488243,
+      "y": 0.823818,
+      "pixelPosition": {
+        "x": 789,
+        "y": 1342,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "中央广场南楼东北垃圾桶",
+      "region": "lumina",
+      "note": "",
+      "sourceImage": 3
+    },
+    {
+      "id": "J-T15",
+      "type": "trash",
+      "x": 0.368193,
+      "y": 0.854512,
+      "pixelPosition": {
+        "x": 595,
+        "y": 1392,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [
+        2
+      ],
+      "floorEvidence": "explicit",
+      "status": "fixed_source",
+      "label": "中央广场南楼二楼垃圾桶",
+      "region": "lumina",
+      "note": "",
+      "sourceImage": 3
+    },
+    {
+      "id": "J-T16",
+      "type": "trash",
+      "x": 0.546411,
+      "y": 0.860037,
+      "pixelPosition": {
+        "x": 883,
+        "y": 1401,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "中央广场东南垃圾桶",
+      "region": "lumina",
+      "note": "",
+      "sourceImage": 3
+    },
+    {
+      "id": "J-D01",
+      "type": "enemy",
+      "x": 0.894802,
+      "y": 0.181707,
+      "pixelPosition": {
+        "x": 1446,
+        "y": 296,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "拟态敌人：Manato / Pulchra",
+      "region": "street",
+      "note": "原图同一位置并列两个名字，未证明两名敌人同时出现；保留原文名称。",
+      "sourceImage": 3
+    },
+    {
+      "id": "J-D02",
+      "type": "enemy",
+      "x": 0.811262,
+      "y": 0.230203,
+      "pixelPosition": {
+        "x": 1311,
+        "y": 375,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "fixed_source",
+      "label": "拟态敌人：Pulchra",
+      "region": "street",
+      "note": "",
+      "sourceImage": 3
+    },
+    {
+      "id": "J-D03",
+      "type": "enemy",
+      "x": 0.394183,
+      "y": 0.399018,
+      "pixelPosition": {
+        "x": 637,
+        "y": 650,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [
+        3
+      ],
+      "floorEvidence": "explicit",
+      "status": "random_source",
+      "label": "拟态敌人：Jane",
+      "region": "construction",
+      "note": "作者 2026-09-14 校正工地 Jane 的位置；新版位于工地西楼南段三楼。沿用公文包与拟态图的问号随机图例。",
+      "sourceImage": 18,
+      "previousEvidence": {
+        "sourceImage": 3,
+        "x": 0.402847,
+        "y": 0.329036,
+        "pixelPosition": {
+          "x": 651,
+          "y": 536,
+          "width": 1616,
+          "height": 1629
+        },
+        "floors": [
+          3
+        ],
+        "note": "图标含问号，并明确标注三楼。"
+      },
+      "sourceDate": "2026-09-22"
+    },
+    {
+      "id": "J-D04",
+      "type": "enemy",
+      "x": 0.426361,
+      "y": 0.847145,
+      "pixelPosition": {
+        "x": 689,
+        "y": 1380,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [
+        1
+      ],
+      "floorEvidence": "explicit_author_floor_inset",
+      "status": "fixed_source",
+      "label": "拟态敌人：Jane",
+      "region": "lumina",
+      "note": "新版作者图在光映中心楼层拆分中标为 1F；保留原主图位置。是否出现按原图随机标识与本局条件判断。",
+      "sourceImage": 28,
+      "previousEvidence20261021": {
+        "sourceImage": 3,
+        "floors": [],
+        "floorEvidence": "unlabelled",
+        "note": "附近三楼数字属于门禁房图标，本敌人没有明确楼层数字。"
+      },
+      "sourceDate": "2026-10-11",
+      "noteEn": "The updated author map places this marker on 1F in the Lumina Central floor inset. Its original main-map position is retained; appearance depends on the source random marker and the current run."
+    },
+    {
+      "id": "J-D05",
+      "type": "enemy",
+      "x": 0.492574,
+      "y": 0.944138,
+      "pixelPosition": {
+        "x": 796,
+        "y": 1538,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "random_source",
+      "label": "拟态敌人：Isolde",
+      "region": "lumina",
+      "note": "图标含问号。",
+      "sourceImage": 3
+    },
+    {
+      "id": "J-P01",
+      "type": "portal",
+      "x": 0.88552,
+      "y": 0.343155,
+      "pixelPosition": {
+        "x": 1431,
+        "y": 559,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "unknown",
+      "label": "街区蓝色传送门",
+      "region": "street",
+      "note": "原图仅标传送门及颜色；不等于出生点，也没有提供稳定性和进出方向。",
+      "sourceImage": 1,
+      "portalColor": "cyan",
+      "portalDirection": null,
+      "isPlayerSpawn": false
+    },
+    {
+      "id": "J-P02",
+      "type": "portal",
+      "x": 0.597153,
+      "y": 0.705341,
+      "pixelPosition": {
+        "x": 965,
+        "y": 1149,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "unknown",
+      "label": "中央广场蓝色传送门",
+      "region": "lumina",
+      "note": "原图仅标传送门及颜色；不等于出生点，也没有提供稳定性和进出方向。",
+      "sourceImage": 1,
+      "portalColor": "cyan",
+      "portalDirection": null,
+      "isPlayerSpawn": false
+    },
+    {
+      "id": "J-P03",
+      "type": "portal",
+      "x": 0.560025,
+      "y": 0.380602,
+      "pixelPosition": {
+        "x": 905,
+        "y": 620,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "unknown",
+      "label": "工地紫色传送门",
+      "region": "construction",
+      "note": "原图仅标传送门及颜色；不等于出生点，也没有提供稳定性和进出方向。",
+      "sourceImage": 1,
+      "portalColor": "purple",
+      "portalDirection": null,
+      "isPlayerSpawn": false
+    },
+    {
+      "id": "J-P04",
+      "type": "portal",
+      "x": 0.581064,
+      "y": 0.686924,
+      "pixelPosition": {
+        "x": 939,
+        "y": 1119,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "unknown",
+      "label": "中央广场紫色传送门",
+      "region": "lumina",
+      "note": "原图仅标传送门及颜色；不等于出生点，也没有提供稳定性和进出方向。",
+      "sourceImage": 1,
+      "portalColor": "purple",
+      "portalDirection": null,
+      "isPlayerSpawn": false
+    },
+    {
+      "id": "J-K01",
+      "type": "keyroom",
+      "x": 0.406559,
+      "y": 0.373235,
+      "pixelPosition": {
+        "x": 657,
+        "y": 608,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [
+        3
+      ],
+      "floorEvidence": "explicit",
+      "status": "conditional",
+      "label": "工地二期工程顶层门禁房",
+      "region": "construction",
+      "note": "需对应门禁卡；房内箱数取自图 5。房内逐箱坐标未提供，不将房内总数重复展开成虚构点位。",
+      "sourceImage": 5,
+      "sourceEnglishName": "Dove Phase II Project - Top Floor",
+      "cardTier": "S",
+      "sourceListedPrice": 40000,
+      "roomContents": {
+        "mechanical": 1,
+        "electronic": 2
+      }
+    },
+    {
+      "id": "J-K02",
+      "type": "keyroom",
+      "x": 0.731436,
+      "y": 0.295887,
+      "pixelPosition": {
+        "x": 1182,
+        "y": 482,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [
+        1
+      ],
+      "floorEvidence": "explicit",
+      "status": "conditional",
+      "label": "Random Play 一楼门禁房",
+      "region": "street",
+      "note": "需对应门禁卡；房内箱数取自图 5。房内逐箱坐标未提供，不将房内总数重复展开成虚构点位。",
+      "sourceImage": 5,
+      "sourceEnglishName": "Random Play, 1F, Six Dusk Street",
+      "cardTier": "S",
+      "sourceListedPrice": 40000,
+      "roomContents": {
+        "mechanical": 2,
+        "electronic": 1
+      }
+    },
+    {
+      "id": "J-K03",
+      "type": "keyroom",
+      "x": 0.340347,
+      "y": 0.842234,
+      "pixelPosition": {
+        "x": 550,
+        "y": 1372,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [
+        2
+      ],
+      "floorEvidence": "explicit",
+      "status": "conditional",
+      "label": "中央广场二楼接待室",
+      "region": "lumina",
+      "note": "需对应门禁卡；房内箱数取自图 5。房内逐箱坐标未提供，不将房内总数重复展开成虚构点位。",
+      "sourceImage": 5,
+      "sourceEnglishName": "Lumina Central, 2F Reception Room",
+      "cardTier": "S",
+      "sourceListedPrice": 40000,
+      "roomContents": {
+        "mechanical": 1,
+        "electronic": 1
+      }
+    },
+    {
+      "id": "J-K04",
+      "type": "keyroom",
+      "x": 0.420173,
+      "y": 0.836096,
+      "pixelPosition": {
+        "x": 679,
+        "y": 1362,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [
+        3
+      ],
+      "floorEvidence": "explicit",
+      "status": "conditional",
+      "label": "中央广场顶层会议室",
+      "region": "lumina",
+      "note": "需对应门禁卡；房内箱数取自图 5。房内逐箱坐标未提供，不将房内总数重复展开成虚构点位。",
+      "sourceImage": 5,
+      "sourceEnglishName": "Lumina Central, Top-Floor Conference Room",
+      "cardTier": "Z",
+      "sourceListedPrice": 120000,
+      "roomContents": {
+        "mechanical": 1,
+        "electronic": 3
+      }
+    },
+    {
+      "id": "J-K05",
+      "type": "keyroom",
+      "x": 0.419554,
+      "y": 0.860651,
+      "pixelPosition": {
+        "x": 678,
+        "y": 1402,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [
+        1
+      ],
+      "floorEvidence": "explicit",
+      "status": "conditional",
+      "label": "中央广场一楼休息室",
+      "region": "lumina",
+      "note": "需对应门禁卡；房内箱数取自图 5。房内逐箱坐标未提供，不将房内总数重复展开成虚构点位。",
+      "sourceImage": 5,
+      "sourceEnglishName": "Lumina Central, 1F Lounge",
+      "cardTier": "S",
+      "sourceListedPrice": 40000,
+      "roomContents": {
+        "mechanical": 2,
+        "electronic": 1
+      }
+    },
+    {
+      "id": "J-E45",
+      "type": "electronic",
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "random_source",
+      "label": "街区最北端电子箱 · 新增",
+      "region": "street",
+      "note": "作者 2026-09-22 新增：最北出生区域另一枚电子箱。图标含问号；记录箱位，不把此点当作玩家出生点。",
+      "sourceImage": 16,
+      "sourceDate": "2026-09-22",
+      "newSourceSpawn": true,
+      "x": 0.623144,
+      "y": 0.048496,
+      "pixelPosition": {
+        "x": 1007,
+        "y": 79,
+        "width": 1616,
+        "height": 1629
+      }
+    },
+    {
+      "id": "J-E46",
+      "type": "electronic",
+      "worldPosition": null,
+      "floors": [],
+      "floorEvidence": "unlabelled",
+      "status": "random_source",
+      "label": "工地—车站岔口电子箱 · 新增",
+      "region": "construction",
+      "note": "作者 2026-09-22 新增：工地与车站交叉处，工地中央圆形地标东侧。紫色电子箱图标内明确有问号。",
+      "sourceImage": 16,
+      "sourceDate": "2026-09-22",
+      "newSourceSpawn": true,
+      "x": 0.521658,
+      "y": 0.309392,
+      "pixelPosition": {
+        "x": 843,
+        "y": 504,
+        "width": 1616,
+        "height": 1629
+      }
+    },
+    {
+      "id": "J-E47",
+      "type": "electronic",
+      "worldPosition": null,
+      "floors": [
+        2
+      ],
+      "floorEvidence": "explicit",
+      "status": "random_source",
+      "label": "工地西楼北侧二楼电子箱 A",
+      "region": "construction",
+      "note": "新版将旧 J-E22 的 2/3 共用符号单独画出二楼位置；仅细化楼层和图像位置，不宣称新增一处实际刷新。",
+      "sourceImage": 16,
+      "sourceDate": "2026-09-22",
+      "newSourceSpawn": false,
+      "x": 0.4375,
+      "y": 0.300798,
+      "pixelPosition": {
+        "x": 707,
+        "y": 490,
+        "width": 1616,
+        "height": 1629
+      }
+    },
+    {
+      "id": "J-E48",
+      "type": "electronic",
+      "worldPosition": null,
+      "floors": [
+        2
+      ],
+      "floorEvidence": "explicit",
+      "status": "random_source",
+      "label": "工地西楼北侧二楼电子箱 B",
+      "region": "construction",
+      "note": "新版将旧 J-E23 的 2/3 共用符号单独画出二楼位置；仅细化楼层和图像位置，不宣称新增一处实际刷新。",
+      "sourceImage": 16,
+      "sourceDate": "2026-09-22",
+      "newSourceSpawn": false,
+      "x": 0.447401,
+      "y": 0.313689,
+      "pixelPosition": {
+        "x": 723,
+        "y": 511,
+        "width": 1616,
+        "height": 1629
+      }
+    }
+  ],
+  "rooms": [
+    {
+      "id": "J-K01",
+      "type": "keyroom",
+      "x": 0.406559,
+      "y": 0.373235,
+      "pixelPosition": {
+        "x": 657,
+        "y": 608,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [
+        3
+      ],
+      "floorEvidence": "explicit",
+      "status": "conditional",
+      "label": "工地二期工程顶层门禁房",
+      "region": "construction",
+      "note": "需对应门禁卡；房内箱数取自图 5。房内逐箱坐标未提供，不将房内总数重复展开成虚构点位。",
+      "sourceImage": 5,
+      "sourceEnglishName": "Dove Phase II Project - Top Floor",
+      "cardTier": "S",
+      "sourceListedPrice": 40000,
+      "roomContents": {
+        "mechanical": 1,
+        "electronic": 2
+      },
+      "contents": {
+        "mechanical": 1,
+        "electronic": 2
+      },
+      "contentsEvidence": "source_image_5_room_summary",
+      "individualContainerPositionsKnown": false
+    },
+    {
+      "id": "J-K02",
+      "type": "keyroom",
+      "x": 0.731436,
+      "y": 0.295887,
+      "pixelPosition": {
+        "x": 1182,
+        "y": 482,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [
+        1
+      ],
+      "floorEvidence": "explicit",
+      "status": "conditional",
+      "label": "Random Play 一楼门禁房",
+      "region": "street",
+      "note": "需对应门禁卡；房内箱数取自图 5。房内逐箱坐标未提供，不将房内总数重复展开成虚构点位。",
+      "sourceImage": 5,
+      "sourceEnglishName": "Random Play, 1F, Six Dusk Street",
+      "cardTier": "S",
+      "sourceListedPrice": 40000,
+      "roomContents": {
+        "mechanical": 2,
+        "electronic": 1
+      },
+      "contents": {
+        "mechanical": 2,
+        "electronic": 1
+      },
+      "contentsEvidence": "source_image_5_room_summary",
+      "individualContainerPositionsKnown": false
+    },
+    {
+      "id": "J-K03",
+      "type": "keyroom",
+      "x": 0.340347,
+      "y": 0.842234,
+      "pixelPosition": {
+        "x": 550,
+        "y": 1372,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [
+        2
+      ],
+      "floorEvidence": "explicit",
+      "status": "conditional",
+      "label": "中央广场二楼接待室",
+      "region": "lumina",
+      "note": "需对应门禁卡；房内箱数取自图 5。房内逐箱坐标未提供，不将房内总数重复展开成虚构点位。",
+      "sourceImage": 5,
+      "sourceEnglishName": "Lumina Central, 2F Reception Room",
+      "cardTier": "S",
+      "sourceListedPrice": 40000,
+      "roomContents": {
+        "mechanical": 1,
+        "electronic": 1
+      },
+      "contents": {
+        "mechanical": 1,
+        "electronic": 1
+      },
+      "contentsEvidence": "source_image_5_room_summary",
+      "individualContainerPositionsKnown": false
+    },
+    {
+      "id": "J-K04",
+      "type": "keyroom",
+      "x": 0.420173,
+      "y": 0.836096,
+      "pixelPosition": {
+        "x": 679,
+        "y": 1362,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [
+        3
+      ],
+      "floorEvidence": "explicit",
+      "status": "conditional",
+      "label": "中央广场顶层会议室",
+      "region": "lumina",
+      "note": "需对应门禁卡；房内箱数取自图 5。房内逐箱坐标未提供，不将房内总数重复展开成虚构点位。",
+      "sourceImage": 5,
+      "sourceEnglishName": "Lumina Central, Top-Floor Conference Room",
+      "cardTier": "Z",
+      "sourceListedPrice": 120000,
+      "roomContents": {
+        "mechanical": 1,
+        "electronic": 3
+      },
+      "contents": {
+        "mechanical": 1,
+        "electronic": 3
+      },
+      "contentsEvidence": "source_image_5_room_summary",
+      "individualContainerPositionsKnown": false
+    },
+    {
+      "id": "J-K05",
+      "type": "keyroom",
+      "x": 0.419554,
+      "y": 0.860651,
+      "pixelPosition": {
+        "x": 678,
+        "y": 1402,
+        "width": 1616,
+        "height": 1629
+      },
+      "worldPosition": null,
+      "floors": [
+        1
+      ],
+      "floorEvidence": "explicit",
+      "status": "conditional",
+      "label": "中央广场一楼休息室",
+      "region": "lumina",
+      "note": "需对应门禁卡；房内箱数取自图 5。房内逐箱坐标未提供，不将房内总数重复展开成虚构点位。",
+      "sourceImage": 5,
+      "sourceEnglishName": "Lumina Central, 1F Lounge",
+      "cardTier": "S",
+      "sourceListedPrice": 40000,
+      "roomContents": {
+        "mechanical": 2,
+        "electronic": 1
+      },
+      "contents": {
+        "mechanical": 2,
+        "electronic": 1
+      },
+      "contentsEvidence": "source_image_5_room_summary",
+      "individualContainerPositionsKnown": false
+    }
+  ],
+  "counts": {
+    "electronic": 48,
+    "mechanical": 23,
+    "gear": 4,
+    "medical": 5,
+    "briefcase": 20,
+    "trash": 16,
+    "enemy": 5,
+    "portal": 4,
+    "keyroom": 5
+  },
+  "statusCounts": {
+    "random_source": 49,
+    "fixed_source": 71,
+    "unknown": 5,
+    "conditional": 5
+  },
+  "validation": {
+    "allCoordinatesNormalized": true,
+    "uniqueIds": true,
+    "allWorldPositionsNull": true,
+    "unresolvedIconIds": [
+      "J-E16"
+    ],
+    "playerSpawnPointsVerified": 0,
+    "digitizationMethod": "人工逐图转录；放大检查重叠图标，颜色连通区域分析核对保险箱图标数量。"
+  },
+  "briefcaseNatureCounts": {
+    "real": 20
+  },
+  "localSourceUpdate": {
+    "date": "2026-09-29",
+    "authorMapVersion": "2026-09-23",
+    "manifest": "research/kelzero-20260923.json",
+    "newElectronicSourceSpawns": [
+      "J-E45",
+      "J-E46"
+    ],
+    "separatedExistingFloorMarkers": [
+      "J-E47",
+      "J-E48"
+    ],
+    "note": "既有编号保持不变。原图不同图层的敌人符号状态需按各自图例读取。"
+  },
+  "authorReview20261106": {
+    "sourceUrl": "https://imgur.com/a/cTlwhvc",
+    "sourceImage": 41,
+    "changedNatureIds": [
+      "J-B01",
+      "J-B02",
+      "J-B04",
+      "J-B05",
+      "J-B07",
+      "J-B08",
+      "J-B10",
+      "J-B11",
+      "J-B15"
+    ],
+    "positionsPreserved": true
+  }
+}

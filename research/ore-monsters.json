@@ -1,0 +1,2343 @@
+{
+  "schemaVersion": 1,
+  "gameVersion": "3.2.0",
+  "item": {
+    "id": 4360046,
+    "name": "赭石碎片",
+    "description": "对<color=#FFAF2C>高危调查进行大富豪投资</color>后，会在容器中出现。\n蕴含特殊以太能量的结晶碎片，表面像烧红的炭块一般，灼热而危险。可用于方案研发。",
+    "globalDropPoolIds": [
+      5010,
+      5011,
+      5012,
+      5013,
+      5014,
+      5015,
+      5016
+    ],
+    "globalRewardSetIds": [
+      300510,
+      300511,
+      300512,
+      300513,
+      300514,
+      300515,
+      300516,
+      300610,
+      300611,
+      300612,
+      300613,
+      300614,
+      300615,
+      300616
+    ],
+    "packageToShardJoinConfirmed": false
+  },
+  "note": "这些怪物位置有击败后生成「残响容器」的配置依据，作为寻找赭石碎片的奖励线索；尚未逐点实测碎片掉落。",
+  "conditions": [
+    "需要进行高危调查的大富豪投资；碎片投放受本局条件影响。",
+    "首领依照本局场景、随机组和遭遇触发出现；同一地点的怪物变体不代表同时刷新。",
+    "已确认的是首领战斗与残响容器配置，尚未逐点实测赭石碎片掉落。"
+  ],
+  "sources": [
+    {
+      "label": "玩家投资与碎片获取实测（2026-08-28，非官方说明）",
+      "url": "https://www.bilibili.com/video/BV1B2tA61ELV/"
+    }
+  ],
+  "maps": [
+    {
+      "map": "janus",
+      "points": []
+    },
+    {
+      "map": "suburbs",
+      "points": [
+        {
+          "id": "ore-suburbs-171200008-101",
+          "label": "拟态·波可娜",
+          "worldPosition": {
+            "x": 97.579575,
+            "y": 52.840954,
+            "z": -92.606285
+          },
+          "monsterIds": [
+            11622
+          ],
+          "conditions": [
+            "需要进行高危调查的大富豪投资；碎片投放受本局条件影响。",
+            "首领依照本局场景、随机组和遭遇触发出现；同一地点的怪物变体不代表同时刷新。",
+            "已确认的是首领战斗与残响容器配置，尚未逐点实测赭石碎片掉落。"
+          ],
+          "evidenceSummary": "3.2 配置中存在高危难度 213 的候选引用、首领战斗触发，以及启用的死亡后残响容器奖励。坐标取自原始成员位置，未按资料图图标移动。",
+          "evidence": {
+            "status": "configured_boss_reward_container",
+            "shardDropConfirmed": false,
+            "runtimePresenceConfirmed": false,
+            "itemId": 4360046,
+            "itemDescription": "对<color=#FFAF2C>高危调查进行大富豪投资</color>后，会在容器中出现。\n蕴含特殊以太能量的结晶碎片，表面像烧红的炭块一般，灼热而危险。可用于方案研发。",
+            "dropContainer": "残响容器",
+            "dropViewObjectId": 2001091,
+            "dropTrigger": "MemberHPZero",
+            "bossBattleSignal": "IsSendZenkov_EnterBossBattle=true",
+            "variants": [
+              {
+                "member": "171200008:101",
+                "monsterId": 11622,
+                "name": "离子体·多佩冈亚·波可娜",
+                "monsterCodeName": "Monster_PulchraSlime",
+                "worldPosition": {
+                  "x": 97.579575,
+                  "y": 52.840954,
+                  "z": -92.606285
+                },
+                "viewObjectId": 1000085,
+                "groupFile": "Group_171200008.json",
+                "groupSha256": "a0be3ccedd3ee43951058d9d8942c78ce91dab03fa940521be2020dfc3531847",
+                "sourcePath": "Group.Members[0]",
+                "suites": [
+                  {
+                    "index": 1,
+                    "backstage": true,
+                    "graph": {
+                      "$type": "ConfigSuiteGraph",
+                      "DFScriptName": "GroupGraph_171200008_1",
+                      "InitParam": []
+                    },
+                    "reward": {
+                      "$type": "ZKRewardTrait",
+                      "DropTimeType": "MemberHPZero",
+                      "DropVOID": 2001091,
+                      "Export2Server": true,
+                      "IsMemberDrop": true,
+                      "ItemAttachPoint": "",
+                      "RewardID": 410307,
+                      "StateRewards": [],
+                      "ZKRewardType": 2,
+                      "isDisable": false
+                    },
+                    "difficulty213": {
+                      "difficultyId": 213,
+                      "rawWeight": 1
+                    }
+                  },
+                  {
+                    "index": 3,
+                    "backstage": true,
+                    "graph": {
+                      "$type": "ConfigSuiteGraph",
+                      "DFScriptName": "GroupGraph_171200008_3",
+                      "InitParam": []
+                    },
+                    "reward": {
+                      "$type": "ZKRewardTrait",
+                      "DropTimeType": "MemberHPZero",
+                      "DropVOID": 2001091,
+                      "Export2Server": true,
+                      "IsMemberDrop": true,
+                      "ItemAttachPoint": "",
+                      "RewardID": 410307,
+                      "StateRewards": [],
+                      "ZKRewardType": 2,
+                      "isDisable": false
+                    },
+                    "difficulty213": {
+                      "difficultyId": 213,
+                      "rawWeight": 1
+                    }
+                  },
+                  {
+                    "index": 4,
+                    "backstage": true,
+                    "graph": {
+                      "$type": "ConfigSuiteGraph",
+                      "DFScriptName": "GroupGraph_171200008_4",
+                      "InitParam": []
+                    },
+                    "reward": {
+                      "$type": "ZKRewardTrait",
+                      "DropTimeType": "MemberHPZero",
+                      "DropVOID": 2001091,
+                      "Export2Server": true,
+                      "IsMemberDrop": true,
+                      "ItemAttachPoint": "",
+                      "RewardID": 410307,
+                      "StateRewards": [],
+                      "ZKRewardType": 2,
+                      "isDisable": false
+                    },
+                    "difficulty213": {
+                      "difficultyId": 213,
+                      "rawWeight": 1
+                    }
+                  },
+                  {
+                    "index": 5,
+                    "backstage": true,
+                    "graph": {
+                      "$type": "ConfigSuiteGraph",
+                      "DFScriptName": "GroupGraph_171200008_5",
+                      "InitParam": []
+                    },
+                    "reward": {
+                      "$type": "ZKRewardTrait",
+                      "DropTimeType": "MemberHPZero",
+                      "DropVOID": 2001091,
+                      "Export2Server": true,
+                      "IsMemberDrop": true,
+                      "ItemAttachPoint": "",
+                      "RewardID": 410307,
+                      "StateRewards": [],
+                      "ZKRewardType": 2,
+                      "isDisable": false
+                    },
+                    "difficulty213": {
+                      "difficultyId": 213,
+                      "rawWeight": 1
+                    }
+                  },
+                  {
+                    "index": 6,
+                    "backstage": true,
+                    "graph": {
+                      "$type": "ConfigSuiteGraph",
+                      "DFScriptName": "GroupGraph_171200008_6",
+                      "InitParam": []
+                    },
+                    "reward": {
+                      "$type": "ZKRewardTrait",
+                      "DropTimeType": "MemberHPZero",
+                      "DropVOID": 2001091,
+                      "Export2Server": true,
+                      "IsMemberDrop": true,
+                      "ItemAttachPoint": "",
+                      "RewardID": 410307,
+                      "StateRewards": [],
+                      "ZKRewardType": 2,
+                      "isDisable": false
+                    },
+                    "difficulty213": {
+                      "difficultyId": 213,
+                      "rawWeight": 1
+                    }
+                  },
+                  {
+                    "index": 7,
+                    "backstage": true,
+                    "graph": {
+                      "$type": "ConfigSuiteGraph",
+                      "DFScriptName": "GroupGraph_171200008_7",
+                      "InitParam": []
+                    },
+                    "reward": {
+                      "$type": "ZKRewardTrait",
+                      "DropTimeType": "MemberHPZero",
+                      "DropVOID": 2001091,
+                      "Export2Server": true,
+                      "IsMemberDrop": true,
+                      "ItemAttachPoint": "",
+                      "RewardID": 410307,
+                      "StateRewards": [],
+                      "ZKRewardType": 2,
+                      "isDisable": false
+                    },
+                    "difficulty213": {
+                      "difficultyId": 213,
+                      "rawWeight": 1
+                    }
+                  }
+                ]
+              },
+              {
+                "member": "171200249:101",
+                "monsterId": 11622,
+                "name": "离子体·多佩冈亚·波可娜",
+                "monsterCodeName": "Monster_PulchraSlime",
+                "worldPosition": {
+                  "x": 97.579575,
+                  "y": 52.840954,
+                  "z": -92.606285
+                },
+                "viewObjectId": 1000085,
+                "groupFile": "Group_171200249.json",
+                "groupSha256": "a53964a98df9c09f35d49a7db2d34acc1981fb305bac3f58353e979ed69556a8",
+                "sourcePath": "Group.Members[0]",
+                "suites": [
+                  {
+                    "index": 1,
+                    "backstage": true,
+                    "graph": {
+                      "$type": "ConfigSuiteGraph",
+                      "DFScriptName": "GroupGraph_171200249_1",
+                      "InitParam": []
+                    },
+                    "reward": {
+                      "$type": "ZKRewardTrait",
+                      "DropTimeType": "MemberHPZero",
+                      "DropVOID": 2001091,
+                      "Export2Server": true,
+                      "IsMemberDrop": true,
+                      "ItemAttachPoint": "",
+                      "RewardID": 410307,
+                      "StateRewards": [],
+                      "ZKRewardType": 2,
+                      "isDisable": false
+                    },
+                    "difficulty213": {
+                      "difficultyId": 213,
+                      "rawWeight": 1
+                    }
+                  },
+                  {
+                    "index": 3,
+                    "backstage": true,
+                    "graph": {
+                      "$type": "ConfigSuiteGraph",
+                      "DFScriptName": "GroupGraph_171200249_3",
+                      "InitParam": []
+                    },
+                    "reward": {
+                      "$type": "ZKRewardTrait",
+                      "DropTimeType": "MemberHPZero",
+                      "DropVOID": 2001091,
+                      "Export2Server": true,
+                      "IsMemberDrop": true,
+                      "ItemAttachPoint": "",
+                      "RewardID": 410307,
+                      "StateRewards": [],
+                      "ZKRewardType": 2,
+                      "isDisable": false
+                    },
+                    "difficulty213": {
+                      "difficultyId": 213,
+                      "rawWeight": 1
+                    }
+                  },
+                  {
+                    "index": 4,
+                    "backstage": true,
+                    "graph": {
+                      "$type": "ConfigSuiteGraph",
+                      "DFScriptName": "GroupGraph_171200249_4",
+                      "InitParam": []
+                    },
+                    "reward": {
+                      "$type": "ZKRewardTrait",
+                      "DropTimeType": "MemberHPZero",
+                      "DropVOID": 2001091,
+                      "Export2Server": true,
+                      "IsMemberDrop": true,
+                      "ItemAttachPoint": "",
+                      "RewardID": 410307,
+                      "StateRewards": [],
+                      "ZKRewardType": 2,
+                      "isDisable": false
+                    },
+                    "difficulty213": {
+                      "difficultyId": 213,
+                      "rawWeight": 1
+                    }
+                  },
+                  {
+                    "index": 5,
+                    "backstage": true,
+                    "graph": {
+                      "$type": "ConfigSuiteGraph",
+                      "DFScriptName": "GroupGraph_171200249_5",
+                      "InitParam": []
+                    },
+                    "reward": {
+                      "$type": "ZKRewardTrait",
+                      "DropTimeType": "MemberHPZero",
+                      "DropVOID": 2001091,
+                      "Export2Server": true,
+                      "IsMemberDrop": true,
+                      "ItemAttachPoint": "",
+                      "RewardID": 410307,
+                      "StateRewards": [],
+                      "ZKRewardType": 2,
+                      "isDisable": false
+                    },
+                    "difficulty213": {
+                      "difficultyId": 213,
+                      "rawWeight": 1
+                    }
+                  },
+                  {
+                    "index": 6,
+                    "backstage": true,
+                    "graph": {
+                      "$type": "ConfigSuiteGraph",
+                      "DFScriptName": "GroupGraph_171200249_6",
+                      "InitParam": []
+                    },
+                    "reward": {
+                      "$type": "ZKRewardTrait",
+                      "DropTimeType": "MemberHPZero",
+                      "DropVOID": 2001091,
+                      "Export2Server": true,
+                      "IsMemberDrop": true,
+                      "ItemAttachPoint": "",
+                      "RewardID": 410307,
+                      "StateRewards": [],
+                      "ZKRewardType": 2,
+                      "isDisable": false
+                    },
+                    "difficulty213": {
+                      "difficultyId": 213,
+                      "rawWeight": 1
+                    }
+                  },
+                  {
+                    "index": 7,
+                    "backstage": true,
+                    "graph": {
+                      "$type": "ConfigSuiteGraph",
+                      "DFScriptName": "GroupGraph_171200249_7",
+                      "InitParam": []
+                    },
+                    "reward": {
+                      "$type": "ZKRewardTrait",
+                      "DropTimeType": "MemberHPZero",
+                      "DropVOID": 2001091,
+                      "Export2Server": true,
+                      "IsMemberDrop": true,
+                      "ItemAttachPoint": "",
+                      "RewardID": 410307,
+                      "StateRewards": [],
+                      "ZKRewardType": 2,
+                      "isDisable": false
+                    },
+                    "difficulty213": {
+                      "difficultyId": 213,
+                      "rawWeight": 1
+                    }
+                  }
+                ]
+              },
+              {
+                "member": "171200250:101",
+                "monsterId": 11622,
+                "name": "离子体·多佩冈亚·波可娜",
+                "monsterCodeName": "Monster_PulchraSlime",
+                "worldPosition": {
+                  "x": 97.579575,
+                  "y": 52.840954,
+                  "z": -92.606285
+                },
+                "viewObjectId": 1000085,
+                "groupFile": "Group_171200250.json",
+                "groupSha256": "26c12efc682e80759202120d8b098ff6d5ebf805e83b0841f5f91fea371fd550",
+                "sourcePath": "Group.Members[0]",
+                "suites": [
+                  {
+                    "index": 1,
+                    "backstage": true,
+                    "graph": {
+                      "$type": "ConfigSuiteGraph",
+                      "DFScriptName": "GroupGraph_171200250_1",
+                      "InitParam": []
+                    },
+                    "reward": {
+                      "$type": "ZKRewardTrait",
+                      "DropTimeType": "MemberHPZero",
+                      "DropVOID": 2001091,
+                      "Export2Server": true,
+                      "IsMemberDrop": true,
+                      "ItemAttachPoint": "",
+                      "RewardID": 410307,
+                      "StateRewards": [],
+                      "ZKRewardType": 2,
+                      "isDisable": false
+                    },
+                    "difficulty213": {
+                      "difficultyId": 213,
+                      "rawWeight": 1
+                    }
+                  },
+                  {
+                    "index": 3,
+                    "backstage": true,
+                    "graph": {
+                      "$type": "ConfigSuiteGraph",
+                      "DFScriptName": "GroupGraph_171200250_3",
+                      "InitParam": []
+                    },
+                    "reward": {
+                      "$type": "ZKRewardTrait",
+                      "DropTimeType": "MemberHPZero",
+                      "DropVOID": 2001091,
+                      "Export2Server": true,
+                      "IsMemberDrop": true,
+                      "ItemAttachPoint": "",
+                      "RewardID": 410307,
+                      "StateRewards": [],
+                      "ZKRewardType": 2,
+                      "isDisable": false
+                    },
+                    "difficulty213": {
+                      "difficultyId": 213,
+                      "rawWeight": 1
+                    }
+                  },
+                  {
+                    "index": 4,
+                    "backstage": true,
+                    "graph": {
+                      "$type": "ConfigSuiteGraph",
+                      "DFScriptName": "GroupGraph_171200250_4",
+                      "InitParam": []
+                    },
+                    "reward": {
+                      "$type": "ZKRewardTrait",
+                      "DropTimeType": "MemberHPZero",
+                      "DropVOID": 2001091,
+                      "Export2Server": true,
+                      "IsMemberDrop": true,
+                      "ItemAttachPoint": "",
+                      "RewardID": 410307,
+                      "StateRewards": [],
+                      "ZKRewardType": 2,
+                      "isDisable": false
+                    },
+                    "difficulty213": {
+                      "difficultyId": 213,
+                      "rawWeight": 1
+                    }
+                  },
+                  {
+                    "index": 5,
+                    "backstage": true,
+                    "graph": {
+                      "$type": "ConfigSuiteGraph",
+                      "DFScriptName": "GroupGraph_171200250_5",
+                      "InitParam": []
+                    },
+                    "reward": {
+                      "$type": "ZKRewardTrait",
+                      "DropTimeType": "MemberHPZero",
+                      "DropVOID": 2001091,
+                      "Export2Server": true,
+                      "IsMemberDrop": true,
+                      "ItemAttachPoint": "",
+                      "RewardID": 410307,
+                      "StateRewards": [],
+                      "ZKRewardType": 2,
+                      "isDisable": false
+                    },
+                    "difficulty213": {
+                      "difficultyId": 213,
+                      "rawWeight": 1
+                    }
+                  },
+                  {
+                    "index": 6,
+                    "backstage": true,
+                    "graph": {
+                      "$type": "ConfigSuiteGraph",
+                      "DFScriptName": "GroupGraph_171200250_6",
+                      "InitParam": []
+                    },
+                    "reward": {
+                      "$type": "ZKRewardTrait",
+                      "DropTimeType": "MemberHPZero",
+                      "DropVOID": 2001091,
+                      "Export2Server": true,
+                      "IsMemberDrop": true,
+                      "ItemAttachPoint": "",
+                      "RewardID": 410307,
+                      "StateRewards": [],
+                      "ZKRewardType": 2,
+                      "isDisable": false
+                    },
+                    "difficulty213": {
+                      "difficultyId": 213,
+                      "rawWeight": 1
+                    }
+                  },
+                  {
+                    "index": 7,
+                    "backstage": true,
+                    "graph": {
+                      "$type": "ConfigSuiteGraph",
+                      "DFScriptName": "GroupGraph_171200250_7",
+                      "InitParam": []
+                    },
+                    "reward": {
+                      "$type": "ZKRewardTrait",
+                      "DropTimeType": "MemberHPZero",
+                      "DropVOID": 2001091,
+                      "Export2Server": true,
+                      "IsMemberDrop": true,
+                      "ItemAttachPoint": "",
+                      "RewardID": 410307,
+                      "StateRewards": [],
+                      "ZKRewardType": 2,
+                      "isDisable": false
+                    },
+                    "difficulty213": {
+                      "difficultyId": 213,
+                      "rawWeight": 1
+                    }
+                  }
+                ]
+              }
+            ],
+            "activation": [
+              {
+                "member": "171200008:101",
+                "suite": 1,
+                "graph": "GroupGraph_171200008_1",
+                "node": 38,
+                "inputs": {
+                  "MonsterList1": [
+                    101
+                  ],
+                  "TriggerKeyList": [
+                    "171200008_Trigger_000"
+                  ],
+                  "BattleRegionName": "401",
+                  "SwitchSuite": 2,
+                  "IsSendZenkov_EnterBossBattle": true
+                },
+                "fromOnSuiteReady": [
+                  {
+                    "nodeId": 23,
+                    "nodeType": "OnSuiteReady"
+                  },
+                  {
+                    "nodeId": 38,
+                    "nodeType": "StartParallelGraph"
+                  }
+                ],
+                "sha256": "fce242553dc12ce36c7754f5f9f5d0f4563e393110a895885e9715fcfc93738f"
+              },
+              {
+                "member": "171200008:101",
+                "suite": 3,
+                "graph": "GroupGraph_171200008_3",
+                "node": 25,
+                "inputs": {
+                  "MonsterList1": [
+                    101
+                  ],
+                  "TriggerKeyList": [
+                    "171200008_Trigger_001"
+                  ],
+                  "BattleRegionName": "401",
+                  "SwitchSuite": 2,
+                  "IsSendZenkov_EnterBossBattle": true
+                },
+                "fromOnSuiteReady": [
+                  {
+                    "nodeId": 24,
+                    "nodeType": "OnSuiteReady"
+                  },
+                  {
+                    "nodeId": 25,
+                    "nodeType": "StartParallelGraph"
+                  }
+                ],
+                "sha256": "0ca523f1ab2b84b134e30fff11894984588554d793057d3057a3809d75c081a4"
+              },
+              {
+                "member": "171200008:101",
+                "suite": 4,
+                "graph": "GroupGraph_171200008_4",
+                "node": 25,
+                "inputs": {
+                  "MonsterList1": [
+                    101
+                  ],
+                  "TriggerKeyList": [
+                    "171200008_Trigger_002"
+                  ],
+                  "BattleRegionName": "401",
+                  "SwitchSuite": 2,
+                  "IsSendZenkov_EnterBossBattle": true
+                },
+                "fromOnSuiteReady": [
+                  {
+                    "nodeId": 24,
+                    "nodeType": "OnSuiteReady"
+                  },
+                  {
+                    "nodeId": 25,
+                    "nodeType": "StartParallelGraph"
+                  }
+                ],
+                "sha256": "39ba0ededa3ca3f04093bc111257031ec7cb126c9585b28f8230cd90e841708a"
+              },
+              {
+                "member": "171200008:101",
+                "suite": 5,
+                "graph": "GroupGraph_171200008_5",
+                "node": 25,
+                "inputs": {
+                  "MonsterList1": [
+                    101
+                  ],
+                  "TriggerKeyList": [
+                    "171200008_Trigger_003"
+                  ],
+                  "BattleRegionName": "401",
+                  "SwitchSuite": 2,
+                  "IsSendZenkov_EnterBossBattle": true
+                },
+                "fromOnSuiteReady": [
+                  {
+                    "nodeId": 24,
+                    "nodeType": "OnSuiteReady"
+                  },
+                  {
+                    "nodeId": 25,
+                    "nodeType": "StartParallelGraph"
+                  }
+                ],
+                "sha256": "04b3ba6bed336bbb06e5d83e8605af9e7026857ac2a4355c37b171f8e6fc5845"
+              },
+              {
+                "member": "171200008:101",
+                "suite": 6,
+                "graph": "GroupGraph_171200008_6",
+                "node": 25,
+                "inputs": {
+                  "MonsterList1": [
+                    101
+                  ],
+                  "TriggerKeyList": [
+                    "171200008_Trigger_004"
+                  ],
+                  "BattleRegionName": "401",
+                  "SwitchSuite": 2,
+                  "IsSendZenkov_EnterBossBattle": true
+                },
+                "fromOnSuiteReady": [
+                  {
+                    "nodeId": 24,
+                    "nodeType": "OnSuiteReady"
+                  },
+                  {
+                    "nodeId": 25,
+                    "nodeType": "StartParallelGraph"
+                  }
+                ],
+                "sha256": "07979a4f2cd9320655fa290be4837421620b721ef22f206ab7d2062f45d31a30"
+              },
+              {
+                "member": "171200008:101",
+                "suite": 7,
+                "graph": "GroupGraph_171200008_7",
+                "node": 25,
+                "inputs": {
+                  "MonsterList1": [
+                    101
+                  ],
+                  "TriggerKeyList": [
+                    "171200008_Trigger_005"
+                  ],
+                  "BattleRegionName": "401",
+                  "SwitchSuite": 2,
+                  "IsSendZenkov_EnterBossBattle": true
+                },
+                "fromOnSuiteReady": [
+                  {
+                    "nodeId": 24,
+                    "nodeType": "OnSuiteReady"
+                  },
+                  {
+                    "nodeId": 25,
+                    "nodeType": "StartParallelGraph"
+                  }
+                ],
+                "sha256": "12180c46ce8d98d4112c95e02b75ec1c2435856323ae7ac8f48851e6231958bf"
+              },
+              {
+                "member": "171200249:101",
+                "suite": 1,
+                "graph": "GroupGraph_171200249_1",
+                "node": 38,
+                "inputs": {
+                  "MonsterList1": [
+                    101
+                  ],
+                  "TriggerKeyList": [
+                    "171200008_Trigger_000"
+                  ],
+                  "BattleRegionName": "401",
+                  "SwitchSuite": 2,
+                  "IsSendZenkov_EnterBossBattle": true
+                },
+                "fromOnSuiteReady": [
+                  {
+                    "nodeId": 23,
+                    "nodeType": "OnSuiteReady"
+                  },
+                  {
+                    "nodeId": 38,
+                    "nodeType": "StartParallelGraph"
+                  }
+                ],
+                "sha256": "8e38a0bf560073c79e0b0ba5c5b1b830d1a44fe0d3eaa4ffa5667c75a1064109"
+              },
+              {
+                "member": "171200249:101",
+                "suite": 3,
+                "graph": "GroupGraph_171200249_3",
+                "node": 25,
+                "inputs": {
+                  "MonsterList1": [
+                    101
+                  ],
+                  "TriggerKeyList": [
+                    "171200008_Trigger_001"
+                  ],
+                  "BattleRegionName": "401",
+                  "SwitchSuite": 2,
+                  "IsSendZenkov_EnterBossBattle": true
+                },
+                "fromOnSuiteReady": [
+                  {
+                    "nodeId": 24,
+                    "nodeType": "OnSuiteReady"
+                  },
+                  {
+                    "nodeId": 25,
+                    "nodeType": "StartParallelGraph"
+                  }
+                ],
+                "sha256": "ec211b225afc5a73fc316320e3d3ecf93dd80b7feed2c8362dc290d19c14e747"
+              },
+              {
+                "member": "171200249:101",
+                "suite": 4,
+                "graph": "GroupGraph_171200249_4",
+                "node": 25,
+                "inputs": {
+                  "MonsterList1": [
+                    101
+                  ],
+                  "TriggerKeyList": [
+                    "171200008_Trigger_002"
+                  ],
+                  "BattleRegionName": "401",
+                  "SwitchSuite": 2,
+                  "IsSendZenkov_EnterBossBattle": true
+                },
+                "fromOnSuiteReady": [
+                  {
+                    "nodeId": 24,
+                    "nodeType": "OnSuiteReady"
+                  },
+                  {
+                    "nodeId": 25,
+                    "nodeType": "StartParallelGraph"
+                  }
+                ],
+                "sha256": "da1624818fab2cce7ef64bcdc0ddc2245e87d702e7b7097bd95c917e15269997"
+              },
+              {
+                "member": "171200249:101",
+                "suite": 5,
+                "graph": "GroupGraph_171200249_5",
+                "node": 25,
+                "inputs": {
+                  "MonsterList1": [
+                    101
+                  ],
+                  "TriggerKeyList": [
+                    "171200008_Trigger_003"
+                  ],
+                  "BattleRegionName": "401",
+                  "SwitchSuite": 2,
+                  "IsSendZenkov_EnterBossBattle": true
+                },
+                "fromOnSuiteReady": [
+                  {
+                    "nodeId": 24,
+                    "nodeType": "OnSuiteReady"
+                  },
+                  {
+                    "nodeId": 25,
+                    "nodeType": "StartParallelGraph"
+                  }
+                ],
+                "sha256": "aea9b75344b1de1da9df275ee8c72456c67a256142ab6b9f8df41b05782e621f"
+              },
+              {
+                "member": "171200249:101",
+                "suite": 6,
+                "graph": "GroupGraph_171200249_6",
+                "node": 25,
+                "inputs": {
+                  "MonsterList1": [
+                    101
+                  ],
+                  "TriggerKeyList": [
+                    "171200008_Trigger_004"
+                  ],
+                  "BattleRegionName": "401",
+                  "SwitchSuite": 2,
+                  "IsSendZenkov_EnterBossBattle": true
+                },
+                "fromOnSuiteReady": [
+                  {
+                    "nodeId": 24,
+                    "nodeType": "OnSuiteReady"
+                  },
+                  {
+                    "nodeId": 25,
+                    "nodeType": "StartParallelGraph"
+                  }
+                ],
+                "sha256": "34a8ec52f99d268f97c39fac1cfd3a2b3009ea39ec8f82aecf52abb3b590bf15"
+              },
+              {
+                "member": "171200249:101",
+                "suite": 7,
+                "graph": "GroupGraph_171200249_7",
+                "node": 25,
+                "inputs": {
+                  "MonsterList1": [
+                    101
+                  ],
+                  "TriggerKeyList": [
+                    "171200008_Trigger_005"
+                  ],
+                  "BattleRegionName": "401",
+                  "SwitchSuite": 2,
+                  "IsSendZenkov_EnterBossBattle": true
+                },
+                "fromOnSuiteReady": [
+                  {
+                    "nodeId": 24,
+                    "nodeType": "OnSuiteReady"
+                  },
+                  {
+                    "nodeId": 25,
+                    "nodeType": "StartParallelGraph"
+                  }
+                ],
+                "sha256": "06cf850891a134fd41aeaac88c18204a75300c18646b95049f3c530c13e61917"
+              },
+              {
+                "member": "171200250:101",
+                "suite": 1,
+                "graph": "GroupGraph_171200250_1",
+                "node": 38,
+                "inputs": {
+                  "MonsterList1": [
+                    101
+                  ],
+                  "TriggerKeyList": [
+                    "171200008_Trigger_000"
+                  ],
+                  "BattleRegionName": "401",
+                  "SwitchSuite": 2,
+                  "IsSendZenkov_EnterBossBattle": true
+                },
+                "fromOnSuiteReady": [
+                  {
+                    "nodeId": 23,
+                    "nodeType": "OnSuiteReady"
+                  },
+                  {
+                    "nodeId": 38,
+                    "nodeType": "StartParallelGraph"
+                  }
+                ],
+                "sha256": "f7f0bab434d639dd8113241cf972021b9ecf62e157f903bb22f10ce57c55a11d"
+              },
+              {
+                "member": "171200250:101",
+                "suite": 3,
+                "graph": "GroupGraph_171200250_3",
+                "node": 25,
+                "inputs": {
+                  "MonsterList1": [
+                    101
+                  ],
+                  "TriggerKeyList": [
+                    "171200008_Trigger_001"
+                  ],
+                  "BattleRegionName": "401",
+                  "SwitchSuite": 2,
+                  "IsSendZenkov_EnterBossBattle": true
+                },
+                "fromOnSuiteReady": [
+                  {
+                    "nodeId": 24,
+                    "nodeType": "OnSuiteReady"
+                  },
+                  {
+                    "nodeId": 25,
+                    "nodeType": "StartParallelGraph"
+                  }
+                ],
+                "sha256": "6cd57a6f651854ca4fed51d7a9b68d05051e974a2db1fe959d23b3514e68114e"
+              },
+              {
+                "member": "171200250:101",
+                "suite": 4,
+                "graph": "GroupGraph_171200250_4",
+                "node": 25,
+                "inputs": {
+                  "MonsterList1": [
+                    101
+                  ],
+                  "TriggerKeyList": [
+                    "171200008_Trigger_002"
+                  ],
+                  "BattleRegionName": "401",
+                  "SwitchSuite": 2,
+                  "IsSendZenkov_EnterBossBattle": true
+                },
+                "fromOnSuiteReady": [
+                  {
+                    "nodeId": 24,
+                    "nodeType": "OnSuiteReady"
+                  },
+                  {
+                    "nodeId": 25,
+                    "nodeType": "StartParallelGraph"
+                  }
+                ],
+                "sha256": "7c1361e7b61185ef7ca51ab2dee387c7267d2644ed2bd79c3ae9074475a85622"
+              },
+              {
+                "member": "171200250:101",
+                "suite": 5,
+                "graph": "GroupGraph_171200250_5",
+                "node": 25,
+                "inputs": {
+                  "MonsterList1": [
+                    101
+                  ],
+                  "TriggerKeyList": [
+                    "171200008_Trigger_003"
+                  ],
+                  "BattleRegionName": "401",
+                  "SwitchSuite": 2,
+                  "IsSendZenkov_EnterBossBattle": true
+                },
+                "fromOnSuiteReady": [
+                  {
+                    "nodeId": 24,
+                    "nodeType": "OnSuiteReady"
+                  },
+                  {
+                    "nodeId": 25,
+                    "nodeType": "StartParallelGraph"
+                  }
+                ],
+                "sha256": "e1eb0acfca96cb40353cbc3c9f6e3b5cedcee9efab08b7628154f935893a3311"
+              },
+              {
+                "member": "171200250:101",
+                "suite": 6,
+                "graph": "GroupGraph_171200250_6",
+                "node": 25,
+                "inputs": {
+                  "MonsterList1": [
+                    101
+                  ],
+                  "TriggerKeyList": [
+                    "171200008_Trigger_004"
+                  ],
+                  "BattleRegionName": "401",
+                  "SwitchSuite": 2,
+                  "IsSendZenkov_EnterBossBattle": true
+                },
+                "fromOnSuiteReady": [
+                  {
+                    "nodeId": 24,
+                    "nodeType": "OnSuiteReady"
+                  },
+                  {
+                    "nodeId": 25,
+                    "nodeType": "StartParallelGraph"
+                  }
+                ],
+                "sha256": "f7383f2763411ce3954e857eae3f0e5be456d87e3678f35fd97e0e3bde2e5a47"
+              },
+              {
+                "member": "171200250:101",
+                "suite": 7,
+                "graph": "GroupGraph_171200250_7",
+                "node": 25,
+                "inputs": {
+                  "MonsterList1": [
+                    101
+                  ],
+                  "TriggerKeyList": [
+                    "171200008_Trigger_005"
+                  ],
+                  "BattleRegionName": "401",
+                  "SwitchSuite": 2,
+                  "IsSendZenkov_EnterBossBattle": true
+                },
+                "fromOnSuiteReady": [
+                  {
+                    "nodeId": 24,
+                    "nodeType": "OnSuiteReady"
+                  },
+                  {
+                    "nodeId": 25,
+                    "nodeType": "StartParallelGraph"
+                  }
+                ],
+                "sha256": "de2d9a63aa3fdfc9dfd134c17e4538638828747b1de1024a037ea85add597a66"
+              }
+            ],
+            "nearestNavigationDistance": 0.021618062500003532
+          }
+        },
+        {
+          "id": "ore-suburbs-171200101-101",
+          "label": "幻矢单元",
+          "worldPosition": {
+            "x": -24.222708,
+            "y": 22.380957,
+            "z": 46.767696
+          },
+          "monsterIds": [
+            31442
+          ],
+          "conditions": [
+            "需要进行高危调查的大富豪投资；碎片投放受本局条件影响。",
+            "首领依照本局场景、随机组和遭遇触发出现；同一地点的怪物变体不代表同时刷新。",
+            "已确认的是首领战斗与残响容器配置，尚未逐点实测赭石碎片掉落。",
+            "同一遭遇可能随机替换敌人；仅在本局实际出现幻矢单元时按此目标处理。"
+          ],
+          "evidenceSummary": "3.2 配置中存在高危难度 213 的候选引用、首领战斗触发，以及启用的死亡后残响容器奖励。坐标取自原始成员位置，未按资料图图标移动。",
+          "evidence": {
+            "status": "configured_boss_reward_container",
+            "shardDropConfirmed": false,
+            "runtimePresenceConfirmed": false,
+            "itemId": 4360046,
+            "itemDescription": "对<color=#FFAF2C>高危调查进行大富豪投资</color>后，会在容器中出现。\n蕴含特殊以太能量的结晶碎片，表面像烧红的炭块一般，灼热而危险。可用于方案研发。",
+            "dropContainer": "残响容器",
+            "dropViewObjectId": 2001091,
+            "dropTrigger": "MemberHPZero",
+            "bossBattleSignal": "IsSendZenkov_EnterBossBattle=true",
+            "variants": [
+              {
+                "member": "171200101:101",
+                "monsterId": 31442,
+                "name": "「A-H0L0」型高智能战术构造体·幻矢单元",
+                "monsterCodeName": "Monster_ObsoleteAndroid",
+                "worldPosition": {
+                  "x": -24.222708,
+                  "y": 22.380957,
+                  "z": 46.767696
+                },
+                "viewObjectId": 1000085,
+                "groupFile": "Group_171200101.json",
+                "groupSha256": "0fc921f3dfb5570a20f3942c40ce1ea4f9cf3074635436fdfaf9b609536c1d4d",
+                "sourcePath": "Group.Members[0]",
+                "suites": [
+                  {
+                    "index": 1,
+                    "backstage": true,
+                    "graph": {
+                      "$type": "ConfigSuiteGraph",
+                      "DFScriptName": "GroupGraph_171200101_1",
+                      "InitParam": []
+                    },
+                    "reward": {
+                      "$type": "ZKRewardTrait",
+                      "DropTimeType": "MemberHPZero",
+                      "DropVOID": 2001091,
+                      "Export2Server": true,
+                      "IsMemberDrop": true,
+                      "ItemAttachPoint": "",
+                      "RewardID": 410305,
+                      "StateRewards": [],
+                      "ZKRewardType": 2,
+                      "isDisable": false
+                    },
+                    "difficulty213": {
+                      "difficultyId": 213,
+                      "rawWeight": 1
+                    }
+                  },
+                  {
+                    "index": 6,
+                    "backstage": true,
+                    "graph": {
+                      "$type": "ConfigSuiteGraph",
+                      "DFScriptName": "GroupGraph_171200101_6",
+                      "InitParam": []
+                    },
+                    "reward": {
+                      "$type": "ZKRewardTrait",
+                      "DropTimeType": "MemberHPZero",
+                      "DropVOID": 2001091,
+                      "Export2Server": true,
+                      "IsMemberDrop": true,
+                      "ItemAttachPoint": "",
+                      "RewardID": 410305,
+                      "StateRewards": [],
+                      "ZKRewardType": 2,
+                      "isDisable": false
+                    },
+                    "difficulty213": {
+                      "difficultyId": 213,
+                      "rawWeight": 1
+                    }
+                  }
+                ]
+              },
+              {
+                "member": "171200364:101",
+                "monsterId": 31442,
+                "name": "「A-H0L0」型高智能战术构造体·幻矢单元",
+                "monsterCodeName": "Monster_ObsoleteAndroid",
+                "worldPosition": {
+                  "x": -24.222708,
+                  "y": 22.380957,
+                  "z": 46.767696
+                },
+                "viewObjectId": 1000085,
+                "groupFile": "Group_171200364.json",
+                "groupSha256": "a3b6665085987172f8390a7ff97a7858e33d1d77e997e23b76eafa222d659be8",
+                "sourcePath": "Group.Members[0]",
+                "suites": [
+                  {
+                    "index": 1,
+                    "backstage": true,
+                    "graph": {
+                      "$type": "ConfigSuiteGraph",
+                      "DFScriptName": "GroupGraph_171200364_1",
+                      "InitParam": []
+                    },
+                    "reward": {
+                      "$type": "ZKRewardTrait",
+                      "DropTimeType": "MemberHPZero",
+                      "DropVOID": 2001091,
+                      "Export2Server": true,
+                      "IsMemberDrop": true,
+                      "ItemAttachPoint": "",
+                      "RewardID": 410305,
+                      "StateRewards": [],
+                      "ZKRewardType": 2,
+                      "isDisable": false
+                    },
+                    "difficulty213": {
+                      "difficultyId": 213,
+                      "rawWeight": 1
+                    }
+                  },
+                  {
+                    "index": 6,
+                    "backstage": true,
+                    "graph": {
+                      "$type": "ConfigSuiteGraph",
+                      "DFScriptName": "GroupGraph_171200364_6",
+                      "InitParam": []
+                    },
+                    "reward": {
+                      "$type": "ZKRewardTrait",
+                      "DropTimeType": "MemberHPZero",
+                      "DropVOID": 2001091,
+                      "Export2Server": true,
+                      "IsMemberDrop": true,
+                      "ItemAttachPoint": "",
+                      "RewardID": 410305,
+                      "StateRewards": [],
+                      "ZKRewardType": 2,
+                      "isDisable": false
+                    },
+                    "difficulty213": {
+                      "difficultyId": 213,
+                      "rawWeight": 1
+                    }
+                  }
+                ]
+              }
+            ],
+            "activation": [
+              {
+                "member": "171200101:101",
+                "suite": 1,
+                "graph": "GroupGraph_171200101_1",
+                "node": 38,
+                "inputs": {
+                  "MonsterList1": [
+                    101
+                  ],
+                  "TriggerKeyList": [
+                    "171200101_Trigger_000"
+                  ],
+                  "BattleRegionName": "401",
+                  "SwitchSuite": 2,
+                  "IsSendZenkov_EnterBossBattle": true
+                },
+                "fromOnSuiteReady": [
+                  {
+                    "nodeId": 23,
+                    "nodeType": "OnSuiteReady"
+                  },
+                  {
+                    "nodeId": 38,
+                    "nodeType": "StartParallelGraph"
+                  }
+                ],
+                "sha256": "5804a908ff07871183a3d181156917262833bcf59429ff2c67a739d8e55859e9"
+              },
+              {
+                "member": "171200101:101",
+                "suite": 6,
+                "graph": "GroupGraph_171200101_6",
+                "node": 24,
+                "inputs": {
+                  "MonsterList1": [
+                    101
+                  ],
+                  "TriggerKeyList": [
+                    "171200101_Trigger_001"
+                  ],
+                  "BattleRegionName": "401",
+                  "SwitchSuite": 2,
+                  "IsSendZenkov_EnterBossBattle": true
+                },
+                "fromOnSuiteReady": [
+                  {
+                    "nodeId": 23,
+                    "nodeType": "OnSuiteReady"
+                  },
+                  {
+                    "nodeId": 24,
+                    "nodeType": "StartParallelGraph"
+                  }
+                ],
+                "sha256": "47419ba2792c7afe7521ef7d4fddcfc654ea3e99440017a1413c64bd50892f30"
+              },
+              {
+                "member": "171200364:101",
+                "suite": 1,
+                "graph": "GroupGraph_171200364_1",
+                "node": 38,
+                "inputs": {
+                  "MonsterList1": [
+                    101
+                  ],
+                  "TriggerKeyList": [
+                    "171200101_Trigger_000"
+                  ],
+                  "BattleRegionName": "401",
+                  "SwitchSuite": 2,
+                  "IsSendZenkov_EnterBossBattle": true
+                },
+                "fromOnSuiteReady": [
+                  {
+                    "nodeId": 23,
+                    "nodeType": "OnSuiteReady"
+                  },
+                  {
+                    "nodeId": 38,
+                    "nodeType": "StartParallelGraph"
+                  }
+                ],
+                "sha256": "65f342e99ad91b724f8180cd2deff7a1a8c96109ae2dd2f98bb2130fd38e5c1d"
+              },
+              {
+                "member": "171200364:101",
+                "suite": 6,
+                "graph": "GroupGraph_171200364_6",
+                "node": 24,
+                "inputs": {
+                  "MonsterList1": [
+                    101
+                  ],
+                  "TriggerKeyList": [
+                    "171200101_Trigger_001"
+                  ],
+                  "BattleRegionName": "401",
+                  "SwitchSuite": 2,
+                  "IsSendZenkov_EnterBossBattle": true
+                },
+                "fromOnSuiteReady": [
+                  {
+                    "nodeId": 23,
+                    "nodeType": "OnSuiteReady"
+                  },
+                  {
+                    "nodeId": 24,
+                    "nodeType": "StartParallelGraph"
+                  }
+                ],
+                "sha256": "736eb6465fbdbc09e514a0e60f389e1ee97945236c3e1cb20343af459a2ab1f4"
+              }
+            ],
+            "nearestNavigationDistance": 0.09494625781249866
+          }
+        },
+        {
+          "id": "ore-suburbs-171200318-101",
+          "label": "开门玩法首领（初始位置）",
+          "worldPosition": {
+            "x": 45.48747,
+            "y": 29.320957,
+            "z": 187.90405
+          },
+          "monsterIds": [
+            11237,
+            11901,
+            11961,
+            31012,
+            31192,
+            31202,
+            31361
+          ],
+          "conditions": [
+            "需要进行高危调查的大富豪投资；碎片投放受本局条件影响。",
+            "首领依照本局场景、随机组和遭遇触发出现；同一地点的怪物变体不代表同时刷新。",
+            "已确认的是首领战斗与残响容器配置，尚未逐点实测赭石碎片掉落。",
+            "此点为开门玩法首领，需本局相应玩法和场景成立；标点仅表示初始配置位置。",
+            "此遭遇原有随机名单已包含蝎骸；同坐标的其他事件组没有并入该名单。"
+          ],
+          "evidenceSummary": "3.2 配置中存在高危难度 213 的候选引用、首领战斗触发，以及启用的死亡后残响容器奖励。坐标取自原始成员位置，未按资料图图标移动。",
+          "evidence": {
+            "status": "configured_boss_reward_container",
+            "shardDropConfirmed": false,
+            "runtimePresenceConfirmed": false,
+            "itemId": 4360046,
+            "itemDescription": "对<color=#FFAF2C>高危调查进行大富豪投资</color>后，会在容器中出现。\n蕴含特殊以太能量的结晶碎片，表面像烧红的炭块一般，灼热而危险。可用于方案研发。",
+            "dropContainer": "残响容器",
+            "dropViewObjectId": 2001091,
+            "dropTrigger": "MemberHPZero",
+            "bossBattleSignal": "IsSendZenkov_EnterBossBattle=true",
+            "variants": [
+              {
+                "member": "171200318:101",
+                "monsterId": 31202,
+                "name": "秽息行者·蝎骸",
+                "monsterCodeName": "Monster_Chelonethid",
+                "worldPosition": {
+                  "x": 45.48747,
+                  "y": 29.320957,
+                  "z": 187.90405
+                },
+                "viewObjectId": 1000108,
+                "groupFile": "Group_171200318.json",
+                "groupSha256": "6dade3cbcf6c54e86cb0aeee90849218f63a673964e1c2d9189ca333c808739f",
+                "sourcePath": "Group.Members[0]",
+                "suites": [
+                  {
+                    "index": 1,
+                    "backstage": false,
+                    "graph": {
+                      "$type": "ConfigSuiteGraph",
+                      "DFScriptName": "GroupGraph_171200318_1",
+                      "InitParam": []
+                    },
+                    "reward": {
+                      "$type": "ZKRewardTrait",
+                      "DropTimeType": "MemberHPZero",
+                      "DropVOID": 2001091,
+                      "Export2Server": true,
+                      "IsMemberDrop": true,
+                      "ItemAttachPoint": "",
+                      "RewardID": 510003,
+                      "StateRewards": [],
+                      "ZKRewardType": 2,
+                      "isDisable": false
+                    },
+                    "difficulty213": {
+                      "difficultyId": 213,
+                      "rawWeight": 1
+                    }
+                  }
+                ]
+              },
+              {
+                "member": "171200318:102",
+                "monsterId": 31192,
+                "name": "赫由托",
+                "monsterCodeName": "Monster_Hayyot",
+                "worldPosition": {
+                  "x": 45.48747,
+                  "y": 29.320957,
+                  "z": 187.90405
+                },
+                "viewObjectId": 1000108,
+                "groupFile": "Group_171200318.json",
+                "groupSha256": "6dade3cbcf6c54e86cb0aeee90849218f63a673964e1c2d9189ca333c808739f",
+                "sourcePath": "Group.Members[1]",
+                "suites": [
+                  {
+                    "index": 3,
+                    "backstage": false,
+                    "graph": {
+                      "$type": "ConfigSuiteGraph",
+                      "DFScriptName": "GroupGraph_171200318_3",
+                      "InitParam": []
+                    },
+                    "reward": {
+                      "$type": "ZKRewardTrait",
+                      "DropTimeType": "MemberHPZero",
+                      "DropVOID": 2001091,
+                      "Export2Server": true,
+                      "IsMemberDrop": true,
+                      "ItemAttachPoint": "",
+                      "RewardID": 510003,
+                      "StateRewards": [],
+                      "ZKRewardType": 2,
+                      "isDisable": false
+                    },
+                    "difficulty213": {
+                      "difficultyId": 213,
+                      "rawWeight": 1
+                    }
+                  }
+                ]
+              },
+              {
+                "member": "171200318:103",
+                "monsterId": 11961,
+                "name": "特佩什",
+                "monsterCodeName": "Monster_Tepes",
+                "worldPosition": {
+                  "x": 45.48747,
+                  "y": 29.320957,
+                  "z": 187.90405
+                },
+                "viewObjectId": 1000108,
+                "groupFile": "Group_171200318.json",
+                "groupSha256": "6dade3cbcf6c54e86cb0aeee90849218f63a673964e1c2d9189ca333c808739f",
+                "sourcePath": "Group.Members[2]",
+                "suites": [
+                  {
+                    "index": 4,
+                    "backstage": false,
+                    "graph": {
+                      "$type": "ConfigSuiteGraph",
+                      "DFScriptName": "GroupGraph_171200318_4",
+                      "InitParam": []
+                    },
+                    "reward": {
+                      "$type": "ZKRewardTrait",
+                      "DropTimeType": "MemberHPZero",
+                      "DropVOID": 2001091,
+                      "Export2Server": true,
+                      "IsMemberDrop": true,
+                      "ItemAttachPoint": "",
+                      "RewardID": 510003,
+                      "StateRewards": [],
+                      "ZKRewardType": 2,
+                      "isDisable": false
+                    },
+                    "difficulty213": {
+                      "difficultyId": 213,
+                      "rawWeight": 1
+                    }
+                  }
+                ]
+              },
+              {
+                "member": "171200318:104",
+                "monsterId": 11237,
+                "name": "初生死路屠夫",
+                "monsterCodeName": "Monster_Cottus",
+                "worldPosition": {
+                  "x": 45.48747,
+                  "y": 29.320957,
+                  "z": 187.90405
+                },
+                "viewObjectId": 1000108,
+                "groupFile": "Group_171200318.json",
+                "groupSha256": "6dade3cbcf6c54e86cb0aeee90849218f63a673964e1c2d9189ca333c808739f",
+                "sourcePath": "Group.Members[3]",
+                "suites": [
+                  {
+                    "index": 5,
+                    "backstage": false,
+                    "graph": {
+                      "$type": "ConfigSuiteGraph",
+                      "DFScriptName": "GroupGraph_171200318_5",
+                      "InitParam": []
+                    },
+                    "reward": {
+                      "$type": "ZKRewardTrait",
+                      "DropTimeType": "MemberHPZero",
+                      "DropVOID": 2001091,
+                      "Export2Server": true,
+                      "IsMemberDrop": true,
+                      "ItemAttachPoint": "",
+                      "RewardID": 510003,
+                      "StateRewards": [],
+                      "ZKRewardType": 2,
+                      "isDisable": false
+                    },
+                    "difficulty213": {
+                      "difficultyId": 213,
+                      "rawWeight": 1
+                    }
+                  }
+                ]
+              },
+              {
+                "member": "171200318:108",
+                "monsterId": 31012,
+                "name": "秽息蚀者·阿瓦鲁斯",
+                "monsterCodeName": "Monster_Avarus",
+                "worldPosition": {
+                  "x": 45.48747,
+                  "y": 29.320957,
+                  "z": 187.90405
+                },
+                "viewObjectId": 1000108,
+                "groupFile": "Group_171200318.json",
+                "groupSha256": "6dade3cbcf6c54e86cb0aeee90849218f63a673964e1c2d9189ca333c808739f",
+                "sourcePath": "Group.Members[7]",
+                "suites": [
+                  {
+                    "index": 9,
+                    "backstage": false,
+                    "graph": {
+                      "$type": "ConfigSuiteGraph",
+                      "DFScriptName": "GroupGraph_171200318_9",
+                      "InitParam": []
+                    },
+                    "reward": {
+                      "$type": "ZKRewardTrait",
+                      "DropTimeType": "MemberHPZero",
+                      "DropVOID": 2001091,
+                      "Export2Server": true,
+                      "IsMemberDrop": true,
+                      "ItemAttachPoint": "",
+                      "RewardID": 510003,
+                      "StateRewards": [],
+                      "ZKRewardType": 2,
+                      "isDisable": false
+                    },
+                    "difficulty213": {
+                      "difficultyId": 213,
+                      "rawWeight": 1
+                    }
+                  }
+                ]
+              },
+              {
+                "member": "171200318:113",
+                "monsterId": 11901,
+                "name": "Monster_NotoriousDeadEndButcher",
+                "monsterCodeName": "Monster_NotoriousDeadEndButcher",
+                "worldPosition": {
+                  "x": 45.48747,
+                  "y": 29.320957,
+                  "z": 187.90405
+                },
+                "viewObjectId": 1000108,
+                "groupFile": "Group_171200318.json",
+                "groupSha256": "6dade3cbcf6c54e86cb0aeee90849218f63a673964e1c2d9189ca333c808739f",
+                "sourcePath": "Group.Members[12]",
+                "suites": [
+                  {
+                    "index": 14,
+                    "backstage": false,
+                    "graph": {
+                      "$type": "ConfigSuiteGraph",
+                      "DFScriptName": "GroupGraph_171200318_14",
+                      "InitParam": []
+                    },
+                    "reward": {
+                      "$type": "ZKRewardTrait",
+                      "DropTimeType": "MemberHPZero",
+                      "DropVOID": 2001091,
+                      "Export2Server": true,
+                      "IsMemberDrop": true,
+                      "ItemAttachPoint": "",
+                      "RewardID": 510003,
+                      "StateRewards": [],
+                      "ZKRewardType": 2,
+                      "isDisable": false
+                    },
+                    "difficulty213": {
+                      "difficultyId": 213,
+                      "rawWeight": 1
+                    }
+                  }
+                ]
+              },
+              {
+                "member": "171200318:115",
+                "monsterId": 31361,
+                "name": "缄枢",
+                "monsterCodeName": "Monster_BlackMazingerGoldenBomb",
+                "worldPosition": {
+                  "x": 45.48747,
+                  "y": 29.320957,
+                  "z": 187.90405
+                },
+                "viewObjectId": 1000108,
+                "groupFile": "Group_171200318.json",
+                "groupSha256": "6dade3cbcf6c54e86cb0aeee90849218f63a673964e1c2d9189ca333c808739f",
+                "sourcePath": "Group.Members[14]",
+                "suites": [
+                  {
+                    "index": 16,
+                    "backstage": false,
+                    "graph": {
+                      "$type": "ConfigSuiteGraph",
+                      "DFScriptName": "GroupGraph_171200318_16",
+                      "InitParam": []
+                    },
+                    "reward": {
+                      "$type": "ZKRewardTrait",
+                      "DropTimeType": "MemberHPZero",
+                      "DropVOID": 2001091,
+                      "Export2Server": true,
+                      "IsMemberDrop": true,
+                      "ItemAttachPoint": "",
+                      "RewardID": 510004,
+                      "StateRewards": [],
+                      "ZKRewardType": 2,
+                      "isDisable": false
+                    },
+                    "difficulty213": {
+                      "difficultyId": 213,
+                      "rawWeight": 1
+                    }
+                  }
+                ]
+              }
+            ],
+            "activation": [
+              {
+                "member": "171200318:101",
+                "suite": 1,
+                "graph": "GroupGraph_171200318_1",
+                "node": 24,
+                "inputs": {
+                  "MonsterList1": [
+                    101
+                  ],
+                  "BattleRegionName": "401",
+                  "SwitchSuite": 2,
+                  "IsSendZenkov_EnterBossBattle": true
+                },
+                "fromOnSuiteReady": [
+                  {
+                    "nodeId": 23,
+                    "nodeType": "OnSuiteReady"
+                  },
+                  {
+                    "nodeId": 24,
+                    "nodeType": "StartParallelGraph"
+                  }
+                ],
+                "sha256": "b9a46eb02a80a7196c4d3f8b1ce296bd584210d2c1bd67e2904e23b19cf4bc7d"
+              },
+              {
+                "member": "171200318:102",
+                "suite": 3,
+                "graph": "GroupGraph_171200318_3",
+                "node": 24,
+                "inputs": {
+                  "MonsterList1": [
+                    102
+                  ],
+                  "BattleRegionName": "401",
+                  "SwitchSuite": 2,
+                  "IsSendZenkov_EnterBossBattle": true
+                },
+                "fromOnSuiteReady": [
+                  {
+                    "nodeId": 23,
+                    "nodeType": "OnSuiteReady"
+                  },
+                  {
+                    "nodeId": 24,
+                    "nodeType": "StartParallelGraph"
+                  }
+                ],
+                "sha256": "0adec29dfec0b647765a8f97c8b2fab7ebd34bb1e87aeab48310c68c06a89ceb"
+              },
+              {
+                "member": "171200318:103",
+                "suite": 4,
+                "graph": "GroupGraph_171200318_4",
+                "node": 24,
+                "inputs": {
+                  "MonsterList1": [
+                    103
+                  ],
+                  "BattleRegionName": "401",
+                  "SwitchSuite": 2,
+                  "IsSendZenkov_EnterBossBattle": true
+                },
+                "fromOnSuiteReady": [
+                  {
+                    "nodeId": 23,
+                    "nodeType": "OnSuiteReady"
+                  },
+                  {
+                    "nodeId": 24,
+                    "nodeType": "StartParallelGraph"
+                  }
+                ],
+                "sha256": "93356a5f23ce8f5235dabde949c0a95827c551b22a14d0f84916de0fae2a1ca0"
+              },
+              {
+                "member": "171200318:104",
+                "suite": 5,
+                "graph": "GroupGraph_171200318_5",
+                "node": 24,
+                "inputs": {
+                  "MonsterList1": [
+                    104
+                  ],
+                  "BattleRegionName": "401",
+                  "SwitchSuite": 2,
+                  "IsSendZenkov_EnterBossBattle": true
+                },
+                "fromOnSuiteReady": [
+                  {
+                    "nodeId": 23,
+                    "nodeType": "OnSuiteReady"
+                  },
+                  {
+                    "nodeId": 24,
+                    "nodeType": "StartParallelGraph"
+                  }
+                ],
+                "sha256": "3f1b83b4f9f64fc22d215464b641352a8ef0d7c05bbd0ce052f31dfd02f7c375"
+              },
+              {
+                "member": "171200318:108",
+                "suite": 9,
+                "graph": "GroupGraph_171200318_9",
+                "node": 24,
+                "inputs": {
+                  "MonsterList1": [
+                    108
+                  ],
+                  "BattleRegionName": "401",
+                  "SwitchSuite": 2,
+                  "IsSendZenkov_EnterBossBattle": true
+                },
+                "fromOnSuiteReady": [
+                  {
+                    "nodeId": 23,
+                    "nodeType": "OnSuiteReady"
+                  },
+                  {
+                    "nodeId": 24,
+                    "nodeType": "StartParallelGraph"
+                  }
+                ],
+                "sha256": "37b122d383d57a8071e431ee49493f3b8b0e197320aabd201f1aa3c1a86c82e4"
+              },
+              {
+                "member": "171200318:113",
+                "suite": 14,
+                "graph": "GroupGraph_171200318_14",
+                "node": 24,
+                "inputs": {
+                  "MonsterList1": [
+                    113
+                  ],
+                  "BattleRegionName": "401",
+                  "SwitchSuite": 2,
+                  "IsSendZenkov_EnterBossBattle": true
+                },
+                "fromOnSuiteReady": [
+                  {
+                    "nodeId": 23,
+                    "nodeType": "OnSuiteReady"
+                  },
+                  {
+                    "nodeId": 24,
+                    "nodeType": "StartParallelGraph"
+                  }
+                ],
+                "sha256": "38f3ce0f4d94b351be8ce071dbec680d0c83073ba69baf1f142901d697907480"
+              },
+              {
+                "member": "171200318:115",
+                "suite": 16,
+                "graph": "GroupGraph_171200318_16",
+                "node": 24,
+                "inputs": {
+                  "MonsterList1": [
+                    115
+                  ],
+                  "BattleRegionName": "401",
+                  "SwitchSuite": 2,
+                  "IsSendZenkov_EnterBossBattle": true
+                },
+                "fromOnSuiteReady": [
+                  {
+                    "nodeId": 23,
+                    "nodeType": "OnSuiteReady"
+                  },
+                  {
+                    "nodeId": 24,
+                    "nodeType": "StartParallelGraph"
+                  }
+                ],
+                "sha256": "6e1f9696b7850bb9a7ea6f7aadd29bba6c7e1c98eaae9a0f15c9e88e297a320e"
+              }
+            ],
+            "nearestNavigationDistance": 0.0016210624999999368
+          }
+        },
+        {
+          "id": "ore-suburbs-171200300-102",
+          "label": "蝎骸",
+          "worldPosition": {
+            "x": -131.9659,
+            "y": 40.257168,
+            "z": 68.77456
+          },
+          "note": "此处有默认场景的奖励容器配置，但高危调查是否启用与赭石碎片掉落均未确认。路线默认不选，可按本局情况手动加入。",
+          "conditions": [
+            "需要进行高危调查的大富豪投资；碎片投放受本局条件影响。",
+            "此处来自场景默认选择的配置推断；高危局是否启用仍需实测核对。",
+            "尚未逐点实测赭石碎片掉落，不能承诺必出或固定数量。",
+            "高危调查是否刷新尚未确认；此点默认不加入完整路线，可手动选择。"
+          ],
+          "evidenceSummary": "3.2 配置中，该成员在默认套组中启用死亡后残响容器奖励。高危场景采用默认选择属于配置推断，实际启用与碎片内容未实测。",
+          "evidence": {
+            "status": "configured_death_container_not_confirmed_shard_drop",
+            "shardDropConfirmed": false,
+            "runtimePresenceConfirmed": false,
+            "itemId": 4360046,
+            "selectionBasis": "configured_fallback_for_213",
+            "variants": [
+              {
+                "memberId": "171200300:102",
+                "monsterId": 31201,
+                "name": "秽息行者·蝎骸",
+                "viewObjectId": 1000085,
+                "source": "Group_171200300.json",
+                "sourceSha256": "260ea5fa4b3656db23d51287235e34fa8aa6b2064091e7010fccf3856c9a0970",
+                "suiteIndex": 1,
+                "selection213": "fallback_suite_for_unlisted_213",
+                "randomSuiteFallbackIndex": 1,
+                "configuredDifficulties": [
+                  212
+                ],
+                "backstage": false,
+                "reward": {
+                  "isDisable": false,
+                  "RewardID": 410305,
+                  "DropVOID": 2001091,
+                  "DropTimeType": "MemberHPZero",
+                  "IsMemberDrop": true,
+                  "ZKRewardType": 2
+                },
+                "graphName": "GroupGraph_171200300_1",
+                "graphSource": "GroupGraph_171200300_1.txt",
+                "graphSourceSha256": "17b5067a2a0adfc2b8380f24ab267e417bc79a071f333d4a3aebb4efa24848fc",
+                "graphWitnesses": [
+                  {
+                    "nodeId": 38,
+                    "nodeType": "StartParallelGraph",
+                    "inputs": {
+                      "MonsterList1": [
+                        102
+                      ],
+                      "TriggerKeyList": [
+                        "171200073_Trigger_000"
+                      ],
+                      "BattleRegionName": "401",
+                      "SwitchSuite": 2,
+                      "IsSendZenkov_EnterBossBattle": true
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "spawnVerification": "high_risk_unconfirmed",
+          "defaultSelected": false,
+          "planningNote": "高危刷新未确认 · 默认不加入路线，可手动选择",
+          "planningNoteEn": "High-risk spawn unconfirmed · Not selected by default; select manually if needed"
+        },
+        {
+          "id": "ore-suburbs-171200099-102",
+          "label": "幻矢单元",
+          "worldPosition": {
+            "x": -53.755592,
+            "y": 24.85118,
+            "z": 35.91578
+          },
+          "note": "此处有默认场景的奖励容器配置，但高危调查是否启用与赭石碎片掉落均未确认。路线默认不选，可按本局情况手动加入。",
+          "conditions": [
+            "需要进行高危调查的大富豪投资；碎片投放受本局条件影响。",
+            "此处来自场景默认选择的配置推断；高危局是否启用仍需实测核对。",
+            "尚未逐点实测赭石碎片掉落，不能承诺必出或固定数量。",
+            "高危调查是否刷新尚未确认；此点默认不加入完整路线，可手动选择。"
+          ],
+          "evidenceSummary": "3.2 配置中，该成员在默认套组中启用死亡后残响容器奖励。高危场景采用默认选择属于配置推断，实际启用与碎片内容未实测。",
+          "evidence": {
+            "status": "configured_death_container_not_confirmed_shard_drop",
+            "shardDropConfirmed": false,
+            "runtimePresenceConfirmed": false,
+            "itemId": 4360046,
+            "selectionBasis": "configured_fallback_for_213",
+            "variants": [
+              {
+                "memberId": "171200099:102",
+                "monsterId": 31442,
+                "name": "「A-H0L0」型高智能战术构造体·幻矢单元",
+                "viewObjectId": 1000095,
+                "source": "Group_171200099.json",
+                "sourceSha256": "e0c9d05f6398e7f4c30570f9ca05b02b5a9d9d59a6bb9c2045100b0baad68645",
+                "suiteIndex": 3,
+                "selection213": "fallback_suite_for_unlisted_213",
+                "randomSuiteFallbackIndex": 3,
+                "configuredDifficulties": [
+                  212
+                ],
+                "backstage": false,
+                "reward": {
+                  "isDisable": false,
+                  "RewardID": 410305,
+                  "DropVOID": 2001091,
+                  "DropTimeType": "MemberHPZero",
+                  "IsMemberDrop": true,
+                  "ZKRewardType": 2
+                },
+                "graphName": "GroupGraph_171200099_3",
+                "graphSource": "GroupGraph_171200099_3.txt",
+                "graphSourceSha256": "1ce3cece56bffabf657bd1505cb3abf2e5f9467c8f643448a50c96e2cafccd5d",
+                "graphWitnesses": [
+                  {
+                    "nodeId": 25,
+                    "nodeType": "MonsterLeftCheck",
+                    "inputs": {
+                      "DeathType": 0,
+                      "TargetList": [
+                        102
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "memberId": "171200405:102",
+                "monsterId": 31442,
+                "name": "「A-H0L0」型高智能战术构造体·幻矢单元",
+                "viewObjectId": 1000095,
+                "source": "Group_171200405.json",
+                "sourceSha256": "954e64ded3e3b5fdb72f756e06d1a5e6f8309b838afc71963835b4588ff17c47",
+                "suiteIndex": 3,
+                "selection213": "fallback_suite_for_unlisted_213",
+                "randomSuiteFallbackIndex": 3,
+                "configuredDifficulties": [
+                  212
+                ],
+                "backstage": false,
+                "reward": {
+                  "isDisable": false,
+                  "RewardID": 410305,
+                  "DropVOID": 2001091,
+                  "DropTimeType": "MemberHPZero",
+                  "IsMemberDrop": true,
+                  "ZKRewardType": 2
+                },
+                "graphName": "GroupGraph_171200405_3",
+                "graphSource": "GroupGraph_171200405_3.txt",
+                "graphSourceSha256": "d473692a33731c9e3a10753c0f0d2a2921033465a4174b97b6b6b593df118a55",
+                "graphWitnesses": [
+                  {
+                    "nodeId": 25,
+                    "nodeType": "MonsterLeftCheck",
+                    "inputs": {
+                      "DeathType": 0,
+                      "TargetList": [
+                        102
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "spawnVerification": "high_risk_unconfirmed",
+          "defaultSelected": false,
+          "planningNote": "高危刷新未确认 · 默认不加入路线，可手动选择",
+          "planningNoteEn": "High-risk spawn unconfirmed · Not selected by default; select manually if needed"
+        },
+        {
+          "id": "ore-suburbs-171200007-101",
+          "label": "赫由托",
+          "worldPosition": {
+            "x": 160.37566,
+            "y": 52.840954,
+            "z": 11.452681
+          },
+          "note": "此处有默认场景的奖励容器配置，但高危调查是否启用与赭石碎片掉落均未确认。路线默认不选，可按本局情况手动加入。",
+          "conditions": [
+            "需要进行高危调查的大富豪投资；碎片投放受本局条件影响。",
+            "此处来自场景默认选择的配置推断；高危局是否启用仍需实测核对。",
+            "尚未逐点实测赭石碎片掉落，不能承诺必出或固定数量。",
+            "高危调查是否刷新尚未确认；此点默认不加入完整路线，可手动选择。"
+          ],
+          "evidenceSummary": "3.2 配置中，该成员在默认套组中启用死亡后残响容器奖励。高危场景采用默认选择属于配置推断，实际启用与碎片内容未实测。",
+          "evidence": {
+            "status": "configured_death_container_not_confirmed_shard_drop",
+            "shardDropConfirmed": false,
+            "runtimePresenceConfirmed": false,
+            "itemId": 4360046,
+            "selectionBasis": "configured_fallback_for_213",
+            "variants": [
+              {
+                "memberId": "171200007:101",
+                "monsterId": 31191,
+                "name": "赫由托",
+                "viewObjectId": 1000095,
+                "source": "Group_171200007.json",
+                "sourceSha256": "ee4f62ab2c1960df3e0005460a0b60d3d856ec80585181291b2225b76a7ea0db",
+                "suiteIndex": 1,
+                "selection213": "fallback_suite_for_unlisted_213",
+                "randomSuiteFallbackIndex": 1,
+                "configuredDifficulties": [
+                  212
+                ],
+                "backstage": false,
+                "reward": {
+                  "isDisable": false,
+                  "RewardID": 410311,
+                  "DropVOID": 2001091,
+                  "DropTimeType": "MemberHPZero",
+                  "IsMemberDrop": true,
+                  "ZKRewardType": "ZKPackage"
+                },
+                "graphName": "GroupGraph_171200007_1",
+                "graphSource": "GroupGraph_171200007_1.txt",
+                "graphSourceSha256": "331b92baa8500d3d2eed14f61428929ce3486df0aa349b6069017ad900754ab3",
+                "graphWitnesses": [
+                  {
+                    "nodeId": 37,
+                    "nodeType": "ActiveBackStageMember",
+                    "inputs": {
+                      "ConfigIDList": [
+                        101
+                      ]
+                    }
+                  },
+                  {
+                    "nodeId": 43,
+                    "nodeType": "MonsterLeftCheck",
+                    "inputs": {
+                      "DeathType": 0,
+                      "TargetList": [
+                        101
+                      ]
+                    }
+                  },
+                  {
+                    "nodeId": 46,
+                    "nodeType": "MonsterLeftCheck",
+                    "inputs": {
+                      "DeathType": 0,
+                      "TargetList": [
+                        101
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "spawnVerification": "high_risk_unconfirmed",
+          "defaultSelected": false,
+          "planningNote": "高危刷新未确认 · 默认不加入路线，可手动选择",
+          "planningNoteEn": "High-risk spawn unconfirmed · Not selected by default; select manually if needed"
+        },
+        {
+          "id": "ore-suburbs-171200248-encounter",
+          "label": "盛怒恶霸 / 杜拉罕（随机遭遇）",
+          "worldPosition": {
+            "x": 188.13803,
+            "y": 55.68091,
+            "z": -55.72505
+          },
+          "positionAlternatives": [
+            {
+              "label": "盛怒恶霸",
+              "worldPosition": {
+                "x": 188.13803,
+                "y": 55.68091,
+                "z": -55.72505
+              },
+              "memberId": "171200248:107"
+            },
+            {
+              "label": "杜拉罕",
+              "worldPosition": {
+                "x": 188.19019,
+                "y": 55.68091,
+                "z": -55.110584
+              },
+              "memberId": "171200248:108"
+            }
+          ],
+          "note": "这些怪物位置有击败后生成「残响容器」的配置依据，作为寻找赭石碎片的奖励线索；尚未逐点实测碎片掉落。",
+          "conditions": [
+            "需要进行高危调查的大富豪投资；碎片投放受本局条件影响。",
+            "同组随机选择盛怒恶霸或杜拉罕，合并为一个遭遇标记，不代表同时刷新两只。",
+            "标记与路线终点采用盛怒恶霸的原始位置；杜拉罕原始位置与之相距约0.62个世界单位，详见下方坐标。",
+            "尚未逐点实测赭石碎片掉落，不能承诺必出或固定数量。"
+          ],
+          "evidenceSummary": "3.2 Group171200248 的高危随机套组4/5分别引用盛怒恶霸/杜拉罕，均启用死亡残响容器奖励；互斥套组不作为两个遭遇计数。",
+          "evidence": {
+            "status": "configured_death_container_not_confirmed_shard_drop",
+            "shardDropConfirmed": false,
+            "runtimePresenceConfirmed": false,
+            "itemId": 4360046,
+            "selectionBasis": "explicit_213_positive_weight",
+            "variants": [
+              {
+                "memberId": "171200248:107",
+                "monsterId": 11512,
+                "name": "匪祸侵蚀体·盛怒恶霸",
+                "viewObjectId": 1000091,
+                "source": "Group_171200248.json",
+                "sourceSha256": "0bf762abc71c59e357e1a3c9f124067d6a230b1d81a93f439b78025e434cda23",
+                "suiteIndex": 4,
+                "selection213": "explicit_213_positive_weight",
+                "randomSuiteFallbackIndex": 1,
+                "configuredDifficulties": [
+                  210,
+                  211,
+                  212,
+                  213
+                ],
+                "backstage": false,
+                "reward": {
+                  "isDisable": false,
+                  "RewardID": 410001,
+                  "DropVOID": 2001091,
+                  "DropTimeType": "MemberHPZero",
+                  "IsMemberDrop": true,
+                  "ZKRewardType": 2
+                },
+                "graphName": "GroupGraph_171200248_4",
+                "graphSource": "GroupGraph_171200248_4.txt",
+                "graphSourceSha256": "302401c016a137986b87564e0af3c53410d65360bfff1fe8ef07c1671906bc56",
+                "graphWitnesses": [
+                  {
+                    "nodeId": 25,
+                    "nodeType": "MonsterLeftCheck",
+                    "inputs": {
+                      "DeathType": 0,
+                      "TargetList": [
+                        107
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "memberId": "171200248:108",
+                "monsterId": 11155,
+                "name": "杜拉罕",
+                "viewObjectId": 1000091,
+                "source": "Group_171200248.json",
+                "sourceSha256": "0bf762abc71c59e357e1a3c9f124067d6a230b1d81a93f439b78025e434cda23",
+                "suiteIndex": 5,
+                "selection213": "explicit_213_positive_weight",
+                "randomSuiteFallbackIndex": 1,
+                "configuredDifficulties": [
+                  210,
+                  211,
+                  212,
+                  213
+                ],
+                "backstage": false,
+                "reward": {
+                  "isDisable": false,
+                  "RewardID": 410001,
+                  "DropVOID": 2001091,
+                  "DropTimeType": "MemberHPZero",
+                  "IsMemberDrop": true,
+                  "ZKRewardType": 2
+                },
+                "graphName": "GroupGraph_171200248_5",
+                "graphSource": "GroupGraph_171200248_5.txt",
+                "graphSourceSha256": "6de2f2b912b3bd1728234f413172e664da75984d5ac3f4c2eeb2102e40bff9e7",
+                "graphWitnesses": [
+                  {
+                    "nodeId": 24,
+                    "nodeType": "MonsterLeftCheck",
+                    "inputs": {
+                      "DeathType": 0,
+                      "TargetList": [
+                        108
+                      ]
+                    }
+                  }
+                ]
+              }
+            ],
+            "positionAlternatives": [
+              {
+                "label": "盛怒恶霸",
+                "worldPosition": {
+                  "x": 188.13803,
+                  "y": 55.68091,
+                  "z": -55.72505
+                },
+                "memberId": "171200248:107"
+              },
+              {
+                "label": "杜拉罕",
+                "worldPosition": {
+                  "x": 188.19019,
+                  "y": 55.68091,
+                  "z": -55.110584
+                },
+                "memberId": "171200248:108"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "policy": {
+    "completeMonsterList": false,
+    "guaranteedShardDrop": false,
+    "countUnit": "图上候选标记数，非每局怪物数量。相同原始坐标合并；已确认同组互斥且相邻的盛怒恶霸/杜拉罕合为一处遭遇，并保留双方原始坐标。",
+    "notIncluded": "缺少当前场景选择或奖励启用依据、地图外独立场景、只见首领血条但未确认奖励容器的点位，仍保留在研究清单，未加入此图层。",
+    "overlapWithMimicLayer": true
+  },
+  "reviewedAt": "2026-09-11",
+  "rewardGuide": {
+    "reviewedAt": "2026-09-11",
+    "sections": [
+      {
+        "title": "获取前提 · 游戏物品说明",
+        "text": "高危调查进行大富豪投资后，赭石碎片会在容器中出现，可用于方案研发。物品说明没有列出每只首领的固定数量或掉率。"
+      },
+      {
+        "title": "拟态敌人与奖励候选有什么区别？",
+        "text": "拟态敌人按怪物类型标记；奖励候选按击败后的容器线索整理，也包含其他怪物。两层可能指向同一场遭遇，数量不能相加；奖励候选也不是完整首领名单。"
+      },
+      {
+        "title": "同名怪不一定有相同奖励 · 玩家观察",
+        "text": "旧版雅努斯攻略记录，同名杜拉罕有首领与普通精英变体，容器奖励不同。不能仅凭怪物名字判断，击败后应检查本局实际容器。",
+        "url": "https://forum.gamer.com.tw/C.php?bsn=74860&snA=10619"
+      },
+      {
+        "title": "旧版数量参考 · 2026-08-28",
+        "text": "玩家实测视频的分段标注：250万投资的三局均为50个，100万投资的一局为20个。这是旧版本局内样本，不是单只首领固定掉落，也不能直接当作3.2上限。",
+        "url": "https://www.bilibili.com/video/BV1B2tA61ELV/"
+      },
+      {
+        "title": "3.2 新线索 · 2026-09-10",
+        "text": "有玩家报告300万投资后从怪物获得3组碎片，再继续搜保险箱。当前只有个人报告，缺少逐箱数量记录，尚不能确认固定片数或每局上限。",
+        "url": "https://forum.gamer.com.tw/Co.php?bsn=74860&sn=60493"
+      },
+      {
+        "title": "仍待核实",
+        "text": "各怪物是否必出、每只数量、每局奖励上限，以及侵蚀替换和事件遭遇的例外，尚未取得足够的当前版本实测证据。不要把“有残响容器”理解成“必出赭石碎片”。"
+      }
+    ]
+  }
+}

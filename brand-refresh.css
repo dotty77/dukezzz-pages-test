@@ -1,0 +1,35 @@
+/* DUKE wordmark with the shared pencil-sketch Patrick avatar. */
+.site-header .site-brand{gap:10px;align-items:center;border-radius:9px;color:#30364b;}
+.site-header .brand-logo{display:block;flex:0 0 auto;width:44px;height:44px;object-fit:contain;}
+.site-header .site-brand-copy{display:flex;flex-direction:column;gap:4px;min-width:0;}
+.site-header .site-brand b{font-family:"Segoe UI","Microsoft YaHei",sans-serif;font-size:24px;font-weight:800;line-height:1.25;letter-spacing:1.6px;}
+.site-header .site-brand small{display:block;margin:0;font-size:10px;font-weight:400;line-height:1.4;letter-spacing:1.2px;color:#7a8198;}
+.site-header .site-brand small span{padding:0 2px;}
+.site-header .site-brand:hover{color:#5265c6;}
+html[data-theme="dark"] .site-header .site-brand{color:#e6e9f3;}
+html[data-theme="dark"] .site-header .site-brand small{color:#a2aac1;}
+html[data-theme="dark"] .site-header .site-brand:hover{color:#bbc6ff;}
+@media(max-width:850px){
+  .site-header .site-brand{gap:8px;}
+  .site-header .brand-logo{width:36px;height:36px;}
+  .site-header .site-brand b{font-size:18px;letter-spacing:.5px;}
+  .site-header .site-brand small{display:none;}
+}
+@media(max-width:570px){
+  .site-header .site-brand{gap:5px;}
+  .site-header .brand-logo{width:28px;height:28px;}
+  .site-header .site-brand b{font-size:15px;letter-spacing:0;}
+  .site-header .site-navigation a{padding-left:7px;padding-right:7px;font-size:11px;}
+  .site-header .preview-badge{font-size:0;padding:5px 6px;}
+  .site-header .preview-badge:before{content:"预览";font-size:9px;}
+}
+@media(max-width:350px){
+  .site-header .brand-logo{width:25px;height:25px;}
+  .site-header .site-brand{gap:4px;}
+  .site-header .site-navigation a{padding-left:6px;padding-right:6px;}
+  .site-header .preview-badge{padding:5px;}
+}
+@media(prefers-reduced-motion:no-preference){
+  .site-header .brand-logo{transition:transform .22s ease;}
+  .site-header .site-brand:is(:hover,:focus-visible) .brand-logo{transform:translateY(-1px) rotate(-6deg);}
+}

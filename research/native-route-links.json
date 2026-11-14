@@ -1,0 +1,379 @@
+{
+  "schemaVersion": 1,
+  "coordinateSpace": "source-world",
+  "directionPolicy": "source-start-to-end-only",
+  "maps": {
+    "suburbs": {
+      "sceneId": 1712,
+      "source": {
+        "path": "output/zzz-high-risk-atlas/extraction/zenkov-area-config/TextAsset/Stage_Zenkov1_1.json",
+        "sha256": "6dac202efe5281896ecfb18703b889b8eb248216b45d99275f326ca2835bf63a",
+        "jsonPath": "Scene.NavMeshLinks"
+      },
+      "links": [
+        {
+          "id": "NavmeshLink",
+          "type": "SceneNavMeshLinkData",
+          "areaType": "ObstacleArea",
+          "start": {
+            "x": 50.03352,
+            "y": 33.232605,
+            "z": 115.11103
+          },
+          "end": {
+            "x": 38.40669,
+            "y": 20.232607,
+            "z": 115.88396
+          },
+          "cost": 0,
+          "tag": 0,
+          "source": {
+            "path": "output/zzz-high-risk-atlas/extraction/zenkov-area-config/TextAsset/Stage_Zenkov1_1.json",
+            "sha256": "6dac202efe5281896ecfb18703b889b8eb248216b45d99275f326ca2835bf63a",
+            "jsonPath": "Scene.NavMeshLinks[0]"
+          }
+        },
+        {
+          "id": "NavmeshLink_1",
+          "type": "SceneNavMeshLinkData",
+          "areaType": "ObstacleArea",
+          "start": {
+            "x": 168.25574,
+            "y": 55.665955,
+            "z": 77.24894
+          },
+          "end": {
+            "x": 97.32191,
+            "y": 27.404774,
+            "z": 120.95614
+          },
+          "cost": 0,
+          "tag": 0,
+          "source": {
+            "path": "output/zzz-high-risk-atlas/extraction/zenkov-area-config/TextAsset/Stage_Zenkov1_1.json",
+            "sha256": "6dac202efe5281896ecfb18703b889b8eb248216b45d99275f326ca2835bf63a",
+            "jsonPath": "Scene.NavMeshLinks[1]"
+          }
+        },
+        {
+          "id": "NavmeshLink_2",
+          "type": "SceneNavMeshLinkData",
+          "areaType": "ObstacleArea",
+          "start": {
+            "x": 3.511426,
+            "y": 52.372284,
+            "z": -31.709427
+          },
+          "end": {
+            "x": -6.497322,
+            "y": 66.232605,
+            "z": -43.319077
+          },
+          "cost": 0,
+          "tag": 0,
+          "source": {
+            "path": "output/zzz-high-risk-atlas/extraction/zenkov-area-config/TextAsset/Stage_Zenkov1_1.json",
+            "sha256": "6dac202efe5281896ecfb18703b889b8eb248216b45d99275f326ca2835bf63a",
+            "jsonPath": "Scene.NavMeshLinks[2]"
+          }
+        },
+        {
+          "id": "NavmeshLink_3",
+          "type": "SceneNavMeshLinkData",
+          "areaType": "ObstacleArea",
+          "start": {
+            "x": -196.54391,
+            "y": 66.232605,
+            "z": -19.039276
+          },
+          "end": {
+            "x": -196.61588,
+            "y": 49.795338,
+            "z": 9.159011
+          },
+          "cost": 0,
+          "tag": 0,
+          "source": {
+            "path": "output/zzz-high-risk-atlas/extraction/zenkov-area-config/TextAsset/Stage_Zenkov1_1.json",
+            "sha256": "6dac202efe5281896ecfb18703b889b8eb248216b45d99275f326ca2835bf63a",
+            "jsonPath": "Scene.NavMeshLinks[3]"
+          }
+        },
+        {
+          "id": "NavmeshLink_4",
+          "type": "SceneNavMeshLinkData",
+          "areaType": "ObstacleArea",
+          "start": {
+            "x": -97.17071,
+            "y": 40.412407,
+            "z": 87.256065
+          },
+          "end": {
+            "x": -91.77433,
+            "y": 19.868732,
+            "z": 101.420944
+          },
+          "cost": 0,
+          "tag": 0,
+          "source": {
+            "path": "output/zzz-high-risk-atlas/extraction/zenkov-area-config/TextAsset/Stage_Zenkov1_1.json",
+            "sha256": "6dac202efe5281896ecfb18703b889b8eb248216b45d99275f326ca2835bf63a",
+            "jsonPath": "Scene.NavMeshLinks[4]"
+          }
+        }
+      ]
+    },
+    "janus": {
+      "sceneId": 1713,
+      "source": {
+        "path": "output/zzz-high-risk-atlas/extraction/zenkov-area-config/TextAsset/Stage_Zenkov1_2.json",
+        "sha256": "0b62b5d63f342c7b349e7333986a3afce90d0f1841d9d72c8bd5d5567720ae9a",
+        "jsonPath": "Scene.NavMeshLinks"
+      },
+      "links": [
+        {
+          "id": "NavmeshLink_0",
+          "type": "SceneNavMeshLinkData",
+          "areaType": "ObstacleArea",
+          "start": {
+            "x": -220.04428,
+            "y": 8.619324,
+            "z": -70.09133
+          },
+          "end": {
+            "x": -226.05899,
+            "y": -13.813996,
+            "z": -69.83093
+          },
+          "cost": 0,
+          "tag": 0,
+          "source": {
+            "path": "output/zzz-high-risk-atlas/extraction/zenkov-area-config/TextAsset/Stage_Zenkov1_2.json",
+            "sha256": "0b62b5d63f342c7b349e7333986a3afce90d0f1841d9d72c8bd5d5567720ae9a",
+            "jsonPath": "Scene.NavMeshLinks[0]"
+          }
+        },
+        {
+          "id": "NavmeshLink_1",
+          "type": "SceneNavMeshLinkData",
+          "areaType": "ObstacleArea",
+          "start": {
+            "x": 124.61385,
+            "y": 26.966793,
+            "z": 76.75891
+          },
+          "end": {
+            "x": 134.97818,
+            "y": 17.852661,
+            "z": 95.27823
+          },
+          "cost": 0,
+          "tag": 0,
+          "source": {
+            "path": "output/zzz-high-risk-atlas/extraction/zenkov-area-config/TextAsset/Stage_Zenkov1_2.json",
+            "sha256": "0b62b5d63f342c7b349e7333986a3afce90d0f1841d9d72c8bd5d5567720ae9a",
+            "jsonPath": "Scene.NavMeshLinks[1]"
+          }
+        },
+        {
+          "id": "NavmeshLink_2",
+          "type": "SceneNavMeshLinkData",
+          "areaType": "ObstacleArea",
+          "start": {
+            "x": 176.9618,
+            "y": 17.71933,
+            "z": 137.62152
+          },
+          "end": {
+            "x": 190.07886,
+            "y": 33.35266,
+            "z": 143.29231
+          },
+          "cost": 0,
+          "tag": 0,
+          "source": {
+            "path": "output/zzz-high-risk-atlas/extraction/zenkov-area-config/TextAsset/Stage_Zenkov1_2.json",
+            "sha256": "0b62b5d63f342c7b349e7333986a3afce90d0f1841d9d72c8bd5d5567720ae9a",
+            "jsonPath": "Scene.NavMeshLinks[2]"
+          }
+        },
+        {
+          "id": "NavmeshLink_3",
+          "type": "SceneNavMeshLinkData",
+          "areaType": "ObstacleArea",
+          "start": {
+            "x": 192.2765,
+            "y": 35.050953,
+            "z": 204.82065
+          },
+          "end": {
+            "x": 193.23582,
+            "y": 35.119324,
+            "z": 221.05013
+          },
+          "cost": 0,
+          "tag": 0,
+          "source": {
+            "path": "output/zzz-high-risk-atlas/extraction/zenkov-area-config/TextAsset/Stage_Zenkov1_2.json",
+            "sha256": "0b62b5d63f342c7b349e7333986a3afce90d0f1841d9d72c8bd5d5567720ae9a",
+            "jsonPath": "Scene.NavMeshLinks[3]"
+          }
+        },
+        {
+          "id": "NavmeshLink_4",
+          "type": "SceneNavMeshLinkData",
+          "areaType": "ObstacleArea",
+          "start": {
+            "x": 191.34323,
+            "y": 35.152676,
+            "z": 255.14836
+          },
+          "end": {
+            "x": 191.44043,
+            "y": 64.199936,
+            "z": 264.55707
+          },
+          "cost": 0,
+          "tag": 0,
+          "source": {
+            "path": "output/zzz-high-risk-atlas/extraction/zenkov-area-config/TextAsset/Stage_Zenkov1_2.json",
+            "sha256": "0b62b5d63f342c7b349e7333986a3afce90d0f1841d9d72c8bd5d5567720ae9a",
+            "jsonPath": "Scene.NavMeshLinks[4]"
+          }
+        },
+        {
+          "id": "NavmeshLink_5",
+          "type": "SceneNavMeshLinkData",
+          "areaType": "ObstacleArea",
+          "start": {
+            "x": 147.58041,
+            "y": 64.186005,
+            "z": 345.76416
+          },
+          "end": {
+            "x": 147.6338,
+            "y": 71.28601,
+            "z": 352.9745
+          },
+          "cost": 0,
+          "tag": 0,
+          "source": {
+            "path": "output/zzz-high-risk-atlas/extraction/zenkov-area-config/TextAsset/Stage_Zenkov1_2.json",
+            "sha256": "0b62b5d63f342c7b349e7333986a3afce90d0f1841d9d72c8bd5d5567720ae9a",
+            "jsonPath": "Scene.NavMeshLinks[5]"
+          }
+        },
+        {
+          "id": "NavmeshLink_6",
+          "type": "SceneNavMeshLinkData",
+          "areaType": "ObstacleArea",
+          "start": {
+            "x": 95.75327,
+            "y": 59.661934,
+            "z": 347.5591
+          },
+          "end": {
+            "x": 96.17358,
+            "y": 38.186005,
+            "z": 346.83197
+          },
+          "cost": 0,
+          "tag": 0,
+          "source": {
+            "path": "output/zzz-high-risk-atlas/extraction/zenkov-area-config/TextAsset/Stage_Zenkov1_2.json",
+            "sha256": "0b62b5d63f342c7b349e7333986a3afce90d0f1841d9d72c8bd5d5567720ae9a",
+            "jsonPath": "Scene.NavMeshLinks[6]"
+          }
+        },
+        {
+          "id": "NavmeshLink_7",
+          "type": "SceneNavMeshLinkData",
+          "areaType": "ObstacleArea",
+          "start": {
+            "x": 95.65778,
+            "y": 71.28601,
+            "z": 347.03842
+          },
+          "end": {
+            "x": 95.68584,
+            "y": 83.38599,
+            "z": 347.23663
+          },
+          "cost": 0,
+          "tag": 0,
+          "source": {
+            "path": "output/zzz-high-risk-atlas/extraction/zenkov-area-config/TextAsset/Stage_Zenkov1_2.json",
+            "sha256": "0b62b5d63f342c7b349e7333986a3afce90d0f1841d9d72c8bd5d5567720ae9a",
+            "jsonPath": "Scene.NavMeshLinks[7]"
+          }
+        },
+        {
+          "id": "NavmeshLink_8",
+          "type": "SceneNavMeshLinkData",
+          "areaType": "ObstacleArea",
+          "start": {
+            "x": 96.72439,
+            "y": 59.63773,
+            "z": 347.76175
+          },
+          "end": {
+            "x": 95.62521,
+            "y": 71.28601,
+            "z": 347.29388
+          },
+          "cost": 0,
+          "tag": 0,
+          "source": {
+            "path": "output/zzz-high-risk-atlas/extraction/zenkov-area-config/TextAsset/Stage_Zenkov1_2.json",
+            "sha256": "0b62b5d63f342c7b349e7333986a3afce90d0f1841d9d72c8bd5d5567720ae9a",
+            "jsonPath": "Scene.NavMeshLinks[8]"
+          }
+        },
+        {
+          "id": "NavmeshLink_9",
+          "type": "SceneNavMeshLinkData",
+          "areaType": "ObstacleArea",
+          "start": {
+            "x": 163.56166,
+            "y": 71.28601,
+            "z": 343.70166
+          },
+          "end": {
+            "x": 163.41068,
+            "y": 71.28601,
+            "z": 346.2921
+          },
+          "cost": 0,
+          "tag": 0,
+          "source": {
+            "path": "output/zzz-high-risk-atlas/extraction/zenkov-area-config/TextAsset/Stage_Zenkov1_2.json",
+            "sha256": "0b62b5d63f342c7b349e7333986a3afce90d0f1841d9d72c8bd5d5567720ae9a",
+            "jsonPath": "Scene.NavMeshLinks[9]"
+          }
+        },
+        {
+          "id": "NavmeshLink_10",
+          "type": "SceneNavMeshLinkData",
+          "areaType": "ObstacleArea",
+          "start": {
+            "x": 80.24186,
+            "y": 64.15268,
+            "z": 393.8167
+          },
+          "end": {
+            "x": 91.3315,
+            "y": 64.05267,
+            "z": 392.49423
+          },
+          "cost": 0,
+          "tag": 0,
+          "source": {
+            "path": "output/zzz-high-risk-atlas/extraction/zenkov-area-config/TextAsset/Stage_Zenkov1_2.json",
+            "sha256": "0b62b5d63f342c7b349e7333986a3afce90d0f1841d9d72c8bd5d5567720ae9a",
+            "jsonPath": "Scene.NavMeshLinks[10]"
+          }
+        }
+      ]
+    }
+  }
+}

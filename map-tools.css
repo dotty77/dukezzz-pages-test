@@ -1,0 +1,51 @@
+#map-tools{display:flex;align-items:center;flex-wrap:wrap;gap:6px;padding:10px 12px;background:#171c2d;border-bottom:1px solid #343b58;flex-shrink:0;position:relative;z-index:7}
+#map-tools button,#map-tools summary{font-size:11px;white-space:nowrap;padding:8px 10px;min-height:34px;border-color:#424c72;background:#242b45;color:#e9edff}
+#map-tools .map-add-marker{background:#f6b867;border-color:#ffd49a;color:#231b14;font-weight:800}
+#map-tools .map-add-marker[aria-pressed=true]{background:#ffd9aa;outline:2px solid #fff0d9}
+#map-tools button:hover{background:#3b466c}#map-tools .map-add-marker:hover{background:#ffcb86;color:#221910}
+#map-tools button.active{background:#244f4e;color:#bdfff0;border-color:#6ed9c3}
+#map-personal-count{display:inline-block;margin-left:3px;padding:1px 5px;background:#10162b;border-radius:5px;color:#cad6ff;font-variant-numeric:tabular-nums}
+.map-personal-toggle{display:flex;align-items:center;gap:4px;font-size:10px;color:#c7d3ef;white-space:nowrap;cursor:pointer}.map-personal-toggle input{accent-color:#f6b867}
+.map-rotation-tools{display:flex;gap:3px;margin-left:auto}#map-tools .map-rotation-tools button{padding:6px 8px}#map-compass{display:inline-block;color:#ffce90}#map-degrees{display:inline-block;min-width:30px;font-variant-numeric:tabular-nums}
+#map-tools-help{padding:5px 12px;font-size:10px;line-height:1.5;background:#111624;color:#a7b7d0;flex-shrink:0}
+.map-backup-tools{position:relative}.map-backup-tools summary{list-style:none;cursor:pointer;border:1px solid;border-radius:7px}.map-backup-tools>div{position:absolute;right:0;top:40px;display:grid;gap:6px;background:#19223a;border:1px solid #475578;border-radius:9px;padding:8px;box-shadow:0 10px 25px #0008;min-width:150px}
+.workspace:fullscreen,.workspace.map-expanded{width:100vw!important;height:100dvh!important;background:#10151f;z-index:1000}.workspace.map-expanded{position:fixed;inset:0}.workspace:fullscreen .toolbar,.workspace.map-expanded .toolbar{min-height:46px;height:46px}.workspace:fullscreen .map-footer,.workspace.map-expanded .map-footer{height:30px}
+.workspace:fullscreen #mobile-filters,.workspace.map-expanded #mobile-filters,.workspace:fullscreen #mobile-detail,.workspace.map-expanded #mobile-detail{display:none!important}
+.workspace:fullscreen .map-footer span:last-child,.workspace.map-expanded .map-footer span:last-child{display:inline!important}
+#map-marker-dialog,#map-marker-list-dialog,#map-restore-dialog{width:440px;max-width:calc(100vw - 28px);background:#1a2033;color:#e7ecfa;border-color:#57648b;border-radius:14px;box-shadow:0 30px 90px #0009;padding:24px}
+#map-marker-list-dialog{width:540px}#map-marker-dialog h2,#map-marker-list-dialog h2,#map-restore-dialog h2{margin:0 0 12px}
+#map-marker-form label{display:block;margin:14px 0;font-size:12px;color:#d7e0f5}#map-marker-form input,#map-marker-form select,#map-marker-form textarea{display:block;width:100%;margin-top:7px;background:#101729;border-color:#45516e;color:#edf2ff;font-size:13px}#map-marker-form small{display:block;line-height:1.7;color:#b4c1db;margin-top:5px}
+.map-marker-grid{display:grid;grid-template-columns:1fr 100px;gap:14px}.map-marker-grid input[type=color]{padding:3px;height:39px}.map-marker-actions{display:flex;justify-content:flex-end;flex-wrap:wrap;gap:8px;margin-top:20px}.map-marker-actions button{font-size:12px}.map-marker-actions .primary-button{background:#f6b867!important;color:#271c0e!important}#map-marker-delete{color:#ffa4ad}
+.map-own-list{display:grid;gap:8px;line-height:1.8}.map-own-list>div{display:flex;align-items:center;gap:8px;padding:9px;background:#11182a;border-radius:8px}.map-own-list b{flex:1;min-width:0;overflow-wrap:anywhere}.map-own-list button{font-size:11px;white-space:nowrap}
+@media(max-width:650px){#map-tools{padding:7px 8px;gap:5px}#map-tools button,#map-tools summary{padding:7px 8px;font-size:10px;min-height:34px}.map-rotation-tools{margin-left:0}#map-tools-help{font-size:9px}#map-marker-dialog{padding:18px}.map-marker-grid{grid-template-columns:1fr 80px}.map-personal-toggle{font-size:10px}}
+html[data-theme=light] #map-tools{background:#fafbff;border-color:#e2e7f6}
+html[data-theme=light] #map-tools button,html[data-theme=light] #map-tools summary{background:#fff;border-color:#dce2f4;color:#4b5a7d}
+html[data-theme=light] #map-tools button:hover{background:#edf0fc}
+html[data-theme=light] #map-tools .map-add-marker{background:#ffc779;border-color:#ebb158;color:#533708}
+html[data-theme=light] #map-tools button.active{background:#dff5ee;border-color:#8acbb7;color:#17654d}
+html[data-theme=light] #map-personal-count{background:#edf0ff;color:#5765a9}
+html[data-theme=light] .map-personal-toggle{color:#627093}
+html[data-theme=light] #map-compass{color:#ac6b08}
+html[data-theme=light] #map-tools-help{background:#f3f5fc;color:#7783a2}
+html[data-theme=light] .map-backup-tools>div{background:#fff;border-color:#dce2f4;box-shadow:0 10px 25px #59638022}
+html[data-theme=light] #map-marker-dialog,html[data-theme=light] #map-marker-list-dialog,html[data-theme=light] #map-restore-dialog{background:#fff;color:#303b59;border-color:#d5ddf1}
+html[data-theme=light] #map-marker-form label{color:#576583}
+html[data-theme=light] #map-marker-form input,html[data-theme=light] #map-marker-form select,html[data-theme=light] #map-marker-form textarea{background:#f7f8fd;color:#354568;border-color:#d8dfef}
+html[data-theme=light] #map-marker-form small,html[data-theme=light] #map-marker-form .muted{color:#7c86a0}
+html[data-theme=light] .map-own-list>div{background:#f3f5fb}
+html[data-theme=light] #map-marker-delete{color:#b84651}
+
+/* Reward guidance stays available beside the optional map layer. */
+.ore-reward-guide{margin-top:12px;border-top:1px solid #b58a5040;padding-top:10px;font-size:13px;line-height:1.7}.ore-reward-guide>summary{cursor:pointer;color:#efbd79;font-weight:600}.ore-reward-guide p{margin:10px 0}.ore-reward-guide a{white-space:nowrap}
+.boss-community-guide{min-width:0;font-size:12px}.boss-community-guide a{white-space:normal;overflow-wrap:anywhere}.boss-community-guide ul{padding-left:18px}.boss-community-guide li{margin:9px 0;overflow-wrap:anywhere}
+
+/* Keep the requested enemy category readable in both map sidebars. */
+.map-page .enemy-filter-row>span:not(.type-symbol):not(.n){flex:1;min-width:0;white-space:normal;overflow-wrap:anywhere;line-height:1.6}
+.map-page .enemy-filter-row>input,.map-page .enemy-filter-row>.n{flex-shrink:0}
+#enemy-source-controls .chips{margin:8px 0}
+
+/* Source pools stay distinct and wrap within narrow map panels. */
+#enemy-source-controls .chips{display:flex;flex-wrap:wrap;gap:6px}
+#enemy-source-controls [data-enemy-source]{flex:1 1 76px;min-width:0;max-width:100%;white-space:normal;overflow-wrap:anywhere;line-height:1.5}
+#enemy-source-controls [data-enemy-count]{display:inline-block;font-variant-numeric:tabular-nums}
+.community-boss-detail a{white-space:normal;overflow-wrap:anywhere}

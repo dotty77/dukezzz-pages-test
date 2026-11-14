@@ -1,0 +1,579 @@
+{
+  "version": "3.2.0",
+  "deployment": "local_only",
+  "sourceCommit": "b084f66a42cf128b7c809c9ba1b5bcce96ae114b",
+  "sourceUrls": [
+    "https://zenless.hoyoverse.com/zh-tw/news/166000?catchSpider=1",
+    "https://git.mero.moe/dimbreath/ZenlessData/src/commit/b084f66a42cf128b7c809c9ba1b5bcce96ae114b/FileCfg",
+    "https://git.mero.moe/dimbreath/ZenlessData/raw/commit/b084f66a42cf128b7c809c9ba1b5bcce96ae114b/TextMap/TextMapTemplateTb.json"
+  ],
+  "coverage": {
+    "globalRows": 5860,
+    "zkNamedRows": 564,
+    "modeExtensionRows": 672,
+    "joinedModeRows": 550,
+    "displayItems": 548,
+    "unresolvedLocalization": 2,
+    "missingModeExtension": 14,
+    "nonZkModeRowsExcluded": 122,
+    "categories": 25,
+    "displayResourceItems": 90
+  },
+  "changes": {
+    "previousItems": 472,
+    "items": 548,
+    "added": 76,
+    "removed": 0,
+    "oldItemsWithTextChanges": 219,
+    "newValuables": 22,
+    "prismAgents": [
+      "柳",
+      "克拉蕾",
+      "洛克茜",
+      "照",
+      "般岳",
+      "伊德海莉",
+      "星徽·比利"
+    ],
+    "addedItems": [
+      {
+        "id": 4300005,
+        "name": "赛季背包扩容插件",
+        "category": "特殊物品"
+      },
+      {
+        "id": 4311022,
+        "name": "保本信标",
+        "category": "保本信标"
+      },
+      {
+        "id": 4320110,
+        "name": "[易损]进阶武备·锋御-Lv.20",
+        "category": "战术棱镜"
+      },
+      {
+        "id": 4320117,
+        "name": "[易损]进阶武备·锋御-Lv.30",
+        "category": "战术棱镜"
+      },
+      {
+        "id": 4320127,
+        "name": "[易损]特化武备·锋御-Lv.30",
+        "category": "战术棱镜"
+      },
+      {
+        "id": 4320137,
+        "name": "[易损]特化武备·锋御-Lv.40",
+        "category": "战术棱镜"
+      },
+      {
+        "id": 4320160,
+        "name": "[易损]高阶武备·锋御-Lv.40",
+        "category": "战术棱镜"
+      },
+      {
+        "id": 4320180,
+        "name": "[易损]高阶武备·锋御-Lv.50",
+        "category": "战术棱镜"
+      },
+      {
+        "id": 4320280,
+        "name": "传奇武备·锋御-Lv.60",
+        "category": "战术棱镜"
+      },
+      {
+        "id": 4321022,
+        "name": "[易损][柳]流转映镜-Lv.50",
+        "category": "战术棱镜"
+      },
+      {
+        "id": 4321023,
+        "name": "[易损][克拉蕾]裂铸强袭-Lv.50",
+        "category": "战术棱镜"
+      },
+      {
+        "id": 4321024,
+        "name": "[易损][洛克茜]铅锤百炼-Lv.50",
+        "category": "战术棱镜"
+      },
+      {
+        "id": 4321025,
+        "name": "[易损][照]岚霜扑朔-Lv.50",
+        "category": "战术棱镜"
+      },
+      {
+        "id": 4321026,
+        "name": "[易损][般岳]修罗道-Lv.50",
+        "category": "战术棱镜"
+      },
+      {
+        "id": 4321027,
+        "name": "[易损][伊德海莉]冽光傍身-Lv.50",
+        "category": "战术棱镜"
+      },
+      {
+        "id": 4321028,
+        "name": "[易损][星徽·比利]骑士腰带-Lv.50",
+        "category": "战术棱镜"
+      },
+      {
+        "id": 4322022,
+        "name": "[柳]流转映镜-Lv.60",
+        "category": "战术棱镜"
+      },
+      {
+        "id": 4322023,
+        "name": "[克拉蕾]裂铸强袭-Lv.60",
+        "category": "战术棱镜"
+      },
+      {
+        "id": 4322024,
+        "name": "[洛克茜]铅锤百炼-Lv.60",
+        "category": "战术棱镜"
+      },
+      {
+        "id": 4322025,
+        "name": "[照]岚霜扑朔-Lv.60",
+        "category": "战术棱镜"
+      },
+      {
+        "id": 4322026,
+        "name": "[般岳]修罗道-Lv.60",
+        "category": "战术棱镜"
+      },
+      {
+        "id": 4322027,
+        "name": "[伊德海莉]冽光傍身-Lv.60",
+        "category": "战术棱镜"
+      },
+      {
+        "id": 4322028,
+        "name": "[星徽·比利]骑士腰带-Lv.60",
+        "category": "战术棱镜"
+      },
+      {
+        "id": 4323111,
+        "name": "[易损]进阶武备·锋御-Lv.25",
+        "category": "战术棱镜"
+      },
+      {
+        "id": 4323127,
+        "name": "[易损]特化武备·锋御-Lv.35",
+        "category": "战术棱镜"
+      },
+      {
+        "id": 4323160,
+        "name": "[易损]高阶武备·锋御-Lv.45",
+        "category": "战术棱镜"
+      },
+      {
+        "id": 4325207,
+        "name": "进阶武备·锋御-Lv.20",
+        "category": "战术棱镜"
+      },
+      {
+        "id": 4325307,
+        "name": "特化武备·锋御-Lv.30",
+        "category": "战术棱镜"
+      },
+      {
+        "id": 4325410,
+        "name": "高阶武备·锋御-Lv.40",
+        "category": "战术棱镜"
+      },
+      {
+        "id": 4325510,
+        "name": "高阶武备·锋御-Lv.50",
+        "category": "战术棱镜"
+      },
+      {
+        "id": 4326022,
+        "name": "[柳]流转映镜-Lv.50",
+        "category": "战术棱镜"
+      },
+      {
+        "id": 4326023,
+        "name": "[克拉蕾]裂铸强袭-Lv.50",
+        "category": "战术棱镜"
+      },
+      {
+        "id": 4326024,
+        "name": "[洛克茜]铅锤百炼-Lv.50",
+        "category": "战术棱镜"
+      },
+      {
+        "id": 4326025,
+        "name": "[照]岚霜扑朔-Lv.50",
+        "category": "战术棱镜"
+      },
+      {
+        "id": 4326026,
+        "name": "[般岳]修罗道-Lv.50",
+        "category": "战术棱镜"
+      },
+      {
+        "id": 4326027,
+        "name": "[伊德海莉]冽光傍身-Lv.50",
+        "category": "战术棱镜"
+      },
+      {
+        "id": 4326028,
+        "name": "[星徽·比利]骑士腰带-Lv.50",
+        "category": "战术棱镜"
+      },
+      {
+        "id": 4350220,
+        "name": "[蓝图]高阶武备·锋御-Lv.40",
+        "category": "蓝图"
+      },
+      {
+        "id": 4350230,
+        "name": "[蓝图]高阶武备·锋御-Lv.50",
+        "category": "蓝图"
+      },
+      {
+        "id": 4350240,
+        "name": "[蓝图]传奇武备·锋御-Lv.60",
+        "category": "蓝图"
+      },
+      {
+        "id": 4350322,
+        "name": "[蓝图][柳]流转映镜-Lv.50",
+        "category": "蓝图"
+      },
+      {
+        "id": 4350323,
+        "name": "[蓝图][克拉蕾]裂铸强袭-Lv.50",
+        "category": "蓝图"
+      },
+      {
+        "id": 4350324,
+        "name": "[蓝图][洛克茜]铅锤百炼-Lv.50",
+        "category": "蓝图"
+      },
+      {
+        "id": 4350325,
+        "name": "[蓝图][照]岚霜扑朔-Lv.50",
+        "category": "蓝图"
+      },
+      {
+        "id": 4350326,
+        "name": "[蓝图][般岳]修罗道-Lv.50",
+        "category": "蓝图"
+      },
+      {
+        "id": 4350327,
+        "name": "[蓝图][伊德海莉]冽光傍身-Lv.50",
+        "category": "蓝图"
+      },
+      {
+        "id": 4350328,
+        "name": "[蓝图][星徽·比利]骑士腰带-Lv.50",
+        "category": "蓝图"
+      },
+      {
+        "id": 4350522,
+        "name": "[蓝图][柳]流转映镜-Lv.60",
+        "category": "蓝图"
+      },
+      {
+        "id": 4350523,
+        "name": "[蓝图][克拉蕾]裂铸强袭-Lv.60",
+        "category": "蓝图"
+      },
+      {
+        "id": 4350524,
+        "name": "[蓝图][洛克茜]铅锤百炼-Lv.60",
+        "category": "蓝图"
+      },
+      {
+        "id": 4350525,
+        "name": "[蓝图][照]岚霜扑朔-Lv.60",
+        "category": "蓝图"
+      },
+      {
+        "id": 4350526,
+        "name": "[蓝图][般岳]修罗道-Lv.60",
+        "category": "蓝图"
+      },
+      {
+        "id": 4350527,
+        "name": "[蓝图][伊德海莉]冽光傍身-Lv.60",
+        "category": "蓝图"
+      },
+      {
+        "id": 4350528,
+        "name": "[蓝图][星徽·比利]骑士腰带-Lv.60",
+        "category": "蓝图"
+      },
+      {
+        "id": 4360047,
+        "name": "星徽骑士变身器·雷欧",
+        "category": "贵重物品"
+      },
+      {
+        "id": 4360048,
+        "name": "午后茶歇·小咪发箍",
+        "category": "贵重物品"
+      },
+      {
+        "id": 4360049,
+        "name": "绯红摇滚·天琴座之星",
+        "category": "贵重物品"
+      },
+      {
+        "id": 4360050,
+        "name": "月夜密语·柔声面纱",
+        "category": "贵重物品"
+      },
+      {
+        "id": 4360051,
+        "name": "绒耳寒枝·叮铃踝环",
+        "category": "贵重物品"
+      },
+      {
+        "id": 4360052,
+        "name": "纪念邮票·丹",
+        "category": "贵重物品"
+      },
+      {
+        "id": 4360053,
+        "name": "纪念邮票·维克",
+        "category": "贵重物品"
+      },
+      {
+        "id": 4360054,
+        "name": "星徽骑士变身器·金牛",
+        "category": "贵重物品"
+      },
+      {
+        "id": 4360055,
+        "name": "星徽骑士变身器·射手",
+        "category": "贵重物品"
+      },
+      {
+        "id": 4360056,
+        "name": "星徽骑士变身器·？黑洞？",
+        "category": "贵重物品"
+      },
+      {
+        "id": 4360057,
+        "name": "红烧牛肉布摆件",
+        "category": "贵重物品"
+      },
+      {
+        "id": 4360058,
+        "name": "鲜虾鱼板布摆件",
+        "category": "贵重物品"
+      },
+      {
+        "id": 4360059,
+        "name": "香菇炖鸡布摆件",
+        "category": "贵重物品"
+      },
+      {
+        "id": 4360060,
+        "name": "酸菜布摆件",
+        "category": "贵重物品"
+      },
+      {
+        "id": 4360061,
+        "name": "祖母绿",
+        "category": "贵重物品"
+      },
+      {
+        "id": 4360062,
+        "name": "黄玉",
+        "category": "贵重物品"
+      },
+      {
+        "id": 4360063,
+        "name": "红宝石",
+        "category": "贵重物品"
+      },
+      {
+        "id": 4360064,
+        "name": "海蓝宝石",
+        "category": "贵重物品"
+      },
+      {
+        "id": 4360065,
+        "name": "封存资料·帕帕戈",
+        "category": "贵重物品"
+      },
+      {
+        "id": 4360066,
+        "name": "封存资料·黑水基地",
+        "category": "贵重物品"
+      },
+      {
+        "id": 4360067,
+        "name": "封存资料·以骸机械",
+        "category": "贵重物品"
+      },
+      {
+        "id": 4360068,
+        "name": "封存资料·绝密",
+        "category": "贵重物品"
+      }
+    ]
+  },
+  "images": {
+    "newStaticIcons": 76,
+    "allIcons": 542,
+    "legacyAnimationsVerified": 61,
+    "newAnimationsPending": 29,
+    "missingLegacyIcons": [
+      {
+        "id": 4350181,
+        "name": "[蓝图]进阶武备·强攻-Lv.20",
+        "iconPath": "Assets/NapResources/UI/Sprite/A1DynamicLoad/Zenkov/UnPacker/ItemIcon/Zenkov_WeaponB_001_Blueprint.png",
+        "reason": "正式资源路径尚未定位到可提取的图像，不使用其他物品图标代替。"
+      },
+      {
+        "id": 4350182,
+        "name": "[蓝图]进阶武备·击破-Lv.20",
+        "iconPath": "Assets/NapResources/UI/Sprite/A1DynamicLoad/Zenkov/UnPacker/ItemIcon/Zenkov_WeaponB_004_Blueprint.png",
+        "reason": "正式资源路径尚未定位到可提取的图像，不使用其他物品图标代替。"
+      },
+      {
+        "id": 4350183,
+        "name": "[蓝图]进阶武备·异常-Lv.20",
+        "iconPath": "Assets/NapResources/UI/Sprite/A1DynamicLoad/Zenkov/UnPacker/ItemIcon/Zenkov_WeaponB_002_Blueprint.png",
+        "reason": "正式资源路径尚未定位到可提取的图像，不使用其他物品图标代替。"
+      },
+      {
+        "id": 4350184,
+        "name": "[蓝图]进阶武备·支援-Lv.20",
+        "iconPath": "Assets/NapResources/UI/Sprite/A1DynamicLoad/Zenkov/UnPacker/ItemIcon/Zenkov_WeaponB_005_Blueprint.png",
+        "reason": "正式资源路径尚未定位到可提取的图像，不使用其他物品图标代替。"
+      },
+      {
+        "id": 4350185,
+        "name": "[蓝图]进阶武备·命破-Lv.20",
+        "iconPath": "Assets/NapResources/UI/Sprite/A1DynamicLoad/Zenkov/UnPacker/ItemIcon/Zenkov_WeaponB_003_Blueprint.png",
+        "reason": "正式资源路径尚未定位到可提取的图像，不使用其他物品图标代替。"
+      },
+      {
+        "id": 4350186,
+        "name": "[蓝图]进阶武备·防护-Lv.20",
+        "iconPath": "Assets/NapResources/UI/Sprite/A1DynamicLoad/Zenkov/UnPacker/ItemIcon/Zenkov_WeaponB_006_Blueprint.png",
+        "reason": "正式资源路径尚未定位到可提取的图像，不使用其他物品图标代替。"
+      }
+    ],
+    "newValuableStaticFrames": "新贵重的 BagSmall 4×4 原始图集仅显示首个128×128原图帧；不把整张16格图集当图标。"
+  },
+  "maps": {
+    "valuableItems": 68,
+    "withCurrentConfiguredMap": 33,
+    "pendingMap": 35,
+    "explicitHighRiskButMapNotNecessarilyKnown": 11,
+    "fullEvidencePath": "research/item-map-availability-3.2.json",
+    "exclusive": false
+  },
+  "importantCorrections": [
+    {
+      "id": 4311022,
+      "name": "保本信标",
+      "detail": "采用物品详情段落中的发财布寄送效果。通用表残留的火力召唤文本仅保留作原始证据。公告确认困难/高危公文包来源，但未逐一指明地图；共享研究收集条件不作为两图均可掉落的证据。"
+    },
+    {
+      "id": 4300005,
+      "name": "赛季背包扩容插件",
+      "detail": "背包容量+5格，本赛季有效；配置价值不作为赛季商店兑换价格。"
+    }
+  ],
+  "limitations": [
+    "配置存在不证明本赛季或每局实际开放，未推断可获得开关。",
+    "配置价值不是实际成交价格、出售报价或赛季硬币兑换价。",
+    "完整配方的材料、费用、工作台等级仍以原始正式配置为证；本轮未给未确认的混淆字段填入解释。",
+    "马马米娅、马马莉亚、放马过来为官方公告的赛季商店外观；不强行计为搜打撤物资ID。",
+    "未补猜未知地图来源、最终掉率或地图独占。",
+    "6个旧蓝图图标仍未定位，29个新增动态资源暂用真实静态图，2条未解中文名称配置仍在研究附录。"
+  ],
+  "validation": {
+    "checks": [
+      {
+        "name": "Original 472 item IDs preserved",
+        "passed": true
+      },
+      {
+        "name": "548 unique items and 76 additions",
+        "passed": true
+      },
+      {
+        "name": "76 new item icons exist",
+        "passed": true
+      },
+      {
+        "name": "Existing 61 animations match current source pixels",
+        "passed": true
+      },
+      {
+        "name": "Every valuable has a map availability record",
+        "passed": true
+      },
+      {
+        "name": "Positive evidence does not claim map exclusivity",
+        "passed": true
+      },
+      {
+        "name": "Public map evidence is bounded to 2 chains per map",
+        "passed": true
+      },
+      {
+        "name": "No false current sources for pending items",
+        "passed": true
+      },
+      {
+        "name": "Current static image files all exist",
+        "passed": true
+      },
+      {
+        "name": "Local browser checks pass",
+        "passed": true
+      }
+    ],
+    "passed": 10,
+    "browserPassed": 19,
+    "modeTableProjectionRows": 672,
+    "modeTableFieldsPerRow": 20,
+    "legacyAnimationPixelComparisons": 61,
+    "viewports": [
+      1440,
+      390,
+      320
+    ],
+    "themes": [
+      "dark",
+      "light"
+    ]
+  },
+  "files": [
+    {
+      "path": "item-catalog.json",
+      "bytes": 985107,
+      "sha256": "ec442f2a262d2202b13fbea29e1434133e68d258fa50809bf5f6260798edc545"
+    },
+    {
+      "path": "item-sources.json",
+      "bytes": 156375,
+      "sha256": "ef6d689f55093565dfcb188db3e98509fa12a503a5ba348b72af7c1218b85691"
+    },
+    {
+      "path": "assets/items/manifest.json",
+      "bytes": 659258,
+      "sha256": "8fa6db185363dc85ba612d0c91e9f0fc0a134dda23765368d5c27cb0751f49d6"
+    },
+    {
+      "path": "research/item-catalog.json",
+      "bytes": 2283070,
+      "sha256": "007dde2c58574a71a468e0ffdc34cb644db165bdb810c444aec5d155b29e531b"
+    },
+    {
+      "path": "research/item-map-availability-3.2.json",
+      "bytes": 2223666,
+      "sha256": "55cbec092b79c19a9d950b62ce44abb6cb1631486016b57b9acd039606ccb138"
+    }
+  ]
+}

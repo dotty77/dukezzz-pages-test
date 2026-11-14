@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><base href="/dukezzz-pages-test/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c0f1d">
+  <meta name="description" content="DUKE 电视墙：在复古电视里播放奥蒙德研究站的物资动画，金额越高，电视越大。">
+  <title>电视墙 · DUKE</title>
+  <link rel="icon" href="assets/brand/duke-patrick-sketch-v1-132.png" type="image/png">
+  <script src="resource-cache.js?v=20261114-pages-test-1" data-cache-build="aed9537c5f7ef4f134019747db0cc2e9123207617e888de4ba82680322155887"></script>
+  <script src="theme.js?v=20260909-version-3-2-1"></script>
+  <script src="i18n.js?v=20261114-refresh-launch-1"></script>
+  <link rel="stylesheet" href="brand-refresh.css?v=20260914-duke-brand-1">
+  <link rel="stylesheet" href="site-nav.css?v=20261001-planner-tuning-1">
+  <link rel="stylesheet" href="i18n.css?v=20260919-site-refresh-1">
+  <link rel="stylesheet" href="tv-wall.css?v=20261009-v33-tvwall-1">
+<meta name="robots" content="noindex,nofollow"><link rel="stylesheet" href="pages-test.css?v=20261114-pages-test-1"><script src="pages-test.js?v=20261114-pages-test-1" defer></script></head>
+<body class="tv-wall-page">
+  <header class="site-header">
+    <a class="site-brand" href="./" aria-label="DUKE首页"><img class="brand-logo" src="assets/brand/duke-patrick-sketch-v1-132.png" width="44" height="44" alt=""><span class="site-brand-copy"><b>DUKE</b><small>绝区零 · 贝果计划</small></span></a>
+    <nav class="site-navigation" aria-label="主要导航"><a href="./">探索地图</a><a href="gallery.html?v=20261114-refresh-launch-1" aria-current="page">物资图鉴</a><a href="tuning.html?v=20261114-refresh-launch-1">调频分析</a><a href="agents.html?v=20261114-refresh-launch-1">代理人资料</a></nav>
+    <div class="site-header-actions"><button class="theme-toggle" type="button" data-theme-toggle aria-label="深色模式" aria-pressed="false" title="切换为深色模式"><svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 13.1A8.8 8.8 0 0 1 10.9 3.2a8.8 8.8 0 1 0 9.9 9.9Z"/></svg><svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42m0-14.14-1.42 1.42M6.35 17.65l-1.42 1.42"/></svg><span data-theme-label>深色模式</span></button></div>
+  </header>
+  <main class="wall-page" data-i18n-skip>
+    <div class="wall-breadcrumb"><a href="gallery.html?v=20261114-refresh-launch-1" data-copy="atlas">物资图鉴</a><span>/</span><span data-copy="tvWall">电视墙</span></div>
+    <section class="wall-intro" aria-labelledby="wall-title">
+      <div><p class="wall-kicker"><span></span><span data-copy="location">奥蒙德研究站 · 仓储枢纽</span></p><h1 id="wall-title"><span data-copy="headline">收获，正在放映。</span><span class="live-tag">ON AIR</span></h1><p class="wall-description" data-copy="description">金额越高，屏幕越大。</p></div>
+      <div class="wall-intro-meta"><b>DUKE <i>COLLECTION</i></b><span><strong id="channel-total">—</strong> <span data-copy="channels">个频道</span><em> / </em><span data-copy="original">游戏原始动画</span></span></div>
+    </section>
+    <section id="wall-room" class="wall-room" aria-label="动态电视墙">
+      <div class="wall-toolbar">
+        <label class="wall-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg><input id="wall-search" type="search" placeholder="搜索一个频道…" aria-label="搜索物资名称或编号" autocomplete="off"></label>
+        <label class="wall-filter"><select id="wall-price" aria-label="筛选金额"><option value="all" data-copy="allPrices">全部金额</option><option value="million" data-copy="million">100 万及以上</option><option value="gold" data-copy="gold">50 万至 100 万</option><option value="other" data-copy="other">50 万以下</option></select></label>
+        <div class="wall-actions">
+          <button id="wall-play" class="wall-control" type="button" data-state="playing"><svg class="pause-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg><svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7Z"/></svg><span data-copy="pause">暂停</span></button>
+          <button id="wall-fit" class="wall-control" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 3v18M9 11h12"/></svg><span data-copy="overview">看全墙</span></button>
+          <button id="wall-fullscreen" class="wall-control" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6"/></svg><span data-copy="fullscreen">全屏</span></button>
+        </div>
+      </div>
+      <div id="wall-stage" class="wall-stage" tabindex="0" role="region" aria-label="电视墙，滚动或拖动浏览">
+        <div id="wall-surface" class="wall-surface"><div id="wall-grid" class="wall-grid"><div class="wall-emboss" aria-hidden="true">DUKE<br>ARCHIVE</div></div></div>
+        <div id="wall-state" class="wall-state" role="status"><span class="signal-loader" aria-hidden="true"></span><h2 data-copy="loading">正在接通信号…</h2><p data-copy="loadingNote">电视即将亮起</p><button id="wall-retry" type="button" hidden data-copy="retry">重新连接</button></div>
+      </div>
+      <div class="wall-statusbar"><span class="wall-signal"><i></i><span id="wall-count" role="status">— / —</span><span class="wall-status-hint" data-copy="browseHint">滚动或拖动浏览 · 点击电视放大</span></span><div class="wall-zoom"><button id="wall-minus" type="button" aria-label="缩小">−</button><input id="wall-zoom" type="range" min="0.05" max="1.4" step="0.01" value="1" aria-label="电视墙缩放"><output id="wall-zoom-value">100%</output><button id="wall-plus" type="button" aria-label="放大">＋</button><button id="wall-reset" type="button" data-copy="reset">复位</button></div></div>
+    </section>
+    <footer class="wall-footer"><details><summary data-copy="sourceTitle">关于这些画面</summary><p data-copy="sizingNote">电视大小按图鉴金额递增展示，非面积等比例。</p><p data-copy="sourceNote">来自游戏客户端的电视宣传序列帧，保留原画面中的文字、金额与转场。预览按 24 帧/秒循环，游戏原始播放速度尚未确认。界面名称和金额采用物资图鉴数据。</p></details><span>DUKE · <span data-copy="fanTool">玩家自制工具</span></span></footer>
+  </main>
+  <dialog id="wall-dialog" class="wall-dialog" aria-labelledby="wall-dialog-title" data-i18n-skip>
+    <button id="wall-dialog-close" class="wall-dialog-close" type="button" aria-label="关闭">×</button>
+    <div class="focus-tv"><div id="wall-focus-screen" class="focus-screen"><video id="wall-focus-video" muted playsinline loop controls preload="none"></video><div class="screen-vignette" aria-hidden="true"></div></div><div class="focus-speaker" aria-hidden="true"></div></div>
+    <div class="focus-info"><div><div class="focus-channel-row"><button id="wall-prev" class="focus-step" type="button" aria-label="上一个频道">‹</button><span id="wall-dialog-channel" class="focus-channel"></span><button id="wall-next" class="focus-step" type="button" aria-label="下一个频道">›</button></div><h2 id="wall-dialog-title"></h2></div><strong id="wall-dialog-price"></strong></div>
+    <p id="wall-dialog-note" class="focus-note" hidden></p>
+    <div class="focus-bottom"><span id="wall-dialog-status"></span><span class="focus-links"><button id="wall-copy-link" class="focus-link" type="button" data-copy="copyLink">复制链接</button><a id="wall-item-link" class="focus-link" href="gallery.html?v=20261114-refresh-launch-1" data-copy="viewItem">查看物资档案 ↗</a></span></div>
+  </dialog>
+  <script type="module" src="tv-wall.js?v=20261114-refresh-launch-1"></script>
+</body>
+</html>

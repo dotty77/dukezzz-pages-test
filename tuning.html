@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><base href="/dukezzz-pages-test/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f6fb">
+  <title>调频分析 · DUKE</title>
+  <script src="resource-cache.js?v=20261114-pages-test-1" data-cache-build="aed9537c5f7ef4f134019747db0cc2e9123207617e888de4ba82680322155887"></script>
+  <script src="theme.js?v=20260909-version-3-2-1"></script>
+  <link rel="icon" href="assets/brand/duke-patrick-sketch-v1-132.png" type="image/png">
+  <link rel="stylesheet" href="site-ui.css?v=20260909-version-3-2-1">
+  <link rel="stylesheet" href="dark-theme.css?v=20260909-version-3-2-1">
+  <link rel="stylesheet" href="brand-refresh.css?v=20260914-duke-brand-1">
+  <link rel="stylesheet" href="tuning.css?v=20260911-community-update-1">
+  <link rel="stylesheet" href="tuning-link.css?v=20260911-community-update-1">
+  <link rel="stylesheet" href="site-nav.css?v=20261001-planner-tuning-1">
+  <link rel="stylesheet" href="agents.css?v=20261107-refresh-launch-1">
+  <link rel="stylesheet" href="tuning-summary.css?v=20261001-planner-tuning-1">
+  <link rel="stylesheet" href="tuning-targets.css?v=20260909-version-3-2-1">
+  <link rel="stylesheet" href="tuning-personal-budget.css?v=20260919-site-refresh-1">
+<script src="i18n.js?v=20261114-refresh-launch-1"></script><link rel="stylesheet" href="i18n.css?v=20260919-site-refresh-1"><link rel="stylesheet" href="tuning-simple.css?v=20260919-site-refresh-1"><meta name="robots" content="noindex,nofollow"><link rel="stylesheet" href="pages-test.css?v=20261114-pages-test-1"><script src="pages-test.js?v=20261114-pages-test-1" defer></script></head>
+<body class="tuning-page">
+  <header class="site-header">
+    <a class="site-brand" href="./" aria-label="DUKE首页"><img class="brand-logo" src="assets/brand/duke-patrick-sketch-v1-132.png" width="44" height="44" alt="" aria-hidden="true"><span class="site-brand-copy"><b>DUKE</b><small>绝区零<span aria-hidden="true"> · </span>贝果计划</small></span></a>
+    <nav class="site-navigation" aria-label="主要导航"><a href="./">探索地图</a><a href="gallery.html?v=20261114-refresh-launch-1">物资图鉴</a><a href="tuning.html?v=20261114-refresh-launch-1" aria-current="page">调频分析</a><a href="agents.html?v=20261114-refresh-launch-1">代理人资料</a></nav>
+    <div class="site-header-actions"><button class="theme-toggle" type="button" data-theme-toggle aria-label="深色模式" aria-pressed="false" title="切换为深色模式"><svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 13.1A8.8 8.8 0 0 1 10.9 3.2a8.8 8.8 0 1 0 9.9 9.9Z"/></svg><svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42m0-14.14-1.42 1.42M6.35 17.65l-1.42 1.42"/></svg><span data-theme-label>深色模式</span></button></div>
+  </header>
+
+  <main id="drop-zone" class="tuning-main">
+    <nav class="agent-page-switch" aria-label="调频功能"><a href="tuning.html?v=20261114-refresh-launch-1" aria-current="page">调频分析</a><a href="banners.html?v=20261114-refresh-launch-1">卡池日历</a><a href="oracle.html?v=20261114-refresh-launch-1">绳匠灵签</a></nav>
+    <section class="tuning-intro" aria-labelledby="tuning-title">
+      <div><h1 id="tuning-title">调频分析</h1></div>
+      <div class="intro-actions"><input id="import-file" type="file" accept=".json,.csv,application/json,text/csv" hidden><button id="import-open" class="primary-button" type="button" disabled><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 13V3m-4 4 4-4 4 4M3 12v4a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-4"/></svg>导入调频记录</button><button id="demo-open" class="secondary-button" type="button" disabled>查看示例 <span aria-hidden="true">↗</span></button></div>
+    </section>
+
+    <div id="demo-banner" class="demo-banner" hidden><div><span class="demo-indicator" aria-hidden="true"></span><p><strong>正在浏览示例</strong><span data-i18n-en="Fictional records, separate from your accounts.">虚构记录，与真实账号分开。</span></p></div><button id="demo-exit" type="button">退出示例</button></div>
+    <p id="status-message" class="status-message" role="status" aria-live="polite">正在加载调频工具…</p><noscript><p class="status-message">调频分析需要 JavaScript。请允许本站运行脚本后刷新页面。</p></noscript>
+
+      <div id="account-controls" class="account-bar panel" hidden><label class="account-field" for="account-select"><span>当前账号</span><select id="account-select" aria-label="选择分析账号"></select></label><div class="account-actions"><button id="timezone-open" class="quiet-button" type="button">记录时区</button><details class="export-menu"><summary>导出记录 <span aria-hidden="true">⌄</span></summary><div class="export-options"><button id="export-json" type="button">导出完整备份</button><button id="export-uigf" type="button">UIGF 导出</button><button id="export-csv" type="button">CSV 导出</button></div></details><button id="clear-account" class="quiet-button danger-button" type="button">移除此账号</button></div></div>
+    <section id="guarantee-hub" class="guarantee-hub panel" aria-labelledby="guarantee-title">
+      <div class="guarantee-hub-heading"><div><h2 id="guarantee-title" data-i18n-en="Current guarantee">当前保底</h2></div><span id="guarantee-account" class="section-subtle">导入后显示你的状态</span></div>
+      <p id="guarantee-empty" class="guarantee-empty">导入调频记录后，这里会分别判断独家频段和音擎频段下次出 S 级时，是大保底还是小保底。</p>
+      <div id="guarantee-cards" class="guarantee-cards" hidden></div>
+      <div id="guarantee-explanation" class="guarantee-explanation" aria-label="大小保底解释">
+        <article><h3>小保底 · 可能歪</h3><p>下一个 S 级：代理人有 50% 是 UP，音擎有 75% 是 UP。没出 UP 就叫「歪」。</p></article>
+        <article><h3>大保底 · 必出 UP</h3><p>上一个 S 级歪了，下一个 S 级一定是 UP。出了 UP 之后回到小保底。</p></article>
+        <article><h3>最多要多少抽</h3><p>角色池最多 90 抽出一个 S 级，音擎池最多 80 抽。最坏情况是先歪一次再出 UP：角色池 180 抽，音擎池 160 抽。</p></article>
+      </div>
+      <p class="guarantee-hub-note">保底状态和已垫抽数会带到下一期同类卡池，同时开放的两个卡池也共用；角色池、音擎池、常驻、邦布各算各的。记录不完整时会显示「暂不能判断」，不会乱猜。</p>
+      <details class="guarantee-guide"><summary>「独家重映」频段有什么不同？</summary><p>独家重映（3.1 起的特殊复刻频段）单独计算抽数和保底。每期第一个 S 级必定是你选的 UP（福利保底），它不会清掉你已有的大保底。普通卡池里的复刻角色仍按普通规则。</p><p>依据：<a href="https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/e36a0a38425dd8a10c55a0725561a63813b64f0c/zh-cn.json" target="_blank" rel="noreferrer">官方独家重映说明</a> · <a href="https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/gacha/list.json" target="_blank" rel="noreferrer">官方调频公示</a>。规则核对日期：2026-09-11。</p></details>
+    </section>
+    
+    <section id="personal-budget" class="personal-budget panel" aria-labelledby="personal-budget-title"></section>
+    <details id="target-expectation" class="target-expectation panel" aria-label="通用抽数期望"></details>
+    <section id="empty-state" class="tuning-empty panel" aria-labelledby="empty-title">
+      <div class="empty-signal" aria-hidden="true"><svg viewBox="0 0 180 142" fill="none"><circle class="signal-orbit" cx="88" cy="69" r="55"/><circle class="signal-orbit" cx="88" cy="69" r="38"/><path class="signal-line" d="M8 70h35l6-12 8 26 11-42 12 51 11-31 9 8h72"/><g class="signal-card"><rect x="65" y="34" width="51" height="75" rx="9" transform="rotate(13 65 34)"/><path d="m76 45 24 5m-30 47 24 5"/><circle cx="83" cy="73" r="13"/><path d="m84 65 2 6 6 3-7 2-3 6-2-7-6-3 7-1Z"/></g><circle class="signal-dot" cx="142" cy="36" r="4"/><path class="signal-spark" d="M36 32v8m-4-4h8m95 72v6m-3-3h6"/></svg></div>
+      <h2 id="empty-title">还没有导入记录</h2><p class="empty-description" data-i18n-en="Import a JSON / CSV file here to view your pulls and pity. Link imports are available on the main site.">导入 JSON / CSV 文件，查看出金记录与保底；链接导入请用正式站。</p><label class="empty-import" for="import-file"><span aria-hidden="true">＋</span>选择记录文件</label><p class="empty-format">支持 rng.moe 备份、UIGF JSON 与本页 CSV 模板</p><div class="empty-notes"><span><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="4" y="8" width="12" height="9" rx="2"/><path d="M7 8V5a3 3 0 0 1 6 0v3m-3 3v3"/></svg>文件只在浏览器内处理</span><a href="#import-guide">查看导入指南 <span aria-hidden="true">↓</span></a></div>
+    </section>
+
+    <section id="dashboard" class="tuning-dashboard" hidden aria-label="调频数据分析">
+
+      <section id="tuning-overview" class="tuning-overview" aria-label="调频总评"></section>
+      <section class="pool-navigation" aria-labelledby="pool-navigation-title">
+        <div class="pool-navigation-heading"><h2 id="pool-navigation-title" data-i18n-en="View channel or collection">查看内容</h2></div>
+        <nav id="pool-tabs" class="pool-tabs" aria-label="卡池与收藏分析"></nav>
+      </section>
+      <div id="pool-heading" class="section-heading pool-heading"><div><h2 id="pool-title">独家频段</h2><p id="pool-description">仅统计当前账号已导入的记录。</p></div><span class="section-chip">已导入区间</span></div>
+      <section id="selected-guarantee" class="selected-guarantee" aria-label="当前频段保底规则" hidden></section>
+      <div id="summary-cards" class="summary-cards" aria-label="调频统计"></div>
+      <section id="luck-panel" class="luck-panel panel" aria-label="调频娱乐评级"></section>
+      <section id="up-pair-panel" class="up-pair-panel" aria-label="角色与专武获取分析" hidden></section>
+      <div id="pool-panel">
+        <div class="analysis-columns">
+          <section class="panel analysis-panel" aria-labelledby="pity-title"><div class="section-heading"><h3 id="pity-title">保底进度</h3><span class="section-subtle">截至最新记录</span></div><div id="pity-panel" class="pity-panel"></div></section>
+          <section class="panel analysis-panel timeline-panel" aria-labelledby="gold-title"><div class="section-heading"><h3 id="gold-title">S 级获取历程</h3><span class="section-subtle">按记录顺序</span></div><div id="gold-list" class="gold-list"></div></section>
+        </div>
+        <section class="panel history-panel" aria-labelledby="history-title"><div class="section-heading history-heading"><div><h3 id="history-title">调频记录</h3><p id="history-count" class="section-subtle" role="status">尚无记录</p></div><div class="history-filters"><label class="search-field"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4"/></svg><input id="record-search" type="search" placeholder="搜索名称" aria-label="搜索调频记录名称" autocomplete="off"></label><label class="rank-field"><span class="sr-only">筛选记录品质</span><select id="rank-filter" aria-label="筛选记录品质"><option value="all">全部品质</option><option value="S">S 级</option><option value="A">A 级</option><option value="B">B 级</option><option value="unknown">未知品质</option></select></label></div></div><div class="history-table-wrap"><table class="history-table"><thead><tr><th scope="col">获取对象</th><th scope="col">品质</th><th scope="col">卡池</th><th scope="col">调频时间</th></tr></thead><tbody id="history-body"></tbody></table></div><p id="history-empty" class="inline-empty" hidden>没有符合筛选条件的记录。</p><div class="history-pagination"><span>按已导入记录展示</span><div><button id="history-prev" type="button" aria-label="上一页调频记录">← 上一页</button><button id="history-next" type="button" aria-label="下一页调频记录">下一页 →</button></div></div></section>
+      </div>
+
+      <section id="collection-panel" class="panel collection-panel" hidden aria-labelledby="collection-title"><div class="section-heading collection-heading"><div><p class="tuning-eyebrow">获取对象总览</p><h2 id="collection-title">代理人总览</h2></div><div class="collection-filters"><label class="search-field"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4"/></svg><input id="collection-search" type="search" placeholder="搜索名称" aria-label="搜索收藏对象名称" autocomplete="off"></label><label><span class="sr-only">收藏对象排序</span><select id="collection-sort" aria-label="收藏对象排序"><option value="rank">品质优先</option><option value="count">获取次数</option><option value="name">名称排序</option><option value="recent">最近获取</option></select></label></div></div><div id="collection-grid" class="collection-grid"></div><p id="collection-note" class="collection-note"></p></section>
+    </section>
+
+    <details id="import-guide" class="import-guide panel"><summary><span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 3h9l3 3v11H4ZM12 3v4h4M7 10h6m-6 3h4"/></svg>导入与数据说明</span><span class="guide-chevron" aria-hidden="true">⌄</span></summary><div class="guide-content"><div><h3>准备记录文件</h3><p><span data-i18n-en="Import rng.moe backups, UIGF JSON or CSV here; files are processed in your browser. For history links, import on the main site, export a backup, then import that file here.">试站支持 rng.moe 整站备份、UIGF JSON、CSV 文件，文件只在浏览器内处理。需要链接导入时，请前往正式站读取并导出备份，再回试站导入。</span></p><button id="download-template" class="text-button" type="button">下载 CSV 模板 <span aria-hidden="true">↓</span></button><a href="https://uigf.org/zh/standards/UIGF.html" target="_blank" rel="noreferrer">UIGF 格式说明 <span aria-hidden="true">↗</span></a></div><div><h3>保存与你的账号</h3><p><span data-i18n-en="Records stay in this browser. The test and main sites save separately. Export full backups regularly; clearing browser data or changing devices requires importing again.">档案仅保存在当前浏览器，试站与正式站分别保存。请定期导出完整备份，清理浏览器数据或换设备后需重新导入。</span></p><p>完整备份保留本页支持的全部卡池。UIGF 导出以该格式支持的卡池范围为准。</p></div><div><h3>如何理解统计</h3><p>统计仅覆盖已导入区间。缺失更早记录时，无法据此还原完整历史或确认此前保底进度。</p><p>本页整理已有记录，不预测下一次调频结果。每次文件与完整档案上限 20 MB，最多 10 万条记录。</p><p>原始图标来自游戏正式客户端；名称与编号参照 <a href="https://github.com/EnkaNetwork/API-docs/tree/master/store/zzz" target="_blank" rel="noreferrer">Enka 公开目录</a>。<a href="tuning-sources.md?v=20261021-v33-launch-1" target="_blank">规则与资料来源 ↗</a></p></div></div></details>
+    <footer class="tuning-footer"><span>DUKE · 调频分析</span><span>角色、音擎图像与文本 © 游戏权利方</span></footer>
+    <div class="drop-overlay" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 32V7m-9 9 9-9 9 9M8 29v10a3 3 0 0 0 3 3h26a3 3 0 0 0 3-3V29"/></svg><strong>松开以导入记录</strong><span>JSON / CSV</span></div>
+  </main>
+
+  <dialog id="timezone-dialog" class="tuning-dialog" aria-labelledby="timezone-title"><div class="dialog-heading"><h2 id="timezone-title">记录时区</h2><button id="timezone-close" class="icon-button" type="button" aria-label="关闭时区设置">×</button></div><p>标注原记录所属的时区，帮助正确理解记录时间。此设置不会转换现有时间文字。</p><label for="timezone-select">原记录时区</label><select id="timezone-select"></select><div class="dialog-actions"><button id="timezone-save" class="primary-button" type="button">保存时区</button></div></dialog>
+  <script type="module" src="tuning.js?v=20261114-refresh-launch-1"></script>
+</body>
+</html>

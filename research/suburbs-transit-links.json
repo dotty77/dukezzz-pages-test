@@ -1,0 +1,699 @@
+{
+  "schemaVersion": 1,
+  "map": "suburbs",
+  "gameVersion": "3.2",
+  "reviewedAt": "2026-09-19",
+  "coordinateSpace": "source-world",
+  "directionPolicy": "source-start-to-end-only",
+  "runtimeAvailability": "user-confirmed-only",
+  "links": [
+    {
+      "id": "suburbs-portal-171200272-202",
+      "map": "suburbs",
+      "type": "hollow_portal",
+      "label": "风蚀公路 → 巴哈姆特仓库",
+      "labelEn": "Windworn Highway → Bahamut Warehouse",
+      "fromRegion": "highway",
+      "toRegion": "warehouse",
+      "configuredDestinationName": "裂隙·通往巴哈姆特仓库",
+      "start": {
+        "x": 122.77096,
+        "y": 52.815105,
+        "z": -92.423195
+      },
+      "end": {
+        "x": -224.32991,
+        "y": 50.4815,
+        "z": 19.245872
+      },
+      "source": {
+        "path": "output/dukezzz-local-preview/research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171200272.json",
+        "sha256": "fca95f4322bdd2d1be7f41aa3751597835a05c4ee979765d7c6ec62bd7fe21ce",
+        "jsonPath": "$.Group.Members[0].MemberPosition"
+      },
+      "evidence": [
+        {
+          "path": "output/dukezzz-local-preview/research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171200272.json",
+          "sha256": "fca95f4322bdd2d1be7f41aa3751597835a05c4ee979765d7c6ec62bd7fe21ce",
+          "jsonPath": "$.Group.Members[0]",
+          "role": "source_gadget_and_world_position",
+          "groupId": 171200272,
+          "configId": 202,
+          "viewObjectId": 2001441
+        },
+        {
+          "path": "output/dukezzz-local-preview/research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171200272.json",
+          "sha256": "fca95f4322bdd2d1be7f41aa3751597835a05c4ee979765d7c6ec62bd7fe21ce",
+          "jsonPath": "$.Group.Members[0].ViewObjectOverrideMap['ConfigDFScriptTrait.InitParam'].Elements",
+          "role": "member_teleport_parameters",
+          "values": {
+            "Color": 1,
+            "teleportId": 171201207,
+            "teleportPoint": "",
+            "HasChat": true,
+            "ChatID": 231013122,
+            "Type": 0
+          }
+        },
+        {
+          "path": "output/dukezzz-local-preview/research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171200272.json",
+          "sha256": "fca95f4322bdd2d1be7f41aa3751597835a05c4ee979765d7c6ec62bd7fe21ce",
+          "jsonPath": "$.Group.SuiteV2List[0].RefMembers[0].ViewObjectOverrideMap['ConfigDFScriptTrait.InitParam'].Elements",
+          "role": "active_suite_teleport_parameters",
+          "suiteIndex": 1
+        },
+        {
+          "path": "output/dukezzz-local-preview/research/version-3.2-update/items/valuable-map-source-data/current-tables/TextAsset/9695468580974720779.txt",
+          "sha256": "cabd885c6e77fc35804cce54c7394336e36234dd663ed58852ffd696e20e3e9a",
+          "role": "teleport_id_to_floor_point",
+          "format": "flatbuffer",
+          "rowByteOffset": 29720,
+          "decodedFields": {
+            "slot0": 171201207,
+            "slot1": 171201,
+            "slot2": "Point_002"
+          },
+          "fieldSemantics": {
+            "slot0": "teleport ID",
+            "slot1": "destination Floor ID",
+            "slot2": "destination point name"
+          },
+          "decoder": "output/zzz-high-risk-atlas/extraction/config-research/inspect_flatcfg.py"
+        },
+        {
+          "path": "output/dukezzz-local-preview/research/version-3.2-update/items/extraction/map-config/TextAsset/Floor_171201.json",
+          "sha256": "0d1faf02f6a2f9a755e460500c786c0cb822083f6258d68f6cc810646976b2c4",
+          "jsonPath": "$.Floor.GameplayExternalData.PointMap['Point_002'].Data.Position",
+          "role": "exact_destination_world_position"
+        },
+        {
+          "path": "output/dukezzz-local-preview/research/version-3.2-update/items/valuable-map-source-data/current-viewobjects/ViewObject_2001441.json",
+          "sha256": "c744ffce01f28bcf5f99de83bf6ec41c9e92fa4204c19d608986f184a9cbb9b8",
+          "jsonPath": "$.ViewObject.Traits",
+          "role": "shared_portal_viewobject",
+          "dfScriptName": "ViewObjectGraph_2001441",
+          "interactName": "Common_GeneralInteract",
+          "unlockId": 0,
+          "warning": "UnlockId 0 alone does not establish current-run availability or a zero item/currency fee."
+        },
+        {
+          "path": "output/dukezzz-local-preview/research/version-3.2-update/items/extraction/config-research/TextMapTemplateTb.json",
+          "sha256": "4e74df776abd65ece3160ea1cd06fb8df85dcfa5d72baa57f82b7fe1eebffd37",
+          "jsonPath": "$['Zenkov_Transmit02']",
+          "role": "configured_destination_name",
+          "text": "裂隙·通往巴哈姆特仓库"
+        },
+        {
+          "path": "output/dukezzz-aliyun/public/research/suburbs-source-registration.json",
+          "sha256": "9ea1ba477f9d6ed8da26e6dec98e378e29ba281200646b08b250f8d78910b4e4",
+          "jsonPath": "$.transform.normalizedRowVectorMatrix",
+          "role": "source_map_region_location_reference",
+          "startProjected": {
+            "x": 0.2726167695420723,
+            "y": 0.3927369685084352
+          },
+          "endProjected": {
+            "x": 0.8149085434521195,
+            "y": 0.6165877721659592
+          },
+          "warning": "Region labels use the existing registered reference map; the projection does not establish a walkable approach or snap an endpoint."
+        },
+        {
+          "path": "output/dukezzz-local-preview/research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171200272.json",
+          "sha256": "fca95f4322bdd2d1be7f41aa3751597835a05c4ee979765d7c6ec62bd7fe21ce",
+          "jsonPath": "$.Group.GroupViewObjectTrait",
+          "role": "suite_activation_rules"
+        }
+      ],
+      "direction": "source-start-to-end-only",
+      "runtimeAvailability": "user-confirmed-only",
+      "defaultSelected": false,
+      "teleportId": 171201207,
+      "destinationFloorId": 171201,
+      "destinationPoint": "Point_002",
+      "activation": {
+        "requiredSuite": 1,
+        "highRiskDifficulty": 213,
+        "explicitHighRiskSuiteRule": false,
+        "fallbackSuiteIndex": 1,
+        "otherDifficultyRules": {
+          "2101": 2,
+          "2102": 2,
+          "2103": 2
+        },
+        "globalGroupActivationVerified": false
+      },
+      "fee": {
+        "verified": false,
+        "amount": null,
+        "currencyOrItem": null
+      },
+      "waitSeconds": null,
+      "notes": [
+        "仅在本局看到且确认可用后勾选；路线方向为入口到落点。",
+        "落点是原始配置指定的位置，与反向裂隙入口不重合。",
+        "传送费用与等待时间未核实；不能据此宣称免费或最快。"
+      ],
+      "notesEn": [
+        "Select only after confirming that this portal is present and usable in the current run.",
+        "The configured arrival point is distinct from the reverse portal entrance.",
+        "Currency/item costs and wait times are unverified; this link is not evidence of free travel or the fastest route."
+      ],
+      "verification": {
+        "coordinateJoin": "verified-current-3.2-member-and-suite-to-teleport-table-to-floor-point",
+        "destinationIsNearestPortalGuess": false,
+        "reverseAutomaticallyAllowed": false,
+        "currentViewObjectGraphBodyReexported": false,
+        "remainingUnverified": [
+          "current-run group selection and usability",
+          "current ViewObjectGraph body revision",
+          "walkable approach and landing snap (route-engine verification required)",
+          "currency/item cost and wait time"
+        ]
+      }
+    },
+    {
+      "id": "suburbs-portal-171200271-201",
+      "map": "suburbs",
+      "type": "hollow_portal",
+      "label": "巴哈姆特仓库 → 风蚀公路",
+      "labelEn": "Bahamut Warehouse → Windworn Highway",
+      "fromRegion": "warehouse",
+      "toRegion": "highway",
+      "configuredDestinationName": "裂隙·通往风蚀公路",
+      "start": {
+        "x": -222.8434,
+        "y": 50.53102,
+        "z": 16.139233
+      },
+      "end": {
+        "x": 237.04437,
+        "y": 59.633953,
+        "z": -4.6687403
+      },
+      "source": {
+        "path": "output/dukezzz-local-preview/research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171200271.json",
+        "sha256": "d30f605b4bbe27584998fa7dc7e05af8c3f2d21ca3322c243952f7c25d3b9021",
+        "jsonPath": "$.Group.Members[0].MemberPosition"
+      },
+      "evidence": [
+        {
+          "path": "output/dukezzz-local-preview/research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171200271.json",
+          "sha256": "d30f605b4bbe27584998fa7dc7e05af8c3f2d21ca3322c243952f7c25d3b9021",
+          "jsonPath": "$.Group.Members[0]",
+          "role": "source_gadget_and_world_position",
+          "groupId": 171200271,
+          "configId": 201,
+          "viewObjectId": 2001441
+        },
+        {
+          "path": "output/dukezzz-local-preview/research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171200271.json",
+          "sha256": "d30f605b4bbe27584998fa7dc7e05af8c3f2d21ca3322c243952f7c25d3b9021",
+          "jsonPath": "$.Group.Members[0].ViewObjectOverrideMap['ConfigDFScriptTrait.InitParam'].Elements",
+          "role": "member_teleport_parameters",
+          "values": {
+            "Color": 1,
+            "teleportId": 171201202,
+            "teleportPoint": "",
+            "HasChat": true,
+            "ChatID": 231013122,
+            "Type": 0
+          }
+        },
+        {
+          "path": "output/dukezzz-local-preview/research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171200271.json",
+          "sha256": "d30f605b4bbe27584998fa7dc7e05af8c3f2d21ca3322c243952f7c25d3b9021",
+          "jsonPath": "$.Group.SuiteV2List[0].RefMembers[0].ViewObjectOverrideMap['ConfigDFScriptTrait.InitParam'].Elements",
+          "role": "active_suite_teleport_parameters",
+          "suiteIndex": 1
+        },
+        {
+          "path": "output/dukezzz-local-preview/research/version-3.2-update/items/valuable-map-source-data/current-tables/TextAsset/9695468580974720779.txt",
+          "sha256": "cabd885c6e77fc35804cce54c7394336e36234dd663ed58852ffd696e20e3e9a",
+          "role": "teleport_id_to_floor_point",
+          "format": "flatbuffer",
+          "rowByteOffset": 29932,
+          "decodedFields": {
+            "slot0": 171201202,
+            "slot1": 171201,
+            "slot2": "Stage_Zenkov1_1_SpawnPoint_01"
+          },
+          "fieldSemantics": {
+            "slot0": "teleport ID",
+            "slot1": "destination Floor ID",
+            "slot2": "destination point name"
+          },
+          "decoder": "output/zzz-high-risk-atlas/extraction/config-research/inspect_flatcfg.py"
+        },
+        {
+          "path": "output/dukezzz-local-preview/research/version-3.2-update/items/extraction/map-config/TextAsset/Floor_171201.json",
+          "sha256": "0d1faf02f6a2f9a755e460500c786c0cb822083f6258d68f6cc810646976b2c4",
+          "jsonPath": "$.Floor.GameplayExternalData.PointMap['Stage_Zenkov1_1_SpawnPoint_01'].Data.Position",
+          "role": "exact_destination_world_position"
+        },
+        {
+          "path": "output/dukezzz-local-preview/research/version-3.2-update/items/valuable-map-source-data/current-viewobjects/ViewObject_2001441.json",
+          "sha256": "c744ffce01f28bcf5f99de83bf6ec41c9e92fa4204c19d608986f184a9cbb9b8",
+          "jsonPath": "$.ViewObject.Traits",
+          "role": "shared_portal_viewobject",
+          "dfScriptName": "ViewObjectGraph_2001441",
+          "interactName": "Common_GeneralInteract",
+          "unlockId": 0,
+          "warning": "UnlockId 0 alone does not establish current-run availability or a zero item/currency fee."
+        },
+        {
+          "path": "output/dukezzz-local-preview/research/version-3.2-update/items/extraction/config-research/TextMapTemplateTb.json",
+          "sha256": "4e74df776abd65ece3160ea1cd06fb8df85dcfa5d72baa57f82b7fe1eebffd37",
+          "jsonPath": "$['Zenkov_Transmit01']",
+          "role": "configured_destination_name",
+          "text": "裂隙·通往风蚀公路"
+        },
+        {
+          "path": "output/dukezzz-aliyun/public/research/suburbs-source-registration.json",
+          "sha256": "9ea1ba477f9d6ed8da26e6dec98e378e29ba281200646b08b250f8d78910b4e4",
+          "jsonPath": "$.transform.normalizedRowVectorMatrix",
+          "role": "source_map_region_location_reference",
+          "startProjected": {
+            "x": 0.8125343981862723,
+            "y": 0.6104281692901614
+          },
+          "endProjected": {
+            "x": 0.09653145893539494,
+            "y": 0.5654302638757399
+          },
+          "warning": "Region labels use the existing registered reference map; the projection does not establish a walkable approach or snap an endpoint."
+        },
+        {
+          "path": "output/dukezzz-local-preview/research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171200271.json",
+          "sha256": "d30f605b4bbe27584998fa7dc7e05af8c3f2d21ca3322c243952f7c25d3b9021",
+          "jsonPath": "$.Group.GroupViewObjectTrait",
+          "role": "suite_activation_rules"
+        }
+      ],
+      "direction": "source-start-to-end-only",
+      "runtimeAvailability": "user-confirmed-only",
+      "defaultSelected": false,
+      "teleportId": 171201202,
+      "destinationFloorId": 171201,
+      "destinationPoint": "Stage_Zenkov1_1_SpawnPoint_01",
+      "activation": {
+        "requiredSuite": 1,
+        "highRiskDifficulty": 213,
+        "explicitHighRiskSuiteRule": false,
+        "fallbackSuiteIndex": 1,
+        "otherDifficultyRules": {
+          "2101": 2,
+          "2102": 2,
+          "2103": 2
+        },
+        "globalGroupActivationVerified": false
+      },
+      "fee": {
+        "verified": false,
+        "amount": null,
+        "currencyOrItem": null
+      },
+      "waitSeconds": null,
+      "notes": [
+        "仅在本局看到且确认可用后勾选；路线方向为入口到落点。",
+        "落点是原始配置指定的位置，与反向裂隙入口不重合。",
+        "传送费用与等待时间未核实；不能据此宣称免费或最快。"
+      ],
+      "notesEn": [
+        "Select only after confirming that this portal is present and usable in the current run.",
+        "The configured arrival point is distinct from the reverse portal entrance.",
+        "Currency/item costs and wait times are unverified; this link is not evidence of free travel or the fastest route."
+      ],
+      "verification": {
+        "coordinateJoin": "verified-current-3.2-member-and-suite-to-teleport-table-to-floor-point",
+        "destinationIsNearestPortalGuess": false,
+        "reverseAutomaticallyAllowed": false,
+        "currentViewObjectGraphBodyReexported": false,
+        "remainingUnverified": [
+          "current-run group selection and usability",
+          "current ViewObjectGraph body revision",
+          "walkable approach and landing snap (route-engine verification required)",
+          "currency/item cost and wait time"
+        ]
+      }
+    },
+    {
+      "id": "suburbs-portal-171200142-201",
+      "map": "suburbs",
+      "type": "hollow_portal",
+      "label": "野人镇 → 绮梦沙滩",
+      "labelEn": "Bunless Bae Town → Fantasy Beach",
+      "fromRegion": "town",
+      "toRegion": "beach",
+      "configuredDestinationName": "裂隙·通往绮梦沙滩",
+      "start": {
+        "x": -138.53186,
+        "y": 66.20349,
+        "z": -69.655685
+      },
+      "end": {
+        "x": 60.543888,
+        "y": 33.231026,
+        "z": 122.95304
+      },
+      "source": {
+        "path": "output/dukezzz-local-preview/research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171200142.json",
+        "sha256": "1eb4fe95105383d650fac61e1a5146cbebdc09a1d5fcd2b1054e6f12e3efbdcb",
+        "jsonPath": "$.Group.Members[0].MemberPosition"
+      },
+      "evidence": [
+        {
+          "path": "output/dukezzz-local-preview/research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171200142.json",
+          "sha256": "1eb4fe95105383d650fac61e1a5146cbebdc09a1d5fcd2b1054e6f12e3efbdcb",
+          "jsonPath": "$.Group.Members[0]",
+          "role": "source_gadget_and_world_position",
+          "groupId": 171200142,
+          "configId": 201,
+          "viewObjectId": 2001441
+        },
+        {
+          "path": "output/dukezzz-local-preview/research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171200142.json",
+          "sha256": "1eb4fe95105383d650fac61e1a5146cbebdc09a1d5fcd2b1054e6f12e3efbdcb",
+          "jsonPath": "$.Group.Members[0].ViewObjectOverrideMap['ConfigDFScriptTrait.InitParam'].Elements",
+          "role": "member_teleport_parameters",
+          "values": {
+            "Color": 1,
+            "teleportId": 171201205,
+            "teleportPoint": "",
+            "HasChat": true,
+            "ChatID": 231013122,
+            "Type": 0
+          }
+        },
+        {
+          "path": "output/dukezzz-local-preview/research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171200142.json",
+          "sha256": "1eb4fe95105383d650fac61e1a5146cbebdc09a1d5fcd2b1054e6f12e3efbdcb",
+          "jsonPath": "$.Group.SuiteV2List[0].RefMembers[0].ViewObjectOverrideMap['ConfigDFScriptTrait.InitParam'].Elements",
+          "role": "active_suite_teleport_parameters",
+          "suiteIndex": 1
+        },
+        {
+          "path": "output/dukezzz-local-preview/research/version-3.2-update/items/valuable-map-source-data/current-tables/TextAsset/9695468580974720779.txt",
+          "sha256": "cabd885c6e77fc35804cce54c7394336e36234dd663ed58852ffd696e20e3e9a",
+          "role": "teleport_id_to_floor_point",
+          "format": "flatbuffer",
+          "rowByteOffset": 29792,
+          "decodedFields": {
+            "slot0": 171201205,
+            "slot1": 171201,
+            "slot2": "Point_000"
+          },
+          "fieldSemantics": {
+            "slot0": "teleport ID",
+            "slot1": "destination Floor ID",
+            "slot2": "destination point name"
+          },
+          "decoder": "output/zzz-high-risk-atlas/extraction/config-research/inspect_flatcfg.py"
+        },
+        {
+          "path": "output/dukezzz-local-preview/research/version-3.2-update/items/extraction/map-config/TextAsset/Floor_171201.json",
+          "sha256": "0d1faf02f6a2f9a755e460500c786c0cb822083f6258d68f6cc810646976b2c4",
+          "jsonPath": "$.Floor.GameplayExternalData.PointMap['Point_000'].Data.Position",
+          "role": "exact_destination_world_position"
+        },
+        {
+          "path": "output/dukezzz-local-preview/research/version-3.2-update/items/valuable-map-source-data/current-viewobjects/ViewObject_2001441.json",
+          "sha256": "c744ffce01f28bcf5f99de83bf6ec41c9e92fa4204c19d608986f184a9cbb9b8",
+          "jsonPath": "$.ViewObject.Traits",
+          "role": "shared_portal_viewobject",
+          "dfScriptName": "ViewObjectGraph_2001441",
+          "interactName": "Common_GeneralInteract",
+          "unlockId": 0,
+          "warning": "UnlockId 0 alone does not establish current-run availability or a zero item/currency fee."
+        },
+        {
+          "path": "output/dukezzz-local-preview/research/version-3.2-update/items/extraction/config-research/TextMapTemplateTb.json",
+          "sha256": "4e74df776abd65ece3160ea1cd06fb8df85dcfa5d72baa57f82b7fe1eebffd37",
+          "jsonPath": "$['Zenkov_Transmit03']",
+          "role": "configured_destination_name",
+          "text": "裂隙·通往绮梦沙滩"
+        },
+        {
+          "path": "output/dukezzz-aliyun/public/research/suburbs-source-registration.json",
+          "sha256": "9ea1ba477f9d6ed8da26e6dec98e378e29ba281200646b08b250f8d78910b4e4",
+          "jsonPath": "$.transform.normalizedRowVectorMatrix",
+          "role": "source_map_region_location_reference",
+          "startProjected": {
+            "x": 0.6796565017930476,
+            "y": 0.439960931945771
+          },
+          "endProjected": {
+            "x": 0.37367975943658555,
+            "y": 0.8194287418903182
+          },
+          "warning": "Region labels use the existing registered reference map; the projection does not establish a walkable approach or snap an endpoint."
+        },
+        {
+          "path": "output/dukezzz-local-preview/research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171200142.json",
+          "sha256": "1eb4fe95105383d650fac61e1a5146cbebdc09a1d5fcd2b1054e6f12e3efbdcb",
+          "jsonPath": "$.Group.GroupViewObjectTrait",
+          "role": "suite_activation_rules"
+        }
+      ],
+      "direction": "source-start-to-end-only",
+      "runtimeAvailability": "user-confirmed-only",
+      "defaultSelected": false,
+      "teleportId": 171201205,
+      "destinationFloorId": 171201,
+      "destinationPoint": "Point_000",
+      "activation": {
+        "requiredSuite": 1,
+        "highRiskDifficulty": 213,
+        "explicitHighRiskSuiteRule": false,
+        "globalGroupActivationVerified": false
+      },
+      "fee": {
+        "verified": false,
+        "amount": null,
+        "currencyOrItem": null
+      },
+      "waitSeconds": null,
+      "notes": [
+        "仅在本局看到且确认可用后勾选；路线方向为入口到落点。",
+        "落点是原始配置指定的位置，与反向裂隙入口不重合。",
+        "传送费用与等待时间未核实；不能据此宣称免费或最快。"
+      ],
+      "notesEn": [
+        "Select only after confirming that this portal is present and usable in the current run.",
+        "The configured arrival point is distinct from the reverse portal entrance.",
+        "Currency/item costs and wait times are unverified; this link is not evidence of free travel or the fastest route."
+      ],
+      "verification": {
+        "coordinateJoin": "verified-current-3.2-member-and-suite-to-teleport-table-to-floor-point",
+        "destinationIsNearestPortalGuess": false,
+        "reverseAutomaticallyAllowed": false,
+        "currentViewObjectGraphBodyReexported": false,
+        "remainingUnverified": [
+          "current-run group selection and usability",
+          "current ViewObjectGraph body revision",
+          "walkable approach and landing snap (route-engine verification required)",
+          "currency/item cost and wait time"
+        ]
+      }
+    },
+    {
+      "id": "suburbs-portal-171200383-201",
+      "map": "suburbs",
+      "type": "hollow_portal",
+      "label": "绮梦沙滩 → 野人镇",
+      "labelEn": "Fantasy Beach → Bunless Bae Town",
+      "fromRegion": "beach",
+      "toRegion": "town",
+      "configuredDestinationName": "裂隙·通往无力野人镇",
+      "start": {
+        "x": -46.00159,
+        "y": 23.554325,
+        "z": 57.206894
+      },
+      "end": {
+        "x": -124.240524,
+        "y": 66.206314,
+        "z": -95.668175
+      },
+      "source": {
+        "path": "output/dukezzz-local-preview/research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171200383.json",
+        "sha256": "9b8b87ca1d24edc2c4e3f4d817e3c5eb7b8247a546f1adb93cf8acc521b82a00",
+        "jsonPath": "$.Group.Members[0].MemberPosition"
+      },
+      "evidence": [
+        {
+          "path": "output/dukezzz-local-preview/research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171200383.json",
+          "sha256": "9b8b87ca1d24edc2c4e3f4d817e3c5eb7b8247a546f1adb93cf8acc521b82a00",
+          "jsonPath": "$.Group.Members[0]",
+          "role": "source_gadget_and_world_position",
+          "groupId": 171200383,
+          "configId": 201,
+          "viewObjectId": 2001441
+        },
+        {
+          "path": "output/dukezzz-local-preview/research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171200383.json",
+          "sha256": "9b8b87ca1d24edc2c4e3f4d817e3c5eb7b8247a546f1adb93cf8acc521b82a00",
+          "jsonPath": "$.Group.Members[0].ViewObjectOverrideMap['ConfigDFScriptTrait.InitParam'].Elements",
+          "role": "member_teleport_parameters",
+          "values": {
+            "Color": 1,
+            "teleportId": 171201227,
+            "teleportPoint": "",
+            "HasChat": true,
+            "ChatID": 231013122,
+            "Type": 0
+          }
+        },
+        {
+          "path": "output/dukezzz-local-preview/research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171200383.json",
+          "sha256": "9b8b87ca1d24edc2c4e3f4d817e3c5eb7b8247a546f1adb93cf8acc521b82a00",
+          "jsonPath": "$.Group.SuiteV2List[0].RefMembers[0].ViewObjectOverrideMap['ConfigDFScriptTrait.InitParam'].Elements",
+          "role": "active_suite_teleport_parameters",
+          "suiteIndex": 1
+        },
+        {
+          "path": "output/dukezzz-local-preview/research/version-3.2-update/items/valuable-map-source-data/current-tables/TextAsset/9695468580974720779.txt",
+          "sha256": "cabd885c6e77fc35804cce54c7394336e36234dd663ed58852ffd696e20e3e9a",
+          "role": "teleport_id_to_floor_point",
+          "format": "flatbuffer",
+          "rowByteOffset": 28620,
+          "decodedFields": {
+            "slot0": 171201227,
+            "slot1": 171201,
+            "slot2": "Point_004"
+          },
+          "fieldSemantics": {
+            "slot0": "teleport ID",
+            "slot1": "destination Floor ID",
+            "slot2": "destination point name"
+          },
+          "decoder": "output/zzz-high-risk-atlas/extraction/config-research/inspect_flatcfg.py"
+        },
+        {
+          "path": "output/dukezzz-local-preview/research/version-3.2-update/items/extraction/map-config/TextAsset/Floor_171201.json",
+          "sha256": "0d1faf02f6a2f9a755e460500c786c0cb822083f6258d68f6cc810646976b2c4",
+          "jsonPath": "$.Floor.GameplayExternalData.PointMap['Point_004'].Data.Position",
+          "role": "exact_destination_world_position"
+        },
+        {
+          "path": "output/dukezzz-local-preview/research/version-3.2-update/items/valuable-map-source-data/current-viewobjects/ViewObject_2001441.json",
+          "sha256": "c744ffce01f28bcf5f99de83bf6ec41c9e92fa4204c19d608986f184a9cbb9b8",
+          "jsonPath": "$.ViewObject.Traits",
+          "role": "shared_portal_viewobject",
+          "dfScriptName": "ViewObjectGraph_2001441",
+          "interactName": "Common_GeneralInteract",
+          "unlockId": 0,
+          "warning": "UnlockId 0 alone does not establish current-run availability or a zero item/currency fee."
+        },
+        {
+          "path": "output/dukezzz-local-preview/research/version-3.2-update/items/extraction/config-research/TextMapTemplateTb.json",
+          "sha256": "4e74df776abd65ece3160ea1cd06fb8df85dcfa5d72baa57f82b7fe1eebffd37",
+          "jsonPath": "$['Zenkov_Transmit07']",
+          "role": "configured_destination_name",
+          "text": "裂隙·通往无力野人镇"
+        },
+        {
+          "path": "output/dukezzz-aliyun/public/research/suburbs-source-registration.json",
+          "sha256": "9ea1ba477f9d6ed8da26e6dec98e378e29ba281200646b08b250f8d78910b4e4",
+          "jsonPath": "$.transform.normalizedRowVectorMatrix",
+          "role": "source_map_region_location_reference",
+          "startProjected": {
+            "x": 0.5381731822498281,
+            "y": 0.6902199805247414
+          },
+          "endProjected": {
+            "x": 0.6569072487152638,
+            "y": 0.3883700459454317
+          },
+          "warning": "Region labels use the existing registered reference map; the projection does not establish a walkable approach or snap an endpoint."
+        },
+        {
+          "path": "output/dukezzz-local-preview/research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171200383.json",
+          "sha256": "9b8b87ca1d24edc2c4e3f4d817e3c5eb7b8247a546f1adb93cf8acc521b82a00",
+          "jsonPath": "$.Group.GroupViewObjectTrait",
+          "role": "suite_activation_rules"
+        },
+        {
+          "path": "output/dukezzz-local-preview/research/ore-missing-audit-20260911/decoded/GroupGraph_171200383_1.json",
+          "sha256": "970b8f5a0dbc33b924a65c2c06979e023fbe28c8ad5828dad2f9f69e063278f3",
+          "jsonPath": "$.nodes",
+          "role": "stale_group_graph_not_used",
+          "warning": "Legacy GroupGraph listens for ConfigID 301, absent from this group, and contains TeleportID 171201205. It is not used. Actual ConfigID 201 member and Suite both specify 171201227."
+        }
+      ],
+      "direction": "source-start-to-end-only",
+      "runtimeAvailability": "user-confirmed-only",
+      "defaultSelected": false,
+      "teleportId": 171201227,
+      "destinationFloorId": 171201,
+      "destinationPoint": "Point_004",
+      "activation": {
+        "requiredSuite": 1,
+        "highRiskDifficulty": 213,
+        "suiteWeights": [
+          {
+            "suiteIndex": 1,
+            "weight": 1,
+            "containsPortal": true
+          },
+          {
+            "suiteIndex": 2,
+            "weight": 1,
+            "containsPortal": false
+          }
+        ],
+        "fallbackSuiteIndex": 2,
+        "globalGroupActivationVerified": false
+      },
+      "fee": {
+        "verified": false,
+        "amount": null,
+        "currencyOrItem": null
+      },
+      "waitSeconds": null,
+      "notes": [
+        "仅在本局看到且确认可用后勾选；路线方向为入口到落点。",
+        "落点是原始配置指定的位置，与反向裂隙入口不重合。",
+        "传送费用与等待时间未核实；不能据此宣称免费或最快。",
+        "高危配置在含裂隙与不含裂隙套组之间随机选择，不能当作必定出现。"
+      ],
+      "notesEn": [
+        "Select only after confirming that this portal is present and usable in the current run.",
+        "The configured arrival point is distinct from the reverse portal entrance.",
+        "Currency/item costs and wait times are unverified; this link is not evidence of free travel or the fastest route."
+      ],
+      "verification": {
+        "coordinateJoin": "verified-current-3.2-member-and-suite-to-teleport-table-to-floor-point",
+        "destinationIsNearestPortalGuess": false,
+        "reverseAutomaticallyAllowed": false,
+        "currentViewObjectGraphBodyReexported": false,
+        "remainingUnverified": [
+          "current-run group selection and usability",
+          "current ViewObjectGraph body revision",
+          "walkable approach and landing snap (route-engine verification required)",
+          "currency/item cost and wait time"
+        ]
+      }
+    }
+  ],
+  "excludedUnresolved": [
+    {
+      "type": "lift",
+      "groupIds": [
+        171200126,
+        171200394
+      ],
+      "configId": 201,
+      "viewObjectId": 2001178,
+      "splineName": "171200126_Spline_000",
+      "splineAsset": "Assets/NapResources/Data/LevelWorld/Spline/Floor_171201_ZenkovCurvy_1_1.prefab",
+      "reason": "Trajectory control points and exact stop/boarding positions have not been exported and verified. Trigger-box centers and nearby Scene.NavMeshLinks[1] are not substituted for lift stops. No Billy encounter or Hematite Shard target is added."
+    }
+  ],
+  "limitations": [
+    "All four coordinate joins use current local 3.2 Group/Floor/table exports. A configured destination is not proof that the portal is spawned, unlocked or usable in this run.",
+    "The shared current ViewObject config names ViewObjectGraph_2001441. Existing decoded graph has StartTeleport driven by teleportId/teleportPoint, but that graph body has not been re-exported from the current 3.2 block during this audit.",
+    "No fee, zero-cost, fixed duration or fully verified runtime-chain assertion is made.",
+    "No synthetic reverse edge, nearest-neighbor portal pairing, lift endpoint or Billy/shard drop assertion is included."
+  ]
+}

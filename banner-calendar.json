@@ -1,0 +1,667 @@
+{
+ "version": 1,
+ "updatedAt": "2026-11-11",
+ "regions": [
+  {
+   "id": "prod_gf_cn",
+   "label": "国服",
+   "timezone": 8
+  },
+  {
+   "id": "prod_gf_jp",
+   "label": "亚服",
+   "timezone": 8
+  },
+  {
+   "id": "prod_gf_us",
+   "label": "美服",
+   "timezone": -5
+  }
+ ],
+ "sources": [
+  {
+   "name": "绝区零官方调频公示（国服 / 亚服 / 美服）",
+   "url": "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/gacha/list.json"
+  },
+  {
+   "name": "绝区零官方 3.3 版本限时频段（下期）",
+   "url": "https://zenless.hoyoverse.com/zh-cn/news/167269"
+  }
+ ],
+ "notes": [
+  "时间为各服务器时间。收录 3.1 版本起已核验的限时频段；欧服暂未收录。"
+ ],
+ "upcoming": null,
+ "phases": [
+  {
+   "id": "3.1-1",
+   "version": "3.1",
+   "half": "上半",
+   "regions": {
+    "prod_gf_us": {
+     "begin": "2026-07-28 17:00:00",
+     "end": "2026-08-19 11:59:59",
+     "timezone": -5
+    },
+    "prod_gf_cn": {
+     "begin": "2026-07-29 06:00:00",
+     "end": "2026-08-19 11:59:59",
+     "timezone": 8
+    },
+    "prod_gf_jp": {
+     "begin": "2026-07-29 06:00:00",
+     "end": "2026-08-19 11:59:59",
+     "timezone": 8
+    }
+   },
+   "banners": [
+    {
+     "id": "8c01c50da79028f66c4c28060f36654a98d35401",
+     "pool": "2",
+     "title": "复乐园",
+     "titleEn": "Paradise Regained",
+     "gachaType": 2001,
+     "kind": "agent",
+     "rerun": false,
+     "special": false,
+     "featuredS": [
+      "1581"
+     ],
+     "featuredA": [
+      "1271",
+      "1281"
+     ]
+    },
+    {
+     "id": null,
+     "pool": "2",
+     "title": "霓色天使",
+     "gachaType": null,
+     "kind": "agent",
+     "rerun": false,
+     "special": false,
+     "featuredS": [
+      "1501"
+     ],
+     "featuredA": [],
+     "source": "https://zenless.hoyoverse.com/zh-cn/news/165363"
+    },
+    {
+     "id": "ff5467b51b3e21ab91784c197458ea5b4465e6a9",
+     "pool": "3",
+     "title": "空羽复归之诗",
+     "titleEn": "Ode of Resurrected Wings",
+     "gachaType": 3001,
+     "kind": "engine",
+     "rerun": false,
+     "special": false,
+     "featuredS": [
+      "14158"
+     ],
+     "featuredA": [
+      "13127",
+      "13128"
+     ]
+    },
+    {
+     "id": null,
+     "pool": "3",
+     "title": "壳中之灵",
+     "gachaType": null,
+     "kind": "engine",
+     "rerun": false,
+     "special": false,
+     "featuredS": [
+      "14150"
+     ],
+     "featuredA": [],
+     "source": "https://zenless.hoyoverse.com/zh-cn/news/165363"
+    }
+   ]
+  },
+  {
+   "id": "3.1-2",
+   "version": "3.1",
+   "half": "下半",
+   "regions": {
+    "prod_gf_us": {
+     "begin": "2026-08-19 12:00:00",
+     "end": "2026-09-08 14:59:59",
+     "timezone": -5
+    },
+    "prod_gf_cn": {
+     "begin": "2026-08-19 12:00:00",
+     "end": "2026-09-08 14:59:59",
+     "timezone": 8
+    },
+    "prod_gf_jp": {
+     "begin": "2026-08-19 12:00:00",
+     "end": "2026-09-08 14:59:59",
+     "timezone": 8
+    }
+   },
+   "banners": [
+    {
+     "id": "8c01c50da79028f66c4c28060f36654a98d35401",
+     "pool": "2",
+     "title": "复乐园",
+     "titleEn": "Paradise Regained",
+     "gachaType": 2001,
+     "kind": "agent",
+     "rerun": false,
+     "special": false,
+     "featuredS": [
+      "1581"
+     ],
+     "featuredA": [
+      "1271",
+      "1281"
+     ]
+    },
+    {
+     "id": "6f1dd29f66a662712d0a2e971b8a15e6f60c970c",
+     "pool": "2",
+     "title": "直到天空沉落",
+     "titleEn": "'Till the Ends of the Sky",
+     "gachaType": 2002,
+     "kind": "agent",
+     "rerun": false,
+     "special": false,
+     "featuredS": [
+      "1591"
+     ],
+     "featuredA": [
+      "1151",
+      "1131"
+     ]
+    },
+    {
+     "id": "ff5467b51b3e21ab91784c197458ea5b4465e6a9",
+     "pool": "3",
+     "title": "空羽复归之诗",
+     "titleEn": "Ode of Resurrected Wings",
+     "gachaType": 3001,
+     "kind": "engine",
+     "rerun": false,
+     "special": false,
+     "featuredS": [
+      "14158"
+     ],
+     "featuredA": [
+      "13127",
+      "13128"
+     ]
+    },
+    {
+     "id": "aa1bc001626633d3991cf2a20a8ca9bb18eb4623",
+     "pool": "3",
+     "title": "骁骑礼赞",
+     "titleEn": "Knight's Extolment",
+     "gachaType": 3002,
+     "kind": "engine",
+     "rerun": false,
+     "special": false,
+     "featuredS": [
+      "14159"
+     ],
+     "featuredA": [
+      "13115",
+      "13113"
+     ]
+    },
+    {
+     "id": "e36a0a38425dd8a10c55a0725561a63813b64f0c",
+     "pool": "102",
+     "title": "唤寂昔声",
+     "titleEn": "Voice of the Once-Spoken",
+     "gachaType": 12002,
+     "kind": "agent",
+     "rerun": false,
+     "special": true,
+     "featuredS": [
+      "1481"
+     ],
+     "featuredA": []
+    },
+    {
+     "id": "4d814bcd0d299b044ae907f85e6efb6c80615de7",
+     "pool": "102",
+     "title": "戏语幽谭",
+     "titleEn": "Whispered Tales",
+     "gachaType": 12002,
+     "kind": "agent",
+     "rerun": false,
+     "special": true,
+     "featuredS": [
+      "1411"
+     ],
+     "featuredA": []
+    },
+    {
+     "id": "bb61b2e5e356a83c28321f93efffb0d4f096b8f6",
+     "pool": "102",
+     "title": "循此苦旅",
+     "titleEn": "Per Aspera",
+     "gachaType": 12002,
+     "kind": "agent",
+     "rerun": false,
+     "special": true,
+     "featuredS": [
+      "1201"
+     ],
+     "featuredA": []
+    },
+    {
+     "id": "d2801ce5f8a74e02accc6a18674e2f3b14d4a3d0",
+     "pool": "103",
+     "title": "昨夜来电",
+     "titleEn": "Yesterday Calls",
+     "gachaType": 13002,
+     "kind": "engine",
+     "rerun": false,
+     "special": true,
+     "featuredS": [
+      "14148"
+     ],
+     "featuredA": []
+    },
+    {
+     "id": "3ff30876e8c4365c6a0ca0cde62a58bde7a5a2d6",
+     "pool": "103",
+     "title": "狸法七变化",
+     "titleEn": "Metanukimorphosis",
+     "gachaType": 13002,
+     "kind": "engine",
+     "rerun": false,
+     "special": true,
+     "featuredS": [
+      "14141"
+     ],
+     "featuredA": []
+    },
+    {
+     "id": "cb9ac2c12a5120229d2ddbbbef58f6ba1ed4854d",
+     "pool": "103",
+     "title": "残心青囊",
+     "titleEn": "Zanshin Herb Case",
+     "gachaType": 13002,
+     "kind": "engine",
+     "rerun": false,
+     "special": true,
+     "featuredS": [
+      "14120"
+     ],
+     "featuredA": []
+    }
+   ]
+  },
+  {
+   "id": "3.2-1",
+   "version": "3.2",
+   "half": "上半",
+   "regions": {
+    "prod_gf_cn": {
+     "begin": "2026-09-09 06:00:00",
+     "end": "2026-09-30 11:59:59",
+     "timezone": 8
+    },
+    "prod_gf_jp": {
+     "begin": "2026-09-09 06:00:00",
+     "end": "2026-09-30 11:59:59",
+     "timezone": 8
+    },
+    "prod_gf_us": {
+     "begin": "2026-09-08 17:00:00",
+     "end": "2026-09-30 11:59:59",
+     "timezone": -5
+    }
+   },
+   "banners": [
+    {
+     "id": "98a3519e56172f5fb33a81665875197f6c830459",
+     "pool": "2",
+     "title": "红月初升",
+     "titleEn": "Bloodmoon Rising",
+     "gachaType": 2001,
+     "kind": "agent",
+     "rerun": false,
+     "special": false,
+     "featuredS": [
+      "1611"
+     ],
+     "featuredA": [
+      "1031",
+      "1111"
+     ]
+    },
+    {
+     "id": "b98c55f7f380d956a9a1135be4d816912f80f4a7",
+     "pool": "2",
+     "title": "视线定格公理",
+     "titleEn": "Axiom of Captivation",
+     "gachaType": 2011,
+     "kind": "agent",
+     "rerun": true,
+     "special": false,
+     "featuredS": [
+      "1511"
+     ],
+     "featuredA": [
+      "1031",
+      "1111"
+     ]
+    },
+    {
+     "id": "ba51ad818b41d1324aabe7403328da060599979a",
+     "pool": "3",
+     "title": "猩红渴望",
+     "titleEn": "Crimson Thirst",
+     "gachaType": 3001,
+     "kind": "engine",
+     "rerun": false,
+     "special": false,
+     "featuredS": [
+      "14161"
+     ],
+     "featuredA": [
+      "13103",
+      "13111"
+     ]
+    },
+    {
+     "id": "1f65f064061de16bfe7be63c7f7a0a787d6e1015",
+     "pool": "3",
+     "title": "霓虹妄想",
+     "titleEn": "Neon Fantasies",
+     "gachaType": 3011,
+     "kind": "engine",
+     "rerun": true,
+     "special": false,
+     "featuredS": [
+      "14151"
+     ],
+     "featuredA": [
+      "13103",
+      "13111"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "3.2-2",
+   "version": "3.2",
+   "half": "下半",
+   "regions": {
+    "prod_gf_cn": {
+     "begin": "2026-09-30 12:00:00",
+     "end": "2026-10-20 14:59:59",
+     "timezone": 8
+    },
+    "prod_gf_jp": {
+     "begin": "2026-09-30 12:00:00",
+     "end": "2026-10-20 14:59:59",
+     "timezone": 8
+    },
+    "prod_gf_us": {
+     "begin": "2026-09-30 12:00:00",
+     "end": "2026-10-20 14:59:59",
+     "timezone": -5
+    }
+   },
+   "banners": [
+    {
+     "id": "57afc3f1b18d6e149970e6240e627b02aeb7c355",
+     "pool": "2",
+     "title": "烬夜安眠",
+     "titleEn": "Cindernight Respite",
+     "gachaType": 2002,
+     "kind": "agent",
+     "rerun": false,
+     "special": false,
+     "featuredS": [
+      "1621"
+     ],
+     "featuredA": [
+      "1081",
+      "1061"
+     ]
+    },
+    {
+     "id": "7a1dcc5ba6cf41fd1a537fe6692ea7629e71f962",
+     "pool": "2",
+     "title": "冷雨将尽之夜",
+     "titleEn": "Cold Rain Wanes in the Night",
+     "gachaType": 2012,
+     "kind": "agent",
+     "rerun": true,
+     "special": false,
+     "featuredS": [
+      "1541"
+     ],
+     "featuredA": [
+      "1081",
+      "1061"
+     ]
+    },
+    {
+     "id": "129af5085b8d7cfe7a57981a6a05622d828555eb",
+     "pool": "3",
+     "title": "绯月银棺",
+     "titleEn": "Crimson Moon Casket",
+     "gachaType": 3002,
+     "kind": "engine",
+     "rerun": false,
+     "special": false,
+     "featuredS": [
+      "14162"
+     ],
+     "featuredA": [
+      "13108",
+      "13106"
+     ]
+    },
+    {
+     "id": "93a6a164becdfca75e2c87fb12eee21db7531759",
+     "pool": "3",
+     "title": "朔月裁霜",
+     "titleEn": "Frostfall Sickle",
+     "gachaType": 3012,
+     "kind": "engine",
+     "rerun": true,
+     "special": false,
+     "featuredS": [
+      "14154"
+     ],
+     "featuredA": [
+      "13108",
+      "13106"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "3.3-1",
+   "version": "3.3",
+   "half": "上半",
+   "regions": {
+    "prod_gf_cn": {
+     "begin": "2026-10-21 06:00:00",
+     "end": "2026-11-11 11:59:59",
+     "timezone": 8
+    },
+    "prod_gf_jp": {
+     "begin": "2026-10-21 06:00:00",
+     "end": "2026-11-11 11:59:59",
+     "timezone": 8
+    },
+    "prod_gf_us": {
+     "begin": "2026-10-20 17:00:00",
+     "end": "2026-11-11 11:59:59",
+     "timezone": -5
+    }
+   },
+   "banners": [
+    {
+     "id": "b80bbbba59774f78e4b3da87a3800dfb521acf99",
+     "pool": "2",
+     "title": "倾掷浮生",
+     "titleEn": "Into the Flames of Life",
+     "gachaType": 2001,
+     "kind": "agent",
+     "rerun": false,
+     "special": false,
+     "featuredS": [
+      "1641"
+     ],
+     "featuredA": [
+      "1441",
+      "1271"
+     ]
+    },
+    {
+     "id": "55e29cd16edb8e6c2fffaa93acb288d1cf2680f2",
+     "pool": "2",
+     "title": "凛风吟仪",
+     "titleEn": "Graceful Gale",
+     "gachaType": 2011,
+     "kind": "agent",
+     "rerun": true,
+     "special": false,
+     "featuredS": [
+      "1561"
+     ],
+     "featuredA": [
+      "1441",
+      "1271"
+     ]
+    },
+    {
+     "id": "500e57a31d6d73613ec3a7b9ef26f58903741752",
+     "pool": "3",
+     "title": "涅槃初翎",
+     "titleEn": "Plume of Rebirth",
+     "gachaType": 3001,
+     "kind": "engine",
+     "rerun": false,
+     "special": false,
+     "featuredS": [
+      "14164"
+     ],
+     "featuredA": [
+      "13144",
+      "13127"
+     ]
+    },
+    {
+     "id": "c39a0f3bb600f3f0f3987014267de3a040a75448",
+     "pool": "3",
+     "title": "琳琅鎏心",
+     "titleEn": "Joyau Dore",
+     "gachaType": 3011,
+     "kind": "engine",
+     "rerun": true,
+     "special": false,
+     "featuredS": [
+      "14156"
+     ],
+     "featuredA": [
+      "13144",
+      "13127"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "3.3-2",
+   "version": "3.3",
+   "half": "下半",
+   "regions": {
+    "prod_gf_cn": {
+     "begin": "2026-11-11 12:00:00",
+     "end": "2026-12-01 14:59:59",
+     "timezone": 8
+    },
+    "prod_gf_jp": {
+     "begin": "2026-11-11 12:00:00",
+     "end": "2026-12-01 14:59:59",
+     "timezone": 8
+    },
+    "prod_gf_us": {
+     "begin": "2026-11-11 12:00:00",
+     "end": "2026-12-01 14:59:59",
+     "timezone": -5
+    }
+   },
+   "banners": [
+    {
+     "id": "a69a6c5b0be2b54491a7ee8fbe7bb68177de01e5",
+     "pool": "2",
+     "title": "答案在风中",
+     "titleEn": "Answers in the Wind",
+     "gachaType": 2002,
+     "kind": "agent",
+     "rerun": false,
+     "special": false,
+     "featuredS": [
+      "1631"
+     ],
+     "featuredA": [
+      "1351",
+      "1031"
+     ]
+    },
+    {
+     "id": "a8dc55b438b6c45ebb19509b1c7a1481f6f76cc7",
+     "pool": "2",
+     "title": "天才不等式",
+     "titleEn": "Outlier of Prodigies",
+     "gachaType": 2012,
+     "kind": "agent",
+     "rerun": true,
+     "special": false,
+     "featuredS": [
+      "1571"
+     ],
+     "featuredA": [
+      "1351",
+      "1031"
+     ]
+    },
+    {
+     "id": "ba37a871d0d2eab3f56d9a4e47c09d866ce377a1",
+     "pool": "3",
+     "title": "禁罪囚笼",
+     "titleEn": "Incarcerating Grip",
+     "gachaType": 3002,
+     "kind": "engine",
+     "rerun": false,
+     "special": false,
+     "featuredS": [
+      "14163"
+     ],
+     "featuredA": [
+      "13135",
+      "13103"
+     ]
+    },
+    {
+     "id": "ed034c113dca22c9e1f60dd42ffa7e40c02f6478",
+     "pool": "3",
+     "title": "首席跟班",
+     "titleEn": "Chief Sidekick",
+     "gachaType": 3012,
+     "kind": "engine",
+     "rerun": true,
+     "special": false,
+     "featuredS": [
+      "14157"
+     ],
+     "featuredA": [
+      "13135",
+      "13103"
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,35 @@
+/* Keep spawn filters visible above the point-type list, in both themes. */
+.map-page #spawn-filter-panel {
+  margin:16px 0 20px; padding:13px;
+  border:1px solid var(--accent); border-radius:12px;
+  background:var(--theme-accent-bg);
+}
+.map-page .spawn-filter-heading {
+  display:flex; align-items:center; justify-content:space-between;
+  gap:8px; margin-bottom:11px; color:var(--text);
+}
+.map-page .spawn-filter-heading b { font-size:14px; }
+.map-page .spawn-filter-heading>span { font-size:11px; color:var(--muted); }
+.map-page #status-filters {
+  display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px;
+}
+.map-page #status-filters button {
+  display:flex; align-items:center; gap:7px; min-height:44px; min-width:0;
+  padding:9px 8px; border:1px solid var(--line); border-radius:8px;
+  background:var(--surface); color:var(--text);
+  font-size:12px; line-height:1.4; text-align:left;
+}
+.map-page #status-filters button:hover { border-color:var(--accent); }
+.map-page #status-filters button.active {
+  background:#475dcc; border-color:#475dcc; color:#fff; font-weight:600;
+}
+.map-page #status-filters button.active:hover { background:#3c50b8; }
+.map-page #status-filters button:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+.map-page #status-filters .status-check {
+  display:block; position:relative; width:14px; height:14px; flex-shrink:0;
+  border:1px solid currentColor; border-radius:3px;
+}
+.map-page #status-filters button.active .status-check::after {
+  content:""; position:absolute; left:4px; top:1px; width:4px; height:7px;
+  border:solid currentColor; border-width:0 2px 2px 0; transform:rotate(45deg);
+}

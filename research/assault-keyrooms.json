@@ -1,0 +1,1501 @@
+{
+  "schemaVersion": 1,
+  "gameVersion": "3.2.0",
+  "reviewedAt": "2026-09-12",
+  "maps": [
+    {
+      "map": "janus",
+      "points": [
+        {
+          "id": "171300119:202",
+          "map": "janus",
+          "label": "六昏街录像店一楼",
+          "kind": "keyroom",
+          "type": "keyroom",
+          "worldPosition": {
+            "x": -103.63438,
+            "y": 9.794724,
+            "z": -26.78787
+          },
+          "coordinateSpace": "source-world",
+          "cardItemId": 4340206,
+          "cardName": "六昏街录像店一楼",
+          "cardQuantity": 1,
+          "cardTier": "S",
+          "doorId": "171300119:201",
+          "doorWorldPosition": {
+            "x": -104.229515,
+            "y": 8.494744,
+            "z": -25.667019
+          },
+          "duplicateReaderIds": [],
+          "evidence": {
+            "status": "configured_card_reader_item_join",
+            "runtimeOpenConfirmed": false,
+            "sourceImageEntranceMatched": false,
+            "cardUsage": "使用后，可解除六昏街-录像店一楼房间的门禁获得大量物资。",
+            "itemCatalog": "item-catalog.json",
+            "submitTable": "research/version-3.2-update/items/valuable-map-source-data/current-tables/TextAsset/12315940412468084600.txt",
+            "submitTableSha256": "51e57747793fc6f71b6241751a06b2b46c9bd107a6f2e21b9601cdcee386c45c",
+            "submitTableSchema": {
+              "rowIdSlot": 0,
+              "costPairVectorSlot": 3
+            },
+            "publicSubmitTable": {
+              "url": "https://git.mero.moe/dimbreath/ZenlessData/raw/commit/b084f66a42cf128b7c809c9ba1b5bcce96ae114b/FileCfg/SubmitConfigTemplateTb.json",
+              "sha256": "76f18f8735f6265916ef74c849db913169c60df64d628fa5103985764d5c5107",
+              "bytes": 15155
+            },
+            "all99SubmitRowsMatchedLocalClient": true,
+            "readerViewObject": "research/version-3.2-update/items/valuable-map-source-data/current-viewobjects/ViewObject_2001291.json",
+            "readerViewObjectSha256": "753abf1b5ad8de2c99e4c78dee87eec0ea9a129947355217daa9dbd3c205d919",
+            "memberEvidence": [
+              {
+                "readerId": "171300119:202",
+                "groupFile": "research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171300119.json",
+                "groupSha256": "a53ce01af1fe931e53f09b14a2166fed021c3c19735430e631c75ed7a93d8e93",
+                "memberPath": "Group.Members[1]",
+                "floorFile": "research/version-3.2-update/items/extraction/map-config/TextAsset/Floor_171301.json",
+                "floorSha256": "a7d1258367b6dfd6b61a144b5f511ad6e7e99119ceef0b9b9b3c32e7bfeed3a7",
+                "groupListedInFloor": true,
+                "states": [
+                  {
+                    "path": "Group.Members",
+                    "suite": null,
+                    "backstage": null,
+                    "enabled": true,
+                    "submitId": 27,
+                    "cost": [
+                      [
+                        4340206,
+                        1
+                      ]
+                    ],
+                    "alternativeSubmitId": 0,
+                    "alternativeCost": [],
+                    "lockedDoorConfigId": 201
+                  },
+                  {
+                    "path": "Group.SuiteV2List[0].RefMembers[1]",
+                    "suite": 1,
+                    "backstage": false,
+                    "enabled": true,
+                    "submitId": 27,
+                    "cost": [
+                      [
+                        4340206,
+                        1
+                      ]
+                    ],
+                    "alternativeSubmitId": 0,
+                    "alternativeCost": [],
+                    "lockedDoorConfigId": 201
+                  },
+                  {
+                    "path": "Group.SuiteV2List[1].RefMembers[1]",
+                    "suite": 2,
+                    "backstage": false,
+                    "enabled": true,
+                    "submitId": 27,
+                    "cost": [
+                      [
+                        4340206,
+                        1
+                      ]
+                    ],
+                    "alternativeSubmitId": 0,
+                    "alternativeCost": [],
+                    "lockedDoorConfigId": 201
+                  }
+                ],
+                "worldPosition": {
+                  "x": -103.63438,
+                  "y": 9.794724,
+                  "z": -26.78787
+                },
+                "refreshCondition": null,
+                "doorId": "171300119:201",
+                "doorWorldPosition": {
+                  "x": -104.229515,
+                  "y": 8.494744,
+                  "z": -25.667019
+                }
+              }
+            ]
+          },
+          "conditions": [
+            "需要持有此门禁房对应的房卡；是否启用、是否已开启以本局实际状态为准。",
+            "目标采用读卡器原始坐标；未自动调整高度，也不代表门后的路径本局已经开放。"
+          ]
+        },
+        {
+          "id": "171300126:202",
+          "map": "janus",
+          "label": "白鸽二期工程顶层",
+          "kind": "keyroom",
+          "type": "keyroom",
+          "worldPosition": {
+            "x": 128.46957,
+            "y": 30.202267,
+            "z": 29.874043
+          },
+          "coordinateSpace": "source-world",
+          "cardItemId": 4340207,
+          "cardName": "白鸽二期工程顶层",
+          "cardQuantity": 1,
+          "cardTier": "S",
+          "doorId": "171300126:201",
+          "doorWorldPosition": {
+            "x": 128.33513,
+            "y": 28.706,
+            "z": 31.504162
+          },
+          "duplicateReaderIds": [],
+          "evidence": {
+            "status": "configured_card_reader_item_join",
+            "runtimeOpenConfirmed": false,
+            "sourceImageEntranceMatched": false,
+            "cardUsage": "使用后，可解除工业园-二期工程-顶层房间的门禁获得大量物资。",
+            "itemCatalog": "item-catalog.json",
+            "submitTable": "research/version-3.2-update/items/valuable-map-source-data/current-tables/TextAsset/12315940412468084600.txt",
+            "submitTableSha256": "51e57747793fc6f71b6241751a06b2b46c9bd107a6f2e21b9601cdcee386c45c",
+            "submitTableSchema": {
+              "rowIdSlot": 0,
+              "costPairVectorSlot": 3
+            },
+            "publicSubmitTable": {
+              "url": "https://git.mero.moe/dimbreath/ZenlessData/raw/commit/b084f66a42cf128b7c809c9ba1b5bcce96ae114b/FileCfg/SubmitConfigTemplateTb.json",
+              "sha256": "76f18f8735f6265916ef74c849db913169c60df64d628fa5103985764d5c5107",
+              "bytes": 15155
+            },
+            "all99SubmitRowsMatchedLocalClient": true,
+            "readerViewObject": "research/version-3.2-update/items/valuable-map-source-data/current-viewobjects/ViewObject_2001291.json",
+            "readerViewObjectSha256": "753abf1b5ad8de2c99e4c78dee87eec0ea9a129947355217daa9dbd3c205d919",
+            "memberEvidence": [
+              {
+                "readerId": "171300126:202",
+                "groupFile": "research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171300126.json",
+                "groupSha256": "4147a711951892ce804a04b73452dd0339b4ed1f0fc1af44dca8a9c0ff126c87",
+                "memberPath": "Group.Members[1]",
+                "floorFile": "research/version-3.2-update/items/extraction/map-config/TextAsset/Floor_171301.json",
+                "floorSha256": "a7d1258367b6dfd6b61a144b5f511ad6e7e99119ceef0b9b9b3c32e7bfeed3a7",
+                "groupListedInFloor": true,
+                "states": [
+                  {
+                    "path": "Group.Members",
+                    "suite": null,
+                    "backstage": null,
+                    "enabled": true,
+                    "submitId": 32,
+                    "cost": [
+                      [
+                        4340207,
+                        1
+                      ]
+                    ],
+                    "alternativeSubmitId": 0,
+                    "alternativeCost": [],
+                    "lockedDoorConfigId": 201
+                  },
+                  {
+                    "path": "Group.SuiteV2List[0].RefMembers[1]",
+                    "suite": 1,
+                    "backstage": false,
+                    "enabled": true,
+                    "submitId": 32,
+                    "cost": [
+                      [
+                        4340207,
+                        1
+                      ]
+                    ],
+                    "alternativeSubmitId": 0,
+                    "alternativeCost": [],
+                    "lockedDoorConfigId": 201
+                  },
+                  {
+                    "path": "Group.SuiteV2List[1].RefMembers[1]",
+                    "suite": 2,
+                    "backstage": false,
+                    "enabled": true,
+                    "submitId": 32,
+                    "cost": [
+                      [
+                        4340207,
+                        1
+                      ]
+                    ],
+                    "alternativeSubmitId": 0,
+                    "alternativeCost": [],
+                    "lockedDoorConfigId": 201
+                  }
+                ],
+                "worldPosition": {
+                  "x": 128.46957,
+                  "y": 30.202267,
+                  "z": 29.874043
+                },
+                "refreshCondition": null,
+                "doorId": "171300126:201",
+                "doorWorldPosition": {
+                  "x": 128.33513,
+                  "y": 28.706,
+                  "z": 31.504162
+                }
+              }
+            ]
+          },
+          "conditions": [
+            "需要持有此门禁房对应的房卡；是否启用、是否已开启以本局实际状态为准。",
+            "目标采用读卡器原始坐标；未自动调整高度，也不代表门后的路径本局已经开放。"
+          ]
+        },
+        {
+          "id": "171300130:202",
+          "map": "janus",
+          "label": "光映中心二层会客室",
+          "kind": "keyroom",
+          "type": "keyroom",
+          "worldPosition": {
+            "x": 166.36223,
+            "y": 72.770744,
+            "z": 353.30377
+          },
+          "coordinateSpace": "source-world",
+          "cardItemId": 4340208,
+          "cardName": "光映中心二层会客室",
+          "cardQuantity": 1,
+          "cardTier": "S",
+          "doorId": "171300130:201",
+          "doorWorldPosition": {
+            "x": 166.48134,
+            "y": 71.302475,
+            "z": 356.4463
+          },
+          "duplicateReaderIds": [],
+          "evidence": {
+            "status": "configured_card_reader_item_join",
+            "runtimeOpenConfirmed": false,
+            "sourceImageEntranceMatched": false,
+            "cardUsage": "使用后，可解除光映中心二层-会客室一的门禁获得大量物资。",
+            "itemCatalog": "item-catalog.json",
+            "submitTable": "research/version-3.2-update/items/valuable-map-source-data/current-tables/TextAsset/12315940412468084600.txt",
+            "submitTableSha256": "51e57747793fc6f71b6241751a06b2b46c9bd107a6f2e21b9601cdcee386c45c",
+            "submitTableSchema": {
+              "rowIdSlot": 0,
+              "costPairVectorSlot": 3
+            },
+            "publicSubmitTable": {
+              "url": "https://git.mero.moe/dimbreath/ZenlessData/raw/commit/b084f66a42cf128b7c809c9ba1b5bcce96ae114b/FileCfg/SubmitConfigTemplateTb.json",
+              "sha256": "76f18f8735f6265916ef74c849db913169c60df64d628fa5103985764d5c5107",
+              "bytes": 15155
+            },
+            "all99SubmitRowsMatchedLocalClient": true,
+            "readerViewObject": "research/version-3.2-update/items/valuable-map-source-data/current-viewobjects/ViewObject_2001291.json",
+            "readerViewObjectSha256": "753abf1b5ad8de2c99e4c78dee87eec0ea9a129947355217daa9dbd3c205d919",
+            "memberEvidence": [
+              {
+                "readerId": "171300130:202",
+                "groupFile": "research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171300130.json",
+                "groupSha256": "b214ec07031811a34937857621577df6b0df18f22e1771c19c49d272c41933eb",
+                "memberPath": "Group.Members[1]",
+                "floorFile": "research/version-3.2-update/items/extraction/map-config/TextAsset/Floor_171301.json",
+                "floorSha256": "a7d1258367b6dfd6b61a144b5f511ad6e7e99119ceef0b9b9b3c32e7bfeed3a7",
+                "groupListedInFloor": true,
+                "states": [
+                  {
+                    "path": "Group.Members",
+                    "suite": null,
+                    "backstage": null,
+                    "enabled": true,
+                    "submitId": 35,
+                    "cost": [
+                      [
+                        4340208,
+                        1
+                      ]
+                    ],
+                    "alternativeSubmitId": 0,
+                    "alternativeCost": [],
+                    "lockedDoorConfigId": 201
+                  }
+                ],
+                "worldPosition": {
+                  "x": 166.36223,
+                  "y": 72.770744,
+                  "z": 353.30377
+                },
+                "refreshCondition": null,
+                "doorId": "171300130:201",
+                "doorWorldPosition": {
+                  "x": 166.48134,
+                  "y": 71.302475,
+                  "z": 356.4463
+                }
+              }
+            ]
+          },
+          "conditions": [
+            "需要持有此门禁房对应的房卡；是否启用、是否已开启以本局实际状态为准。",
+            "目标采用读卡器原始坐标；未自动调整高度，也不代表门后的路径本局已经开放。"
+          ]
+        },
+        {
+          "id": "171300131:202",
+          "map": "janus",
+          "label": "光映中心一层休息室",
+          "kind": "keyroom",
+          "type": "keyroom",
+          "worldPosition": {
+            "x": 122.992516,
+            "y": 60.56231,
+            "z": 366.87103
+          },
+          "coordinateSpace": "source-world",
+          "cardItemId": 4340209,
+          "cardName": "光映中心一层休息室",
+          "cardQuantity": 1,
+          "cardTier": "S",
+          "doorId": "171300131:201",
+          "doorWorldPosition": {
+            "x": 118.45537,
+            "y": 59.632355,
+            "z": 367.3206
+          },
+          "duplicateReaderIds": [],
+          "evidence": {
+            "status": "configured_card_reader_item_join",
+            "runtimeOpenConfirmed": false,
+            "sourceImageEntranceMatched": false,
+            "cardUsage": "使用后，可解除光映中心一层-休息室的门禁获得大量物资。",
+            "itemCatalog": "item-catalog.json",
+            "submitTable": "research/version-3.2-update/items/valuable-map-source-data/current-tables/TextAsset/12315940412468084600.txt",
+            "submitTableSha256": "51e57747793fc6f71b6241751a06b2b46c9bd107a6f2e21b9601cdcee386c45c",
+            "submitTableSchema": {
+              "rowIdSlot": 0,
+              "costPairVectorSlot": 3
+            },
+            "publicSubmitTable": {
+              "url": "https://git.mero.moe/dimbreath/ZenlessData/raw/commit/b084f66a42cf128b7c809c9ba1b5bcce96ae114b/FileCfg/SubmitConfigTemplateTb.json",
+              "sha256": "76f18f8735f6265916ef74c849db913169c60df64d628fa5103985764d5c5107",
+              "bytes": 15155
+            },
+            "all99SubmitRowsMatchedLocalClient": true,
+            "readerViewObject": "research/version-3.2-update/items/valuable-map-source-data/current-viewobjects/ViewObject_2001291.json",
+            "readerViewObjectSha256": "753abf1b5ad8de2c99e4c78dee87eec0ea9a129947355217daa9dbd3c205d919",
+            "memberEvidence": [
+              {
+                "readerId": "171300131:202",
+                "groupFile": "research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171300131.json",
+                "groupSha256": "0f6f245c36efa6794489fb75d4cf6346036b519ad7174ffa01dd6dbe498c7ae9",
+                "memberPath": "Group.Members[1]",
+                "floorFile": "research/version-3.2-update/items/extraction/map-config/TextAsset/Floor_171301.json",
+                "floorSha256": "a7d1258367b6dfd6b61a144b5f511ad6e7e99119ceef0b9b9b3c32e7bfeed3a7",
+                "groupListedInFloor": true,
+                "states": [
+                  {
+                    "path": "Group.Members",
+                    "suite": null,
+                    "backstage": null,
+                    "enabled": true,
+                    "submitId": 36,
+                    "cost": [
+                      [
+                        4340209,
+                        1
+                      ]
+                    ],
+                    "alternativeSubmitId": 0,
+                    "alternativeCost": [],
+                    "lockedDoorConfigId": 201
+                  }
+                ],
+                "worldPosition": {
+                  "x": 122.992516,
+                  "y": 60.56231,
+                  "z": 366.87103
+                },
+                "refreshCondition": null,
+                "doorId": "171300131:201",
+                "doorWorldPosition": {
+                  "x": 118.45537,
+                  "y": 59.632355,
+                  "z": 367.3206
+                }
+              }
+            ]
+          },
+          "conditions": [
+            "需要持有此门禁房对应的房卡；是否启用、是否已开启以本局实际状态为准。",
+            "目标采用读卡器原始坐标；未自动调整高度，也不代表门后的路径本局已经开放。"
+          ]
+        },
+        {
+          "id": "171300129:202",
+          "map": "janus",
+          "label": "光映中心顶层会议室",
+          "kind": "keyroom",
+          "type": "keyroom",
+          "worldPosition": {
+            "x": 119.059326,
+            "y": 84.8013,
+            "z": 350.11813
+          },
+          "coordinateSpace": "source-world",
+          "cardItemId": 4340302,
+          "cardName": "光映中心顶层会议室",
+          "cardQuantity": 1,
+          "cardTier": "Z",
+          "doorId": "171300129:201",
+          "doorWorldPosition": {
+            "x": 119.01792,
+            "y": 83.49711,
+            "z": 346.3949
+          },
+          "duplicateReaderIds": [],
+          "evidence": {
+            "status": "configured_card_reader_item_join",
+            "runtimeOpenConfirmed": false,
+            "sourceImageEntranceMatched": false,
+            "cardUsage": "使用后，可解除光映中心-顶层会议室的门禁获得大量物资。",
+            "itemCatalog": "item-catalog.json",
+            "submitTable": "research/version-3.2-update/items/valuable-map-source-data/current-tables/TextAsset/12315940412468084600.txt",
+            "submitTableSha256": "51e57747793fc6f71b6241751a06b2b46c9bd107a6f2e21b9601cdcee386c45c",
+            "submitTableSchema": {
+              "rowIdSlot": 0,
+              "costPairVectorSlot": 3
+            },
+            "publicSubmitTable": {
+              "url": "https://git.mero.moe/dimbreath/ZenlessData/raw/commit/b084f66a42cf128b7c809c9ba1b5bcce96ae114b/FileCfg/SubmitConfigTemplateTb.json",
+              "sha256": "76f18f8735f6265916ef74c849db913169c60df64d628fa5103985764d5c5107",
+              "bytes": 15155
+            },
+            "all99SubmitRowsMatchedLocalClient": true,
+            "readerViewObject": "research/version-3.2-update/items/valuable-map-source-data/current-viewobjects/ViewObject_2001291.json",
+            "readerViewObjectSha256": "753abf1b5ad8de2c99e4c78dee87eec0ea9a129947355217daa9dbd3c205d919",
+            "memberEvidence": [
+              {
+                "readerId": "171300129:202",
+                "groupFile": "research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171300129.json",
+                "groupSha256": "597381d7f265b2a03afa4faf80a3ec3520c3b5feeb5c123932ff27f0badcf202",
+                "memberPath": "Group.Members[1]",
+                "floorFile": "research/version-3.2-update/items/extraction/map-config/TextAsset/Floor_171301.json",
+                "floorSha256": "a7d1258367b6dfd6b61a144b5f511ad6e7e99119ceef0b9b9b3c32e7bfeed3a7",
+                "groupListedInFloor": true,
+                "states": [
+                  {
+                    "path": "Group.Members",
+                    "suite": null,
+                    "backstage": null,
+                    "enabled": true,
+                    "submitId": 34,
+                    "cost": [
+                      [
+                        4340302,
+                        1
+                      ]
+                    ],
+                    "alternativeSubmitId": 0,
+                    "alternativeCost": [],
+                    "lockedDoorConfigId": 201
+                  }
+                ],
+                "worldPosition": {
+                  "x": 119.059326,
+                  "y": 84.8013,
+                  "z": 350.11813
+                },
+                "refreshCondition": null,
+                "doorId": "171300129:201",
+                "doorWorldPosition": {
+                  "x": 119.01792,
+                  "y": 83.49711,
+                  "z": 346.3949
+                }
+              }
+            ]
+          },
+          "conditions": [
+            "需要持有此门禁房对应的房卡；是否启用、是否已开启以本局实际状态为准。",
+            "目标采用读卡器原始坐标；未自动调整高度，也不代表门后的路径本局已经开放。"
+          ]
+        }
+      ],
+      "unmapped": [],
+      "excludedReaders": [
+        {
+          "id": "171300114:202",
+          "reason": "消耗物不是当前目录的11种具名门禁房卡；委托卡、任务卡及未展示旧卡不混入。",
+          "cost": [
+            [
+              4340104,
+              1
+            ]
+          ]
+        },
+        {
+          "id": "171300117:202",
+          "reason": "消耗物不是当前目录的11种具名门禁房卡；委托卡、任务卡及未展示旧卡不混入。",
+          "cost": [
+            [
+              4340105,
+              1
+            ]
+          ]
+        },
+        {
+          "id": "171300118:202",
+          "reason": "消耗物不是当前目录的11种具名门禁房卡；委托卡、任务卡及未展示旧卡不混入。",
+          "cost": [
+            [
+              4340106,
+              1
+            ]
+          ]
+        },
+        {
+          "id": "171300120:202",
+          "reason": "消耗物不是当前目录的11种具名门禁房卡；委托卡、任务卡及未展示旧卡不混入。",
+          "cost": [
+            [
+              4364005,
+              1
+            ]
+          ]
+        },
+        {
+          "id": "171300127:202",
+          "reason": "消耗物不是当前目录的11种具名门禁房卡；委托卡、任务卡及未展示旧卡不混入。",
+          "cost": [
+            [
+              4340107,
+              1
+            ]
+          ]
+        },
+        {
+          "id": "171300132:202",
+          "reason": "消耗物不是当前目录的11种具名门禁房卡；委托卡、任务卡及未展示旧卡不混入。",
+          "cost": [
+            [
+              4340108,
+              1
+            ]
+          ]
+        },
+        {
+          "id": "171300133:202",
+          "reason": "消耗物不是当前目录的11种具名门禁房卡；委托卡、任务卡及未展示旧卡不混入。",
+          "cost": [
+            [
+              4340109,
+              1
+            ]
+          ]
+        },
+        {
+          "id": "171300146:209",
+          "reason": "消耗物不是当前目录的11种具名门禁房卡；委托卡、任务卡及未展示旧卡不混入。",
+          "cost": [
+            [
+              4360093,
+              1
+            ]
+          ]
+        },
+        {
+          "id": "171300390:203",
+          "reason": "卡片用途文字区域与该Floor所属地图冲突，暂不当作可用房卡入口。",
+          "cardItemId": 4340202
+        }
+      ],
+      "sourceImageMapping": {
+        "status": "not_used",
+        "note": "本表按房卡物品关联原生读卡器；没有借用或覆盖资料图旧keyroom的坐标及choices。"
+      }
+    },
+    {
+      "map": "suburbs",
+      "points": [
+        {
+          "id": "171200338:202",
+          "map": "suburbs",
+          "label": "风蚀公路汽车旅馆二层",
+          "kind": "keyroom",
+          "type": "keyroom",
+          "worldPosition": {
+            "x": 190.22173,
+            "y": 61.52388,
+            "z": -88.66257
+          },
+          "coordinateSpace": "source-world",
+          "cardItemId": 4340102,
+          "cardName": "风蚀公路汽车旅馆二层",
+          "cardQuantity": 1,
+          "cardTier": "S",
+          "doorId": "171200338:201",
+          "doorWorldPosition": {
+            "x": 189.74861,
+            "y": 60.03136,
+            "z": -89.86715
+          },
+          "duplicateReaderIds": [],
+          "evidence": {
+            "status": "configured_card_reader_item_join",
+            "runtimeOpenConfirmed": false,
+            "sourceImageEntranceMatched": false,
+            "cardUsage": "使用后，可解除风蚀公路-汽车旅馆-二层房间的门禁获得大量物资。",
+            "itemCatalog": "item-catalog.json",
+            "submitTable": "research/version-3.2-update/items/valuable-map-source-data/current-tables/TextAsset/12315940412468084600.txt",
+            "submitTableSha256": "51e57747793fc6f71b6241751a06b2b46c9bd107a6f2e21b9601cdcee386c45c",
+            "submitTableSchema": {
+              "rowIdSlot": 0,
+              "costPairVectorSlot": 3
+            },
+            "publicSubmitTable": {
+              "url": "https://git.mero.moe/dimbreath/ZenlessData/raw/commit/b084f66a42cf128b7c809c9ba1b5bcce96ae114b/FileCfg/SubmitConfigTemplateTb.json",
+              "sha256": "76f18f8735f6265916ef74c849db913169c60df64d628fa5103985764d5c5107",
+              "bytes": 15155
+            },
+            "all99SubmitRowsMatchedLocalClient": true,
+            "readerViewObject": "research/version-3.2-update/items/valuable-map-source-data/current-viewobjects/ViewObject_2001291.json",
+            "readerViewObjectSha256": "753abf1b5ad8de2c99e4c78dee87eec0ea9a129947355217daa9dbd3c205d919",
+            "memberEvidence": [
+              {
+                "readerId": "171200338:202",
+                "groupFile": "research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171200338.json",
+                "groupSha256": "3b7fbfcf45290792f30372186ff33e1920268b058e217d99f1e078871f6fcd78",
+                "memberPath": "Group.Members[1]",
+                "floorFile": "research/version-3.2-update/items/extraction/map-config/TextAsset/Floor_171201.json",
+                "floorSha256": "0d1faf02f6a2f9a755e460500c786c0cb822083f6258d68f6cc810646976b2c4",
+                "groupListedInFloor": true,
+                "states": [
+                  {
+                    "path": "Group.Members",
+                    "suite": null,
+                    "backstage": null,
+                    "enabled": true,
+                    "submitId": 9,
+                    "cost": [
+                      [
+                        4340102,
+                        1
+                      ]
+                    ],
+                    "alternativeSubmitId": 42,
+                    "alternativeCost": [
+                      [
+                        4360093,
+                        1
+                      ]
+                    ],
+                    "lockedDoorConfigId": 201
+                  }
+                ],
+                "worldPosition": {
+                  "x": 190.22173,
+                  "y": 61.52388,
+                  "z": -88.66257
+                },
+                "refreshCondition": null,
+                "doorId": "171200338:201",
+                "doorWorldPosition": {
+                  "x": 189.74861,
+                  "y": 60.03136,
+                  "z": -89.86715
+                }
+              }
+            ]
+          },
+          "conditions": [
+            "需要持有此门禁房对应的房卡；是否启用、是否已开启以本局实际状态为准。",
+            "目标采用读卡器原始坐标；未自动调整高度，也不代表门后的路径本局已经开放。"
+          ]
+        },
+        {
+          "id": "171200333:202",
+          "map": "suburbs",
+          "label": "无力野人镇芝邦邦餐厅",
+          "kind": "keyroom",
+          "type": "keyroom",
+          "worldPosition": {
+            "x": -147.89449,
+            "y": 68.23208,
+            "z": -167.7154
+          },
+          "coordinateSpace": "source-world",
+          "cardItemId": 4340201,
+          "cardName": "无力野人镇芝邦邦餐厅",
+          "cardQuantity": 1,
+          "cardTier": "S",
+          "doorId": "171200333:201",
+          "doorWorldPosition": {
+            "x": -148.00745,
+            "y": 66.80072,
+            "z": -166.38689
+          },
+          "duplicateReaderIds": [],
+          "evidence": {
+            "status": "configured_card_reader_item_join",
+            "runtimeOpenConfirmed": false,
+            "sourceImageEntranceMatched": false,
+            "cardUsage": "使用后，可解除无力野人镇-芝邦邦餐厅-储物室的门禁获得大量物资。",
+            "itemCatalog": "item-catalog.json",
+            "submitTable": "research/version-3.2-update/items/valuable-map-source-data/current-tables/TextAsset/12315940412468084600.txt",
+            "submitTableSha256": "51e57747793fc6f71b6241751a06b2b46c9bd107a6f2e21b9601cdcee386c45c",
+            "submitTableSchema": {
+              "rowIdSlot": 0,
+              "costPairVectorSlot": 3
+            },
+            "publicSubmitTable": {
+              "url": "https://git.mero.moe/dimbreath/ZenlessData/raw/commit/b084f66a42cf128b7c809c9ba1b5bcce96ae114b/FileCfg/SubmitConfigTemplateTb.json",
+              "sha256": "76f18f8735f6265916ef74c849db913169c60df64d628fa5103985764d5c5107",
+              "bytes": 15155
+            },
+            "all99SubmitRowsMatchedLocalClient": true,
+            "readerViewObject": "research/version-3.2-update/items/valuable-map-source-data/current-viewobjects/ViewObject_2001291.json",
+            "readerViewObjectSha256": "753abf1b5ad8de2c99e4c78dee87eec0ea9a129947355217daa9dbd3c205d919",
+            "memberEvidence": [
+              {
+                "readerId": "171200333:202",
+                "groupFile": "research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171200333.json",
+                "groupSha256": "4bc4ab190c11cde38ea6bb6e831a9ab0ab853b54425c6574db094a01b255e153",
+                "memberPath": "Group.Members[1]",
+                "floorFile": "research/version-3.2-update/items/extraction/map-config/TextAsset/Floor_171201.json",
+                "floorSha256": "0d1faf02f6a2f9a755e460500c786c0cb822083f6258d68f6cc810646976b2c4",
+                "groupListedInFloor": true,
+                "states": [
+                  {
+                    "path": "Group.Members",
+                    "suite": null,
+                    "backstage": null,
+                    "enabled": true,
+                    "submitId": 7,
+                    "cost": [
+                      [
+                        4340201,
+                        1
+                      ]
+                    ],
+                    "alternativeSubmitId": 42,
+                    "alternativeCost": [
+                      [
+                        4360093,
+                        1
+                      ]
+                    ],
+                    "lockedDoorConfigId": 201
+                  }
+                ],
+                "worldPosition": {
+                  "x": -147.89449,
+                  "y": 68.23208,
+                  "z": -167.7154
+                },
+                "refreshCondition": null,
+                "doorId": "171200333:201",
+                "doorWorldPosition": {
+                  "x": -148.00745,
+                  "y": 66.80072,
+                  "z": -166.38689
+                }
+              }
+            ]
+          },
+          "conditions": [
+            "需要持有此门禁房对应的房卡；是否启用、是否已开启以本局实际状态为准。",
+            "目标采用读卡器原始坐标；未自动调整高度，也不代表门后的路径本局已经开放。"
+          ]
+        },
+        {
+          "id": "171200337:202",
+          "map": "suburbs",
+          "label": "风蚀公路加油站",
+          "kind": "keyroom",
+          "type": "keyroom",
+          "worldPosition": {
+            "x": 80.5124,
+            "y": 54.21183,
+            "z": -91.67111
+          },
+          "coordinateSpace": "source-world",
+          "cardItemId": 4340202,
+          "cardName": "风蚀公路加油站",
+          "cardQuantity": 1,
+          "cardTier": "S",
+          "doorId": "171200337:201",
+          "doorWorldPosition": {
+            "x": 79.938675,
+            "y": 52.790955,
+            "z": -92.62838
+          },
+          "duplicateReaderIds": [
+            "171200353:202"
+          ],
+          "evidence": {
+            "status": "configured_card_reader_item_join",
+            "runtimeOpenConfirmed": false,
+            "sourceImageEntranceMatched": false,
+            "cardUsage": "使用后，可解除风蚀公路-加油站-东侧办公室的门禁获得大量物资。",
+            "itemCatalog": "item-catalog.json",
+            "submitTable": "research/version-3.2-update/items/valuable-map-source-data/current-tables/TextAsset/12315940412468084600.txt",
+            "submitTableSha256": "51e57747793fc6f71b6241751a06b2b46c9bd107a6f2e21b9601cdcee386c45c",
+            "submitTableSchema": {
+              "rowIdSlot": 0,
+              "costPairVectorSlot": 3
+            },
+            "publicSubmitTable": {
+              "url": "https://git.mero.moe/dimbreath/ZenlessData/raw/commit/b084f66a42cf128b7c809c9ba1b5bcce96ae114b/FileCfg/SubmitConfigTemplateTb.json",
+              "sha256": "76f18f8735f6265916ef74c849db913169c60df64d628fa5103985764d5c5107",
+              "bytes": 15155
+            },
+            "all99SubmitRowsMatchedLocalClient": true,
+            "readerViewObject": "research/version-3.2-update/items/valuable-map-source-data/current-viewobjects/ViewObject_2001291.json",
+            "readerViewObjectSha256": "753abf1b5ad8de2c99e4c78dee87eec0ea9a129947355217daa9dbd3c205d919",
+            "memberEvidence": [
+              {
+                "readerId": "171200337:202",
+                "groupFile": "research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171200337.json",
+                "groupSha256": "3ae2bb54780239bab030d6bb7c5a836381560e7d2a9f9e55ced164ce38bf4e2c",
+                "memberPath": "Group.Members[1]",
+                "floorFile": "research/version-3.2-update/items/extraction/map-config/TextAsset/Floor_171201.json",
+                "floorSha256": "0d1faf02f6a2f9a755e460500c786c0cb822083f6258d68f6cc810646976b2c4",
+                "groupListedInFloor": true,
+                "states": [
+                  {
+                    "path": "Group.Members",
+                    "suite": null,
+                    "backstage": null,
+                    "enabled": true,
+                    "submitId": 10,
+                    "cost": [
+                      [
+                        4340202,
+                        1
+                      ]
+                    ],
+                    "alternativeSubmitId": 42,
+                    "alternativeCost": [
+                      [
+                        4360093,
+                        1
+                      ]
+                    ],
+                    "lockedDoorConfigId": 201
+                  },
+                  {
+                    "path": "Group.SuiteV2List[0].RefMembers[1]",
+                    "suite": 1,
+                    "backstage": false,
+                    "enabled": true,
+                    "submitId": 10,
+                    "cost": [
+                      [
+                        4340202,
+                        1
+                      ]
+                    ],
+                    "alternativeSubmitId": 42,
+                    "alternativeCost": [
+                      [
+                        4360093,
+                        1
+                      ]
+                    ],
+                    "lockedDoorConfigId": 201
+                  },
+                  {
+                    "path": "Group.SuiteV2List[1].RefMembers[1]",
+                    "suite": 2,
+                    "backstage": false,
+                    "enabled": true,
+                    "submitId": 10,
+                    "cost": [
+                      [
+                        4340202,
+                        1
+                      ]
+                    ],
+                    "alternativeSubmitId": 42,
+                    "alternativeCost": [
+                      [
+                        4360093,
+                        1
+                      ]
+                    ],
+                    "lockedDoorConfigId": 201
+                  }
+                ],
+                "worldPosition": {
+                  "x": 80.5124,
+                  "y": 54.21183,
+                  "z": -91.67111
+                },
+                "refreshCondition": null,
+                "doorId": "171200337:201",
+                "doorWorldPosition": {
+                  "x": 79.938675,
+                  "y": 52.790955,
+                  "z": -92.62838
+                }
+              },
+              {
+                "readerId": "171200353:202",
+                "groupFile": "research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171200353.json",
+                "groupSha256": "e9912dc653d004a52fa1d000533bc2af5397c718dd25c5c2ec7f6a44251f71b7",
+                "memberPath": "Group.Members[1]",
+                "floorFile": "research/version-3.2-update/items/extraction/map-config/TextAsset/Floor_171201.json",
+                "floorSha256": "0d1faf02f6a2f9a755e460500c786c0cb822083f6258d68f6cc810646976b2c4",
+                "groupListedInFloor": true,
+                "states": [
+                  {
+                    "path": "Group.Members",
+                    "suite": null,
+                    "backstage": null,
+                    "enabled": true,
+                    "submitId": 10,
+                    "cost": [
+                      [
+                        4340202,
+                        1
+                      ]
+                    ],
+                    "alternativeSubmitId": 42,
+                    "alternativeCost": [
+                      [
+                        4360093,
+                        1
+                      ]
+                    ],
+                    "lockedDoorConfigId": 201
+                  }
+                ],
+                "worldPosition": {
+                  "x": 80.5124,
+                  "y": 54.21183,
+                  "z": -91.67111
+                },
+                "refreshCondition": null,
+                "doorId": "171200353:201",
+                "doorWorldPosition": {
+                  "x": 79.938675,
+                  "y": 52.790955,
+                  "z": -92.62838
+                }
+              }
+            ]
+          },
+          "conditions": [
+            "需要持有此门禁房对应的房卡；是否启用、是否已开启以本局实际状态为准。",
+            "目标采用读卡器原始坐标；未自动调整高度，也不代表门后的路径本局已经开放。"
+          ]
+        },
+        {
+          "id": "171200330:202",
+          "map": "suburbs",
+          "label": "无力野人镇仓储中心二层板房",
+          "kind": "keyroom",
+          "type": "keyroom",
+          "worldPosition": {
+            "x": -199.2451,
+            "y": 72.32607,
+            "z": -140.89838
+          },
+          "coordinateSpace": "source-world",
+          "cardItemId": 4340203,
+          "cardName": "无力野人镇仓储中心二层板房",
+          "cardQuantity": 1,
+          "cardTier": "S",
+          "doorId": "171200330:201",
+          "doorWorldPosition": {
+            "x": -199.25992,
+            "y": 70.82282,
+            "z": -139.73872
+          },
+          "duplicateReaderIds": [
+            "171200354:202"
+          ],
+          "evidence": {
+            "status": "configured_card_reader_item_join",
+            "runtimeOpenConfirmed": false,
+            "sourceImageEntranceMatched": false,
+            "cardUsage": "使用后，可解除无力野人镇-仓储中心-板房二层的门禁获得大量物资。",
+            "itemCatalog": "item-catalog.json",
+            "submitTable": "research/version-3.2-update/items/valuable-map-source-data/current-tables/TextAsset/12315940412468084600.txt",
+            "submitTableSha256": "51e57747793fc6f71b6241751a06b2b46c9bd107a6f2e21b9601cdcee386c45c",
+            "submitTableSchema": {
+              "rowIdSlot": 0,
+              "costPairVectorSlot": 3
+            },
+            "publicSubmitTable": {
+              "url": "https://git.mero.moe/dimbreath/ZenlessData/raw/commit/b084f66a42cf128b7c809c9ba1b5bcce96ae114b/FileCfg/SubmitConfigTemplateTb.json",
+              "sha256": "76f18f8735f6265916ef74c849db913169c60df64d628fa5103985764d5c5107",
+              "bytes": 15155
+            },
+            "all99SubmitRowsMatchedLocalClient": true,
+            "readerViewObject": "research/version-3.2-update/items/valuable-map-source-data/current-viewobjects/ViewObject_2001291.json",
+            "readerViewObjectSha256": "753abf1b5ad8de2c99e4c78dee87eec0ea9a129947355217daa9dbd3c205d919",
+            "memberEvidence": [
+              {
+                "readerId": "171200330:202",
+                "groupFile": "research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171200330.json",
+                "groupSha256": "335c483c4eccbf7dff565c0f8947a2770fa86313c9e44488dee45a93b53ddd3d",
+                "memberPath": "Group.Members[1]",
+                "floorFile": "research/version-3.2-update/items/extraction/map-config/TextAsset/Floor_171201.json",
+                "floorSha256": "0d1faf02f6a2f9a755e460500c786c0cb822083f6258d68f6cc810646976b2c4",
+                "groupListedInFloor": true,
+                "states": [
+                  {
+                    "path": "Group.Members",
+                    "suite": null,
+                    "backstage": null,
+                    "enabled": true,
+                    "submitId": 12,
+                    "cost": [
+                      [
+                        4340203,
+                        1
+                      ]
+                    ],
+                    "alternativeSubmitId": 42,
+                    "alternativeCost": [
+                      [
+                        4360093,
+                        1
+                      ]
+                    ],
+                    "lockedDoorConfigId": 201
+                  },
+                  {
+                    "path": "Group.SuiteV2List[0].RefMembers[1]",
+                    "suite": 1,
+                    "backstage": false,
+                    "enabled": true,
+                    "submitId": 12,
+                    "cost": [
+                      [
+                        4340203,
+                        1
+                      ]
+                    ],
+                    "alternativeSubmitId": 42,
+                    "alternativeCost": [
+                      [
+                        4360093,
+                        1
+                      ]
+                    ],
+                    "lockedDoorConfigId": 201
+                  },
+                  {
+                    "path": "Group.SuiteV2List[1].RefMembers[1]",
+                    "suite": 2,
+                    "backstage": false,
+                    "enabled": true,
+                    "submitId": 12,
+                    "cost": [
+                      [
+                        4340203,
+                        1
+                      ]
+                    ],
+                    "alternativeSubmitId": 42,
+                    "alternativeCost": [
+                      [
+                        4360093,
+                        1
+                      ]
+                    ],
+                    "lockedDoorConfigId": 201
+                  }
+                ],
+                "worldPosition": {
+                  "x": -199.2451,
+                  "y": 72.32607,
+                  "z": -140.89838
+                },
+                "refreshCondition": null,
+                "doorId": "171200330:201",
+                "doorWorldPosition": {
+                  "x": -199.25992,
+                  "y": 70.82282,
+                  "z": -139.73872
+                }
+              },
+              {
+                "readerId": "171200354:202",
+                "groupFile": "research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171200354.json",
+                "groupSha256": "6dda688ac97be53d6ecb3d0cbd1759e5a4b36c312bfd4e9f07738831725539f8",
+                "memberPath": "Group.Members[1]",
+                "floorFile": "research/version-3.2-update/items/extraction/map-config/TextAsset/Floor_171201.json",
+                "floorSha256": "0d1faf02f6a2f9a755e460500c786c0cb822083f6258d68f6cc810646976b2c4",
+                "groupListedInFloor": true,
+                "states": [
+                  {
+                    "path": "Group.Members",
+                    "suite": null,
+                    "backstage": null,
+                    "enabled": true,
+                    "submitId": 12,
+                    "cost": [
+                      [
+                        4340203,
+                        1
+                      ]
+                    ],
+                    "alternativeSubmitId": 42,
+                    "alternativeCost": [
+                      [
+                        4360093,
+                        1
+                      ]
+                    ],
+                    "lockedDoorConfigId": 201
+                  }
+                ],
+                "worldPosition": {
+                  "x": -199.2451,
+                  "y": 72.32607,
+                  "z": -140.89838
+                },
+                "refreshCondition": null,
+                "doorId": "171200354:201",
+                "doorWorldPosition": {
+                  "x": -199.25992,
+                  "y": 70.82282,
+                  "z": -139.73872
+                }
+              }
+            ]
+          },
+          "conditions": [
+            "需要持有此门禁房对应的房卡；是否启用、是否已开启以本局实际状态为准。",
+            "目标采用读卡器原始坐标；未自动调整高度，也不代表门后的路径本局已经开放。"
+          ]
+        },
+        {
+          "id": "171200321:202",
+          "map": "suburbs",
+          "label": "绮梦沙滩魅影水族馆西门",
+          "kind": "keyroom",
+          "type": "keyroom",
+          "worldPosition": {
+            "x": 20.509726,
+            "y": 23.2243,
+            "z": 43.012897
+          },
+          "coordinateSpace": "source-world",
+          "cardItemId": 4340204,
+          "cardName": "绮梦沙滩魅影水族馆西门",
+          "cardQuantity": 1,
+          "cardTier": "S",
+          "doorId": "171200321:201",
+          "doorWorldPosition": {
+            "x": 18.531439,
+            "y": 22.266602,
+            "z": 43.031532
+          },
+          "duplicateReaderIds": [
+            "171200355:202"
+          ],
+          "evidence": {
+            "status": "configured_card_reader_item_join",
+            "runtimeOpenConfirmed": false,
+            "sourceImageEntranceMatched": false,
+            "cardUsage": "使用后，可解除绮梦沙滩-魅影水族馆西侧大门的门禁获得大量物资。",
+            "itemCatalog": "item-catalog.json",
+            "submitTable": "research/version-3.2-update/items/valuable-map-source-data/current-tables/TextAsset/12315940412468084600.txt",
+            "submitTableSha256": "51e57747793fc6f71b6241751a06b2b46c9bd107a6f2e21b9601cdcee386c45c",
+            "submitTableSchema": {
+              "rowIdSlot": 0,
+              "costPairVectorSlot": 3
+            },
+            "publicSubmitTable": {
+              "url": "https://git.mero.moe/dimbreath/ZenlessData/raw/commit/b084f66a42cf128b7c809c9ba1b5bcce96ae114b/FileCfg/SubmitConfigTemplateTb.json",
+              "sha256": "76f18f8735f6265916ef74c849db913169c60df64d628fa5103985764d5c5107",
+              "bytes": 15155
+            },
+            "all99SubmitRowsMatchedLocalClient": true,
+            "readerViewObject": "research/version-3.2-update/items/valuable-map-source-data/current-viewobjects/ViewObject_2001291.json",
+            "readerViewObjectSha256": "753abf1b5ad8de2c99e4c78dee87eec0ea9a129947355217daa9dbd3c205d919",
+            "memberEvidence": [
+              {
+                "readerId": "171200321:202",
+                "groupFile": "research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171200321.json",
+                "groupSha256": "fb3863d2d261036bff3804b4bf3ffacc51dd371c4a8bb1f1f841fa8352649f65",
+                "memberPath": "Group.Members[1]",
+                "floorFile": "research/version-3.2-update/items/extraction/map-config/TextAsset/Floor_171201.json",
+                "floorSha256": "0d1faf02f6a2f9a755e460500c786c0cb822083f6258d68f6cc810646976b2c4",
+                "groupListedInFloor": true,
+                "states": [
+                  {
+                    "path": "Group.Members",
+                    "suite": null,
+                    "backstage": null,
+                    "enabled": true,
+                    "submitId": 14,
+                    "cost": [
+                      [
+                        4340204,
+                        1
+                      ]
+                    ],
+                    "alternativeSubmitId": 42,
+                    "alternativeCost": [
+                      [
+                        4360093,
+                        1
+                      ]
+                    ],
+                    "lockedDoorConfigId": 201
+                  },
+                  {
+                    "path": "Group.SuiteV2List[0].RefMembers[1]",
+                    "suite": 1,
+                    "backstage": false,
+                    "enabled": true,
+                    "submitId": 14,
+                    "cost": [
+                      [
+                        4340204,
+                        1
+                      ]
+                    ],
+                    "alternativeSubmitId": 42,
+                    "alternativeCost": [
+                      [
+                        4360093,
+                        1
+                      ]
+                    ],
+                    "lockedDoorConfigId": 201
+                  },
+                  {
+                    "path": "Group.SuiteV2List[1].RefMembers[1]",
+                    "suite": 2,
+                    "backstage": false,
+                    "enabled": true,
+                    "submitId": 14,
+                    "cost": [
+                      [
+                        4340204,
+                        1
+                      ]
+                    ],
+                    "alternativeSubmitId": 42,
+                    "alternativeCost": [
+                      [
+                        4360093,
+                        1
+                      ]
+                    ],
+                    "lockedDoorConfigId": 201
+                  }
+                ],
+                "worldPosition": {
+                  "x": 20.509726,
+                  "y": 23.2243,
+                  "z": 43.012897
+                },
+                "refreshCondition": null,
+                "doorId": "171200321:201",
+                "doorWorldPosition": {
+                  "x": 18.531439,
+                  "y": 22.266602,
+                  "z": 43.031532
+                }
+              },
+              {
+                "readerId": "171200355:202",
+                "groupFile": "research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171200355.json",
+                "groupSha256": "d1da37a799b60a03aa1d88032643b0e59c2234f6c470b126c8a670cdb7587c9c",
+                "memberPath": "Group.Members[1]",
+                "floorFile": "research/version-3.2-update/items/extraction/map-config/TextAsset/Floor_171201.json",
+                "floorSha256": "0d1faf02f6a2f9a755e460500c786c0cb822083f6258d68f6cc810646976b2c4",
+                "groupListedInFloor": true,
+                "states": [
+                  {
+                    "path": "Group.Members",
+                    "suite": null,
+                    "backstage": null,
+                    "enabled": true,
+                    "submitId": 14,
+                    "cost": [
+                      [
+                        4340204,
+                        1
+                      ]
+                    ],
+                    "alternativeSubmitId": 42,
+                    "alternativeCost": [
+                      [
+                        4360093,
+                        1
+                      ]
+                    ],
+                    "lockedDoorConfigId": 201
+                  }
+                ],
+                "worldPosition": {
+                  "x": 20.509726,
+                  "y": 23.2243,
+                  "z": 43.012897
+                },
+                "refreshCondition": null,
+                "doorId": "171200355:201",
+                "doorWorldPosition": {
+                  "x": 18.531439,
+                  "y": 22.266602,
+                  "z": 43.031532
+                }
+              }
+            ]
+          },
+          "conditions": [
+            "需要持有此门禁房对应的房卡；是否启用、是否已开启以本局实际状态为准。",
+            "目标采用读卡器原始坐标；未自动调整高度，也不代表门后的路径本局已经开放。"
+          ]
+        },
+        {
+          "id": "171200325:202",
+          "map": "suburbs",
+          "label": "巴哈姆特仓库二层",
+          "kind": "keyroom",
+          "type": "keyroom",
+          "worldPosition": {
+            "x": -207.17616,
+            "y": 53.98765,
+            "z": 71.47178
+          },
+          "coordinateSpace": "source-world",
+          "cardItemId": 4340301,
+          "cardName": "巴哈姆特仓库二层",
+          "cardQuantity": 1,
+          "cardTier": "Z",
+          "doorId": "171200325:201",
+          "doorWorldPosition": {
+            "x": -209.0461,
+            "y": 52.582115,
+            "z": 71.49635
+          },
+          "duplicateReaderIds": [],
+          "evidence": {
+            "status": "configured_card_reader_item_join",
+            "runtimeOpenConfirmed": false,
+            "sourceImageEntranceMatched": false,
+            "cardUsage": "使用后，可解除巴哈姆特仓库-二层控制室门禁获得大量物资。",
+            "itemCatalog": "item-catalog.json",
+            "submitTable": "research/version-3.2-update/items/valuable-map-source-data/current-tables/TextAsset/12315940412468084600.txt",
+            "submitTableSha256": "51e57747793fc6f71b6241751a06b2b46c9bd107a6f2e21b9601cdcee386c45c",
+            "submitTableSchema": {
+              "rowIdSlot": 0,
+              "costPairVectorSlot": 3
+            },
+            "publicSubmitTable": {
+              "url": "https://git.mero.moe/dimbreath/ZenlessData/raw/commit/b084f66a42cf128b7c809c9ba1b5bcce96ae114b/FileCfg/SubmitConfigTemplateTb.json",
+              "sha256": "76f18f8735f6265916ef74c849db913169c60df64d628fa5103985764d5c5107",
+              "bytes": 15155
+            },
+            "all99SubmitRowsMatchedLocalClient": true,
+            "readerViewObject": "research/version-3.2-update/items/valuable-map-source-data/current-viewobjects/ViewObject_2001291.json",
+            "readerViewObjectSha256": "753abf1b5ad8de2c99e4c78dee87eec0ea9a129947355217daa9dbd3c205d919",
+            "memberEvidence": [
+              {
+                "readerId": "171200325:202",
+                "groupFile": "research/version-3.2-update/items/extraction/map-config/TextAsset/Group_171200325.json",
+                "groupSha256": "bc31af0c7489cbef3b5929fdb0f8be39ba0d0a8cca120583e69f3e4e0065087b",
+                "memberPath": "Group.Members[1]",
+                "floorFile": "research/version-3.2-update/items/extraction/map-config/TextAsset/Floor_171201.json",
+                "floorSha256": "0d1faf02f6a2f9a755e460500c786c0cb822083f6258d68f6cc810646976b2c4",
+                "groupListedInFloor": true,
+                "states": [
+                  {
+                    "path": "Group.Members",
+                    "suite": null,
+                    "backstage": null,
+                    "enabled": true,
+                    "submitId": 13,
+                    "cost": [
+                      [
+                        4340301,
+                        1
+                      ]
+                    ],
+                    "alternativeSubmitId": 42,
+                    "alternativeCost": [
+                      [
+                        4360093,
+                        1
+                      ]
+                    ],
+                    "lockedDoorConfigId": 201
+                  }
+                ],
+                "worldPosition": {
+                  "x": -207.17616,
+                  "y": 53.98765,
+                  "z": 71.47178
+                },
+                "refreshCondition": null,
+                "doorId": "171200325:201",
+                "doorWorldPosition": {
+                  "x": -209.0461,
+                  "y": 52.582115,
+                  "z": 71.49635
+                }
+              }
+            ]
+          },
+          "conditions": [
+            "需要持有此门禁房对应的房卡；是否启用、是否已开启以本局实际状态为准。",
+            "目标采用读卡器原始坐标；未自动调整高度，也不代表门后的路径本局已经开放。"
+          ]
+        }
+      ],
+      "unmapped": [],
+      "excludedReaders": [
+        {
+          "id": "171200166:204",
+          "reason": "消耗物不是当前目录的11种具名门禁房卡；委托卡、任务卡及未展示旧卡不混入。",
+          "cost": [
+            [
+              4360093,
+              1
+            ]
+          ]
+        },
+        {
+          "id": "171200320:202",
+          "reason": "消耗物不是当前目录的11种具名门禁房卡；委托卡、任务卡及未展示旧卡不混入。",
+          "cost": [
+            [
+              4364008,
+              1
+            ]
+          ]
+        },
+        {
+          "id": "171200391:202",
+          "reason": "消耗物不是当前目录的11种具名门禁房卡；委托卡、任务卡及未展示旧卡不混入。",
+          "cost": [
+            [
+              4364003,
+              1
+            ]
+          ]
+        }
+      ],
+      "sourceImageMapping": {
+        "status": "not_used",
+        "note": "本表按房卡物品关联原生读卡器；没有借用或覆盖资料图旧keyroom的坐标及choices。"
+      }
+    }
+  ],
+  "note": "按客户端读卡器消耗配置与门禁卡物品表联接。仅规划前往持有房卡对应的入口，不推测房卡掉落点，不保证本局开门或刷新状态。",
+  "policy": {
+    "sourceImageNearestNeighbourUsed": false,
+    "coordinatesModified": false,
+    "duplicateRule": "只合并同地图、同卡ID、完全相同原始XYZ的读卡器；保留全部组证据。",
+    "nativeGatePolicy": "门、读卡器、普通任务通路不能整体视为门禁房；这里只收录当前11种具名门禁卡。"
+  }
+}

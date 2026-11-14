@@ -1,0 +1,1265 @@
+{
+  "version": 1,
+  "gameVersion": "3.3.0",
+  "updatedAt": "2026-11-11",
+  "sources": [
+    {
+      "name": "绝区零官方调频公示 · prod_gf_cn",
+      "url": "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/gacha/list.json"
+    },
+    {
+      "name": "绝区零官方调频公示 · prod_gf_jp",
+      "url": "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_jp/gacha/list.json"
+    },
+    {
+      "name": "绝区零官方调频公示 · prod_gf_us",
+      "url": "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/gacha/list.json"
+    },
+    {
+      "name": "绝区零官方 3.1 版本限时频段公告（首期爱芮与壳中之灵）",
+      "url": "https://zenless.hoyoverse.com/zh-cn/news/165363"
+    },
+    {
+      "name": "绝区零官方 3.2 版本限时频段（上期）",
+      "url": "https://zenless.hoyoverse.com/zh-cn/news/165979"
+    },
+    {
+      "name": "绝区零官方调频公示 · 3.2 下期（2026-10-01 读取）",
+      "url": "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/gacha/list.json"
+    },
+    {
+      "name": "绝区零官方调频公示 · 3.3 上期（2026-10-21 读取）",
+      "url": "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/gacha/list.json"
+    },
+    {
+      "name": "绝区零官方调频公示 · 3.3 下期（2026-11-11 读取）",
+      "url": "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/gacha/list.json"
+    }
+  ],
+  "historicalSupplement": {
+    "source": "https://zenless.hoyoverse.com/zh-cn/news/165363",
+    "featured": [
+      "1501",
+      "14150"
+    ],
+    "note": "首期爱芮和壳中之灵属于普通独家/音擎频段，共享同类保底，并非102/103重映。公告确认3.1更新后至8月19日11:59服务器时间；各服开服边界取同期蕾米埃尔/空羽的官方调频公示。公告同时确认共享S信号定制机制，非UP候选沿用同服同期公示。仅补该历史窗口，不延伸至其他期次。"
+  },
+  "windows": [
+    {
+      "pool": "2",
+      "begin": "2026-07-28 17:00:00",
+      "end": "2026-08-19 11:59:59",
+      "timezone": -5,
+      "regions": [
+        "prod_gf_us"
+      ],
+      "featured": [
+        "1501",
+        "1581"
+      ],
+      "off": [
+        "1021",
+        "1041",
+        "1071",
+        "1101",
+        "1141",
+        "1181",
+        "1211",
+        "1221",
+        "1241"
+      ],
+      "label": "复乐园 / 霓色天使",
+      "source": "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/gacha/list.json",
+      "sources": [
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/8c01c50da79028f66c4c28060f36654a98d35401/zh-cn.json",
+        "https://zenless.hoyoverse.com/zh-cn/news/165363"
+      ],
+      "bannerIds": [
+        "8c01c50da79028f66c4c28060f36654a98d35401"
+      ],
+      "customizableOff": true,
+      "ambiguity": false,
+      "ambiguousItems": []
+    },
+    {
+      "pool": "2",
+      "begin": "2026-08-19 12:00:00",
+      "end": "2026-09-08 14:59:59",
+      "timezone": -5,
+      "regions": [
+        "prod_gf_us"
+      ],
+      "featured": [
+        "1581",
+        "1591"
+      ],
+      "off": [
+        "1021",
+        "1041",
+        "1071",
+        "1101",
+        "1141",
+        "1181",
+        "1211",
+        "1221",
+        "1241"
+      ],
+      "label": "复乐园 / 直到天空沉落",
+      "source": "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/gacha/list.json",
+      "sources": [
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/8c01c50da79028f66c4c28060f36654a98d35401/zh-cn.json",
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/6f1dd29f66a662712d0a2e971b8a15e6f60c970c/zh-cn.json"
+      ],
+      "bannerIds": [
+        "8c01c50da79028f66c4c28060f36654a98d35401",
+        "6f1dd29f66a662712d0a2e971b8a15e6f60c970c"
+      ],
+      "customizableOff": true,
+      "ambiguity": false,
+      "ambiguousItems": []
+    },
+    {
+      "pool": "3",
+      "begin": "2026-07-28 17:00:00",
+      "end": "2026-08-19 11:59:59",
+      "timezone": -5,
+      "regions": [
+        "prod_gf_us"
+      ],
+      "featured": [
+        "14150",
+        "14158"
+      ],
+      "off": [
+        "14102",
+        "14104",
+        "14107",
+        "14110",
+        "14114",
+        "14118",
+        "14121",
+        "14122",
+        "14124"
+      ],
+      "label": "空羽复归之诗 / 壳中之灵",
+      "source": "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/gacha/list.json",
+      "sources": [
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/ff5467b51b3e21ab91784c197458ea5b4465e6a9/zh-cn.json",
+        "https://zenless.hoyoverse.com/zh-cn/news/165363"
+      ],
+      "bannerIds": [
+        "ff5467b51b3e21ab91784c197458ea5b4465e6a9"
+      ],
+      "customizableOff": true,
+      "ambiguity": false,
+      "ambiguousItems": []
+    },
+    {
+      "pool": "3",
+      "begin": "2026-08-19 12:00:00",
+      "end": "2026-09-08 14:59:59",
+      "timezone": -5,
+      "regions": [
+        "prod_gf_us"
+      ],
+      "featured": [
+        "14158",
+        "14159"
+      ],
+      "off": [
+        "14102",
+        "14104",
+        "14107",
+        "14110",
+        "14114",
+        "14118",
+        "14121",
+        "14122",
+        "14124"
+      ],
+      "label": "空羽复归之诗 / 骁骑礼赞",
+      "source": "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/gacha/list.json",
+      "sources": [
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/ff5467b51b3e21ab91784c197458ea5b4465e6a9/zh-cn.json",
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/aa1bc001626633d3991cf2a20a8ca9bb18eb4623/zh-cn.json"
+      ],
+      "bannerIds": [
+        "ff5467b51b3e21ab91784c197458ea5b4465e6a9",
+        "aa1bc001626633d3991cf2a20a8ca9bb18eb4623"
+      ],
+      "customizableOff": true,
+      "ambiguity": false,
+      "ambiguousItems": []
+    },
+    {
+      "pool": "2",
+      "begin": "2026-07-29 06:00:00",
+      "end": "2026-08-19 11:59:59",
+      "timezone": 8,
+      "regions": [
+        "prod_gf_cn",
+        "prod_gf_jp"
+      ],
+      "featured": [
+        "1501",
+        "1581"
+      ],
+      "off": [
+        "1021",
+        "1041",
+        "1071",
+        "1101",
+        "1141",
+        "1181",
+        "1211",
+        "1221",
+        "1241"
+      ],
+      "label": "复乐园 / 霓色天使",
+      "source": "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/gacha/list.json",
+      "sources": [
+        "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/8c01c50da79028f66c4c28060f36654a98d35401/zh-cn.json",
+        "https://zenless.hoyoverse.com/zh-cn/news/165363",
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_jp/8c01c50da79028f66c4c28060f36654a98d35401/zh-cn.json",
+        "https://zenless.hoyoverse.com/zh-cn/news/165363"
+      ],
+      "bannerIds": [
+        "8c01c50da79028f66c4c28060f36654a98d35401"
+      ],
+      "customizableOff": true,
+      "ambiguity": false,
+      "ambiguousItems": []
+    },
+    {
+      "pool": "2",
+      "begin": "2026-08-19 12:00:00",
+      "end": "2026-09-08 14:59:59",
+      "timezone": 8,
+      "regions": [
+        "prod_gf_cn",
+        "prod_gf_jp"
+      ],
+      "featured": [
+        "1581",
+        "1591"
+      ],
+      "off": [
+        "1021",
+        "1041",
+        "1071",
+        "1101",
+        "1141",
+        "1181",
+        "1211",
+        "1221",
+        "1241"
+      ],
+      "label": "复乐园 / 直到天空沉落",
+      "source": "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/gacha/list.json",
+      "sources": [
+        "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/8c01c50da79028f66c4c28060f36654a98d35401/zh-cn.json",
+        "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/6f1dd29f66a662712d0a2e971b8a15e6f60c970c/zh-cn.json",
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_jp/8c01c50da79028f66c4c28060f36654a98d35401/zh-cn.json",
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_jp/6f1dd29f66a662712d0a2e971b8a15e6f60c970c/zh-cn.json"
+      ],
+      "bannerIds": [
+        "8c01c50da79028f66c4c28060f36654a98d35401",
+        "6f1dd29f66a662712d0a2e971b8a15e6f60c970c"
+      ],
+      "customizableOff": true,
+      "ambiguity": false,
+      "ambiguousItems": []
+    },
+    {
+      "pool": "3",
+      "begin": "2026-07-29 06:00:00",
+      "end": "2026-08-19 11:59:59",
+      "timezone": 8,
+      "regions": [
+        "prod_gf_cn",
+        "prod_gf_jp"
+      ],
+      "featured": [
+        "14150",
+        "14158"
+      ],
+      "off": [
+        "14102",
+        "14104",
+        "14107",
+        "14110",
+        "14114",
+        "14118",
+        "14121",
+        "14122",
+        "14124"
+      ],
+      "label": "空羽复归之诗 / 壳中之灵",
+      "source": "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/gacha/list.json",
+      "sources": [
+        "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/ff5467b51b3e21ab91784c197458ea5b4465e6a9/zh-cn.json",
+        "https://zenless.hoyoverse.com/zh-cn/news/165363",
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_jp/ff5467b51b3e21ab91784c197458ea5b4465e6a9/zh-cn.json",
+        "https://zenless.hoyoverse.com/zh-cn/news/165363"
+      ],
+      "bannerIds": [
+        "ff5467b51b3e21ab91784c197458ea5b4465e6a9"
+      ],
+      "customizableOff": true,
+      "ambiguity": false,
+      "ambiguousItems": []
+    },
+    {
+      "pool": "3",
+      "begin": "2026-08-19 12:00:00",
+      "end": "2026-09-08 14:59:59",
+      "timezone": 8,
+      "regions": [
+        "prod_gf_cn",
+        "prod_gf_jp"
+      ],
+      "featured": [
+        "14158",
+        "14159"
+      ],
+      "off": [
+        "14102",
+        "14104",
+        "14107",
+        "14110",
+        "14114",
+        "14118",
+        "14121",
+        "14122",
+        "14124"
+      ],
+      "label": "空羽复归之诗 / 骁骑礼赞",
+      "source": "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/gacha/list.json",
+      "sources": [
+        "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/ff5467b51b3e21ab91784c197458ea5b4465e6a9/zh-cn.json",
+        "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/aa1bc001626633d3991cf2a20a8ca9bb18eb4623/zh-cn.json",
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_jp/ff5467b51b3e21ab91784c197458ea5b4465e6a9/zh-cn.json",
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_jp/aa1bc001626633d3991cf2a20a8ca9bb18eb4623/zh-cn.json"
+      ],
+      "bannerIds": [
+        "ff5467b51b3e21ab91784c197458ea5b4465e6a9",
+        "aa1bc001626633d3991cf2a20a8ca9bb18eb4623"
+      ],
+      "customizableOff": true,
+      "ambiguity": false,
+      "ambiguousItems": []
+    },
+    {
+      "pool": "2",
+      "begin": "2026-09-09 06:00:00",
+      "end": "2026-09-30 11:59:59",
+      "timezone": 8,
+      "regions": [
+        "prod_gf_cn",
+        "prod_gf_jp"
+      ],
+      "featured": [
+        "1511",
+        "1611"
+      ],
+      "off": [
+        "1021",
+        "1041",
+        "1071",
+        "1101",
+        "1141",
+        "1181",
+        "1211",
+        "1221",
+        "1241"
+      ],
+      "label": "红月初升 / 视线定格公理",
+      "source": "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/gacha/list.json",
+      "sources": [
+        "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/98a3519e56172f5fb33a81665875197f6c830459/zh-cn.json",
+        "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/b98c55f7f380d956a9a1135be4d816912f80f4a7/zh-cn.json",
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_jp/98a3519e56172f5fb33a81665875197f6c830459/zh-cn.json",
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_jp/b98c55f7f380d956a9a1135be4d816912f80f4a7/zh-cn.json"
+      ],
+      "bannerIds": [
+        "98a3519e56172f5fb33a81665875197f6c830459",
+        "b98c55f7f380d956a9a1135be4d816912f80f4a7"
+      ],
+      "customizableOff": true,
+      "ambiguity": false,
+      "ambiguousItems": []
+    },
+    {
+      "pool": "3",
+      "begin": "2026-09-09 06:00:00",
+      "end": "2026-09-30 11:59:59",
+      "timezone": 8,
+      "regions": [
+        "prod_gf_cn",
+        "prod_gf_jp"
+      ],
+      "featured": [
+        "14151",
+        "14161"
+      ],
+      "off": [
+        "14102",
+        "14104",
+        "14107",
+        "14110",
+        "14114",
+        "14118",
+        "14121",
+        "14122",
+        "14124"
+      ],
+      "label": "猩红渴望 / 霓虹妄想",
+      "source": "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/gacha/list.json",
+      "sources": [
+        "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/ba51ad818b41d1324aabe7403328da060599979a/zh-cn.json",
+        "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/1f65f064061de16bfe7be63c7f7a0a787d6e1015/zh-cn.json",
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_jp/ba51ad818b41d1324aabe7403328da060599979a/zh-cn.json",
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_jp/1f65f064061de16bfe7be63c7f7a0a787d6e1015/zh-cn.json"
+      ],
+      "bannerIds": [
+        "ba51ad818b41d1324aabe7403328da060599979a",
+        "1f65f064061de16bfe7be63c7f7a0a787d6e1015"
+      ],
+      "customizableOff": true,
+      "ambiguity": false,
+      "ambiguousItems": []
+    },
+    {
+      "pool": "2",
+      "begin": "2026-09-08 17:00:00",
+      "end": "2026-09-30 11:59:59",
+      "timezone": -5,
+      "regions": [
+        "prod_gf_us"
+      ],
+      "featured": [
+        "1511",
+        "1611"
+      ],
+      "off": [
+        "1021",
+        "1041",
+        "1071",
+        "1101",
+        "1141",
+        "1181",
+        "1211",
+        "1221",
+        "1241"
+      ],
+      "label": "红月初升 / 视线定格公理",
+      "source": "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/gacha/list.json",
+      "sources": [
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/98a3519e56172f5fb33a81665875197f6c830459/zh-cn.json",
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/b98c55f7f380d956a9a1135be4d816912f80f4a7/zh-cn.json"
+      ],
+      "bannerIds": [
+        "98a3519e56172f5fb33a81665875197f6c830459",
+        "b98c55f7f380d956a9a1135be4d816912f80f4a7"
+      ],
+      "customizableOff": true,
+      "ambiguity": false,
+      "ambiguousItems": []
+    },
+    {
+      "pool": "3",
+      "begin": "2026-09-08 17:00:00",
+      "end": "2026-09-30 11:59:59",
+      "timezone": -5,
+      "regions": [
+        "prod_gf_us"
+      ],
+      "featured": [
+        "14151",
+        "14161"
+      ],
+      "off": [
+        "14102",
+        "14104",
+        "14107",
+        "14110",
+        "14114",
+        "14118",
+        "14121",
+        "14122",
+        "14124"
+      ],
+      "label": "猩红渴望 / 霓虹妄想",
+      "source": "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/gacha/list.json",
+      "sources": [
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/ba51ad818b41d1324aabe7403328da060599979a/zh-cn.json",
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/1f65f064061de16bfe7be63c7f7a0a787d6e1015/zh-cn.json"
+      ],
+      "bannerIds": [
+        "ba51ad818b41d1324aabe7403328da060599979a",
+        "1f65f064061de16bfe7be63c7f7a0a787d6e1015"
+      ],
+      "customizableOff": true,
+      "ambiguity": false,
+      "ambiguousItems": []
+    },
+    {
+      "pool": "2",
+      "begin": "2026-09-30 12:00:00",
+      "end": "2026-10-20 14:59:59",
+      "timezone": 8,
+      "regions": [
+        "prod_gf_cn",
+        "prod_gf_jp"
+      ],
+      "featured": [
+        "1621",
+        "1541"
+      ],
+      "off": [
+        "1021",
+        "1041",
+        "1071",
+        "1101",
+        "1141",
+        "1181",
+        "1211",
+        "1221",
+        "1241"
+      ],
+      "label": "烬夜安眠 / 冷雨将尽之夜",
+      "source": "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/gacha/list.json",
+      "sources": [
+        "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/57afc3f1b18d6e149970e6240e627b02aeb7c355/zh-cn.json",
+        "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/7a1dcc5ba6cf41fd1a537fe6692ea7629e71f962/zh-cn.json",
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_jp/57afc3f1b18d6e149970e6240e627b02aeb7c355/zh-cn.json",
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_jp/7a1dcc5ba6cf41fd1a537fe6692ea7629e71f962/zh-cn.json"
+      ],
+      "bannerIds": [
+        "57afc3f1b18d6e149970e6240e627b02aeb7c355",
+        "7a1dcc5ba6cf41fd1a537fe6692ea7629e71f962"
+      ],
+      "customizableOff": true,
+      "ambiguity": false,
+      "ambiguousItems": []
+    },
+    {
+      "pool": "3",
+      "begin": "2026-09-30 12:00:00",
+      "end": "2026-10-20 14:59:59",
+      "timezone": 8,
+      "regions": [
+        "prod_gf_cn",
+        "prod_gf_jp"
+      ],
+      "featured": [
+        "14162",
+        "14154"
+      ],
+      "off": [
+        "14102",
+        "14104",
+        "14107",
+        "14110",
+        "14114",
+        "14118",
+        "14121",
+        "14122",
+        "14124"
+      ],
+      "label": "绯月银棺 / 朔月裁霜",
+      "source": "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/gacha/list.json",
+      "sources": [
+        "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/129af5085b8d7cfe7a57981a6a05622d828555eb/zh-cn.json",
+        "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/93a6a164becdfca75e2c87fb12eee21db7531759/zh-cn.json",
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_jp/129af5085b8d7cfe7a57981a6a05622d828555eb/zh-cn.json",
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_jp/93a6a164becdfca75e2c87fb12eee21db7531759/zh-cn.json"
+      ],
+      "bannerIds": [
+        "129af5085b8d7cfe7a57981a6a05622d828555eb",
+        "93a6a164becdfca75e2c87fb12eee21db7531759"
+      ],
+      "customizableOff": true,
+      "ambiguity": false,
+      "ambiguousItems": []
+    },
+    {
+      "pool": "2",
+      "begin": "2026-09-30 12:00:00",
+      "end": "2026-10-20 14:59:59",
+      "timezone": -5,
+      "regions": [
+        "prod_gf_us"
+      ],
+      "featured": [
+        "1621",
+        "1541"
+      ],
+      "off": [
+        "1021",
+        "1041",
+        "1071",
+        "1101",
+        "1141",
+        "1181",
+        "1211",
+        "1221",
+        "1241"
+      ],
+      "label": "烬夜安眠 / 冷雨将尽之夜",
+      "source": "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/gacha/list.json",
+      "sources": [
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/57afc3f1b18d6e149970e6240e627b02aeb7c355/zh-cn.json",
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/7a1dcc5ba6cf41fd1a537fe6692ea7629e71f962/zh-cn.json"
+      ],
+      "bannerIds": [
+        "57afc3f1b18d6e149970e6240e627b02aeb7c355",
+        "7a1dcc5ba6cf41fd1a537fe6692ea7629e71f962"
+      ],
+      "customizableOff": true,
+      "ambiguity": false,
+      "ambiguousItems": []
+    },
+    {
+      "pool": "3",
+      "begin": "2026-09-30 12:00:00",
+      "end": "2026-10-20 14:59:59",
+      "timezone": -5,
+      "regions": [
+        "prod_gf_us"
+      ],
+      "featured": [
+        "14162",
+        "14154"
+      ],
+      "off": [
+        "14102",
+        "14104",
+        "14107",
+        "14110",
+        "14114",
+        "14118",
+        "14121",
+        "14122",
+        "14124"
+      ],
+      "label": "绯月银棺 / 朔月裁霜",
+      "source": "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/gacha/list.json",
+      "sources": [
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/129af5085b8d7cfe7a57981a6a05622d828555eb/zh-cn.json",
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/93a6a164becdfca75e2c87fb12eee21db7531759/zh-cn.json"
+      ],
+      "bannerIds": [
+        "129af5085b8d7cfe7a57981a6a05622d828555eb",
+        "93a6a164becdfca75e2c87fb12eee21db7531759"
+      ],
+      "customizableOff": true,
+      "ambiguity": false,
+      "ambiguousItems": []
+    },
+    {
+      "pool": "2",
+      "begin": "2026-10-21 06:00:00",
+      "end": "2026-11-11 11:59:59",
+      "timezone": 8,
+      "regions": [
+        "prod_gf_cn",
+        "prod_gf_jp"
+      ],
+      "featured": [
+        "1641",
+        "1561"
+      ],
+      "off": [
+        "1021",
+        "1041",
+        "1071",
+        "1101",
+        "1141",
+        "1181",
+        "1211",
+        "1221",
+        "1241"
+      ],
+      "label": "倾掷浮生 / 凛风吟仪",
+      "source": "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/gacha/list.json",
+      "sources": [
+        "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/b80bbbba59774f78e4b3da87a3800dfb521acf99/zh-cn.json",
+        "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/55e29cd16edb8e6c2fffaa93acb288d1cf2680f2/zh-cn.json",
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_jp/b80bbbba59774f78e4b3da87a3800dfb521acf99/zh-cn.json",
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_jp/55e29cd16edb8e6c2fffaa93acb288d1cf2680f2/zh-cn.json"
+      ],
+      "bannerIds": [
+        "b80bbbba59774f78e4b3da87a3800dfb521acf99",
+        "55e29cd16edb8e6c2fffaa93acb288d1cf2680f2"
+      ],
+      "customizableOff": true,
+      "ambiguity": false,
+      "ambiguousItems": []
+    },
+    {
+      "pool": "3",
+      "begin": "2026-10-21 06:00:00",
+      "end": "2026-11-11 11:59:59",
+      "timezone": 8,
+      "regions": [
+        "prod_gf_cn",
+        "prod_gf_jp"
+      ],
+      "featured": [
+        "14164",
+        "14156"
+      ],
+      "off": [
+        "14102",
+        "14104",
+        "14107",
+        "14110",
+        "14114",
+        "14118",
+        "14121",
+        "14122",
+        "14124"
+      ],
+      "label": "涅槃初翎 / 琳琅鎏心",
+      "source": "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/gacha/list.json",
+      "sources": [
+        "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/500e57a31d6d73613ec3a7b9ef26f58903741752/zh-cn.json",
+        "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/c39a0f3bb600f3f0f3987014267de3a040a75448/zh-cn.json",
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_jp/500e57a31d6d73613ec3a7b9ef26f58903741752/zh-cn.json",
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_jp/c39a0f3bb600f3f0f3987014267de3a040a75448/zh-cn.json"
+      ],
+      "bannerIds": [
+        "500e57a31d6d73613ec3a7b9ef26f58903741752",
+        "c39a0f3bb600f3f0f3987014267de3a040a75448"
+      ],
+      "customizableOff": true,
+      "ambiguity": false,
+      "ambiguousItems": []
+    },
+    {
+      "pool": "2",
+      "begin": "2026-10-20 17:00:00",
+      "end": "2026-11-11 11:59:59",
+      "timezone": -5,
+      "regions": [
+        "prod_gf_us"
+      ],
+      "featured": [
+        "1641",
+        "1561"
+      ],
+      "off": [
+        "1021",
+        "1041",
+        "1071",
+        "1101",
+        "1141",
+        "1181",
+        "1211",
+        "1221",
+        "1241"
+      ],
+      "label": "倾掷浮生 / 凛风吟仪",
+      "source": "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/gacha/list.json",
+      "sources": [
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/b80bbbba59774f78e4b3da87a3800dfb521acf99/zh-cn.json",
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/55e29cd16edb8e6c2fffaa93acb288d1cf2680f2/zh-cn.json"
+      ],
+      "bannerIds": [
+        "b80bbbba59774f78e4b3da87a3800dfb521acf99",
+        "55e29cd16edb8e6c2fffaa93acb288d1cf2680f2"
+      ],
+      "customizableOff": true,
+      "ambiguity": false,
+      "ambiguousItems": []
+    },
+    {
+      "pool": "3",
+      "begin": "2026-10-20 17:00:00",
+      "end": "2026-11-11 11:59:59",
+      "timezone": -5,
+      "regions": [
+        "prod_gf_us"
+      ],
+      "featured": [
+        "14164",
+        "14156"
+      ],
+      "off": [
+        "14102",
+        "14104",
+        "14107",
+        "14110",
+        "14114",
+        "14118",
+        "14121",
+        "14122",
+        "14124"
+      ],
+      "label": "涅槃初翎 / 琳琅鎏心",
+      "source": "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/gacha/list.json",
+      "sources": [
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/500e57a31d6d73613ec3a7b9ef26f58903741752/zh-cn.json",
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/c39a0f3bb600f3f0f3987014267de3a040a75448/zh-cn.json"
+      ],
+      "bannerIds": [
+        "500e57a31d6d73613ec3a7b9ef26f58903741752",
+        "c39a0f3bb600f3f0f3987014267de3a040a75448"
+      ],
+      "customizableOff": true,
+      "ambiguity": false,
+      "ambiguousItems": []
+    },
+    {
+      "pool": "2",
+      "begin": "2026-11-11 12:00:00",
+      "end": "2026-12-01 14:59:59",
+      "timezone": 8,
+      "regions": [
+        "prod_gf_cn",
+        "prod_gf_jp"
+      ],
+      "featured": [
+        "1631",
+        "1571"
+      ],
+      "off": [
+        "1021",
+        "1041",
+        "1071",
+        "1101",
+        "1141",
+        "1181",
+        "1211",
+        "1221",
+        "1241"
+      ],
+      "label": "答案在风中 / 天才不等式",
+      "source": "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/gacha/list.json",
+      "sources": [
+        "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/a69a6c5b0be2b54491a7ee8fbe7bb68177de01e5/zh-cn.json",
+        "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/a8dc55b438b6c45ebb19509b1c7a1481f6f76cc7/zh-cn.json",
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_jp/a69a6c5b0be2b54491a7ee8fbe7bb68177de01e5/zh-cn.json",
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_jp/a8dc55b438b6c45ebb19509b1c7a1481f6f76cc7/zh-cn.json"
+      ],
+      "bannerIds": [
+        "a69a6c5b0be2b54491a7ee8fbe7bb68177de01e5",
+        "a8dc55b438b6c45ebb19509b1c7a1481f6f76cc7"
+      ],
+      "customizableOff": true,
+      "ambiguity": false,
+      "ambiguousItems": []
+    },
+    {
+      "pool": "3",
+      "begin": "2026-11-11 12:00:00",
+      "end": "2026-12-01 14:59:59",
+      "timezone": 8,
+      "regions": [
+        "prod_gf_cn",
+        "prod_gf_jp"
+      ],
+      "featured": [
+        "14163",
+        "14157"
+      ],
+      "off": [
+        "14102",
+        "14104",
+        "14107",
+        "14110",
+        "14114",
+        "14118",
+        "14121",
+        "14122",
+        "14124"
+      ],
+      "label": "禁罪囚笼 / 首席跟班",
+      "source": "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/gacha/list.json",
+      "sources": [
+        "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/ba37a871d0d2eab3f56d9a4e47c09d866ce377a1/zh-cn.json",
+        "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/ed034c113dca22c9e1f60dd42ffa7e40c02f6478/zh-cn.json",
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_jp/ba37a871d0d2eab3f56d9a4e47c09d866ce377a1/zh-cn.json",
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_jp/ed034c113dca22c9e1f60dd42ffa7e40c02f6478/zh-cn.json"
+      ],
+      "bannerIds": [
+        "ba37a871d0d2eab3f56d9a4e47c09d866ce377a1",
+        "ed034c113dca22c9e1f60dd42ffa7e40c02f6478"
+      ],
+      "customizableOff": true,
+      "ambiguity": false,
+      "ambiguousItems": []
+    },
+    {
+      "pool": "2",
+      "begin": "2026-11-11 12:00:00",
+      "end": "2026-12-01 14:59:59",
+      "timezone": -5,
+      "regions": [
+        "prod_gf_us"
+      ],
+      "featured": [
+        "1631",
+        "1571"
+      ],
+      "off": [
+        "1021",
+        "1041",
+        "1071",
+        "1101",
+        "1141",
+        "1181",
+        "1211",
+        "1221",
+        "1241"
+      ],
+      "label": "答案在风中 / 天才不等式",
+      "source": "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/gacha/list.json",
+      "sources": [
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/a69a6c5b0be2b54491a7ee8fbe7bb68177de01e5/zh-cn.json",
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/a8dc55b438b6c45ebb19509b1c7a1481f6f76cc7/zh-cn.json"
+      ],
+      "bannerIds": [
+        "a69a6c5b0be2b54491a7ee8fbe7bb68177de01e5",
+        "a8dc55b438b6c45ebb19509b1c7a1481f6f76cc7"
+      ],
+      "customizableOff": true,
+      "ambiguity": false,
+      "ambiguousItems": []
+    },
+    {
+      "pool": "3",
+      "begin": "2026-11-11 12:00:00",
+      "end": "2026-12-01 14:59:59",
+      "timezone": -5,
+      "regions": [
+        "prod_gf_us"
+      ],
+      "featured": [
+        "14163",
+        "14157"
+      ],
+      "off": [
+        "14102",
+        "14104",
+        "14107",
+        "14110",
+        "14114",
+        "14118",
+        "14121",
+        "14122",
+        "14124"
+      ],
+      "label": "禁罪囚笼 / 首席跟班",
+      "source": "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/gacha/list.json",
+      "sources": [
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/ba37a871d0d2eab3f56d9a4e47c09d866ce377a1/zh-cn.json",
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/ed034c113dca22c9e1f60dd42ffa7e40c02f6478/zh-cn.json"
+      ],
+      "bannerIds": [
+        "ba37a871d0d2eab3f56d9a4e47c09d866ce377a1",
+        "ed034c113dca22c9e1f60dd42ffa7e40c02f6478"
+      ],
+      "customizableOff": true,
+      "ambiguity": false,
+      "ambiguousItems": []
+    }
+  ],
+  "note": "覆盖已核验的3.1、3.2（含下期）与3.3（含下期）普通频段，以及3.1下期特殊重映频段。根据记录所属频段、账号记录时区和当时期次名单判断；不把当前名单套用于未覆盖的历史。",
+  "specialPoolsNote": "独家重映102、音擎重映103的福利保证与常规大小保底分开追踪。仅已核验期次使用互斥UP/非UP名单识别结果；未知选择、福利来源或缺失期次时保留不确定状态，福利UP不清除常规大保底。特殊频段不并入普通UP统计。",
+  "specialWindows": [
+    {
+      "pool": "102",
+      "begin": "2026-08-19 12:00:00",
+      "end": "2026-09-08 14:59:59",
+      "timezone": 8,
+      "regions": [
+        "prod_gf_cn",
+        "prod_gf_jp"
+      ],
+      "featured": [
+        "1201",
+        "1411",
+        "1481"
+      ],
+      "off": [
+        "1021",
+        "1041",
+        "1071",
+        "1101",
+        "1141",
+        "1181",
+        "1211",
+        "1221",
+        "1241"
+      ],
+      "label": "唤寂昔声 / 戏语幽谭 / 循此苦旅",
+      "bannerIds": [
+        "e36a0a38425dd8a10c55a0725561a63813b64f0c",
+        "4d814bcd0d299b044ae907f85e6efb6c80615de7",
+        "bb61b2e5e356a83c28321f93efffb0d4f096b8f6"
+      ],
+      "source": "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/gacha/list.json",
+      "sources": [
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_jp/4d814bcd0d299b044ae907f85e6efb6c80615de7/zh-cn.json",
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_jp/bb61b2e5e356a83c28321f93efffb0d4f096b8f6/zh-cn.json",
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_jp/e36a0a38425dd8a10c55a0725561a63813b64f0c/zh-cn.json",
+        "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/4d814bcd0d299b044ae907f85e6efb6c80615de7/zh-cn.json",
+        "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/bb61b2e5e356a83c28321f93efffb0d4f096b8f6/zh-cn.json",
+        "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/e36a0a38425dd8a10c55a0725561a63813b64f0c/zh-cn.json"
+      ],
+      "evidenceFiles": [
+        "../tuning-summary\\official-list-prod_gf_jp.json",
+        "../tuning-summary\\official-list.json",
+        "special-character-liuyin.json",
+        "special-character-yuzuha.json",
+        "special-character-harumasa.json"
+      ],
+      "customizableOff": true,
+      "ambiguity": false,
+      "ambiguousItems": [],
+      "periodId": "3.1-phase-2-102",
+      "welfareSeparate": true,
+      "welfareFirstS": true,
+      "welfareResetsEachPeriod": true,
+      "welfareDoesNotConsumeRegularGuarantee": true,
+      "regularPityCarriesAcrossPeriods": true,
+      "sharesAcrossChoicePages": true,
+      "hardPity": 90,
+      "regularFeaturedChance": 0.5,
+      "note": "3.1历史期次；当前3.2列表无特殊页。福利每期首S一次，优先于常规保证且不消耗它。同一期任意限定目标S为UP、九候选S为非UP，需通过互斥名单判定。"
+    },
+    {
+      "pool": "102",
+      "begin": "2026-08-19 12:00:00",
+      "end": "2026-09-08 14:59:59",
+      "timezone": -5,
+      "regions": [
+        "prod_gf_us"
+      ],
+      "featured": [
+        "1201",
+        "1411",
+        "1481"
+      ],
+      "off": [
+        "1021",
+        "1041",
+        "1071",
+        "1101",
+        "1141",
+        "1181",
+        "1211",
+        "1221",
+        "1241"
+      ],
+      "label": "唤寂昔声 / 戏语幽谭 / 循此苦旅",
+      "bannerIds": [
+        "e36a0a38425dd8a10c55a0725561a63813b64f0c",
+        "4d814bcd0d299b044ae907f85e6efb6c80615de7",
+        "bb61b2e5e356a83c28321f93efffb0d4f096b8f6"
+      ],
+      "source": "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/gacha/list.json",
+      "sources": [
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/4d814bcd0d299b044ae907f85e6efb6c80615de7/zh-cn.json",
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/bb61b2e5e356a83c28321f93efffb0d4f096b8f6/zh-cn.json",
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/e36a0a38425dd8a10c55a0725561a63813b64f0c/zh-cn.json"
+      ],
+      "evidenceFiles": [
+        "../tuning-summary\\official-list-prod_gf_us.json",
+        "special-character-liuyin.json",
+        "special-character-yuzuha.json",
+        "special-character-harumasa.json"
+      ],
+      "customizableOff": true,
+      "ambiguity": false,
+      "ambiguousItems": [],
+      "periodId": "3.1-phase-2-102",
+      "welfareSeparate": true,
+      "welfareFirstS": true,
+      "welfareResetsEachPeriod": true,
+      "welfareDoesNotConsumeRegularGuarantee": true,
+      "regularPityCarriesAcrossPeriods": true,
+      "sharesAcrossChoicePages": true,
+      "hardPity": 90,
+      "regularFeaturedChance": 0.5,
+      "note": "3.1历史期次；当前3.2列表无特殊页。福利每期首S一次，优先于常规保证且不消耗它。同一期任意限定目标S为UP、九候选S为非UP，需通过互斥名单判定。"
+    },
+    {
+      "pool": "103",
+      "begin": "2026-08-19 12:00:00",
+      "end": "2026-09-08 14:59:59",
+      "timezone": 8,
+      "regions": [
+        "prod_gf_cn",
+        "prod_gf_jp"
+      ],
+      "featured": [
+        "14120",
+        "14141",
+        "14148"
+      ],
+      "off": [
+        "14102",
+        "14104",
+        "14107",
+        "14110",
+        "14114",
+        "14118",
+        "14121",
+        "14122",
+        "14124"
+      ],
+      "label": "昨夜来电 / 狸法七变化 / 残心青囊",
+      "bannerIds": [
+        "d2801ce5f8a74e02accc6a18674e2f3b14d4a3d0",
+        "3ff30876e8c4365c6a0ca0cde62a58bde7a5a2d6",
+        "cb9ac2c12a5120229d2ddbbbef58f6ba1ed4854d"
+      ],
+      "source": "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/gacha/list.json",
+      "sources": [
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_jp/3ff30876e8c4365c6a0ca0cde62a58bde7a5a2d6/zh-cn.json",
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_jp/cb9ac2c12a5120229d2ddbbbef58f6ba1ed4854d/zh-cn.json",
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_jp/d2801ce5f8a74e02accc6a18674e2f3b14d4a3d0/zh-cn.json",
+        "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/3ff30876e8c4365c6a0ca0cde62a58bde7a5a2d6/zh-cn.json",
+        "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/cb9ac2c12a5120229d2ddbbbef58f6ba1ed4854d/zh-cn.json",
+        "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/d2801ce5f8a74e02accc6a18674e2f3b14d4a3d0/zh-cn.json"
+      ],
+      "evidenceFiles": [
+        "../tuning-summary\\official-list-prod_gf_jp.json",
+        "../tuning-summary\\official-list.json",
+        "special-weapon-liuyin.json",
+        "special-weapon-yuzuha.json",
+        "special-weapon-harumasa.json"
+      ],
+      "customizableOff": true,
+      "ambiguity": false,
+      "ambiguousItems": [],
+      "periodId": "3.1-phase-2-103",
+      "welfareSeparate": true,
+      "welfareFirstS": true,
+      "welfareResetsEachPeriod": true,
+      "welfareDoesNotConsumeRegularGuarantee": true,
+      "regularPityCarriesAcrossPeriods": true,
+      "sharesAcrossChoicePages": true,
+      "hardPity": 80,
+      "regularFeaturedChance": 0.75,
+      "note": "3.1历史期次；当前3.2列表无特殊页。福利每期首S一次，优先于常规保证且不消耗它。同一期任意限定目标S为UP、九候选S为非UP，需通过互斥名单判定。"
+    },
+    {
+      "pool": "103",
+      "begin": "2026-08-19 12:00:00",
+      "end": "2026-09-08 14:59:59",
+      "timezone": -5,
+      "regions": [
+        "prod_gf_us"
+      ],
+      "featured": [
+        "14120",
+        "14141",
+        "14148"
+      ],
+      "off": [
+        "14102",
+        "14104",
+        "14107",
+        "14110",
+        "14114",
+        "14118",
+        "14121",
+        "14122",
+        "14124"
+      ],
+      "label": "昨夜来电 / 狸法七变化 / 残心青囊",
+      "bannerIds": [
+        "d2801ce5f8a74e02accc6a18674e2f3b14d4a3d0",
+        "3ff30876e8c4365c6a0ca0cde62a58bde7a5a2d6",
+        "cb9ac2c12a5120229d2ddbbbef58f6ba1ed4854d"
+      ],
+      "source": "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/gacha/list.json",
+      "sources": [
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/3ff30876e8c4365c6a0ca0cde62a58bde7a5a2d6/zh-cn.json",
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/cb9ac2c12a5120229d2ddbbbef58f6ba1ed4854d/zh-cn.json",
+        "https://operation-webstatic.hoyoverse.com/gacha_info/nap/prod_gf_us/d2801ce5f8a74e02accc6a18674e2f3b14d4a3d0/zh-cn.json"
+      ],
+      "evidenceFiles": [
+        "../tuning-summary\\official-list-prod_gf_us.json",
+        "special-weapon-liuyin.json",
+        "special-weapon-yuzuha.json",
+        "special-weapon-harumasa.json"
+      ],
+      "customizableOff": true,
+      "ambiguity": false,
+      "ambiguousItems": [],
+      "periodId": "3.1-phase-2-103",
+      "welfareSeparate": true,
+      "welfareFirstS": true,
+      "welfareResetsEachPeriod": true,
+      "welfareDoesNotConsumeRegularGuarantee": true,
+      "regularPityCarriesAcrossPeriods": true,
+      "sharesAcrossChoicePages": true,
+      "hardPity": 80,
+      "regularFeaturedChance": 0.75,
+      "note": "3.1历史期次；当前3.2列表无特殊页。福利每期首S一次，优先于常规保证且不消耗它。同一期任意限定目标S为UP、九候选S为非UP，需通过互斥名单判定。"
+    }
+  ],
+  "standardPool": {
+    "updatedAt": "2026-10-01",
+    "note": "歪只会出定制调频候选。开服常驻 6 位代理人及其音擎从未作为限定 UP，任何时期在独家/音擎频段出现都是歪；不在当前候选里的 S 级从未进入候选，任何时期出现都是 UP。凯撒、柳、朱鸢及其音擎曾为限定 UP 后进入候选，加入时间未核实，已核验期次之外保持未知。",
+    "sources": [
+      {
+        "name": "官方定制调频候选（s_group_customize_items）",
+        "url": "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/gacha/list.json"
+      },
+      {
+        "name": "BWIKI 调频历史：开服常驻代理人与音擎从未作为独家/音擎频段 UP",
+        "url": "https://wiki.biligame.com/zzz/%E8%B0%83%E9%A2%91"
+      }
+    ],
+    "pools": {
+      "2": {
+        "alwaysOff": [
+          "1021",
+          "1041",
+          "1101",
+          "1141",
+          "1181",
+          "1211"
+        ],
+        "candidates": [
+          "1021",
+          "1041",
+          "1071",
+          "1101",
+          "1141",
+          "1181",
+          "1211",
+          "1221",
+          "1241"
+        ]
+      },
+      "3": {
+        "alwaysOff": [
+          "14102",
+          "14104",
+          "14110",
+          "14114",
+          "14118",
+          "14121"
+        ],
+        "candidates": [
+          "14102",
+          "14104",
+          "14107",
+          "14110",
+          "14114",
+          "14118",
+          "14121",
+          "14122",
+          "14124"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,3614 @@
+{
+  "updatedAt": "2026-11-14",
+  "scope": "官方已公开的角色档案与预告；开放时间和正式效果以游戏内公告为准。",
+  "agents": [
+    {
+      "id": "phoenix-reffaella",
+      "name": "菲欧妮",
+      "fullName": "菲欧妮·蕾法爱菈",
+      "englishName": "Phoenix Reffaella",
+      "aliases": [
+        "菲歐妮",
+        "Phoenix",
+        "Fioni",
+        "フィオニー",
+        "菲欧妮·蕾法爱菈"
+      ],
+      "element": "火属性",
+      "specialty": "异常",
+      "faction": "坎卜斯黑枝",
+      "role": "裁决官",
+      "rank": "S",
+      "introducedVersion": "3.3",
+      "description": "坎卜斯黑枝的裁决官。她出门前会备好葡萄糖、设置急救快捷键，并向照共享定位；就连去超市，也要认真做好准备。",
+      "voiceActors": {
+        "zh": "宋媛媛",
+        "ja": "藤田茜"
+      },
+      "availability": {
+        "status": "released",
+        "phase": "3.3-1",
+        "badge": "3.3 上半 · 已开放",
+        "label": "3.3 上半调频「倾掷浮生」· 已开放，至 11月11日 11:59（服务器时间）"
+      },
+      "previewNote": "已公开火属性、异常特性、阵营与配音。此次角色档案未附完整技能、影画、专属音擎与培养数值，配装和毕业面板将在资料齐备后补充。",
+      "announcedAt": "2026-09-12T03:00:04Z",
+      "updatedAt": "2026-10-21",
+      "icon": "assets/agent-previews/phoenix-official.jpeg",
+      "officialArt": "assets/agent-previews/phoenix-official.jpeg",
+      "artCaption": "2026-09-12 官方代理人档案原图 · © miHoYo / HoYoverse",
+      "sources": [
+        {
+          "title": "米游社 · 3.3版本限时频段（上期）",
+          "url": "https://www.miyoushe.com/zzz/article/79004828",
+          "date": "2026-10-19"
+        },
+        {
+          "title": "HoYoLAB · 3.3版本限时频段（上期）",
+          "url": "https://www.hoyolab.com/article/47131668?lang=zh-cn",
+          "date": "2026-10-19"
+        },
+        {
+          "title": "米游社 · 代理人机制介绍丨菲欧妮",
+          "url": "https://www.miyoushe.com/zzz/article/78959792",
+          "date": "2026-10-17"
+        },
+        {
+          "title": "HoYoLAB · 代理人机制介绍丨菲欧妮",
+          "url": "https://www.hoyolab.com/article/47109390?lang=zh-cn",
+          "date": "2026-10-17"
+        },
+        {
+          "title": "米游社 · 3.3「重返天空的旅程」前瞻特别节目情报总览",
+          "url": "https://www.miyoushe.com/zzz/article/78804974",
+          "date": "2026-10-09"
+        },
+        {
+          "title": "HoYoLAB · 3.3「重返天空的旅程」前瞻特别节目情报总览",
+          "url": "https://www.hoyolab.com/article/47023957?lang=zh-cn",
+          "date": "2026-10-09"
+        },
+        {
+          "title": "米游社 · 3.3「重返天空的旅程」前瞻特别节目预告",
+          "url": "https://www.miyoushe.com/zzz/article/78701776",
+          "date": "2026-10-05"
+        },
+        {
+          "title": "HoYoLAB · 3.3「重返天空的旅程」前瞻特别节目预告",
+          "url": "https://www.hoyolab.com/article/46972907?lang=zh-cn",
+          "date": "2026-10-05"
+        },
+        {
+          "title": "HoYoLAB · 菲欧妮官方档案",
+          "url": "https://www.hoyolab.com/article/46653231?lang=zh-cn",
+          "date": "2026-09-12"
+        },
+        {
+          "title": "米游社 · 菲欧妮官方档案",
+          "url": "https://www.miyoushe.com/zzz/article/78104666",
+          "date": "2026-09-12"
+        },
+        {
+          "title": "HoYoLAB · 第三季角色公开与配音",
+          "url": "https://www.hoyolab.com/article/44865721?lang=zh-cn",
+          "date": "2026-04-30"
+        }
+      ],
+      "betaCheckedAt": "2026-09-30",
+      "roleTags": [
+        "火属性[异常]输出代理人",
+        "使全队全属性异常伤害有概率触发暴击",
+        "拥有强大的生存能力，战败后可以重回战场并回复生命值",
+        "短时间内快速积蓄异常条入场"
+      ],
+      "signatureEngine": {
+        "name": "涅槃初翎",
+        "nameEn": "Plume of Rebirth",
+        "rank": "S",
+        "specialty": "异常"
+      },
+      "officialTeams": [
+        [
+          "1561",
+          "1581"
+        ],
+        [
+          "1561",
+          "1411"
+        ]
+      ],
+      "supersededBy": "1641",
+      "status": "superseded"
+    },
+    {
+      "id": "severian-lowell",
+      "name": "赛维里安",
+      "fullName": "赛维里安·洛威尔",
+      "englishName": "Severian Lowell",
+      "aliases": [
+        "塞维里安",
+        "赛维利安",
+        "賽維里安",
+        "Severian",
+        "セヴェリアン",
+        "赛维里安·洛威尔"
+      ],
+      "element": "风属性",
+      "specialty": "强攻",
+      "faction": "都市秩序部",
+      "role": "新艾利都治安局 · 秩序督察",
+      "rank": "S",
+      "introducedVersion": "3.3",
+      "description": "新艾利都治安局的秩序督察，所属都市秩序部。对行动纪律要求严格：肯定朱鸢小队的先锋表现，也提醒队员等待火力支援，并安排全组带薪休整。",
+      "voiceActors": {
+        "zh": "杨超然",
+        "ja": "森川智之"
+      },
+      "availability": {
+        "status": "announced",
+        "phase": "3.3-2",
+        "badge": "3.3 下半 · 11月11日",
+        "label": "3.3 下半调频 · 11月11日 12:00 – 12月1日 14:59（服务器时间）"
+      },
+      "previewNote": "已公开官方机制介绍、未归档影像与角色展示；正式技能和数值见本页对应标签，调频于11月11日12:00（服务器时间）开放。",
+      "announcedAt": "2026-09-12T04:00:06Z",
+      "updatedAt": "2026-11-11",
+      "icon": "assets/agent-previews/severian-official.jpeg",
+      "officialArt": "assets/agent-previews/severian-official.jpeg",
+      "artCaption": "2026-09-12 官方代理人档案原图 · © miHoYo / HoYoverse",
+      "sources": [
+        {
+          "title": "米游社 · 赛维里安 EP · 险棋",
+          "titleEn": "HoYoLAB · Severian EP · Gambit",
+          "url": "https://www.miyoushe.com/zzz/article/79448856",
+          "urlEn": "https://www.hoyolab.com/article/47375133",
+          "date": "2026-11-09"
+        },
+        {
+          "title": "米游社 · 肃仪无犯 · 官方时装展示",
+          "titleEn": "HoYoLAB · Solemnly Impeccable · Official outfit showcase",
+          "url": "https://www.miyoushe.com/zzz/article/79449326",
+          "urlEn": "https://www.hoyolab.com/article/47375346",
+          "date": "2026-11-09"
+        },
+        {
+          "title": "米游社 · 肃仪无犯 · 官方时装短片",
+          "titleEn": "HoYoLAB · Solemnly Impeccable · Official outfit teaser",
+          "url": "https://www.miyoushe.com/zzz/article/79426995",
+          "urlEn": "https://www.hoyolab.com/article/47363692",
+          "date": "2026-11-08"
+        },
+        {
+          "title": "米游社 · 禁罪囚笼 · 官方音擎展示",
+          "titleEn": "HoYoLAB · Incarcerating Grip · Official W-Engine showcase",
+          "url": "https://www.miyoushe.com/zzz/article/79403314",
+          "urlEn": "https://www.hoyolab.com/article/47352196",
+          "date": "2026-11-07"
+        },
+        {
+          "title": "米游社 · 赛维里安角色展示",
+          "titleEn": "HoYoLAB · Severian Character Demo",
+          "url": "https://www.miyoushe.com/zzz/article/79378420",
+          "date": "2026-11-06",
+          "urlEn": "https://www.hoyolab.com/article/47339558"
+        },
+        {
+          "title": "米游社 · 赛维里安机制介绍",
+          "titleEn": "HoYoLAB · Agent Mechanics Intro: Severian",
+          "url": "https://www.miyoushe.com/zzz/article/79355055",
+          "date": "2026-11-05",
+          "urlEn": "https://www.hoyolab.com/article/47327352"
+        },
+        {
+          "title": "米游社 · 赛维里安未归档影像",
+          "titleEn": "HoYoLAB · Unarchived Agent Footage: Severian",
+          "url": "https://www.miyoushe.com/zzz/article/79328664",
+          "date": "2026-11-04",
+          "urlEn": "https://www.hoyolab.com/article/47309557"
+        },
+        {
+          "title": "米游社 · 全息试炼：赛维里安",
+          "titleEn": "HoYoLAB · Holographic Trial: Severian",
+          "url": "https://www.miyoushe.com/zzz/article/79327806",
+          "date": "2026-11-04",
+          "urlEn": "https://www.hoyolab.com/article/47309009"
+        },
+        {
+          "title": "米游社 · 不可售影像：赛维里安",
+          "titleEn": "HoYoLAB · For Display Only: Severian",
+          "url": "https://www.miyoushe.com/zzz/article/79384406",
+          "date": "2026-11-06",
+          "urlEn": "https://www.hoyolab.com/article/47342929"
+        },
+        {
+          "title": "米游社 · 赛维里安养成材料预告",
+          "titleEn": "Miyoushe (Chinese) · Severian Upgrade Material Preview",
+          "url": "https://www.miyoushe.com/zzz/article/79233566",
+          "date": "2026-10-31"
+        },
+        {
+          "title": "米游社 · 3.3「重返天空的旅程」前瞻特别节目情报总览",
+          "url": "https://www.miyoushe.com/zzz/article/78804974",
+          "date": "2026-10-09"
+        },
+        {
+          "title": "HoYoLAB · 3.3「重返天空的旅程」前瞻特别节目情报总览",
+          "url": "https://www.hoyolab.com/article/47023957?lang=zh-cn",
+          "date": "2026-10-09"
+        },
+        {
+          "title": "米游社 · 3.3「重返天空的旅程」前瞻特别节目预告",
+          "url": "https://www.miyoushe.com/zzz/article/78701776",
+          "date": "2026-10-05"
+        },
+        {
+          "title": "HoYoLAB · 3.3「重返天空的旅程」前瞻特别节目预告",
+          "url": "https://www.hoyolab.com/article/46972907?lang=zh-cn",
+          "date": "2026-10-05"
+        },
+        {
+          "title": "HoYoLAB · 赛维里安官方档案",
+          "url": "https://www.hoyolab.com/article/46653676?lang=zh-cn",
+          "date": "2026-09-12"
+        },
+        {
+          "title": "米游社 · 赛维里安官方档案",
+          "url": "https://www.miyoushe.com/zzz/article/78105565",
+          "date": "2026-09-12"
+        },
+        {
+          "title": "HoYoLAB · 第三季角色公开与配音",
+          "url": "https://www.hoyolab.com/article/44865721?lang=zh-cn",
+          "date": "2026-04-30"
+        }
+      ],
+      "betaCheckedAt": "2026-09-30",
+      "roleTags": [
+        "强力风属性输出代理人",
+        "发动强化普攻造成高额伤害",
+        "可自动闪避敌人攻击并反击"
+      ],
+      "signatureEngine": {
+        "name": "禁罪囚笼",
+        "nameEn": "Incarcerating Grip",
+        "rank": "S",
+        "specialty": "强攻"
+      },
+      "supersededBy": "1631",
+      "status": "superseded",
+      "officialTeams": [
+        [
+          "1571",
+          "1311"
+        ],
+        [
+          "1621",
+          "1491"
+        ]
+      ],
+      "officialTeamsSource": "https://www.miyoushe.com/zzz/article/79355055",
+      "mediaNote": "站内视频使用官方中文版本；其他语言版本可前往官方原文。",
+      "mediaNoteEn": "Embedded videos use the official Chinese versions. Other language versions are available on the official pages.",
+      "media": [
+        {
+          "id": "severian-ep",
+          "src": "assets/agent-previews/official-20261111/severian-ep.mp4",
+          "poster": "assets/agent-previews/official-20261111/severian-ep-poster.png",
+          "width": 1920,
+          "height": 1080,
+          "durationSeconds": 223.267,
+          "sourceUrl": "https://www.miyoushe.com/zzz/article/79448856",
+          "sourceUrlEn": "https://www.hoyolab.com/article/47375133",
+          "quality": "1080P",
+          "sourceLanguage": "zh-CN",
+          "title": "赛维里安 · 险棋",
+          "titleEn": "Severian · Gambit"
+        },
+        {
+          "id": "severian-outfit-teaser",
+          "src": "assets/agent-previews/official-20261111/severian-outfit-teaser.mp4",
+          "poster": "assets/agent-previews/official-20261111/severian-outfit-teaser-poster.jpg",
+          "width": 1080,
+          "height": 1920,
+          "durationSeconds": 11.933,
+          "sourceUrl": "https://www.miyoushe.com/zzz/article/79426995",
+          "sourceUrlEn": "https://www.hoyolab.com/article/47363692",
+          "quality": "1080P",
+          "sourceLanguage": "zh-CN",
+          "title": "赛维里安 · 肃仪无犯",
+          "titleEn": "Severian · Solemnly Impeccable"
+        },
+        {
+          "id": "incarcerating-grip-showcase",
+          "src": "assets/agent-previews/official-20261111/incarcerating-grip-showcase.mp4",
+          "poster": "assets/agent-previews/official-20261111/incarcerating-grip-showcase-poster.jpg",
+          "width": 1080,
+          "height": 1920,
+          "durationSeconds": 14.2,
+          "sourceUrl": "https://www.miyoushe.com/zzz/article/79403314",
+          "sourceUrlEn": "https://www.hoyolab.com/article/47352196",
+          "quality": "1080P",
+          "sourceLanguage": "zh-CN",
+          "title": "禁罪囚笼 · 音擎展示",
+          "titleEn": "Incarcerating Grip · W-Engine Showcase"
+        },
+        {
+          "id": "severian-demo",
+          "src": "assets/agent-previews/official-20261106/severian-demo.mp4",
+          "poster": "assets/agent-previews/official-20261106/severian-demo-poster.png",
+          "width": 1706,
+          "height": 720,
+          "durationSeconds": 176.067,
+          "sourceUrl": "https://www.miyoushe.com/zzz/article/79378420",
+          "quality": "720P",
+          "title": "赛维里安 · 督察是怎样练成的",
+          "titleEn": "Severian · The Making of a Commissioner",
+          "audioLanguage": "zh-CN",
+          "sourceUrlEn": "https://www.hoyolab.com/article/47339558"
+        },
+        {
+          "id": "severian-holographic-trial",
+          "src": "assets/agent-previews/official-20261106/severian-holographic-trial.mp4",
+          "poster": "assets/agent-previews/official-20261106/severian-holographic-trial-poster.jpg",
+          "width": 1080,
+          "height": 1920,
+          "durationSeconds": 34.2,
+          "sourceUrl": "https://www.miyoushe.com/zzz/article/79327806",
+          "quality": "1080P",
+          "title": "赛维里安 · 全息试炼",
+          "titleEn": "Severian · Holographic Trial",
+          "audioLanguage": "zh-CN",
+          "sourceUrlEn": "https://www.hoyolab.com/article/47309009"
+        },
+        {
+          "id": "severian-for-display-only",
+          "src": "assets/agent-previews/official-20261106/severian-for-display-only.mp4",
+          "poster": "assets/agent-previews/official-20261106/severian-for-display-only-poster.jpg",
+          "width": 1080,
+          "height": 1920,
+          "durationSeconds": 15.467,
+          "sourceUrl": "https://www.miyoushe.com/zzz/article/79384406",
+          "quality": "1080P",
+          "title": "赛维里安 · 不可售影像",
+          "titleEn": "Severian · For Display Only",
+          "audioLanguage": "zh-CN",
+          "sourceUrlEn": "https://www.hoyolab.com/article/47342929"
+        }
+      ],
+      "artworkGroups": [
+        {
+          "id": "severian-outfit",
+          "title": "肃仪无犯 · 官方时装展示",
+          "titleEn": "Solemnly Impeccable · Official outfit showcase",
+          "sourceUrl": "https://www.miyoushe.com/zzz/article/79449326",
+          "sourceUrlEn": "https://www.hoyolab.com/article/47375346",
+          "pages": [
+            {
+              "id": "severian-outfit-1",
+              "src": "assets/agent-previews/official-20261111/severian-outfit-1-zh.jpeg",
+              "srcEn": "assets/agent-previews/official-20261111/severian-outfit-1-en.jpeg",
+              "width": 1080,
+              "widthEn": 1080,
+              "height": 1670,
+              "heightEn": 1670,
+              "caption": "肃仪无犯 · 官方时装展示 1 · © miHoYo / HoYoverse",
+              "captionEn": "Solemnly Impeccable · Official outfit showcase 1 · © miHoYo / HoYoverse"
+            },
+            {
+              "id": "severian-outfit-2",
+              "src": "assets/agent-previews/official-20261111/severian-outfit-2-zh.gif",
+              "srcEn": "assets/agent-previews/official-20261111/severian-outfit-2-en.gif",
+              "width": 1080,
+              "widthEn": 1080,
+              "height": 1670,
+              "heightEn": 1670,
+              "caption": "肃仪无犯 · 官方时装展示 2 · © miHoYo / HoYoverse",
+              "captionEn": "Solemnly Impeccable · Official outfit showcase 2 · © miHoYo / HoYoverse"
+            },
+            {
+              "id": "severian-outfit-3",
+              "src": "assets/agent-previews/official-20261111/severian-outfit-3-zh.jpeg",
+              "srcEn": "assets/agent-previews/official-20261111/severian-outfit-3-en.jpeg",
+              "width": 1080,
+              "widthEn": 1080,
+              "height": 1670,
+              "heightEn": 1670,
+              "caption": "肃仪无犯 · 官方时装展示 3 · © miHoYo / HoYoverse",
+              "captionEn": "Solemnly Impeccable · Official outfit showcase 3 · © miHoYo / HoYoverse"
+            }
+          ]
+        },
+        {
+          "id": "severian-mechanics",
+          "title": "官方机制介绍图",
+          "titleEn": "Official mechanics introduction",
+          "sourceUrl": "https://www.miyoushe.com/zzz/article/79355055",
+          "sourceUrlEn": "https://www.hoyolab.com/article/47327352",
+          "pages": [
+            {
+              "id": "severian-mechanics-1",
+              "src": "assets/agent-previews/official-20261106/severian-mechanics-1-zh.png",
+              "srcEn": "assets/agent-previews/official-20261106/severian-mechanics-1-en.png",
+              "caption": "官方机制介绍图 · 1 · © miHoYo / HoYoverse",
+              "captionEn": "Official mechanics introduction · 1 · © miHoYo / HoYoverse",
+              "width": 1080,
+              "widthEn": 1080,
+              "height": 2160,
+              "heightEn": 2160
+            },
+            {
+              "id": "severian-mechanics-2",
+              "src": "assets/agent-previews/official-20261106/severian-mechanics-2-zh.png",
+              "srcEn": "assets/agent-previews/official-20261106/severian-mechanics-2-en.png",
+              "caption": "官方机制介绍图 · 2 · © miHoYo / HoYoverse",
+              "captionEn": "Official mechanics introduction · 2 · © miHoYo / HoYoverse",
+              "width": 1080,
+              "widthEn": 1080,
+              "height": 2160,
+              "heightEn": 2160
+            },
+            {
+              "id": "severian-mechanics-3",
+              "src": "assets/agent-previews/official-20261106/severian-mechanics-3-zh.png",
+              "srcEn": "assets/agent-previews/official-20261106/severian-mechanics-3-en.png",
+              "caption": "官方机制介绍图 · 3 · © miHoYo / HoYoverse",
+              "captionEn": "Official mechanics introduction · 3 · © miHoYo / HoYoverse",
+              "width": 1080,
+              "widthEn": 1080,
+              "height": 1810,
+              "heightEn": 1810
+            }
+          ]
+        },
+        {
+          "id": "severian-unarchived",
+          "title": "官方未归档影像图",
+          "titleEn": "Official unarchived footage",
+          "sourceUrl": "https://www.miyoushe.com/zzz/article/79328664",
+          "sourceUrlEn": "https://www.hoyolab.com/article/47309557",
+          "pages": [
+            {
+              "id": "severian-unarchived-1",
+              "src": "assets/agent-previews/official-20261106/severian-unarchived-1-zh.jpeg",
+              "srcEn": "assets/agent-previews/official-20261106/severian-unarchived-1-en.jpeg",
+              "caption": "官方未归档影像图 · 1 · © miHoYo / HoYoverse",
+              "captionEn": "Official unarchived footage · 1 · © miHoYo / HoYoverse",
+              "width": 1200,
+              "widthEn": 1200,
+              "height": 1600,
+              "heightEn": 1600
+            },
+            {
+              "id": "severian-unarchived-2",
+              "src": "assets/agent-previews/official-20261106/severian-unarchived-2-zh.jpeg",
+              "srcEn": "assets/agent-previews/official-20261106/severian-unarchived-2-en.jpeg",
+              "caption": "官方未归档影像图 · 2 · © miHoYo / HoYoverse",
+              "captionEn": "Official unarchived footage · 2 · © miHoYo / HoYoverse",
+              "width": 1200,
+              "widthEn": 1200,
+              "height": 1600,
+              "heightEn": 1600
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sunbringer",
+      "name": "挽昼",
+      "englishName": "Sunbringer",
+      "aliases": [
+        "挽晝",
+        "Sunbringer",
+        "艾尔妲·挽昼",
+        "Eldreda",
+        "Eldreda Sunbringer",
+        "林德薇恩·挽昼",
+        "Lindverne",
+        "Lindverne Sunbringer",
+        "德蕾琪娜·挽昼",
+        "Dracaene",
+        "Dracaene Sunbringer"
+      ],
+      "faction": "罗斯凯利法",
+      "description": "艾尔妲、林德薇恩与德蕾琪娜共同以「挽昼」之名守护罗斯凯利法。三人并肩，承接世界的期许。",
+      "voiceActors": {
+        "zh": "张若瑜",
+        "ja": "大原沙耶香"
+      },
+      "availability": {
+        "status": "announced",
+        "badge": "3.4 官方预告",
+        "label": "3.4 版本登场，具体调频时间待公布"
+      },
+      "status": "announced",
+      "previewNote": "官方确认将于3.4版本以全新虚狩、首位结使代理人的身份登场；技能、音擎与具体调频时间待官方公布。",
+      "announcedAt": "2026-10-23T04:00:13Z",
+      "updatedAt": "2026-10-27",
+      "icon": "assets/agent-previews/sunbringer/sunbringer-poster.png",
+      "artwork": "assets/agent-previews/sunbringer/sunbringer-poster.png",
+      "officialArt": "assets/agent-previews/sunbringer/sunbringer-profile-zh.png",
+      "officialArtEn": "assets/agent-previews/sunbringer/sunbringer-profile-en.jpg",
+      "artCaption": "2026-10-23 官方代理人档案原图 · © miHoYo / HoYoverse",
+      "members": [
+        {
+          "name": "艾尔妲·挽昼",
+          "englishName": "Eldreda",
+          "poster": "assets/agent-previews/sunbringer/eldreda-poster.png"
+        },
+        {
+          "name": "林德薇恩·挽昼",
+          "englishName": "Lindverne",
+          "poster": "assets/agent-previews/sunbringer/lindverne-poster.png"
+        },
+        {
+          "name": "德蕾琪娜·挽昼",
+          "englishName": "Dracaene",
+          "poster": "assets/agent-previews/sunbringer/dracaene-poster.png"
+        }
+      ],
+      "media": [
+        {
+          "id": "sunbringer",
+          "title": "挽昼 · 共同档案",
+          "src": "assets/agent-previews/sunbringer/sunbringer-teaser.mp4",
+          "poster": "assets/agent-previews/sunbringer/sunbringer-poster.png",
+          "width": 1440,
+          "height": 1080,
+          "durationSeconds": 13.933,
+          "sourceUrl": "https://www.miyoushe.com/zzz/article/79077741"
+        },
+        {
+          "id": "eldreda",
+          "title": "艾尔妲·挽昼",
+          "src": "assets/agent-previews/sunbringer/eldreda-teaser.mp4",
+          "poster": "assets/agent-previews/sunbringer/eldreda-poster.png",
+          "width": 1080,
+          "height": 1920,
+          "durationSeconds": 15.033,
+          "sourceUrl": "https://www.miyoushe.com/zzz/article/79077528"
+        },
+        {
+          "id": "lindverne",
+          "title": "林德薇恩·挽昼",
+          "src": "assets/agent-previews/sunbringer/lindverne-teaser.mp4",
+          "poster": "assets/agent-previews/sunbringer/lindverne-poster.png",
+          "width": 1080,
+          "height": 1920,
+          "durationSeconds": 15.033,
+          "sourceUrl": "https://www.miyoushe.com/zzz/article/79077314"
+        },
+        {
+          "id": "dracaene",
+          "title": "德蕾琪娜·挽昼",
+          "src": "assets/agent-previews/sunbringer/dracaene-teaser.mp4",
+          "poster": "assets/agent-previews/sunbringer/dracaene-poster.png",
+          "width": 1080,
+          "height": 1920,
+          "durationSeconds": 16.033,
+          "sourceUrl": "https://www.miyoushe.com/zzz/article/79077084"
+        },
+        {
+          "id": "sunbringer-showcase",
+          "title": "挽昼 · 先行展示",
+          "src": "assets/agent-previews/sunbringer/sunbringer-preview-showcase.mp4",
+          "poster": "assets/agent-previews/sunbringer/sunbringer-preview-showcase-poster.jpg",
+          "width": 1920,
+          "height": 1080,
+          "durationSeconds": 80.88,
+          "sourceUrl": "https://www.hoyolab.com/article/47185415"
+        }
+      ],
+      "sources": [
+        {
+          "title": "哔哩哔哩官方 · 挽昼先行展示",
+          "url": "https://www.bilibili.com/video/BV1U3n46GEzY/",
+          "date": "2026-10-24"
+        },
+        {
+          "title": "HoYoLAB · 挽昼先行展示",
+          "url": "https://www.hoyolab.com/article/47185415",
+          "date": "2026-10-24"
+        },
+        {
+          "title": "米游社 · 代理人档案丨挽昼",
+          "url": "https://www.miyoushe.com/zzz/article/79077741",
+          "date": "2026-10-23"
+        },
+        {
+          "title": "米游社 · 艾尔妲·挽昼",
+          "url": "https://www.miyoushe.com/zzz/article/79077528",
+          "date": "2026-10-23"
+        },
+        {
+          "title": "米游社 · 林德薇恩·挽昼",
+          "url": "https://www.miyoushe.com/zzz/article/79077314",
+          "date": "2026-10-23"
+        },
+        {
+          "title": "米游社 · 德蕾琪娜·挽昼",
+          "url": "https://www.miyoushe.com/zzz/article/79077084",
+          "date": "2026-10-23"
+        },
+        {
+          "title": "绝区零官网 · 挽昼英文档案",
+          "url": "https://zenless.hoyoverse.com/en-us/news/166997",
+          "date": "2026-10-23"
+        }
+      ],
+      "introducedVersion": "3.4",
+      "role": "虚狩 · 首位结使代理人"
+    },
+    {
+      "id": "robin",
+      "name": "知更鸟",
+      "englishName": "Robin",
+      "aliases": [
+        "知更鳥",
+        "Robin"
+      ],
+      "faction": "未明界域",
+      "role": "《崩坏：星穹铁道》联动代理人",
+      "introducedVersion": "3.4",
+      "description": "来自《崩坏：星穹铁道》的联动代理人。知更鸟来到罗斯凯利法的片场，期待与大家共同完成精彩的演出。",
+      "voiceActors": {
+        "zh": "钱琛 / 歌：Chevy",
+        "ja": "名冢佳织 / 歌：Chevy"
+      },
+      "availability": {
+        "status": "announced",
+        "badge": "3.4 联动预告",
+        "label": "3.4 版本联动登场，具体调频时间待公布"
+      },
+      "status": "announced",
+      "previewNote": "已公开联动角色档案、阵营与中日配音；技能、音擎与调频时间待官方公布。",
+      "announcedAt": "2026-10-09T12:07:09Z",
+      "updatedAt": "2026-11-06",
+      "icon": "assets/agent-previews/robin/robin-poster.png",
+      "artwork": "assets/agent-previews/robin/robin-poster.png",
+      "officialArt": "assets/agent-previews/robin/robin-profile-zh.png",
+      "officialArtEn": "assets/agent-previews/robin/robin-profile-en.jpg",
+      "artCaption": "2026-10-24 官方代理人档案原图 · © miHoYo / HoYoverse",
+      "media": [
+        {
+          "id": "robin-kafka-contact",
+          "src": "assets/agent-previews/official-20261106/robin-kafka-contact.mp4",
+          "poster": "assets/agent-previews/official-20261106/robin-contact-poster.jpg",
+          "width": 1920,
+          "height": 1080,
+          "durationSeconds": 76.933,
+          "sourceUrl": "https://www.miyoushe.com/zzz/article/79401979",
+          "quality": "1080P",
+          "title": "知更鸟＆卡芙卡 · 未明通讯",
+          "titleEn": "Robin & Kafka · Official crossover teaser",
+          "audioLanguage": "zh-CN"
+        },
+        {
+          "id": "robin",
+          "title": "知更鸟 · 官方档案",
+          "src": "assets/agent-previews/robin/robin-teaser.mp4",
+          "poster": "assets/agent-previews/robin/robin-poster.png",
+          "width": 1080,
+          "height": 1920,
+          "durationSeconds": 15.07,
+          "sourceUrl": "https://www.miyoushe.com/zzz/article/79099235"
+        }
+      ],
+      "sources": [
+        {
+          "title": "米游社 · 未明通讯：知更鸟＆卡芙卡",
+          "titleEn": "Miyoushe (Chinese) · Robin & Kafka crossover teaser",
+          "url": "https://www.miyoushe.com/zzz/article/79401979",
+          "date": "2026-11-07"
+        },
+        {
+          "title": "米游社 · 代理人档案丨知更鸟",
+          "url": "https://www.miyoushe.com/zzz/article/79099235",
+          "date": "2026-10-24"
+        },
+        {
+          "title": "HoYoLAB · 知更鸟英文档案",
+          "url": "https://www.hoyolab.com/article/47185723",
+          "date": "2026-10-24"
+        },
+        {
+          "title": "米游社 · 《绝区零》×《崩坏：星穹铁道》联动角色公开",
+          "url": "https://www.miyoushe.com/zzz/article/78804749",
+          "date": "2026-10-09"
+        }
+      ],
+      "portraitLayout": "poster",
+      "artworkCaption": "官方角色图 · © miHoYo / HoYoverse"
+    },
+    {
+      "id": "kafka",
+      "name": "卡芙卡",
+      "englishName": "Kafka",
+      "aliases": [
+        "Kafka",
+        "カフカ"
+      ],
+      "faction": "未明界域",
+      "role": "《崩坏：星穹铁道》联动代理人",
+      "introducedVersion": "3.4",
+      "description": "来自《崩坏：星穹铁道》的联动代理人。卡芙卡趁着度假来到片场，接下电影演出，故事的结局则取决于大家的选择。",
+      "voiceActors": {
+        "zh": "徐慧",
+        "ja": "伊藤静"
+      },
+      "availability": {
+        "status": "announced",
+        "badge": "3.4 联动预告",
+        "label": "3.4 版本联动登场，具体调频时间待公布"
+      },
+      "status": "announced",
+      "previewNote": "已公开联动角色档案、阵营与中日配音；技能、音擎与调频时间待官方公布。",
+      "announcedAt": "2026-10-09T12:07:09Z",
+      "updatedAt": "2026-11-06",
+      "icon": "assets/agent-previews/kafka/kafka-poster.png",
+      "artwork": "assets/agent-previews/kafka/kafka-poster.png",
+      "officialArt": "assets/agent-previews/kafka/kafka-profile-zh.png",
+      "officialArtEn": "assets/agent-previews/kafka/kafka-profile-en.jpg",
+      "artCaption": "2026-10-24 官方代理人档案原图 · © miHoYo / HoYoverse",
+      "media": [
+        {
+          "id": "robin-kafka-contact",
+          "src": "assets/agent-previews/official-20261106/robin-kafka-contact.mp4",
+          "poster": "assets/agent-previews/official-20261106/kafka-contact-poster.jpg",
+          "width": 1920,
+          "height": 1080,
+          "durationSeconds": 76.933,
+          "sourceUrl": "https://www.miyoushe.com/zzz/article/79401979",
+          "quality": "1080P",
+          "title": "知更鸟＆卡芙卡 · 未明通讯",
+          "titleEn": "Robin & Kafka · Official crossover teaser",
+          "audioLanguage": "zh-CN"
+        },
+        {
+          "id": "kafka",
+          "title": "卡芙卡 · 官方档案",
+          "src": "assets/agent-previews/kafka/kafka-teaser.mp4",
+          "poster": "assets/agent-previews/kafka/kafka-poster.png",
+          "width": 1080,
+          "height": 2124,
+          "durationSeconds": 12.05,
+          "sourceUrl": "https://www.miyoushe.com/zzz/article/79099521"
+        }
+      ],
+      "sources": [
+        {
+          "title": "米游社 · 未明通讯：知更鸟＆卡芙卡",
+          "titleEn": "Miyoushe (Chinese) · Robin & Kafka crossover teaser",
+          "url": "https://www.miyoushe.com/zzz/article/79401979",
+          "date": "2026-11-07"
+        },
+        {
+          "title": "米游社 · 代理人档案丨卡芙卡",
+          "url": "https://www.miyoushe.com/zzz/article/79099521",
+          "date": "2026-10-24"
+        },
+        {
+          "title": "HoYoLAB · 卡芙卡英文档案",
+          "url": "https://www.hoyolab.com/article/47185592",
+          "date": "2026-10-24"
+        },
+        {
+          "title": "米游社 · 《绝区零》×《崩坏：星穹铁道》联动角色公开",
+          "url": "https://www.miyoushe.com/zzz/article/78804749",
+          "date": "2026-10-09"
+        }
+      ],
+      "portraitLayout": "poster",
+      "artworkCaption": "官方角色图 · © miHoYo / HoYoverse"
+    },
+    {
+      "id": "norma-hollowell",
+      "name": "诺姆",
+      "englishName": "Norma",
+      "supersededBy": "1571",
+      "status": "superseded",
+      "updatedAt": "2026-11-14",
+      "artworkGroups": [
+        {
+          "id": "norma-eous-official-20261112",
+          "title": "诺姆 · 官方插画",
+          "titleEn": "Norma · Official illustration",
+          "sourceUrl": "https://www.miyoushe.com/zzz/article/79517921",
+          "pages": [
+            {
+              "id": "norma-eous-official-20261112-1",
+              "src": "assets/agent-previews/official-20261114/norma-eous-official.jpg",
+              "width": 2350,
+              "height": 1000,
+              "caption": "2026-11-12 · 官方中文原图 · © miHoYo / HoYoverse",
+              "captionEn": "2026-11-12 · Original artwork from the Chinese official post · © miHoYo / HoYoverse"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "米游社 · 诺姆与伊埃斯",
+          "titleEn": "Miyoushe · Norma and Eous (Chinese original)",
+          "url": "https://www.miyoushe.com/zzz/article/79517921",
+          "date": "2026-11-12"
+        }
+      ]
+    }
+  ],
+  "directory": {
+    "version": 1,
+    "gameVersion": "3.3.0",
+    "detailsBytes": 3367589,
+    "agents": [
+      {
+        "name": "安比",
+        "nameEn": "Anby",
+        "fullName": "安比·德玛拉",
+        "fullNameEn": "Anby Demara",
+        "faction": "狡兔屋",
+        "factionEn": "Cunning Hares",
+        "specialty": "击破",
+        "specialtyEn": "Stun",
+        "element": "电属性",
+        "elementEn": "Electric",
+        "id": "1011",
+        "icon": "assets/tuning/agent-1011.webp",
+        "rank": "A",
+        "aliases": [
+          "Anby",
+          "Энби",
+          "アンビー",
+          "엔비"
+        ],
+        "detailRange": [
+          1070,
+          25648,
+          19815450,
+          19815450,
+          "7b4458100bb856f4b1074f63f90ba7616a9416171a511bc5dca27c15263145e0"
+        ],
+        "portrait": "assets/agent-portraits/agent-1011.webp"
+      },
+      {
+        "name": "猫又",
+        "nameEn": "Nekomata",
+        "fullName": "猫宫 又奈",
+        "fullNameEn": "Nekomiya Mana",
+        "faction": "狡兔屋",
+        "factionEn": "Cunning Hares",
+        "specialty": "强攻",
+        "specialtyEn": "Attack",
+        "element": "物理",
+        "elementEn": "Physical",
+        "id": "1021",
+        "icon": "assets/tuning/agent-1021.webp",
+        "rank": "S",
+        "aliases": [
+          "Nekomata",
+          "Нэкомата",
+          "貓又",
+          "네코마타"
+        ],
+        "detailRange": [
+          26726,
+          61167,
+          19815450,
+          19815450,
+          "440276ef7fed5b9a37a491ef3147b7e67bc974f1fac20a3ec3a1d428100d8a8b"
+        ],
+        "portrait": "assets/agent-portraits/agent-1021.webp"
+      },
+      {
+        "name": "妮可",
+        "nameEn": "Nicole",
+        "fullName": "妮可·德玛拉",
+        "fullNameEn": "Nicole Demara",
+        "faction": "狡兔屋",
+        "factionEn": "Cunning Hares",
+        "specialty": "支援",
+        "specialtyEn": "Support",
+        "element": "以太",
+        "elementEn": "Ether",
+        "id": "1031",
+        "icon": "assets/tuning/agent-1031.webp",
+        "rank": "A",
+        "aliases": [
+          "Nicole",
+          "Николь",
+          "ニコ",
+          "니콜"
+        ],
+        "detailRange": [
+          87901,
+          29765,
+          19815450,
+          19815450,
+          "825118c198e356582a06b191396df4638f5934b5ad85d42fd51ba4b8ede7a5b8"
+        ],
+        "portrait": "assets/agent-portraits/agent-1031.webp"
+      },
+      {
+        "name": "「11号」",
+        "nameEn": "Soldier 11",
+        "fullName": "「11号」",
+        "fullNameEn": "Soldier 11",
+        "faction": "防卫军·奥波勒斯小队",
+        "factionEn": "Defense Force - Obol Squad",
+        "specialty": "强攻",
+        "specialtyEn": "Attack",
+        "element": "火属性",
+        "elementEn": "Fire",
+        "id": "1041",
+        "icon": "assets/tuning/agent-1041.webp",
+        "rank": "S",
+        "aliases": [
+          "\"Soldier 11\"",
+          "Chiến Binh 11",
+          "N.º 11",
+          "N.º 11",
+          "Soldatin Nr. 11",
+          "Soldat 11",
+          "Soldier 11",
+          "Солдат 11",
+          "「11號」",
+          "「11호」"
+        ],
+        "detailRange": [
+          117674,
+          41766,
+          19815450,
+          19815450,
+          "4b452473941f44d4076d54f4f0bed7f25b8b73e52b4660ed72734e0312de3ddb"
+        ],
+        "portrait": "assets/agent-portraits/agent-1041.webp"
+      },
+      {
+        "name": "伊德海莉",
+        "nameEn": "Yidhari",
+        "fullName": "伊德海莉·墨菲",
+        "fullNameEn": "Yidhari Murphy",
+        "faction": "怪啖屋",
+        "factionEn": "Spook Shack",
+        "specialty": "命破",
+        "specialtyEn": "Rupture",
+        "element": "冰属性",
+        "elementEn": "Ice",
+        "id": "1051",
+        "icon": "assets/tuning/agent-1051.webp",
+        "rank": "S",
+        "aliases": [
+          "Yidhari",
+          "Йидхари",
+          "イドリー",
+          "이드하리"
+        ],
+        "detailRange": [
+          159448,
+          50505,
+          19815450,
+          19815450,
+          "edcb29d07410c095fd9b0b64cdeac7309da4d746fbca1e0904974f460ae05dc1"
+        ],
+        "portrait": "assets/agent-portraits/agent-1051.webp"
+      },
+      {
+        "name": "可琳",
+        "nameEn": "Corin",
+        "fullName": "可琳·威克斯",
+        "fullNameEn": "Corin Wickes",
+        "faction": "维多利亚家政",
+        "factionEn": "Victoria Housekeeping Co.",
+        "specialty": "强攻",
+        "specialtyEn": "Attack",
+        "element": "物理",
+        "elementEn": "Physical",
+        "id": "1061",
+        "icon": "assets/tuning/agent-1061.webp",
+        "rank": "A",
+        "aliases": [
+          "Corin",
+          "Корин",
+          "カリン",
+          "코린"
+        ],
+        "detailRange": [
+          209961,
+          25771,
+          19815450,
+          19815450,
+          "1f56711212f7810ad921844d8b733f6acaca0fe37a564f5c1fb389cd8fd10879"
+        ],
+        "portrait": "assets/agent-portraits/agent-1061.webp"
+      },
+      {
+        "name": "凯撒",
+        "nameEn": "Caesar",
+        "fullName": "凯撒·金",
+        "fullNameEn": "Caesar King",
+        "faction": "卡吕冬之子",
+        "factionEn": "Sons of Calydon",
+        "specialty": "防护",
+        "specialtyEn": "Defense",
+        "element": "物理",
+        "elementEn": "Physical",
+        "id": "1071",
+        "icon": "assets/tuning/agent-1071.webp",
+        "rank": "S",
+        "aliases": [
+          "Caesar",
+          "César",
+          "Цезарь",
+          "シーザー",
+          "凱撒",
+          "카이사르"
+        ],
+        "detailRange": [
+          235740,
+          53963,
+          19815450,
+          19815450,
+          "65b244542694fbf74a48c38f26a9c0c8539e238d3f712c73188e149604ff95fa"
+        ],
+        "portrait": "assets/agent-portraits/agent-1071.webp"
+      },
+      {
+        "name": "比利",
+        "nameEn": "Billy",
+        "fullName": "比利·奇德",
+        "fullNameEn": "Billy Kid",
+        "faction": "狡兔屋",
+        "factionEn": "Cunning Hares",
+        "specialty": "强攻",
+        "specialtyEn": "Attack",
+        "element": "物理",
+        "elementEn": "Physical",
+        "id": "1081",
+        "icon": "assets/tuning/agent-1081.webp",
+        "rank": "A",
+        "aliases": [
+          "Billy",
+          "Билли",
+          "ビリー",
+          "빌리"
+        ],
+        "detailRange": [
+          289711,
+          25627,
+          19815450,
+          19815450,
+          "3ff044bedf27d1ebe3db281b4b4b9b5723507e820f2c203adc342ed7a7be59fa"
+        ],
+        "portrait": "assets/agent-portraits/agent-1081.webp"
+      },
+      {
+        "name": "雅",
+        "nameEn": "Miyabi",
+        "fullName": "星见 雅",
+        "fullNameEn": "Hoshimi Miyabi",
+        "faction": "对空洞特别行动部第六课",
+        "factionEn": "Hollow Special Operations Section 6",
+        "specialty": "异常",
+        "specialtyEn": "Anomaly",
+        "element": "烈霜",
+        "elementEn": "Frost",
+        "id": "1091",
+        "icon": "assets/tuning/agent-1091.webp",
+        "rank": "S",
+        "aliases": [
+          "Miyabi",
+          "Мияби",
+          "星見雅",
+          "미야비"
+        ],
+        "detailRange": [
+          315346,
+          44271,
+          19815450,
+          19815450,
+          "7306651828fdad5d7103a43eaacde5483bceafc3987a1d535cb91440a9f9716f"
+        ],
+        "portrait": "assets/agent-portraits/agent-1091.webp"
+      },
+      {
+        "name": "珂蕾妲",
+        "nameEn": "Koleda",
+        "fullName": "珂蕾妲·贝洛伯格",
+        "fullNameEn": "Koleda Belobog",
+        "faction": "白祇重工",
+        "factionEn": "Belobog Heavy Industries",
+        "specialty": "击破",
+        "specialtyEn": "Stun",
+        "element": "火属性",
+        "elementEn": "Fire",
+        "id": "1101",
+        "icon": "assets/tuning/agent-1101.webp",
+        "rank": "S",
+        "aliases": [
+          "Koleda",
+          "Коляда",
+          "クレタ",
+          "콜레다"
+        ],
+        "detailRange": [
+          359625,
+          52034,
+          19815450,
+          19815450,
+          "2d44f4ae3d91ae2bf444633f7db94edaf9e8c014f2ad1ecbaf290efec1c5c5a4"
+        ],
+        "portrait": "assets/agent-portraits/agent-1101.webp"
+      },
+      {
+        "name": "安东",
+        "nameEn": "Anton",
+        "fullName": "安东·伊万诺夫",
+        "fullNameEn": "Anton Ivanov",
+        "faction": "白祇重工",
+        "factionEn": "Belobog Heavy Industries",
+        "specialty": "强攻",
+        "specialtyEn": "Attack",
+        "element": "电属性",
+        "elementEn": "Electric",
+        "id": "1111",
+        "icon": "assets/tuning/agent-1111.webp",
+        "rank": "A",
+        "aliases": [
+          "Anton",
+          "Antón",
+          "Антон",
+          "アンドー",
+          "安東",
+          "앤톤"
+        ],
+        "detailRange": [
+          411667,
+          29884,
+          19815450,
+          19815450,
+          "a2860fe012e50aed934251fd1dc467d7de05b7f20e23ffa38cc126dc5610275b"
+        ],
+        "portrait": "assets/agent-portraits/agent-1111.webp"
+      },
+      {
+        "name": "本",
+        "nameEn": "Ben",
+        "fullName": "本·比格",
+        "fullNameEn": "Ben Bigger",
+        "faction": "白祇重工",
+        "factionEn": "Belobog Heavy Industries",
+        "specialty": "防护",
+        "specialtyEn": "Defense",
+        "element": "火属性",
+        "elementEn": "Fire",
+        "id": "1121",
+        "icon": "assets/tuning/agent-1121.webp",
+        "rank": "A",
+        "aliases": [
+          "Ben",
+          "Бен",
+          "ベン",
+          "벤"
+        ],
+        "detailRange": [
+          441559,
+          28456,
+          19815450,
+          19815450,
+          "7bfe34560ce1bc2404a1a46b97f52ea72d1f91ee4482823dfe7f5a9db6997fa4"
+        ],
+        "portrait": "assets/agent-portraits/agent-1121.webp"
+      },
+      {
+        "name": "苍角",
+        "nameEn": "Soukaku",
+        "fullName": "苍角",
+        "fullNameEn": "Soukaku",
+        "faction": "对空洞特别行动部第六课",
+        "factionEn": "Hollow Special Operations Section 6",
+        "specialty": "支援",
+        "specialtyEn": "Support",
+        "element": "冰属性",
+        "elementEn": "Ice",
+        "id": "1131",
+        "icon": "assets/tuning/agent-1131.webp",
+        "rank": "A",
+        "aliases": [
+          "Soukaku",
+          "Сокаку",
+          "蒼角",
+          "소우카쿠"
+        ],
+        "detailRange": [
+          470023,
+          34014,
+          19815450,
+          19815450,
+          "a86574bb94c6b2ee4ad60e251bf20d8a7b4187cf025d82c5153d78ad4545778e"
+        ],
+        "portrait": "assets/agent-portraits/agent-1131.webp"
+      },
+      {
+        "name": "莱卡恩",
+        "nameEn": "Lycaon",
+        "fullName": "冯·莱卡恩",
+        "fullNameEn": "Von Lycaon",
+        "faction": "维多利亚家政",
+        "factionEn": "Victoria Housekeeping Co.",
+        "specialty": "击破",
+        "specialtyEn": "Stun",
+        "element": "冰属性",
+        "elementEn": "Ice",
+        "id": "1141",
+        "icon": "assets/tuning/agent-1141.webp",
+        "rank": "S",
+        "aliases": [
+          "Lycaon",
+          "Ликаон",
+          "ライカン",
+          "萊卡恩",
+          "리카온"
+        ],
+        "detailRange": [
+          504045,
+          74007,
+          19815450,
+          19815450,
+          "030abd11bf1812c9b3786b4ec0fe8b4061cd0ee0d226257c344eb56b4f60a454"
+        ],
+        "portrait": "assets/agent-portraits/agent-1141.webp"
+      },
+      {
+        "name": "露西",
+        "nameEn": "Lucy",
+        "fullName": "露西亚娜·德·蒙特夫",
+        "fullNameEn": "Luciana de Montefio",
+        "faction": "卡吕冬之子",
+        "factionEn": "Sons of Calydon",
+        "specialty": "支援",
+        "specialtyEn": "Support",
+        "element": "火属性",
+        "elementEn": "Fire",
+        "id": "1151",
+        "icon": "assets/tuning/agent-1151.webp",
+        "rank": "A",
+        "aliases": [
+          "Lucy",
+          "Люси",
+          "ルーシー",
+          "루시"
+        ],
+        "detailRange": [
+          578060,
+          44326,
+          19815450,
+          19815450,
+          "51844ca4519fe4c21a5fb668f85d9027388549e1e0da6db676be1152e1665cdb"
+        ],
+        "portrait": "assets/agent-portraits/agent-1151.webp"
+      },
+      {
+        "name": "莱特",
+        "nameEn": "Lighter",
+        "fullName": "莱特",
+        "fullNameEn": "Lighter",
+        "faction": "卡吕冬之子",
+        "factionEn": "Sons of Calydon",
+        "specialty": "击破",
+        "specialtyEn": "Stun",
+        "element": "火属性",
+        "elementEn": "Fire",
+        "id": "1161",
+        "icon": "assets/tuning/agent-1161.webp",
+        "rank": "S",
+        "aliases": [
+          "Lighter",
+          "Лайтер",
+          "ライト",
+          "萊特",
+          "라이터"
+        ],
+        "detailRange": [
+          622394,
+          52402,
+          19815450,
+          19815450,
+          "14605a962de82fb39698d86ac107c1d550feb93e1ebc00863dca8959c380b4de"
+        ],
+        "portrait": "assets/agent-portraits/agent-1161.webp"
+      },
+      {
+        "name": "柏妮思",
+        "nameEn": "Burnice",
+        "fullName": "柏妮思·怀特",
+        "fullNameEn": "Burnice White",
+        "faction": "卡吕冬之子",
+        "factionEn": "Sons of Calydon",
+        "specialty": "异常",
+        "specialtyEn": "Anomaly",
+        "element": "火属性",
+        "elementEn": "Fire",
+        "id": "1171",
+        "icon": "assets/tuning/agent-1171.webp",
+        "rank": "S",
+        "aliases": [
+          "Bernice",
+          "Burnice",
+          "Бёрнис",
+          "バーニス",
+          "버니스"
+        ],
+        "detailRange": [
+          674804,
+          64489,
+          19815450,
+          19815450,
+          "c6d268464740d5cb9a16b6c9f9a488c3b85e7373f09819c3815e2e772bc501e4"
+        ],
+        "portrait": "assets/agent-portraits/agent-1171.webp"
+      },
+      {
+        "name": "格莉丝",
+        "nameEn": "Grace",
+        "fullName": "格莉丝·霍华德",
+        "fullNameEn": "Grace Howard",
+        "faction": "白祇重工",
+        "factionEn": "Belobog Heavy Industries",
+        "specialty": "异常",
+        "specialtyEn": "Anomaly",
+        "element": "电属性",
+        "elementEn": "Electric",
+        "id": "1181",
+        "icon": "assets/tuning/agent-1181.webp",
+        "rank": "S",
+        "aliases": [
+          "Grace",
+          "Грейс",
+          "グレース",
+          "格莉絲",
+          "그레이스"
+        ],
+        "detailRange": [
+          739301,
+          51674,
+          19815450,
+          19815450,
+          "cf6e3561d35acea10d7ccab68216f80c05996e71b21dfc471db6c80d508e3e48"
+        ],
+        "portrait": "assets/agent-portraits/agent-1181.webp"
+      },
+      {
+        "name": "艾莲",
+        "nameEn": "Ellen",
+        "fullName": "艾莲·乔",
+        "fullNameEn": "Ellen Joe",
+        "faction": "维多利亚家政",
+        "factionEn": "Victoria Housekeeping Co.",
+        "specialty": "强攻",
+        "specialtyEn": "Attack",
+        "element": "冰属性",
+        "elementEn": "Ice",
+        "id": "1191",
+        "icon": "assets/tuning/agent-1191.webp",
+        "rank": "S",
+        "aliases": [
+          "Ellen",
+          "Эллен",
+          "エレン",
+          "艾蓮",
+          "엘렌"
+        ],
+        "detailRange": [
+          790983,
+          52261,
+          19815450,
+          19815450,
+          "f4e6d2ad89f13178c123d6fa61df4b326b29d8af1624fcc929355f716bed72bc"
+        ],
+        "portrait": "assets/agent-portraits/agent-1191.webp"
+      },
+      {
+        "name": "悠真",
+        "nameEn": "Harumasa",
+        "fullName": "浅羽 悠真",
+        "fullNameEn": "Asaba Harumasa",
+        "faction": "对空洞特别行动部第六课",
+        "factionEn": "Hollow Special Operations Section 6",
+        "specialty": "强攻",
+        "specialtyEn": "Attack",
+        "element": "电属性",
+        "elementEn": "Electric",
+        "id": "1201",
+        "icon": "assets/tuning/agent-1201.webp",
+        "rank": "S",
+        "aliases": [
+          "Harumasa",
+          "Харумаса",
+          "浅羽悠真",
+          "하루마사"
+        ],
+        "detailRange": [
+          843252,
+          61293,
+          19815450,
+          19815450,
+          "200afc8324257cb6a4bab1dad8c4a137d48d3b04b535c78f164fc63b4c55f51f"
+        ],
+        "portrait": "assets/agent-portraits/agent-1201.webp"
+      },
+      {
+        "name": "丽娜",
+        "nameEn": "Rina",
+        "fullName": "亚历山德丽娜·莎芭丝缇安",
+        "fullNameEn": "Alexandrina Sebastiane",
+        "faction": "维多利亚家政",
+        "factionEn": "Victoria Housekeeping Co.",
+        "specialty": "支援",
+        "specialtyEn": "Support",
+        "element": "电属性",
+        "elementEn": "Electric",
+        "id": "1211",
+        "icon": "assets/tuning/agent-1211.webp",
+        "rank": "S",
+        "aliases": [
+          "Rina",
+          "Рина",
+          "リナ",
+          "麗娜",
+          "리나"
+        ],
+        "detailRange": [
+          904553,
+          39843,
+          19815450,
+          19815450,
+          "16030c9a3a08e46c7c04ca8cf5499977545ac8a446dbe861f1eb1fd9fea8bc58"
+        ],
+        "portrait": "assets/agent-portraits/agent-1211.webp"
+      },
+      {
+        "name": "柳",
+        "nameEn": "Yanagi",
+        "fullName": "月城 柳",
+        "fullNameEn": "Tsukishiro Yanagi",
+        "faction": "对空洞特别行动部第六课",
+        "factionEn": "Hollow Special Operations Section 6",
+        "specialty": "异常",
+        "specialtyEn": "Anomaly",
+        "element": "电属性",
+        "elementEn": "Electric",
+        "id": "1221",
+        "icon": "assets/tuning/agent-1221.webp",
+        "rank": "S",
+        "aliases": [
+          "Yanagi",
+          "Янаги",
+          "月城柳",
+          "야나기"
+        ],
+        "detailRange": [
+          944404,
+          69630,
+          19815450,
+          19815450,
+          "bc0b23fc257445c346a0fa9ed8cf0944ca14f452b3fe77e2f549eacb6cf458b9"
+        ],
+        "portrait": "assets/agent-portraits/agent-1221.webp"
+      },
+      {
+        "name": "朱鸢",
+        "nameEn": "Zhu Yuan",
+        "fullName": "朱鸢",
+        "fullNameEn": "Zhu Yuan",
+        "faction": "治安局·刑侦特勤组",
+        "factionEn": "Public Security: Criminal Investigation Special Response Team",
+        "specialty": "强攻",
+        "specialtyEn": "Attack",
+        "element": "以太",
+        "elementEn": "Ether",
+        "id": "1241",
+        "icon": "assets/tuning/agent-1241.webp",
+        "rank": "S",
+        "aliases": [
+          "Zhu Yuan",
+          "Чжу Юань",
+          "朱鳶",
+          "주연"
+        ],
+        "detailRange": [
+          1014042,
+          32204,
+          19815450,
+          19815450,
+          "a259af875001c191a60a06b07430dd23212a12e33eb880989edcd5c280ece3a5"
+        ],
+        "portrait": "assets/agent-portraits/agent-1241.webp"
+      },
+      {
+        "name": "青衣",
+        "nameEn": "Qingyi",
+        "fullName": "青衣",
+        "fullNameEn": "Qingyi",
+        "faction": "治安局·刑侦特勤组",
+        "factionEn": "Public Security: Criminal Investigation Special Response Team",
+        "specialty": "击破",
+        "specialtyEn": "Stun",
+        "element": "电属性",
+        "elementEn": "Electric",
+        "id": "1251",
+        "icon": "assets/tuning/agent-1251.webp",
+        "rank": "S",
+        "aliases": [
+          "Qingyi",
+          "Цинъи",
+          "청의"
+        ],
+        "detailRange": [
+          1046254,
+          39690,
+          19815450,
+          19815450,
+          "6b67597140cd80fa2fa9b8c063e8dc70b6cdee451bb9571c21480655fd430bb4"
+        ],
+        "portrait": "assets/agent-portraits/agent-1251.webp"
+      },
+      {
+        "name": "简",
+        "nameEn": "Jane",
+        "fullName": "简·杜",
+        "fullNameEn": "Jane Doe",
+        "faction": "治安局·刑侦特勤组",
+        "factionEn": "Public Security: Criminal Investigation Special Response Team",
+        "specialty": "异常",
+        "specialtyEn": "Anomaly",
+        "element": "物理",
+        "elementEn": "Physical",
+        "id": "1261",
+        "icon": "assets/tuning/agent-1261.webp",
+        "rank": "S",
+        "aliases": [
+          "Jane",
+          "Джейн",
+          "ジェーン",
+          "簡",
+          "제인"
+        ],
+        "detailRange": [
+          1085952,
+          47525,
+          19815450,
+          19815450,
+          "3dd6675a450f97cd1153b64ed8d8e4f68d806cdd25f2ba2752d5b9c8e8cf2f4f"
+        ],
+        "portrait": "assets/agent-portraits/agent-1261.webp"
+      },
+      {
+        "name": "赛斯",
+        "nameEn": "Seth",
+        "fullName": "赛斯·洛威尔",
+        "fullNameEn": "Seth Lowell",
+        "faction": "治安局·刑侦特勤组",
+        "factionEn": "Public Security: Criminal Investigation Special Response Team",
+        "specialty": "防护",
+        "specialtyEn": "Defense",
+        "element": "电属性",
+        "elementEn": "Electric",
+        "id": "1271",
+        "icon": "assets/tuning/agent-1271.webp",
+        "rank": "A",
+        "aliases": [
+          "Seth",
+          "Сет",
+          "セス",
+          "賽斯",
+          "세스"
+        ],
+        "detailRange": [
+          1133485,
+          36982,
+          19815450,
+          19815450,
+          "776741a3a242e8ae7d815ef94a7d8528f1c92850b3cc7d584588085eff49de1c"
+        ],
+        "portrait": "assets/agent-portraits/agent-1271.webp"
+      },
+      {
+        "name": "派派",
+        "nameEn": "Piper",
+        "fullName": "派派·韦尔",
+        "fullNameEn": "Piper Wheel",
+        "faction": "卡吕冬之子",
+        "factionEn": "Sons of Calydon",
+        "specialty": "异常",
+        "specialtyEn": "Anomaly",
+        "element": "物理",
+        "elementEn": "Physical",
+        "id": "1281",
+        "icon": "assets/tuning/agent-1281.webp",
+        "rank": "A",
+        "aliases": [
+          "Piper",
+          "Пайпер",
+          "パイパー",
+          "파이퍼"
+        ],
+        "detailRange": [
+          1170475,
+          30829,
+          19815450,
+          19815450,
+          "3715f589c7e84f17c47861a3615acc61bbc864548e285ddbc9dfe56d256bf78a"
+        ],
+        "portrait": "assets/agent-portraits/agent-1281.webp"
+      },
+      {
+        "name": "雨果",
+        "nameEn": "Hugo",
+        "fullName": "雨果·维拉德",
+        "fullNameEn": "Hugo Vlad",
+        "faction": "反舌鸟",
+        "factionEn": "Mockingbird",
+        "specialty": "强攻",
+        "specialtyEn": "Attack",
+        "element": "冰属性",
+        "elementEn": "Ice",
+        "id": "1291",
+        "icon": "assets/tuning/agent-1291.webp",
+        "rank": "S",
+        "aliases": [
+          "Hugo",
+          "Хуго",
+          "ヒューゴ",
+          "휴고"
+        ],
+        "detailRange": [
+          1201312,
+          53220,
+          19815450,
+          19815450,
+          "e208cd9e2e3ca9aa9dfdd5b644e2668d2b76b54025cce9265fde57e0605a858a"
+        ],
+        "portrait": "assets/agent-portraits/agent-1291.webp"
+      },
+      {
+        "name": "奥菲丝&「鬼火」",
+        "nameEn": "Orphie & Magus",
+        "fullName": "奥菲丝·马格努森& 「鬼火」",
+        "fullNameEn": "Orphie Magnusson & Magus",
+        "faction": "防卫军·奥波勒斯小队",
+        "factionEn": "Defense Force - Obol Squad",
+        "specialty": "强攻",
+        "specialtyEn": "Attack",
+        "element": "火属性",
+        "elementEn": "Fire",
+        "id": "1301",
+        "icon": "assets/tuning/agent-1301.webp",
+        "rank": "S",
+        "aliases": [
+          "Orfeu & Magus",
+          "Orfia y Magas",
+          "Orphie & \"Magus\"",
+          "Orphie & Magus",
+          "Orphie và Magus",
+          "Orphie & Magus",
+          "Орфея и Магус",
+          "オルペウス&「鬼火」",
+          "奧菲絲&「鬼火」",
+          "오피&「도깨비불」"
+        ],
+        "detailRange": [
+          1254540,
+          54076,
+          19815450,
+          19815450,
+          "046d09508f1a7be60228029da9c590495b1575b9c2d4b932b8bf6c2492a61fe4"
+        ],
+        "portrait": "assets/agent-portraits/agent-1301.webp"
+      },
+      {
+        "name": "耀嘉音",
+        "nameEn": "Astra Yao",
+        "fullName": "耀嘉音",
+        "fullNameEn": "Astra Yao",
+        "faction": "天琴座",
+        "factionEn": "Stars of Lyra",
+        "specialty": "支援",
+        "specialtyEn": "Support",
+        "element": "以太",
+        "elementEn": "Ether",
+        "id": "1311",
+        "icon": "assets/tuning/agent-1311.webp",
+        "rank": "S",
+        "aliases": [
+          "Astra Yao",
+          "Астра Яо",
+          "アストラ",
+          "아스트라"
+        ],
+        "detailRange": [
+          1308624,
+          77248,
+          19815450,
+          19815450,
+          "7aec84dc8e9e59364ccd46b70282fcd8a468e46d05e8e3771a30c8ddb0d5e198"
+        ],
+        "portrait": "assets/agent-portraits/agent-1311.webp"
+      },
+      {
+        "name": "伊芙琳",
+        "nameEn": "Evelyn",
+        "fullName": "伊芙琳·舒瓦利耶",
+        "fullNameEn": "Evelyn Chevalier",
+        "faction": "天琴座",
+        "factionEn": "Stars of Lyra",
+        "specialty": "强攻",
+        "specialtyEn": "Attack",
+        "element": "火属性",
+        "elementEn": "Fire",
+        "id": "1321",
+        "icon": "assets/tuning/agent-1321.webp",
+        "rank": "S",
+        "aliases": [
+          "Evelyn",
+          "Évelyne",
+          "Эвелин",
+          "イヴリン",
+          "이블린"
+        ],
+        "detailRange": [
+          1385880,
+          39036,
+          19815450,
+          19815450,
+          "36415c71e91decfa2950f51afe0a245e68f4d016ddbd08d7a893d5dda736bb67"
+        ],
+        "portrait": "assets/agent-portraits/agent-1321.webp"
+      },
+      {
+        "name": "薇薇安",
+        "nameEn": "Vivian",
+        "fullName": "薇薇安·班希",
+        "fullNameEn": "Vivian Banshee",
+        "faction": "反舌鸟",
+        "factionEn": "Mockingbird",
+        "specialty": "异常",
+        "specialtyEn": "Anomaly",
+        "element": "以太",
+        "elementEn": "Ether",
+        "id": "1331",
+        "icon": "assets/tuning/agent-1331.webp",
+        "rank": "S",
+        "aliases": [
+          "Vivian",
+          "Viviane",
+          "Вивиан",
+          "ビビアン",
+          "비비안"
+        ],
+        "detailRange": [
+          1424924,
+          44537,
+          19815450,
+          19815450,
+          "b36a8f844d539af8ad3cf06129dcd27ea980a2a858862a72061ccd9f86b55a9c"
+        ],
+        "portrait": "assets/agent-portraits/agent-1331.webp"
+      },
+      {
+        "name": "照",
+        "nameEn": "Zhao",
+        "fullName": "照",
+        "fullNameEn": "Zhao",
+        "faction": "坎卜斯黑枝",
+        "factionEn": "Krampus Compliance Authority",
+        "specialty": "防护",
+        "specialtyEn": "Defense",
+        "element": "冰属性",
+        "elementEn": "Ice",
+        "id": "1341",
+        "icon": "assets/tuning/agent-1341.webp",
+        "rank": "S",
+        "aliases": [
+          "Zhao",
+          "Чжао",
+          "자오"
+        ],
+        "detailRange": [
+          1469469,
+          101300,
+          19815450,
+          19815450,
+          "0e5b6dfde96903a95339140b589742de201b30457b86a615d748f51d5b5b1604"
+        ],
+        "portrait": "assets/agent-portraits/agent-1341.webp"
+      },
+      {
+        "name": "波可娜",
+        "nameEn": "Pulchra",
+        "fullName": "波可娜·费雷尼",
+        "fullNameEn": "Pulchra Fellini",
+        "faction": "卡吕冬之子",
+        "factionEn": "Sons of Calydon",
+        "specialty": "击破",
+        "specialtyEn": "Stun",
+        "element": "物理",
+        "elementEn": "Physical",
+        "id": "1351",
+        "icon": "assets/tuning/agent-1351.webp",
+        "rank": "A",
+        "aliases": [
+          "Pulchra",
+          "Пульхра",
+          "プルクラ",
+          "펄크라"
+        ],
+        "detailRange": [
+          1570777,
+          34894,
+          19815450,
+          19815450,
+          "34a21b836dd9b741a09f4d487f85e6b2e6c1c0cabca15e88ac0245547a074330"
+        ],
+        "portrait": "assets/agent-portraits/agent-1351.webp"
+      },
+      {
+        "name": "「扳机」",
+        "nameEn": "Trigger",
+        "fullName": "「扳机」",
+        "fullNameEn": "Trigger",
+        "faction": "防卫军·奥波勒斯小队",
+        "factionEn": "Defense Force - Obol Squad",
+        "specialty": "击破",
+        "specialtyEn": "Stun",
+        "element": "电属性",
+        "elementEn": "Electric",
+        "id": "1361",
+        "icon": "assets/tuning/agent-1361.webp",
+        "rank": "S",
+        "aliases": [
+          "\"Trigger\"",
+          "Gatillo",
+          "Gâchette",
+          "Trigger",
+          "Гашетка",
+          "「トリガー」",
+          "「扳機」",
+          "「트리거」"
+        ],
+        "detailRange": [
+          1605679,
+          38494,
+          19815450,
+          19815450,
+          "ba7aa2747ac387637ff2e00ebed524e9f1a8efd61650249d57d4663288b215e9"
+        ],
+        "portrait": "assets/agent-portraits/agent-1361.webp"
+      },
+      {
+        "name": "仪玄",
+        "nameEn": "Yixuan",
+        "fullName": "仪玄",
+        "fullNameEn": "Yixuan",
+        "faction": "云岿山",
+        "factionEn": "Yunkui Summit",
+        "specialty": "命破",
+        "specialtyEn": "Rupture",
+        "element": "玄墨",
+        "elementEn": "Auric Ink",
+        "id": "1371",
+        "icon": "assets/tuning/agent-1371.webp",
+        "rank": "S",
+        "aliases": [
+          "Yixuan",
+          "Исюань",
+          "儀玄",
+          "의현"
+        ],
+        "detailRange": [
+          1644181,
+          57574,
+          19815450,
+          19815450,
+          "1164ef11ca7cb1d47f75f3a966b3c7c4899b2f5d0323d65815787587d4cd2074"
+        ],
+        "portrait": "assets/agent-portraits/agent-1371.webp"
+      },
+      {
+        "name": "零号·安比",
+        "nameEn": "Soldier 0 - Anby",
+        "fullName": "零号·安比",
+        "fullNameEn": "Soldier 0 - Anby",
+        "faction": "防卫军·白银小队",
+        "factionEn": "Defense Force - Silver Squad",
+        "specialty": "强攻",
+        "specialtyEn": "Attack",
+        "element": "电属性",
+        "elementEn": "Electric",
+        "id": "1381",
+        "icon": "assets/tuning/agent-1381.webp",
+        "rank": "S",
+        "aliases": [
+          "0号・アンビー",
+          "0호·엔비",
+          "Chiến Binh 0 - Anby",
+          "N.º 0: Anby",
+          "Soldado\nN.º0 - Anby",
+          "Soldat 0 - Anby",
+          "Soldatin Nr. 0 – Anby",
+          "Soldier 0 - Anby",
+          "Солдат 0 Энби",
+          "零號·安比"
+        ],
+        "detailRange": [
+          1701763,
+          53509,
+          19815450,
+          19815450,
+          "afd98706ed376da94b5340ec8e12b52e734574d3db108190955efe8b6cd98689"
+        ],
+        "portrait": "assets/agent-portraits/agent-1381.webp"
+      },
+      {
+        "name": "橘福福",
+        "nameEn": "Ju Fufu",
+        "fullName": "橘福福",
+        "fullNameEn": "Ju Fufu",
+        "faction": "云岿山",
+        "factionEn": "Yunkui Summit",
+        "specialty": "击破",
+        "specialtyEn": "Stun",
+        "element": "火属性",
+        "elementEn": "Fire",
+        "id": "1391",
+        "icon": "assets/tuning/agent-1391.webp",
+        "rank": "S",
+        "aliases": [
+          "Ju Fufu",
+          "Цзюй Фуфу",
+          "귤복복"
+        ],
+        "detailRange": [
+          1755280,
+          43749,
+          19815450,
+          19815450,
+          "90990a5cd52cc1f4ff99e4c50fe2f0ec4b85d4579328f7e49aa4244067f6dae9"
+        ],
+        "portrait": "assets/agent-portraits/agent-1391.webp"
+      },
+      {
+        "name": "爱丽丝",
+        "nameEn": "Alice",
+        "fullName": "爱丽丝·泰姆菲尔德",
+        "fullNameEn": "Alice Thymefield",
+        "faction": "怪啖屋",
+        "factionEn": "Spook Shack",
+        "specialty": "异常",
+        "specialtyEn": "Anomaly",
+        "element": "物理",
+        "elementEn": "Physical",
+        "id": "1401",
+        "icon": "assets/tuning/agent-1401.webp",
+        "rank": "S",
+        "aliases": [
+          "Alice",
+          "Элис",
+          "アリス",
+          "愛麗絲",
+          "앨리스"
+        ],
+        "detailRange": [
+          1799037,
+          46192,
+          19815450,
+          19815450,
+          "279279146ef317ec65f1142efad0a72468ab306fea7f34df7be5349b18227213"
+        ],
+        "portrait": "assets/agent-portraits/agent-1401.webp"
+      },
+      {
+        "name": "柚叶",
+        "nameEn": "Yuzuha",
+        "fullName": "浮波 柚叶",
+        "fullNameEn": "Ukinami Yuzuha",
+        "faction": "怪啖屋",
+        "factionEn": "Spook Shack",
+        "specialty": "支援",
+        "specialtyEn": "Support",
+        "element": "物理",
+        "elementEn": "Physical",
+        "id": "1411",
+        "icon": "assets/tuning/agent-1411.webp",
+        "rank": "S",
+        "aliases": [
+          "Yuzuha",
+          "Юдзуха",
+          "柚葉",
+          "浮波柚葉",
+          "유즈하"
+        ],
+        "detailRange": [
+          1845237,
+          101764,
+          19815450,
+          19815450,
+          "b4e6714b78d807ff1e165926e1eb757b41a13513504df46d5e1c072ac779455b"
+        ],
+        "portrait": "assets/agent-portraits/agent-1411.webp"
+      },
+      {
+        "name": "潘引壶",
+        "nameEn": "Pan Yinhu",
+        "fullName": "潘引壶",
+        "fullNameEn": "Pan Yinhu",
+        "faction": "云岿山",
+        "factionEn": "Yunkui Summit",
+        "specialty": "防护",
+        "specialtyEn": "Defense",
+        "element": "物理",
+        "elementEn": "Physical",
+        "id": "1421",
+        "icon": "assets/tuning/agent-1421.webp",
+        "rank": "A",
+        "aliases": [
+          "Pan Yinhu",
+          "Пань Иньху",
+          "潘引壺",
+          "반인호"
+        ],
+        "detailRange": [
+          1947009,
+          44084,
+          19815450,
+          19815450,
+          "f90bf2f9fd7f334dbc2f7d09a047419acd7cda1fb451fb07d3d95ea950618318"
+        ],
+        "portrait": "assets/agent-portraits/agent-1421.webp"
+      },
+      {
+        "name": "叶瞬光",
+        "nameEn": "Ye Shunguang",
+        "fullName": "叶瞬光",
+        "fullNameEn": "Ye Shunguang",
+        "faction": "云岿山",
+        "factionEn": "Yunkui Summit",
+        "specialty": "强攻",
+        "specialtyEn": "Attack",
+        "element": "凛刃",
+        "elementEn": "Honed Edge",
+        "id": "1431",
+        "icon": "assets/tuning/agent-1431.webp",
+        "rank": "S",
+        "aliases": [
+          "Ye Shunguang",
+          "Е Шуньгуан",
+          "葉瞬光",
+          "엽빛나"
+        ],
+        "detailRange": [
+          1991101,
+          66040,
+          19815450,
+          19815450,
+          "d100ddb5006a391f2efba352e972a7532583bf0d7f18b14758aeaab21da58e5f"
+        ],
+        "portrait": "assets/agent-portraits/agent-1431.webp"
+      },
+      {
+        "name": "真斗",
+        "nameEn": "Manato",
+        "fullName": "狛野 真斗",
+        "fullNameEn": "Komano Manato",
+        "faction": "怪啖屋",
+        "factionEn": "Spook Shack",
+        "specialty": "命破",
+        "specialtyEn": "Rupture",
+        "element": "火属性",
+        "elementEn": "Fire",
+        "id": "1441",
+        "icon": "assets/tuning/agent-1441.webp",
+        "rank": "A",
+        "aliases": [
+          "Manato",
+          "Манато",
+          "狛野真斗",
+          "마나토"
+        ],
+        "detailRange": [
+          2057149,
+          46890,
+          19815450,
+          19815450,
+          "bc80be6e3c4ac2907cb54824171b9ae1720c1dcca0c7bdae673d6269eb6d5b59"
+        ],
+        "portrait": "assets/agent-portraits/agent-1441.webp"
+      },
+      {
+        "name": "卢西娅",
+        "nameEn": "Lucia",
+        "fullName": "卢西娅·艾洛温",
+        "fullNameEn": "Lucia Elowen",
+        "faction": "怪啖屋",
+        "factionEn": "Spook Shack",
+        "specialty": "支援",
+        "specialtyEn": "Support",
+        "element": "以太",
+        "elementEn": "Ether",
+        "id": "1451",
+        "icon": "assets/tuning/agent-1451.webp",
+        "rank": "S",
+        "aliases": [
+          "Lucia",
+          "Lucía",
+          "Lúcia",
+          "Люсия",
+          "リュシア",
+          "盧西婭",
+          "루시아"
+        ],
+        "detailRange": [
+          2104047,
+          112720,
+          19815450,
+          19815450,
+          "bb79d93fe74f897fc0f0dc37b1b595de7e8f77a44ba44a50a0e761a1bac51a58"
+        ],
+        "portrait": "assets/agent-portraits/agent-1451.webp"
+      },
+      {
+        "name": "「席德」",
+        "nameEn": "Seed",
+        "fullName": "「席德」",
+        "fullNameEn": "Seed",
+        "faction": "防卫军·奥波勒斯小队",
+        "factionEn": "Defense Force - Obol Squad",
+        "specialty": "强攻",
+        "specialtyEn": "Attack",
+        "element": "电属性",
+        "elementEn": "Electric",
+        "id": "1461",
+        "icon": "assets/tuning/agent-1461.webp",
+        "rank": "S",
+        "aliases": [
+          "\"Seed\"",
+          "Seed",
+          "Sporos",
+          "Сид",
+          "「シード」",
+          "「시드」"
+        ],
+        "detailRange": [
+          2216775,
+          56512,
+          19815450,
+          19815450,
+          "cfcd7019fef7ebd5ecd6bcaa10877c3c65cc23f199f0abafdcebeea682564167"
+        ],
+        "portrait": "assets/agent-portraits/agent-1461.webp"
+      },
+      {
+        "name": "般岳",
+        "nameEn": "Banyue",
+        "fullName": "般岳",
+        "fullNameEn": "Banyue",
+        "faction": "坎卜斯黑枝",
+        "factionEn": "Krampus Compliance Authority",
+        "specialty": "命破",
+        "specialtyEn": "Rupture",
+        "element": "火属性",
+        "elementEn": "Fire",
+        "id": "1471",
+        "icon": "assets/tuning/agent-1471.webp",
+        "rank": "S",
+        "aliases": [
+          "Banyue",
+          "Баньюэ",
+          "盤岳",
+          "반악"
+        ],
+        "detailRange": [
+          2273295,
+          73571,
+          19815450,
+          19815450,
+          "64238fdf06c5638db1db47b6dc93ec5c3428177be05a10efed851d78e0de5d3a"
+        ],
+        "portrait": "assets/agent-portraits/agent-1471.webp"
+      },
+      {
+        "name": "琉音",
+        "nameEn": "Dialyn",
+        "fullName": "琉音",
+        "fullNameEn": "Dialyn",
+        "faction": "坎卜斯黑枝",
+        "factionEn": "Krampus Compliance Authority",
+        "specialty": "击破",
+        "specialtyEn": "Stun",
+        "element": "物理",
+        "elementEn": "Physical",
+        "id": "1481",
+        "icon": "assets/tuning/agent-1481.webp",
+        "rank": "S",
+        "aliases": [
+          "Dialyn",
+          "Диалинь",
+          "ダイアリン",
+          "다이아린"
+        ],
+        "detailRange": [
+          2346874,
+          62516,
+          19815450,
+          19815450,
+          "42c359913db41d5b1b72f0bffc86e6101de41dbb207d73aece2d1df0d2a28d99"
+        ],
+        "portrait": "assets/agent-portraits/agent-1481.webp"
+      },
+      {
+        "name": "千夏",
+        "nameEn": "Sunna",
+        "fullName": "千夏",
+        "fullNameEn": "Sunna",
+        "faction": "妄想天使",
+        "factionEn": "Angels of Delusion",
+        "specialty": "支援",
+        "specialtyEn": "Support",
+        "element": "物理",
+        "elementEn": "Physical",
+        "id": "1491",
+        "icon": "assets/tuning/agent-1491.webp",
+        "rank": "S",
+        "aliases": [
+          "Sunna",
+          "Sunniva",
+          "Санна",
+          "수나"
+        ],
+        "detailRange": [
+          2409398,
+          68738,
+          19815450,
+          19815450,
+          "db7feeb7a387f7bc3cb9a6d4dfce6cb3a1a0aefbeb7d505b0f4c272d0044d0d5"
+        ],
+        "portrait": "assets/agent-portraits/agent-1491.webp"
+      },
+      {
+        "name": "爱芮",
+        "nameEn": "Aria",
+        "fullName": "爱芮",
+        "fullNameEn": "Aria",
+        "faction": "妄想天使",
+        "factionEn": "Angels of Delusion",
+        "specialty": "异常",
+        "specialtyEn": "Anomaly",
+        "element": "以太",
+        "elementEn": "Ether",
+        "id": "1501",
+        "icon": "assets/tuning/agent-1501.webp",
+        "rank": "S",
+        "aliases": [
+          "Aria",
+          "Ария",
+          "アリア",
+          "愛芮",
+          "아리아"
+        ],
+        "detailRange": [
+          2478144,
+          41282,
+          19815450,
+          19815450,
+          "1b040377ce9be2f6960249a8b9623f9ef8d59616485984a7899e722e5ff91f35"
+        ],
+        "portrait": "assets/agent-portraits/agent-1501.webp"
+      },
+      {
+        "name": "南宫羽",
+        "nameEn": "Nangong Yu",
+        "fullName": "南宫羽",
+        "fullNameEn": "Nangong Yu",
+        "faction": "妄想天使",
+        "factionEn": "Angels of Delusion",
+        "specialty": "击破",
+        "specialtyEn": "Stun",
+        "element": "以太",
+        "elementEn": "Ether",
+        "id": "1511",
+        "icon": "assets/tuning/agent-1511.webp",
+        "rank": "S",
+        "aliases": [
+          "Nangong Yu",
+          "Наньгун Юй",
+          "南宮羽",
+          "남궁우"
+        ],
+        "detailRange": [
+          2519434,
+          62794,
+          19815450,
+          19815450,
+          "c401f607e3594d70c7391605a449548bcac428fd333d334e05890948939a4ffb"
+        ],
+        "portrait": "assets/agent-portraits/agent-1511.webp"
+      },
+      {
+        "name": "希希芙",
+        "nameEn": "Cissia",
+        "fullName": "希希芙",
+        "fullNameEn": "Cissia",
+        "faction": "治安局·都市秩序部",
+        "factionEn": "Public Security: Metropolitan Order Division",
+        "specialty": "强攻",
+        "specialtyEn": "Attack",
+        "element": "电属性",
+        "elementEn": "Electric",
+        "id": "1521",
+        "icon": "assets/tuning/agent-1521.webp",
+        "rank": "S",
+        "aliases": [
+          "Cissia",
+          "Císsia",
+          "Циссия",
+          "シーシィア",
+          "시시아"
+        ],
+        "detailRange": [
+          2582236,
+          43688,
+          19815450,
+          19815450,
+          "33abee86175892914a2578ac27f6bade85f90d5099aba5f3621392fc65844133"
+        ],
+        "portrait": "assets/agent-portraits/agent-1521.webp"
+      },
+      {
+        "name": "星徽·比利",
+        "nameEn": "Starlight - Billy",
+        "fullName": "星徽·比利·奇德",
+        "fullNameEn": "Starlight - Billy Kid",
+        "faction": "狡兔屋",
+        "factionEn": "Cunning Hares",
+        "specialty": "命破",
+        "specialtyEn": "Rupture",
+        "element": "物理",
+        "elementEn": "Physical",
+        "id": "1531",
+        "icon": "assets/tuning/agent-1531.webp",
+        "rank": "S",
+        "aliases": [
+          "Billy - Stellaire",
+          "Billy Estelar",
+          "Starlight - Billy",
+          "Sternenlicht – Billy",
+          "Ánh Sao - Billy",
+          "Звёздный Билли",
+          "スターライト･ビリー",
+          "스타라이트·빌리"
+        ],
+        "detailRange": [
+          2625932,
+          57048,
+          19815450,
+          19815450,
+          "bcf042838f3f41f77e2bb03da1d1360137e62495ffeed423ca6f63ffe97c85e9"
+        ],
+        "portrait": "assets/agent-portraits/agent-1531.webp"
+      },
+      {
+        "name": "普罗米娅",
+        "nameEn": "Promeia",
+        "fullName": "普罗米娅",
+        "fullNameEn": "Promeia",
+        "faction": "坎卜斯黑枝",
+        "factionEn": "Krampus Compliance Authority",
+        "specialty": "异常",
+        "specialtyEn": "Anomaly",
+        "element": "冰属性",
+        "elementEn": "Ice",
+        "id": "1541",
+        "icon": "assets/tuning/agent-1541.webp",
+        "rank": "S",
+        "aliases": [
+          "Promeia",
+          "Промея",
+          "プロメイア",
+          "普羅米婭",
+          "프로미아"
+        ],
+        "detailRange": [
+          2682988,
+          60882,
+          19815450,
+          19815450,
+          "ca40fd8fb1cb4ea290015d95cba53e3f663e005fdc0c532f11c7df0c10e1a557"
+        ],
+        "portrait": "assets/agent-portraits/agent-1541.webp"
+      },
+      {
+        "name": "佩洛伊斯",
+        "nameEn": "Pyrois",
+        "fullName": "佩洛伊斯",
+        "fullNameEn": "Pyrois",
+        "faction": "法厄同",
+        "factionEn": "Phaethon",
+        "specialty": "强攻",
+        "specialtyEn": "Attack",
+        "element": "以太",
+        "elementEn": "Ether",
+        "id": "1551",
+        "icon": "assets/tuning/agent-1551.webp",
+        "rank": "S",
+        "aliases": [
+          "Pyrois",
+          "Pyroïs",
+          "Пироис",
+          "ピュロイス",
+          "피로이스"
+        ],
+        "detailRange": [
+          2743878,
+          48753,
+          19815450,
+          19815450,
+          "b10e849d9824dea7bdfc37cca9bf1deb6a121910246cc23b4270f154a7589e0e"
+        ],
+        "portrait": "assets/agent-portraits/agent-1551.webp"
+      },
+      {
+        "name": "维琳娜",
+        "nameEn": "Velina",
+        "fullName": "维琳娜·艾嘉德",
+        "fullNameEn": "Velina Airgid",
+        "faction": "罗斯凯利法·外务筹策局",
+        "factionEn": "Roscaelifer External Strategy Department",
+        "specialty": "异常",
+        "specialtyEn": "Anomaly",
+        "element": "风属性",
+        "elementEn": "Wind",
+        "id": "1561",
+        "icon": "assets/tuning/agent-1561.webp",
+        "rank": "S",
+        "aliases": [
+          "Velina",
+          "Vélina",
+          "Велина",
+          "ヴェリナ",
+          "維琳娜",
+          "벨리나"
+        ],
+        "detailRange": [
+          2792639,
+          59483,
+          19815450,
+          19815450,
+          "83cca7f3dc9d8ea8ef09ccd327f6af81098f06f5cff5d3353ea5524e0932f6be"
+        ],
+        "portrait": "assets/agent-portraits/agent-1561.webp"
+      },
+      {
+        "name": "诺姆",
+        "nameEn": "Norma",
+        "fullName": "诺姆·霍洛维尔",
+        "fullNameEn": "Norma Hollowell",
+        "faction": "罗斯凯利法·外务筹策局",
+        "factionEn": "Roscaelifer External Strategy Department",
+        "specialty": "击破",
+        "specialtyEn": "Stun",
+        "element": "火属性",
+        "elementEn": "Fire",
+        "id": "1571",
+        "icon": "assets/tuning/agent-1571.webp",
+        "rank": "S",
+        "aliases": [
+          "Norma",
+          "Норма",
+          "ノルムー",
+          "諾姆",
+          "노르마"
+        ],
+        "detailRange": [
+          2852130,
+          46167,
+          19815450,
+          19815450,
+          "aaa8d010d66ce7660a93910daa6aa0c4a3c2f79dc6f20ccf24161afe35081b7f"
+        ],
+        "portrait": "assets/agent-portraits/agent-1571.webp"
+      },
+      {
+        "name": "蕾米埃尔",
+        "nameEn": "Remielle",
+        "fullName": "蕾米埃尔·丹",
+        "fullNameEn": "Remielle Dan",
+        "faction": "达识结社",
+        "factionEn": "Covenant of Dayat",
+        "specialty": "异常",
+        "specialtyEn": "Anomaly",
+        "element": "流明",
+        "elementEn": "Lumiflux",
+        "id": "1581",
+        "icon": "assets/tuning/agent-1581.webp",
+        "rank": "S",
+        "aliases": [
+          "Remielle",
+          "Rémielle",
+          "Ремиэлла",
+          "レミエール",
+          "蕾米埃爾",
+          "레미엘"
+        ],
+        "detailRange": [
+          2898305,
+          135224,
+          19815450,
+          19815450,
+          "6ec8f0ff1c9c6f36aeb34e9effc9df052391c252f69e051dc8efea1edc3daa69"
+        ],
+        "portrait": "assets/agent-portraits/agent-1581.webp"
+      },
+      {
+        "name": "希格莉德",
+        "nameEn": "Sigrid",
+        "fullName": "希格莉德·德拉叙尔",
+        "fullNameEn": "Sigrid de L'Azur",
+        "faction": "罗斯凯利法·空域巡戍局",
+        "factionEn": "Roscaelifer Airspace Patrol Department",
+        "specialty": "强攻",
+        "specialtyEn": "Attack",
+        "element": "冰属性",
+        "elementEn": "Ice",
+        "id": "1591",
+        "icon": "assets/tuning/agent-1591.webp",
+        "rank": "S",
+        "aliases": [
+          "Sigrid",
+          "Сигрид",
+          "シグリッド",
+          "시그리드"
+        ],
+        "detailRange": [
+          3033537,
+          54249,
+          19815450,
+          19815450,
+          "f4ba06285ffa94ae7ffb47aef417ab8fb5ad71b4456e4933cdceaf45453d85da"
+        ],
+        "portrait": "assets/agent-portraits/agent-1591.webp"
+      },
+      {
+        "name": "克拉蕾",
+        "nameEn": "Claret",
+        "fullName": "克拉蕾·弗林特",
+        "fullNameEn": "Claret Flint",
+        "faction": "罗斯凯利法·弗林特工坊",
+        "factionEn": "Roscaelifer Flint Workshop",
+        "specialty": "锋御",
+        "specialtyEn": "Armorer",
+        "element": "电属性",
+        "elementEn": "Electric",
+        "introducedVersion": "3.2.0",
+        "id": "1611",
+        "icon": "assets/tuning/agent-1611.webp",
+        "rank": "S",
+        "aliases": [
+          "Claret",
+          "Clarette",
+          "Кларет",
+          "クラレッタ",
+          "클라렛"
+        ],
+        "availability": {
+          "status": "released",
+          "label": "3.2 上期"
+        },
+        "detailRange": [
+          3087794,
+          60098,
+          19815450,
+          19815450,
+          "0b7a5cd12629d5665dde61b6c95b6ae93664ff08791d85ffbb8c3a3eb93aa95b"
+        ],
+        "portrait": "assets/agent-portraits/agent-1611.webp"
+      },
+      {
+        "name": "洛克茜",
+        "nameEn": "Roxy",
+        "fullName": "洛克茜·伊芙莉塔·普莱斯",
+        "fullNameEn": "Roxy Ifrita Pryce",
+        "faction": "罗斯凯利法·弗林特工坊",
+        "factionEn": "Roscaelifer Flint Workshop",
+        "specialty": "击破",
+        "specialtyEn": "Stun",
+        "element": "风属性",
+        "elementEn": "Wind",
+        "introducedVersion": "3.2.0",
+        "id": "1621",
+        "icon": "assets/tuning/agent-1621.webp",
+        "rank": "S",
+        "aliases": [
+          "Roxy",
+          "Рокси",
+          "ロクシー",
+          "록시",
+          "洛克西",
+          "洛克茜·伊芙莉塔·普莱斯"
+        ],
+        "availability": {
+          "status": "released",
+          "label": "3.2 下期 · 9 月 30 日开放"
+        },
+        "detailRange": [
+          3147900,
+          53231,
+          19815450,
+          19815450,
+          "d500583926037e7f6ea39be7a2bf1eb0e38a5f0876c9f3f2ec6567af37c49c75"
+        ],
+        "portrait": "assets/agent-portraits/agent-1621.webp"
+      },
+      {
+        "name": "菲欧妮",
+        "nameEn": "Phoenix",
+        "fullName": "菲欧妮·蕾法爱菈",
+        "fullNameEn": "Phoenix Reffaella",
+        "faction": "坎卜斯黑枝",
+        "factionEn": "Krampus Compliance Authority",
+        "specialty": "异常",
+        "specialtyEn": "Anomaly",
+        "element": "火属性",
+        "elementEn": "Fire",
+        "introducedVersion": "3.3.0",
+        "id": "1641",
+        "icon": "assets/tuning/agent-1641.webp",
+        "rank": "S",
+        "aliases": [
+          "Phoenix",
+          "Phoenix Reffaella",
+          "Phénix",
+          "Феникс",
+          "フィオニー",
+          "菲欧妮·蕾法爱菈",
+          "菲歐妮",
+          "피닉스"
+        ],
+        "availability": {
+          "status": "released",
+          "label": "3.3 上期 · 10 月 21 日开放"
+        },
+        "detailRange": [
+          3262575,
+          105012,
+          19815450,
+          19815450,
+          "96b0bc556a7e475947c244336cb9dde634798867086654d53defc5b226a59dd7"
+        ],
+        "portrait": "assets/agent-portraits/agent-1641.webp"
+      },
+      {
+        "name": "赛维里安",
+        "nameEn": "Severian",
+        "fullName": "赛维里安·洛威尔",
+        "fullNameEn": "Severian Lowell",
+        "faction": "治安局·都市秩序部",
+        "factionEn": "Public Security: Metropolitan Order Division",
+        "specialty": "强攻",
+        "specialtyEn": "Attack",
+        "element": "风属性",
+        "elementEn": "Wind",
+        "introducedVersion": "3.3.0",
+        "id": "1631",
+        "icon": "assets/tuning/agent-1631.webp",
+        "rank": "S",
+        "aliases": [
+          "Severian",
+          "Severian Lowell",
+          "Севериан",
+          "セヴェリアン",
+          "塞维里安",
+          "賽維里安",
+          "赛维利安",
+          "세베리안"
+        ],
+        "availability": {
+          "status": "released",
+          "label": "3.3 下半 · 已开放"
+        },
+        "detailRange": [
+          3201139,
+          61428,
+          20245314,
+          20245314,
+          "0dc4b675a19fa6b1b3f347c0c8e0576f7f4c4cfaa411e99a4ad4536982b25fc3"
+        ],
+        "portrait": "assets/agent-portraits/agent-1631.webp"
+      }
+    ],
+    "beta": {
+      "sunbringer": {
+        "rank": "S",
+        "kind": "full",
+        "source": {
+          "version": "3.4.4 BETA"
+        }
+      },
+      "robin": {
+        "rank": "S",
+        "kind": "full",
+        "source": {
+          "version": "3.4.4 BETA"
+        }
+      },
+      "kafka": {
+        "rank": "S",
+        "kind": "full",
+        "source": {
+          "version": "3.4.4 BETA"
+        }
+      },
+      "1071": {
+        "rank": "S",
+        "kind": "changes",
+        "source": {
+          "version": "3.4.4 BETA"
+        }
+      },
+      "1241": {
+        "rank": "S",
+        "kind": "changes",
+        "source": {
+          "version": "3.4.4 BETA"
+        }
+      },
+      "1271": {
+        "rank": "A",
+        "kind": "changes",
+        "source": {
+          "version": "3.4.4 BETA"
+        }
+      },
+      "1331": {
+        "rank": "S",
+        "kind": "changes",
+        "source": {
+          "version": "3.4.4 BETA"
+        }
+      },
+      "1391": {
+        "rank": "S",
+        "kind": "changes",
+        "source": {
+          "version": "3.4.4 BETA"
+        }
+      },
+      "1551": {
+        "rank": "S",
+        "kind": "changes",
+        "source": {
+          "version": "3.4.4 BETA"
+        }
+      },
+      "1631": {
+        "rank": "S",
+        "kind": "changes",
+        "source": {
+          "version": "3.4.4 BETA"
+        }
+      }
+    },
+    "previewFactionsEn": {
+      "sunbringer": "Roscaelifer",
+      "robin": "Unknown Realm",
+      "kafka": "Unknown Realm"
+    },
+    "thumbnails": {
+      "sunbringer": "data:image/webp;base64,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",
+      "robin": "data:image/webp;base64,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",
+      "kafka": "data:image/webp;base64,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"
+    }
+  },
+  "assetBundles": {
+    "version": 1,
+    "bundles": [
+      {
+        "path": "assets/agent-previews/bundles/agents-20261027-001.bin",
+        "bytes": 25165824,
+        "sha256": "99ef7238ff6e130b61e328adf2f01167e7d8d267a60e2830fd1aa29c2f197695"
+      },
+      {
+        "path": "assets/agent-previews/bundles/agents-20261027-002.bin",
+        "bytes": 25165824,
+        "sha256": "08785bb2d30ac581f343f1b1b09a717340bd9633726f80055824a7eddb40c245"
+      },
+      {
+        "path": "assets/agent-previews/bundles/agents-20261027-003.bin",
+        "bytes": 21344880,
+        "sha256": "8ebc02ee066a492fd395a96846f923f69feab62149d1570c84b75fd67438fd53"
+      },
+      {
+        "path": "assets/agent-previews/bundles/agents-20261107-001.bin",
+        "bytes": 25165824,
+        "sha256": "3203785824eda5520e4f70004d85af02965741958652cc67197f30c2673b0897"
+      },
+      {
+        "path": "assets/agent-previews/bundles/agents-20261107-002.bin",
+        "bytes": 25165824,
+        "sha256": "0fc3cdbc0a9af2a21791e2c220958c93cf791dee5e813776ba5bae8916a00238"
+      },
+      {
+        "path": "assets/agent-previews/bundles/agents-20261107-003.bin",
+        "bytes": 25165824,
+        "sha256": "742e62653a8e5f93b0e7cf1f34f729e3dae5a685fd130969d0977421ae644109"
+      },
+      {
+        "path": "assets/agent-previews/bundles/agents-20261107-004.bin",
+        "bytes": 16212609,
+        "sha256": "f9752777943fb80f517a857a770c14b6c5708f37c386d2b619b6c414e255882b"
+      },
+      {
+        "path": "assets/agent-previews/bundles/agents-20261111-001.bin",
+        "bytes": 25165824,
+        "sha256": "88a1e1aa26f1ffbf4858a4998fe629d81ec407b5749a1249607ede86fb2909cb"
+      },
+      {
+        "path": "assets/agent-previews/bundles/agents-20261111-002.bin",
+        "bytes": 25165824,
+        "sha256": "9dc88439b916537a8a525de1816e0f7691065ccc5e6f1b1f383bb2e4b3562d46"
+      },
+      {
+        "path": "assets/agent-previews/bundles/agents-20261111-003.bin",
+        "bytes": 25165824,
+        "sha256": "051a5d4d4ccbe01a04d33e592c3c5eeb75e6aed5d0dc4c4b44beb208fcbed210"
+      },
+      {
+        "path": "assets/agent-previews/bundles/agents-20261111-004.bin",
+        "bytes": 24992964,
+        "sha256": "7fe699b5d6d35cc1986b391b0d68c9a9a7fafe7712697cea39f983c6020077b8"
+      },
+      {
+        "path": "assets/agent-previews/bundles/agents-20261114-001.bin",
+        "bytes": 1568540,
+        "sha256": "3ea875787fd68eb840bcad2f2cda8d08f3b60244c651463aaba0437974cd59a6"
+      }
+    ],
+    "assets": {
+      "assets/agent-previews/kafka/kafka-poster.png": {
+        "bytes": 1300446,
+        "sha256": "0737ea0807aaa09b23312ad06cd9dde10282ec1cdfdfd8562b1aed9e68e92d69",
+        "mimeType": "image/png",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261027-001.bin",
+            "offset": 0,
+            "length": 1300446,
+            "sha256": "0737ea0807aaa09b23312ad06cd9dde10282ec1cdfdfd8562b1aed9e68e92d69"
+          }
+        ]
+      },
+      "assets/agent-previews/kafka/kafka-profile-en.jpg": {
+        "bytes": 989292,
+        "sha256": "446f09ad53837251e44af5a1285f1492b1c1ad91b7615c247eadfa79f5195429",
+        "mimeType": "image/jpeg",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261027-001.bin",
+            "offset": 1300446,
+            "length": 989292,
+            "sha256": "446f09ad53837251e44af5a1285f1492b1c1ad91b7615c247eadfa79f5195429"
+          }
+        ]
+      },
+      "assets/agent-previews/kafka/kafka-profile-zh.png": {
+        "bytes": 8910931,
+        "sha256": "5ec37376a4012b32dac9b1bc7679f79603ac180c96f493c1ce0450f364948be1",
+        "mimeType": "image/png",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261027-001.bin",
+            "offset": 2289738,
+            "length": 8910931,
+            "sha256": "5ec37376a4012b32dac9b1bc7679f79603ac180c96f493c1ce0450f364948be1"
+          }
+        ]
+      },
+      "assets/agent-previews/robin/robin-poster.png": {
+        "bytes": 752810,
+        "sha256": "dce9e5ef18cf3c2581a51147cb47f2bd3bd2709d2467acf63070d2bd1859df31",
+        "mimeType": "image/png",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261027-001.bin",
+            "offset": 11200669,
+            "length": 752810,
+            "sha256": "dce9e5ef18cf3c2581a51147cb47f2bd3bd2709d2467acf63070d2bd1859df31"
+          }
+        ]
+      },
+      "assets/agent-previews/robin/robin-profile-en.jpg": {
+        "bytes": 974275,
+        "sha256": "1587b43a97d8b99bdc4c59981e5d8e909d3c674d963c9b4dfa6ce9608340b3db",
+        "mimeType": "image/jpeg",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261027-001.bin",
+            "offset": 11953479,
+            "length": 974275,
+            "sha256": "1587b43a97d8b99bdc4c59981e5d8e909d3c674d963c9b4dfa6ce9608340b3db"
+          }
+        ]
+      },
+      "assets/agent-previews/robin/robin-profile-zh.png": {
+        "bytes": 8894739,
+        "sha256": "fcc9f2b83fdc2519c53f5ca82feaae249fe3f75242b3bf1d2fd06f61905e07c3",
+        "mimeType": "image/png",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261027-001.bin",
+            "offset": 12927754,
+            "length": 8894739,
+            "sha256": "fcc9f2b83fdc2519c53f5ca82feaae249fe3f75242b3bf1d2fd06f61905e07c3"
+          }
+        ]
+      },
+      "assets/agent-previews/sunbringer/sunbringer-poster.png": {
+        "bytes": 1007668,
+        "sha256": "e8fd9a02d3c825f8446b5d4e0ddf0561cad37698cf1291a450c3a06ad51f50cc",
+        "mimeType": "image/png",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261027-001.bin",
+            "offset": 21822493,
+            "length": 1007668,
+            "sha256": "e8fd9a02d3c825f8446b5d4e0ddf0561cad37698cf1291a450c3a06ad51f50cc"
+          }
+        ]
+      },
+      "assets/agent-previews/sunbringer/sunbringer-preview-showcase-poster.jpg": {
+        "bytes": 73309,
+        "sha256": "f9a61580d346da24d05652d96f7f693eeff43b0fb444009896cc468b8c0ecff7",
+        "mimeType": "image/jpeg",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261027-001.bin",
+            "offset": 22830161,
+            "length": 73309,
+            "sha256": "f9a61580d346da24d05652d96f7f693eeff43b0fb444009896cc468b8c0ecff7"
+          }
+        ]
+      },
+      "assets/agent-previews/sunbringer/sunbringer-profile-en.jpg": {
+        "bytes": 941012,
+        "sha256": "48d79378c0551d43ad1960bb2c5fce2ab19361968ac19a8eac36fb38276c0247",
+        "mimeType": "image/jpeg",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261027-001.bin",
+            "offset": 22903470,
+            "length": 941012,
+            "sha256": "48d79378c0551d43ad1960bb2c5fce2ab19361968ac19a8eac36fb38276c0247"
+          }
+        ]
+      },
+      "assets/agent-previews/sunbringer/sunbringer-profile-zh.png": {
+        "bytes": 9825096,
+        "sha256": "1d1a354543fc65cdca659e87f0b387190c6ab632003707342bc97bb5a93957ad",
+        "mimeType": "image/png",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261027-001.bin",
+            "offset": 23844482,
+            "length": 1321342,
+            "sha256": "30a0bae509baa15b86b74a32f6634c2463dd2660e40ff052f5180f33e37a6830"
+          },
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261027-002.bin",
+            "offset": 0,
+            "length": 8503754,
+            "sha256": "3d04719482dfe3b5706ed038b16a7686d788b8248373ab59c4438e1a898899d7"
+          }
+        ]
+      },
+      "assets/agent-previews/kafka/kafka-teaser.mp4": {
+        "bytes": 4507375,
+        "sha256": "bbbb5592a1af91357f26800931d20db0bc81591924f1aeae3d7f18da7af1869a",
+        "mimeType": "video/mp4",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261027-002.bin",
+            "offset": 8503754,
+            "length": 4507375,
+            "sha256": "bbbb5592a1af91357f26800931d20db0bc81591924f1aeae3d7f18da7af1869a"
+          }
+        ]
+      },
+      "assets/agent-previews/robin/robin-teaser.mp4": {
+        "bytes": 6931508,
+        "sha256": "51ff7ebcd4e8d76a5e08b12b45c350471629f7f08c2dfe895d9bbb08a5e69ade",
+        "mimeType": "video/mp4",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261027-002.bin",
+            "offset": 13011129,
+            "length": 6931508,
+            "sha256": "51ff7ebcd4e8d76a5e08b12b45c350471629f7f08c2dfe895d9bbb08a5e69ade"
+          }
+        ]
+      },
+      "assets/agent-previews/sunbringer/sunbringer-preview-showcase.mp4": {
+        "bytes": 26568067,
+        "sha256": "d8952692af01fa4750ce2f1cf022185723567441f41b1c2d8056ae54e209ace0",
+        "mimeType": "video/mp4",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261027-002.bin",
+            "offset": 19942637,
+            "length": 5223187,
+            "sha256": "fdc1aad8dfb222e5a080f0edbad17492e03f3cdac08c678ad5bf36878ee31711"
+          },
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261027-003.bin",
+            "offset": 0,
+            "length": 21344880,
+            "sha256": "8ebc02ee066a492fd395a96846f923f69feab62149d1570c84b75fd67438fd53"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261106/kafka-contact-poster.jpg": {
+        "bytes": 181287,
+        "sha256": "51719a63867f3bfb5dca5df557d99a902e4c14a5c0f43c2a8db0ae68ee227802",
+        "mimeType": "image/jpeg",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261107-001.bin",
+            "offset": 0,
+            "length": 181287,
+            "sha256": "51719a63867f3bfb5dca5df557d99a902e4c14a5c0f43c2a8db0ae68ee227802"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261106/robin-contact-poster.jpg": {
+        "bytes": 169942,
+        "sha256": "691be69f1c67f9cd58746d2c79df839bb45b5cfa88190ead3e7d209235fcf14e",
+        "mimeType": "image/jpeg",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261107-001.bin",
+            "offset": 181287,
+            "length": 169942,
+            "sha256": "691be69f1c67f9cd58746d2c79df839bb45b5cfa88190ead3e7d209235fcf14e"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261106/severian-demo-poster.png": {
+        "bytes": 922817,
+        "sha256": "d308f344eb6c36108798156db3181697fe3882f4fd0bc6bb86191300daa7507d",
+        "mimeType": "image/png",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261107-001.bin",
+            "offset": 351229,
+            "length": 922817,
+            "sha256": "d308f344eb6c36108798156db3181697fe3882f4fd0bc6bb86191300daa7507d"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261106/severian-for-display-only-poster.jpg": {
+        "bytes": 91657,
+        "sha256": "4826d0d8abcbe4c87c16b09277a2952a61f644c7a5dc0644d8c323c95f71f5a4",
+        "mimeType": "image/jpeg",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261107-001.bin",
+            "offset": 1274046,
+            "length": 91657,
+            "sha256": "4826d0d8abcbe4c87c16b09277a2952a61f644c7a5dc0644d8c323c95f71f5a4"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261106/severian-holographic-trial-poster.jpg": {
+        "bytes": 120510,
+        "sha256": "f9c1f7625496668b0efb2165026124f5720d57b585befb24bf5ed6208232562b",
+        "mimeType": "image/jpeg",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261107-001.bin",
+            "offset": 1365703,
+            "length": 120510,
+            "sha256": "f9c1f7625496668b0efb2165026124f5720d57b585befb24bf5ed6208232562b"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261106/severian-mechanics-1-en.png": {
+        "bytes": 342525,
+        "sha256": "17442d67bb3c27116b65b4f2bb6e50886c2ea3c79ee9c7d6515074212fd4c532",
+        "mimeType": "image/png",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261107-001.bin",
+            "offset": 1486213,
+            "length": 342525,
+            "sha256": "17442d67bb3c27116b65b4f2bb6e50886c2ea3c79ee9c7d6515074212fd4c532"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261106/severian-mechanics-1-zh.png": {
+        "bytes": 342871,
+        "sha256": "0bcb700f0764d28a41f188540409dc4904df70b0ac76dfb96f3ed8acb6ef08a7",
+        "mimeType": "image/png",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261107-001.bin",
+            "offset": 1828738,
+            "length": 342871,
+            "sha256": "0bcb700f0764d28a41f188540409dc4904df70b0ac76dfb96f3ed8acb6ef08a7"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261106/severian-mechanics-2-en.png": {
+        "bytes": 330852,
+        "sha256": "c02228658595ea7b7035f06bfe6dbb0fbdf14970d7db4d943b9ebfc2e5c6b5f4",
+        "mimeType": "image/png",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261107-001.bin",
+            "offset": 2171609,
+            "length": 330852,
+            "sha256": "c02228658595ea7b7035f06bfe6dbb0fbdf14970d7db4d943b9ebfc2e5c6b5f4"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261106/severian-mechanics-2-zh.png": {
+        "bytes": 324675,
+        "sha256": "965b11a22500ab78187d718c78432b18d80489a8a090dbbde14c7e09e97a8029",
+        "mimeType": "image/png",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261107-001.bin",
+            "offset": 2502461,
+            "length": 324675,
+            "sha256": "965b11a22500ab78187d718c78432b18d80489a8a090dbbde14c7e09e97a8029"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261106/severian-mechanics-3-en.png": {
+        "bytes": 257502,
+        "sha256": "59136b52a5e945a79bc77de42874890934078680cc9beda6d1e5174beba6c4aa",
+        "mimeType": "image/png",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261107-001.bin",
+            "offset": 2827136,
+            "length": 257502,
+            "sha256": "59136b52a5e945a79bc77de42874890934078680cc9beda6d1e5174beba6c4aa"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261106/severian-mechanics-3-zh.png": {
+        "bytes": 250208,
+        "sha256": "1c93e869dad6815b0c80e1962c5dfae5e6855b73835757dc0858712a72784bc0",
+        "mimeType": "image/png",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261107-001.bin",
+            "offset": 3084638,
+            "length": 250208,
+            "sha256": "1c93e869dad6815b0c80e1962c5dfae5e6855b73835757dc0858712a72784bc0"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261106/severian-unarchived-1-en.jpeg": {
+        "bytes": 294535,
+        "sha256": "1533431df3ca6701427145ee26314d0c16481dc4406b748ff0651a6648d278cb",
+        "mimeType": "image/jpeg",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261107-001.bin",
+            "offset": 3334846,
+            "length": 294535,
+            "sha256": "1533431df3ca6701427145ee26314d0c16481dc4406b748ff0651a6648d278cb"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261106/severian-unarchived-1-zh.jpeg": {
+        "bytes": 291964,
+        "sha256": "73473a401ddd8ce59ab0a7a57249fa2a01bbed1e9dcbccd2a04c08f97aba1edc",
+        "mimeType": "image/jpeg",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261107-001.bin",
+            "offset": 3629381,
+            "length": 291964,
+            "sha256": "73473a401ddd8ce59ab0a7a57249fa2a01bbed1e9dcbccd2a04c08f97aba1edc"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261106/severian-unarchived-2-en.jpeg": {
+        "bytes": 315944,
+        "sha256": "1f0268d0f4cc64c1cdc3730a35e9f274b91cab114c40a19dcf074682f1fceb12",
+        "mimeType": "image/jpeg",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261107-001.bin",
+            "offset": 3921345,
+            "length": 315944,
+            "sha256": "1f0268d0f4cc64c1cdc3730a35e9f274b91cab114c40a19dcf074682f1fceb12"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261106/severian-unarchived-2-zh.jpeg": {
+        "bytes": 295656,
+        "sha256": "87f3280bfb0546f4ed9f8c84eb74c2bc2ad005ac5b68b420950d41263b29d775",
+        "mimeType": "image/jpeg",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261107-001.bin",
+            "offset": 4237289,
+            "length": 295656,
+            "sha256": "87f3280bfb0546f4ed9f8c84eb74c2bc2ad005ac5b68b420950d41263b29d775"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261106/robin-kafka-contact.mp4": {
+        "bytes": 33293206,
+        "sha256": "50aa6ca5ff9a21a67dd08cdd2768f6c8f4b9797f2ffb0b109eb414224ec6ff5e",
+        "mimeType": "video/mp4",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261107-001.bin",
+            "offset": 4532945,
+            "length": 20632879,
+            "sha256": "93903be6d93a798f68a80fd440a2e7d289c0eff626def739a20623fca9938608"
+          },
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261107-002.bin",
+            "offset": 0,
+            "length": 12660327,
+            "sha256": "986481e531ecd7f7d3a5bb1f8305a90afe3e2741d9ddc5215efd4b4c1e1ebc80"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261106/severian-demo.mp4": {
+        "bytes": 31109750,
+        "sha256": "9583ff77f41d9e9744e9bf2962fbbc7ebc0361981ebb89170e3cb1034f30ebcd",
+        "mimeType": "video/mp4",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261107-002.bin",
+            "offset": 12660327,
+            "length": 12505497,
+            "sha256": "06ba6c4b8732b4fbd338c26b7e044b527d000a310b79006c42c4fbb27878c566"
+          },
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261107-003.bin",
+            "offset": 0,
+            "length": 18604253,
+            "sha256": "aa21c8ec99863f5af613495117a48c62576d13a3d8550697f9a7fe4b54568e93"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261106/severian-for-display-only.mp4": {
+        "bytes": 6592646,
+        "sha256": "e2738b7a3dd0e0237ded7add50650835f37f0c2e8819c0502bf85ee143526ed2",
+        "mimeType": "video/mp4",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261107-003.bin",
+            "offset": 18604253,
+            "length": 6561571,
+            "sha256": "61a234a0f113efa2fece5a5f607b861118fb6716cb1d34e337f0dbb0e44326b4"
+          },
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261107-004.bin",
+            "offset": 0,
+            "length": 31075,
+            "sha256": "4c74e0cab81288ebe47cc137a46e8b67a91859955c708d749d8b104bb83a0dcc"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261106/severian-holographic-trial.mp4": {
+        "bytes": 16181534,
+        "sha256": "e0ac4a6bee75e851a34d244ac1b14c3b2bd315d138bd4b09390be757043e7d6d",
+        "mimeType": "video/mp4",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261107-004.bin",
+            "offset": 31075,
+            "length": 16181534,
+            "sha256": "e0ac4a6bee75e851a34d244ac1b14c3b2bd315d138bd4b09390be757043e7d6d"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261111/incarcerating-grip-showcase-poster.jpg": {
+        "bytes": 323500,
+        "sha256": "47dc1b29388bcb262f0833b0e94c7794e3aec70f5027c5f5d69da19f73f55997",
+        "mimeType": "image/jpeg",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261111-001.bin",
+            "offset": 0,
+            "length": 323500,
+            "sha256": "47dc1b29388bcb262f0833b0e94c7794e3aec70f5027c5f5d69da19f73f55997"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261111/severian-ep-poster.png": {
+        "bytes": 1820388,
+        "sha256": "7f16ac76c82496cee5adb1eff8df3d62d5ba68245d55c7a1e1cfa826d3fd8ac2",
+        "mimeType": "image/png",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261111-001.bin",
+            "offset": 323500,
+            "length": 1820388,
+            "sha256": "7f16ac76c82496cee5adb1eff8df3d62d5ba68245d55c7a1e1cfa826d3fd8ac2"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261111/severian-outfit-1-en.jpeg": {
+        "bytes": 266023,
+        "sha256": "2cd9c37caa7dc36dc852aed5e2b0b7e7b2c7303b82480c7f1475285183f65f91",
+        "mimeType": "image/jpeg",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261111-001.bin",
+            "offset": 2143888,
+            "length": 266023,
+            "sha256": "2cd9c37caa7dc36dc852aed5e2b0b7e7b2c7303b82480c7f1475285183f65f91"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261111/severian-outfit-1-zh.jpeg": {
+        "bytes": 266060,
+        "sha256": "8fc6ae6e5e1a884c95619f1d93f8b6a2dac76bc500bdf32a1dbbce193220f779",
+        "mimeType": "image/jpeg",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261111-001.bin",
+            "offset": 2409911,
+            "length": 266060,
+            "sha256": "8fc6ae6e5e1a884c95619f1d93f8b6a2dac76bc500bdf32a1dbbce193220f779"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261111/severian-outfit-2-en.gif": {
+        "bytes": 14334051,
+        "sha256": "195152b62f88f90125fed97d30fd72bd3d81e0cca752437d03c0fc2c39aacf60",
+        "mimeType": "image/gif",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261111-001.bin",
+            "offset": 2675971,
+            "length": 14334051,
+            "sha256": "195152b62f88f90125fed97d30fd72bd3d81e0cca752437d03c0fc2c39aacf60"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261111/severian-outfit-2-zh.gif": {
+        "bytes": 14926275,
+        "sha256": "176177f456f1caa341426f5c5776e68779b3945bca2aa289237b3d5abe82810f",
+        "mimeType": "image/gif",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261111-001.bin",
+            "offset": 17010022,
+            "length": 8155802,
+            "sha256": "59cfe1de68a80835c4e8e3a770393f172f1c2d25b3de86702a57e16abf99b9b9"
+          },
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261111-002.bin",
+            "offset": 0,
+            "length": 6770473,
+            "sha256": "5c053f969dd92054022a4ae57588a700b03dadb1c2e4b7d61f382f03b8ef8df7"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261111/severian-outfit-3-en.jpeg": {
+        "bytes": 283528,
+        "sha256": "2bbc50113ab0530230968c878da08d93d51744fece627ae8c6bda37f316b0b99",
+        "mimeType": "image/jpeg",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261111-002.bin",
+            "offset": 6770473,
+            "length": 283528,
+            "sha256": "2bbc50113ab0530230968c878da08d93d51744fece627ae8c6bda37f316b0b99"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261111/severian-outfit-3-zh.jpeg": {
+        "bytes": 280418,
+        "sha256": "97a4157c5d52c099247925dbf741a8e4d7da11bff4672d0ea171ea8a828abc86",
+        "mimeType": "image/jpeg",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261111-002.bin",
+            "offset": 7054001,
+            "length": 280418,
+            "sha256": "97a4157c5d52c099247925dbf741a8e4d7da11bff4672d0ea171ea8a828abc86"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261111/severian-outfit-teaser-poster.jpg": {
+        "bytes": 101930,
+        "sha256": "dcf6fa57e5b36ce9564c3cadec6c91fba62ad45403f9663ef62a9ae31ce67e55",
+        "mimeType": "image/jpeg",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261111-002.bin",
+            "offset": 7334419,
+            "length": 101930,
+            "sha256": "dcf6fa57e5b36ce9564c3cadec6c91fba62ad45403f9663ef62a9ae31ce67e55"
+          }
+        ]
+      },
+      "assets/agent-previews/phoenix-official.jpeg": {
+        "bytes": 838125,
+        "sha256": "613dcbe82d6481d6c117f6aa32eb84404822c848e5caca6fca0411c13e49e7f3",
+        "mimeType": "image/jpeg",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261111-002.bin",
+            "offset": 7436349,
+            "length": 838125,
+            "sha256": "613dcbe82d6481d6c117f6aa32eb84404822c848e5caca6fca0411c13e49e7f3"
+          }
+        ]
+      },
+      "assets/agent-previews/severian-official.jpeg": {
+        "bytes": 907909,
+        "sha256": "658cb898904791da2c04fc2d71b44de5468708b34cde2d70350ca0351e51eb37",
+        "mimeType": "image/jpeg",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261111-002.bin",
+            "offset": 8274474,
+            "length": 907909,
+            "sha256": "658cb898904791da2c04fc2d71b44de5468708b34cde2d70350ca0351e51eb37"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261111/incarcerating-grip-showcase.mp4": {
+        "bytes": 5653752,
+        "sha256": "591c2f5a1753202591d235a0e579041f53294fcc1d627ec3e32ae3b3fe986e44",
+        "mimeType": "video/mp4",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261111-002.bin",
+            "offset": 9182383,
+            "length": 5653752,
+            "sha256": "591c2f5a1753202591d235a0e579041f53294fcc1d627ec3e32ae3b3fe986e44"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261111/severian-ep.mp4": {
+        "bytes": 40742437,
+        "sha256": "7b4194b5385e45440ab4c4b3c3b7bfba4d6ea76f7de86e400570e63640466d71",
+        "mimeType": "video/mp4",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261111-002.bin",
+            "offset": 14836135,
+            "length": 10329689,
+            "sha256": "418ead83f9c86c1df8d05491ed42fdbfba7c9c2b4e9a5c1251ee029556a8089b"
+          },
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261111-003.bin",
+            "offset": 0,
+            "length": 25165824,
+            "sha256": "051a5d4d4ccbe01a04d33e592c3c5eeb75e6aed5d0dc4c4b44beb208fcbed210"
+          },
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261111-004.bin",
+            "offset": 0,
+            "length": 5246924,
+            "sha256": "311128c9005c897a3e2b3379e1de8381c987ab42aeb9aae60a2e44551b4f0853"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261111/severian-outfit-teaser.mp4": {
+        "bytes": 5519656,
+        "sha256": "71dec24eafe4d57a7b7cf53eff37fed3ce2672a3df672f61a31a2f2e33ec824b",
+        "mimeType": "video/mp4",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261111-004.bin",
+            "offset": 5246924,
+            "length": 5519656,
+            "sha256": "71dec24eafe4d57a7b7cf53eff37fed3ce2672a3df672f61a31a2f2e33ec824b"
+          }
+        ]
+      },
+      "assets/agent-previews/sunbringer/dracaene-teaser.mp4": {
+        "bytes": 4532908,
+        "sha256": "b7739af858bf516b485b7f21febd30b9da38e95e0f6aa7a3ac462bbe24ad966f",
+        "mimeType": "video/mp4",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261111-004.bin",
+            "offset": 10766580,
+            "length": 4532908,
+            "sha256": "b7739af858bf516b485b7f21febd30b9da38e95e0f6aa7a3ac462bbe24ad966f"
+          }
+        ]
+      },
+      "assets/agent-previews/sunbringer/lindverne-teaser.mp4": {
+        "bytes": 5040495,
+        "sha256": "26550de9f43adb10df0c7023810f4ddcf5e955233e62efa28429786fcfd91284",
+        "mimeType": "video/mp4",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261111-004.bin",
+            "offset": 15299488,
+            "length": 5040495,
+            "sha256": "26550de9f43adb10df0c7023810f4ddcf5e955233e62efa28429786fcfd91284"
+          }
+        ]
+      },
+      "assets/agent-previews/sunbringer/sunbringer-teaser.mp4": {
+        "bytes": 4652981,
+        "sha256": "05517677a7752903e2bd8aab915c52cd0e78598e478b2b6491b38d4f78ecd1fa",
+        "mimeType": "video/mp4",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261111-004.bin",
+            "offset": 20339983,
+            "length": 4652981,
+            "sha256": "05517677a7752903e2bd8aab915c52cd0e78598e478b2b6491b38d4f78ecd1fa"
+          }
+        ]
+      },
+      "assets/agent-previews/incarcerating-grip-icon.webp": {
+        "bytes": 5868,
+        "sha256": "4dfc67727515550933bd33a491eb648383bd0c8a764e5f1e6884188a4e9ced05",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261114-001.bin",
+            "offset": 0,
+            "length": 5868,
+            "sha256": "4dfc67727515550933bd33a491eb648383bd0c8a764e5f1e6884188a4e9ced05"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261114/norma-eous-official.jpg": {
+        "bytes": 1549180,
+        "sha256": "13c778c014ce5e9111219231813ae00ab2eee78e00cb3643bda89dcb6300b68e",
+        "mimeType": "image/jpeg",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261114-001.bin",
+            "offset": 5868,
+            "length": 1549180,
+            "sha256": "13c778c014ce5e9111219231813ae00ab2eee78e00cb3643bda89dcb6300b68e"
+          }
+        ]
+      },
+      "assets/agent-previews/plume-of-rebirth-icon.webp": {
+        "bytes": 5434,
+        "sha256": "da42c633ce11fac3836e034afe8a71856b452d760028c88f0584cdee797d04f8",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261114-001.bin",
+            "offset": 1555048,
+            "length": 5434,
+            "sha256": "da42c633ce11fac3836e034afe8a71856b452d760028c88f0584cdee797d04f8"
+          }
+        ]
+      },
+      "assets/agent-previews/severian-icon.webp": {
+        "bytes": 8058,
+        "sha256": "d7656bd1827ad71cd3bd190d3e92af26a757bd47d2d6403ba2ea72e67ea62399",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/agents-20261114-001.bin",
+            "offset": 1560482,
+            "length": 8058,
+            "sha256": "d7656bd1827ad71cd3bd190d3e92af26a757bd47d2d6403ba2ea72e67ea62399"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+Pinned revision: d0f2ad962539e52ed56bdcf6972943e9cae6d182
+Gist: https://gist.github.com/Star-Rail-Station/2147c886045beec7cefc301508bd83d3
+
+SHA-256 / bytes:
+get_signal_link_cn.ps1
+9540316f7060882acf1455f6ef0715cab96f221226060dff4ed33508ca330f15
+6884 bytes
+
+get_signal_link_os.ps1
+205e30080170eefc545f8d25d7feaf7bb0e499ec95269105474f99dc2ff5eccb
+6879 bytes
+
+Verification: freshly downloaded pinned remote bytes, previously researched
+local bytes and these vendored bytes match exactly. No line-ending, encoding,
+copyright-header or script-logic changes were applied.
+
+Behavior of these original scripts:
+- Read a known Unity log header to find the game path, unless set_path is given.
+- Locate a versioned webCaches Cache/Cache_Data/data_2 file.
+- Copy the complete cache file to a GUID-named system temporary file.
+- Read that entire copy and remove it after successful reading.
+- Extract candidate getGachaLog URLs and make HTTP requests to test them.
+- Keep five query parameters, print the resulting URL and copy it to clipboard.
+- Enable TLS 1.2 in the current PowerShell process and load System.Web.
+
+The originals do not enforce a hostname allowlist or a read-size limit and do
+not use a finally block for temporary-file cleanup. They do not change the
+machine execution policy, request administrator elevation, or modify game files.
+These behavioral notes describe the unmodified upstream files, not guarantees
+that every runtime environment will behave identically.

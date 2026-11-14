@@ -1,0 +1,100 @@
+/* Compact game-tool tiles replace the introductory slogan and oversized reticle. */
+.map-page .map-overview {
+  --tool-icon-fill:#fff;
+  --tool-icon-accent:#6575f5;
+  --tool-tile-hover:#f1f3ff;
+  --tool-tile-border:#d9def8;
+  --tool-icon-shadow:#b4bcdc66;
+}
+.map-page .overview-heading { display:flex; align-items:center; justify-content:space-between; gap:8px; margin:0 0 20px; }
+.map-page .overview-heading h2 { margin:0; font-size:17px; line-height:1.4; font-weight:650; letter-spacing:.2px; color:var(--text); }
+.map-page .overview-view-label { padding:4px 7px; border-radius:6px; background:var(--surface-muted); color:var(--muted); font-size:9px; white-space:nowrap; }
+.map-page .map-tools { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin:0; }
+.map-page .map-overview .tool-tile {
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:9px;
+  min-width:0; min-height:104px; padding:12px 4px 11px;
+  background:transparent; border:1px solid transparent; border-radius:12px;
+  color:var(--text); text-decoration:none; cursor:pointer; font-weight:400;
+  transition:background .2s,border-color .2s,box-shadow .2s;
+  -webkit-tap-highlight-color:transparent;
+}
+.map-page .map-overview .tool-tile:hover,
+.map-page .map-overview .tool-tile:focus-visible {
+  background:var(--tool-tile-hover); border-color:var(--tool-tile-border);
+  box-shadow:0 3px 12px #19245105; text-decoration:none; color:var(--text);
+}
+.map-page .map-overview .tool-tile:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+.map-page .tool-art { display:grid; place-items:center; width:54px; height:54px; flex-shrink:0; pointer-events:none; }
+.map-page .tool-art svg { display:block; width:54px; height:54px; overflow:visible; filter:drop-shadow(0 2px 0 var(--tool-icon-shadow)); animation:tool-idle-float 5.6s ease-in-out infinite; animation-delay:calc(var(--tool-order) * -.71s); }
+.map-page .tool-label { font-size:12px; line-height:1.5; white-space:nowrap; pointer-events:none; }
+.map-page .tool-icon-part { transform-origin:center; transform-box:fill-box; transition:transform .35s cubic-bezier(.2,.7,.2,1); }
+.map-page .tool-tile:is(:hover,:focus-visible) .tool-art svg { animation-play-state:paused; }
+.map-page .tool-tile:is(:hover,:focus-visible) .tool-icon-part { transform:translateY(-2px) rotate(-7deg); }
+.map-page .tool-tile:active .tool-icon-part { transform:translateY(0) scale(.94); transition-duration:.1s; }
+.map-page .tool-icon-signal { animation:tool-signal 4.8s ease-in-out infinite; animation-delay:calc(var(--tool-order) * -.71s); }
+.map-page .overview-hint { display:flex; align-items:center; gap:7px; margin:19px 0 24px; font-size:10px; color:var(--muted); line-height:1.7; }
+.map-page .overview-hint>span { color:var(--teal); font-size:16px; line-height:1; }
+.map-page .overview-section-heading { display:flex; align-items:center; justify-content:space-between; gap:8px; padding-top:20px; border-top:1px solid var(--line); }
+.map-page .overview-section-heading h3 { margin:0; font-size:12px; font-weight:600; color:var(--text); }
+.map-page .overview-section-heading>span { font-size:9px; color:var(--muted); }
+.map-page .overview-metrics { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px 12px; margin:18px 0 24px; }
+.map-page .overview-metrics>div { display:flex; flex-direction:column-reverse; gap:5px; min-width:0; }
+.map-page .overview-metrics dt { color:var(--muted); font-size:10px; line-height:1.6; }
+.map-page .overview-metrics dd { margin:0; color:var(--text); font-size:24px; line-height:1.15; font-weight:600; letter-spacing:-.5px; font-variant-numeric:tabular-nums; }
+.map-page .overview-notes { padding-top:15px; border-top:1px solid var(--line); }
+.map-page .overview-notes summary { display:flex; align-items:center; justify-content:space-between; cursor:pointer; color:var(--muted); font-size:11px; list-style:none; }
+.map-page .overview-notes summary::-webkit-details-marker { display:none; }
+.map-page .overview-notes summary>span { transition:transform .2s; font-size:15px; }
+.map-page .overview-notes[open] summary>span { transform:rotate(180deg); }
+.map-page .overview-notes p { margin:12px 0 0; color:var(--muted); font-size:10px; line-height:1.85; }
+html[data-theme="dark"] .map-page .map-overview {
+  --tool-icon-fill:#202331;
+  --tool-icon-accent:#99aaff;
+  --tool-tile-hover:#242838;
+  --tool-tile-border:#3b4260;
+  --tool-icon-shadow:#06091399;
+}
+html[data-theme="dark"] .map-page .map-overview .tool-art { color:#f0f1f7; }
+html.overview-motion-paused .map-page .tool-art svg,
+html.overview-motion-paused .map-page .tool-icon-signal { animation-play-state:paused; }
+@keyframes tool-idle-float { 0%,80%,100%{transform:translateY(0)} 40%{transform:translateY(-2px)} }
+@keyframes tool-signal { 0%,65%,100%{opacity:1} 32%{opacity:.48} }
+@media(max-width:1200px) { .map-page .map-tools{gap:5px}.map-page .map-overview .tool-tile{min-height:98px}.map-page .tool-art,.map-page .tool-art svg{width:49px;height:49px} }
+@media(max-width:1000px) { .map-page .right-panel:has(.map-overview){display:none} }
+/* Lists and point details share a visible close control, including while scrolling. */
+.map-page .detail-panel-header {
+  position:sticky; top:0; z-index:2;
+  display:flex; align-items:center; justify-content:space-between; gap:10px;
+  padding:6px 0 12px; margin:-6px 0 14px;
+  background:var(--surface); border-bottom:1px solid var(--line);
+}
+.map-page .detail-panel-header::before {
+  content:""; position:absolute; left:0; right:0; bottom:100%; height:24px;
+  background:var(--surface); pointer-events:none;
+}
+.map-page .detail-panel-header>.eyebrow {
+  min-width:0; margin:0; font-size:9px; line-height:1.7; letter-spacing:.8px;
+}
+.map-page .detail-panel-header .detail-eyebrow { min-width:0; line-height:1.6; }
+.map-page .detail-panel-header .type-symbol { flex-shrink:0; }
+.map-page .detail-context-label { min-width:0; overflow-wrap:anywhere; }
+.map-page .detail-close-button {
+  display:inline-flex; align-items:center; justify-content:center; gap:6px; flex-shrink:0;
+  min-width:78px; min-height:44px; padding:10px 12px;
+  border:1px solid #b6c0fa; border-radius:10px;
+  background:#eef0ff; color:#4051c3;
+  font-size:12px; font-weight:600; line-height:1; letter-spacing:0; white-space:nowrap;
+  cursor:pointer; transition:background .16s,border-color .16s,color .16s;
+}
+.map-page .detail-close-button svg { display:block; flex-shrink:0; }
+.map-page .detail-close-button:hover { background:#4e5ed1; border-color:#4e5ed1; color:#fff; }
+.map-page .detail-close-button:focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
+.map-page .detail-close-button:active { background:#3c4bb8; border-color:#3c4bb8; color:#fff; }
+html[data-theme="dark"] .map-page .detail-close-button { background:#343e67; border-color:#8195f6; color:#f2f4ff; }
+html[data-theme="dark"] .map-page .detail-close-button:hover { background:#5366b9; border-color:#a9b6ff; color:#fff; }
+html[data-theme="dark"] .map-page .detail-close-button:active { background:#43549e; border-color:#a9b6ff; }
+@media(prefers-reduced-motion:reduce) {
+  .map-page .tool-art svg,.map-page .tool-icon-signal { animation:none!important; }
+  .map-page .map-overview .tool-tile,.map-page .tool-icon-part,.map-page .overview-notes summary>span,.map-page .detail-close-button { transition:none!important; }
+  .map-page .tool-tile:is(:hover,:focus-visible,:active) .tool-icon-part { transform:none; }
+}

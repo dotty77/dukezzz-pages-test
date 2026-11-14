@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <defs><linearGradient id="bagel" x1="8" y1="9" x2="39" y2="40" gradientUnits="userSpaceOnUse"><stop stop-color="#6685ff"/><stop offset="1" stop-color="#7862e7"/></linearGradient></defs>
+  <path d="M35.9 20.1A14.7 14.7 0 1 1 26.6 10.4" stroke="url(#bagel)" stroke-width="7" stroke-linecap="round"/>
+  <path d="m24 25 8.3-8.3" stroke="url(#bagel)" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="37.6" cy="11.4" r="4.6" fill="#8296ff"/>
+</svg>

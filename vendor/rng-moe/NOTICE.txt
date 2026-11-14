@@ -1,0 +1,23 @@
+Third-party component: rng.moe signal-history link scripts
+Copyright 2026 rng.moe
+
+Files:
+  get_signal_link_cn.ps1
+  get_signal_link_os.ps1
+
+These two files are distributed byte-for-byte without modifications from
+Star-Rail-Station's public Gist, revision:
+  d0f2ad962539e52ed56bdcf6972943e9cae6d182
+
+Original tutorial:
+  https://zzz.rng.moe/zh/tracker/import
+
+Pinned source:
+  https://gist.github.com/Star-Rail-Station/2147c886045beec7cefc301508bd83d3/raw/d0f2ad962539e52ed56bdcf6972943e9cae6d182/get_signal_link_cn.ps1
+  https://gist.github.com/Star-Rail-Station/2147c886045beec7cefc301508bd83d3/raw/d0f2ad962539e52ed56bdcf6972943e9cae6d182/get_signal_link_os.ps1
+
+Licensed under the Apache License, Version 2.0. See LICENSE.txt.
+All original copyright, license and author/source references in the script
+files are retained. This distribution is not an endorsement by rng.moe.
+This NOTICE supplies attribution for this redistribution; it is not an
+additional upstream notice or a modification to the license.

@@ -1,0 +1,2832 @@
+{
+  "reviewedAt": "2026-10-21",
+  "author": "@KELZERO",
+  "albumUrl": "https://imgur.com/a/cTlwhvc",
+  "albumUpdatedDate": "2026-10-11",
+  "gameVersionConfirmed": null,
+  "sourceType": "player-authored-map-not-official-client",
+  "images": [
+    {
+      "newEvidenceId": 23,
+      "albumIndex": 1,
+      "imageId": "8JUYUd6",
+      "titleZh": "城郊敌人与掉落引线",
+      "newSize": [
+        1805,
+        1426
+      ],
+      "visualReviewed": true,
+      "imageSha256": "0b90f685262487c29203b98ceb0b79740b80101c5b5ce1737becac2db474e2ad",
+      "oldEvidenceId": 9,
+      "oldSize": [
+        1805,
+        1426
+      ],
+      "sameFileBytes": false,
+      "identicalPixelFraction": 0.959652,
+      "dominantFrameDiagnostic": {
+        "method": "ORB descriptor matches, ratio <0.7, similarity RANSAC <=2px",
+        "matches": 5283,
+        "inliers": 5117,
+        "oldPixelToNewPixelMatrix": [
+          [
+            1.000005,
+            -3e-06,
+            -3.1e-05
+          ],
+          [
+            3e-06,
+            1.000005,
+            -0.006501
+          ]
+        ],
+        "medianInlierResidualPixels": 0.0035,
+        "meaning": "Dominant published image frame only; insets and displaced annotations are excluded by this model. Not a world-coordinate registration."
+      },
+      "review": "主地图框架保留，新增出生/撤离说明；敌人专图增加喧响巡逻标记。"
+    },
+    {
+      "newEvidenceId": 24,
+      "albumIndex": 2,
+      "imageId": "A2l6HrJ",
+      "titleZh": "城郊敌人与原地容器",
+      "newSize": [
+        1805,
+        1426
+      ],
+      "visualReviewed": true,
+      "imageSha256": "f33ea810a2e8630b9b782b48097369230793491dd309d439c1ad723473a15152",
+      "oldEvidenceId": 10,
+      "oldSize": [
+        1805,
+        1426
+      ],
+      "sameFileBytes": false,
+      "identicalPixelFraction": 0.968649,
+      "dominantFrameDiagnostic": {
+        "method": "ORB descriptor matches, ratio <0.7, similarity RANSAC <=2px",
+        "matches": 5119,
+        "inliers": 5065,
+        "oldPixelToNewPixelMatrix": [
+          [
+            1.000005,
+            -4e-06,
+            0.00032
+          ],
+          [
+            4e-06,
+            1.000005,
+            -0.006401
+          ]
+        ],
+        "medianInlierResidualPixels": 0.0028,
+        "meaning": "Dominant published image frame only; insets and displaced annotations are excluded by this model. Not a world-coordinate registration."
+      },
+      "review": "主地图框架保留，新增出生/撤离说明；敌人专图增加喧响巡逻标记。"
+    },
+    {
+      "newEvidenceId": 25,
+      "albumIndex": 3,
+      "imageId": "4Q3r9Qg",
+      "titleZh": "城郊敌人",
+      "newSize": [
+        1805,
+        1426
+      ],
+      "visualReviewed": true,
+      "imageSha256": "dc0c86c12648c6e3466fe10a121d72bace199c5ac0e14ac009ae3721c5c22a8c",
+      "oldEvidenceId": 11,
+      "oldSize": [
+        1805,
+        1426
+      ],
+      "sameFileBytes": false,
+      "identicalPixelFraction": 0.968961,
+      "dominantFrameDiagnostic": {
+        "method": "ORB descriptor matches, ratio <0.7, similarity RANSAC <=2px",
+        "matches": 5255,
+        "inliers": 5204,
+        "oldPixelToNewPixelMatrix": [
+          [
+            1.000004,
+            -1e-06,
+            -0.001347
+          ],
+          [
+            1e-06,
+            1.000004,
+            -0.003122
+          ]
+        ],
+        "medianInlierResidualPixels": 0.0024,
+        "meaning": "Dominant published image frame only; insets and displaced annotations are excluded by this model. Not a world-coordinate registration."
+      },
+      "review": "主地图框架保留，新增出生/撤离说明；敌人专图增加喧响巡逻标记。"
+    },
+    {
+      "newEvidenceId": 26,
+      "albumIndex": 4,
+      "imageId": "0mfguum",
+      "titleZh": "雅努斯敌人与掉落引线",
+      "newSize": [
+        1616,
+        1629
+      ],
+      "visualReviewed": true,
+      "imageSha256": "04046ab3385b087943193b198322ac72923c66e61333dcfd9a6a85962cd6a55d",
+      "oldEvidenceId": 12,
+      "oldSize": [
+        1077,
+        1086
+      ],
+      "sameFileBytes": false,
+      "identicalPixelFraction": null,
+      "dominantFrameDiagnostic": {
+        "method": "ORB descriptor matches, ratio <0.7, similarity RANSAC <=2px",
+        "matches": 1093,
+        "inliers": 638,
+        "oldPixelToNewPixelMatrix": [
+          [
+            1.499475,
+            0.00038,
+            -0.162935
+          ],
+          [
+            -0.00038,
+            1.499475,
+            0.689119
+          ]
+        ],
+        "medianInlierResidualPixels": 0.9099,
+        "meaning": "Dominant published image frame only; insets and displaced annotations are excluded by this model. Not a world-coordinate registration."
+      },
+      "review": "主地图框架保留；工地3F/2F/1F、光映3F/2F/1F/B1、六昏街2F增加外置插图，相关标记移入插图。"
+    },
+    {
+      "newEvidenceId": 27,
+      "albumIndex": 5,
+      "imageId": "ishYhIB",
+      "titleZh": "雅努斯敌人与原地容器",
+      "newSize": [
+        1616,
+        1629
+      ],
+      "visualReviewed": true,
+      "imageSha256": "f2fda5b08c44b2ebade9322b02503ba81f50f5fca96dd6647d82d58549a843b2",
+      "oldEvidenceId": 13,
+      "oldSize": [
+        1616,
+        1629
+      ],
+      "sameFileBytes": false,
+      "identicalPixelFraction": 0.811188,
+      "dominantFrameDiagnostic": {
+        "method": "ORB descriptor matches, ratio <0.7, similarity RANSAC <=2px",
+        "matches": 3034,
+        "inliers": 2846,
+        "oldPixelToNewPixelMatrix": [
+          [
+            0.999995,
+            3e-06,
+            0.002293
+          ],
+          [
+            -3e-06,
+            0.999995,
+            0.004231
+          ]
+        ],
+        "medianInlierResidualPixels": 0.0029,
+        "meaning": "Dominant published image frame only; insets and displaced annotations are excluded by this model. Not a world-coordinate registration."
+      },
+      "review": "主地图框架保留；工地3F/2F/1F、光映3F/2F/1F/B1、六昏街2F增加外置插图，相关标记移入插图。"
+    },
+    {
+      "newEvidenceId": 28,
+      "albumIndex": 6,
+      "imageId": "SdBNkVT",
+      "titleZh": "雅努斯敌人",
+      "newSize": [
+        1616,
+        1629
+      ],
+      "visualReviewed": true,
+      "imageSha256": "4b0af850f5f2766ac3490a74ffa9089c0ad3c9c3a7ce82aa8358b1df27b6c7dc",
+      "oldEvidenceId": 14,
+      "oldSize": [
+        1616,
+        1629
+      ],
+      "sameFileBytes": false,
+      "identicalPixelFraction": 0.858325,
+      "dominantFrameDiagnostic": {
+        "method": "ORB descriptor matches, ratio <0.7, similarity RANSAC <=2px",
+        "matches": 2999,
+        "inliers": 2816,
+        "oldPixelToNewPixelMatrix": [
+          [
+            1.000003,
+            -3e-06,
+            -0.000942
+          ],
+          [
+            3e-06,
+            1.000003,
+            -0.004273
+          ]
+        ],
+        "medianInlierResidualPixels": 0.0021,
+        "meaning": "Dominant published image frame only; insets and displaced annotations are excluded by this model. Not a world-coordinate registration."
+      },
+      "review": "主地图框架保留；工地3F/2F/1F、光映3F/2F/1F/B1、六昏街2F增加外置插图，相关标记移入插图。"
+    },
+    {
+      "newEvidenceId": 29,
+      "albumIndex": 7,
+      "imageId": "FbAXuoO",
+      "titleZh": "城郊保险箱/装备/医疗",
+      "newSize": [
+        1805,
+        1426
+      ],
+      "visualReviewed": true,
+      "imageSha256": "d4c7fb79b3d76d3d5a9d22ab4543dc74fcc9c193f3ce89142ad74495cb6703bd",
+      "oldEvidenceId": 15,
+      "oldSize": [
+        1805,
+        1426
+      ],
+      "sameFileBytes": false,
+      "identicalPixelFraction": 0.980237,
+      "dominantFrameDiagnostic": {
+        "method": "ORB descriptor matches, ratio <0.7, similarity RANSAC <=2px",
+        "matches": 5896,
+        "inliers": 5890,
+        "oldPixelToNewPixelMatrix": [
+          [
+            1.0,
+            -0.0,
+            0.000196
+          ],
+          [
+            0.0,
+            1.0,
+            -8.5e-05
+          ]
+        ],
+        "medianInlierResidualPixels": 0.0002,
+        "meaning": "Dominant published image frame only; insets and displaced annotations are excluded by this model. Not a world-coordinate registration."
+      },
+      "review": "主地图与物资/门卡内容保留，加入出生/撤离与通路显示。"
+    },
+    {
+      "newEvidenceId": 30,
+      "albumIndex": 8,
+      "imageId": "Ehh2pdq",
+      "titleZh": "雅努斯保险箱/装备/医疗",
+      "newSize": [
+        1616,
+        1629
+      ],
+      "visualReviewed": true,
+      "imageSha256": "6e7b5e24922f8ba0232bea9a7961ae77b3015f2d16a3e11e79a44ae70ce6aa98",
+      "oldEvidenceId": 16,
+      "oldSize": [
+        1616,
+        1629
+      ],
+      "sameFileBytes": false,
+      "identicalPixelFraction": 0.868678,
+      "dominantFrameDiagnostic": {
+        "method": "ORB descriptor matches, ratio <0.7, similarity RANSAC <=2px",
+        "matches": 3543,
+        "inliers": 3321,
+        "oldPixelToNewPixelMatrix": [
+          [
+            1.000001,
+            -1e-06,
+            -0.00053
+          ],
+          [
+            1e-06,
+            1.000001,
+            -0.001852
+          ]
+        ],
+        "medianInlierResidualPixels": 0.0008,
+        "meaning": "Dominant published image frame only; insets and displaced annotations are excluded by this model. Not a world-coordinate registration."
+      },
+      "review": "主地图框架保留；工地3F/2F/1F、光映3F/2F/1F/B1、六昏街2F增加外置插图，相关标记移入插图。"
+    },
+    {
+      "newEvidenceId": 31,
+      "albumIndex": 9,
+      "imageId": "61cO1Ax",
+      "titleZh": "城郊公文包/垃圾/拟态",
+      "newSize": [
+        1805,
+        1426
+      ],
+      "visualReviewed": true,
+      "imageSha256": "72c53b09d62ba8379423a82852481e004fa5119fc7caa4fa7d3346350f2b61b5",
+      "oldEvidenceId": 17,
+      "oldSize": [
+        1805,
+        1426
+      ],
+      "sameFileBytes": false,
+      "identicalPixelFraction": 0.980228,
+      "dominantFrameDiagnostic": {
+        "method": "ORB descriptor matches, ratio <0.7, similarity RANSAC <=2px",
+        "matches": 5904,
+        "inliers": 5898,
+        "oldPixelToNewPixelMatrix": [
+          [
+            0.999999,
+            1e-06,
+            0.000506
+          ],
+          [
+            -1e-06,
+            0.999999,
+            0.001282
+          ]
+        ],
+        "medianInlierResidualPixels": 0.0004,
+        "meaning": "Dominant published image frame only; insets and displaced annotations are excluded by this model. Not a world-coordinate registration."
+      },
+      "review": "主地图与物资/门卡内容保留，加入出生/撤离与通路显示。"
+    },
+    {
+      "newEvidenceId": 32,
+      "albumIndex": 10,
+      "imageId": "9DyWmiw",
+      "titleZh": "雅努斯公文包/垃圾/拟态",
+      "newSize": [
+        1616,
+        1629
+      ],
+      "visualReviewed": true,
+      "imageSha256": "edda24e557ce6451bba624e95475cfdd7054fed1731923ad03289db12cb2b58f",
+      "oldEvidenceId": 18,
+      "oldSize": [
+        1616,
+        1629
+      ],
+      "sameFileBytes": false,
+      "identicalPixelFraction": 0.868804,
+      "dominantFrameDiagnostic": {
+        "method": "ORB descriptor matches, ratio <0.7, similarity RANSAC <=2px",
+        "matches": 3530,
+        "inliers": 3379,
+        "oldPixelToNewPixelMatrix": [
+          [
+            1.000001,
+            2e-06,
+            -0.002984
+          ],
+          [
+            -2e-06,
+            1.000001,
+            -0.001675
+          ]
+        ],
+        "medianInlierResidualPixels": 0.0028,
+        "meaning": "Dominant published image frame only; insets and displaced annotations are excluded by this model. Not a world-coordinate registration."
+      },
+      "review": "主地图框架保留；工地3F/2F/1F、光映3F/2F/1F/B1、六昏街2F增加外置插图，相关标记移入插图。"
+    },
+    {
+      "newEvidenceId": 33,
+      "albumIndex": 11,
+      "imageId": "tWWWGB8",
+      "titleZh": "城郊门卡房",
+      "newSize": [
+        1805,
+        1426
+      ],
+      "visualReviewed": true,
+      "imageSha256": "c4ac8ee0460c8b2cdabe7f7da2e0a3927dd729d27877256d41a69a72d239d944",
+      "oldEvidenceId": 19,
+      "oldSize": [
+        1805,
+        1426
+      ],
+      "sameFileBytes": false,
+      "identicalPixelFraction": 0.981622,
+      "dominantFrameDiagnostic": {
+        "method": "ORB descriptor matches, ratio <0.7, similarity RANSAC <=2px",
+        "matches": 5749,
+        "inliers": 5739,
+        "oldPixelToNewPixelMatrix": [
+          [
+            1.0,
+            -0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ]
+        ],
+        "medianInlierResidualPixels": 0.0,
+        "meaning": "Dominant published image frame only; insets and displaced annotations are excluded by this model. Not a world-coordinate registration."
+      },
+      "review": "主地图与物资/门卡内容保留，加入出生/撤离与通路显示。"
+    },
+    {
+      "newEvidenceId": 34,
+      "albumIndex": 12,
+      "imageId": "oJm8FrM",
+      "titleZh": "雅努斯门卡房",
+      "newSize": [
+        1616,
+        1629
+      ],
+      "visualReviewed": true,
+      "imageSha256": "8204c8417464dc58f9104ff866dba74ed4d8ed3783701168490aef421fb4d463",
+      "oldEvidenceId": 20,
+      "oldSize": [
+        1616,
+        1629
+      ],
+      "sameFileBytes": false,
+      "identicalPixelFraction": 0.805797,
+      "dominantFrameDiagnostic": {
+        "method": "ORB descriptor matches, ratio <0.7, similarity RANSAC <=2px",
+        "matches": 3358,
+        "inliers": 2229,
+        "oldPixelToNewPixelMatrix": [
+          [
+            1.0,
+            -0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            -0.0
+          ]
+        ],
+        "medianInlierResidualPixels": 0.0,
+        "meaning": "Dominant published image frame only; insets and displaced annotations are excluded by this model. Not a world-coordinate registration."
+      },
+      "review": "主地图框架保留；工地3F/2F/1F、光映3F/2F/1F/B1、六昏街2F增加外置插图，相关标记移入插图。"
+    },
+    {
+      "newEvidenceId": 35,
+      "albumIndex": 13,
+      "imageId": "YQzVYQF",
+      "titleZh": "城郊简图",
+      "newSize": [
+        1805,
+        1426
+      ],
+      "visualReviewed": true,
+      "imageSha256": "c293b3bdbb3f6aa66b52fb894c90848356c74d1f7ed8be8ae0ab0bdcce49991c",
+      "oldEvidenceId": null,
+      "review": "新增独立简图；保留主地图与楼层插图区分。"
+    },
+    {
+      "newEvidenceId": 36,
+      "albumIndex": 14,
+      "imageId": "z4k8wGa",
+      "titleZh": "雅努斯简图",
+      "newSize": [
+        1616,
+        1629
+      ],
+      "visualReviewed": true,
+      "imageSha256": "4a76d30f6685a4553cf2c45fc3b8e8fef6a91890ea738996db8c08fbced5b416",
+      "oldEvidenceId": null,
+      "review": "新增独立简图；保留主地图与楼层插图区分。"
+    },
+    {
+      "newEvidenceId": 37,
+      "albumIndex": 15,
+      "imageId": "esHH8bX",
+      "titleZh": "城郊纯底图",
+      "newSize": [
+        1805,
+        1426
+      ],
+      "visualReviewed": true,
+      "imageSha256": "60d4edeeeb7af8238aa6323e83a9101b2a0ad995075bd853d949cd4b6bb1e085",
+      "oldEvidenceId": 21,
+      "oldSize": [
+        1805,
+        1426
+      ],
+      "sameFileBytes": true,
+      "identicalPixelFraction": 1.0,
+      "review": "原始底图逐字节相同，保持旧配准。"
+    },
+    {
+      "newEvidenceId": 38,
+      "albumIndex": 16,
+      "imageId": "WM8z84w",
+      "titleZh": "雅努斯纯底图",
+      "newSize": [
+        1616,
+        1629
+      ],
+      "visualReviewed": true,
+      "imageSha256": "b9c735647cfd52af05a65eac8c62e69cb9c53f9ec610bc80132f8c41103b09f4",
+      "oldEvidenceId": 22,
+      "oldSize": [
+        1616,
+        1629
+      ],
+      "sameFileBytes": true,
+      "identicalPixelFraction": 1.0,
+      "review": "原始底图逐字节相同，保持旧配准。"
+    }
+  ],
+  "suburbsLootPaletteChecks": [
+    {
+      "newEvidenceId": 29,
+      "rgb": [
+        222,
+        139,
+        87
+      ],
+      "oldPixels": 4855,
+      "newPixels": 4855,
+      "maskIdentical": true
+    },
+    {
+      "newEvidenceId": 29,
+      "rgb": [
+        38,
+        33,
+        55
+      ],
+      "oldPixels": 7264,
+      "newPixels": 7264,
+      "maskIdentical": true
+    },
+    {
+      "newEvidenceId": 29,
+      "rgb": [
+        255,
+        255,
+        255
+      ],
+      "oldPixels": 10125,
+      "newPixels": 10125,
+      "maskIdentical": true
+    },
+    {
+      "newEvidenceId": 31,
+      "rgb": [
+        143,
+        89,
+        37
+      ],
+      "oldPixels": 7236,
+      "newPixels": 7236,
+      "maskIdentical": true
+    },
+    {
+      "newEvidenceId": 31,
+      "rgb": [
+        255,
+        255,
+        255
+      ],
+      "oldPixels": 4519,
+      "newPixels": 4519,
+      "maskIdentical": true
+    }
+  ],
+  "enemyPointCorrespondence": [
+    {
+      "id": "KZ-J-01",
+      "map": "janus",
+      "oldEvidenceId": 14,
+      "newEvidenceId": 28,
+      "oldPixel": [
+        1009,
+        112
+      ],
+      "newImageSize": [
+        1616,
+        1629
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        1009,
+        112
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-J-02",
+      "map": "janus",
+      "oldEvidenceId": 14,
+      "newEvidenceId": 28,
+      "oldPixel": [
+        1131,
+        166
+      ],
+      "newImageSize": [
+        1616,
+        1629
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        1131,
+        166
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-J-03",
+      "map": "janus",
+      "oldEvidenceId": 14,
+      "newEvidenceId": 28,
+      "oldPixel": [
+        1381,
+        214
+      ],
+      "newImageSize": [
+        1616,
+        1629
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        1381,
+        214
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-J-04",
+      "map": "janus",
+      "oldEvidenceId": 14,
+      "newEvidenceId": 28,
+      "oldPixel": [
+        1259,
+        248
+      ],
+      "newImageSize": [
+        1616,
+        1629
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        1259,
+        248
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-J-05",
+      "map": "janus",
+      "oldEvidenceId": 14,
+      "newEvidenceId": 28,
+      "oldPixel": [
+        1446,
+        296
+      ],
+      "newImageSize": [
+        1616,
+        1629
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        1446,
+        296
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-J-06",
+      "map": "janus",
+      "oldEvidenceId": 14,
+      "newEvidenceId": 28,
+      "oldPixel": [
+        1408,
+        356
+      ],
+      "newImageSize": [
+        1616,
+        1629
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        1408,
+        356
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-J-07",
+      "map": "janus",
+      "oldEvidenceId": 14,
+      "newEvidenceId": 28,
+      "oldPixel": [
+        1312,
+        375
+      ],
+      "newImageSize": [
+        1616,
+        1629
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        1312,
+        375
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-J-08",
+      "map": "janus",
+      "oldEvidenceId": 14,
+      "newEvidenceId": 28,
+      "oldPixel": [
+        1506,
+        400
+      ],
+      "newImageSize": [
+        1616,
+        1629
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        1506,
+        400
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-J-09",
+      "map": "janus",
+      "oldEvidenceId": 14,
+      "newEvidenceId": 28,
+      "oldPixel": [
+        1076,
+        437
+      ],
+      "newImageSize": [
+        1616,
+        1629
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        1076,
+        437
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-J-10",
+      "map": "janus",
+      "oldEvidenceId": 14,
+      "newEvidenceId": 28,
+      "oldPixel": [
+        1209,
+        446
+      ],
+      "newImageSize": [
+        1616,
+        1629
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        1209,
+        446
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-J-11",
+      "map": "janus",
+      "oldEvidenceId": 14,
+      "newEvidenceId": 28,
+      "oldPixel": [
+        952,
+        485
+      ],
+      "newImageSize": [
+        1616,
+        1629
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        952,
+        485
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-J-12",
+      "map": "janus",
+      "oldEvidenceId": 14,
+      "newEvidenceId": 28,
+      "oldPixel": [
+        1311,
+        484
+      ],
+      "newImageSize": [
+        1616,
+        1629
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "not-located-in-new-image",
+      "evidencePixel": null,
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation",
+      "note": "旧位置在新版主图没有相同图标；作者未解释，亦未能唯一对应到分层图，保留待核实。",
+      "suggestedStatus": "unknown"
+    },
+    {
+      "id": "KZ-J-13",
+      "map": "janus",
+      "oldEvidenceId": 14,
+      "newEvidenceId": 28,
+      "oldPixel": [
+        1023,
+        483
+      ],
+      "newImageSize": [
+        1616,
+        1629
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        1023,
+        483
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-J-14",
+      "map": "janus",
+      "oldEvidenceId": 14,
+      "newEvidenceId": 28,
+      "oldPixel": [
+        709,
+        514
+      ],
+      "newImageSize": [
+        1616,
+        1629
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "moved-to-floor-inset",
+      "evidencePixel": null,
+      "pixelMeaning": "diagram-only; do not assign these inset pixels to main map x/y",
+      "insetEvidence": [
+        {
+          "x": 536.5,
+          "y": 442.5,
+          "floor": 1
+        },
+        {
+          "x": 409,
+          "y": 447.5,
+          "floor": 2
+        }
+      ],
+      "floorConfidence": "same named building and relative floor/side; drawing evidence, not client entity linkage"
+    },
+    {
+      "id": "KZ-J-15",
+      "map": "janus",
+      "oldEvidenceId": 14,
+      "newEvidenceId": 28,
+      "oldPixel": [
+        821,
+        517
+      ],
+      "newImageSize": [
+        1616,
+        1629
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        821,
+        517
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-J-16",
+      "map": "janus",
+      "oldEvidenceId": 14,
+      "newEvidenceId": 28,
+      "oldPixel": [
+        1077,
+        518
+      ],
+      "newImageSize": [
+        1616,
+        1629
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        1077,
+        518
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-J-17",
+      "map": "janus",
+      "oldEvidenceId": 14,
+      "newEvidenceId": 28,
+      "oldPixel": [
+        1160,
+        533
+      ],
+      "newImageSize": [
+        1616,
+        1629
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        1160,
+        533
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-J-18",
+      "map": "janus",
+      "oldEvidenceId": 14,
+      "newEvidenceId": 28,
+      "oldPixel": [
+        651,
+        531
+      ],
+      "newImageSize": [
+        1616,
+        1629
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "moved-to-floor-inset",
+      "evidencePixel": null,
+      "pixelMeaning": "diagram-only; do not assign these inset pixels to main map x/y",
+      "insetEvidence": [
+        {
+          "x": 288,
+          "y": 461.5,
+          "floor": 3
+        }
+      ],
+      "floorConfidence": "same named building and relative floor/side; drawing evidence, not client entity linkage"
+    },
+    {
+      "id": "KZ-J-19",
+      "map": "janus",
+      "oldEvidenceId": 14,
+      "newEvidenceId": 28,
+      "oldPixel": [
+        1251,
+        563
+      ],
+      "newImageSize": [
+        1616,
+        1629
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        1251,
+        563
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-J-20",
+      "map": "janus",
+      "oldEvidenceId": 14,
+      "newEvidenceId": 28,
+      "oldPixel": [
+        637,
+        650
+      ],
+      "newImageSize": [
+        1616,
+        1629
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "moved-to-floor-inset",
+      "evidencePixel": null,
+      "pixelMeaning": "diagram-only; do not assign these inset pixels to main map x/y",
+      "insetEvidence": [
+        {
+          "x": 277.5,
+          "y": 567.5,
+          "floor": 3
+        }
+      ],
+      "floorConfidence": "same named building and relative floor/side; drawing evidence, not client entity linkage"
+    },
+    {
+      "id": "KZ-J-21",
+      "map": "janus",
+      "oldEvidenceId": 14,
+      "newEvidenceId": 28,
+      "oldPixel": [
+        684,
+        665
+      ],
+      "newImageSize": [
+        1616,
+        1629
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "moved-to-floor-inset",
+      "evidencePixel": null,
+      "pixelMeaning": "diagram-only; do not assign these inset pixels to main map x/y",
+      "insetEvidence": [
+        {
+          "x": 512.5,
+          "y": 604,
+          "floor": 1
+        }
+      ],
+      "floorConfidence": "same named building and relative floor/side; drawing evidence, not client entity linkage"
+    },
+    {
+      "id": "KZ-J-22",
+      "map": "janus",
+      "oldEvidenceId": 14,
+      "newEvidenceId": 28,
+      "oldPixel": [
+        641,
+        676
+      ],
+      "newImageSize": [
+        1616,
+        1629
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "moved-to-floor-inset",
+      "evidencePixel": null,
+      "pixelMeaning": "diagram-only; do not assign these inset pixels to main map x/y",
+      "insetEvidence": [
+        {
+          "x": 478.5,
+          "y": 602.5,
+          "floor": 1
+        }
+      ],
+      "floorConfidence": "same named building and relative floor/side; drawing evidence, not client entity linkage"
+    },
+    {
+      "id": "KZ-J-23",
+      "map": "janus",
+      "oldEvidenceId": 14,
+      "newEvidenceId": 28,
+      "oldPixel": [
+        552,
+        809
+      ],
+      "newImageSize": [
+        1616,
+        1629
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        552,
+        809
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-J-24",
+      "map": "janus",
+      "oldEvidenceId": 14,
+      "newEvidenceId": 28,
+      "oldPixel": [
+        534,
+        1213
+      ],
+      "newImageSize": [
+        1616,
+        1629
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        534,
+        1213
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation",
+      "verifiedFieldChange": {
+        "field": "gradeChange",
+        "old": null,
+        "new": "upgrade",
+        "evidence": "广场西北原精英图标新增白色向上双箭头，与作者高架下敌人可升级说明对应。",
+        "evidencePixel": [
+          534,
+          1213
+        ],
+        "preserveMainMapCoordinate": true
+      }
+    },
+    {
+      "id": "KZ-J-25",
+      "map": "janus",
+      "oldEvidenceId": 14,
+      "newEvidenceId": 28,
+      "oldPixel": [
+        727,
+        1235
+      ],
+      "newImageSize": [
+        1616,
+        1629
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        727,
+        1235
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-J-26",
+      "map": "janus",
+      "oldEvidenceId": 14,
+      "newEvidenceId": 28,
+      "oldPixel": [
+        495,
+        1287
+      ],
+      "newImageSize": [
+        1616,
+        1629
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        495,
+        1287
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-J-27",
+      "map": "janus",
+      "oldEvidenceId": 14,
+      "newEvidenceId": 28,
+      "oldPixel": [
+        867,
+        1287
+      ],
+      "newImageSize": [
+        1616,
+        1629
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        867,
+        1287
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-J-28",
+      "map": "janus",
+      "oldEvidenceId": 14,
+      "newEvidenceId": 28,
+      "oldPixel": [
+        689,
+        1380
+      ],
+      "newImageSize": [
+        1616,
+        1629
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "moved-to-floor-inset",
+      "evidencePixel": null,
+      "pixelMeaning": "diagram-only; do not assign these inset pixels to main map x/y",
+      "insetEvidence": [
+        {
+          "x": 307.5,
+          "y": 1435,
+          "floor": 1
+        }
+      ],
+      "floorConfidence": "same named building and relative floor/side; drawing evidence, not client entity linkage"
+    },
+    {
+      "id": "KZ-J-29",
+      "map": "janus",
+      "oldEvidenceId": 14,
+      "newEvidenceId": 28,
+      "oldPixel": [
+        649,
+        1385
+      ],
+      "newImageSize": [
+        1616,
+        1629
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "moved-to-floor-inset",
+      "evidencePixel": null,
+      "pixelMeaning": "diagram-only; do not assign these inset pixels to main map x/y",
+      "insetEvidence": [
+        {
+          "x": 314.5,
+          "y": 1264,
+          "floor": 3
+        }
+      ],
+      "floorConfidence": "same named building and relative floor/side; drawing evidence, not client entity linkage"
+    },
+    {
+      "id": "KZ-J-30",
+      "map": "janus",
+      "oldEvidenceId": 14,
+      "newEvidenceId": 28,
+      "oldPixel": [
+        607,
+        1385
+      ],
+      "newImageSize": [
+        1616,
+        1629
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "moved-to-floor-inset",
+      "evidencePixel": null,
+      "pixelMeaning": "diagram-only; do not assign these inset pixels to main map x/y",
+      "insetEvidence": [
+        {
+          "x": 302,
+          "y": 1340,
+          "floor": 2
+        }
+      ],
+      "floorConfidence": "same named building and relative floor/side; drawing evidence, not client entity linkage"
+    },
+    {
+      "id": "KZ-J-31",
+      "map": "janus",
+      "oldEvidenceId": 14,
+      "newEvidenceId": 28,
+      "oldPixel": [
+        880,
+        1443
+      ],
+      "newImageSize": [
+        1616,
+        1629
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        880,
+        1443
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-J-32",
+      "map": "janus",
+      "oldEvidenceId": 14,
+      "newEvidenceId": 28,
+      "oldPixel": [
+        800,
+        1534
+      ],
+      "newImageSize": [
+        1616,
+        1629
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        800,
+        1534
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-S-01",
+      "map": "suburbs",
+      "oldEvidenceId": 11,
+      "newEvidenceId": 25,
+      "oldPixel": [
+        1182,
+        283
+      ],
+      "newImageSize": [
+        1805,
+        1426
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        1182,
+        283
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-S-02",
+      "map": "suburbs",
+      "oldEvidenceId": 11,
+      "newEvidenceId": 25,
+      "oldPixel": [
+        1486,
+        303
+      ],
+      "newImageSize": [
+        1805,
+        1426
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        1486,
+        303
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-S-03",
+      "map": "suburbs",
+      "oldEvidenceId": 11,
+      "newEvidenceId": 25,
+      "oldPixel": [
+        1226,
+        409
+      ],
+      "newImageSize": [
+        1805,
+        1426
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        1226,
+        409
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-S-04",
+      "map": "suburbs",
+      "oldEvidenceId": 11,
+      "newEvidenceId": 25,
+      "oldPixel": [
+        1607,
+        412
+      ],
+      "newImageSize": [
+        1805,
+        1426
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "not-located-in-new-image",
+      "evidencePixel": null,
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation",
+      "note": "新版不再标出；作者称最东侧精英近期未见刷新，是玩家观察，不是客户端已删除证明。",
+      "suggestedStatus": "unknown"
+    },
+    {
+      "id": "KZ-S-05",
+      "map": "suburbs",
+      "oldEvidenceId": 11,
+      "newEvidenceId": 25,
+      "oldPixel": [
+        1374,
+        467
+      ],
+      "newImageSize": [
+        1805,
+        1426
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        1374,
+        467
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-S-06",
+      "map": "suburbs",
+      "oldEvidenceId": 11,
+      "newEvidenceId": 25,
+      "oldPixel": [
+        380,
+        469
+      ],
+      "newImageSize": [
+        1805,
+        1426
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        380,
+        469
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-S-07",
+      "map": "suburbs",
+      "oldEvidenceId": 11,
+      "newEvidenceId": 25,
+      "oldPixel": [
+        1557,
+        478
+      ],
+      "newImageSize": [
+        1805,
+        1426
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        1557,
+        478
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-S-08",
+      "map": "suburbs",
+      "oldEvidenceId": 11,
+      "newEvidenceId": 25,
+      "oldPixel": [
+        910,
+        503
+      ],
+      "newImageSize": [
+        1805,
+        1426
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        910,
+        503
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-S-09",
+      "map": "suburbs",
+      "oldEvidenceId": 11,
+      "newEvidenceId": 25,
+      "oldPixel": [
+        1255,
+        510
+      ],
+      "newImageSize": [
+        1805,
+        1426
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        1255,
+        510
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-S-10",
+      "map": "suburbs",
+      "oldEvidenceId": 11,
+      "newEvidenceId": 25,
+      "oldPixel": [
+        1397,
+        557
+      ],
+      "newImageSize": [
+        1805,
+        1426
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        1397,
+        557
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-S-11",
+      "map": "suburbs",
+      "oldEvidenceId": 11,
+      "newEvidenceId": 25,
+      "oldPixel": [
+        549,
+        569
+      ],
+      "newImageSize": [
+        1805,
+        1426
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        549,
+        569
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-S-12",
+      "map": "suburbs",
+      "oldEvidenceId": 11,
+      "newEvidenceId": 25,
+      "oldPixel": [
+        520,
+        666
+      ],
+      "newImageSize": [
+        1805,
+        1426
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        520,
+        666
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation",
+      "verifiedFieldChange": {
+        "field": "cacophonyDisappears",
+        "old": false,
+        "new": true,
+        "evidence": "可降级BOSS外框从粉色变青色；新版图例称喧响区内高度可能消失。",
+        "evidencePixel": [
+          527.5,
+          675.0
+        ],
+        "preserveMainMapCoordinate": true
+      }
+    },
+    {
+      "id": "KZ-S-13",
+      "map": "suburbs",
+      "oldEvidenceId": 11,
+      "newEvidenceId": 25,
+      "oldPixel": [
+        291,
+        671
+      ],
+      "newImageSize": [
+        1805,
+        1426
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        291,
+        671
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-S-14",
+      "map": "suburbs",
+      "oldEvidenceId": 11,
+      "newEvidenceId": 25,
+      "oldPixel": [
+        669,
+        752
+      ],
+      "newImageSize": [
+        1805,
+        1426
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        669,
+        752
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-S-15",
+      "map": "suburbs",
+      "oldEvidenceId": 11,
+      "newEvidenceId": 25,
+      "oldPixel": [
+        216,
+        771
+      ],
+      "newImageSize": [
+        1805,
+        1426
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        216,
+        771
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-S-16",
+      "map": "suburbs",
+      "oldEvidenceId": 11,
+      "newEvidenceId": 25,
+      "oldPixel": [
+        452,
+        798
+      ],
+      "newImageSize": [
+        1805,
+        1426
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        452,
+        798
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-S-17",
+      "map": "suburbs",
+      "oldEvidenceId": 11,
+      "newEvidenceId": 25,
+      "oldPixel": [
+        483,
+        909
+      ],
+      "newImageSize": [
+        1805,
+        1426
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        483,
+        909
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-S-18",
+      "map": "suburbs",
+      "oldEvidenceId": 11,
+      "newEvidenceId": 25,
+      "oldPixel": [
+        1009,
+        928
+      ],
+      "newImageSize": [
+        1805,
+        1426
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        1009,
+        928
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-S-19",
+      "map": "suburbs",
+      "oldEvidenceId": 11,
+      "newEvidenceId": 25,
+      "oldPixel": [
+        922,
+        933
+      ],
+      "newImageSize": [
+        1805,
+        1426
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        922,
+        933
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-S-20",
+      "map": "suburbs",
+      "oldEvidenceId": 11,
+      "newEvidenceId": 25,
+      "oldPixel": [
+        657,
+        1001
+      ],
+      "newImageSize": [
+        1805,
+        1426
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        657,
+        1001
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-S-21",
+      "map": "suburbs",
+      "oldEvidenceId": 11,
+      "newEvidenceId": 25,
+      "oldPixel": [
+        931,
+        1005
+      ],
+      "newImageSize": [
+        1805,
+        1426
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        931,
+        1005
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-S-22",
+      "map": "suburbs",
+      "oldEvidenceId": 11,
+      "newEvidenceId": 25,
+      "oldPixel": [
+        1211,
+        1027
+      ],
+      "newImageSize": [
+        1805,
+        1426
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        1211,
+        1027
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-S-23",
+      "map": "suburbs",
+      "oldEvidenceId": 11,
+      "newEvidenceId": 25,
+      "oldPixel": [
+        1468,
+        1037
+      ],
+      "newImageSize": [
+        1805,
+        1426
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        1468,
+        1037
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-S-24",
+      "map": "suburbs",
+      "oldEvidenceId": 11,
+      "newEvidenceId": 25,
+      "oldPixel": [
+        388,
+        1059
+      ],
+      "newImageSize": [
+        1805,
+        1426
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        388,
+        1059
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-S-25",
+      "map": "suburbs",
+      "oldEvidenceId": 11,
+      "newEvidenceId": 25,
+      "oldPixel": [
+        986,
+        1140
+      ],
+      "newImageSize": [
+        1805,
+        1426
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        986,
+        1140
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-S-26",
+      "map": "suburbs",
+      "oldEvidenceId": 11,
+      "newEvidenceId": 25,
+      "oldPixel": [
+        1562,
+        1194
+      ],
+      "newImageSize": [
+        1805,
+        1426
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        1562,
+        1194
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    },
+    {
+      "id": "KZ-S-27",
+      "map": "suburbs",
+      "oldEvidenceId": 11,
+      "newEvidenceId": 25,
+      "oldPixel": [
+        714,
+        1334
+      ],
+      "newImageSize": [
+        1805,
+        1426
+      ],
+      "keepOldId": true,
+      "preserveMainMapCoordinate": true,
+      "status": "same-main-map-icon-visually-present",
+      "evidencePixel": [
+        714,
+        1334
+      ],
+      "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+    }
+  ],
+  "phantomPatrolMarkers": [
+    {
+      "map": "suburbs",
+      "newEvidenceId": 25,
+      "evidencePixel": [
+        1209.5,
+        288.5
+      ],
+      "imageSize": [
+        1805,
+        1426
+      ],
+      "coordinateRegion": "main-map",
+      "insetFloor": null,
+      "normalizedMainMapCandidate": [
+        0.6700831024930748,
+        0.20231416549789621
+      ],
+      "meaning": "author patrol-location marker; not a measured path, exact spawn or guaranteed occurrence",
+      "condition": "only inside Cacophony Zones according to author",
+      "worldPosition": null,
+      "routeEligible": false,
+      "canLabelGuaranteedSpawn": false
+    },
+    {
+      "map": "suburbs",
+      "newEvidenceId": 25,
+      "evidencePixel": [
+        1559.5,
+        428.5
+      ],
+      "imageSize": [
+        1805,
+        1426
+      ],
+      "coordinateRegion": "main-map",
+      "insetFloor": null,
+      "normalizedMainMapCandidate": [
+        0.8639889196675901,
+        0.30049088359046283
+      ],
+      "meaning": "author patrol-location marker; not a measured path, exact spawn or guaranteed occurrence",
+      "condition": "only inside Cacophony Zones according to author",
+      "worldPosition": null,
+      "routeEligible": false,
+      "canLabelGuaranteedSpawn": false
+    },
+    {
+      "map": "suburbs",
+      "newEvidenceId": 25,
+      "evidencePixel": [
+        878.5,
+        569.5
+      ],
+      "imageSize": [
+        1805,
+        1426
+      ],
+      "coordinateRegion": "main-map",
+      "insetFloor": null,
+      "normalizedMainMapCandidate": [
+        0.48670360110803323,
+        0.3993688639551192
+      ],
+      "meaning": "author patrol-location marker; not a measured path, exact spawn or guaranteed occurrence",
+      "condition": "only inside Cacophony Zones according to author",
+      "worldPosition": null,
+      "routeEligible": false,
+      "canLabelGuaranteedSpawn": false
+    },
+    {
+      "map": "suburbs",
+      "newEvidenceId": 25,
+      "evidencePixel": [
+        549.5,
+        627.5
+      ],
+      "imageSize": [
+        1805,
+        1426
+      ],
+      "coordinateRegion": "main-map",
+      "insetFloor": null,
+      "normalizedMainMapCandidate": [
+        0.3044321329639889,
+        0.44004207573632537
+      ],
+      "meaning": "author patrol-location marker; not a measured path, exact spawn or guaranteed occurrence",
+      "condition": "only inside Cacophony Zones according to author",
+      "worldPosition": null,
+      "routeEligible": false,
+      "canLabelGuaranteedSpawn": false
+    },
+    {
+      "map": "suburbs",
+      "newEvidenceId": 25,
+      "evidencePixel": [
+        1462.5,
+        925.5
+      ],
+      "imageSize": [
+        1805,
+        1426
+      ],
+      "coordinateRegion": "main-map",
+      "insetFloor": null,
+      "normalizedMainMapCandidate": [
+        0.8102493074792244,
+        0.6490182328190743
+      ],
+      "meaning": "author patrol-location marker; not a measured path, exact spawn or guaranteed occurrence",
+      "condition": "only inside Cacophony Zones according to author",
+      "worldPosition": null,
+      "routeEligible": false,
+      "canLabelGuaranteedSpawn": false
+    },
+    {
+      "map": "suburbs",
+      "newEvidenceId": 25,
+      "evidencePixel": [
+        898.5,
+        1004.5
+      ],
+      "imageSize": [
+        1805,
+        1426
+      ],
+      "coordinateRegion": "main-map",
+      "insetFloor": null,
+      "normalizedMainMapCandidate": [
+        0.49778393351800554,
+        0.7044179523141655
+      ],
+      "meaning": "author patrol-location marker; not a measured path, exact spawn or guaranteed occurrence",
+      "condition": "only inside Cacophony Zones according to author",
+      "worldPosition": null,
+      "routeEligible": false,
+      "canLabelGuaranteedSpawn": false
+    },
+    {
+      "map": "suburbs",
+      "newEvidenceId": 25,
+      "evidencePixel": [
+        1471.5,
+        1186.5
+      ],
+      "imageSize": [
+        1805,
+        1426
+      ],
+      "coordinateRegion": "main-map",
+      "insetFloor": null,
+      "normalizedMainMapCandidate": [
+        0.8152354570637119,
+        0.8320476858345021
+      ],
+      "meaning": "author patrol-location marker; not a measured path, exact spawn or guaranteed occurrence",
+      "condition": "only inside Cacophony Zones according to author",
+      "worldPosition": null,
+      "routeEligible": false,
+      "canLabelGuaranteedSpawn": false
+    },
+    {
+      "map": "janus",
+      "newEvidenceId": 28,
+      "evidencePixel": [
+        1396.5,
+        299.5
+      ],
+      "imageSize": [
+        1616,
+        1629
+      ],
+      "coordinateRegion": "main-map",
+      "insetFloor": null,
+      "normalizedMainMapCandidate": [
+        0.8641707920792079,
+        0.18385512584407612
+      ],
+      "meaning": "author patrol-location marker; not a measured path, exact spawn or guaranteed occurrence",
+      "condition": "only inside Cacophony Zones according to author",
+      "worldPosition": null,
+      "routeEligible": false,
+      "canLabelGuaranteedSpawn": false
+    },
+    {
+      "map": "janus",
+      "newEvidenceId": 28,
+      "evidencePixel": [
+        1261.5,
+        369.5
+      ],
+      "imageSize": [
+        1616,
+        1629
+      ],
+      "coordinateRegion": "main-map",
+      "insetFloor": null,
+      "normalizedMainMapCandidate": [
+        0.7806311881188119,
+        0.22682627378759976
+      ],
+      "meaning": "author patrol-location marker; not a measured path, exact spawn or guaranteed occurrence",
+      "condition": "only inside Cacophony Zones according to author",
+      "worldPosition": null,
+      "routeEligible": false,
+      "canLabelGuaranteedSpawn": false
+    },
+    {
+      "map": "janus",
+      "newEvidenceId": 28,
+      "evidencePixel": [
+        406.5,
+        399.5
+      ],
+      "imageSize": [
+        1616,
+        1629
+      ],
+      "coordinateRegion": "floor-inset",
+      "insetFloor": 2,
+      "normalizedMainMapCandidate": null,
+      "meaning": "author patrol-location marker; not a measured path, exact spawn or guaranteed occurrence",
+      "condition": "only inside Cacophony Zones according to author",
+      "worldPosition": null,
+      "routeEligible": false,
+      "canLabelGuaranteedSpawn": false
+    },
+    {
+      "map": "janus",
+      "newEvidenceId": 28,
+      "evidencePixel": [
+        1013.5,
+        436.5
+      ],
+      "imageSize": [
+        1616,
+        1629
+      ],
+      "coordinateRegion": "main-map",
+      "insetFloor": null,
+      "normalizedMainMapCandidate": [
+        0.6271658415841584,
+        0.26795580110497236
+      ],
+      "meaning": "author patrol-location marker; not a measured path, exact spawn or guaranteed occurrence",
+      "condition": "only inside Cacophony Zones according to author",
+      "worldPosition": null,
+      "routeEligible": false,
+      "canLabelGuaranteedSpawn": false
+    },
+    {
+      "map": "janus",
+      "newEvidenceId": 28,
+      "evidencePixel": [
+        1278.5,
+        437.5
+      ],
+      "imageSize": [
+        1616,
+        1629
+      ],
+      "coordinateRegion": "main-map",
+      "insetFloor": null,
+      "normalizedMainMapCandidate": [
+        0.7911509900990099,
+        0.2685696746470227
+      ],
+      "meaning": "author patrol-location marker; not a measured path, exact spawn or guaranteed occurrence",
+      "condition": "only inside Cacophony Zones according to author",
+      "worldPosition": null,
+      "routeEligible": false,
+      "canLabelGuaranteedSpawn": false
+    },
+    {
+      "map": "janus",
+      "newEvidenceId": 28,
+      "evidencePixel": [
+        1223.5,
+        540.5
+      ],
+      "imageSize": [
+        1616,
+        1629
+      ],
+      "coordinateRegion": "main-map",
+      "insetFloor": null,
+      "normalizedMainMapCandidate": [
+        0.7571163366336634,
+        0.3317986494782075
+      ],
+      "meaning": "author patrol-location marker; not a measured path, exact spawn or guaranteed occurrence",
+      "condition": "only inside Cacophony Zones according to author",
+      "worldPosition": null,
+      "routeEligible": false,
+      "canLabelGuaranteedSpawn": false
+    },
+    {
+      "map": "janus",
+      "newEvidenceId": 28,
+      "evidencePixel": [
+        278.5,
+        603.5
+      ],
+      "imageSize": [
+        1616,
+        1629
+      ],
+      "coordinateRegion": "floor-inset",
+      "insetFloor": 3,
+      "normalizedMainMapCandidate": null,
+      "meaning": "author patrol-location marker; not a measured path, exact spawn or guaranteed occurrence",
+      "condition": "only inside Cacophony Zones according to author",
+      "worldPosition": null,
+      "routeEligible": false,
+      "canLabelGuaranteedSpawn": false
+    },
+    {
+      "map": "janus",
+      "newEvidenceId": 28,
+      "evidencePixel": [
+        756.5,
+        1184.5
+      ],
+      "imageSize": [
+        1616,
+        1629
+      ],
+      "coordinateRegion": "main-map",
+      "insetFloor": null,
+      "normalizedMainMapCandidate": [
+        0.4681311881188119,
+        0.7271332105586249
+      ],
+      "meaning": "author patrol-location marker; not a measured path, exact spawn or guaranteed occurrence",
+      "condition": "only inside Cacophony Zones according to author",
+      "worldPosition": null,
+      "routeEligible": false,
+      "canLabelGuaranteedSpawn": false
+    },
+    {
+      "map": "janus",
+      "newEvidenceId": 28,
+      "evidencePixel": [
+        348.5,
+        1338.5
+      ],
+      "imageSize": [
+        1616,
+        1629
+      ],
+      "coordinateRegion": "floor-inset",
+      "insetFloor": 2,
+      "normalizedMainMapCandidate": null,
+      "meaning": "author patrol-location marker; not a measured path, exact spawn or guaranteed occurrence",
+      "condition": "only inside Cacophony Zones according to author",
+      "worldPosition": null,
+      "routeEligible": false,
+      "canLabelGuaranteedSpawn": false
+    },
+    {
+      "map": "janus",
+      "newEvidenceId": 28,
+      "evidencePixel": [
+        860.5,
+        1440.5
+      ],
+      "imageSize": [
+        1616,
+        1629
+      ],
+      "coordinateRegion": "main-map",
+      "insetFloor": null,
+      "normalizedMainMapCandidate": [
+        0.5324876237623762,
+        0.8842848373235114
+      ],
+      "meaning": "author patrol-location marker; not a measured path, exact spawn or guaranteed occurrence",
+      "condition": "only inside Cacophony Zones according to author",
+      "worldPosition": null,
+      "routeEligible": false,
+      "canLabelGuaranteedSpawn": false
+    },
+    {
+      "map": "janus",
+      "newEvidenceId": 28,
+      "evidencePixel": [
+        368.5,
+        1479.5
+      ],
+      "imageSize": [
+        1616,
+        1629
+      ],
+      "coordinateRegion": "floor-inset",
+      "insetFloor": 1,
+      "normalizedMainMapCandidate": null,
+      "meaning": "author patrol-location marker; not a measured path, exact spawn or guaranteed occurrence",
+      "condition": "only inside Cacophony Zones according to author",
+      "worldPosition": null,
+      "routeEligible": false,
+      "canLabelGuaranteedSpawn": false
+    },
+    {
+      "map": "janus",
+      "newEvidenceId": 28,
+      "evidencePixel": [
+        860.5,
+        1493.5
+      ],
+      "imageSize": [
+        1616,
+        1629
+      ],
+      "coordinateRegion": "main-map",
+      "insetFloor": null,
+      "normalizedMainMapCandidate": [
+        0.5324876237623762,
+        0.9168201350521793
+      ],
+      "meaning": "author patrol-location marker; not a measured path, exact spawn or guaranteed occurrence",
+      "condition": "only inside Cacophony Zones according to author",
+      "worldPosition": null,
+      "routeEligible": false,
+      "canLabelGuaranteedSpawn": false
+    }
+  ],
+  "verifiedChanges": [
+    {
+      "id": "KZ-S-12",
+      "field": "cacophonyDisappears",
+      "old": false,
+      "new": true,
+      "evidence": "可降级BOSS外框从粉色变青色；新版图例称喧响区内高度可能消失。",
+      "evidencePixel": [
+        527.5,
+        675.0
+      ],
+      "preserveMainMapCoordinate": true
+    },
+    {
+      "id": "KZ-J-24",
+      "field": "gradeChange",
+      "old": null,
+      "new": "upgrade",
+      "evidence": "广场西北原精英图标新增白色向上双箭头，与作者高架下敌人可升级说明对应。",
+      "evidencePixel": [
+        534,
+        1213
+      ],
+      "preserveMainMapCoordinate": true
+    }
+  ],
+  "floorClarifications": [
+    {
+      "id": "KZ-J-21",
+      "floors": [
+        1
+      ]
+    },
+    {
+      "id": "KZ-J-22",
+      "floors": [
+        1
+      ]
+    },
+    {
+      "id": "KZ-J-28",
+      "floors": [
+        1
+      ]
+    },
+    {
+      "id": "J-D04",
+      "sameLocationAs": "KZ-J-28",
+      "floors": [
+        1
+      ]
+    }
+  ],
+  "lootInsetCorrespondence": [
+    {
+      "id": "J-M13",
+      "newEvidenceId": 30,
+      "oldPixel": [
+        722,
+        470
+      ],
+      "evidencePixel": [
+        557,
+        397
+      ],
+      "floors": [
+        1
+      ],
+      "status": "floor-explicit-in-author-inset",
+      "reason": "工地北部唯一机械箱转入1F图；另一机械箱仍在3F门禁处，旧ID与主图坐标不变。"
+    },
+    {
+      "id": "J-M14",
+      "newEvidenceId": 30,
+      "oldPixel": [
+        678,
+        630
+      ],
+      "evidencePixel": [
+        318,
+        558
+      ],
+      "floors": [
+        3
+      ],
+      "status": "existing-floor-confirmed"
+    },
+    {
+      "id": "J-B12",
+      "newEvidenceId": 32,
+      "oldPixel": [
+        708,
+        461
+      ],
+      "evidencePixel": [
+        420,
+        392
+      ],
+      "floors": [
+        2
+      ],
+      "status": "existing-floor-confirmed"
+    },
+    {
+      "id": "J-B13",
+      "newEvidenceId": 32,
+      "oldPixel": [
+        721,
+        474
+      ],
+      "evidencePixel": [
+        562,
+        411
+      ],
+      "floors": [
+        1
+      ],
+      "status": "floor-explicit-in-author-inset",
+      "reason": "工地北部两只真公文包分别画入2F与1F；原已明确2F者仍在2F。"
+    },
+    {
+      "id": "J-B15",
+      "newEvidenceId": 32,
+      "oldPixel": [
+        615,
+        665
+      ],
+      "evidencePixel": [
+        264,
+        608
+      ],
+      "floors": [
+        3
+      ],
+      "status": "existing-floor-confirmed",
+      "briefcaseNature": "spawn_dependent"
+    },
+    {
+      "id": "J-B09",
+      "newEvidenceId": 32,
+      "oldPixel": [
+        1198,
+        477
+      ],
+      "evidencePixel": [
+        1119,
+        346
+      ],
+      "floors": [
+        2
+      ],
+      "status": "floor-explicit-in-author-inset",
+      "reason": "六昏街原录像店附近真公文包移入新2F小插图；其他街区公文包仍在原处。"
+    },
+    {
+      "ids": [
+        "J-E27",
+        "J-E29"
+      ],
+      "newEvidenceId": 30,
+      "evidencePixels": [
+        [
+          461,
+          598
+        ],
+        [
+          478,
+          623
+        ]
+      ],
+      "floors": [
+        1
+      ],
+      "status": "joint-floor-match-individual-pairing-unresolved",
+      "reason": "工地南部无楼层编号的两只电子箱现在分层图1F画出；不猜两旧ID与两新图标的逐一对应。"
+    },
+    {
+      "id": "J-E28",
+      "newEvidenceId": 30,
+      "oldPixel": [
+        633,
+        674
+      ],
+      "evidencePixel": [
+        271,
+        608
+      ],
+      "floors": [
+        3
+      ],
+      "status": "existing-floor-confirmed"
+    },
+    {
+      "ids": [
+        "J-E41",
+        "J-E42"
+      ],
+      "newEvidenceId": 30,
+      "evidencePixels": [
+        [
+          340,
+          1440
+        ],
+        [
+          359,
+          1462
+        ]
+      ],
+      "floors": [
+        1
+      ],
+      "status": "joint-floor-match-individual-pairing-unresolved",
+      "reason": "光映南楼两只原未标层的电子箱在1F图；一只非问号、一只问号，未自动修改刷新属性。"
+    }
+  ],
+  "authorChangelogDelta": [
+    "两图新增 Ulidim Phantom 巡逻位置；作者称只在喧响区出现。",
+    "两图新增出生点、撤离点标识。",
+    "雅努斯工地和光映新增楼层拆分图；六昏街另见2F插图。",
+    "雅努斯高架下小怪可升级为掉落 Reverb 的 BOSS。",
+    "城郊最东侧精英不再标出，作者理由为近期未再见刷新。"
+  ],
+  "spawnExitCrossCheck": {
+    "existingEvidenceFile": "research/spawn-exit-locations.json",
+    "existing": [
+      {
+        "map": "suburbs",
+        "existingConfigCandidateIds": [
+          "suburbs-entry-01",
+          "suburbs-entry-02",
+          "suburbs-entry-03",
+          "suburbs-entry-04",
+          "suburbs-entry-05",
+          "suburbs-entry-06",
+          "suburbs-exit-01",
+          "suburbs-exit-02",
+          "suburbs-exit-03",
+          "suburbs-exit-04",
+          "suburbs-exit-05",
+          "suburbs-exit-06"
+        ],
+        "summary": {
+          "fixedSpawnCandidateCount": 6,
+          "rawEvacuationDeviceReferencesInGameplayPoints": 13,
+          "rawAnchorGadgetReferences": 12,
+          "evacuationLocationCandidateCount": 6,
+          "locationsWithHighRiskEvidence": 4,
+          "activeExitCountThisRun": null,
+          "countMeaning": "去重后空间候选数量，包含仍未证明高危启用的地点；不是本局出口数量。"
+        }
+      },
+      {
+        "map": "janus",
+        "existingConfigCandidateIds": [
+          "janus-entry-01",
+          "janus-entry-02",
+          "janus-entry-03",
+          "janus-entry-04",
+          "janus-entry-05",
+          "janus-exit-01",
+          "janus-exit-02",
+          "janus-exit-03",
+          "janus-exit-04",
+          "janus-exit-05",
+          "janus-exit-06",
+          "janus-exit-07"
+        ],
+        "summary": {
+          "fixedSpawnCandidateCount": 5,
+          "rawEvacuationDeviceReferencesInGameplayPoints": 19,
+          "rawAnchorGadgetReferences": 18,
+          "evacuationLocationCandidateCount": 7,
+          "locationsWithHighRiskEvidence": 7,
+          "activeExitCountThisRun": null,
+          "countMeaning": "去重后空间候选数量，包含仍未证明高危启用的地点；不是本局出口数量。"
+        }
+      }
+    ],
+    "decision": "Do not add new game spawn/exit entities from the author icons. Existing 11 spawn candidates and 13 exit candidates already cover both maps; exact per-icon association and any unmatched symbol need client/runtime confirmation.",
+    "newAuthorSymbolsInterpretation": "Roman-number spawn areas and gray departure symbols are annotation evidence; not all are precise interaction points. Keep research return portals distinct from extraction exits."
+  },
+  "containersAndRoutes": {
+    "suburbs": "箱体、公文包及白色图符像素掩码全同；未发现新增/删除容器证据，不能把新图数量当新箱数量。",
+    "janus": "多层容器、公文包和门卡标记移入楼层插图，图上移动不等于世界坐标改变。保留旧点ID与主图坐标；未建立精确对应的标记继续待核。",
+    "floorInsets": [
+      {
+        "name": "construction",
+        "bbox": [
+          200,
+          340,
+          605,
+          690
+        ],
+        "floors": [
+          3,
+          2,
+          1
+        ]
+      },
+      {
+        "name": "lumina",
+        "bbox": [
+          130,
+          1195,
+          420,
+          1615
+        ],
+        "floors": [
+          3,
+          2,
+          1,
+          "B1"
+        ]
+      },
+      {
+        "name": "street",
+        "bbox": [
+          1040,
+          285,
+          1150,
+          390
+        ],
+        "floors": [
+          2
+        ]
+      }
+    ],
+    "routes": "彩色楼层出口对应和空中轨道显示是作者绘图信息；未建立新的NavMesh边、传送连接、门禁开放条件或跨层高度。"
+  },
+  "limitations": [
+    "相册10月11日更新时间不证明3.3开服客户端或实局已验证。",
+    "新旧纯底图相同且主地图图像框架保持；floor inset pixels不得代替主图坐标。",
+    "KZ-J-12的新图对应未解，不删除、不改为确定刷新或掉落。",
+    "所有新幻影是巡逻位置候选，未证明精确游戏实体ID、巡逻轨迹或每局出现。"
+  ],
+  "integration": {
+    "oldEnemyIdsPreserved": 59,
+    "mainMapPatrolCandidatesAdded": [
+      "KZ-J-33",
+      "KZ-J-34",
+      "KZ-J-35",
+      "KZ-J-36",
+      "KZ-J-37",
+      "KZ-J-38",
+      "KZ-J-39",
+      "KZ-J-40",
+      "KZ-S-28",
+      "KZ-S-29",
+      "KZ-S-30",
+      "KZ-S-31",
+      "KZ-S-32",
+      "KZ-S-33",
+      "KZ-S-34"
+    ],
+    "insetPatrolReferencesNotPlaced": 4,
+    "unknownOldIds": [
+      "KZ-J-12",
+      "KZ-S-04"
+    ],
+    "verifiedChanges": [
+      {
+        "id": "KZ-S-12",
+        "field": "cacophonyDisappears",
+        "old": false,
+        "new": true,
+        "evidence": "可降级BOSS外框从粉色变青色；新版图例称喧响区内高度可能消失。",
+        "evidencePixel": [
+          527.5,
+          675.0
+        ],
+        "preserveMainMapCoordinate": true
+      },
+      {
+        "id": "KZ-J-24",
+        "field": "gradeChange",
+        "old": null,
+        "new": "upgrade",
+        "evidence": "广场西北原精英图标新增白色向上双箭头，与作者高架下敌人可升级说明对应。",
+        "evidencePixel": [
+          534,
+          1213
+        ],
+        "preserveMainMapCoordinate": true
+      }
+    ],
+    "floorClarifications": [
+      {
+        "id": "KZ-J-21",
+        "floors": [
+          1
+        ]
+      },
+      {
+        "id": "KZ-J-22",
+        "floors": [
+          1
+        ]
+      },
+      {
+        "id": "KZ-J-28",
+        "floors": [
+          1
+        ]
+      },
+      {
+        "id": "J-D04",
+        "sameLocationAs": "KZ-J-28",
+        "floors": [
+          1
+        ]
+      }
+    ],
+    "appliedLootFloorClarifications": [
+      {
+        "id": "J-M13",
+        "floors": [
+          1
+        ],
+        "evidenceImage": 30
+      },
+      {
+        "id": "J-B13",
+        "floors": [
+          1
+        ],
+        "evidenceImage": 32
+      }
+    ],
+    "baseImagesAndOldCoordinatesPreserved": true,
+    "newNavigationEndpoints": 0
+  },
+  "currentClientEvidence": {
+    "clientBuild": "OSPRODWin3.3.0",
+    "dropChain": "research/map-drop-chain-3.3.json",
+    "navigationCorrections": "research/map-3.3-navigation-changes.json",
+    "note": "Author-map review and current client configuration are separate evidence types; neither establishes a guaranteed spawn in a run."
+  }
+}

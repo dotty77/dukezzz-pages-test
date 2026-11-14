@@ -1,0 +1,82 @@
+/* Item Atlas entrance to the independent TV Wall. */
+.gallery-page .tv-wall-entry {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin-top: 17px;
+  padding: 12px 16px 12px 12px;
+  border: 1px solid #6875ee55;
+  border-radius: 12px;
+  background: linear-gradient(110deg, #eef0ff, #f7fbff);
+  color: #4656c7;
+  text-decoration: none;
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.gallery-page .tv-wall-entry-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #6875ee30;
+  border-radius: 10px;
+  background: #ffffff99;
+}
+.gallery-page .tv-wall-entry-copy {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+  line-height: 1.45;
+}
+.gallery-page .tv-wall-entry-copy strong {
+  font-size: 15px;
+  font-weight: 700;
+  color: #293571;
+}
+.gallery-page .tv-wall-entry-copy > span {
+  font-size: 12px;
+  color: #67718e;
+}
+.gallery-page .tv-wall-entry-arrow {
+  margin-left: 16px;
+  font-size: 22px;
+  line-height: 1;
+  transition: transform .2s ease;
+}
+.gallery-page .tv-wall-entry:hover {
+  border-color: #6875ee;
+  box-shadow: 0 5px 20px #6875ee1a;
+  transform: translateY(-2px);
+}
+.gallery-page .tv-wall-entry:hover .tv-wall-entry-arrow {
+  transform: translate(2px, -2px);
+}
+.gallery-page .tv-wall-entry:focus-visible {
+  outline: 3px solid #6875ee;
+  outline-offset: 4px;
+}
+html[data-theme="dark"] .gallery-page .tv-wall-entry {
+  background: linear-gradient(110deg, #232749, #1b2839);
+  border-color: #7785f54d;
+  color: #a7b2ff;
+}
+html[data-theme="dark"] .gallery-page .tv-wall-entry-icon {
+  background: #8797ff0d;
+  border-color: #8797ff33;
+}
+html[data-theme="dark"] .gallery-page .tv-wall-entry-copy strong { color: #e8ecff; }
+html[data-theme="dark"] .gallery-page .tv-wall-entry-copy > span { color: #b0bbd2; }
+html[data-theme="dark"] .gallery-page .tv-wall-entry:hover { border-color: #a7b2ff; }
+@media (max-width: 480px) {
+  .gallery-page .tv-wall-entry { width: 100%; gap: 10px; margin-top: 14px; padding: 10px; }
+  .gallery-page .tv-wall-entry-arrow { margin-left: auto; padding-left: 4px; }
+  .gallery-page .tv-wall-entry-copy > span { font-size: 11px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gallery-page .tv-wall-entry,
+  .gallery-page .tv-wall-entry-arrow { transition: none; }
+  .gallery-page .tv-wall-entry:hover,
+  .gallery-page .tv-wall-entry:hover .tv-wall-entry-arrow { transform: none; }
+}

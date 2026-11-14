@@ -1,0 +1,18 @@
+/* Collapsible next-season preview shared by the map (index.html) and the item archive (gallery.html). */
+.season-preview{margin:14px 0 0;border:1px solid color-mix(in srgb,var(--accent) 32%,var(--line));border-radius:12px;background:color-mix(in srgb,var(--accent) 6%,var(--panel));color:var(--text);font-size:12px;line-height:1.7;text-align:left}
+.season-preview summary{display:flex;align-items:center;gap:8px;padding:9px 12px;cursor:pointer;list-style:none;font-weight:600}
+.season-preview summary::-webkit-details-marker{display:none}
+.season-preview summary::after{content:"";flex:none;margin-left:auto;width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);opacity:.55;transition:transform .2s}
+.season-preview[open] summary::after{transform:rotate(-135deg)}
+.season-preview .season-title{display:flex;flex-direction:column;min-width:0;line-height:1.5}
+.season-preview .season-title b{font-weight:600}
+.season-preview .season-title small{color:var(--muted);font-size:11px;font-weight:500}
+.season-preview .season-tag{flex:none;align-self:flex-start;margin-top:2px;padding:0 7px;border-radius:999px;background:var(--accent);color:#fff;font-size:10px;font-weight:700;line-height:1.8}
+.season-preview ul{margin:0;padding:0 12px 0 28px}
+.season-preview li{margin:3px 0}
+.season-preview p{margin:8px 12px 10px;color:var(--muted);font-size:11px;line-height:1.6}
+.season-preview a{color:var(--teal);white-space:nowrap}
+
+.season-more{margin:5px 10px;border-top:1px solid var(--line)}
+.season-preview .season-more summary{padding:7px 2px;font-size:11px}
+.season-preview .season-more p{margin:0 2px 8px}

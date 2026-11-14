@@ -1,0 +1,576 @@
+{
+  "version": 1,
+  "gameVersion": "3.3.0",
+  "updatedAt": "2026-10-21",
+  "sources": [
+    {
+      "id": "enka-avatar-weapon-id",
+      "name": "Enka Network 代理人资料 WeaponId 显式绑定",
+      "url": "https://github.com/EnkaNetwork/API-docs/blob/master/store/zzz/avatars.json",
+      "localSource": "agent-details.json / agent-equipment.json"
+    },
+    {
+      "id": "enka-avatar-weapon-id-3.2",
+      "name": "Enka Network 3.2 代理人资料 WeaponId 显式绑定",
+      "url": "https://github.com/EnkaNetwork/API-docs/blob/a64e26184903df9d91002a72663b9ba62a710cb7/store/zzz/avatars.json",
+      "localSource": "agent-details.json / agent-equipment.json"
+    },
+    {
+      "id": "official-mechanics-3.3",
+      "name": "官方代理人机制介绍丨菲欧妮（专属音擎「涅槃初翎」）",
+      "url": "https://www.miyoushe.com/zzz/article/78959792"
+    },
+    {
+      "id": "client-weapon-avatar-binding-3.3",
+      "name": "3.3 正式客户端音擎与代理人显式绑定",
+      "url": "https://git.mero.moe/dimbreath/ZenlessData/src/commit/fd6cb326c07c75f39b0b05845d204302c451ec34/FileCfg/WeaponTemplateTb.json",
+      "commit": "fd6cb326c07c75f39b0b05845d204302c451ec34"
+    }
+  ],
+  "notes": [
+    "专属音擎关系由 Enka 代理人资料的 WeaponId 明确绑定，并与本站代理人详情、装备资料和调频图鉴交叉校验；未按名称或相近编号推断。",
+    "收录本站当前调频图鉴中的全部 S 级代理人及专属音擎；是否为某次调频的 UP，仍需由该期卡池公示或导入记录中的可靠标记判定。",
+    "常驻、可选歪池和 UP 身份随卡池与时期变化，本表不把代理人固定分类为限定或常驻。"
+  ],
+  "pairs": {
+    "1021": {
+      "agentId": "1021",
+      "agentName": "猫又",
+      "weaponId": "14102",
+      "weaponName": "钢铁肉垫",
+      "agentIcon": "assets/tuning/agent-1021.webp",
+      "weaponIcon": "assets/tuning/engine-14102.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1041": {
+      "agentId": "1041",
+      "agentName": "「11号」",
+      "weaponId": "14104",
+      "weaponName": "硫磺石",
+      "agentIcon": "assets/tuning/agent-1041.webp",
+      "weaponIcon": "assets/tuning/engine-14104.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1051": {
+      "agentId": "1051",
+      "agentName": "伊德海莉",
+      "weaponId": "14105",
+      "weaponName": "海妖摇篮",
+      "agentIcon": "assets/tuning/agent-1051.webp",
+      "weaponIcon": "assets/tuning/engine-14105.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1071": {
+      "agentId": "1071",
+      "agentName": "凯撒",
+      "weaponId": "14107",
+      "weaponName": "奔袭獠牙",
+      "agentIcon": "assets/tuning/agent-1071.webp",
+      "weaponIcon": "assets/tuning/engine-14107.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1091": {
+      "agentId": "1091",
+      "agentName": "雅",
+      "weaponId": "14109",
+      "weaponName": "霰落星殿",
+      "agentIcon": "assets/tuning/agent-1091.webp",
+      "weaponIcon": "assets/tuning/engine-14109.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1101": {
+      "agentId": "1101",
+      "agentName": "珂蕾妲",
+      "weaponId": "14110",
+      "weaponName": "燃狱齿轮",
+      "agentIcon": "assets/tuning/agent-1101.webp",
+      "weaponIcon": "assets/tuning/engine-14110.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1141": {
+      "agentId": "1141",
+      "agentName": "莱卡恩",
+      "weaponId": "14114",
+      "weaponName": "拘缚者",
+      "agentIcon": "assets/tuning/agent-1141.webp",
+      "weaponIcon": "assets/tuning/engine-14114.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1161": {
+      "agentId": "1161",
+      "agentName": "莱特",
+      "weaponId": "14116",
+      "weaponName": "焰心桂冠",
+      "agentIcon": "assets/tuning/agent-1161.webp",
+      "weaponIcon": "assets/tuning/engine-14116.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1171": {
+      "agentId": "1171",
+      "agentName": "柏妮思",
+      "weaponId": "14117",
+      "weaponName": "灼心摇壶",
+      "agentIcon": "assets/tuning/agent-1171.webp",
+      "weaponIcon": "assets/tuning/engine-14117.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1181": {
+      "agentId": "1181",
+      "agentName": "格莉丝",
+      "weaponId": "14118",
+      "weaponName": "嵌合编译器",
+      "agentIcon": "assets/tuning/agent-1181.webp",
+      "weaponIcon": "assets/tuning/engine-14118.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1191": {
+      "agentId": "1191",
+      "agentName": "艾莲",
+      "weaponId": "14119",
+      "weaponName": "深海访客",
+      "agentIcon": "assets/tuning/agent-1191.webp",
+      "weaponIcon": "assets/tuning/engine-14119.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1201": {
+      "agentId": "1201",
+      "agentName": "悠真",
+      "weaponId": "14120",
+      "weaponName": "残心青囊",
+      "agentIcon": "assets/tuning/agent-1201.webp",
+      "weaponIcon": "assets/tuning/engine-14120.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1211": {
+      "agentId": "1211",
+      "agentName": "丽娜",
+      "weaponId": "14121",
+      "weaponName": "啜泣摇篮",
+      "agentIcon": "assets/tuning/agent-1211.webp",
+      "weaponIcon": "assets/tuning/engine-14121.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1221": {
+      "agentId": "1221",
+      "agentName": "柳",
+      "weaponId": "14122",
+      "weaponName": "时流贤者",
+      "agentIcon": "assets/tuning/agent-1221.webp",
+      "weaponIcon": "assets/tuning/engine-14122.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1241": {
+      "agentId": "1241",
+      "agentName": "朱鸢",
+      "weaponId": "14124",
+      "weaponName": "防暴者Ⅵ型",
+      "agentIcon": "assets/tuning/agent-1241.webp",
+      "weaponIcon": "assets/tuning/engine-14124.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1251": {
+      "agentId": "1251",
+      "agentName": "青衣",
+      "weaponId": "14125",
+      "weaponName": "玉壶青冰",
+      "agentIcon": "assets/tuning/agent-1251.webp",
+      "weaponIcon": "assets/tuning/engine-14125.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1261": {
+      "agentId": "1261",
+      "agentName": "简",
+      "weaponId": "14126",
+      "weaponName": "淬锋钳刺",
+      "agentIcon": "assets/tuning/agent-1261.webp",
+      "weaponIcon": "assets/tuning/engine-14126.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1291": {
+      "agentId": "1291",
+      "agentName": "雨果",
+      "weaponId": "14129",
+      "weaponName": "千面日陨",
+      "agentIcon": "assets/tuning/agent-1291.webp",
+      "weaponIcon": "assets/tuning/engine-14129.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1301": {
+      "agentId": "1301",
+      "agentName": "奥菲丝&「鬼火」",
+      "weaponId": "14130",
+      "weaponName": "嚣枪喧焰",
+      "agentIcon": "assets/tuning/agent-1301.webp",
+      "weaponIcon": "assets/tuning/engine-14130.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1311": {
+      "agentId": "1311",
+      "agentName": "耀嘉音",
+      "weaponId": "14131",
+      "weaponName": "玲珑妆匣",
+      "agentIcon": "assets/tuning/agent-1311.webp",
+      "weaponIcon": "assets/tuning/engine-14131.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1321": {
+      "agentId": "1321",
+      "agentName": "伊芙琳",
+      "weaponId": "14132",
+      "weaponName": "心弦夜响",
+      "agentIcon": "assets/tuning/agent-1321.webp",
+      "weaponIcon": "assets/tuning/engine-14132.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1331": {
+      "agentId": "1331",
+      "agentName": "薇薇安",
+      "weaponId": "14133",
+      "weaponName": "飞鸟星梦",
+      "agentIcon": "assets/tuning/agent-1331.webp",
+      "weaponIcon": "assets/tuning/engine-14133.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1341": {
+      "agentId": "1341",
+      "agentName": "照",
+      "weaponId": "14134",
+      "weaponName": "半糖雪兔",
+      "agentIcon": "assets/tuning/agent-1341.webp",
+      "weaponIcon": "assets/tuning/engine-14134.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1361": {
+      "agentId": "1361",
+      "agentName": "「扳机」",
+      "weaponId": "14136",
+      "weaponName": "索魂影眸",
+      "agentIcon": "assets/tuning/agent-1361.webp",
+      "weaponIcon": "assets/tuning/engine-14136.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1371": {
+      "agentId": "1371",
+      "agentName": "仪玄",
+      "weaponId": "14137",
+      "weaponName": "青溟笼舍",
+      "agentIcon": "assets/tuning/agent-1371.webp",
+      "weaponIcon": "assets/tuning/engine-14137.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1381": {
+      "agentId": "1381",
+      "agentName": "零号·安比",
+      "weaponId": "14138",
+      "weaponName": "牺牲洁纯",
+      "agentIcon": "assets/tuning/agent-1381.webp",
+      "weaponIcon": "assets/tuning/engine-14138.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1391": {
+      "agentId": "1391",
+      "agentName": "橘福福",
+      "weaponId": "14139",
+      "weaponName": "福虓炉炉",
+      "agentIcon": "assets/tuning/agent-1391.webp",
+      "weaponIcon": "assets/tuning/engine-14139.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1401": {
+      "agentId": "1401",
+      "agentName": "爱丽丝",
+      "weaponId": "14140",
+      "weaponName": "十方锻星",
+      "agentIcon": "assets/tuning/agent-1401.webp",
+      "weaponIcon": "assets/tuning/engine-14140.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1411": {
+      "agentId": "1411",
+      "agentName": "柚叶",
+      "weaponId": "14141",
+      "weaponName": "狸法七变化",
+      "agentIcon": "assets/tuning/agent-1411.webp",
+      "weaponIcon": "assets/tuning/engine-14141.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1431": {
+      "agentId": "1431",
+      "agentName": "叶瞬光",
+      "weaponId": "14143",
+      "weaponName": "云霓孤光",
+      "agentIcon": "assets/tuning/agent-1431.webp",
+      "weaponIcon": "assets/tuning/engine-14143.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1451": {
+      "agentId": "1451",
+      "agentName": "卢西娅",
+      "weaponId": "14145",
+      "weaponName": "铸梦炉歌",
+      "agentIcon": "assets/tuning/agent-1451.webp",
+      "weaponIcon": "assets/tuning/engine-14145.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1461": {
+      "agentId": "1461",
+      "agentName": "「席德」",
+      "weaponId": "14146",
+      "weaponName": "机巧心种",
+      "agentIcon": "assets/tuning/agent-1461.webp",
+      "weaponIcon": "assets/tuning/engine-14146.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1471": {
+      "agentId": "1471",
+      "agentName": "般岳",
+      "weaponId": "14147",
+      "weaponName": "怒目金刚",
+      "agentIcon": "assets/tuning/agent-1471.webp",
+      "weaponIcon": "assets/tuning/engine-14147.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1481": {
+      "agentId": "1481",
+      "agentName": "琉音",
+      "weaponId": "14148",
+      "weaponName": "昨夜来电",
+      "agentIcon": "assets/tuning/agent-1481.webp",
+      "weaponIcon": "assets/tuning/engine-14148.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1491": {
+      "agentId": "1491",
+      "agentName": "千夏",
+      "weaponId": "14149",
+      "weaponName": "思络成歌",
+      "agentIcon": "assets/tuning/agent-1491.webp",
+      "weaponIcon": "assets/tuning/engine-14149.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1501": {
+      "agentId": "1501",
+      "agentName": "爱芮",
+      "weaponId": "14150",
+      "weaponName": "壳中之灵",
+      "agentIcon": "assets/tuning/agent-1501.webp",
+      "weaponIcon": "assets/tuning/engine-14150.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1511": {
+      "agentId": "1511",
+      "agentName": "南宫羽",
+      "weaponId": "14151",
+      "weaponName": "霓虹妄想",
+      "agentIcon": "assets/tuning/agent-1511.webp",
+      "weaponIcon": "assets/tuning/engine-14151.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1521": {
+      "agentId": "1521",
+      "agentName": "希希芙",
+      "weaponId": "14152",
+      "weaponName": "鳞齿寻踪",
+      "agentIcon": "assets/tuning/agent-1521.webp",
+      "weaponIcon": "assets/tuning/engine-14152.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1531": {
+      "agentId": "1531",
+      "agentName": "星徽·比利",
+      "weaponId": "14153",
+      "weaponName": "辉骑面铠",
+      "agentIcon": "assets/tuning/agent-1531.webp",
+      "weaponIcon": "assets/tuning/engine-14153.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1541": {
+      "agentId": "1541",
+      "agentName": "普罗米娅",
+      "weaponId": "14154",
+      "weaponName": "朔月裁霜",
+      "agentIcon": "assets/tuning/agent-1541.webp",
+      "weaponIcon": "assets/tuning/engine-14154.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1551": {
+      "agentId": "1551",
+      "agentName": "佩洛伊斯",
+      "weaponId": "14155",
+      "weaponName": "日冕遗蜕",
+      "agentIcon": "assets/tuning/agent-1551.webp",
+      "weaponIcon": "assets/tuning/engine-14155.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1561": {
+      "agentId": "1561",
+      "agentName": "维琳娜",
+      "weaponId": "14156",
+      "weaponName": "琳琅鎏心",
+      "agentIcon": "assets/tuning/agent-1561.webp",
+      "weaponIcon": "assets/tuning/engine-14156.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1571": {
+      "agentId": "1571",
+      "agentName": "诺姆",
+      "weaponId": "14157",
+      "weaponName": "首席跟班",
+      "agentIcon": "assets/tuning/agent-1571.webp",
+      "weaponIcon": "assets/tuning/engine-14157.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1581": {
+      "agentId": "1581",
+      "agentName": "蕾米埃尔",
+      "weaponId": "14158",
+      "weaponName": "空羽复归之诗",
+      "agentIcon": "assets/tuning/agent-1581.webp",
+      "weaponIcon": "assets/tuning/engine-14158.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1591": {
+      "agentId": "1591",
+      "agentName": "希格莉德",
+      "weaponId": "14159",
+      "weaponName": "骁骑礼赞",
+      "agentIcon": "assets/tuning/agent-1591.webp",
+      "weaponIcon": "assets/tuning/engine-14159.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id"
+    },
+    "1611": {
+      "agentId": "1611",
+      "agentName": "克拉蕾",
+      "weaponId": "14161",
+      "weaponName": "猩红渴望",
+      "agentIcon": "assets/tuning/agent-1611.webp",
+      "weaponIcon": "assets/tuning/engine-14161.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id-3.2"
+    },
+    "1621": {
+      "agentId": "1621",
+      "agentName": "洛克茜",
+      "weaponId": "14162",
+      "weaponName": "绯月银棺",
+      "agentIcon": "assets/tuning/agent-1621.webp",
+      "weaponIcon": "assets/tuning/engine-14162.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "enka-avatar-weapon-id-3.2"
+    },
+    "1641": {
+      "agentId": "1641",
+      "agentName": "菲欧妮",
+      "weaponId": "14164",
+      "weaponName": "涅槃初翎",
+      "agentIcon": "assets/tuning/agent-1641.webp",
+      "weaponIcon": "assets/tuning/engine-14164.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "client-weapon-avatar-binding-3.3"
+    },
+    "1631": {
+      "agentId": "1631",
+      "agentName": "赛维里安",
+      "weaponId": "14163",
+      "weaponName": "禁罪囚笼",
+      "agentIcon": "assets/tuning/agent-1631.webp",
+      "weaponIcon": "assets/tuning/engine-14163.webp",
+      "rank": "S",
+      "status": "confirmed",
+      "source": "client-weapon-avatar-binding-3.3"
+    }
+  }
+}

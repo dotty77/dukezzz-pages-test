@@ -1,0 +1,618 @@
+{
+  "version": 2,
+  "provenanceNote": "地点依据官方街区介绍与公开游戏图文核对，来源见各点位链接；HoYoLAB 社区作者文章不等于官方攻略。本次未在游戏客户端实走，开放情况以你的主线进度和当前版本为准。路线使用店门、雕像等相对地标，不提供未经核实的坐标或东南西北。五行关联与建议站位均为本站娱乐设定，不是官方场景属性，也不会改变调频概率。",
+  "cities": [
+    {
+      "id": "sixth-street",
+      "name": "六分街",
+      "description": "录像店所在的日常街区。先解锁对应店铺，再按游戏内街区传送入口前往；寻吉停留在门前即可。",
+      "sourceUrls": [
+        "https://www.hoyolab.com/article_pre/18014398241031063",
+        "https://www.hoyolab.com/article/36633596",
+        "https://www.hoyolab.com/article/31572770"
+      ]
+    },
+    {
+      "id": "lumina-square",
+      "name": "光映广场",
+      "description": "有治安局、沿街店铺和临江露台的城市街区。需要先随游戏进度解锁；这里只使用可步行抵达的室外地标。",
+      "sourceUrls": [
+        "https://zenless.hoyoverse.com/zh-cn/news/154662",
+        "https://www.taptap.cn/moment/622073962985161281",
+        "https://www.hoyolab.com/article/35963232"
+      ]
+    },
+    {
+      "id": "ballet-twins-road",
+      "name": "芭莱大厦前",
+      "description": "含广场步道、地铁通道和雕像的城市探索区域。请先在游戏中解锁该街区；推荐点均在大厦外的公共步行区域。",
+      "sourceUrls": [
+        "https://www.hoyolab.com/article/35963232",
+        "https://www.gamersky.com/handbook/202407/1788259.shtml",
+        "https://www.gamersky.com/handbook/202407/1785025.shtml"
+      ]
+    },
+    {
+      "id": "brant-street-construction",
+      "name": "黑雁工地旧址",
+      "description": "随主线进度开放的工地探索区域。解锁后从街区导航进入；这里只推荐仓储区和高空作业设施旁可步行停留的地面位置，不进入战斗委托。",
+      "sourceUrls": [
+        "https://www.taptap.cn/moment/562946974307847358",
+        "https://www.gamersky.com/handbook/202407/1784916.shtml"
+      ]
+    },
+    {
+      "id": "scott-outpost",
+      "name": "斯科特哨站",
+      "description": "随零号空洞相关引导开放的常驻据点。请选择已解锁的前哨区域或后勤商店入口；寻吉地点在哨站的非战斗步行区域。",
+      "sourceUrls": [
+        "https://www.hoyolab.com/article/32091544",
+        "https://www.taptap.cn/moment/572459909359078782",
+        "https://www.hoyolab.com/article/31572770"
+      ]
+    },
+    {
+      "id": "blazewood",
+      "name": "野火镇",
+      "description": "主线第四章「火狱骑行」中解锁的外环城镇。街区开放后可通过导航前往芝托邦餐厅附近；推荐点不要求参加限时活动或触发角色同行。",
+      "sourceUrls": [
+        "https://www.hoyolab.com/article/33607662",
+        "https://www.taptap.cn/moment/587758327782442989",
+        "https://www.taptap.cn/moment/622071384515807688"
+      ]
+    },
+    {
+      "id": "port-elpis",
+      "name": "厄匹斯港",
+      "description": "主线第五章「星流霆击」中解锁的港口街区。推荐港口步道的灯塔入口外与下层海神雕像旁；不要求进入灯塔楼层、活动场景或战斗关卡。",
+      "sourceUrls": [
+        "https://www.hoyolab.com/article/35654082",
+        "https://www.taptap.cn/moment/618185972844069885",
+        "https://www.gamersky.com/handbook/202412/1861674.shtml"
+      ]
+    },
+    {
+      "id": "failume-heights",
+      "name": "澄辉坪",
+      "description": "2.0 开放的卫非地生活街区，在主线第二季第一章「云霞同归处」期间解锁。随便观、好物铺等都属于这一街区；请先完成对应区域的解锁流程。",
+      "sourceUrls": [
+        "https://www.taptap.cn/moment/679781752012539729"
+      ]
+    },
+    {
+      "id": "sailume-bay",
+      "name": "泅珑围",
+      "description": "2.1 开放的临海街区，在主线第二季第二章「迟吟的浪涌」期间解锁。这里选用可步行到达的沙滩地标，不依赖限时事件或未领取的宝箱。",
+      "sourceUrls": [
+        "https://www.taptap.cn/moment/694263081794012454",
+        "https://www.gamersky.com/handbook/202507/1963282.shtml"
+      ]
+    },
+    {
+      "id": "fantasy-resort",
+      "name": "绮梦度假村",
+      "description": "2.1 开放的海滨休闲场景，随「仲夏游梦绮谭」剧情解锁。活动已收录丽都纪事，可继续体验；接待处和水族馆等设施仍需推进相应剧情后使用。",
+      "sourceUrls": [
+        "https://www.taptap.cn/moment/694263081794012454",
+        "https://www.taptap.cn/moment/693775889460103861"
+      ]
+    },
+    {
+      "id": "hand-headquarters",
+      "name": "HAND总部",
+      "description": "1.3 开放的空洞事务机构区域，1.4 扩展了总部外部广场。本轮选用已解锁的室外广场入口，不要求进入对空六课办公室；开放范围以你的主线进度为准。",
+      "sourceUrls": [
+        "https://www.hoyolab.com/article/34753725",
+        "https://zenless-zone-zero.fandom.com/wiki/HAND_Headquarters/Change_History",
+        "https://www.hoyolab.com/article/35685625"
+      ]
+    },
+    {
+      "id": "banbastrum",
+      "name": "布亚斯特城区",
+      "description": "罗斯凯利法的城市步行区域，随主线第三季第一章解锁。贝克福德街等内部街道归在同一城区下，按你当前主线进度选择可达地点。",
+      "sourceUrls": [
+        "https://www.taptap.cn/moment/816024102270667939"
+      ]
+    }
+  ],
+  "spots": [
+    {
+      "id": "sixth-random-play-door",
+      "cityId": "sixth-street",
+      "city": "六分街",
+      "name": "Random Play 录像店门前",
+      "landmark": "Random Play 的店面招牌与入口",
+      "element": "土",
+      "orientation": "建议站在店外，面向 Random Play 的门和招牌。",
+      "approach": [
+        "在游戏内返回六分街的 Random Play 录像店。",
+        "如果落点在店内，从正门走到街上，再转身面对店门。"
+      ],
+      "rationale": "本站娱乐设定：借录像店作为日常归处的意象关联「土」，提醒自己先安顿心情；不是官方五行属性。",
+      "sourceUrls": [
+        "https://www.hoyolab.com/article/31572770",
+        "https://www.hoyolab.com/article/31141363"
+      ]
+    },
+    {
+      "id": "sixth-coff-menu",
+      "cityId": "sixth-street",
+      "city": "六分街",
+      "name": "COFF CAFE 店外招牌",
+      "landmark": "汀曼大师的咖啡店与店外价目招牌",
+      "element": "水",
+      "orientation": "建议站在店外价目招牌前，面向招牌与咖啡店。",
+      "approach": [
+        "在六分街的传送列表选择「咖啡店」。",
+        "在落点附近找到店外价目招牌，走近后停下；无需购买咖啡。"
+      ],
+      "rationale": "本站娱乐设定：用咖啡饮品的流动意象关联「水」，把短暂停留当作放松；不是官方五行属性。",
+      "sourceUrls": [
+        "https://www.taptap.cn/moment/622073962985161281",
+        "https://www.hoyolab.com/article/31572770"
+      ]
+    },
+    {
+      "id": "sixth-waterfall-soup",
+      "cityId": "sixth-street",
+      "city": "六分街",
+      "name": "瀑汤谷拉面店前",
+      "landmark": "乔普师傅所在的拉面店柜台",
+      "element": "火",
+      "orientation": "建议站在街边的拉面店柜台前，面向乔普师傅一侧。",
+      "approach": [
+        "在六分街的传送列表选择「拉面店」。",
+        "靠近乔普师傅所在的柜台，在可交互的位置前停下；无需点餐。"
+      ],
+      "rationale": "本站娱乐设定：借热汤与烹饪意象关联「火」，给今天添一点行动的热情；不是官方五行属性。",
+      "sourceUrls": [
+        "https://www.hoyolab.com/article/31572770",
+        "https://www.hoyolab.com/article/39362745"
+      ]
+    },
+    {
+      "id": "sixth-godfinger-door",
+      "cityId": "sixth-street",
+      "city": "六分街",
+      "name": "金手指电玩店门前",
+      "landmark": "金手指（Godfinger）电玩店入口",
+      "element": "金",
+      "orientation": "建议留在电玩店外，面向金手指的入口招牌。",
+      "approach": [
+        "解锁电玩店后，在六分街的传送列表选择「电玩店」。",
+        "在金手指入口前停留，保持镜头朝向店面。"
+      ],
+      "rationale": "本站娱乐设定：借电玩设备和「金手指」店名的意象关联「金」，寓意把注意力放回操作本身；不是官方五行属性。",
+      "sourceUrls": [
+        "https://www.hoyolab.com/article/36633596",
+        "https://www.hoyolab.com/article/31572770"
+      ]
+    },
+    {
+      "id": "sixth-bardic-needle-door",
+      "cityId": "sixth-street",
+      "city": "六分街",
+      "name": "吟游唱针音像店门前",
+      "landmark": "吟游唱针音像店的招牌与店门",
+      "element": "木",
+      "orientation": "建议站在街上，面向音像店门与唱片展示一侧。",
+      "approach": [
+        "解锁音像店后，在六分街的传送列表选择「音像店」。",
+        "在落点附近走近店门，停在店外；无需进行驱动盘调律。"
+      ],
+      "rationale": "本站娱乐设定：用音乐创作不断生长的意象关联「木」，给新的想法留一点空间；不是官方五行属性，也不代表店面材质。",
+      "sourceUrls": [
+        "https://www.taptap.cn/moment/622073962985161281",
+        "https://www.hoyolab.com/article/31141363"
+      ]
+    },
+    {
+      "id": "sixth-howls-newsstand",
+      "cityId": "sixth-street",
+      "city": "六分街",
+      "name": "嗷呜报刊亭前",
+      "landmark": "嗷呜所在的报刊亭柜台",
+      "element": "木",
+      "orientation": "建议面对报刊亭的报纸陈列与柜台，停在街道这一侧。",
+      "approach": [
+        "在六分街的传送列表选择「报刊亭」。",
+        "找到嗷呜的柜台，在亭前停留即可；不要求刮卡或切换时段。"
+      ],
+      "rationale": "本站娱乐设定：从纸张与阅读的意象关联「木」，寓意从日常消息获得新灵感；不是官方五行属性，站位不会影响刮卡或调频结果。",
+      "sourceUrls": [
+        "https://www.hoyolab.com/article/31572770",
+        "https://www.hoyolab.com/article/39362745"
+      ]
+    },
+    {
+      "id": "lumina-dew-florist",
+      "cityId": "lumina-square",
+      "city": "光映广场",
+      "name": "朝露花店前",
+      "landmark": "报刊亭附近的花店与门前花卉",
+      "element": "木",
+      "orientation": "建议站在花店外，面向花卉陈列和店面。",
+      "approach": [
+        "在光映广场的传送列表选择「报刊亭」。",
+        "沿报刊亭附近的商铺步行，找到门前摆有花卉的朝露花店，在花卉陈列前停下。"
+      ],
+      "rationale": "本站娱乐设定：借花草生长的意象关联「木」，为今天留一点耐心；不是官方五行属性。",
+      "sourceUrls": [
+        "https://www.taptap.cn/moment/622073962985161281",
+        "https://shouyou.3dmgame.com/gl/543872.html"
+      ]
+    },
+    {
+      "id": "lumina-coff-terrace",
+      "cityId": "lumina-square",
+      "city": "光映广场",
+      "name": "咖啡店二楼临江露台",
+      "landmark": "光映广场咖啡店的二楼露台",
+      "element": "水",
+      "orientation": "建议停在露台护栏内侧，面向江景。",
+      "approach": [
+        "在光映广场的传送列表选择「咖啡店」。",
+        "找到通向咖啡店二楼露台的楼梯，沿楼梯上行。",
+        "抵达露台后走到临江护栏内侧停下。"
+      ],
+      "rationale": "本站娱乐设定：以临江观景的意象关联「水」，把远眺当作整理思路的小休息；不是官方五行属性。",
+      "sourceUrls": [
+        "https://www.hoyolab.com/article/35963232",
+        "https://xin.18183.com/wiki/4445654.html"
+      ]
+    },
+    {
+      "id": "lumina-pubsec-gate",
+      "cityId": "lumina-square",
+      "city": "光映广场",
+      "name": "治安局光映分署门前",
+      "landmark": "光映广场分署的入口与治安局标识",
+      "element": "金",
+      "orientation": "建议站在入口外侧，面向治安局门口标识。",
+      "approach": [
+        "在光映广场的传送列表选择「喵吉长官」。",
+        "找到对面的治安局入口，走到门前标识附近停下；无需进入办公区域。"
+      ],
+      "rationale": "本站娱乐设定：用秩序与专注的意象关联「金」，提醒自己按计划行动；不是官方五行属性。",
+      "sourceUrls": [
+        "https://www.taptap.cn/moment/622073962985161281",
+        "https://www.hoyolab.com/article/31141363"
+      ]
+    },
+    {
+      "id": "ballet-statue-plaza",
+      "cityId": "ballet-twins-road",
+      "city": "芭莱大厦前",
+      "name": "广场雕像前",
+      "landmark": "喵吉长官附近的大型沉思姿态雕像",
+      "element": "土",
+      "orientation": "建议在雕像基座外的步行区域停下，面向雕像。",
+      "approach": [
+        "在芭莱大厦前的传送列表选择「喵吉长官」。",
+        "转动镜头找到附近的大型雕像，走近基座外侧的平地。"
+      ],
+      "rationale": "本站娱乐设定：借雕像稳稳驻立的意象关联「土」，给自己片刻沉静；不是官方五行属性，不依赖任何幽灵或限时任务触发。",
+      "sourceUrls": [
+        "https://www.gamersky.com/handbook/202407/1788259.shtml",
+        "https://www.gamersky.com/handbook/202407/1785025.shtml"
+      ]
+    },
+    {
+      "id": "ballet-metro-entrance",
+      "cityId": "ballet-twins-road",
+      "city": "芭莱大厦前",
+      "name": "下沉广场地铁口外",
+      "landmark": "雕像广场旁连接地铁通道的入口",
+      "element": "金",
+      "orientation": "建议站在下沉广场这一侧，面向地铁通道入口。",
+      "approach": [
+        "在芭莱大厦前选择「喵吉长官」，来到雕像所在的广场。",
+        "找到广场旁与地铁通道相连的入口，停在入口外侧即可。"
+      ],
+      "rationale": "本站娱乐设定：借轨道交通与出发的意象关联「金」，寓意把想法化成下一步；不是官方五行属性，也不要求搭乘列车。",
+      "sourceUrls": [
+        "https://www.gamersky.com/handbook/202407/1785025.shtml",
+        "https://www.gamersky.com/handbook/202407/1786697.shtml"
+      ]
+    },
+    {
+      "id": "ballet-walkway-bench",
+      "cityId": "ballet-twins-road",
+      "city": "芭莱大厦前",
+      "name": "广场步道长椅旁",
+      "landmark": "广场步道地面层的长椅",
+      "element": "火",
+      "orientation": "建议面对步道上的长椅，在椅旁的通行区域停下。",
+      "approach": [
+        "在芭莱大厦前的传送列表选择「广场步道」。",
+        "留在地面步道层，沿步道寻找长椅；这条短路线不下地铁楼梯。"
+      ],
+      "rationale": "本站娱乐设定：把一起坐下聊天的温暖意象关联「火」，提醒自己适时休息再出发；不是官方五行属性，也不是对现场光照或长椅材质的判定。",
+      "sourceUrls": [
+        "https://www.gamersky.com/handbook/202407/1786697.shtml",
+        "https://www.hoyolab.com/article/35963232"
+      ]
+    },
+    {
+      "id": "brant-work-platform-forklift",
+      "cityId": "brant-street-construction",
+      "city": "黑雁工地旧址",
+      "name": "高空作业设施下方的叉车旁",
+      "landmark": "喵吉长官附近、高空作业设施下方的叉车",
+      "element": "金",
+      "orientation": "建议站在叉车旁的地面通道上，面向车身和作业设施。",
+      "approach": [
+        "解锁黑雁工地旧址后，使用街区导航前往「喵吉长官」附近。",
+        "转动镜头寻找高空作业设施下方的叉车，沿地面通道走到车旁即可；无需寻找或开启小卡格车。"
+      ],
+      "rationale": "本站娱乐设定：用叉车与施工器械的金属意象关联「金」，提醒自己整理工具、稳妥行动；不是官方五行属性。",
+      "sourceUrls": [
+        "https://www.taptap.cn/moment/562946974307847358"
+      ]
+    },
+    {
+      "id": "brant-excavator-noticeboard",
+      "cityId": "brant-street-construction",
+      "city": "黑雁工地旧址",
+      "name": "仓储区公示栏前",
+      "landmark": "仓储区挖掘机附近的公示栏",
+      "element": "土",
+      "orientation": "建议停在公示栏前的地面空处，面向栏面。",
+      "approach": [
+        "在黑雁工地旧址的街区导航中选择「仓储区」。",
+        "在落点附近转动镜头找到挖掘机一带，沿地面通道走近公示栏；在栏外停下，不需要收集旁边的小卡格车。"
+      ],
+      "rationale": "本站娱乐设定：借工地建设与地面驻足的意象关联「土」，寓意先看清安排再出发；不是官方五行属性。",
+      "sourceUrls": [
+        "https://www.taptap.cn/moment/562946974307847358"
+      ]
+    },
+    {
+      "id": "scott-logistics-reception",
+      "cityId": "scott-outpost",
+      "city": "斯科特哨站",
+      "name": "后勤商店接待点",
+      "landmark": "卡斯珀所在的哨站后勤商店位置",
+      "element": "土",
+      "orientation": "建议留在前哨区域的步行地面，面向后勤商店的接待位置。",
+      "approach": [
+        "哨站开放后，选择「斯科特哨站—后勤商店」；也可先到「前哨区域」再找到卡斯珀。",
+        "在接待位置前停下即可；若传送后自动打开商店，关闭商店界面返回场景。无需兑换物资或进入零号空洞。"
+      ],
+      "rationale": "本站娱乐设定：把常驻补给据点的安顿与储备意象关联「土」，提醒自己从容准备；不是官方五行属性。",
+      "sourceUrls": [
+        "https://www.hoyolab.com/article/32091544",
+        "https://www.hoyolab.com/article/31572770",
+        "https://www.taptap.cn/moment/569438479969157424",
+        "https://www.taptap.cn/moment/618185972844069885"
+      ]
+    },
+    {
+      "id": "blazewood-cheestopia-fuel-pump",
+      "cityId": "blazewood",
+      "city": "野火镇",
+      "name": "芝托邦餐厅外加油机旁",
+      "landmark": "芝托邦餐厅柜台外的绿色加油机",
+      "element": "火",
+      "orientation": "建议站在餐厅外的空地，面向加油机与餐厅柜台。",
+      "approach": [
+        "在已开放的野火镇中，使用街区导航前往「芝托邦餐厅」。",
+        "在餐厅柜台外找到绿色加油机，走到机身前的空地停下；不需要邀请代理人同行。"
+      ],
+      "rationale": "本站娱乐设定：借燃料与重新出发的意象关联「火」，为今天添一点行动的热情；不是官方五行属性。",
+      "sourceUrls": [
+        "https://www.taptap.cn/moment/622071384515807688",
+        "https://www.hoyolab.com/article/33607662"
+      ]
+    },
+    {
+      "id": "blazewood-cheestopia-cactus",
+      "cityId": "blazewood",
+      "city": "野火镇",
+      "name": "餐厅对面的仙人掌旁",
+      "landmark": "芝托邦餐厅对面的仙人掌植株",
+      "element": "木",
+      "orientation": "建议站在仙人掌旁的可行走地面，面向植株；保持在道路一侧即可。",
+      "approach": [
+        "在野火镇的街区导航中前往「芝托邦餐厅」。",
+        "从餐厅前观察对面的仙人掌，沿可行走地面靠近后停下；无需等待老德米尔等任务人物出现。"
+      ],
+      "rationale": "本站娱乐设定：用仙人掌在外环生长的植物意象关联「木」，寓意保持耐心与生机；不是官方五行属性。",
+      "sourceUrls": [
+        "https://ol.3dmgame.com/gl/299300.html",
+        "https://news.17173.com/content/09272024/185406887.shtml"
+      ]
+    },
+    {
+      "id": "elpis-torchlit-lighthouse-door",
+      "cityId": "port-elpis",
+      "city": "厄匹斯港",
+      "name": "炬光灯塔入口外",
+      "landmark": "港口步道尽头一带的炬光灯塔一楼入口",
+      "element": "火",
+      "orientation": "建议站在灯塔一楼入口外，面向塔门与灯塔。",
+      "approach": [
+        "厄匹斯港开放后，使用街区导航前往「港口步道」。",
+        "沿步道朝灯塔走，到一楼入口外停下即可；不进入灯塔，不选择楼层，也无需开启相关活动。"
+      ],
+      "rationale": "本站娱乐设定：用灯塔指路的光亮意象关联「火」，寓意先找到自己的方向；不是官方五行属性。",
+      "sourceUrls": [
+        "https://www.taptap.cn/moment/618185972844069885",
+        "https://www.gamersky.com/handbook/202504/1906880.shtml",
+        "https://www.gamersky.com/handbook/202508/1974710.shtml"
+      ]
+    },
+    {
+      "id": "elpis-sea-god-statue",
+      "cityId": "port-elpis",
+      "city": "厄匹斯港",
+      "name": "海神雕像前",
+      "landmark": "港口下层、喵吉长官附近的海神雕像",
+      "element": "水",
+      "orientation": "建议站在雕像基座外的平地，面向海神雕像。",
+      "approach": [
+        "推进厄匹斯港相关主线、开放对应导航后，前往「喵吉长官」附近。",
+        "在周围找到海神雕像，走到基座前的平地停下即可；不需要邀请浅羽悠真，也无需触发拍照或纪念币任务。"
+      ],
+      "rationale": "本站娱乐设定：以港口和海神雕像的海洋意象关联「水」，把短暂停留当作平复心情；不是官方五行属性。",
+      "sourceUrls": [
+        "https://www.gamersky.com/handbook/202412/1861674.shtml",
+        "https://news.17173.com/content/01202025/103002407.shtml",
+        "https://www.hoyolab.com/article/35654082"
+      ]
+    },
+    {
+      "id": "failume-suibian-statue",
+      "cityId": "failume-heights",
+      "city": "澄辉坪",
+      "name": "随便观正门雕塑前",
+      "landmark": "随便观正门外的固定雕塑",
+      "element": "土",
+      "orientation": "建议站在观外雕塑前，转身面向雕塑。",
+      "approach": [
+        "在澄辉坪选择「随便观外庭」传送，进入观外公共步行区域。",
+        "找到正门外的雕塑，走近后面向雕塑停下。"
+      ],
+      "rationale": "本站娱乐设定：用观前雕塑的安定意象关联「土」，作为抽卡前整理心情的停留点；不是官方五行属性。",
+      "sourceUrls": [
+        "https://www.taptap.cn/moment/679781752012539729",
+        "https://m.ali213.net/news/gl2506/1664967.html",
+        "https://www.9game.cn/juequling/11203428.html"
+      ]
+    },
+    {
+      "id": "failume-good-goods",
+      "cityId": "failume-heights",
+      "city": "澄辉坪",
+      "name": "好物铺店前",
+      "landmark": "好物铺的店面与交易柜台",
+      "element": "金",
+      "orientation": "建议站在好物铺店外，面向店面和柜台。",
+      "approach": [
+        "在澄辉坪的传送列表选择「好物铺」。",
+        "沿落点附近的步行区走近好物铺，在店面前停下并面向柜台。"
+      ],
+      "rationale": "本站娱乐设定：借材料交换与店铺交易的意象关联「金」，提醒自己先定好抽卡预算；不是官方五行属性。",
+      "sourceUrls": [
+        "https://www.taptap.cn/moment/679781752012539729",
+        "https://m.ali213.net/news/gl2506/1664967.html",
+        "https://www.9game.cn/juequling/11203428.html"
+      ]
+    },
+    {
+      "id": "sailume-beach-shore",
+      "cityId": "sailume-bay",
+      "city": "泅珑围",
+      "name": "泅珑围沙滩岸边",
+      "landmark": "街区下层通向海面的沙滩",
+      "element": "水",
+      "orientation": "建议站在可步行的沙滩边缘，面向海面。",
+      "approach": [
+        "进入已解锁的泅珑围，沿街区楼梯走向下层临海沙滩。",
+        "走到沙滩与海岸衔接处，保持在可步行范围内，转向海面停下。"
+      ],
+      "rationale": "本站娱乐设定：用海面与潮汐的流动意象关联「水」，借看海给自己留一段安静时间；不是官方五行属性。",
+      "sourceUrls": [
+        "https://www.taptap.cn/moment/694263081794012454",
+        "https://www.gamersky.com/handbook/202507/1963282.shtml"
+      ]
+    },
+    {
+      "id": "resort-reception",
+      "cityId": "fantasy-resort",
+      "city": "绮梦度假村",
+      "name": "度假村接待处前",
+      "landmark": "绮梦度假村的接待台",
+      "element": "火",
+      "orientation": "建议站在接待台访客一侧，面向柜台。",
+      "approach": [
+        "先解锁绮梦度假村，再在该区域的传送列表选择「度假村接待处」。",
+        "在落点附近找到接待台，走到访客一侧并面对柜台停下。"
+      ],
+      "rationale": "本站娱乐设定：借度假村迎接访客的热闹意象关联「火」，把停留当作出发前的小仪式；不是官方五行属性。",
+      "sourceUrls": [
+        "https://www.taptap.cn/moment/693775889460103861",
+        "https://game8.co/games/Zenless-Zone-Zero/archives/537247",
+        "https://www.hoyolab.com/article/40079654",
+        "https://www.lcks.com.cn/news/663.html"
+      ]
+    },
+    {
+      "id": "resort-aqua-mirage",
+      "cityId": "fantasy-resort",
+      "city": "绮梦度假村",
+      "name": "水色幻影水族馆鱼缸前",
+      "landmark": "「水色幻影」水族馆内的展示鱼缸",
+      "element": "水",
+      "orientation": "建议站在展示鱼缸前，面向缸内水景。",
+      "approach": [
+        "推进「仲夏游梦绮谭」解锁水族馆后，在绮梦度假村前往「水色幻影」水族馆。",
+        "进入后找到展示鱼缸，走近缸前并面向水景停下；无需兑换装饰。"
+      ],
+      "rationale": "本站娱乐设定：用水族馆水景的舒缓意象关联「水」，让注意力从抽卡结果回到片刻观赏；不是官方五行属性。",
+      "sourceUrls": [
+        "https://www.taptap.cn/moment/693775889460103861",
+        "https://www.hoyolab.com/article/40079654",
+        "https://zenless-zone-zero.fandom.com/wiki/Aqua_Mirage_Aquarium",
+        "https://zenless-zone-zero.fandom.com/wiki/Immersive_Viewing"
+      ]
+    },
+    {
+      "id": "hand-plaza-notice-wall",
+      "cityId": "hand-headquarters",
+      "city": "HAND总部",
+      "name": "总部广场入口告示墙",
+      "landmark": "广场入口商务车附近、带禁止拍照标志的外墙",
+      "element": "金",
+      "orientation": "建议站在室外步行区，面向带告示标志的外墙。",
+      "approach": [
+        "在已解锁的 HAND 总部选择「HAND广场入口」传送。",
+        "找到落点附近商务车旁的告示外墙，沿步行区走近并面向标志停下。"
+      ],
+      "rationale": "本站娱乐设定：借机构广场与告示的秩序意象关联「金」，提醒自己先定好本次抽数；不是官方五行属性。",
+      "sourceUrls": [
+        "https://www.hoyolab.com/article/34753725",
+        "https://www.hoyolab.com/article/35685625",
+        "https://www.gamersky.com/handbook/202505/1927145_5.shtml"
+      ]
+    },
+    {
+      "id": "banbastrum-cuppa-moment",
+      "cityId": "banbastrum",
+      "city": "布亚斯特城区",
+      "name": "片刻闲茶店门前",
+      "landmark": "贝克福德街的片刻闲（Cuppa Moment）店面",
+      "element": "水",
+      "orientation": "建议站在店外可通行处，面向片刻闲的店面招牌。",
+      "approach": [
+        "解锁布亚斯特城区后，前往贝克福德街，寻找片刻闲茶店。",
+        "以 Cuppa Moment 招牌辨认店面，在门前停留即可；无需点单。"
+      ],
+      "rationale": "本站娱乐设定：借茶饮的流动意象关联「水」，把片刻停留当作舒缓心情的仪式；不是官方五行属性。",
+      "sourceUrls": [
+        "https://zhuanlan.zhihu.com/p/2052682531858822133",
+        "https://www.yangtuoyou.com/article/7886.html"
+      ]
+    },
+    {
+      "id": "banbastrum-bangboo-statue",
+      "cityId": "banbastrum",
+      "city": "布亚斯特城区",
+      "name": "布连邦雕像前",
+      "landmark": "布亚斯特城区的布连邦雕像",
+      "element": "土",
+      "orientation": "建议在雕像旁可站立的地面停下，将镜头转向雕像。",
+      "approach": [
+        "在已解锁的布亚斯特城区中前往布连邦雕像附近。",
+        "走到雕像前方的步行区域，以雕像作为朝向参照；无需提交物品。"
+      ],
+      "rationale": "本站娱乐设定：借雕像安稳矗立的意象关联「土」，寓意先定心再启程；不是官方五行属性。",
+      "sourceUrls": [
+        "https://www.yangtuoyou.com/article/7886.html",
+        "https://www.taptap.cn/moment/816024102270667939"
+      ]
+    }
+  ],
+  "coverageNote": "已收录可步行城市场景与据点，不是全部游戏地图。内部店铺和街道归入所属街区；请按自己的解锁进度勾选。"
+}

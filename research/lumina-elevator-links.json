@@ -1,0 +1,796 @@
+{
+  "schemaVersion": 1,
+  "map": "janus",
+  "gameVersion": "3.2.0",
+  "verifiedAt": "2026-09-19",
+  "coordinateSpace": "source-world",
+  "policy": "Only original member → explicitly named arrival point. No inverse scene link, floor snapping or synthetic walk.",
+  "limitations": [
+    "本局任务、门禁、楼层选项开放状态未知。",
+    "电梯菜单对话内容未解码；连接只表示脚本支持的条件目的地。",
+    "三间房属于同一栋楼的不同楼层；过门与电梯线不计入步行距离。"
+  ],
+  "evidence": [
+    {
+      "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/Group_171300062.txt",
+      "sha256": "6a06d29d3154f4c037570c0b48d9b87e049f21c0581929181c390499685fd2b6",
+      "assetIndexEntry": {
+        "Name": "Group_171300062",
+        "Container": "6536052142251576134",
+        "Source": "D:\\SteamLibrary\\steamapps\\common\\Zenless Zone Zero\\games\\ZenlessZoneZero Game\\ZenlessZoneZero_Data\\Persistent\\Blocks\\Data\\3795604548.blk",
+        "PathID": -6534306364796739211,
+        "Type": "TextAsset",
+        "Hash": "50cb0f781636e698",
+        "Offset": 2577500
+      }
+    },
+    {
+      "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/Group_171300147.txt",
+      "sha256": "7c2381756be78d3de1627aa969ee935fc2470a555677096b346fc7e4a017e2bb",
+      "assetIndexEntry": {
+        "Name": "Group_171300147",
+        "Container": "10765504803513054856",
+        "Source": "D:\\SteamLibrary\\steamapps\\common\\Zenless Zone Zero\\games\\ZenlessZoneZero Game\\ZenlessZoneZero_Data\\Persistent\\Blocks\\Data\\3795604548.blk",
+        "PathID": 9034173948072944328,
+        "Type": "TextAsset",
+        "Hash": "c18521906e333fbd",
+        "Offset": 2577500
+      }
+    },
+    {
+      "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/GroupGraph_171300147.txt",
+      "sha256": "5e21c465360a439d3e7559c01c122acffca34167e788dbac486c2b2a3025331e",
+      "assetIndexEntry": {
+        "Name": "GroupGraph_171300147",
+        "Container": "1701836151978896360",
+        "Source": "D:\\SteamLibrary\\steamapps\\common\\Zenless Zone Zero\\games\\ZenlessZoneZero Game\\ZenlessZoneZero_Data\\Persistent\\Blocks\\Data\\2084833875.blk",
+        "PathID": 2328159473010292166,
+        "Type": "TextAsset",
+        "Hash": "4df3f0eaa0f079c1",
+        "Offset": 1991777
+      }
+    },
+    {
+      "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/ViewObject_2001412.txt",
+      "sha256": "48fcfa569467842dbafd77c4e593c3e5ff1035316731fed3063ac0d6de135f86",
+      "assetIndexEntry": {
+        "Name": "ViewObject_2001412",
+        "Container": "2226133244929205774",
+        "Source": "D:\\SteamLibrary\\steamapps\\common\\Zenless Zone Zero\\games\\ZenlessZoneZero Game\\ZenlessZoneZero_Data\\Persistent\\Blocks\\Data\\3795604548.blk",
+        "PathID": 6930459880834651781,
+        "Type": "TextAsset",
+        "Hash": "cbfb38676251456a",
+        "Offset": 3343124
+      }
+    },
+    {
+      "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/ViewObject_2001436.txt",
+      "sha256": "90a4ffd94459e66b53cad0abc6ac5a1e2b877031cf9a21e5dba52bcf70f9f589",
+      "assetIndexEntry": {
+        "Name": "ViewObject_2001436",
+        "Container": "12947351699694323597",
+        "Source": "D:\\SteamLibrary\\steamapps\\common\\Zenless Zone Zero\\games\\ZenlessZoneZero Game\\ZenlessZoneZero_Data\\Persistent\\Blocks\\Data\\3795604548.blk",
+        "PathID": -7173741002471166520,
+        "Type": "TextAsset",
+        "Hash": "c13632f2692bb992",
+        "Offset": 3343124
+      }
+    },
+    {
+      "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/ViewObjectGraph_2001412.txt",
+      "sha256": "568acaa2a5af4c5685fa6bbb5f786d29843f05cbc2aecf1c5581686dc37f5143",
+      "assetIndexEntry": {
+        "Name": "ViewObjectGraph_2001412",
+        "Container": "17293651464695143935",
+        "Source": "D:\\SteamLibrary\\steamapps\\common\\Zenless Zone Zero\\games\\ZenlessZoneZero Game\\ZenlessZoneZero_Data\\Persistent\\Blocks\\Data\\2190123304.blk",
+        "PathID": 9121740756116628139,
+        "Type": "TextAsset",
+        "Hash": "e4b96d61814c8049",
+        "Offset": 1393890
+      }
+    },
+    {
+      "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/ViewObjectGraph_2001436.txt",
+      "sha256": "bc1c3afec2131d0f43267e25b1df79215d7ee5c6d0f54545e852f5b1b677dae5",
+      "assetIndexEntry": {
+        "Name": "ViewObjectGraph_2001436",
+        "Container": "12461454561447542683",
+        "Source": "D:\\SteamLibrary\\steamapps\\common\\Zenless Zone Zero\\games\\ZenlessZoneZero Game\\ZenlessZoneZero_Data\\Persistent\\Blocks\\Data\\2190123304.blk",
+        "PathID": -3309708451082552183,
+        "Type": "TextAsset",
+        "Hash": "9318f410e1df8c26",
+        "Offset": 1406430
+      }
+    }
+  ],
+  "communityReferences": [
+    "https://forum.gamer.com.tw/Co.php?bsn=74860&sn=59491",
+    "https://www.miyoushe.com/zzz/article/77315699"
+  ],
+  "links": [
+    {
+      "id": "lumina-elevator-201-202",
+      "type": "ConfigTeleportLink",
+      "mechanism": "lumina_elevator",
+      "label": "光映中心电梯：下层 → 一层",
+      "labelEn": "Lumina Square elevator: Lower level → 1F",
+      "start": {
+        "x": 91.605354,
+        "y": 38.176464,
+        "z": 346.44122
+      },
+      "end": {
+        "x": 92.51116,
+        "y": 59.667175,
+        "z": 347.11688
+      },
+      "direction": "source-start-to-end-only",
+      "runtimeAvailability": "unknown",
+      "source": {
+        "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/Group_171300062.json",
+        "sha256": "1570dcb947723aa08ec83cfd9c87b197614794b95cd459003f1f45c6b01ae9e6",
+        "jsonPath": "Group.Members[0].MemberPosition"
+      },
+      "destinationSource": {
+        "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/Group_171300062.json",
+        "sha256": "1570dcb947723aa08ec83cfd9c87b197614794b95cd459003f1f45c6b01ae9e6",
+        "jsonPath": "Group.GameplayExternalData.PointMap.171300062_Point_202.Data.Position"
+      },
+      "scriptSource": {
+        "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/ViewObjectGraph_2001436.json",
+        "sha256": "5bcbafcd652d24e2db03c2a8f39859d2176b615d793d01fa88c58693701d350c",
+        "jsonPath": "nodes[id=141]"
+      },
+      "dispatch": {
+        "chatId": 231013197,
+        "selectionKey": "ElevatorFloor",
+        "selectionValue": 2,
+        "arrivalConfigId": 202,
+        "pointParam": "OverrideTeleportPoint2"
+      },
+      "conditions": [
+        "楼层菜单已开放，且可选目标楼层。",
+        "未读取本局任务状态：Quest 231013402 状态为 1 时，脚本限制通行并可能强制前往下层。"
+      ],
+      "conditionsEn": [
+        "The normal floor menu is available and the target floor is selectable.",
+        "Live quest state is unknown. Quest 231013402 status 1 restricts the lift and can force the lower level."
+      ]
+    },
+    {
+      "id": "lumina-elevator-201-203",
+      "type": "ConfigTeleportLink",
+      "mechanism": "lumina_elevator",
+      "label": "光映中心电梯：下层 → 二层",
+      "labelEn": "Lumina Square elevator: Lower level → 2F",
+      "start": {
+        "x": 91.605354,
+        "y": 38.176464,
+        "z": 346.44122
+      },
+      "end": {
+        "x": 92.09949,
+        "y": 71.27558,
+        "z": 347.11688
+      },
+      "direction": "source-start-to-end-only",
+      "runtimeAvailability": "unknown",
+      "source": {
+        "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/Group_171300062.json",
+        "sha256": "1570dcb947723aa08ec83cfd9c87b197614794b95cd459003f1f45c6b01ae9e6",
+        "jsonPath": "Group.Members[0].MemberPosition"
+      },
+      "destinationSource": {
+        "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/Group_171300062.json",
+        "sha256": "1570dcb947723aa08ec83cfd9c87b197614794b95cd459003f1f45c6b01ae9e6",
+        "jsonPath": "Group.GameplayExternalData.PointMap.171300062_Point_203.Data.Position"
+      },
+      "scriptSource": {
+        "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/ViewObjectGraph_2001436.json",
+        "sha256": "5bcbafcd652d24e2db03c2a8f39859d2176b615d793d01fa88c58693701d350c",
+        "jsonPath": "nodes[id=141]"
+      },
+      "dispatch": {
+        "chatId": 231013197,
+        "selectionKey": "ElevatorFloor",
+        "selectionValue": 3,
+        "arrivalConfigId": 203,
+        "pointParam": "OverrideTeleportPoint3"
+      },
+      "conditions": [
+        "楼层菜单已开放，且可选目标楼层。",
+        "未读取本局任务状态：Quest 231013402 状态为 1 时，脚本限制通行并可能强制前往下层。"
+      ],
+      "conditionsEn": [
+        "The normal floor menu is available and the target floor is selectable.",
+        "Live quest state is unknown. Quest 231013402 status 1 restricts the lift and can force the lower level."
+      ]
+    },
+    {
+      "id": "lumina-elevator-201-204",
+      "type": "ConfigTeleportLink",
+      "mechanism": "lumina_elevator",
+      "label": "光映中心电梯：下层 → 顶层",
+      "labelEn": "Lumina Square elevator: Lower level → Top floor",
+      "start": {
+        "x": 91.605354,
+        "y": 38.176464,
+        "z": 346.44122
+      },
+      "end": {
+        "x": 92.032684,
+        "y": 83.3653,
+        "z": 347.11688
+      },
+      "direction": "source-start-to-end-only",
+      "runtimeAvailability": "unknown",
+      "source": {
+        "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/Group_171300062.json",
+        "sha256": "1570dcb947723aa08ec83cfd9c87b197614794b95cd459003f1f45c6b01ae9e6",
+        "jsonPath": "Group.Members[0].MemberPosition"
+      },
+      "destinationSource": {
+        "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/Group_171300062.json",
+        "sha256": "1570dcb947723aa08ec83cfd9c87b197614794b95cd459003f1f45c6b01ae9e6",
+        "jsonPath": "Group.GameplayExternalData.PointMap.171300062_Point_204.Data.Position"
+      },
+      "scriptSource": {
+        "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/ViewObjectGraph_2001436.json",
+        "sha256": "5bcbafcd652d24e2db03c2a8f39859d2176b615d793d01fa88c58693701d350c",
+        "jsonPath": "nodes[id=141]"
+      },
+      "dispatch": {
+        "chatId": 231013197,
+        "selectionKey": "ElevatorFloor",
+        "selectionValue": 4,
+        "arrivalConfigId": 204,
+        "pointParam": "OverrideTeleportPoint4"
+      },
+      "conditions": [
+        "楼层菜单已开放，且可选目标楼层。",
+        "未读取本局任务状态：Quest 231013402 状态为 1 时，脚本限制通行并可能强制前往下层。"
+      ],
+      "conditionsEn": [
+        "The normal floor menu is available and the target floor is selectable.",
+        "Live quest state is unknown. Quest 231013402 status 1 restricts the lift and can force the lower level."
+      ]
+    },
+    {
+      "id": "lumina-elevator-202-201",
+      "type": "ConfigTeleportLink",
+      "mechanism": "lumina_elevator",
+      "label": "光映中心电梯：一层 → 下层",
+      "labelEn": "Lumina Square elevator: 1F → Lower level",
+      "start": {
+        "x": 92.332695,
+        "y": 59.65,
+        "z": 347.1
+      },
+      "end": {
+        "x": 91.8324,
+        "y": 38.166817,
+        "z": 346.48096
+      },
+      "direction": "source-start-to-end-only",
+      "runtimeAvailability": "unknown",
+      "source": {
+        "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/Group_171300062.json",
+        "sha256": "1570dcb947723aa08ec83cfd9c87b197614794b95cd459003f1f45c6b01ae9e6",
+        "jsonPath": "Group.Members[1].MemberPosition"
+      },
+      "destinationSource": {
+        "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/Group_171300062.json",
+        "sha256": "1570dcb947723aa08ec83cfd9c87b197614794b95cd459003f1f45c6b01ae9e6",
+        "jsonPath": "Group.GameplayExternalData.PointMap.171300062_Point_201.Data.Position"
+      },
+      "scriptSource": {
+        "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/ViewObjectGraph_2001436.json",
+        "sha256": "5bcbafcd652d24e2db03c2a8f39859d2176b615d793d01fa88c58693701d350c",
+        "jsonPath": "nodes[id=141]"
+      },
+      "dispatch": {
+        "chatId": 231013198,
+        "selectionKey": "ElevatorFloor",
+        "selectionValue": 1,
+        "arrivalConfigId": 201,
+        "pointParam": "OverrideTeleportPoint1"
+      },
+      "conditions": [
+        "楼层菜单已开放，且可选目标楼层。",
+        "未读取本局任务状态：Quest 231013402 状态为 1 时，脚本限制通行并可能强制前往下层。"
+      ],
+      "conditionsEn": [
+        "The normal floor menu is available and the target floor is selectable.",
+        "Live quest state is unknown. Quest 231013402 status 1 restricts the lift and can force the lower level."
+      ]
+    },
+    {
+      "id": "lumina-elevator-202-203",
+      "type": "ConfigTeleportLink",
+      "mechanism": "lumina_elevator",
+      "label": "光映中心电梯：一层 → 二层",
+      "labelEn": "Lumina Square elevator: 1F → 2F",
+      "start": {
+        "x": 92.332695,
+        "y": 59.65,
+        "z": 347.1
+      },
+      "end": {
+        "x": 92.09949,
+        "y": 71.27558,
+        "z": 347.11688
+      },
+      "direction": "source-start-to-end-only",
+      "runtimeAvailability": "unknown",
+      "source": {
+        "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/Group_171300062.json",
+        "sha256": "1570dcb947723aa08ec83cfd9c87b197614794b95cd459003f1f45c6b01ae9e6",
+        "jsonPath": "Group.Members[1].MemberPosition"
+      },
+      "destinationSource": {
+        "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/Group_171300062.json",
+        "sha256": "1570dcb947723aa08ec83cfd9c87b197614794b95cd459003f1f45c6b01ae9e6",
+        "jsonPath": "Group.GameplayExternalData.PointMap.171300062_Point_203.Data.Position"
+      },
+      "scriptSource": {
+        "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/ViewObjectGraph_2001436.json",
+        "sha256": "5bcbafcd652d24e2db03c2a8f39859d2176b615d793d01fa88c58693701d350c",
+        "jsonPath": "nodes[id=141]"
+      },
+      "dispatch": {
+        "chatId": 231013198,
+        "selectionKey": "ElevatorFloor",
+        "selectionValue": 3,
+        "arrivalConfigId": 203,
+        "pointParam": "OverrideTeleportPoint3"
+      },
+      "conditions": [
+        "楼层菜单已开放，且可选目标楼层。",
+        "未读取本局任务状态：Quest 231013402 状态为 1 时，脚本限制通行并可能强制前往下层。"
+      ],
+      "conditionsEn": [
+        "The normal floor menu is available and the target floor is selectable.",
+        "Live quest state is unknown. Quest 231013402 status 1 restricts the lift and can force the lower level."
+      ]
+    },
+    {
+      "id": "lumina-elevator-202-204",
+      "type": "ConfigTeleportLink",
+      "mechanism": "lumina_elevator",
+      "label": "光映中心电梯：一层 → 顶层",
+      "labelEn": "Lumina Square elevator: 1F → Top floor",
+      "start": {
+        "x": 92.332695,
+        "y": 59.65,
+        "z": 347.1
+      },
+      "end": {
+        "x": 92.032684,
+        "y": 83.3653,
+        "z": 347.11688
+      },
+      "direction": "source-start-to-end-only",
+      "runtimeAvailability": "unknown",
+      "source": {
+        "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/Group_171300062.json",
+        "sha256": "1570dcb947723aa08ec83cfd9c87b197614794b95cd459003f1f45c6b01ae9e6",
+        "jsonPath": "Group.Members[1].MemberPosition"
+      },
+      "destinationSource": {
+        "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/Group_171300062.json",
+        "sha256": "1570dcb947723aa08ec83cfd9c87b197614794b95cd459003f1f45c6b01ae9e6",
+        "jsonPath": "Group.GameplayExternalData.PointMap.171300062_Point_204.Data.Position"
+      },
+      "scriptSource": {
+        "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/ViewObjectGraph_2001436.json",
+        "sha256": "5bcbafcd652d24e2db03c2a8f39859d2176b615d793d01fa88c58693701d350c",
+        "jsonPath": "nodes[id=141]"
+      },
+      "dispatch": {
+        "chatId": 231013198,
+        "selectionKey": "ElevatorFloor",
+        "selectionValue": 4,
+        "arrivalConfigId": 204,
+        "pointParam": "OverrideTeleportPoint4"
+      },
+      "conditions": [
+        "楼层菜单已开放，且可选目标楼层。",
+        "未读取本局任务状态：Quest 231013402 状态为 1 时，脚本限制通行并可能强制前往下层。"
+      ],
+      "conditionsEn": [
+        "The normal floor menu is available and the target floor is selectable.",
+        "Live quest state is unknown. Quest 231013402 status 1 restricts the lift and can force the lower level."
+      ]
+    },
+    {
+      "id": "lumina-elevator-203-201",
+      "type": "ConfigTeleportLink",
+      "mechanism": "lumina_elevator",
+      "label": "光映中心电梯：二层 → 下层",
+      "labelEn": "Lumina Square elevator: 2F → Lower level",
+      "start": {
+        "x": 92.08218,
+        "y": 71.3,
+        "z": 347.11688
+      },
+      "end": {
+        "x": 91.8324,
+        "y": 38.166817,
+        "z": 346.48096
+      },
+      "direction": "source-start-to-end-only",
+      "runtimeAvailability": "unknown",
+      "source": {
+        "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/Group_171300062.json",
+        "sha256": "1570dcb947723aa08ec83cfd9c87b197614794b95cd459003f1f45c6b01ae9e6",
+        "jsonPath": "Group.Members[2].MemberPosition"
+      },
+      "destinationSource": {
+        "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/Group_171300062.json",
+        "sha256": "1570dcb947723aa08ec83cfd9c87b197614794b95cd459003f1f45c6b01ae9e6",
+        "jsonPath": "Group.GameplayExternalData.PointMap.171300062_Point_201.Data.Position"
+      },
+      "scriptSource": {
+        "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/ViewObjectGraph_2001436.json",
+        "sha256": "5bcbafcd652d24e2db03c2a8f39859d2176b615d793d01fa88c58693701d350c",
+        "jsonPath": "nodes[id=141]"
+      },
+      "dispatch": {
+        "chatId": 231013199,
+        "selectionKey": "ElevatorFloor",
+        "selectionValue": 1,
+        "arrivalConfigId": 201,
+        "pointParam": "OverrideTeleportPoint1"
+      },
+      "conditions": [
+        "楼层菜单已开放，且可选目标楼层。",
+        "未读取本局任务状态：Quest 231013402 状态为 1 时，脚本限制通行并可能强制前往下层。"
+      ],
+      "conditionsEn": [
+        "The normal floor menu is available and the target floor is selectable.",
+        "Live quest state is unknown. Quest 231013402 status 1 restricts the lift and can force the lower level."
+      ]
+    },
+    {
+      "id": "lumina-elevator-203-202",
+      "type": "ConfigTeleportLink",
+      "mechanism": "lumina_elevator",
+      "label": "光映中心电梯：二层 → 一层",
+      "labelEn": "Lumina Square elevator: 2F → 1F",
+      "start": {
+        "x": 92.08218,
+        "y": 71.3,
+        "z": 347.11688
+      },
+      "end": {
+        "x": 92.51116,
+        "y": 59.667175,
+        "z": 347.11688
+      },
+      "direction": "source-start-to-end-only",
+      "runtimeAvailability": "unknown",
+      "source": {
+        "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/Group_171300062.json",
+        "sha256": "1570dcb947723aa08ec83cfd9c87b197614794b95cd459003f1f45c6b01ae9e6",
+        "jsonPath": "Group.Members[2].MemberPosition"
+      },
+      "destinationSource": {
+        "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/Group_171300062.json",
+        "sha256": "1570dcb947723aa08ec83cfd9c87b197614794b95cd459003f1f45c6b01ae9e6",
+        "jsonPath": "Group.GameplayExternalData.PointMap.171300062_Point_202.Data.Position"
+      },
+      "scriptSource": {
+        "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/ViewObjectGraph_2001436.json",
+        "sha256": "5bcbafcd652d24e2db03c2a8f39859d2176b615d793d01fa88c58693701d350c",
+        "jsonPath": "nodes[id=141]"
+      },
+      "dispatch": {
+        "chatId": 231013199,
+        "selectionKey": "ElevatorFloor",
+        "selectionValue": 2,
+        "arrivalConfigId": 202,
+        "pointParam": "OverrideTeleportPoint2"
+      },
+      "conditions": [
+        "楼层菜单已开放，且可选目标楼层。",
+        "未读取本局任务状态：Quest 231013402 状态为 1 时，脚本限制通行并可能强制前往下层。"
+      ],
+      "conditionsEn": [
+        "The normal floor menu is available and the target floor is selectable.",
+        "Live quest state is unknown. Quest 231013402 status 1 restricts the lift and can force the lower level."
+      ]
+    },
+    {
+      "id": "lumina-elevator-203-204",
+      "type": "ConfigTeleportLink",
+      "mechanism": "lumina_elevator",
+      "label": "光映中心电梯：二层 → 顶层",
+      "labelEn": "Lumina Square elevator: 2F → Top floor",
+      "start": {
+        "x": 92.08218,
+        "y": 71.3,
+        "z": 347.11688
+      },
+      "end": {
+        "x": 92.032684,
+        "y": 83.3653,
+        "z": 347.11688
+      },
+      "direction": "source-start-to-end-only",
+      "runtimeAvailability": "unknown",
+      "source": {
+        "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/Group_171300062.json",
+        "sha256": "1570dcb947723aa08ec83cfd9c87b197614794b95cd459003f1f45c6b01ae9e6",
+        "jsonPath": "Group.Members[2].MemberPosition"
+      },
+      "destinationSource": {
+        "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/Group_171300062.json",
+        "sha256": "1570dcb947723aa08ec83cfd9c87b197614794b95cd459003f1f45c6b01ae9e6",
+        "jsonPath": "Group.GameplayExternalData.PointMap.171300062_Point_204.Data.Position"
+      },
+      "scriptSource": {
+        "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/ViewObjectGraph_2001436.json",
+        "sha256": "5bcbafcd652d24e2db03c2a8f39859d2176b615d793d01fa88c58693701d350c",
+        "jsonPath": "nodes[id=141]"
+      },
+      "dispatch": {
+        "chatId": 231013199,
+        "selectionKey": "ElevatorFloor",
+        "selectionValue": 4,
+        "arrivalConfigId": 204,
+        "pointParam": "OverrideTeleportPoint4"
+      },
+      "conditions": [
+        "楼层菜单已开放，且可选目标楼层。",
+        "未读取本局任务状态：Quest 231013402 状态为 1 时，脚本限制通行并可能强制前往下层。"
+      ],
+      "conditionsEn": [
+        "The normal floor menu is available and the target floor is selectable.",
+        "Live quest state is unknown. Quest 231013402 status 1 restricts the lift and can force the lower level."
+      ]
+    },
+    {
+      "id": "lumina-elevator-204-201",
+      "type": "ConfigTeleportLink",
+      "mechanism": "lumina_elevator",
+      "label": "光映中心电梯：顶层 → 下层",
+      "labelEn": "Lumina Square elevator: Top floor → Lower level",
+      "start": {
+        "x": 92.05187,
+        "y": 83.4,
+        "z": 347.11688
+      },
+      "end": {
+        "x": 91.8324,
+        "y": 38.166817,
+        "z": 346.48096
+      },
+      "direction": "source-start-to-end-only",
+      "runtimeAvailability": "unknown",
+      "source": {
+        "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/Group_171300062.json",
+        "sha256": "1570dcb947723aa08ec83cfd9c87b197614794b95cd459003f1f45c6b01ae9e6",
+        "jsonPath": "Group.Members[3].MemberPosition"
+      },
+      "destinationSource": {
+        "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/Group_171300062.json",
+        "sha256": "1570dcb947723aa08ec83cfd9c87b197614794b95cd459003f1f45c6b01ae9e6",
+        "jsonPath": "Group.GameplayExternalData.PointMap.171300062_Point_201.Data.Position"
+      },
+      "scriptSource": {
+        "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/ViewObjectGraph_2001436.json",
+        "sha256": "5bcbafcd652d24e2db03c2a8f39859d2176b615d793d01fa88c58693701d350c",
+        "jsonPath": "nodes[id=141]"
+      },
+      "dispatch": {
+        "chatId": 231013200,
+        "selectionKey": "ElevatorFloor",
+        "selectionValue": 1,
+        "arrivalConfigId": 201,
+        "pointParam": "OverrideTeleportPoint1"
+      },
+      "conditions": [
+        "楼层菜单已开放，且可选目标楼层。",
+        "未读取本局任务状态：Quest 231013402 状态为 1 时，脚本限制通行并可能强制前往下层。"
+      ],
+      "conditionsEn": [
+        "The normal floor menu is available and the target floor is selectable.",
+        "Live quest state is unknown. Quest 231013402 status 1 restricts the lift and can force the lower level."
+      ]
+    },
+    {
+      "id": "lumina-elevator-204-202",
+      "type": "ConfigTeleportLink",
+      "mechanism": "lumina_elevator",
+      "label": "光映中心电梯：顶层 → 一层",
+      "labelEn": "Lumina Square elevator: Top floor → 1F",
+      "start": {
+        "x": 92.05187,
+        "y": 83.4,
+        "z": 347.11688
+      },
+      "end": {
+        "x": 92.51116,
+        "y": 59.667175,
+        "z": 347.11688
+      },
+      "direction": "source-start-to-end-only",
+      "runtimeAvailability": "unknown",
+      "source": {
+        "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/Group_171300062.json",
+        "sha256": "1570dcb947723aa08ec83cfd9c87b197614794b95cd459003f1f45c6b01ae9e6",
+        "jsonPath": "Group.Members[3].MemberPosition"
+      },
+      "destinationSource": {
+        "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/Group_171300062.json",
+        "sha256": "1570dcb947723aa08ec83cfd9c87b197614794b95cd459003f1f45c6b01ae9e6",
+        "jsonPath": "Group.GameplayExternalData.PointMap.171300062_Point_202.Data.Position"
+      },
+      "scriptSource": {
+        "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/ViewObjectGraph_2001436.json",
+        "sha256": "5bcbafcd652d24e2db03c2a8f39859d2176b615d793d01fa88c58693701d350c",
+        "jsonPath": "nodes[id=141]"
+      },
+      "dispatch": {
+        "chatId": 231013200,
+        "selectionKey": "ElevatorFloor",
+        "selectionValue": 2,
+        "arrivalConfigId": 202,
+        "pointParam": "OverrideTeleportPoint2"
+      },
+      "conditions": [
+        "楼层菜单已开放，且可选目标楼层。",
+        "未读取本局任务状态：Quest 231013402 状态为 1 时，脚本限制通行并可能强制前往下层。"
+      ],
+      "conditionsEn": [
+        "The normal floor menu is available and the target floor is selectable.",
+        "Live quest state is unknown. Quest 231013402 status 1 restricts the lift and can force the lower level."
+      ]
+    },
+    {
+      "id": "lumina-elevator-204-203",
+      "type": "ConfigTeleportLink",
+      "mechanism": "lumina_elevator",
+      "label": "光映中心电梯：顶层 → 二层",
+      "labelEn": "Lumina Square elevator: Top floor → 2F",
+      "start": {
+        "x": 92.05187,
+        "y": 83.4,
+        "z": 347.11688
+      },
+      "end": {
+        "x": 92.09949,
+        "y": 71.27558,
+        "z": 347.11688
+      },
+      "direction": "source-start-to-end-only",
+      "runtimeAvailability": "unknown",
+      "source": {
+        "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/Group_171300062.json",
+        "sha256": "1570dcb947723aa08ec83cfd9c87b197614794b95cd459003f1f45c6b01ae9e6",
+        "jsonPath": "Group.Members[3].MemberPosition"
+      },
+      "destinationSource": {
+        "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/Group_171300062.json",
+        "sha256": "1570dcb947723aa08ec83cfd9c87b197614794b95cd459003f1f45c6b01ae9e6",
+        "jsonPath": "Group.GameplayExternalData.PointMap.171300062_Point_203.Data.Position"
+      },
+      "scriptSource": {
+        "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/ViewObjectGraph_2001436.json",
+        "sha256": "5bcbafcd652d24e2db03c2a8f39859d2176b615d793d01fa88c58693701d350c",
+        "jsonPath": "nodes[id=141]"
+      },
+      "dispatch": {
+        "chatId": 231013200,
+        "selectionKey": "ElevatorFloor",
+        "selectionValue": 3,
+        "arrivalConfigId": 203,
+        "pointParam": "OverrideTeleportPoint3"
+      },
+      "conditions": [
+        "楼层菜单已开放，且可选目标楼层。",
+        "未读取本局任务状态：Quest 231013402 状态为 1 时，脚本限制通行并可能强制前往下层。"
+      ],
+      "conditionsEn": [
+        "The normal floor menu is available and the target floor is selectable.",
+        "Live quest state is unknown. Quest 231013402 status 1 restricts the lift and can force the lower level."
+      ]
+    },
+    {
+      "id": "lumina-door-201",
+      "type": "ConfigTeleportLink",
+      "mechanism": "interact_door",
+      "label": "光映中心二层门：出楼",
+      "labelEn": "Lumina Square 2F door: Exit building",
+      "start": {
+        "x": 163.57639,
+        "y": 71.06088,
+        "z": 344.97842
+      },
+      "end": {
+        "x": 163.29245,
+        "y": 71.06088,
+        "z": 338.05844
+      },
+      "direction": "source-start-to-end-only",
+      "runtimeAvailability": "unknown",
+      "source": {
+        "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/Group_171300147.json",
+        "sha256": "8c2b44a5def96118d1f991ce3e1f9e62fff5951f3e71fa2c0252096d7f683acb",
+        "jsonPath": "Group.Members[0].MemberPosition"
+      },
+      "destinationSource": {
+        "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/Group_171300147.json",
+        "sha256": "8c2b44a5def96118d1f991ce3e1f9e62fff5951f3e71fa2c0252096d7f683acb",
+        "jsonPath": "Group.GameplayExternalData.PointMap.171300147_Point_001.Data.Position"
+      },
+      "scriptSource": {
+        "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/ViewObjectGraph_2001412.json",
+        "sha256": "035e7af01b9877c4677710a29c0576c45cb32fd92be7a1c3526e9fbbb7ff7f3d",
+        "jsonPath": "nodes[id=10,14]"
+      },
+      "dispatch": {
+        "interaction": "ZenkovDoor_GeneralInteract",
+        "pointParams": [
+          "TeleportPosition_1",
+          "TeleportPosition_2"
+        ],
+        "triggerSidesShareDestination": true
+      },
+      "conditions": [
+        "在门口交互通过；本局门的交互状态未读取。"
+      ],
+      "conditionsEn": [
+        "Interact with the door to pass through. Its live interaction state is unknown."
+      ]
+    },
+    {
+      "id": "lumina-door-202",
+      "type": "ConfigTeleportLink",
+      "mechanism": "interact_door",
+      "label": "光映中心二层门：进楼",
+      "labelEn": "Lumina Square 2F door: Enter building",
+      "start": {
+        "x": 163.57639,
+        "y": 71.06088,
+        "z": 344.19772
+      },
+      "end": {
+        "x": 163.29245,
+        "y": 71.06088,
+        "z": 347.91214
+      },
+      "direction": "source-start-to-end-only",
+      "runtimeAvailability": "unknown",
+      "source": {
+        "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/Group_171300147.json",
+        "sha256": "8c2b44a5def96118d1f991ce3e1f9e62fff5951f3e71fa2c0252096d7f683acb",
+        "jsonPath": "Group.Members[1].MemberPosition"
+      },
+      "destinationSource": {
+        "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/Group_171300147.json",
+        "sha256": "8c2b44a5def96118d1f991ce3e1f9e62fff5951f3e71fa2c0252096d7f683acb",
+        "jsonPath": "Group.GameplayExternalData.PointMap.171300147_Point_002.Data.Position"
+      },
+      "scriptSource": {
+        "path": "output/dukezzz-local-preview/research/map-rebuild-20260919/lumina-evidence/TextAsset/ViewObjectGraph_2001412.json",
+        "sha256": "035e7af01b9877c4677710a29c0576c45cb32fd92be7a1c3526e9fbbb7ff7f3d",
+        "jsonPath": "nodes[id=10,14]"
+      },
+      "dispatch": {
+        "interaction": "ZenkovDoor_GeneralInteract",
+        "pointParams": [
+          "TeleportPosition_1",
+          "TeleportPosition_2"
+        ],
+        "triggerSidesShareDestination": true
+      },
+      "conditions": [
+        "在门口交互通过；本局门的交互状态未读取。"
+      ],
+      "conditionsEn": [
+        "Interact with the door to pass through. Its live interaction state is unknown."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4743 @@
+{
+  "version": "2026-10-11",
+  "author": "@KELZERO",
+  "albumUrl": "https://imgur.com/a/cTlwhvc",
+  "coordinateSystem": "normalized-image, top-left origin; original icon centers; not world coordinates",
+  "statusDefinitions": {
+    "fixed_source": "原图未标随机，不等于多局实测必刷。",
+    "random_source": "原图问号或文字明确随机。"
+  },
+  "maps": {
+    "janus": {
+      "sourceImage": 28,
+      "referenceWidth": 1616,
+      "referenceHeight": 1629,
+      "points": [
+        {
+          "id": "KZ-J-01",
+          "map": "janus",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.624381,
+          "y": 0.068754,
+          "pixelPosition": {
+            "x": 1009,
+            "y": 112,
+            "width": 1616,
+            "height": 1629
+          },
+          "label": "北端精英 / 小怪",
+          "region": "street",
+          "enemyClass": "elite",
+          "enemyClassOriginal": "elite_or_mob",
+          "enemyNames": [],
+          "cacophonyDisappears": false,
+          "gradeChange": null,
+          "status": "fixed_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。原图将精英与小怪合并为同一图例。",
+          "sourceImage": 28,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 14,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。原图将精英与小怪合并为同一图例。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 28,
+          "authorReview": {
+            "id": "KZ-J-01",
+            "map": "janus",
+            "oldEvidenceId": 14,
+            "newEvidenceId": 28,
+            "oldPixel": [
+              1009,
+              112
+            ],
+            "newImageSize": [
+              1616,
+              1629
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              1009,
+              112
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run. The author uses one symbol for elites and mobs."
+        },
+        {
+          "id": "KZ-J-02",
+          "map": "janus",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.699876,
+          "y": 0.101903,
+          "pixelPosition": {
+            "x": 1131,
+            "y": 166,
+            "width": 1616,
+            "height": 1629
+          },
+          "label": "街区北侧 BOSS",
+          "region": "street",
+          "enemyClass": "boss",
+          "enemyClassOriginal": "boss",
+          "enemyNames": [],
+          "cacophonyDisappears": false,
+          "gradeChange": null,
+          "status": "fixed_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。",
+          "sourceImage": 28,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 14,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 28,
+          "authorReview": {
+            "id": "KZ-J-02",
+            "map": "janus",
+            "oldEvidenceId": 14,
+            "newEvidenceId": 28,
+            "oldPixel": [
+              1131,
+              166
+            ],
+            "newImageSize": [
+              1616,
+              1629
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              1131,
+              166
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run."
+        },
+        {
+          "id": "KZ-J-03",
+          "map": "janus",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.854579,
+          "y": 0.131369,
+          "pixelPosition": {
+            "x": 1381,
+            "y": 214,
+            "width": 1616,
+            "height": 1629
+          },
+          "label": "东北精英 / 小怪",
+          "region": "street",
+          "enemyClass": "elite",
+          "enemyClassOriginal": "elite_or_mob",
+          "enemyNames": [],
+          "cacophonyDisappears": false,
+          "gradeChange": "upgrade",
+          "status": "fixed_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。原图将精英与小怪合并为同一图例。",
+          "sourceImage": 28,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 14,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。原图将精英与小怪合并为同一图例。原图上箭头：可升级为会掉落 Reverb Vessels 的 BOSS。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 28,
+          "authorReview": {
+            "id": "KZ-J-03",
+            "map": "janus",
+            "oldEvidenceId": 14,
+            "newEvidenceId": 28,
+            "oldPixel": [
+              1381,
+              214
+            ],
+            "newImageSize": [
+              1616,
+              1629
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              1381,
+              214
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run. The author uses one symbol for elites and mobs."
+        },
+        {
+          "id": "KZ-J-04",
+          "map": "janus",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.779084,
+          "y": 0.152241,
+          "pixelPosition": {
+            "x": 1259,
+            "y": 248,
+            "width": 1616,
+            "height": 1629
+          },
+          "label": "北侧街口 BOSS",
+          "region": "street",
+          "enemyClass": "boss",
+          "enemyClassOriginal": "boss",
+          "enemyNames": [],
+          "cacophonyDisappears": false,
+          "gradeChange": "downgrade",
+          "status": "fixed_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。",
+          "sourceImage": 28,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 14,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。原图下箭头：可降级为不再掉落 Reverb Vessels 的精英。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 28,
+          "authorReview": {
+            "id": "KZ-J-04",
+            "map": "janus",
+            "oldEvidenceId": 14,
+            "newEvidenceId": 28,
+            "oldPixel": [
+              1259,
+              248
+            ],
+            "newImageSize": [
+              1616,
+              1629
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              1259,
+              248
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run."
+        },
+        {
+          "id": "KZ-J-05",
+          "map": "janus",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.894802,
+          "y": 0.181707,
+          "pixelPosition": {
+            "x": 1446,
+            "y": 296,
+            "width": 1616,
+            "height": 1629
+          },
+          "label": "拟态敌人 · Pulchra",
+          "region": "street",
+          "enemyClass": "doppelganger",
+          "enemyClassOriginal": "doppelganger",
+          "enemyNames": [
+            "Pulchra"
+          ],
+          "cacophonyDisappears": false,
+          "gradeChange": null,
+          "status": "fixed_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。",
+          "sourceImage": 28,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 14,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 28,
+          "authorReview": {
+            "id": "KZ-J-05",
+            "map": "janus",
+            "oldEvidenceId": 14,
+            "newEvidenceId": 28,
+            "oldPixel": [
+              1446,
+              296
+            ],
+            "newImageSize": [
+              1616,
+              1629
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              1446,
+              296
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run."
+        },
+        {
+          "id": "KZ-J-06",
+          "map": "janus",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.871287,
+          "y": 0.218539,
+          "pixelPosition": {
+            "x": 1408,
+            "y": 356,
+            "width": 1616,
+            "height": 1629
+          },
+          "label": "街区东侧二楼精英 / 小怪",
+          "region": "street",
+          "enemyClass": "elite",
+          "enemyClassOriginal": "elite_or_mob",
+          "enemyNames": [],
+          "cacophonyDisappears": false,
+          "gradeChange": null,
+          "status": "fixed_source",
+          "floors": [
+            2
+          ],
+          "floorEvidence": "explicit",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。原图将精英与小怪合并为同一图例。",
+          "sourceImage": 28,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 14,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。原图将精英与小怪合并为同一图例。",
+            "floors": [
+              2
+            ],
+            "floorEvidence": "explicit"
+          },
+          "currentReviewImage": 28,
+          "authorReview": {
+            "id": "KZ-J-06",
+            "map": "janus",
+            "oldEvidenceId": 14,
+            "newEvidenceId": 28,
+            "oldPixel": [
+              1408,
+              356
+            ],
+            "newImageSize": [
+              1616,
+              1629
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              1408,
+              356
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run. The author uses one symbol for elites and mobs."
+        },
+        {
+          "id": "KZ-J-07",
+          "map": "janus",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.811881,
+          "y": 0.230203,
+          "pixelPosition": {
+            "x": 1312,
+            "y": 375,
+            "width": 1616,
+            "height": 1629
+          },
+          "label": "拟态敌人 · Pulchra",
+          "region": "street",
+          "enemyClass": "doppelganger",
+          "enemyClassOriginal": "doppelganger",
+          "enemyNames": [
+            "Pulchra"
+          ],
+          "cacophonyDisappears": false,
+          "gradeChange": null,
+          "status": "fixed_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。",
+          "sourceImage": 28,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 14,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 28,
+          "authorReview": {
+            "id": "KZ-J-07",
+            "map": "janus",
+            "oldEvidenceId": 14,
+            "newEvidenceId": 28,
+            "oldPixel": [
+              1312,
+              375
+            ],
+            "newImageSize": [
+              1616,
+              1629
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              1312,
+              375
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run."
+        },
+        {
+          "id": "KZ-J-08",
+          "map": "janus",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.931931,
+          "y": 0.245549,
+          "pixelPosition": {
+            "x": 1506,
+            "y": 400,
+            "width": 1616,
+            "height": 1629
+          },
+          "label": "街区最东端 BOSS",
+          "region": "street",
+          "enemyClass": "boss",
+          "enemyClassOriginal": "boss",
+          "enemyNames": [],
+          "cacophonyDisappears": false,
+          "gradeChange": null,
+          "status": "fixed_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。",
+          "sourceImage": 28,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 14,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 28,
+          "authorReview": {
+            "id": "KZ-J-08",
+            "map": "janus",
+            "oldEvidenceId": 14,
+            "newEvidenceId": 28,
+            "oldPixel": [
+              1506,
+              400
+            ],
+            "newImageSize": [
+              1616,
+              1629
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              1506,
+              400
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run."
+        },
+        {
+          "id": "KZ-J-09",
+          "map": "janus",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.665842,
+          "y": 0.268263,
+          "pixelPosition": {
+            "x": 1076,
+            "y": 437,
+            "width": 1616,
+            "height": 1629
+          },
+          "label": "工地东侧 BOSS",
+          "region": "construction",
+          "enemyClass": "boss",
+          "enemyClassOriginal": "boss",
+          "enemyNames": [],
+          "cacophonyDisappears": true,
+          "gradeChange": null,
+          "status": "fixed_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。",
+          "sourceImage": 28,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 14,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。原图青色标记：喧响区出现时消失，部分会被 Phantom Ulidim 替代。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 28,
+          "authorReview": {
+            "id": "KZ-J-09",
+            "map": "janus",
+            "oldEvidenceId": 14,
+            "newEvidenceId": 28,
+            "oldPixel": [
+              1076,
+              437
+            ],
+            "newImageSize": [
+              1616,
+              1629
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              1076,
+              437
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run."
+        },
+        {
+          "id": "KZ-J-10",
+          "map": "janus",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.748144,
+          "y": 0.273788,
+          "pixelPosition": {
+            "x": 1209,
+            "y": 446,
+            "width": 1616,
+            "height": 1629
+          },
+          "label": "街区中西部精英 / 小怪",
+          "region": "street",
+          "enemyClass": "elite",
+          "enemyClassOriginal": "elite_or_mob",
+          "enemyNames": [],
+          "cacophonyDisappears": false,
+          "gradeChange": "upgrade",
+          "status": "fixed_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。原图将精英与小怪合并为同一图例。",
+          "sourceImage": 28,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 14,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。原图将精英与小怪合并为同一图例。原图上箭头：可升级为会掉落 Reverb Vessels 的 BOSS。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 28,
+          "authorReview": {
+            "id": "KZ-J-10",
+            "map": "janus",
+            "oldEvidenceId": 14,
+            "newEvidenceId": 28,
+            "oldPixel": [
+              1209,
+              446
+            ],
+            "newImageSize": [
+              1616,
+              1629
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              1209,
+              446
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run. The author uses one symbol for elites and mobs."
+        },
+        {
+          "id": "KZ-J-11",
+          "map": "janus",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.589109,
+          "y": 0.297729,
+          "pixelPosition": {
+            "x": 952,
+            "y": 485,
+            "width": 1616,
+            "height": 1629
+          },
+          "label": "工地东侧通道 BOSS",
+          "region": "construction",
+          "enemyClass": "boss",
+          "enemyClassOriginal": "boss",
+          "enemyNames": [],
+          "cacophonyDisappears": false,
+          "gradeChange": null,
+          "status": "fixed_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。",
+          "sourceImage": 28,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 14,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 28,
+          "authorReview": {
+            "id": "KZ-J-11",
+            "map": "janus",
+            "oldEvidenceId": 14,
+            "newEvidenceId": 28,
+            "oldPixel": [
+              952,
+              485
+            ],
+            "newImageSize": [
+              1616,
+              1629
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              952,
+              485
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run."
+        },
+        {
+          "id": "KZ-J-12",
+          "map": "janus",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.811262,
+          "y": 0.297115,
+          "pixelPosition": {
+            "x": 1311,
+            "y": 484,
+            "width": 1616,
+            "height": 1629
+          },
+          "label": "街区中南部精英 / 小怪",
+          "region": "street",
+          "enemyClass": "elite",
+          "enemyClassOriginal": "elite_or_mob",
+          "enemyNames": [],
+          "cacophonyDisappears": false,
+          "gradeChange": null,
+          "status": "unknown",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "新版图中暂未找到可唯一对应的标记，作者未说明原因；保留旧位置待核实，不据此判定敌人已删除。",
+          "sourceImage": 14,
+          "sourceDate": "2026-09-23",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 14,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。原图将精英与小怪合并为同一图例。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 28,
+          "authorReview": {
+            "id": "KZ-J-12",
+            "map": "janus",
+            "oldEvidenceId": 14,
+            "newEvidenceId": 28,
+            "oldPixel": [
+              1311,
+              484
+            ],
+            "newImageSize": [
+              1616,
+              1629
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "not-located-in-new-image",
+            "evidencePixel": null,
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation",
+            "note": "旧位置在新版主图没有相同图标；作者未解释，亦未能唯一对应到分层图，保留待核实。",
+            "suggestedStatus": "unknown"
+          },
+          "noteEn": "No unique matching marker was located on the new map, and the author gave no explanation. Its old position is retained as unverified; removal is not established."
+        },
+        {
+          "id": "KZ-J-13",
+          "map": "janus",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.633045,
+          "y": 0.296501,
+          "pixelPosition": {
+            "x": 1023,
+            "y": 483,
+            "width": 1616,
+            "height": 1629
+          },
+          "label": "工地东侧多层精英 / 小怪",
+          "region": "construction",
+          "enemyClass": "elite",
+          "enemyClassOriginal": "elite_or_mob",
+          "enemyNames": [],
+          "cacophonyDisappears": false,
+          "gradeChange": "upgrade",
+          "status": "fixed_source",
+          "floors": [
+            1,
+            2,
+            3
+          ],
+          "floorEvidence": "explicit",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。原图将精英与小怪合并为同一图例。",
+          "sourceImage": 28,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 14,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。原图将精英与小怪合并为同一图例。原图上箭头：可升级为会掉落 Reverb Vessels 的 BOSS。同一原图符号标出多个楼层，不表示多层同时出现。",
+            "floors": [
+              1,
+              2,
+              3
+            ],
+            "floorEvidence": "explicit"
+          },
+          "currentReviewImage": 28,
+          "authorReview": {
+            "id": "KZ-J-13",
+            "map": "janus",
+            "oldEvidenceId": 14,
+            "newEvidenceId": 28,
+            "oldPixel": [
+              1023,
+              483
+            ],
+            "newImageSize": [
+              1616,
+              1629
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              1023,
+              483
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run. The author uses one symbol for elites and mobs."
+        },
+        {
+          "id": "KZ-J-14",
+          "map": "janus",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.438738,
+          "y": 0.315531,
+          "pixelPosition": {
+            "x": 709,
+            "y": 514,
+            "width": 1616,
+            "height": 1629
+          },
+          "label": "工地西楼一 / 二楼精英 / 小怪",
+          "region": "construction",
+          "enemyClass": "elite",
+          "enemyClassOriginal": "elite_or_mob",
+          "enemyNames": [],
+          "cacophonyDisappears": false,
+          "gradeChange": "upgrade",
+          "status": "fixed_source",
+          "floors": [
+            1,
+            2
+          ],
+          "floorEvidence": "explicit",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。原图将精英与小怪合并为同一图例。新版证据在楼层拆分插图中，插图位置不用于移动主地图标记。",
+          "sourceImage": 28,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 14,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。原图将精英与小怪合并为同一图例。原图上箭头：可升级为会掉落 Reverb Vessels 的 BOSS。同一原图符号标出多个楼层，不表示多层同时出现。",
+            "floors": [
+              1,
+              2
+            ],
+            "floorEvidence": "explicit"
+          },
+          "currentReviewImage": 28,
+          "authorReview": {
+            "id": "KZ-J-14",
+            "map": "janus",
+            "oldEvidenceId": 14,
+            "newEvidenceId": 28,
+            "oldPixel": [
+              709,
+              514
+            ],
+            "newImageSize": [
+              1616,
+              1629
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "moved-to-floor-inset",
+            "evidencePixel": null,
+            "pixelMeaning": "diagram-only; do not assign these inset pixels to main map x/y",
+            "insetEvidence": [
+              {
+                "x": 536.5,
+                "y": 442.5,
+                "floor": 1
+              },
+              {
+                "x": 409,
+                "y": 447.5,
+                "floor": 2
+              }
+            ],
+            "floorConfidence": "same named building and relative floor/side; drawing evidence, not client entity linkage"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run. The author uses one symbol for elites and mobs. The new evidence is in a floor inset; inset coordinates are not used to move the main-map marker."
+        },
+        {
+          "id": "KZ-J-15",
+          "map": "janus",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.508045,
+          "y": 0.317373,
+          "pixelPosition": {
+            "x": 821,
+            "y": 517,
+            "width": 1616,
+            "height": 1629
+          },
+          "label": "工地中央精英 / 小怪",
+          "region": "construction",
+          "enemyClass": "elite",
+          "enemyClassOriginal": "elite_or_mob",
+          "enemyNames": [],
+          "cacophonyDisappears": false,
+          "gradeChange": "upgrade",
+          "status": "fixed_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。原图将精英与小怪合并为同一图例。",
+          "sourceImage": 28,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 14,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。原图将精英与小怪合并为同一图例。原图上箭头：可升级为会掉落 Reverb Vessels 的 BOSS。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 28,
+          "authorReview": {
+            "id": "KZ-J-15",
+            "map": "janus",
+            "oldEvidenceId": 14,
+            "newEvidenceId": 28,
+            "oldPixel": [
+              821,
+              517
+            ],
+            "newImageSize": [
+              1616,
+              1629
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              821,
+              517
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run. The author uses one symbol for elites and mobs."
+        },
+        {
+          "id": "KZ-J-16",
+          "map": "janus",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.66646,
+          "y": 0.317986,
+          "pixelPosition": {
+            "x": 1077,
+            "y": 518,
+            "width": 1616,
+            "height": 1629
+          },
+          "label": "工地东南精英 / 小怪",
+          "region": "construction",
+          "enemyClass": "elite",
+          "enemyClassOriginal": "elite_or_mob",
+          "enemyNames": [],
+          "cacophonyDisappears": false,
+          "gradeChange": null,
+          "status": "fixed_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。原图将精英与小怪合并为同一图例。",
+          "sourceImage": 28,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 14,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。原图将精英与小怪合并为同一图例。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 28,
+          "authorReview": {
+            "id": "KZ-J-16",
+            "map": "janus",
+            "oldEvidenceId": 14,
+            "newEvidenceId": 28,
+            "oldPixel": [
+              1077,
+              518
+            ],
+            "newImageSize": [
+              1616,
+              1629
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              1077,
+              518
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run. The author uses one symbol for elites and mobs."
+        },
+        {
+          "id": "KZ-J-17",
+          "map": "janus",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.717822,
+          "y": 0.327195,
+          "pixelPosition": {
+            "x": 1160,
+            "y": 533,
+            "width": 1616,
+            "height": 1629
+          },
+          "label": "街区西南精英 / 小怪",
+          "region": "street",
+          "enemyClass": "elite",
+          "enemyClassOriginal": "elite_or_mob",
+          "enemyNames": [],
+          "cacophonyDisappears": false,
+          "gradeChange": "upgrade",
+          "status": "fixed_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。原图将精英与小怪合并为同一图例。",
+          "sourceImage": 28,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 14,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。原图将精英与小怪合并为同一图例。原图上箭头：可升级为会掉落 Reverb Vessels 的 BOSS。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 28,
+          "authorReview": {
+            "id": "KZ-J-17",
+            "map": "janus",
+            "oldEvidenceId": 14,
+            "newEvidenceId": 28,
+            "oldPixel": [
+              1160,
+              533
+            ],
+            "newImageSize": [
+              1616,
+              1629
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              1160,
+              533
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run. The author uses one symbol for elites and mobs."
+        },
+        {
+          "id": "KZ-J-18",
+          "map": "janus",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.402847,
+          "y": 0.325967,
+          "pixelPosition": {
+            "x": 651,
+            "y": 531,
+            "width": 1616,
+            "height": 1629
+          },
+          "label": "工地西楼三楼精英 / 小怪",
+          "region": "construction",
+          "enemyClass": "elite",
+          "enemyClassOriginal": "elite_or_mob",
+          "enemyNames": [],
+          "cacophonyDisappears": false,
+          "gradeChange": "upgrade",
+          "status": "fixed_source",
+          "floors": [
+            3
+          ],
+          "floorEvidence": "explicit",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。原图将精英与小怪合并为同一图例。新版证据在楼层拆分插图中，插图位置不用于移动主地图标记。",
+          "sourceImage": 28,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 14,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。原图将精英与小怪合并为同一图例。原图上箭头：可升级为会掉落 Reverb Vessels 的 BOSS。",
+            "floors": [
+              3
+            ],
+            "floorEvidence": "explicit"
+          },
+          "currentReviewImage": 28,
+          "authorReview": {
+            "id": "KZ-J-18",
+            "map": "janus",
+            "oldEvidenceId": 14,
+            "newEvidenceId": 28,
+            "oldPixel": [
+              651,
+              531
+            ],
+            "newImageSize": [
+              1616,
+              1629
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "moved-to-floor-inset",
+            "evidencePixel": null,
+            "pixelMeaning": "diagram-only; do not assign these inset pixels to main map x/y",
+            "insetEvidence": [
+              {
+                "x": 288,
+                "y": 461.5,
+                "floor": 3
+              }
+            ],
+            "floorConfidence": "same named building and relative floor/side; drawing evidence, not client entity linkage"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run. The author uses one symbol for elites and mobs. The new evidence is in a floor inset; inset coordinates are not used to move the main-map marker."
+        },
+        {
+          "id": "KZ-J-19",
+          "map": "janus",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.774134,
+          "y": 0.345611,
+          "pixelPosition": {
+            "x": 1251,
+            "y": 563,
+            "width": 1616,
+            "height": 1629
+          },
+          "label": "街区南端 BOSS",
+          "region": "street",
+          "enemyClass": "boss",
+          "enemyClassOriginal": "boss",
+          "enemyNames": [],
+          "cacophonyDisappears": false,
+          "gradeChange": null,
+          "status": "fixed_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。",
+          "sourceImage": 28,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 14,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 28,
+          "authorReview": {
+            "id": "KZ-J-19",
+            "map": "janus",
+            "oldEvidenceId": 14,
+            "newEvidenceId": 28,
+            "oldPixel": [
+              1251,
+              563
+            ],
+            "newImageSize": [
+              1616,
+              1629
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              1251,
+              563
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run."
+        },
+        {
+          "id": "KZ-J-20",
+          "map": "janus",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.394183,
+          "y": 0.399018,
+          "pixelPosition": {
+            "x": 637,
+            "y": 650,
+            "width": 1616,
+            "height": 1629
+          },
+          "label": "拟态敌人 · Jane · 三楼 · 随机",
+          "region": "construction",
+          "enemyClass": "doppelganger",
+          "enemyClassOriginal": "doppelganger",
+          "enemyNames": [
+            "Jane"
+          ],
+          "cacophonyDisappears": false,
+          "gradeChange": null,
+          "status": "random_source",
+          "floors": [
+            3
+          ],
+          "floorEvidence": "explicit",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。新版证据在楼层拆分插图中，插图位置不用于移动主地图标记。",
+          "sourceImage": 28,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 14,
+            "sourceDate": "2026-09-23",
+            "status": "random_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。",
+            "floors": [
+              3
+            ],
+            "floorEvidence": "explicit"
+          },
+          "currentReviewImage": 28,
+          "authorReview": {
+            "id": "KZ-J-20",
+            "map": "janus",
+            "oldEvidenceId": 14,
+            "newEvidenceId": 28,
+            "oldPixel": [
+              637,
+              650
+            ],
+            "newImageSize": [
+              1616,
+              1629
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "moved-to-floor-inset",
+            "evidencePixel": null,
+            "pixelMeaning": "diagram-only; do not assign these inset pixels to main map x/y",
+            "insetEvidence": [
+              {
+                "x": 277.5,
+                "y": 567.5,
+                "floor": 3
+              }
+            ],
+            "floorConfidence": "same named building and relative floor/side; drawing evidence, not client entity linkage"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run. The new evidence is in a floor inset; inset coordinates are not used to move the main-map marker."
+        },
+        {
+          "id": "KZ-J-21",
+          "map": "janus",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.423267,
+          "y": 0.408226,
+          "pixelPosition": {
+            "x": 684,
+            "y": 665,
+            "width": 1616,
+            "height": 1629
+          },
+          "label": "工地西楼南端东侧精英 / 小怪",
+          "region": "construction",
+          "enemyClass": "elite",
+          "enemyClassOriginal": "elite_or_mob",
+          "enemyNames": [],
+          "cacophonyDisappears": false,
+          "gradeChange": "upgrade",
+          "status": "fixed_source",
+          "floors": [
+            1
+          ],
+          "floorEvidence": "explicit_author_floor_inset",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。原图将精英与小怪合并为同一图例。新版证据在楼层拆分插图中，插图位置不用于移动主地图标记。",
+          "sourceImage": 28,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 14,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。原图将精英与小怪合并为同一图例。原图上箭头：可升级为会掉落 Reverb Vessels 的 BOSS。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 28,
+          "authorReview": {
+            "id": "KZ-J-21",
+            "map": "janus",
+            "oldEvidenceId": 14,
+            "newEvidenceId": 28,
+            "oldPixel": [
+              684,
+              665
+            ],
+            "newImageSize": [
+              1616,
+              1629
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "moved-to-floor-inset",
+            "evidencePixel": null,
+            "pixelMeaning": "diagram-only; do not assign these inset pixels to main map x/y",
+            "insetEvidence": [
+              {
+                "x": 512.5,
+                "y": 604,
+                "floor": 1
+              }
+            ],
+            "floorConfidence": "same named building and relative floor/side; drawing evidence, not client entity linkage"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run. The author uses one symbol for elites and mobs. The new evidence is in a floor inset; inset coordinates are not used to move the main-map marker."
+        },
+        {
+          "id": "KZ-J-22",
+          "map": "janus",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.396658,
+          "y": 0.414979,
+          "pixelPosition": {
+            "x": 641,
+            "y": 676,
+            "width": 1616,
+            "height": 1629
+          },
+          "label": "工地西楼南端西侧精英 / 小怪",
+          "region": "construction",
+          "enemyClass": "elite",
+          "enemyClassOriginal": "elite_or_mob",
+          "enemyNames": [],
+          "cacophonyDisappears": false,
+          "gradeChange": "upgrade",
+          "status": "fixed_source",
+          "floors": [
+            1
+          ],
+          "floorEvidence": "explicit_author_floor_inset",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。原图将精英与小怪合并为同一图例。新版证据在楼层拆分插图中，插图位置不用于移动主地图标记。",
+          "sourceImage": 28,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 14,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。原图将精英与小怪合并为同一图例。原图上箭头：可升级为会掉落 Reverb Vessels 的 BOSS。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 28,
+          "authorReview": {
+            "id": "KZ-J-22",
+            "map": "janus",
+            "oldEvidenceId": 14,
+            "newEvidenceId": 28,
+            "oldPixel": [
+              641,
+              676
+            ],
+            "newImageSize": [
+              1616,
+              1629
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "moved-to-floor-inset",
+            "evidencePixel": null,
+            "pixelMeaning": "diagram-only; do not assign these inset pixels to main map x/y",
+            "insetEvidence": [
+              {
+                "x": 478.5,
+                "y": 602.5,
+                "floor": 1
+              }
+            ],
+            "floorConfidence": "same named building and relative floor/side; drawing evidence, not client entity linkage"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run. The author uses one symbol for elites and mobs. The new evidence is in a floor inset; inset coordinates are not used to move the main-map marker."
+        },
+        {
+          "id": "KZ-J-23",
+          "map": "janus",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.341584,
+          "y": 0.496624,
+          "pixelPosition": {
+            "x": 552,
+            "y": 809,
+            "width": 1616,
+            "height": 1629
+          },
+          "label": "工地南侧 BOSS",
+          "region": "construction",
+          "enemyClass": "boss",
+          "enemyClassOriginal": "boss",
+          "enemyNames": [],
+          "cacophonyDisappears": false,
+          "gradeChange": null,
+          "status": "fixed_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。",
+          "sourceImage": 28,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 14,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 28,
+          "authorReview": {
+            "id": "KZ-J-23",
+            "map": "janus",
+            "oldEvidenceId": 14,
+            "newEvidenceId": 28,
+            "oldPixel": [
+              552,
+              809
+            ],
+            "newImageSize": [
+              1616,
+              1629
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              552,
+              809
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run."
+        },
+        {
+          "id": "KZ-J-24",
+          "map": "janus",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.330446,
+          "y": 0.744629,
+          "pixelPosition": {
+            "x": 534,
+            "y": 1213,
+            "width": 1616,
+            "height": 1629
+          },
+          "label": "中央广场西北精英 / 小怪",
+          "region": "lumina",
+          "enemyClass": "elite",
+          "enemyClassOriginal": "elite_or_mob",
+          "enemyNames": [],
+          "cacophonyDisappears": false,
+          "gradeChange": "upgrade",
+          "status": "fixed_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。原图将精英与小怪合并为同一图例。",
+          "sourceImage": 28,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 14,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。原图将精英与小怪合并为同一图例。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 28,
+          "authorReview": {
+            "id": "KZ-J-24",
+            "map": "janus",
+            "oldEvidenceId": 14,
+            "newEvidenceId": 28,
+            "oldPixel": [
+              534,
+              1213
+            ],
+            "newImageSize": [
+              1616,
+              1629
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              534,
+              1213
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation",
+            "verifiedFieldChange": {
+              "field": "gradeChange",
+              "old": null,
+              "new": "upgrade",
+              "evidence": "广场西北原精英图标新增白色向上双箭头，与作者高架下敌人可升级说明对应。",
+              "evidencePixel": [
+                534,
+                1213
+              ],
+              "preserveMainMapCoordinate": true
+            }
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run. The author uses one symbol for elites and mobs.",
+          "verifiedChanges": [
+            {
+              "id": "KZ-J-24",
+              "field": "gradeChange",
+              "old": null,
+              "new": "upgrade",
+              "evidence": "广场西北原精英图标新增白色向上双箭头，与作者高架下敌人可升级说明对应。",
+              "evidencePixel": [
+                534,
+                1213
+              ],
+              "preserveMainMapCoordinate": true
+            }
+          ]
+        },
+        {
+          "id": "KZ-J-25",
+          "map": "janus",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.449876,
+          "y": 0.758134,
+          "pixelPosition": {
+            "x": 727,
+            "y": 1235,
+            "width": 1616,
+            "height": 1629
+          },
+          "label": "中央广场北侧精英 / 小怪",
+          "region": "lumina",
+          "enemyClass": "elite",
+          "enemyClassOriginal": "elite_or_mob",
+          "enemyNames": [],
+          "cacophonyDisappears": false,
+          "gradeChange": "upgrade",
+          "status": "fixed_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。原图将精英与小怪合并为同一图例。",
+          "sourceImage": 28,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 14,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。原图将精英与小怪合并为同一图例。原图上箭头：可升级为会掉落 Reverb Vessels 的 BOSS。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 28,
+          "authorReview": {
+            "id": "KZ-J-25",
+            "map": "janus",
+            "oldEvidenceId": 14,
+            "newEvidenceId": 28,
+            "oldPixel": [
+              727,
+              1235
+            ],
+            "newImageSize": [
+              1616,
+              1629
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              727,
+              1235
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run. The author uses one symbol for elites and mobs."
+        },
+        {
+          "id": "KZ-J-26",
+          "map": "janus",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.306312,
+          "y": 0.790055,
+          "pixelPosition": {
+            "x": 495,
+            "y": 1287,
+            "width": 1616,
+            "height": 1629
+          },
+          "label": "中央广场西侧 BOSS",
+          "region": "lumina",
+          "enemyClass": "boss",
+          "enemyClassOriginal": "boss",
+          "enemyNames": [],
+          "cacophonyDisappears": false,
+          "gradeChange": null,
+          "status": "fixed_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。",
+          "sourceImage": 28,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 14,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 28,
+          "authorReview": {
+            "id": "KZ-J-26",
+            "map": "janus",
+            "oldEvidenceId": 14,
+            "newEvidenceId": 28,
+            "oldPixel": [
+              495,
+              1287
+            ],
+            "newImageSize": [
+              1616,
+              1629
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              495,
+              1287
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run."
+        },
+        {
+          "id": "KZ-J-27",
+          "map": "janus",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.53651,
+          "y": 0.790055,
+          "pixelPosition": {
+            "x": 867,
+            "y": 1287,
+            "width": 1616,
+            "height": 1629
+          },
+          "label": "中央广场东侧 BOSS",
+          "region": "lumina",
+          "enemyClass": "boss",
+          "enemyClassOriginal": "boss",
+          "enemyNames": [],
+          "cacophonyDisappears": false,
+          "gradeChange": null,
+          "status": "fixed_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。",
+          "sourceImage": 28,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 14,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 28,
+          "authorReview": {
+            "id": "KZ-J-27",
+            "map": "janus",
+            "oldEvidenceId": 14,
+            "newEvidenceId": 28,
+            "oldPixel": [
+              867,
+              1287
+            ],
+            "newImageSize": [
+              1616,
+              1629
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              867,
+              1287
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run."
+        },
+        {
+          "id": "KZ-J-28",
+          "map": "janus",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.426361,
+          "y": 0.847145,
+          "pixelPosition": {
+            "x": 689,
+            "y": 1380,
+            "width": 1616,
+            "height": 1629
+          },
+          "label": "拟态敌人 · Jane",
+          "region": "lumina",
+          "enemyClass": "doppelganger",
+          "enemyClassOriginal": "doppelganger",
+          "enemyNames": [
+            "Jane"
+          ],
+          "cacophonyDisappears": false,
+          "gradeChange": null,
+          "status": "fixed_source",
+          "floors": [
+            1
+          ],
+          "floorEvidence": "explicit_author_floor_inset",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。新版证据在楼层拆分插图中，插图位置不用于移动主地图标记。",
+          "sourceImage": 28,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 14,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 28,
+          "authorReview": {
+            "id": "KZ-J-28",
+            "map": "janus",
+            "oldEvidenceId": 14,
+            "newEvidenceId": 28,
+            "oldPixel": [
+              689,
+              1380
+            ],
+            "newImageSize": [
+              1616,
+              1629
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "moved-to-floor-inset",
+            "evidencePixel": null,
+            "pixelMeaning": "diagram-only; do not assign these inset pixels to main map x/y",
+            "insetEvidence": [
+              {
+                "x": 307.5,
+                "y": 1435,
+                "floor": 1
+              }
+            ],
+            "floorConfidence": "same named building and relative floor/side; drawing evidence, not client entity linkage"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run. The new evidence is in a floor inset; inset coordinates are not used to move the main-map marker."
+        },
+        {
+          "id": "KZ-J-29",
+          "map": "janus",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.401609,
+          "y": 0.850215,
+          "pixelPosition": {
+            "x": 649,
+            "y": 1385,
+            "width": 1616,
+            "height": 1629
+          },
+          "label": "中央广场南楼三楼 BOSS",
+          "region": "lumina",
+          "enemyClass": "boss",
+          "enemyClassOriginal": "boss",
+          "enemyNames": [],
+          "cacophonyDisappears": false,
+          "gradeChange": "downgrade",
+          "status": "fixed_source",
+          "floors": [
+            3
+          ],
+          "floorEvidence": "explicit",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。新版证据在楼层拆分插图中，插图位置不用于移动主地图标记。",
+          "sourceImage": 28,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 14,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。原图下箭头：可降级为不再掉落 Reverb Vessels 的精英。",
+            "floors": [
+              3
+            ],
+            "floorEvidence": "explicit"
+          },
+          "currentReviewImage": 28,
+          "authorReview": {
+            "id": "KZ-J-29",
+            "map": "janus",
+            "oldEvidenceId": 14,
+            "newEvidenceId": 28,
+            "oldPixel": [
+              649,
+              1385
+            ],
+            "newImageSize": [
+              1616,
+              1629
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "moved-to-floor-inset",
+            "evidencePixel": null,
+            "pixelMeaning": "diagram-only; do not assign these inset pixels to main map x/y",
+            "insetEvidence": [
+              {
+                "x": 314.5,
+                "y": 1264,
+                "floor": 3
+              }
+            ],
+            "floorConfidence": "same named building and relative floor/side; drawing evidence, not client entity linkage"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run. The new evidence is in a floor inset; inset coordinates are not used to move the main-map marker."
+        },
+        {
+          "id": "KZ-J-30",
+          "map": "janus",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.375619,
+          "y": 0.850215,
+          "pixelPosition": {
+            "x": 607,
+            "y": 1385,
+            "width": 1616,
+            "height": 1629
+          },
+          "label": "中央广场南楼二楼精英 / 小怪",
+          "region": "lumina",
+          "enemyClass": "elite",
+          "enemyClassOriginal": "elite_or_mob",
+          "enemyNames": [],
+          "cacophonyDisappears": true,
+          "gradeChange": "upgrade",
+          "status": "fixed_source",
+          "floors": [
+            2
+          ],
+          "floorEvidence": "explicit",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。原图将精英与小怪合并为同一图例。新版证据在楼层拆分插图中，插图位置不用于移动主地图标记。",
+          "sourceImage": 28,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 14,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。原图将精英与小怪合并为同一图例。原图青色标记：喧响区出现时消失，部分会被 Phantom Ulidim 替代。原图上箭头：可升级为会掉落 Reverb Vessels 的 BOSS。",
+            "floors": [
+              2
+            ],
+            "floorEvidence": "explicit"
+          },
+          "currentReviewImage": 28,
+          "authorReview": {
+            "id": "KZ-J-30",
+            "map": "janus",
+            "oldEvidenceId": 14,
+            "newEvidenceId": 28,
+            "oldPixel": [
+              607,
+              1385
+            ],
+            "newImageSize": [
+              1616,
+              1629
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "moved-to-floor-inset",
+            "evidencePixel": null,
+            "pixelMeaning": "diagram-only; do not assign these inset pixels to main map x/y",
+            "insetEvidence": [
+              {
+                "x": 302,
+                "y": 1340,
+                "floor": 2
+              }
+            ],
+            "floorConfidence": "same named building and relative floor/side; drawing evidence, not client entity linkage"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run. The author uses one symbol for elites and mobs. The new evidence is in a floor inset; inset coordinates are not used to move the main-map marker."
+        },
+        {
+          "id": "KZ-J-31",
+          "map": "janus",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.544554,
+          "y": 0.88582,
+          "pixelPosition": {
+            "x": 880,
+            "y": 1443,
+            "width": 1616,
+            "height": 1629
+          },
+          "label": "中央广场东南 BOSS",
+          "region": "lumina",
+          "enemyClass": "boss",
+          "enemyClassOriginal": "boss",
+          "enemyNames": [],
+          "cacophonyDisappears": true,
+          "gradeChange": null,
+          "status": "fixed_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。",
+          "sourceImage": 28,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 14,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。原图青色标记：喧响区出现时消失，部分会被 Phantom Ulidim 替代。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 28,
+          "authorReview": {
+            "id": "KZ-J-31",
+            "map": "janus",
+            "oldEvidenceId": 14,
+            "newEvidenceId": 28,
+            "oldPixel": [
+              880,
+              1443
+            ],
+            "newImageSize": [
+              1616,
+              1629
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              880,
+              1443
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run."
+        },
+        {
+          "id": "KZ-J-32",
+          "map": "janus",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.49505,
+          "y": 0.941682,
+          "pixelPosition": {
+            "x": 800,
+            "y": 1534,
+            "width": 1616,
+            "height": 1629
+          },
+          "label": "南端 BOSS · Isolde 随机出现",
+          "region": "lumina",
+          "enemyClass": "boss",
+          "enemyClassOriginal": "boss",
+          "enemyNames": [
+            "Isolde"
+          ],
+          "cacophonyDisappears": false,
+          "gradeChange": null,
+          "status": "random_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。",
+          "sourceImage": 28,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 14,
+            "sourceDate": "2026-09-23",
+            "status": "random_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 28,
+          "authorReview": {
+            "id": "KZ-J-32",
+            "map": "janus",
+            "oldEvidenceId": 14,
+            "newEvidenceId": 28,
+            "oldPixel": [
+              800,
+              1534
+            ],
+            "newImageSize": [
+              1616,
+              1629
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              800,
+              1534
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run."
+        },
+        {
+          "id": "KZ-J-33",
+          "map": "janus",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.8641707920792079,
+          "y": 0.18385512584407612,
+          "pixelPosition": {
+            "x": 1396.5,
+            "y": 299.5,
+            "width": 1616,
+            "height": 1629
+          },
+          "label": "幻影巡逻参考 · 1",
+          "labelEn": "Phantom patrol reference · 1",
+          "region": "patrol-reference",
+          "enemyClass": "phantom",
+          "enemyClassOriginal": "Ulidim Phantom",
+          "enemyNames": [
+            "Ulidim Phantom"
+          ],
+          "cacophonyDisappears": false,
+          "cacophonyOnly": true,
+          "gradeChange": null,
+          "status": "conditional",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "作者标为 Ulidim Phantom 巡逻位置，仅在喧响区出现。这里只是图上位置参考，不是精确刷新点或已测巡逻路线，也不保证本局出现或掉落。",
+          "noteEn": "The author marks an Ulidim Phantom patrol location that appears only in Cacophony Zones. This is a map reference, not an exact spawn or a measured patrol route; occurrence and drops are not guaranteed.",
+          "sourceImage": 28,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "routeEligible": false,
+          "shardDropConfirmed": false,
+          "authorReview": {
+            "map": "janus",
+            "newEvidenceId": 28,
+            "evidencePixel": [
+              1396.5,
+              299.5
+            ],
+            "imageSize": [
+              1616,
+              1629
+            ],
+            "coordinateRegion": "main-map",
+            "insetFloor": null,
+            "normalizedMainMapCandidate": [
+              0.8641707920792079,
+              0.18385512584407612
+            ],
+            "meaning": "author patrol-location marker; not a measured path, exact spawn or guaranteed occurrence",
+            "condition": "only inside Cacophony Zones according to author",
+            "worldPosition": null,
+            "routeEligible": false,
+            "canLabelGuaranteedSpawn": false
+          }
+        },
+        {
+          "id": "KZ-J-34",
+          "map": "janus",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.7806311881188119,
+          "y": 0.22682627378759976,
+          "pixelPosition": {
+            "x": 1261.5,
+            "y": 369.5,
+            "width": 1616,
+            "height": 1629
+          },
+          "label": "幻影巡逻参考 · 2",
+          "labelEn": "Phantom patrol reference · 2",
+          "region": "patrol-reference",
+          "enemyClass": "phantom",
+          "enemyClassOriginal": "Ulidim Phantom",
+          "enemyNames": [
+            "Ulidim Phantom"
+          ],
+          "cacophonyDisappears": false,
+          "cacophonyOnly": true,
+          "gradeChange": null,
+          "status": "conditional",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "作者标为 Ulidim Phantom 巡逻位置，仅在喧响区出现。这里只是图上位置参考，不是精确刷新点或已测巡逻路线，也不保证本局出现或掉落。",
+          "noteEn": "The author marks an Ulidim Phantom patrol location that appears only in Cacophony Zones. This is a map reference, not an exact spawn or a measured patrol route; occurrence and drops are not guaranteed.",
+          "sourceImage": 28,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "routeEligible": false,
+          "shardDropConfirmed": false,
+          "authorReview": {
+            "map": "janus",
+            "newEvidenceId": 28,
+            "evidencePixel": [
+              1261.5,
+              369.5
+            ],
+            "imageSize": [
+              1616,
+              1629
+            ],
+            "coordinateRegion": "main-map",
+            "insetFloor": null,
+            "normalizedMainMapCandidate": [
+              0.7806311881188119,
+              0.22682627378759976
+            ],
+            "meaning": "author patrol-location marker; not a measured path, exact spawn or guaranteed occurrence",
+            "condition": "only inside Cacophony Zones according to author",
+            "worldPosition": null,
+            "routeEligible": false,
+            "canLabelGuaranteedSpawn": false
+          }
+        },
+        {
+          "id": "KZ-J-35",
+          "map": "janus",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.6271658415841584,
+          "y": 0.26795580110497236,
+          "pixelPosition": {
+            "x": 1013.5,
+            "y": 436.5,
+            "width": 1616,
+            "height": 1629
+          },
+          "label": "幻影巡逻参考 · 3",
+          "labelEn": "Phantom patrol reference · 3",
+          "region": "patrol-reference",
+          "enemyClass": "phantom",
+          "enemyClassOriginal": "Ulidim Phantom",
+          "enemyNames": [
+            "Ulidim Phantom"
+          ],
+          "cacophonyDisappears": false,
+          "cacophonyOnly": true,
+          "gradeChange": null,
+          "status": "conditional",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "作者标为 Ulidim Phantom 巡逻位置，仅在喧响区出现。这里只是图上位置参考，不是精确刷新点或已测巡逻路线，也不保证本局出现或掉落。",
+          "noteEn": "The author marks an Ulidim Phantom patrol location that appears only in Cacophony Zones. This is a map reference, not an exact spawn or a measured patrol route; occurrence and drops are not guaranteed.",
+          "sourceImage": 28,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "routeEligible": false,
+          "shardDropConfirmed": false,
+          "authorReview": {
+            "map": "janus",
+            "newEvidenceId": 28,
+            "evidencePixel": [
+              1013.5,
+              436.5
+            ],
+            "imageSize": [
+              1616,
+              1629
+            ],
+            "coordinateRegion": "main-map",
+            "insetFloor": null,
+            "normalizedMainMapCandidate": [
+              0.6271658415841584,
+              0.26795580110497236
+            ],
+            "meaning": "author patrol-location marker; not a measured path, exact spawn or guaranteed occurrence",
+            "condition": "only inside Cacophony Zones according to author",
+            "worldPosition": null,
+            "routeEligible": false,
+            "canLabelGuaranteedSpawn": false
+          }
+        },
+        {
+          "id": "KZ-J-36",
+          "map": "janus",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.7911509900990099,
+          "y": 0.2685696746470227,
+          "pixelPosition": {
+            "x": 1278.5,
+            "y": 437.5,
+            "width": 1616,
+            "height": 1629
+          },
+          "label": "幻影巡逻参考 · 4",
+          "labelEn": "Phantom patrol reference · 4",
+          "region": "patrol-reference",
+          "enemyClass": "phantom",
+          "enemyClassOriginal": "Ulidim Phantom",
+          "enemyNames": [
+            "Ulidim Phantom"
+          ],
+          "cacophonyDisappears": false,
+          "cacophonyOnly": true,
+          "gradeChange": null,
+          "status": "conditional",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "作者标为 Ulidim Phantom 巡逻位置，仅在喧响区出现。这里只是图上位置参考，不是精确刷新点或已测巡逻路线，也不保证本局出现或掉落。",
+          "noteEn": "The author marks an Ulidim Phantom patrol location that appears only in Cacophony Zones. This is a map reference, not an exact spawn or a measured patrol route; occurrence and drops are not guaranteed.",
+          "sourceImage": 28,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "routeEligible": false,
+          "shardDropConfirmed": false,
+          "authorReview": {
+            "map": "janus",
+            "newEvidenceId": 28,
+            "evidencePixel": [
+              1278.5,
+              437.5
+            ],
+            "imageSize": [
+              1616,
+              1629
+            ],
+            "coordinateRegion": "main-map",
+            "insetFloor": null,
+            "normalizedMainMapCandidate": [
+              0.7911509900990099,
+              0.2685696746470227
+            ],
+            "meaning": "author patrol-location marker; not a measured path, exact spawn or guaranteed occurrence",
+            "condition": "only inside Cacophony Zones according to author",
+            "worldPosition": null,
+            "routeEligible": false,
+            "canLabelGuaranteedSpawn": false
+          }
+        },
+        {
+          "id": "KZ-J-37",
+          "map": "janus",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.7571163366336634,
+          "y": 0.3317986494782075,
+          "pixelPosition": {
+            "x": 1223.5,
+            "y": 540.5,
+            "width": 1616,
+            "height": 1629
+          },
+          "label": "幻影巡逻参考 · 5",
+          "labelEn": "Phantom patrol reference · 5",
+          "region": "patrol-reference",
+          "enemyClass": "phantom",
+          "enemyClassOriginal": "Ulidim Phantom",
+          "enemyNames": [
+            "Ulidim Phantom"
+          ],
+          "cacophonyDisappears": false,
+          "cacophonyOnly": true,
+          "gradeChange": null,
+          "status": "conditional",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "作者标为 Ulidim Phantom 巡逻位置，仅在喧响区出现。这里只是图上位置参考，不是精确刷新点或已测巡逻路线，也不保证本局出现或掉落。",
+          "noteEn": "The author marks an Ulidim Phantom patrol location that appears only in Cacophony Zones. This is a map reference, not an exact spawn or a measured patrol route; occurrence and drops are not guaranteed.",
+          "sourceImage": 28,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "routeEligible": false,
+          "shardDropConfirmed": false,
+          "authorReview": {
+            "map": "janus",
+            "newEvidenceId": 28,
+            "evidencePixel": [
+              1223.5,
+              540.5
+            ],
+            "imageSize": [
+              1616,
+              1629
+            ],
+            "coordinateRegion": "main-map",
+            "insetFloor": null,
+            "normalizedMainMapCandidate": [
+              0.7571163366336634,
+              0.3317986494782075
+            ],
+            "meaning": "author patrol-location marker; not a measured path, exact spawn or guaranteed occurrence",
+            "condition": "only inside Cacophony Zones according to author",
+            "worldPosition": null,
+            "routeEligible": false,
+            "canLabelGuaranteedSpawn": false
+          }
+        },
+        {
+          "id": "KZ-J-38",
+          "map": "janus",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.4681311881188119,
+          "y": 0.7271332105586249,
+          "pixelPosition": {
+            "x": 756.5,
+            "y": 1184.5,
+            "width": 1616,
+            "height": 1629
+          },
+          "label": "幻影巡逻参考 · 6",
+          "labelEn": "Phantom patrol reference · 6",
+          "region": "patrol-reference",
+          "enemyClass": "phantom",
+          "enemyClassOriginal": "Ulidim Phantom",
+          "enemyNames": [
+            "Ulidim Phantom"
+          ],
+          "cacophonyDisappears": false,
+          "cacophonyOnly": true,
+          "gradeChange": null,
+          "status": "conditional",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "作者标为 Ulidim Phantom 巡逻位置，仅在喧响区出现。这里只是图上位置参考，不是精确刷新点或已测巡逻路线，也不保证本局出现或掉落。",
+          "noteEn": "The author marks an Ulidim Phantom patrol location that appears only in Cacophony Zones. This is a map reference, not an exact spawn or a measured patrol route; occurrence and drops are not guaranteed.",
+          "sourceImage": 28,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "routeEligible": false,
+          "shardDropConfirmed": false,
+          "authorReview": {
+            "map": "janus",
+            "newEvidenceId": 28,
+            "evidencePixel": [
+              756.5,
+              1184.5
+            ],
+            "imageSize": [
+              1616,
+              1629
+            ],
+            "coordinateRegion": "main-map",
+            "insetFloor": null,
+            "normalizedMainMapCandidate": [
+              0.4681311881188119,
+              0.7271332105586249
+            ],
+            "meaning": "author patrol-location marker; not a measured path, exact spawn or guaranteed occurrence",
+            "condition": "only inside Cacophony Zones according to author",
+            "worldPosition": null,
+            "routeEligible": false,
+            "canLabelGuaranteedSpawn": false
+          }
+        },
+        {
+          "id": "KZ-J-39",
+          "map": "janus",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.5324876237623762,
+          "y": 0.8842848373235114,
+          "pixelPosition": {
+            "x": 860.5,
+            "y": 1440.5,
+            "width": 1616,
+            "height": 1629
+          },
+          "label": "幻影巡逻参考 · 7",
+          "labelEn": "Phantom patrol reference · 7",
+          "region": "patrol-reference",
+          "enemyClass": "phantom",
+          "enemyClassOriginal": "Ulidim Phantom",
+          "enemyNames": [
+            "Ulidim Phantom"
+          ],
+          "cacophonyDisappears": false,
+          "cacophonyOnly": true,
+          "gradeChange": null,
+          "status": "conditional",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "作者标为 Ulidim Phantom 巡逻位置，仅在喧响区出现。这里只是图上位置参考，不是精确刷新点或已测巡逻路线，也不保证本局出现或掉落。",
+          "noteEn": "The author marks an Ulidim Phantom patrol location that appears only in Cacophony Zones. This is a map reference, not an exact spawn or a measured patrol route; occurrence and drops are not guaranteed.",
+          "sourceImage": 28,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "routeEligible": false,
+          "shardDropConfirmed": false,
+          "authorReview": {
+            "map": "janus",
+            "newEvidenceId": 28,
+            "evidencePixel": [
+              860.5,
+              1440.5
+            ],
+            "imageSize": [
+              1616,
+              1629
+            ],
+            "coordinateRegion": "main-map",
+            "insetFloor": null,
+            "normalizedMainMapCandidate": [
+              0.5324876237623762,
+              0.8842848373235114
+            ],
+            "meaning": "author patrol-location marker; not a measured path, exact spawn or guaranteed occurrence",
+            "condition": "only inside Cacophony Zones according to author",
+            "worldPosition": null,
+            "routeEligible": false,
+            "canLabelGuaranteedSpawn": false
+          }
+        },
+        {
+          "id": "KZ-J-40",
+          "map": "janus",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.5324876237623762,
+          "y": 0.9168201350521793,
+          "pixelPosition": {
+            "x": 860.5,
+            "y": 1493.5,
+            "width": 1616,
+            "height": 1629
+          },
+          "label": "幻影巡逻参考 · 8",
+          "labelEn": "Phantom patrol reference · 8",
+          "region": "patrol-reference",
+          "enemyClass": "phantom",
+          "enemyClassOriginal": "Ulidim Phantom",
+          "enemyNames": [
+            "Ulidim Phantom"
+          ],
+          "cacophonyDisappears": false,
+          "cacophonyOnly": true,
+          "gradeChange": null,
+          "status": "conditional",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "作者标为 Ulidim Phantom 巡逻位置，仅在喧响区出现。这里只是图上位置参考，不是精确刷新点或已测巡逻路线，也不保证本局出现或掉落。",
+          "noteEn": "The author marks an Ulidim Phantom patrol location that appears only in Cacophony Zones. This is a map reference, not an exact spawn or a measured patrol route; occurrence and drops are not guaranteed.",
+          "sourceImage": 28,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "routeEligible": false,
+          "shardDropConfirmed": false,
+          "authorReview": {
+            "map": "janus",
+            "newEvidenceId": 28,
+            "evidencePixel": [
+              860.5,
+              1493.5
+            ],
+            "imageSize": [
+              1616,
+              1629
+            ],
+            "coordinateRegion": "main-map",
+            "insetFloor": null,
+            "normalizedMainMapCandidate": [
+              0.5324876237623762,
+              0.9168201350521793
+            ],
+            "meaning": "author patrol-location marker; not a measured path, exact spawn or guaranteed occurrence",
+            "condition": "only inside Cacophony Zones according to author",
+            "worldPosition": null,
+            "routeEligible": false,
+            "canLabelGuaranteedSpawn": false
+          }
+        }
+      ]
+    },
+    "suburbs": {
+      "sourceImage": 25,
+      "referenceWidth": 1805,
+      "referenceHeight": 1426,
+      "points": [
+        {
+          "id": "KZ-S-01",
+          "map": "suburbs",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.654848,
+          "y": 0.198457,
+          "pixelPosition": {
+            "x": 1182,
+            "y": 283,
+            "width": 1805,
+            "height": 1426
+          },
+          "label": "小镇西北 BOSS",
+          "region": "town",
+          "enemyClass": "boss",
+          "enemyClassOriginal": "boss",
+          "enemyNames": [],
+          "cacophonyDisappears": true,
+          "gradeChange": null,
+          "status": "fixed_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。",
+          "sourceImage": 25,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 11,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。原图青色标记：喧响区出现时消失，部分会被 Phantom Ulidim 替代。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 25,
+          "authorReview": {
+            "id": "KZ-S-01",
+            "map": "suburbs",
+            "oldEvidenceId": 11,
+            "newEvidenceId": 25,
+            "oldPixel": [
+              1182,
+              283
+            ],
+            "newImageSize": [
+              1805,
+              1426
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              1182,
+              283
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run."
+        },
+        {
+          "id": "KZ-S-02",
+          "map": "suburbs",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.823269,
+          "y": 0.212482,
+          "pixelPosition": {
+            "x": 1486,
+            "y": 303,
+            "width": 1805,
+            "height": 1426
+          },
+          "label": "小镇北侧 BOSS",
+          "region": "town",
+          "enemyClass": "boss",
+          "enemyClassOriginal": "boss",
+          "enemyNames": [],
+          "cacophonyDisappears": false,
+          "gradeChange": null,
+          "status": "fixed_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。",
+          "sourceImage": 25,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 11,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 25,
+          "authorReview": {
+            "id": "KZ-S-02",
+            "map": "suburbs",
+            "oldEvidenceId": 11,
+            "newEvidenceId": 25,
+            "oldPixel": [
+              1486,
+              303
+            ],
+            "newImageSize": [
+              1805,
+              1426
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              1486,
+              303
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run."
+        },
+        {
+          "id": "KZ-S-03",
+          "map": "suburbs",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.679224,
+          "y": 0.286816,
+          "pixelPosition": {
+            "x": 1226,
+            "y": 409,
+            "width": 1805,
+            "height": 1426
+          },
+          "label": "小镇餐馆南侧精英 / 小怪",
+          "region": "town",
+          "enemyClass": "elite",
+          "enemyClassOriginal": "elite_or_mob",
+          "enemyNames": [],
+          "cacophonyDisappears": true,
+          "gradeChange": "upgrade",
+          "status": "fixed_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。原图将精英与小怪合并为同一图例。",
+          "sourceImage": 25,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 11,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。原图将精英与小怪合并为同一图例。原图青色标记：喧响区出现时消失，部分会被 Phantom Ulidim 替代。原图上箭头：可升级为会掉落 Reverb Vessels 的 BOSS。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 25,
+          "authorReview": {
+            "id": "KZ-S-03",
+            "map": "suburbs",
+            "oldEvidenceId": 11,
+            "newEvidenceId": 25,
+            "oldPixel": [
+              1226,
+              409
+            ],
+            "newImageSize": [
+              1805,
+              1426
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              1226,
+              409
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run. The author uses one symbol for elites and mobs."
+        },
+        {
+          "id": "KZ-S-04",
+          "map": "suburbs",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.890305,
+          "y": 0.28892,
+          "pixelPosition": {
+            "x": 1607,
+            "y": 412,
+            "width": 1805,
+            "height": 1426
+          },
+          "label": "小镇东北精英 / 小怪",
+          "region": "town",
+          "enemyClass": "elite",
+          "enemyClassOriginal": "elite_or_mob",
+          "enemyNames": [],
+          "cacophonyDisappears": false,
+          "gradeChange": null,
+          "status": "unknown",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "新版作者图已移除此标记，作者称近期未见刷新；保留旧位置待核实，不代表客户端删除或永不出现。",
+          "sourceImage": 11,
+          "sourceDate": "2026-09-23",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 11,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。原图将精英与小怪合并为同一图例。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 25,
+          "authorReview": {
+            "id": "KZ-S-04",
+            "map": "suburbs",
+            "oldEvidenceId": 11,
+            "newEvidenceId": 25,
+            "oldPixel": [
+              1607,
+              412
+            ],
+            "newImageSize": [
+              1805,
+              1426
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "not-located-in-new-image",
+            "evidencePixel": null,
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation",
+            "note": "新版不再标出；作者称最东侧精英近期未见刷新，是玩家观察，不是客户端已删除证明。",
+            "suggestedStatus": "unknown"
+          },
+          "noteEn": "The author removed this marker after not seeing it spawn recently. Its old position is retained as unverified; this does not prove client removal or permanent absence."
+        },
+        {
+          "id": "KZ-S-05",
+          "map": "suburbs",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.761219,
+          "y": 0.327489,
+          "pixelPosition": {
+            "x": 1374,
+            "y": 467,
+            "width": 1805,
+            "height": 1426
+          },
+          "label": "拟态敌人 · Jane · 随机",
+          "region": "town",
+          "enemyClass": "doppelganger",
+          "enemyClassOriginal": "doppelganger",
+          "enemyNames": [
+            "Jane"
+          ],
+          "cacophonyDisappears": false,
+          "gradeChange": null,
+          "status": "random_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。",
+          "sourceImage": 25,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 11,
+            "sourceDate": "2026-09-23",
+            "status": "random_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 25,
+          "authorReview": {
+            "id": "KZ-S-05",
+            "map": "suburbs",
+            "oldEvidenceId": 11,
+            "newEvidenceId": 25,
+            "oldPixel": [
+              1374,
+              467
+            ],
+            "newImageSize": [
+              1805,
+              1426
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              1374,
+              467
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run."
+        },
+        {
+          "id": "KZ-S-06",
+          "map": "suburbs",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.210526,
+          "y": 0.328892,
+          "pixelPosition": {
+            "x": 380,
+            "y": 469,
+            "width": 1805,
+            "height": 1426
+          },
+          "label": "公路北侧 BOSS",
+          "region": "highway",
+          "enemyClass": "boss",
+          "enemyClassOriginal": "boss",
+          "enemyNames": [],
+          "cacophonyDisappears": false,
+          "gradeChange": null,
+          "status": "fixed_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。",
+          "sourceImage": 25,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 11,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 25,
+          "authorReview": {
+            "id": "KZ-S-06",
+            "map": "suburbs",
+            "oldEvidenceId": 11,
+            "newEvidenceId": 25,
+            "oldPixel": [
+              380,
+              469
+            ],
+            "newImageSize": [
+              1805,
+              1426
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              380,
+              469
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run."
+        },
+        {
+          "id": "KZ-S-07",
+          "map": "suburbs",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.862604,
+          "y": 0.335203,
+          "pixelPosition": {
+            "x": 1557,
+            "y": 478,
+            "width": 1805,
+            "height": 1426
+          },
+          "label": "小镇东侧 BOSS",
+          "region": "town",
+          "enemyClass": "boss",
+          "enemyClassOriginal": "boss",
+          "enemyNames": [],
+          "cacophonyDisappears": true,
+          "gradeChange": null,
+          "status": "fixed_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。",
+          "sourceImage": 25,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 11,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。原图青色标记：喧响区出现时消失，部分会被 Phantom Ulidim 替代。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 25,
+          "authorReview": {
+            "id": "KZ-S-07",
+            "map": "suburbs",
+            "oldEvidenceId": 11,
+            "newEvidenceId": 25,
+            "oldPixel": [
+              1557,
+              478
+            ],
+            "newImageSize": [
+              1805,
+              1426
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              1557,
+              478
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run."
+        },
+        {
+          "id": "KZ-S-08",
+          "map": "suburbs",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.504155,
+          "y": 0.352735,
+          "pixelPosition": {
+            "x": 910,
+            "y": 503,
+            "width": 1805,
+            "height": 1426
+          },
+          "label": "Romeul · 公路与小镇连接处 BOSS",
+          "region": "highway",
+          "enemyClass": "boss",
+          "enemyClassOriginal": "boss",
+          "enemyNames": [
+            "Romeul"
+          ],
+          "cacophonyDisappears": false,
+          "gradeChange": null,
+          "status": "fixed_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。",
+          "sourceImage": 25,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 11,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 25,
+          "authorReview": {
+            "id": "KZ-S-08",
+            "map": "suburbs",
+            "oldEvidenceId": 11,
+            "newEvidenceId": 25,
+            "oldPixel": [
+              910,
+              503
+            ],
+            "newImageSize": [
+              1805,
+              1426
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              910,
+              503
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run."
+        },
+        {
+          "id": "KZ-S-09",
+          "map": "suburbs",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.695291,
+          "y": 0.357644,
+          "pixelPosition": {
+            "x": 1255,
+            "y": 510,
+            "width": 1805,
+            "height": 1426
+          },
+          "label": "小镇中央精英 / 小怪",
+          "region": "town",
+          "enemyClass": "elite",
+          "enemyClassOriginal": "elite_or_mob",
+          "enemyNames": [],
+          "cacophonyDisappears": false,
+          "gradeChange": "upgrade",
+          "status": "fixed_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。原图将精英与小怪合并为同一图例。",
+          "sourceImage": 25,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 11,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。原图将精英与小怪合并为同一图例。原图上箭头：可升级为会掉落 Reverb Vessels 的 BOSS。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 25,
+          "authorReview": {
+            "id": "KZ-S-09",
+            "map": "suburbs",
+            "oldEvidenceId": 11,
+            "newEvidenceId": 25,
+            "oldPixel": [
+              1255,
+              510
+            ],
+            "newImageSize": [
+              1805,
+              1426
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              1255,
+              510
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run. The author uses one symbol for elites and mobs."
+        },
+        {
+          "id": "KZ-S-10",
+          "map": "suburbs",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.773961,
+          "y": 0.390603,
+          "pixelPosition": {
+            "x": 1397,
+            "y": 557,
+            "width": 1805,
+            "height": 1426
+          },
+          "label": "拟态敌人 · Manato · 随机",
+          "region": "town",
+          "enemyClass": "doppelganger",
+          "enemyClassOriginal": "doppelganger",
+          "enemyNames": [
+            "Manato"
+          ],
+          "cacophonyDisappears": false,
+          "gradeChange": null,
+          "status": "random_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。",
+          "sourceImage": 25,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 11,
+            "sourceDate": "2026-09-23",
+            "status": "random_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 25,
+          "authorReview": {
+            "id": "KZ-S-10",
+            "map": "suburbs",
+            "oldEvidenceId": 11,
+            "newEvidenceId": 25,
+            "oldPixel": [
+              1397,
+              557
+            ],
+            "newImageSize": [
+              1805,
+              1426
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              1397,
+              557
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run."
+        },
+        {
+          "id": "KZ-S-11",
+          "map": "suburbs",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.304155,
+          "y": 0.399018,
+          "pixelPosition": {
+            "x": 549,
+            "y": 569,
+            "width": 1805,
+            "height": 1426
+          },
+          "label": "拟态敌人 · Jane / Pulchra · 随机",
+          "region": "highway",
+          "enemyClass": "doppelganger",
+          "enemyClassOriginal": "doppelganger",
+          "enemyNames": [
+            "Jane",
+            "Pulchra"
+          ],
+          "cacophonyDisappears": false,
+          "gradeChange": null,
+          "status": "random_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。",
+          "sourceImage": 25,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 11,
+            "sourceDate": "2026-09-23",
+            "status": "random_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。列出的名字为同一位置的候选，并非同时出现。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 25,
+          "authorReview": {
+            "id": "KZ-S-11",
+            "map": "suburbs",
+            "oldEvidenceId": 11,
+            "newEvidenceId": 25,
+            "oldPixel": [
+              549,
+              569
+            ],
+            "newImageSize": [
+              1805,
+              1426
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              549,
+              569
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run."
+        },
+        {
+          "id": "KZ-S-12",
+          "map": "suburbs",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.288089,
+          "y": 0.467041,
+          "pixelPosition": {
+            "x": 520,
+            "y": 666,
+            "width": 1805,
+            "height": 1426
+          },
+          "label": "公路中部 BOSS",
+          "region": "highway",
+          "enemyClass": "boss",
+          "enemyClassOriginal": "boss",
+          "enemyNames": [],
+          "cacophonyDisappears": true,
+          "gradeChange": "downgrade",
+          "status": "fixed_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。",
+          "sourceImage": 25,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 11,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。原图下箭头：可降级为不再掉落 Reverb Vessels 的精英。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 25,
+          "authorReview": {
+            "id": "KZ-S-12",
+            "map": "suburbs",
+            "oldEvidenceId": 11,
+            "newEvidenceId": 25,
+            "oldPixel": [
+              520,
+              666
+            ],
+            "newImageSize": [
+              1805,
+              1426
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              520,
+              666
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation",
+            "verifiedFieldChange": {
+              "field": "cacophonyDisappears",
+              "old": false,
+              "new": true,
+              "evidence": "可降级BOSS外框从粉色变青色；新版图例称喧响区内高度可能消失。",
+              "evidencePixel": [
+                527.5,
+                675.0
+              ],
+              "preserveMainMapCoordinate": true
+            }
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run.",
+          "verifiedChanges": [
+            {
+              "id": "KZ-S-12",
+              "field": "cacophonyDisappears",
+              "old": false,
+              "new": true,
+              "evidence": "可降级BOSS外框从粉色变青色；新版图例称喧响区内高度可能消失。",
+              "evidencePixel": [
+                527.5,
+                675.0
+              ],
+              "preserveMainMapCoordinate": true
+            }
+          ]
+        },
+        {
+          "id": "KZ-S-13",
+          "map": "suburbs",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.161219,
+          "y": 0.470547,
+          "pixelPosition": {
+            "x": 291,
+            "y": 671,
+            "width": 1805,
+            "height": 1426
+          },
+          "label": "公路旅馆东侧精英 / 小怪",
+          "region": "highway",
+          "enemyClass": "elite",
+          "enemyClassOriginal": "elite_or_mob",
+          "enemyNames": [],
+          "cacophonyDisappears": true,
+          "gradeChange": "upgrade",
+          "status": "fixed_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。原图将精英与小怪合并为同一图例。",
+          "sourceImage": 25,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 11,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。原图将精英与小怪合并为同一图例。原图青色标记：喧响区出现时消失，部分会被 Phantom Ulidim 替代。原图上箭头：可升级为会掉落 Reverb Vessels 的 BOSS。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 25,
+          "authorReview": {
+            "id": "KZ-S-13",
+            "map": "suburbs",
+            "oldEvidenceId": 11,
+            "newEvidenceId": 25,
+            "oldPixel": [
+              291,
+              671
+            ],
+            "newImageSize": [
+              1805,
+              1426
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              291,
+              671
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run. The author uses one symbol for elites and mobs."
+        },
+        {
+          "id": "KZ-S-14",
+          "map": "suburbs",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.370637,
+          "y": 0.527349,
+          "pixelPosition": {
+            "x": 669,
+            "y": 752,
+            "width": 1805,
+            "height": 1426
+          },
+          "label": "公路东南 BOSS",
+          "region": "highway",
+          "enemyClass": "boss",
+          "enemyClassOriginal": "boss",
+          "enemyNames": [],
+          "cacophonyDisappears": false,
+          "gradeChange": null,
+          "status": "fixed_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。",
+          "sourceImage": 25,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 11,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 25,
+          "authorReview": {
+            "id": "KZ-S-14",
+            "map": "suburbs",
+            "oldEvidenceId": 11,
+            "newEvidenceId": 25,
+            "oldPixel": [
+              669,
+              752
+            ],
+            "newImageSize": [
+              1805,
+              1426
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              669,
+              752
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run."
+        },
+        {
+          "id": "KZ-S-15",
+          "map": "suburbs",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.119668,
+          "y": 0.540673,
+          "pixelPosition": {
+            "x": 216,
+            "y": 771,
+            "width": 1805,
+            "height": 1426
+          },
+          "label": "公路西南精英 / 小怪",
+          "region": "highway",
+          "enemyClass": "elite",
+          "enemyClassOriginal": "elite_or_mob",
+          "enemyNames": [],
+          "cacophonyDisappears": false,
+          "gradeChange": "upgrade",
+          "status": "fixed_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。原图将精英与小怪合并为同一图例。",
+          "sourceImage": 25,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 11,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。原图将精英与小怪合并为同一图例。原图上箭头：可升级为会掉落 Reverb Vessels 的 BOSS。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 25,
+          "authorReview": {
+            "id": "KZ-S-15",
+            "map": "suburbs",
+            "oldEvidenceId": 11,
+            "newEvidenceId": 25,
+            "oldPixel": [
+              216,
+              771
+            ],
+            "newImageSize": [
+              1805,
+              1426
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              216,
+              771
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run. The author uses one symbol for elites and mobs."
+        },
+        {
+          "id": "KZ-S-16",
+          "map": "suburbs",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.250416,
+          "y": 0.559607,
+          "pixelPosition": {
+            "x": 452,
+            "y": 798,
+            "width": 1805,
+            "height": 1426
+          },
+          "label": "公路南侧精英 / 小怪",
+          "region": "highway",
+          "enemyClass": "elite",
+          "enemyClassOriginal": "elite_or_mob",
+          "enemyNames": [],
+          "cacophonyDisappears": false,
+          "gradeChange": "upgrade",
+          "status": "fixed_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。原图将精英与小怪合并为同一图例。",
+          "sourceImage": 25,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 11,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。原图将精英与小怪合并为同一图例。原图上箭头：可升级为会掉落 Reverb Vessels 的 BOSS。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 25,
+          "authorReview": {
+            "id": "KZ-S-16",
+            "map": "suburbs",
+            "oldEvidenceId": 11,
+            "newEvidenceId": 25,
+            "oldPixel": [
+              452,
+              798
+            ],
+            "newImageSize": [
+              1805,
+              1426
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              452,
+              798
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run. The author uses one symbol for elites and mobs."
+        },
+        {
+          "id": "KZ-S-17",
+          "map": "suburbs",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.26759,
+          "y": 0.637447,
+          "pixelPosition": {
+            "x": 483,
+            "y": 909,
+            "width": 1805,
+            "height": 1426
+          },
+          "label": "公路南端 BOSS",
+          "region": "highway",
+          "enemyClass": "boss",
+          "enemyClassOriginal": "boss",
+          "enemyNames": [],
+          "cacophonyDisappears": false,
+          "gradeChange": null,
+          "status": "fixed_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。",
+          "sourceImage": 25,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 11,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 25,
+          "authorReview": {
+            "id": "KZ-S-17",
+            "map": "suburbs",
+            "oldEvidenceId": 11,
+            "newEvidenceId": 25,
+            "oldPixel": [
+              483,
+              909
+            ],
+            "newImageSize": [
+              1805,
+              1426
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              483,
+              909
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run."
+        },
+        {
+          "id": "KZ-S-18",
+          "map": "suburbs",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.559003,
+          "y": 0.650771,
+          "pixelPosition": {
+            "x": 1009,
+            "y": 928,
+            "width": 1805,
+            "height": 1426
+          },
+          "label": "拟态敌人 · Aria",
+          "region": "beach",
+          "enemyClass": "doppelganger",
+          "enemyClassOriginal": "doppelganger",
+          "enemyNames": [
+            "Aria"
+          ],
+          "cacophonyDisappears": false,
+          "gradeChange": null,
+          "status": "fixed_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。",
+          "sourceImage": 25,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 11,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 25,
+          "authorReview": {
+            "id": "KZ-S-18",
+            "map": "suburbs",
+            "oldEvidenceId": 11,
+            "newEvidenceId": 25,
+            "oldPixel": [
+              1009,
+              928
+            ],
+            "newImageSize": [
+              1805,
+              1426
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              1009,
+              928
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run."
+        },
+        {
+          "id": "KZ-S-19",
+          "map": "suburbs",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.510803,
+          "y": 0.654278,
+          "pixelPosition": {
+            "x": 922,
+            "y": 933,
+            "width": 1805,
+            "height": 1426
+          },
+          "label": "拟态敌人 · Aria / Manato / Isolde / Jane · 随机",
+          "region": "beach",
+          "enemyClass": "doppelganger",
+          "enemyClassOriginal": "doppelganger",
+          "enemyNames": [
+            "Aria",
+            "Manato",
+            "Isolde",
+            "Jane"
+          ],
+          "cacophonyDisappears": false,
+          "gradeChange": null,
+          "status": "random_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。",
+          "sourceImage": 25,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 11,
+            "sourceDate": "2026-09-23",
+            "status": "random_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。列出的名字为同一位置的候选，并非同时出现。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 25,
+          "authorReview": {
+            "id": "KZ-S-19",
+            "map": "suburbs",
+            "oldEvidenceId": 11,
+            "newEvidenceId": 25,
+            "oldPixel": [
+              922,
+              933
+            ],
+            "newImageSize": [
+              1805,
+              1426
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              922,
+              933
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run."
+        },
+        {
+          "id": "KZ-S-20",
+          "map": "suburbs",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.363989,
+          "y": 0.701964,
+          "pixelPosition": {
+            "x": 657,
+            "y": 1001,
+            "width": 1805,
+            "height": 1426
+          },
+          "label": "海滩西侧精英 / 小怪",
+          "region": "beach",
+          "enemyClass": "elite",
+          "enemyClassOriginal": "elite_or_mob",
+          "enemyNames": [],
+          "cacophonyDisappears": false,
+          "gradeChange": "upgrade",
+          "status": "fixed_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。原图将精英与小怪合并为同一图例。",
+          "sourceImage": 25,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 11,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。原图将精英与小怪合并为同一图例。原图上箭头：可升级为会掉落 Reverb Vessels 的 BOSS。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 25,
+          "authorReview": {
+            "id": "KZ-S-20",
+            "map": "suburbs",
+            "oldEvidenceId": 11,
+            "newEvidenceId": 25,
+            "oldPixel": [
+              657,
+              1001
+            ],
+            "newImageSize": [
+              1805,
+              1426
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              657,
+              1001
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run. The author uses one symbol for elites and mobs."
+        },
+        {
+          "id": "KZ-S-21",
+          "map": "suburbs",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.515789,
+          "y": 0.704769,
+          "pixelPosition": {
+            "x": 931,
+            "y": 1005,
+            "width": 1805,
+            "height": 1426
+          },
+          "label": "海滩北侧 BOSS",
+          "region": "beach",
+          "enemyClass": "boss",
+          "enemyClassOriginal": "boss",
+          "enemyNames": [],
+          "cacophonyDisappears": true,
+          "gradeChange": null,
+          "status": "fixed_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。",
+          "sourceImage": 25,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 11,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。原图青色标记：喧响区出现时消失，部分会被 Phantom Ulidim 替代。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 25,
+          "authorReview": {
+            "id": "KZ-S-21",
+            "map": "suburbs",
+            "oldEvidenceId": 11,
+            "newEvidenceId": 25,
+            "oldPixel": [
+              931,
+              1005
+            ],
+            "newImageSize": [
+              1805,
+              1426
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              931,
+              1005
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run."
+        },
+        {
+          "id": "KZ-S-22",
+          "map": "suburbs",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.670914,
+          "y": 0.720196,
+          "pixelPosition": {
+            "x": 1211,
+            "y": 1027,
+            "width": 1805,
+            "height": 1426
+          },
+          "label": "海滩与仓库连接处 BOSS",
+          "region": "warehouse",
+          "enemyClass": "boss",
+          "enemyClassOriginal": "boss",
+          "enemyNames": [],
+          "cacophonyDisappears": false,
+          "gradeChange": null,
+          "status": "fixed_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。",
+          "sourceImage": 25,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 11,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 25,
+          "authorReview": {
+            "id": "KZ-S-22",
+            "map": "suburbs",
+            "oldEvidenceId": 11,
+            "newEvidenceId": 25,
+            "oldPixel": [
+              1211,
+              1027
+            ],
+            "newImageSize": [
+              1805,
+              1426
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              1211,
+              1027
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run."
+        },
+        {
+          "id": "KZ-S-23",
+          "map": "suburbs",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.813296,
+          "y": 0.727209,
+          "pixelPosition": {
+            "x": 1468,
+            "y": 1037,
+            "width": 1805,
+            "height": 1426
+          },
+          "label": "仓库北侧 BOSS",
+          "region": "warehouse",
+          "enemyClass": "boss",
+          "enemyClassOriginal": "boss",
+          "enemyNames": [],
+          "cacophonyDisappears": false,
+          "gradeChange": null,
+          "status": "fixed_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。",
+          "sourceImage": 25,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 11,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 25,
+          "authorReview": {
+            "id": "KZ-S-23",
+            "map": "suburbs",
+            "oldEvidenceId": 11,
+            "newEvidenceId": 25,
+            "oldPixel": [
+              1468,
+              1037
+            ],
+            "newImageSize": [
+              1805,
+              1426
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              1468,
+              1037
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run."
+        },
+        {
+          "id": "KZ-S-24",
+          "map": "suburbs",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.214958,
+          "y": 0.742637,
+          "pixelPosition": {
+            "x": 388,
+            "y": 1059,
+            "width": 1805,
+            "height": 1426
+          },
+          "label": "Billy · 随机",
+          "region": "highway",
+          "enemyClass": "boss",
+          "enemyClassOriginal": "boss",
+          "enemyNames": [
+            "Billy"
+          ],
+          "cacophonyDisappears": false,
+          "gradeChange": null,
+          "status": "random_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。",
+          "sourceImage": 25,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 11,
+            "sourceDate": "2026-09-23",
+            "status": "random_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 25,
+          "authorReview": {
+            "id": "KZ-S-24",
+            "map": "suburbs",
+            "oldEvidenceId": 11,
+            "newEvidenceId": 25,
+            "oldPixel": [
+              388,
+              1059
+            ],
+            "newImageSize": [
+              1805,
+              1426
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              388,
+              1059
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run."
+        },
+        {
+          "id": "KZ-S-25",
+          "map": "suburbs",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.54626,
+          "y": 0.799439,
+          "pixelPosition": {
+            "x": 986,
+            "y": 1140,
+            "width": 1805,
+            "height": 1426
+          },
+          "label": "海滩东南精英 / 小怪",
+          "region": "beach",
+          "enemyClass": "elite",
+          "enemyClassOriginal": "elite_or_mob",
+          "enemyNames": [],
+          "cacophonyDisappears": false,
+          "gradeChange": "upgrade",
+          "status": "fixed_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。原图将精英与小怪合并为同一图例。",
+          "sourceImage": 25,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 11,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。原图将精英与小怪合并为同一图例。原图上箭头：可升级为会掉落 Reverb Vessels 的 BOSS。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 25,
+          "authorReview": {
+            "id": "KZ-S-25",
+            "map": "suburbs",
+            "oldEvidenceId": 11,
+            "newEvidenceId": 25,
+            "oldPixel": [
+              986,
+              1140
+            ],
+            "newImageSize": [
+              1805,
+              1426
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              986,
+              1140
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run. The author uses one symbol for elites and mobs."
+        },
+        {
+          "id": "KZ-S-26",
+          "map": "suburbs",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.865374,
+          "y": 0.837307,
+          "pixelPosition": {
+            "x": 1562,
+            "y": 1194,
+            "width": 1805,
+            "height": 1426
+          },
+          "label": "拟态敌人 · Isolde",
+          "region": "warehouse",
+          "enemyClass": "doppelganger",
+          "enemyClassOriginal": "doppelganger",
+          "enemyNames": [
+            "Isolde"
+          ],
+          "cacophonyDisappears": false,
+          "gradeChange": null,
+          "status": "fixed_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。",
+          "sourceImage": 25,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 11,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 25,
+          "authorReview": {
+            "id": "KZ-S-26",
+            "map": "suburbs",
+            "oldEvidenceId": 11,
+            "newEvidenceId": 25,
+            "oldPixel": [
+              1562,
+              1194
+            ],
+            "newImageSize": [
+              1805,
+              1426
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              1562,
+              1194
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run."
+        },
+        {
+          "id": "KZ-S-27",
+          "map": "suburbs",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.395568,
+          "y": 0.935484,
+          "pixelPosition": {
+            "x": 714,
+            "y": 1334,
+            "width": 1805,
+            "height": 1426
+          },
+          "label": "海滩最南端 BOSS",
+          "region": "beach",
+          "enemyClass": "boss",
+          "enemyClassOriginal": "boss",
+          "enemyNames": [],
+          "cacophonyDisappears": false,
+          "gradeChange": null,
+          "status": "fixed_source",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "按 KELZERO 2026-10-11 作者图核对；保留主底图位置，图标不代表本局必刷或确定掉落。",
+          "sourceImage": 25,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "shardDropConfirmed": false,
+          "previousEvidence": {
+            "sourceImage": 11,
+            "sourceDate": "2026-09-23",
+            "status": "fixed_source",
+            "note": "按 KELZERO 2026-09-23 敌人专图转录；图标不代表经实测必刷或确定碎片掉落。",
+            "floors": [],
+            "floorEvidence": "unlabelled"
+          },
+          "currentReviewImage": 25,
+          "authorReview": {
+            "id": "KZ-S-27",
+            "map": "suburbs",
+            "oldEvidenceId": 11,
+            "newEvidenceId": 25,
+            "oldPixel": [
+              714,
+              1334
+            ],
+            "newImageSize": [
+              1805,
+              1426
+            ],
+            "keepOldId": true,
+            "preserveMainMapCoordinate": true,
+            "status": "same-main-map-icon-visually-present",
+            "evidencePixel": [
+              714,
+              1334
+            ],
+            "pixelMeaning": "old-center within visually matched current icon; minor drawing shifts not physical relocation"
+          },
+          "noteEn": "Checked against KELZERO’s Oct 11, 2026 map. The main-map position is retained; the marker does not guarantee a spawn or a drop in your run."
+        },
+        {
+          "id": "KZ-S-28",
+          "map": "suburbs",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.6700831024930748,
+          "y": 0.20231416549789621,
+          "pixelPosition": {
+            "x": 1209.5,
+            "y": 288.5,
+            "width": 1805,
+            "height": 1426
+          },
+          "label": "幻影巡逻参考 · 1",
+          "labelEn": "Phantom patrol reference · 1",
+          "region": "patrol-reference",
+          "enemyClass": "phantom",
+          "enemyClassOriginal": "Ulidim Phantom",
+          "enemyNames": [
+            "Ulidim Phantom"
+          ],
+          "cacophonyDisappears": false,
+          "cacophonyOnly": true,
+          "gradeChange": null,
+          "status": "conditional",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "作者标为 Ulidim Phantom 巡逻位置，仅在喧响区出现。这里只是图上位置参考，不是精确刷新点或已测巡逻路线，也不保证本局出现或掉落。",
+          "noteEn": "The author marks an Ulidim Phantom patrol location that appears only in Cacophony Zones. This is a map reference, not an exact spawn or a measured patrol route; occurrence and drops are not guaranteed.",
+          "sourceImage": 25,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "routeEligible": false,
+          "shardDropConfirmed": false,
+          "authorReview": {
+            "map": "suburbs",
+            "newEvidenceId": 25,
+            "evidencePixel": [
+              1209.5,
+              288.5
+            ],
+            "imageSize": [
+              1805,
+              1426
+            ],
+            "coordinateRegion": "main-map",
+            "insetFloor": null,
+            "normalizedMainMapCandidate": [
+              0.6700831024930748,
+              0.20231416549789621
+            ],
+            "meaning": "author patrol-location marker; not a measured path, exact spawn or guaranteed occurrence",
+            "condition": "only inside Cacophony Zones according to author",
+            "worldPosition": null,
+            "routeEligible": false,
+            "canLabelGuaranteedSpawn": false
+          }
+        },
+        {
+          "id": "KZ-S-29",
+          "map": "suburbs",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.8639889196675901,
+          "y": 0.30049088359046283,
+          "pixelPosition": {
+            "x": 1559.5,
+            "y": 428.5,
+            "width": 1805,
+            "height": 1426
+          },
+          "label": "幻影巡逻参考 · 2",
+          "labelEn": "Phantom patrol reference · 2",
+          "region": "patrol-reference",
+          "enemyClass": "phantom",
+          "enemyClassOriginal": "Ulidim Phantom",
+          "enemyNames": [
+            "Ulidim Phantom"
+          ],
+          "cacophonyDisappears": false,
+          "cacophonyOnly": true,
+          "gradeChange": null,
+          "status": "conditional",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "作者标为 Ulidim Phantom 巡逻位置，仅在喧响区出现。这里只是图上位置参考，不是精确刷新点或已测巡逻路线，也不保证本局出现或掉落。",
+          "noteEn": "The author marks an Ulidim Phantom patrol location that appears only in Cacophony Zones. This is a map reference, not an exact spawn or a measured patrol route; occurrence and drops are not guaranteed.",
+          "sourceImage": 25,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "routeEligible": false,
+          "shardDropConfirmed": false,
+          "authorReview": {
+            "map": "suburbs",
+            "newEvidenceId": 25,
+            "evidencePixel": [
+              1559.5,
+              428.5
+            ],
+            "imageSize": [
+              1805,
+              1426
+            ],
+            "coordinateRegion": "main-map",
+            "insetFloor": null,
+            "normalizedMainMapCandidate": [
+              0.8639889196675901,
+              0.30049088359046283
+            ],
+            "meaning": "author patrol-location marker; not a measured path, exact spawn or guaranteed occurrence",
+            "condition": "only inside Cacophony Zones according to author",
+            "worldPosition": null,
+            "routeEligible": false,
+            "canLabelGuaranteedSpawn": false
+          }
+        },
+        {
+          "id": "KZ-S-30",
+          "map": "suburbs",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.48670360110803323,
+          "y": 0.3993688639551192,
+          "pixelPosition": {
+            "x": 878.5,
+            "y": 569.5,
+            "width": 1805,
+            "height": 1426
+          },
+          "label": "幻影巡逻参考 · 3",
+          "labelEn": "Phantom patrol reference · 3",
+          "region": "patrol-reference",
+          "enemyClass": "phantom",
+          "enemyClassOriginal": "Ulidim Phantom",
+          "enemyNames": [
+            "Ulidim Phantom"
+          ],
+          "cacophonyDisappears": false,
+          "cacophonyOnly": true,
+          "gradeChange": null,
+          "status": "conditional",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "作者标为 Ulidim Phantom 巡逻位置，仅在喧响区出现。这里只是图上位置参考，不是精确刷新点或已测巡逻路线，也不保证本局出现或掉落。",
+          "noteEn": "The author marks an Ulidim Phantom patrol location that appears only in Cacophony Zones. This is a map reference, not an exact spawn or a measured patrol route; occurrence and drops are not guaranteed.",
+          "sourceImage": 25,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "routeEligible": false,
+          "shardDropConfirmed": false,
+          "authorReview": {
+            "map": "suburbs",
+            "newEvidenceId": 25,
+            "evidencePixel": [
+              878.5,
+              569.5
+            ],
+            "imageSize": [
+              1805,
+              1426
+            ],
+            "coordinateRegion": "main-map",
+            "insetFloor": null,
+            "normalizedMainMapCandidate": [
+              0.48670360110803323,
+              0.3993688639551192
+            ],
+            "meaning": "author patrol-location marker; not a measured path, exact spawn or guaranteed occurrence",
+            "condition": "only inside Cacophony Zones according to author",
+            "worldPosition": null,
+            "routeEligible": false,
+            "canLabelGuaranteedSpawn": false
+          }
+        },
+        {
+          "id": "KZ-S-31",
+          "map": "suburbs",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.3044321329639889,
+          "y": 0.44004207573632537,
+          "pixelPosition": {
+            "x": 549.5,
+            "y": 627.5,
+            "width": 1805,
+            "height": 1426
+          },
+          "label": "幻影巡逻参考 · 4",
+          "labelEn": "Phantom patrol reference · 4",
+          "region": "patrol-reference",
+          "enemyClass": "phantom",
+          "enemyClassOriginal": "Ulidim Phantom",
+          "enemyNames": [
+            "Ulidim Phantom"
+          ],
+          "cacophonyDisappears": false,
+          "cacophonyOnly": true,
+          "gradeChange": null,
+          "status": "conditional",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "作者标为 Ulidim Phantom 巡逻位置，仅在喧响区出现。这里只是图上位置参考，不是精确刷新点或已测巡逻路线，也不保证本局出现或掉落。",
+          "noteEn": "The author marks an Ulidim Phantom patrol location that appears only in Cacophony Zones. This is a map reference, not an exact spawn or a measured patrol route; occurrence and drops are not guaranteed.",
+          "sourceImage": 25,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "routeEligible": false,
+          "shardDropConfirmed": false,
+          "authorReview": {
+            "map": "suburbs",
+            "newEvidenceId": 25,
+            "evidencePixel": [
+              549.5,
+              627.5
+            ],
+            "imageSize": [
+              1805,
+              1426
+            ],
+            "coordinateRegion": "main-map",
+            "insetFloor": null,
+            "normalizedMainMapCandidate": [
+              0.3044321329639889,
+              0.44004207573632537
+            ],
+            "meaning": "author patrol-location marker; not a measured path, exact spawn or guaranteed occurrence",
+            "condition": "only inside Cacophony Zones according to author",
+            "worldPosition": null,
+            "routeEligible": false,
+            "canLabelGuaranteedSpawn": false
+          }
+        },
+        {
+          "id": "KZ-S-32",
+          "map": "suburbs",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.8102493074792244,
+          "y": 0.6490182328190743,
+          "pixelPosition": {
+            "x": 1462.5,
+            "y": 925.5,
+            "width": 1805,
+            "height": 1426
+          },
+          "label": "幻影巡逻参考 · 5",
+          "labelEn": "Phantom patrol reference · 5",
+          "region": "patrol-reference",
+          "enemyClass": "phantom",
+          "enemyClassOriginal": "Ulidim Phantom",
+          "enemyNames": [
+            "Ulidim Phantom"
+          ],
+          "cacophonyDisappears": false,
+          "cacophonyOnly": true,
+          "gradeChange": null,
+          "status": "conditional",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "作者标为 Ulidim Phantom 巡逻位置，仅在喧响区出现。这里只是图上位置参考，不是精确刷新点或已测巡逻路线，也不保证本局出现或掉落。",
+          "noteEn": "The author marks an Ulidim Phantom patrol location that appears only in Cacophony Zones. This is a map reference, not an exact spawn or a measured patrol route; occurrence and drops are not guaranteed.",
+          "sourceImage": 25,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "routeEligible": false,
+          "shardDropConfirmed": false,
+          "authorReview": {
+            "map": "suburbs",
+            "newEvidenceId": 25,
+            "evidencePixel": [
+              1462.5,
+              925.5
+            ],
+            "imageSize": [
+              1805,
+              1426
+            ],
+            "coordinateRegion": "main-map",
+            "insetFloor": null,
+            "normalizedMainMapCandidate": [
+              0.8102493074792244,
+              0.6490182328190743
+            ],
+            "meaning": "author patrol-location marker; not a measured path, exact spawn or guaranteed occurrence",
+            "condition": "only inside Cacophony Zones according to author",
+            "worldPosition": null,
+            "routeEligible": false,
+            "canLabelGuaranteedSpawn": false
+          }
+        },
+        {
+          "id": "KZ-S-33",
+          "map": "suburbs",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.49778393351800554,
+          "y": 0.7044179523141655,
+          "pixelPosition": {
+            "x": 898.5,
+            "y": 1004.5,
+            "width": 1805,
+            "height": 1426
+          },
+          "label": "幻影巡逻参考 · 6",
+          "labelEn": "Phantom patrol reference · 6",
+          "region": "patrol-reference",
+          "enemyClass": "phantom",
+          "enemyClassOriginal": "Ulidim Phantom",
+          "enemyNames": [
+            "Ulidim Phantom"
+          ],
+          "cacophonyDisappears": false,
+          "cacophonyOnly": true,
+          "gradeChange": null,
+          "status": "conditional",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "作者标为 Ulidim Phantom 巡逻位置，仅在喧响区出现。这里只是图上位置参考，不是精确刷新点或已测巡逻路线，也不保证本局出现或掉落。",
+          "noteEn": "The author marks an Ulidim Phantom patrol location that appears only in Cacophony Zones. This is a map reference, not an exact spawn or a measured patrol route; occurrence and drops are not guaranteed.",
+          "sourceImage": 25,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "routeEligible": false,
+          "shardDropConfirmed": false,
+          "authorReview": {
+            "map": "suburbs",
+            "newEvidenceId": 25,
+            "evidencePixel": [
+              898.5,
+              1004.5
+            ],
+            "imageSize": [
+              1805,
+              1426
+            ],
+            "coordinateRegion": "main-map",
+            "insetFloor": null,
+            "normalizedMainMapCandidate": [
+              0.49778393351800554,
+              0.7044179523141655
+            ],
+            "meaning": "author patrol-location marker; not a measured path, exact spawn or guaranteed occurrence",
+            "condition": "only inside Cacophony Zones according to author",
+            "worldPosition": null,
+            "routeEligible": false,
+            "canLabelGuaranteedSpawn": false
+          }
+        },
+        {
+          "id": "KZ-S-34",
+          "map": "suburbs",
+          "type": "enemy",
+          "sourceKind": "kelzero",
+          "x": 0.8152354570637119,
+          "y": 0.8320476858345021,
+          "pixelPosition": {
+            "x": 1471.5,
+            "y": 1186.5,
+            "width": 1805,
+            "height": 1426
+          },
+          "label": "幻影巡逻参考 · 7",
+          "labelEn": "Phantom patrol reference · 7",
+          "region": "patrol-reference",
+          "enemyClass": "phantom",
+          "enemyClassOriginal": "Ulidim Phantom",
+          "enemyNames": [
+            "Ulidim Phantom"
+          ],
+          "cacophonyDisappears": false,
+          "cacophonyOnly": true,
+          "gradeChange": null,
+          "status": "conditional",
+          "floors": [],
+          "floorEvidence": "unlabelled",
+          "note": "作者标为 Ulidim Phantom 巡逻位置，仅在喧响区出现。这里只是图上位置参考，不是精确刷新点或已测巡逻路线，也不保证本局出现或掉落。",
+          "noteEn": "The author marks an Ulidim Phantom patrol location that appears only in Cacophony Zones. This is a map reference, not an exact spawn or a measured patrol route; occurrence and drops are not guaranteed.",
+          "sourceImage": 25,
+          "sourceDate": "2026-10-11",
+          "worldPosition": null,
+          "routeEligible": false,
+          "shardDropConfirmed": false,
+          "authorReview": {
+            "map": "suburbs",
+            "newEvidenceId": 25,
+            "evidencePixel": [
+              1471.5,
+              1186.5
+            ],
+            "imageSize": [
+              1805,
+              1426
+            ],
+            "coordinateRegion": "main-map",
+            "insetFloor": null,
+            "normalizedMainMapCandidate": [
+              0.8152354570637119,
+              0.8320476858345021
+            ],
+            "meaning": "author patrol-location marker; not a measured path, exact spawn or guaranteed occurrence",
+            "condition": "only inside Cacophony Zones according to author",
+            "worldPosition": null,
+            "routeEligible": false,
+            "canLabelGuaranteedSpawn": false
+          }
+        }
+      ]
+    }
+  },
+  "checkedAt": "2026-10-21",
+  "gameVersionVerified": false,
+  "reviewEvidence": "research/map-update-20261021.json",
+  "unplacedInsetPatrolReferences": [
+    {
+      "map": "janus",
+      "newEvidenceId": 28,
+      "evidencePixel": [
+        406.5,
+        399.5
+      ],
+      "imageSize": [
+        1616,
+        1629
+      ],
+      "coordinateRegion": "floor-inset",
+      "insetFloor": 2,
+      "normalizedMainMapCandidate": null,
+      "meaning": "author patrol-location marker; not a measured path, exact spawn or guaranteed occurrence",
+      "condition": "only inside Cacophony Zones according to author",
+      "worldPosition": null,
+      "routeEligible": false,
+      "canLabelGuaranteedSpawn": false
+    },
+    {
+      "map": "janus",
+      "newEvidenceId": 28,
+      "evidencePixel": [
+        278.5,
+        603.5
+      ],
+      "imageSize": [
+        1616,
+        1629
+      ],
+      "coordinateRegion": "floor-inset",
+      "insetFloor": 3,
+      "normalizedMainMapCandidate": null,
+      "meaning": "author patrol-location marker; not a measured path, exact spawn or guaranteed occurrence",
+      "condition": "only inside Cacophony Zones according to author",
+      "worldPosition": null,
+      "routeEligible": false,
+      "canLabelGuaranteedSpawn": false
+    },
+    {
+      "map": "janus",
+      "newEvidenceId": 28,
+      "evidencePixel": [
+        348.5,
+        1338.5
+      ],
+      "imageSize": [
+        1616,
+        1629
+      ],
+      "coordinateRegion": "floor-inset",
+      "insetFloor": 2,
+      "normalizedMainMapCandidate": null,
+      "meaning": "author patrol-location marker; not a measured path, exact spawn or guaranteed occurrence",
+      "condition": "only inside Cacophony Zones according to author",
+      "worldPosition": null,
+      "routeEligible": false,
+      "canLabelGuaranteedSpawn": false
+    },
+    {
+      "map": "janus",
+      "newEvidenceId": 28,
+      "evidencePixel": [
+        368.5,
+        1479.5
+      ],
+      "imageSize": [
+        1616,
+        1629
+      ],
+      "coordinateRegion": "floor-inset",
+      "insetFloor": 1,
+      "normalizedMainMapCandidate": null,
+      "meaning": "author patrol-location marker; not a measured path, exact spawn or guaranteed occurrence",
+      "condition": "only inside Cacophony Zones according to author",
+      "worldPosition": null,
+      "routeEligible": false,
+      "canLabelGuaranteedSpawn": false
+    }
+  ]
+}

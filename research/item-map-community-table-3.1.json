@@ -1,0 +1,1947 @@
+{
+  "metadata": {
+    "updatedAt": "2026-09-12",
+    "sourceId": "bili-BV1qSb36zEyx-table",
+    "sourceVersion": "3.1.0",
+    "versionScope": "记录继续用于已有物资的地图参考；表格未覆盖3.2新增物品。",
+    "applicability": {
+      "currentVersion": "3.2.0",
+      "basis": "site_owner_statement",
+      "note": "站点维护者说明：3.2仅新增物资，已有物资产出规则未改动。已有记录继续适用，保留原始日期与证据等级；该说明不作为官方公告引用。"
+    },
+    "originalAuthor": "原初の守夜人",
+    "originalCommentDate": "2026-08-27",
+    "videoAuthor": "Mark小黑",
+    "videoPublishedAt": "2026-09-08",
+    "sourceMethod": "视频简介署名与20–30秒画面核对；原评论通过视频截图读取，未直接读取原评论。",
+    "kind": "unverified_community_table",
+    "exclusive": false,
+    "probabilityStatus": "unverified",
+    "probabilityNote": "原作者注明概率供参考、不确定；本站未采用表内比例作为掉率。",
+    "scope": "仅作局内物品产出地图的社区参考，不据此判断地图独占、难度或容器，不包含撤离后随机奖励。",
+    "items": 22,
+    "compatibleWithCurrentConfig": 16,
+    "currentMapPending": 6,
+    "links": [
+      {
+        "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=26",
+        "title": "视频中的地图表 · 26秒"
+      },
+      {
+        "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=20",
+        "title": "原评论与概率说明 · 20秒"
+      }
+    ],
+    "forumResearchAt": "2026-09-12",
+    "forumDiscussion": {
+      "note": "关于地图是否限定，玩家资料存在分歧：有作者认为两图均可产出、只是概率不同，也有玩家认为部分物品分图。现有讨论不足以确定地图独占或具体掉率。",
+      "links": [
+        {
+          "url": "https://www.miyoushe.com/zzz/article/77524189",
+          "title": "米游社 · 大红地图分布盘点"
+        },
+        {
+          "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+          "title": "米游社 · 地图限定讨论"
+        }
+      ],
+      "accessNote": "原帖若无法打开，可先展开本站摘要。摘要由本站整理，原帖链接保留在各条摘要中。",
+      "sources": [
+        {
+          "id": "mys-77524189",
+          "label": "大红地图分布盘点",
+          "platform": "米游社",
+          "title": "贝果计划大红盘点，目标是全图鉴",
+          "author": "格拉默第一星推",
+          "publishedAt": "2026-08-16",
+          "updatedAt": "2026-09-04",
+          "summary": "作者认为两图都可能出大红，区别在于常见程度；将血蝉等列为城郊较常见、红宝石戒指等列为雅努斯较常见，并认为电视等物品两图相近。",
+          "limitation": "这是玩家的经验归纳，未提供逐件跨地图获得记录或可复核样本，不能据此确认地图独占或具体概率。",
+          "links": [
+            {
+              "url": "https://www.miyoushe.com/zzz/article/77524189",
+              "title": "查看米游社原帖"
+            }
+          ]
+        },
+        {
+          "id": "mys-77781577",
+          "label": "地图限定讨论",
+          "platform": "米游社",
+          "title": "搜打撤的所有大红都能在一个地图里出吗？",
+          "author": "叶里qwq",
+          "publishedAt": "2026-08-26",
+          "summary": "评论中的看法并不一致：有人认为部分高价值物品分地图，也有人认为血蝉只是城郊更常见、雅努斯更少见。",
+          "limitation": "本站摘要依据原帖及已读取的公开评论。原帖是提问，评论缺少逐件实机记录，仅能说明玩家存在分歧，不能作为掉落结论。",
+          "links": [
+            {
+              "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+              "title": "查看米游社原帖与评论"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "items": {
+    "4360015": {
+      "sourceId": "bili-BV1qSb36zEyx-table",
+      "itemId": 4360015,
+      "name": "调频电视",
+      "maps": [
+        "suburbs",
+        "janus"
+      ],
+      "kind": "unverified_community_table",
+      "sourceVersion": "3.1.0",
+      "originalCommentDate": "2026-08-27",
+      "originalAuthor": "原初の守夜人",
+      "videoAuthor": "Mark小黑",
+      "currentVersion": "3.2.0",
+      "applicability": {
+        "currentVersion": "3.2.0",
+        "basis": "site_owner_statement",
+        "note": "站点维护者说明：3.2仅新增物资，已有物资产出规则未改动。已有记录继续适用，保留原始日期与证据等级；该说明不作为官方公告引用。"
+      },
+      "crossCheck": "compatible_with_config",
+      "exclusive": false,
+      "probabilityStatus": "unverified",
+      "links": [
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=26",
+          "title": "视频中的地图表 · 26秒"
+        },
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=20",
+          "title": "原评论与概率说明 · 20秒"
+        }
+      ],
+      "discussion": {
+        "note": "关于地图是否限定，玩家资料存在分歧：有作者认为两图均可产出、只是概率不同，也有玩家认为部分物品分图。现有讨论不足以确定地图独占或具体掉率。",
+        "links": [
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77524189",
+            "title": "米游社 · 大红地图分布盘点"
+          },
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+            "title": "米游社 · 地图限定讨论"
+          }
+        ],
+        "accessNote": "原帖若无法打开，可先展开本站摘要。摘要由本站整理，原帖链接保留在各条摘要中。",
+        "sources": [
+          {
+            "id": "mys-77524189",
+            "label": "大红地图分布盘点",
+            "platform": "米游社",
+            "title": "贝果计划大红盘点，目标是全图鉴",
+            "author": "格拉默第一星推",
+            "publishedAt": "2026-08-16",
+            "updatedAt": "2026-09-04",
+            "summary": "作者认为两图都可能出大红，区别在于常见程度；将血蝉等列为城郊较常见、红宝石戒指等列为雅努斯较常见，并认为电视等物品两图相近。",
+            "limitation": "这是玩家的经验归纳，未提供逐件跨地图获得记录或可复核样本，不能据此确认地图独占或具体概率。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77524189",
+                "title": "查看米游社原帖"
+              }
+            ]
+          },
+          {
+            "id": "mys-77781577",
+            "label": "地图限定讨论",
+            "platform": "米游社",
+            "title": "搜打撤的所有大红都能在一个地图里出吗？",
+            "author": "叶里qwq",
+            "publishedAt": "2026-08-26",
+            "summary": "评论中的看法并不一致：有人认为部分高价值物品分地图，也有人认为血蝉只是城郊更常见、雅努斯更少见。",
+            "limitation": "本站摘要依据原帖及已读取的公开评论。原帖是提问，评论缺少逐件实机记录，仅能说明玩家存在分歧，不能作为掉落结论。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+                "title": "查看米游社原帖与评论"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "4360045": {
+      "sourceId": "bili-BV1qSb36zEyx-table",
+      "itemId": 4360045,
+      "name": "闭路电视",
+      "maps": [
+        "suburbs",
+        "janus"
+      ],
+      "kind": "unverified_community_table",
+      "sourceVersion": "3.1.0",
+      "originalCommentDate": "2026-08-27",
+      "originalAuthor": "原初の守夜人",
+      "videoAuthor": "Mark小黑",
+      "currentVersion": "3.2.0",
+      "applicability": {
+        "currentVersion": "3.2.0",
+        "basis": "site_owner_statement",
+        "note": "站点维护者说明：3.2仅新增物资，已有物资产出规则未改动。已有记录继续适用，保留原始日期与证据等级；该说明不作为官方公告引用。"
+      },
+      "crossCheck": "pending",
+      "exclusive": false,
+      "probabilityStatus": "unverified",
+      "links": [
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=26",
+          "title": "视频中的地图表 · 26秒"
+        },
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=20",
+          "title": "原评论与概率说明 · 20秒"
+        }
+      ],
+      "discussion": {
+        "note": "关于地图是否限定，玩家资料存在分歧：有作者认为两图均可产出、只是概率不同，也有玩家认为部分物品分图。现有讨论不足以确定地图独占或具体掉率。",
+        "links": [
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77524189",
+            "title": "米游社 · 大红地图分布盘点"
+          },
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+            "title": "米游社 · 地图限定讨论"
+          }
+        ],
+        "accessNote": "原帖若无法打开，可先展开本站摘要。摘要由本站整理，原帖链接保留在各条摘要中。",
+        "sources": [
+          {
+            "id": "mys-77524189",
+            "label": "大红地图分布盘点",
+            "platform": "米游社",
+            "title": "贝果计划大红盘点，目标是全图鉴",
+            "author": "格拉默第一星推",
+            "publishedAt": "2026-08-16",
+            "updatedAt": "2026-09-04",
+            "summary": "作者认为两图都可能出大红，区别在于常见程度；将血蝉等列为城郊较常见、红宝石戒指等列为雅努斯较常见，并认为电视等物品两图相近。",
+            "limitation": "这是玩家的经验归纳，未提供逐件跨地图获得记录或可复核样本，不能据此确认地图独占或具体概率。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77524189",
+                "title": "查看米游社原帖"
+              }
+            ]
+          },
+          {
+            "id": "mys-77781577",
+            "label": "地图限定讨论",
+            "platform": "米游社",
+            "title": "搜打撤的所有大红都能在一个地图里出吗？",
+            "author": "叶里qwq",
+            "publishedAt": "2026-08-26",
+            "summary": "评论中的看法并不一致：有人认为部分高价值物品分地图，也有人认为血蝉只是城郊更常见、雅努斯更少见。",
+            "limitation": "本站摘要依据原帖及已读取的公开评论。原帖是提问，评论缺少逐件实机记录，仅能说明玩家存在分歧，不能作为掉落结论。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+                "title": "查看米游社原帖与评论"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "4360032": {
+      "sourceId": "bili-BV1qSb36zEyx-table",
+      "itemId": 4360032,
+      "name": "脆皮煎饺摆件",
+      "maps": [
+        "suburbs",
+        "janus"
+      ],
+      "kind": "unverified_community_table",
+      "sourceVersion": "3.1.0",
+      "originalCommentDate": "2026-08-27",
+      "originalAuthor": "原初の守夜人",
+      "videoAuthor": "Mark小黑",
+      "currentVersion": "3.2.0",
+      "applicability": {
+        "currentVersion": "3.2.0",
+        "basis": "site_owner_statement",
+        "note": "站点维护者说明：3.2仅新增物资，已有物资产出规则未改动。已有记录继续适用，保留原始日期与证据等级；该说明不作为官方公告引用。"
+      },
+      "crossCheck": "compatible_with_config",
+      "exclusive": false,
+      "probabilityStatus": "unverified",
+      "links": [
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=26",
+          "title": "视频中的地图表 · 26秒"
+        },
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=20",
+          "title": "原评论与概率说明 · 20秒"
+        }
+      ],
+      "discussion": {
+        "note": "关于地图是否限定，玩家资料存在分歧：有作者认为两图均可产出、只是概率不同，也有玩家认为部分物品分图。现有讨论不足以确定地图独占或具体掉率。",
+        "links": [
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77524189",
+            "title": "米游社 · 大红地图分布盘点"
+          },
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+            "title": "米游社 · 地图限定讨论"
+          }
+        ],
+        "accessNote": "原帖若无法打开，可先展开本站摘要。摘要由本站整理，原帖链接保留在各条摘要中。",
+        "sources": [
+          {
+            "id": "mys-77524189",
+            "label": "大红地图分布盘点",
+            "platform": "米游社",
+            "title": "贝果计划大红盘点，目标是全图鉴",
+            "author": "格拉默第一星推",
+            "publishedAt": "2026-08-16",
+            "updatedAt": "2026-09-04",
+            "summary": "作者认为两图都可能出大红，区别在于常见程度；将血蝉等列为城郊较常见、红宝石戒指等列为雅努斯较常见，并认为电视等物品两图相近。",
+            "limitation": "这是玩家的经验归纳，未提供逐件跨地图获得记录或可复核样本，不能据此确认地图独占或具体概率。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77524189",
+                "title": "查看米游社原帖"
+              }
+            ]
+          },
+          {
+            "id": "mys-77781577",
+            "label": "地图限定讨论",
+            "platform": "米游社",
+            "title": "搜打撤的所有大红都能在一个地图里出吗？",
+            "author": "叶里qwq",
+            "publishedAt": "2026-08-26",
+            "summary": "评论中的看法并不一致：有人认为部分高价值物品分地图，也有人认为血蝉只是城郊更常见、雅努斯更少见。",
+            "limitation": "本站摘要依据原帖及已读取的公开评论。原帖是提问，评论缺少逐件实机记录，仅能说明玩家存在分歧，不能作为掉落结论。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+                "title": "查看米游社原帖与评论"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "4360016": {
+      "sourceId": "bili-BV1qSb36zEyx-table",
+      "itemId": 4360016,
+      "name": "金卡带游戏机",
+      "maps": [
+        "suburbs",
+        "janus"
+      ],
+      "kind": "unverified_community_table",
+      "sourceVersion": "3.1.0",
+      "originalCommentDate": "2026-08-27",
+      "originalAuthor": "原初の守夜人",
+      "videoAuthor": "Mark小黑",
+      "currentVersion": "3.2.0",
+      "applicability": {
+        "currentVersion": "3.2.0",
+        "basis": "site_owner_statement",
+        "note": "站点维护者说明：3.2仅新增物资，已有物资产出规则未改动。已有记录继续适用，保留原始日期与证据等级；该说明不作为官方公告引用。"
+      },
+      "crossCheck": "compatible_with_config",
+      "exclusive": false,
+      "probabilityStatus": "unverified",
+      "links": [
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=26",
+          "title": "视频中的地图表 · 26秒"
+        },
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=20",
+          "title": "原评论与概率说明 · 20秒"
+        }
+      ],
+      "discussion": {
+        "note": "关于地图是否限定，玩家资料存在分歧：有作者认为两图均可产出、只是概率不同，也有玩家认为部分物品分图。现有讨论不足以确定地图独占或具体掉率。",
+        "links": [
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77524189",
+            "title": "米游社 · 大红地图分布盘点"
+          },
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+            "title": "米游社 · 地图限定讨论"
+          }
+        ],
+        "accessNote": "原帖若无法打开，可先展开本站摘要。摘要由本站整理，原帖链接保留在各条摘要中。",
+        "sources": [
+          {
+            "id": "mys-77524189",
+            "label": "大红地图分布盘点",
+            "platform": "米游社",
+            "title": "贝果计划大红盘点，目标是全图鉴",
+            "author": "格拉默第一星推",
+            "publishedAt": "2026-08-16",
+            "updatedAt": "2026-09-04",
+            "summary": "作者认为两图都可能出大红，区别在于常见程度；将血蝉等列为城郊较常见、红宝石戒指等列为雅努斯较常见，并认为电视等物品两图相近。",
+            "limitation": "这是玩家的经验归纳，未提供逐件跨地图获得记录或可复核样本，不能据此确认地图独占或具体概率。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77524189",
+                "title": "查看米游社原帖"
+              }
+            ]
+          },
+          {
+            "id": "mys-77781577",
+            "label": "地图限定讨论",
+            "platform": "米游社",
+            "title": "搜打撤的所有大红都能在一个地图里出吗？",
+            "author": "叶里qwq",
+            "publishedAt": "2026-08-26",
+            "summary": "评论中的看法并不一致：有人认为部分高价值物品分地图，也有人认为血蝉只是城郊更常见、雅努斯更少见。",
+            "limitation": "本站摘要依据原帖及已读取的公开评论。原帖是提问，评论缺少逐件实机记录，仅能说明玩家存在分歧，不能作为掉落结论。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+                "title": "查看米游社原帖与评论"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "4360012": {
+      "sourceId": "bili-BV1qSb36zEyx-table",
+      "itemId": 4360012,
+      "name": "《杜拉罕的微笑》",
+      "maps": [
+        "suburbs",
+        "janus"
+      ],
+      "kind": "unverified_community_table",
+      "sourceVersion": "3.1.0",
+      "originalCommentDate": "2026-08-27",
+      "originalAuthor": "原初の守夜人",
+      "videoAuthor": "Mark小黑",
+      "currentVersion": "3.2.0",
+      "applicability": {
+        "currentVersion": "3.2.0",
+        "basis": "site_owner_statement",
+        "note": "站点维护者说明：3.2仅新增物资，已有物资产出规则未改动。已有记录继续适用，保留原始日期与证据等级；该说明不作为官方公告引用。"
+      },
+      "crossCheck": "compatible_with_config",
+      "exclusive": false,
+      "probabilityStatus": "unverified",
+      "links": [
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=26",
+          "title": "视频中的地图表 · 26秒"
+        },
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=20",
+          "title": "原评论与概率说明 · 20秒"
+        }
+      ],
+      "discussion": {
+        "note": "关于地图是否限定，玩家资料存在分歧：有作者认为两图均可产出、只是概率不同，也有玩家认为部分物品分图。现有讨论不足以确定地图独占或具体掉率。",
+        "links": [
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77524189",
+            "title": "米游社 · 大红地图分布盘点"
+          },
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+            "title": "米游社 · 地图限定讨论"
+          }
+        ],
+        "accessNote": "原帖若无法打开，可先展开本站摘要。摘要由本站整理，原帖链接保留在各条摘要中。",
+        "sources": [
+          {
+            "id": "mys-77524189",
+            "label": "大红地图分布盘点",
+            "platform": "米游社",
+            "title": "贝果计划大红盘点，目标是全图鉴",
+            "author": "格拉默第一星推",
+            "publishedAt": "2026-08-16",
+            "updatedAt": "2026-09-04",
+            "summary": "作者认为两图都可能出大红，区别在于常见程度；将血蝉等列为城郊较常见、红宝石戒指等列为雅努斯较常见，并认为电视等物品两图相近。",
+            "limitation": "这是玩家的经验归纳，未提供逐件跨地图获得记录或可复核样本，不能据此确认地图独占或具体概率。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77524189",
+                "title": "查看米游社原帖"
+              }
+            ]
+          },
+          {
+            "id": "mys-77781577",
+            "label": "地图限定讨论",
+            "platform": "米游社",
+            "title": "搜打撤的所有大红都能在一个地图里出吗？",
+            "author": "叶里qwq",
+            "publishedAt": "2026-08-26",
+            "summary": "评论中的看法并不一致：有人认为部分高价值物品分地图，也有人认为血蝉只是城郊更常见、雅努斯更少见。",
+            "limitation": "本站摘要依据原帖及已读取的公开评论。原帖是提问，评论缺少逐件实机记录，仅能说明玩家存在分歧，不能作为掉落结论。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+                "title": "查看米游社原帖与评论"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "4360019": {
+      "sourceId": "bili-BV1qSb36zEyx-table",
+      "itemId": 4360019,
+      "name": "纯金冰淇淋",
+      "maps": [
+        "suburbs",
+        "janus"
+      ],
+      "kind": "unverified_community_table",
+      "sourceVersion": "3.1.0",
+      "originalCommentDate": "2026-08-27",
+      "originalAuthor": "原初の守夜人",
+      "videoAuthor": "Mark小黑",
+      "currentVersion": "3.2.0",
+      "applicability": {
+        "currentVersion": "3.2.0",
+        "basis": "site_owner_statement",
+        "note": "站点维护者说明：3.2仅新增物资，已有物资产出规则未改动。已有记录继续适用，保留原始日期与证据等级；该说明不作为官方公告引用。"
+      },
+      "crossCheck": "pending",
+      "exclusive": false,
+      "probabilityStatus": "unverified",
+      "links": [
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=26",
+          "title": "视频中的地图表 · 26秒"
+        },
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=20",
+          "title": "原评论与概率说明 · 20秒"
+        }
+      ],
+      "discussion": {
+        "note": "关于地图是否限定，玩家资料存在分歧：有作者认为两图均可产出、只是概率不同，也有玩家认为部分物品分图。现有讨论不足以确定地图独占或具体掉率。",
+        "links": [
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77524189",
+            "title": "米游社 · 大红地图分布盘点"
+          },
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+            "title": "米游社 · 地图限定讨论"
+          }
+        ],
+        "accessNote": "原帖若无法打开，可先展开本站摘要。摘要由本站整理，原帖链接保留在各条摘要中。",
+        "sources": [
+          {
+            "id": "mys-77524189",
+            "label": "大红地图分布盘点",
+            "platform": "米游社",
+            "title": "贝果计划大红盘点，目标是全图鉴",
+            "author": "格拉默第一星推",
+            "publishedAt": "2026-08-16",
+            "updatedAt": "2026-09-04",
+            "summary": "作者认为两图都可能出大红，区别在于常见程度；将血蝉等列为城郊较常见、红宝石戒指等列为雅努斯较常见，并认为电视等物品两图相近。",
+            "limitation": "这是玩家的经验归纳，未提供逐件跨地图获得记录或可复核样本，不能据此确认地图独占或具体概率。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77524189",
+                "title": "查看米游社原帖"
+              }
+            ]
+          },
+          {
+            "id": "mys-77781577",
+            "label": "地图限定讨论",
+            "platform": "米游社",
+            "title": "搜打撤的所有大红都能在一个地图里出吗？",
+            "author": "叶里qwq",
+            "publishedAt": "2026-08-26",
+            "summary": "评论中的看法并不一致：有人认为部分高价值物品分地图，也有人认为血蝉只是城郊更常见、雅努斯更少见。",
+            "limitation": "本站摘要依据原帖及已读取的公开评论。原帖是提问，评论缺少逐件实机记录，仅能说明玩家存在分歧，不能作为掉落结论。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+                "title": "查看米游社原帖与评论"
+              }
+            ]
+          }
+        ]
+      },
+      "relatedReports": [
+        {
+          "map": "janus",
+          "kind": "player_report",
+          "label": "米游社 · 3.2 玩家报告",
+          "difficulty": "high-risk",
+          "note": "暖可樂发帖说明搜出纯金冰淇淋；配图明确雅努斯幻境、高危、2026-09-10，并在调查收获中显示物品图标。记录支持局内取得，未展示拾取全过程。",
+          "links": [
+            {
+              "url": "https://www.miyoushe.com/zzz/article/78084950",
+              "title": "米游社 · 纯金冰淇淋调查收获"
+            }
+          ]
+        },
+        {
+          "map": "janus",
+          "kind": "player_report",
+          "label": "HoYoLAB · 3.1 玩家自述",
+          "difficulty": "high-risk",
+          "note": "Keytostar 于8月26日说明在光映广场搜到纯金冰淇淋，地点对应雅努斯幻境；地图依据作者自述。",
+          "links": [
+            {
+              "url": "https://www.hoyolab.com/article/46454878",
+              "title": "HoYoLAB · 光映广场冰淇淋记录"
+            }
+          ]
+        },
+        {
+          "map": "suburbs",
+          "kind": "player_report",
+          "label": "HoYoLAB · 3.1 玩家自述",
+          "difficulty": "unknown",
+          "note": "Ball™ Guy 在9月4日帖子的回复中说明，纯金冰淇淋来自绮梦度假村水族馆前，地点对应城郊幻境；尚无同段具名地图与拾取过程核对。",
+          "links": [
+            {
+              "url": "https://www.hoyolab.com/article/46573772",
+              "title": "HoYoLAB · 绮梦度假村冰淇淋讨论"
+            }
+          ]
+        }
+      ]
+    },
+    "4360031": {
+      "sourceId": "bili-BV1qSb36zEyx-table",
+      "itemId": 4360031,
+      "name": "燃油汽水摆件",
+      "maps": [
+        "suburbs"
+      ],
+      "kind": "unverified_community_table",
+      "sourceVersion": "3.1.0",
+      "originalCommentDate": "2026-08-27",
+      "originalAuthor": "原初の守夜人",
+      "videoAuthor": "Mark小黑",
+      "currentVersion": "3.2.0",
+      "applicability": {
+        "currentVersion": "3.2.0",
+        "basis": "site_owner_statement",
+        "note": "站点维护者说明：3.2仅新增物资，已有物资产出规则未改动。已有记录继续适用，保留原始日期与证据等级；该说明不作为官方公告引用。"
+      },
+      "crossCheck": "compatible_with_config",
+      "exclusive": false,
+      "probabilityStatus": "unverified",
+      "links": [
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=26",
+          "title": "视频中的地图表 · 26秒"
+        },
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=20",
+          "title": "原评论与概率说明 · 20秒"
+        }
+      ],
+      "discussion": {
+        "note": "关于地图是否限定，玩家资料存在分歧：有作者认为两图均可产出、只是概率不同，也有玩家认为部分物品分图。现有讨论不足以确定地图独占或具体掉率。",
+        "links": [
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77524189",
+            "title": "米游社 · 大红地图分布盘点"
+          },
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+            "title": "米游社 · 地图限定讨论"
+          }
+        ],
+        "accessNote": "原帖若无法打开，可先展开本站摘要。摘要由本站整理，原帖链接保留在各条摘要中。",
+        "sources": [
+          {
+            "id": "mys-77524189",
+            "label": "大红地图分布盘点",
+            "platform": "米游社",
+            "title": "贝果计划大红盘点，目标是全图鉴",
+            "author": "格拉默第一星推",
+            "publishedAt": "2026-08-16",
+            "updatedAt": "2026-09-04",
+            "summary": "作者认为两图都可能出大红，区别在于常见程度；将血蝉等列为城郊较常见、红宝石戒指等列为雅努斯较常见，并认为电视等物品两图相近。",
+            "limitation": "这是玩家的经验归纳，未提供逐件跨地图获得记录或可复核样本，不能据此确认地图独占或具体概率。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77524189",
+                "title": "查看米游社原帖"
+              }
+            ]
+          },
+          {
+            "id": "mys-77781577",
+            "label": "地图限定讨论",
+            "platform": "米游社",
+            "title": "搜打撤的所有大红都能在一个地图里出吗？",
+            "author": "叶里qwq",
+            "publishedAt": "2026-08-26",
+            "summary": "评论中的看法并不一致：有人认为部分高价值物品分地图，也有人认为血蝉只是城郊更常见、雅努斯更少见。",
+            "limitation": "本站摘要依据原帖及已读取的公开评论。原帖是提问，评论缺少逐件实机记录，仅能说明玩家存在分歧，不能作为掉落结论。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+                "title": "查看米游社原帖与评论"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "4360011": {
+      "sourceId": "bili-BV1qSb36zEyx-table",
+      "itemId": 4360011,
+      "name": "《星徽骑士典藏版》",
+      "maps": [
+        "suburbs"
+      ],
+      "kind": "unverified_community_table",
+      "sourceVersion": "3.1.0",
+      "originalCommentDate": "2026-08-27",
+      "originalAuthor": "原初の守夜人",
+      "videoAuthor": "Mark小黑",
+      "currentVersion": "3.2.0",
+      "applicability": {
+        "currentVersion": "3.2.0",
+        "basis": "site_owner_statement",
+        "note": "站点维护者说明：3.2仅新增物资，已有物资产出规则未改动。已有记录继续适用，保留原始日期与证据等级；该说明不作为官方公告引用。"
+      },
+      "crossCheck": "compatible_with_config",
+      "exclusive": false,
+      "probabilityStatus": "unverified",
+      "links": [
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=26",
+          "title": "视频中的地图表 · 26秒"
+        },
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=20",
+          "title": "原评论与概率说明 · 20秒"
+        }
+      ],
+      "discussion": {
+        "note": "关于地图是否限定，玩家资料存在分歧：有作者认为两图均可产出、只是概率不同，也有玩家认为部分物品分图。现有讨论不足以确定地图独占或具体掉率。",
+        "links": [
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77524189",
+            "title": "米游社 · 大红地图分布盘点"
+          },
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+            "title": "米游社 · 地图限定讨论"
+          }
+        ],
+        "accessNote": "原帖若无法打开，可先展开本站摘要。摘要由本站整理，原帖链接保留在各条摘要中。",
+        "sources": [
+          {
+            "id": "mys-77524189",
+            "label": "大红地图分布盘点",
+            "platform": "米游社",
+            "title": "贝果计划大红盘点，目标是全图鉴",
+            "author": "格拉默第一星推",
+            "publishedAt": "2026-08-16",
+            "updatedAt": "2026-09-04",
+            "summary": "作者认为两图都可能出大红，区别在于常见程度；将血蝉等列为城郊较常见、红宝石戒指等列为雅努斯较常见，并认为电视等物品两图相近。",
+            "limitation": "这是玩家的经验归纳，未提供逐件跨地图获得记录或可复核样本，不能据此确认地图独占或具体概率。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77524189",
+                "title": "查看米游社原帖"
+              }
+            ]
+          },
+          {
+            "id": "mys-77781577",
+            "label": "地图限定讨论",
+            "platform": "米游社",
+            "title": "搜打撤的所有大红都能在一个地图里出吗？",
+            "author": "叶里qwq",
+            "publishedAt": "2026-08-26",
+            "summary": "评论中的看法并不一致：有人认为部分高价值物品分地图，也有人认为血蝉只是城郊更常见、雅努斯更少见。",
+            "limitation": "本站摘要依据原帖及已读取的公开评论。原帖是提问，评论缺少逐件实机记录，仅能说明玩家存在分歧，不能作为掉落结论。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+                "title": "查看米游社原帖与评论"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "4360043": {
+      "sourceId": "bili-BV1qSb36zEyx-table",
+      "itemId": 4360043,
+      "name": "嗯呢钟（霜晓白）",
+      "maps": [
+        "suburbs"
+      ],
+      "kind": "unverified_community_table",
+      "sourceVersion": "3.1.0",
+      "originalCommentDate": "2026-08-27",
+      "originalAuthor": "原初の守夜人",
+      "videoAuthor": "Mark小黑",
+      "currentVersion": "3.2.0",
+      "applicability": {
+        "currentVersion": "3.2.0",
+        "basis": "site_owner_statement",
+        "note": "站点维护者说明：3.2仅新增物资，已有物资产出规则未改动。已有记录继续适用，保留原始日期与证据等级；该说明不作为官方公告引用。"
+      },
+      "crossCheck": "pending",
+      "exclusive": false,
+      "probabilityStatus": "unverified",
+      "links": [
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=26",
+          "title": "视频中的地图表 · 26秒"
+        },
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=20",
+          "title": "原评论与概率说明 · 20秒"
+        }
+      ],
+      "discussion": {
+        "note": "关于地图是否限定，玩家资料存在分歧：有作者认为两图均可产出、只是概率不同，也有玩家认为部分物品分图。现有讨论不足以确定地图独占或具体掉率。",
+        "links": [
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77524189",
+            "title": "米游社 · 大红地图分布盘点"
+          },
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+            "title": "米游社 · 地图限定讨论"
+          }
+        ],
+        "accessNote": "原帖若无法打开，可先展开本站摘要。摘要由本站整理，原帖链接保留在各条摘要中。",
+        "sources": [
+          {
+            "id": "mys-77524189",
+            "label": "大红地图分布盘点",
+            "platform": "米游社",
+            "title": "贝果计划大红盘点，目标是全图鉴",
+            "author": "格拉默第一星推",
+            "publishedAt": "2026-08-16",
+            "updatedAt": "2026-09-04",
+            "summary": "作者认为两图都可能出大红，区别在于常见程度；将血蝉等列为城郊较常见、红宝石戒指等列为雅努斯较常见，并认为电视等物品两图相近。",
+            "limitation": "这是玩家的经验归纳，未提供逐件跨地图获得记录或可复核样本，不能据此确认地图独占或具体概率。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77524189",
+                "title": "查看米游社原帖"
+              }
+            ]
+          },
+          {
+            "id": "mys-77781577",
+            "label": "地图限定讨论",
+            "platform": "米游社",
+            "title": "搜打撤的所有大红都能在一个地图里出吗？",
+            "author": "叶里qwq",
+            "publishedAt": "2026-08-26",
+            "summary": "评论中的看法并不一致：有人认为部分高价值物品分地图，也有人认为血蝉只是城郊更常见、雅努斯更少见。",
+            "limitation": "本站摘要依据原帖及已读取的公开评论。原帖是提问，评论缺少逐件实机记录，仅能说明玩家存在分歧，不能作为掉落结论。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+                "title": "查看米游社原帖与评论"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "4360035": {
+      "sourceId": "bili-BV1qSb36zEyx-table",
+      "itemId": 4360035,
+      "name": "嗯呢钟（白昼橙）",
+      "maps": [
+        "suburbs"
+      ],
+      "kind": "unverified_community_table",
+      "sourceVersion": "3.1.0",
+      "originalCommentDate": "2026-08-27",
+      "originalAuthor": "原初の守夜人",
+      "videoAuthor": "Mark小黑",
+      "currentVersion": "3.2.0",
+      "applicability": {
+        "currentVersion": "3.2.0",
+        "basis": "site_owner_statement",
+        "note": "站点维护者说明：3.2仅新增物资，已有物资产出规则未改动。已有记录继续适用，保留原始日期与证据等级；该说明不作为官方公告引用。"
+      },
+      "crossCheck": "compatible_with_config",
+      "exclusive": false,
+      "probabilityStatus": "unverified",
+      "links": [
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=26",
+          "title": "视频中的地图表 · 26秒"
+        },
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=20",
+          "title": "原评论与概率说明 · 20秒"
+        }
+      ],
+      "discussion": {
+        "note": "关于地图是否限定，玩家资料存在分歧：有作者认为两图均可产出、只是概率不同，也有玩家认为部分物品分图。现有讨论不足以确定地图独占或具体掉率。",
+        "links": [
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77524189",
+            "title": "米游社 · 大红地图分布盘点"
+          },
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+            "title": "米游社 · 地图限定讨论"
+          }
+        ],
+        "accessNote": "原帖若无法打开，可先展开本站摘要。摘要由本站整理，原帖链接保留在各条摘要中。",
+        "sources": [
+          {
+            "id": "mys-77524189",
+            "label": "大红地图分布盘点",
+            "platform": "米游社",
+            "title": "贝果计划大红盘点，目标是全图鉴",
+            "author": "格拉默第一星推",
+            "publishedAt": "2026-08-16",
+            "updatedAt": "2026-09-04",
+            "summary": "作者认为两图都可能出大红，区别在于常见程度；将血蝉等列为城郊较常见、红宝石戒指等列为雅努斯较常见，并认为电视等物品两图相近。",
+            "limitation": "这是玩家的经验归纳，未提供逐件跨地图获得记录或可复核样本，不能据此确认地图独占或具体概率。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77524189",
+                "title": "查看米游社原帖"
+              }
+            ]
+          },
+          {
+            "id": "mys-77781577",
+            "label": "地图限定讨论",
+            "platform": "米游社",
+            "title": "搜打撤的所有大红都能在一个地图里出吗？",
+            "author": "叶里qwq",
+            "publishedAt": "2026-08-26",
+            "summary": "评论中的看法并不一致：有人认为部分高价值物品分地图，也有人认为血蝉只是城郊更常见、雅努斯更少见。",
+            "limitation": "本站摘要依据原帖及已读取的公开评论。原帖是提问，评论缺少逐件实机记录，仅能说明玩家存在分歧，不能作为掉落结论。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+                "title": "查看米游社原帖与评论"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "4360037": {
+      "sourceId": "bili-BV1qSb36zEyx-table",
+      "itemId": 4360037,
+      "name": "邦哥大（象牙白）",
+      "maps": [
+        "suburbs"
+      ],
+      "kind": "unverified_community_table",
+      "sourceVersion": "3.1.0",
+      "originalCommentDate": "2026-08-27",
+      "originalAuthor": "原初の守夜人",
+      "videoAuthor": "Mark小黑",
+      "currentVersion": "3.2.0",
+      "applicability": {
+        "currentVersion": "3.2.0",
+        "basis": "site_owner_statement",
+        "note": "站点维护者说明：3.2仅新增物资，已有物资产出规则未改动。已有记录继续适用，保留原始日期与证据等级；该说明不作为官方公告引用。"
+      },
+      "crossCheck": "compatible_with_config",
+      "exclusive": false,
+      "probabilityStatus": "unverified",
+      "links": [
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=26",
+          "title": "视频中的地图表 · 26秒"
+        },
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=20",
+          "title": "原评论与概率说明 · 20秒"
+        }
+      ],
+      "discussion": {
+        "note": "关于地图是否限定，玩家资料存在分歧：有作者认为两图均可产出、只是概率不同，也有玩家认为部分物品分图。现有讨论不足以确定地图独占或具体掉率。",
+        "links": [
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77524189",
+            "title": "米游社 · 大红地图分布盘点"
+          },
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+            "title": "米游社 · 地图限定讨论"
+          }
+        ],
+        "accessNote": "原帖若无法打开，可先展开本站摘要。摘要由本站整理，原帖链接保留在各条摘要中。",
+        "sources": [
+          {
+            "id": "mys-77524189",
+            "label": "大红地图分布盘点",
+            "platform": "米游社",
+            "title": "贝果计划大红盘点，目标是全图鉴",
+            "author": "格拉默第一星推",
+            "publishedAt": "2026-08-16",
+            "updatedAt": "2026-09-04",
+            "summary": "作者认为两图都可能出大红，区别在于常见程度；将血蝉等列为城郊较常见、红宝石戒指等列为雅努斯较常见，并认为电视等物品两图相近。",
+            "limitation": "这是玩家的经验归纳，未提供逐件跨地图获得记录或可复核样本，不能据此确认地图独占或具体概率。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77524189",
+                "title": "查看米游社原帖"
+              }
+            ]
+          },
+          {
+            "id": "mys-77781577",
+            "label": "地图限定讨论",
+            "platform": "米游社",
+            "title": "搜打撤的所有大红都能在一个地图里出吗？",
+            "author": "叶里qwq",
+            "publishedAt": "2026-08-26",
+            "summary": "评论中的看法并不一致：有人认为部分高价值物品分地图，也有人认为血蝉只是城郊更常见、雅努斯更少见。",
+            "limitation": "本站摘要依据原帖及已读取的公开评论。原帖是提问，评论缺少逐件实机记录，仅能说明玩家存在分歧，不能作为掉落结论。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+                "title": "查看米游社原帖与评论"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "4360003": {
+      "sourceId": "bili-BV1qSb36zEyx-table",
+      "itemId": 4360003,
+      "name": "辉瓷戒指",
+      "maps": [
+        "suburbs"
+      ],
+      "kind": "unverified_community_table",
+      "sourceVersion": "3.1.0",
+      "originalCommentDate": "2026-08-27",
+      "originalAuthor": "原初の守夜人",
+      "videoAuthor": "Mark小黑",
+      "currentVersion": "3.2.0",
+      "applicability": {
+        "currentVersion": "3.2.0",
+        "basis": "site_owner_statement",
+        "note": "站点维护者说明：3.2仅新增物资，已有物资产出规则未改动。已有记录继续适用，保留原始日期与证据等级；该说明不作为官方公告引用。"
+      },
+      "crossCheck": "compatible_with_config",
+      "exclusive": false,
+      "probabilityStatus": "unverified",
+      "links": [
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=26",
+          "title": "视频中的地图表 · 26秒"
+        },
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=20",
+          "title": "原评论与概率说明 · 20秒"
+        }
+      ],
+      "discussion": {
+        "note": "关于地图是否限定，玩家资料存在分歧：有作者认为两图均可产出、只是概率不同，也有玩家认为部分物品分图。现有讨论不足以确定地图独占或具体掉率。",
+        "links": [
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77524189",
+            "title": "米游社 · 大红地图分布盘点"
+          },
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+            "title": "米游社 · 地图限定讨论"
+          }
+        ],
+        "accessNote": "原帖若无法打开，可先展开本站摘要。摘要由本站整理，原帖链接保留在各条摘要中。",
+        "sources": [
+          {
+            "id": "mys-77524189",
+            "label": "大红地图分布盘点",
+            "platform": "米游社",
+            "title": "贝果计划大红盘点，目标是全图鉴",
+            "author": "格拉默第一星推",
+            "publishedAt": "2026-08-16",
+            "updatedAt": "2026-09-04",
+            "summary": "作者认为两图都可能出大红，区别在于常见程度；将血蝉等列为城郊较常见、红宝石戒指等列为雅努斯较常见，并认为电视等物品两图相近。",
+            "limitation": "这是玩家的经验归纳，未提供逐件跨地图获得记录或可复核样本，不能据此确认地图独占或具体概率。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77524189",
+                "title": "查看米游社原帖"
+              }
+            ]
+          },
+          {
+            "id": "mys-77781577",
+            "label": "地图限定讨论",
+            "platform": "米游社",
+            "title": "搜打撤的所有大红都能在一个地图里出吗？",
+            "author": "叶里qwq",
+            "publishedAt": "2026-08-26",
+            "summary": "评论中的看法并不一致：有人认为部分高价值物品分地图，也有人认为血蝉只是城郊更常见、雅努斯更少见。",
+            "limitation": "本站摘要依据原帖及已读取的公开评论。原帖是提问，评论缺少逐件实机记录，仅能说明玩家存在分歧，不能作为掉落结论。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+                "title": "查看米游社原帖与评论"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "4360042": {
+      "sourceId": "bili-BV1qSb36zEyx-table",
+      "itemId": 4360042,
+      "name": "挂饰「血蝉」",
+      "maps": [
+        "suburbs"
+      ],
+      "kind": "unverified_community_table",
+      "sourceVersion": "3.1.0",
+      "originalCommentDate": "2026-08-27",
+      "originalAuthor": "原初の守夜人",
+      "videoAuthor": "Mark小黑",
+      "currentVersion": "3.2.0",
+      "applicability": {
+        "currentVersion": "3.2.0",
+        "basis": "site_owner_statement",
+        "note": "站点维护者说明：3.2仅新增物资，已有物资产出规则未改动。已有记录继续适用，保留原始日期与证据等级；该说明不作为官方公告引用。"
+      },
+      "crossCheck": "pending",
+      "exclusive": false,
+      "probabilityStatus": "unverified",
+      "links": [
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=26",
+          "title": "视频中的地图表 · 26秒"
+        },
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=20",
+          "title": "原评论与概率说明 · 20秒"
+        }
+      ],
+      "discussion": {
+        "note": "关于地图是否限定，玩家资料存在分歧：有作者认为两图均可产出、只是概率不同，也有玩家认为部分物品分图。现有讨论不足以确定地图独占或具体掉率。",
+        "links": [
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77524189",
+            "title": "米游社 · 大红地图分布盘点"
+          },
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+            "title": "米游社 · 地图限定讨论"
+          }
+        ],
+        "accessNote": "原帖若无法打开，可先展开本站摘要。摘要由本站整理，原帖链接保留在各条摘要中。",
+        "sources": [
+          {
+            "id": "mys-77524189",
+            "label": "大红地图分布盘点",
+            "platform": "米游社",
+            "title": "贝果计划大红盘点，目标是全图鉴",
+            "author": "格拉默第一星推",
+            "publishedAt": "2026-08-16",
+            "updatedAt": "2026-09-04",
+            "summary": "作者认为两图都可能出大红，区别在于常见程度；将血蝉等列为城郊较常见、红宝石戒指等列为雅努斯较常见，并认为电视等物品两图相近。",
+            "limitation": "这是玩家的经验归纳，未提供逐件跨地图获得记录或可复核样本，不能据此确认地图独占或具体概率。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77524189",
+                "title": "查看米游社原帖"
+              }
+            ]
+          },
+          {
+            "id": "mys-77781577",
+            "label": "地图限定讨论",
+            "platform": "米游社",
+            "title": "搜打撤的所有大红都能在一个地图里出吗？",
+            "author": "叶里qwq",
+            "publishedAt": "2026-08-26",
+            "summary": "评论中的看法并不一致：有人认为部分高价值物品分地图，也有人认为血蝉只是城郊更常见、雅努斯更少见。",
+            "limitation": "本站摘要依据原帖及已读取的公开评论。原帖是提问，评论缺少逐件实机记录，仅能说明玩家存在分歧，不能作为掉落结论。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+                "title": "查看米游社原帖与评论"
+              }
+            ]
+          }
+        ]
+      },
+      "relatedReports": [
+        {
+          "map": "suburbs",
+          "kind": "player_report",
+          "label": "米游社 · 3.1 玩家报告",
+          "difficulty": "hard",
+          "note": "落海夕烟于8月27日发帖称在城郊困难获得两件血蝉；局内安全箱配图中的图标与血蝉一致，另一张配图明确困难城郊幻境。未显示全名或拾取瞬间。",
+          "links": [
+            {
+              "url": "https://www.miyoushe.com/zzz/article/77796708",
+              "title": "米游社 · 城郊困难血蝉记录"
+            }
+          ]
+        }
+      ]
+    },
+    "4360017": {
+      "sourceId": "bili-BV1qSb36zEyx-table",
+      "itemId": 4360017,
+      "name": "金摆件·布思考",
+      "maps": [
+        "suburbs"
+      ],
+      "kind": "unverified_community_table",
+      "sourceVersion": "3.1.0",
+      "originalCommentDate": "2026-08-27",
+      "originalAuthor": "原初の守夜人",
+      "videoAuthor": "Mark小黑",
+      "currentVersion": "3.2.0",
+      "applicability": {
+        "currentVersion": "3.2.0",
+        "basis": "site_owner_statement",
+        "note": "站点维护者说明：3.2仅新增物资，已有物资产出规则未改动。已有记录继续适用，保留原始日期与证据等级；该说明不作为官方公告引用。"
+      },
+      "crossCheck": "compatible_with_config",
+      "exclusive": false,
+      "probabilityStatus": "unverified",
+      "links": [
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=26",
+          "title": "视频中的地图表 · 26秒"
+        },
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=20",
+          "title": "原评论与概率说明 · 20秒"
+        }
+      ],
+      "discussion": {
+        "note": "关于地图是否限定，玩家资料存在分歧：有作者认为两图均可产出、只是概率不同，也有玩家认为部分物品分图。现有讨论不足以确定地图独占或具体掉率。",
+        "links": [
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77524189",
+            "title": "米游社 · 大红地图分布盘点"
+          },
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+            "title": "米游社 · 地图限定讨论"
+          }
+        ],
+        "accessNote": "原帖若无法打开，可先展开本站摘要。摘要由本站整理，原帖链接保留在各条摘要中。",
+        "sources": [
+          {
+            "id": "mys-77524189",
+            "label": "大红地图分布盘点",
+            "platform": "米游社",
+            "title": "贝果计划大红盘点，目标是全图鉴",
+            "author": "格拉默第一星推",
+            "publishedAt": "2026-08-16",
+            "updatedAt": "2026-09-04",
+            "summary": "作者认为两图都可能出大红，区别在于常见程度；将血蝉等列为城郊较常见、红宝石戒指等列为雅努斯较常见，并认为电视等物品两图相近。",
+            "limitation": "这是玩家的经验归纳，未提供逐件跨地图获得记录或可复核样本，不能据此确认地图独占或具体概率。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77524189",
+                "title": "查看米游社原帖"
+              }
+            ]
+          },
+          {
+            "id": "mys-77781577",
+            "label": "地图限定讨论",
+            "platform": "米游社",
+            "title": "搜打撤的所有大红都能在一个地图里出吗？",
+            "author": "叶里qwq",
+            "publishedAt": "2026-08-26",
+            "summary": "评论中的看法并不一致：有人认为部分高价值物品分地图，也有人认为血蝉只是城郊更常见、雅努斯更少见。",
+            "limitation": "本站摘要依据原帖及已读取的公开评论。原帖是提问，评论缺少逐件实机记录，仅能说明玩家存在分歧，不能作为掉落结论。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+                "title": "查看米游社原帖与评论"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "4360033": {
+      "sourceId": "bili-BV1qSb36zEyx-table",
+      "itemId": 4360033,
+      "name": "奶油布丁摆件",
+      "maps": [
+        "janus"
+      ],
+      "kind": "unverified_community_table",
+      "sourceVersion": "3.1.0",
+      "originalCommentDate": "2026-08-27",
+      "originalAuthor": "原初の守夜人",
+      "videoAuthor": "Mark小黑",
+      "currentVersion": "3.2.0",
+      "applicability": {
+        "currentVersion": "3.2.0",
+        "basis": "site_owner_statement",
+        "note": "站点维护者说明：3.2仅新增物资，已有物资产出规则未改动。已有记录继续适用，保留原始日期与证据等级；该说明不作为官方公告引用。"
+      },
+      "crossCheck": "compatible_with_config",
+      "exclusive": false,
+      "probabilityStatus": "unverified",
+      "links": [
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=26",
+          "title": "视频中的地图表 · 26秒"
+        },
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=20",
+          "title": "原评论与概率说明 · 20秒"
+        }
+      ],
+      "discussion": {
+        "note": "关于地图是否限定，玩家资料存在分歧：有作者认为两图均可产出、只是概率不同，也有玩家认为部分物品分图。现有讨论不足以确定地图独占或具体掉率。",
+        "links": [
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77524189",
+            "title": "米游社 · 大红地图分布盘点"
+          },
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+            "title": "米游社 · 地图限定讨论"
+          }
+        ],
+        "accessNote": "原帖若无法打开，可先展开本站摘要。摘要由本站整理，原帖链接保留在各条摘要中。",
+        "sources": [
+          {
+            "id": "mys-77524189",
+            "label": "大红地图分布盘点",
+            "platform": "米游社",
+            "title": "贝果计划大红盘点，目标是全图鉴",
+            "author": "格拉默第一星推",
+            "publishedAt": "2026-08-16",
+            "updatedAt": "2026-09-04",
+            "summary": "作者认为两图都可能出大红，区别在于常见程度；将血蝉等列为城郊较常见、红宝石戒指等列为雅努斯较常见，并认为电视等物品两图相近。",
+            "limitation": "这是玩家的经验归纳，未提供逐件跨地图获得记录或可复核样本，不能据此确认地图独占或具体概率。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77524189",
+                "title": "查看米游社原帖"
+              }
+            ]
+          },
+          {
+            "id": "mys-77781577",
+            "label": "地图限定讨论",
+            "platform": "米游社",
+            "title": "搜打撤的所有大红都能在一个地图里出吗？",
+            "author": "叶里qwq",
+            "publishedAt": "2026-08-26",
+            "summary": "评论中的看法并不一致：有人认为部分高价值物品分地图，也有人认为血蝉只是城郊更常见、雅努斯更少见。",
+            "limitation": "本站摘要依据原帖及已读取的公开评论。原帖是提问，评论缺少逐件实机记录，仅能说明玩家存在分歧，不能作为掉落结论。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+                "title": "查看米游社原帖与评论"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "4360013": {
+      "sourceId": "bili-BV1qSb36zEyx-table",
+      "itemId": 4360013,
+      "name": "《苦情慢歌》",
+      "maps": [
+        "janus"
+      ],
+      "kind": "unverified_community_table",
+      "sourceVersion": "3.1.0",
+      "originalCommentDate": "2026-08-27",
+      "originalAuthor": "原初の守夜人",
+      "videoAuthor": "Mark小黑",
+      "currentVersion": "3.2.0",
+      "applicability": {
+        "currentVersion": "3.2.0",
+        "basis": "site_owner_statement",
+        "note": "站点维护者说明：3.2仅新增物资，已有物资产出规则未改动。已有记录继续适用，保留原始日期与证据等级；该说明不作为官方公告引用。"
+      },
+      "crossCheck": "compatible_with_config",
+      "exclusive": false,
+      "probabilityStatus": "unverified",
+      "links": [
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=26",
+          "title": "视频中的地图表 · 26秒"
+        },
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=20",
+          "title": "原评论与概率说明 · 20秒"
+        }
+      ],
+      "discussion": {
+        "note": "关于地图是否限定，玩家资料存在分歧：有作者认为两图均可产出、只是概率不同，也有玩家认为部分物品分图。现有讨论不足以确定地图独占或具体掉率。",
+        "links": [
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77524189",
+            "title": "米游社 · 大红地图分布盘点"
+          },
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+            "title": "米游社 · 地图限定讨论"
+          }
+        ],
+        "accessNote": "原帖若无法打开，可先展开本站摘要。摘要由本站整理，原帖链接保留在各条摘要中。",
+        "sources": [
+          {
+            "id": "mys-77524189",
+            "label": "大红地图分布盘点",
+            "platform": "米游社",
+            "title": "贝果计划大红盘点，目标是全图鉴",
+            "author": "格拉默第一星推",
+            "publishedAt": "2026-08-16",
+            "updatedAt": "2026-09-04",
+            "summary": "作者认为两图都可能出大红，区别在于常见程度；将血蝉等列为城郊较常见、红宝石戒指等列为雅努斯较常见，并认为电视等物品两图相近。",
+            "limitation": "这是玩家的经验归纳，未提供逐件跨地图获得记录或可复核样本，不能据此确认地图独占或具体概率。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77524189",
+                "title": "查看米游社原帖"
+              }
+            ]
+          },
+          {
+            "id": "mys-77781577",
+            "label": "地图限定讨论",
+            "platform": "米游社",
+            "title": "搜打撤的所有大红都能在一个地图里出吗？",
+            "author": "叶里qwq",
+            "publishedAt": "2026-08-26",
+            "summary": "评论中的看法并不一致：有人认为部分高价值物品分地图，也有人认为血蝉只是城郊更常见、雅努斯更少见。",
+            "limitation": "本站摘要依据原帖及已读取的公开评论。原帖是提问，评论缺少逐件实机记录，仅能说明玩家存在分歧，不能作为掉落结论。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+                "title": "查看米游社原帖与评论"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "4360034": {
+      "sourceId": "bili-BV1qSb36zEyx-table",
+      "itemId": 4360034,
+      "name": "嗯呢钟（午夜黑）",
+      "maps": [
+        "janus"
+      ],
+      "kind": "unverified_community_table",
+      "sourceVersion": "3.1.0",
+      "originalCommentDate": "2026-08-27",
+      "originalAuthor": "原初の守夜人",
+      "videoAuthor": "Mark小黑",
+      "currentVersion": "3.2.0",
+      "applicability": {
+        "currentVersion": "3.2.0",
+        "basis": "site_owner_statement",
+        "note": "站点维护者说明：3.2仅新增物资，已有物资产出规则未改动。已有记录继续适用，保留原始日期与证据等级；该说明不作为官方公告引用。"
+      },
+      "crossCheck": "compatible_with_config",
+      "exclusive": false,
+      "probabilityStatus": "unverified",
+      "links": [
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=26",
+          "title": "视频中的地图表 · 26秒"
+        },
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=20",
+          "title": "原评论与概率说明 · 20秒"
+        }
+      ],
+      "discussion": {
+        "note": "关于地图是否限定，玩家资料存在分歧：有作者认为两图均可产出、只是概率不同，也有玩家认为部分物品分图。现有讨论不足以确定地图独占或具体掉率。",
+        "links": [
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77524189",
+            "title": "米游社 · 大红地图分布盘点"
+          },
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+            "title": "米游社 · 地图限定讨论"
+          }
+        ],
+        "accessNote": "原帖若无法打开，可先展开本站摘要。摘要由本站整理，原帖链接保留在各条摘要中。",
+        "sources": [
+          {
+            "id": "mys-77524189",
+            "label": "大红地图分布盘点",
+            "platform": "米游社",
+            "title": "贝果计划大红盘点，目标是全图鉴",
+            "author": "格拉默第一星推",
+            "publishedAt": "2026-08-16",
+            "updatedAt": "2026-09-04",
+            "summary": "作者认为两图都可能出大红，区别在于常见程度；将血蝉等列为城郊较常见、红宝石戒指等列为雅努斯较常见，并认为电视等物品两图相近。",
+            "limitation": "这是玩家的经验归纳，未提供逐件跨地图获得记录或可复核样本，不能据此确认地图独占或具体概率。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77524189",
+                "title": "查看米游社原帖"
+              }
+            ]
+          },
+          {
+            "id": "mys-77781577",
+            "label": "地图限定讨论",
+            "platform": "米游社",
+            "title": "搜打撤的所有大红都能在一个地图里出吗？",
+            "author": "叶里qwq",
+            "publishedAt": "2026-08-26",
+            "summary": "评论中的看法并不一致：有人认为部分高价值物品分地图，也有人认为血蝉只是城郊更常见、雅努斯更少见。",
+            "limitation": "本站摘要依据原帖及已读取的公开评论。原帖是提问，评论缺少逐件实机记录，仅能说明玩家存在分歧，不能作为掉落结论。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+                "title": "查看米游社原帖与评论"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "4360036": {
+      "sourceId": "bili-BV1qSb36zEyx-table",
+      "itemId": 4360036,
+      "name": "邦哥大（檀木黑）",
+      "maps": [
+        "janus"
+      ],
+      "kind": "unverified_community_table",
+      "sourceVersion": "3.1.0",
+      "originalCommentDate": "2026-08-27",
+      "originalAuthor": "原初の守夜人",
+      "videoAuthor": "Mark小黑",
+      "currentVersion": "3.2.0",
+      "applicability": {
+        "currentVersion": "3.2.0",
+        "basis": "site_owner_statement",
+        "note": "站点维护者说明：3.2仅新增物资，已有物资产出规则未改动。已有记录继续适用，保留原始日期与证据等级；该说明不作为官方公告引用。"
+      },
+      "crossCheck": "compatible_with_config",
+      "exclusive": false,
+      "probabilityStatus": "unverified",
+      "links": [
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=26",
+          "title": "视频中的地图表 · 26秒"
+        },
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=20",
+          "title": "原评论与概率说明 · 20秒"
+        }
+      ],
+      "discussion": {
+        "note": "关于地图是否限定，玩家资料存在分歧：有作者认为两图均可产出、只是概率不同，也有玩家认为部分物品分图。现有讨论不足以确定地图独占或具体掉率。",
+        "links": [
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77524189",
+            "title": "米游社 · 大红地图分布盘点"
+          },
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+            "title": "米游社 · 地图限定讨论"
+          }
+        ],
+        "accessNote": "原帖若无法打开，可先展开本站摘要。摘要由本站整理，原帖链接保留在各条摘要中。",
+        "sources": [
+          {
+            "id": "mys-77524189",
+            "label": "大红地图分布盘点",
+            "platform": "米游社",
+            "title": "贝果计划大红盘点，目标是全图鉴",
+            "author": "格拉默第一星推",
+            "publishedAt": "2026-08-16",
+            "updatedAt": "2026-09-04",
+            "summary": "作者认为两图都可能出大红，区别在于常见程度；将血蝉等列为城郊较常见、红宝石戒指等列为雅努斯较常见，并认为电视等物品两图相近。",
+            "limitation": "这是玩家的经验归纳，未提供逐件跨地图获得记录或可复核样本，不能据此确认地图独占或具体概率。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77524189",
+                "title": "查看米游社原帖"
+              }
+            ]
+          },
+          {
+            "id": "mys-77781577",
+            "label": "地图限定讨论",
+            "platform": "米游社",
+            "title": "搜打撤的所有大红都能在一个地图里出吗？",
+            "author": "叶里qwq",
+            "publishedAt": "2026-08-26",
+            "summary": "评论中的看法并不一致：有人认为部分高价值物品分地图，也有人认为血蝉只是城郊更常见、雅努斯更少见。",
+            "limitation": "本站摘要依据原帖及已读取的公开评论。原帖是提问，评论缺少逐件实机记录，仅能说明玩家存在分歧，不能作为掉落结论。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+                "title": "查看米游社原帖与评论"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "4360044": {
+      "sourceId": "bili-BV1qSb36zEyx-table",
+      "itemId": 4360044,
+      "name": "邦哥大（琥珀橙）",
+      "maps": [
+        "janus"
+      ],
+      "kind": "unverified_community_table",
+      "sourceVersion": "3.1.0",
+      "originalCommentDate": "2026-08-27",
+      "originalAuthor": "原初の守夜人",
+      "videoAuthor": "Mark小黑",
+      "currentVersion": "3.2.0",
+      "applicability": {
+        "currentVersion": "3.2.0",
+        "basis": "site_owner_statement",
+        "note": "站点维护者说明：3.2仅新增物资，已有物资产出规则未改动。已有记录继续适用，保留原始日期与证据等级；该说明不作为官方公告引用。"
+      },
+      "crossCheck": "pending",
+      "exclusive": false,
+      "probabilityStatus": "unverified",
+      "links": [
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=26",
+          "title": "视频中的地图表 · 26秒"
+        },
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=20",
+          "title": "原评论与概率说明 · 20秒"
+        }
+      ],
+      "discussion": {
+        "note": "关于地图是否限定，玩家资料存在分歧：有作者认为两图均可产出、只是概率不同，也有玩家认为部分物品分图。现有讨论不足以确定地图独占或具体掉率。",
+        "links": [
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77524189",
+            "title": "米游社 · 大红地图分布盘点"
+          },
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+            "title": "米游社 · 地图限定讨论"
+          }
+        ],
+        "accessNote": "原帖若无法打开，可先展开本站摘要。摘要由本站整理，原帖链接保留在各条摘要中。",
+        "sources": [
+          {
+            "id": "mys-77524189",
+            "label": "大红地图分布盘点",
+            "platform": "米游社",
+            "title": "贝果计划大红盘点，目标是全图鉴",
+            "author": "格拉默第一星推",
+            "publishedAt": "2026-08-16",
+            "updatedAt": "2026-09-04",
+            "summary": "作者认为两图都可能出大红，区别在于常见程度；将血蝉等列为城郊较常见、红宝石戒指等列为雅努斯较常见，并认为电视等物品两图相近。",
+            "limitation": "这是玩家的经验归纳，未提供逐件跨地图获得记录或可复核样本，不能据此确认地图独占或具体概率。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77524189",
+                "title": "查看米游社原帖"
+              }
+            ]
+          },
+          {
+            "id": "mys-77781577",
+            "label": "地图限定讨论",
+            "platform": "米游社",
+            "title": "搜打撤的所有大红都能在一个地图里出吗？",
+            "author": "叶里qwq",
+            "publishedAt": "2026-08-26",
+            "summary": "评论中的看法并不一致：有人认为部分高价值物品分地图，也有人认为血蝉只是城郊更常见、雅努斯更少见。",
+            "limitation": "本站摘要依据原帖及已读取的公开评论。原帖是提问，评论缺少逐件实机记录，仅能说明玩家存在分歧，不能作为掉落结论。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+                "title": "查看米游社原帖与评论"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "4360041": {
+      "sourceId": "bili-BV1qSb36zEyx-table",
+      "itemId": 4360041,
+      "name": "红宝石戒指",
+      "maps": [
+        "janus"
+      ],
+      "kind": "unverified_community_table",
+      "sourceVersion": "3.1.0",
+      "originalCommentDate": "2026-08-27",
+      "originalAuthor": "原初の守夜人",
+      "videoAuthor": "Mark小黑",
+      "currentVersion": "3.2.0",
+      "applicability": {
+        "currentVersion": "3.2.0",
+        "basis": "site_owner_statement",
+        "note": "站点维护者说明：3.2仅新增物资，已有物资产出规则未改动。已有记录继续适用，保留原始日期与证据等级；该说明不作为官方公告引用。"
+      },
+      "crossCheck": "pending",
+      "exclusive": false,
+      "probabilityStatus": "unverified",
+      "links": [
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=26",
+          "title": "视频中的地图表 · 26秒"
+        },
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=20",
+          "title": "原评论与概率说明 · 20秒"
+        }
+      ],
+      "discussion": {
+        "note": "关于地图是否限定，玩家资料存在分歧：有作者认为两图均可产出、只是概率不同，也有玩家认为部分物品分图。现有讨论不足以确定地图独占或具体掉率。",
+        "links": [
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77524189",
+            "title": "米游社 · 大红地图分布盘点"
+          },
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+            "title": "米游社 · 地图限定讨论"
+          }
+        ],
+        "accessNote": "原帖若无法打开，可先展开本站摘要。摘要由本站整理，原帖链接保留在各条摘要中。",
+        "sources": [
+          {
+            "id": "mys-77524189",
+            "label": "大红地图分布盘点",
+            "platform": "米游社",
+            "title": "贝果计划大红盘点，目标是全图鉴",
+            "author": "格拉默第一星推",
+            "publishedAt": "2026-08-16",
+            "updatedAt": "2026-09-04",
+            "summary": "作者认为两图都可能出大红，区别在于常见程度；将血蝉等列为城郊较常见、红宝石戒指等列为雅努斯较常见，并认为电视等物品两图相近。",
+            "limitation": "这是玩家的经验归纳，未提供逐件跨地图获得记录或可复核样本，不能据此确认地图独占或具体概率。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77524189",
+                "title": "查看米游社原帖"
+              }
+            ]
+          },
+          {
+            "id": "mys-77781577",
+            "label": "地图限定讨论",
+            "platform": "米游社",
+            "title": "搜打撤的所有大红都能在一个地图里出吗？",
+            "author": "叶里qwq",
+            "publishedAt": "2026-08-26",
+            "summary": "评论中的看法并不一致：有人认为部分高价值物品分地图，也有人认为血蝉只是城郊更常见、雅努斯更少见。",
+            "limitation": "本站摘要依据原帖及已读取的公开评论。原帖是提问，评论缺少逐件实机记录，仅能说明玩家存在分歧，不能作为掉落结论。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+                "title": "查看米游社原帖与评论"
+              }
+            ]
+          }
+        ]
+      },
+      "relatedReports": [
+        {
+          "map": "janus",
+          "kind": "player_report",
+          "label": "米游社 · 3.2 收获图标核对",
+          "difficulty": "high-risk",
+          "note": "同帖战绩明确雅努斯幻境、高危、2026-09-10；调查收获第二格与红宝石戒指正式图标一致。正文未单独说明戒指，也未展示物品全名或拾取过程。",
+          "links": [
+            {
+              "url": "https://www.miyoushe.com/zzz/article/78084950",
+              "title": "米游社 · 雅努斯调查收获配图"
+            }
+          ]
+        }
+      ]
+    },
+    "4360014": {
+      "sourceId": "bili-BV1qSb36zEyx-table",
+      "itemId": 4360014,
+      "name": "挂饰「蝉」",
+      "maps": [
+        "janus"
+      ],
+      "kind": "unverified_community_table",
+      "sourceVersion": "3.1.0",
+      "originalCommentDate": "2026-08-27",
+      "originalAuthor": "原初の守夜人",
+      "videoAuthor": "Mark小黑",
+      "currentVersion": "3.2.0",
+      "applicability": {
+        "currentVersion": "3.2.0",
+        "basis": "site_owner_statement",
+        "note": "站点维护者说明：3.2仅新增物资，已有物资产出规则未改动。已有记录继续适用，保留原始日期与证据等级；该说明不作为官方公告引用。"
+      },
+      "crossCheck": "compatible_with_config",
+      "exclusive": false,
+      "probabilityStatus": "unverified",
+      "links": [
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=26",
+          "title": "视频中的地图表 · 26秒"
+        },
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=20",
+          "title": "原评论与概率说明 · 20秒"
+        }
+      ],
+      "discussion": {
+        "note": "关于地图是否限定，玩家资料存在分歧：有作者认为两图均可产出、只是概率不同，也有玩家认为部分物品分图。现有讨论不足以确定地图独占或具体掉率。",
+        "links": [
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77524189",
+            "title": "米游社 · 大红地图分布盘点"
+          },
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+            "title": "米游社 · 地图限定讨论"
+          }
+        ],
+        "accessNote": "原帖若无法打开，可先展开本站摘要。摘要由本站整理，原帖链接保留在各条摘要中。",
+        "sources": [
+          {
+            "id": "mys-77524189",
+            "label": "大红地图分布盘点",
+            "platform": "米游社",
+            "title": "贝果计划大红盘点，目标是全图鉴",
+            "author": "格拉默第一星推",
+            "publishedAt": "2026-08-16",
+            "updatedAt": "2026-09-04",
+            "summary": "作者认为两图都可能出大红，区别在于常见程度；将血蝉等列为城郊较常见、红宝石戒指等列为雅努斯较常见，并认为电视等物品两图相近。",
+            "limitation": "这是玩家的经验归纳，未提供逐件跨地图获得记录或可复核样本，不能据此确认地图独占或具体概率。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77524189",
+                "title": "查看米游社原帖"
+              }
+            ]
+          },
+          {
+            "id": "mys-77781577",
+            "label": "地图限定讨论",
+            "platform": "米游社",
+            "title": "搜打撤的所有大红都能在一个地图里出吗？",
+            "author": "叶里qwq",
+            "publishedAt": "2026-08-26",
+            "summary": "评论中的看法并不一致：有人认为部分高价值物品分地图，也有人认为血蝉只是城郊更常见、雅努斯更少见。",
+            "limitation": "本站摘要依据原帖及已读取的公开评论。原帖是提问，评论缺少逐件实机记录，仅能说明玩家存在分歧，不能作为掉落结论。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+                "title": "查看米游社原帖与评论"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "4360018": {
+      "sourceId": "bili-BV1qSb36zEyx-table",
+      "itemId": 4360018,
+      "name": "金摆件·思考布",
+      "maps": [
+        "janus"
+      ],
+      "kind": "unverified_community_table",
+      "sourceVersion": "3.1.0",
+      "originalCommentDate": "2026-08-27",
+      "originalAuthor": "原初の守夜人",
+      "videoAuthor": "Mark小黑",
+      "currentVersion": "3.2.0",
+      "applicability": {
+        "currentVersion": "3.2.0",
+        "basis": "site_owner_statement",
+        "note": "站点维护者说明：3.2仅新增物资，已有物资产出规则未改动。已有记录继续适用，保留原始日期与证据等级；该说明不作为官方公告引用。"
+      },
+      "crossCheck": "compatible_with_config",
+      "exclusive": false,
+      "probabilityStatus": "unverified",
+      "links": [
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=26",
+          "title": "视频中的地图表 · 26秒"
+        },
+        {
+          "url": "https://www.bilibili.com/video/BV1qSb36zEyx/?t=20",
+          "title": "原评论与概率说明 · 20秒"
+        }
+      ],
+      "discussion": {
+        "note": "关于地图是否限定，玩家资料存在分歧：有作者认为两图均可产出、只是概率不同，也有玩家认为部分物品分图。现有讨论不足以确定地图独占或具体掉率。",
+        "links": [
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77524189",
+            "title": "米游社 · 大红地图分布盘点"
+          },
+          {
+            "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+            "title": "米游社 · 地图限定讨论"
+          }
+        ],
+        "accessNote": "原帖若无法打开，可先展开本站摘要。摘要由本站整理，原帖链接保留在各条摘要中。",
+        "sources": [
+          {
+            "id": "mys-77524189",
+            "label": "大红地图分布盘点",
+            "platform": "米游社",
+            "title": "贝果计划大红盘点，目标是全图鉴",
+            "author": "格拉默第一星推",
+            "publishedAt": "2026-08-16",
+            "updatedAt": "2026-09-04",
+            "summary": "作者认为两图都可能出大红，区别在于常见程度；将血蝉等列为城郊较常见、红宝石戒指等列为雅努斯较常见，并认为电视等物品两图相近。",
+            "limitation": "这是玩家的经验归纳，未提供逐件跨地图获得记录或可复核样本，不能据此确认地图独占或具体概率。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77524189",
+                "title": "查看米游社原帖"
+              }
+            ]
+          },
+          {
+            "id": "mys-77781577",
+            "label": "地图限定讨论",
+            "platform": "米游社",
+            "title": "搜打撤的所有大红都能在一个地图里出吗？",
+            "author": "叶里qwq",
+            "publishedAt": "2026-08-26",
+            "summary": "评论中的看法并不一致：有人认为部分高价值物品分地图，也有人认为血蝉只是城郊更常见、雅努斯更少见。",
+            "limitation": "本站摘要依据原帖及已读取的公开评论。原帖是提问，评论缺少逐件实机记录，仅能说明玩家存在分歧，不能作为掉落结论。",
+            "links": [
+              {
+                "url": "https://www.miyoushe.com/zzz/article/77781577#reply",
+                "title": "查看米游社原帖与评论"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

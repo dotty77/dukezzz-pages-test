@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><base href="/dukezzz-pages-test/">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0c0f1d">
+  <link rel="icon" href="assets/brand/duke-patrick-sketch-v1-132.png" type="image/png">
+  <title>城郊幻境 · 3D 地图 — DUKE</title>
+  <script src="resource-cache.js?v=20261114-pages-test-1" data-cache-build="aed9537c5f7ef4f134019747db0cc2e9123207617e888de4ba82680322155887"></script>
+  <script src="theme.js"></script>
+  <script src="i18n.js?v=20261114-refresh-launch-1" defer></script>
+  <link rel="stylesheet" href="map-3d.css?v=20261022-map3d-launch-1">
+  <link rel="stylesheet" href="map-3d-roam.css?v=20261022-map3d-launch-1">
+  <script type="importmap">{"imports":{"three":"./vendor/three/three.module.js","three/addons/":"./vendor/three/addons/"}}</script>
+<meta name="robots" content="noindex,nofollow"><link rel="stylesheet" href="pages-test.css?v=20261114-pages-test-1"><script src="pages-test.js?v=20261114-pages-test-1" defer></script></head>
+<body data-i18n-skip data-map="suburbs">
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="DUKE 首页">DUKE<span>绝区零</span></a>
+    <span class="header-divider"></span>
+    <div class="page-title"><label class="map-selector"><span class="sr-only" data-ui="switchMap">切换地图</span><select id="map-selector" aria-label="切换地图"><option value="suburbs" selected>城郊幻境</option><option value="janus">雅努斯幻境</option></select></label><span class="tag">3D</span></div>
+    <nav class="header-actions" aria-label="页面导航">
+      <a class="back-link" href="./?map=suburbs" data-ui="back2d">返回 2D 地图</a>
+      <button id="language-toggle" class="icon-button" type="button" aria-label="Switch to English">EN</button>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切换主题"><span aria-hidden="true">◐</span></button>
+    </nav>
+  </header>
+  <main class="map-layout">
+    <button id="sidebar-shade" class="sidebar-shade" type="button" tabindex="-1" aria-label="关闭筛选" hidden></button>
+    <aside id="filter-panel" class="filter-panel" aria-label="点位筛选">
+      <div class="panel-heading"><div><span class="eyebrow" data-ui="operation">OPERATION BAGEL</span><h1 data-ui="pointsTitle">城郊点位</h1></div><button id="close-filters" class="icon-button mobile-only" type="button" aria-label="关闭筛选">×</button></div>
+      <label class="search-field"><span aria-hidden="true">⌕</span><input id="point-search" type="search" autocomplete="off" placeholder="搜索名称、编号、备注" aria-label="搜索点位"></label>
+      <div class="filter-summary"><span id="filter-count" role="status">读取点位中…</span><button id="reset-filters" class="text-button" type="button" data-ui="resetFilters">重置筛选</button></div>
+      <section class="filter-section" aria-labelledby="types-title"><div class="section-heading"><h2 id="types-title" data-ui="types">点位类型</h2><div class="small-actions"><button id="types-all" class="text-button" type="button" data-ui="selectAll">全选</button><button id="types-none" class="text-button" type="button" data-ui="clearAll">清空</button></div></div><div id="type-filters" class="type-filters"></div></section>
+      <section class="filter-section" aria-labelledby="status-title"><div class="section-heading"><h2 id="status-title" data-ui="statuses">刷新分类</h2><span class="muted" data-ui="multiSelect">可多选</span></div><div id="status-filters" class="chip-filters"></div></section>
+      <details class="filter-more"><summary data-ui="sourcesFloors">图层来源与楼层</summary><div id="layer-filters" class="layer-filters"></div><label class="floor-field"><span data-ui="floor">楼层标记</span><select id="floor-filter"><option value="all" data-ui="allFloors">全部楼层</option><option value="unknown" data-ui="unknownFloor">楼层未注明</option><option value="1">1F</option><option value="2">2F</option><option value="3">3F</option><option value="-1">B1</option></select></label></details>
+      <section id="results-section" class="results-section" hidden><div class="section-heading"><h2 id="results-title" data-ui="searchResults">搜索结果</h2><span id="result-count" class="muted"></span></div><div id="search-results"></div></section>
+      <details class="map-notes"><summary data-ui="readMap">地图说明</summary><p data-ui="pointCaveat">标记不保证每局刷新或掉落。</p><p data-ui="heightCaveat">配准位置与高度仅供参考，未标楼层仍待核验。</p><p data-ui="sourceCaveat">不同来源可能重复标注同一敌人。</p><p class="credits">© 游戏资源归原权利方所有<br><span data-ui="sourceCredit">资料标点：@KELZERO / 社区资料 / 客户端配置</span></p></details>
+      <div class="panel-foot"><span class="save-dot"></span><span data-ui="saved">筛选自动保存在本机</span></div>
+    </aside>
+    <section class="workspace" aria-label="3D 地图">
+      <div class="view-toolbar"><div class="toolbar-start"><button id="open-filters" class="mobile-only" type="button" aria-expanded="false" aria-controls="filter-panel" data-ui="filters">筛选</button><span class="map-name" data-ui="mapTitle">城郊幻境 · 全区域</span></div><div class="view-actions"><button id="roam-toggle" class="roam-toggle" type="button" aria-pressed="false" aria-controls="roam-panel" data-ui="roamEnter" disabled>漫游</button><button id="quality-toggle" class="quality-toggle" type="button" aria-pressed="true" aria-label="画质：清晰，切换为流畅">清晰</button><button id="toggle-labels" type="button" aria-pressed="false" data-ui="labels">编号</button><button id="top-view" type="button" aria-pressed="false" data-ui="top">俯视</button><button id="reset-view" type="button" data-ui="overview">总览</button></div></div>
+      <div id="map-stage" class="map-stage">
+        <canvas id="scene-canvas" aria-label="可旋转、缩放的城郊三维地图"></canvas>
+        <div id="marker-layer" class="marker-layer" aria-label="地图点位"></div>
+        <div class="stage-top"><div class="stage-count"><span class="live-dot"></span><span id="visible-count">读取中…</span></div><span id="view-label" class="view-label" data-ui="perspective">自由视角</span></div>
+        <div id="loading-panel" class="loading-panel" role="status" aria-live="polite"><div class="loading-icon" aria-hidden="true"></div><strong id="loading-title">正在打开城郊幻境</strong><span id="loading-detail">读取场景与点位…</span><progress id="loading-progress" max="100"></progress><button id="retry-load" type="button" data-ui="retry" hidden>重新加载</button></div>
+        <div id="empty-points" class="empty-points" hidden><span data-ui="noPoints">没有符合筛选的点位</span><button id="empty-reset" type="button" data-ui="resetFilters">重置筛选</button></div>
+        <div class="zoom-tools"><button id="zoom-in" type="button" aria-label="放大">＋</button><button id="zoom-out" type="button" aria-label="缩小">−</button></div>
+        <aside id="point-detail" class="point-detail" aria-label="点位详情" hidden><button id="close-detail" class="detail-close icon-button" type="button" aria-label="关闭详情">×</button><div id="detail-content"></div></aside>
+        <div class="compass" aria-hidden="true"><span id="compass-arrow">↑</span><small data-ui="mapUp">2D 上方</small></div>
+        <section id="roam-panel" class="roam-panel" role="group" aria-label="漫游控制" data-ui-aria="roamControls" hidden>
+          <div class="roam-actions"><button id="roam-mode-run" type="button" aria-pressed="true" data-ui="roamRun">跑步</button><button id="roam-mode-fly" type="button" aria-pressed="false" data-ui="roamFly">飞行</button><button id="roam-flight-fast" type="button" aria-pressed="false" data-ui="roamFast" hidden>加速</button><button id="roam-exit" class="roam-exit" type="button" data-ui="roamExit">退出</button></div>
+          <div class="roam-panel-foot"><span id="roam-status" role="status" aria-live="polite">第三人称 · 跑步</span><details id="roam-help" class="roam-help"><summary data-ui="roamHelp">操作说明</summary><div class="roam-help-content"><p class="roam-desktop-help" data-ui="roamDesktopHelp">WASD 移动 · 左键拖动环视</p><p class="roam-desktop-help" data-ui="roamFlyHelp">Space 上升 · C 下降 · 点按 Shift 切换加速。Ctrl+W 会关闭网页。</p><p class="roam-touch-help" data-ui="roamTouchHelp">方向键移动 · 拖动环视 · ↑/↓ 升降 · 点按加速</p></div></details></div>
+        </section>
+        <div id="roam-touch" class="roam-touch" hidden>
+          <div class="roam-dpad" role="group" aria-label="移动方向" data-ui-aria="roamMoveControls">
+            <button type="button" data-roam-input="forward" aria-label="向前移动" data-ui-aria="roamForward" aria-pressed="false"><span aria-hidden="true">▲</span></button>
+            <button type="button" data-roam-input="left" aria-label="向左移动" data-ui-aria="roamLeft" aria-pressed="false"><span aria-hidden="true">◀</span></button>
+            <span class="roam-dpad-center" aria-hidden="true">✦</span>
+            <button type="button" data-roam-input="right" aria-label="向右移动" data-ui-aria="roamRight" aria-pressed="false"><span aria-hidden="true">▶</span></button>
+            <button type="button" data-roam-input="backward" aria-label="向后移动" data-ui-aria="roamBackward" aria-pressed="false"><span aria-hidden="true">▼</span></button>
+          </div>
+          <div class="roam-motion-controls"><div id="roam-height-controls" class="roam-height-controls" hidden><button type="button" data-roam-input="up" aria-label="上升" data-ui-aria="roamUp" aria-pressed="false"><span aria-hidden="true">↑</span></button><button type="button" data-roam-input="down" aria-label="下降" data-ui-aria="roamDown" aria-pressed="false"><span aria-hidden="true">↓</span></button></div></div>
+        </div>
+        <div id="load-warning" class="load-warning" role="alert" hidden></div>
+      </div>
+      <footer class="map-footer"><span class="mouse-help" data-ui="controls">左键旋转 · 右键平移 · 滚轮缩放</span><span class="touch-help" data-ui="touchControls">单指旋转 · 双指缩放 / 平移</span><span data-ui="legend">○ 随机　◇ 条件　? 待核验</span><span class="footer-credit">DUKE</span></footer>
+    </section>
+  </main>
+  <div id="toast" class="toast" role="status" hidden></div>
+  <noscript><div class="no-script">此地图需要启用 JavaScript / JavaScript is required.</div></noscript>
+  <script type="module" src="map-3d.js?v=20261111-refresh-launch-1"></script>
+</body>
+</html>

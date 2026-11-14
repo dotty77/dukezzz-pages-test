@@ -1,0 +1,3683 @@
+{
+  "version": 1,
+  "gameVersion": "3.3.0",
+  "updatedAt": "2026-10-21",
+  "sources": [
+    {
+      "name": "绝区零已安装正式客户端 UI 原始纹理",
+      "url": "https://zzz.mihoyo.com/"
+    },
+    {
+      "name": "Enka Network 代理人及音擎 ID / 文本映射",
+      "url": "https://github.com/EnkaNetwork/API-docs/tree/master/store/zzz"
+    },
+    {
+      "name": "绝区零当前邦布频段公开名单",
+      "url": "https://operation-webstatic.mihoyo.com/gacha_info/nap/prod_gf_cn/76efce75a40e18ad673844c3d8a171e80cbe65/zh-cn.json"
+    },
+    {
+      "name": "ZenlessData 正式 3.2.0 固定配置与中文文本",
+      "url": "https://git.mero.moe/dimbreath/ZenlessData/src/commit/b084f66a42cf128b7c809c9ba1b5bcce96ae114b",
+      "commit": "b084f66a42cf128b7c809c9ba1b5bcce96ae114b"
+    },
+    {
+      "name": "Enka Network 3.2：角色、音擎明确绑定与原始游戏图像",
+      "url": "https://github.com/EnkaNetwork/API-docs/tree/a64e26184903df9d91002a72663b9ba62a710cb7/store/zzz",
+      "commit": "a64e26184903df9d91002a72663b9ba62a710cb7"
+    },
+    {
+      "name": "3.3.0 正式客户端固定配置与文本",
+      "url": "https://git.mero.moe/dimbreath/ZenlessData/src/commit/fd6cb326c07c75f39b0b05845d204302c451ec34",
+      "commit": "fd6cb326c07c75f39b0b05845d204302c451ec34"
+    }
+  ],
+  "items": {
+    "1011": {
+      "id": "1011",
+      "name": "安比",
+      "type": "agent",
+      "rank": "A",
+      "icon": "assets/tuning/agent-1011.webp",
+      "aliases": [
+        "Anby",
+        "Энби",
+        "アンビー",
+        "엔비"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1021": {
+      "id": "1021",
+      "name": "猫又",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1021.webp",
+      "aliases": [
+        "Nekomata",
+        "Нэкомата",
+        "貓又",
+        "네코마타"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1031": {
+      "id": "1031",
+      "name": "妮可",
+      "type": "agent",
+      "rank": "A",
+      "icon": "assets/tuning/agent-1031.webp",
+      "aliases": [
+        "Nicole",
+        "Николь",
+        "ニコ",
+        "니콜"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1041": {
+      "id": "1041",
+      "name": "「11号」",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1041.webp",
+      "aliases": [
+        "\"Soldier 11\"",
+        "Chiến Binh 11",
+        "N.º 11",
+        "N.º 11",
+        "Soldatin Nr. 11",
+        "Soldat 11",
+        "Soldier 11",
+        "Солдат 11",
+        "「11號」",
+        "「11호」"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1051": {
+      "id": "1051",
+      "name": "伊德海莉",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1051.webp",
+      "aliases": [
+        "Yidhari",
+        "Йидхари",
+        "イドリー",
+        "이드하리"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1061": {
+      "id": "1061",
+      "name": "可琳",
+      "type": "agent",
+      "rank": "A",
+      "icon": "assets/tuning/agent-1061.webp",
+      "aliases": [
+        "Corin",
+        "Корин",
+        "カリン",
+        "코린"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1071": {
+      "id": "1071",
+      "name": "凯撒",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1071.webp",
+      "aliases": [
+        "Caesar",
+        "César",
+        "Цезарь",
+        "シーザー",
+        "凱撒",
+        "카이사르"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1081": {
+      "id": "1081",
+      "name": "比利",
+      "type": "agent",
+      "rank": "A",
+      "icon": "assets/tuning/agent-1081.webp",
+      "aliases": [
+        "Billy",
+        "Билли",
+        "ビリー",
+        "빌리"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1091": {
+      "id": "1091",
+      "name": "雅",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1091.webp",
+      "aliases": [
+        "Miyabi",
+        "Мияби",
+        "星見雅",
+        "미야비"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1101": {
+      "id": "1101",
+      "name": "珂蕾妲",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1101.webp",
+      "aliases": [
+        "Koleda",
+        "Коляда",
+        "クレタ",
+        "콜레다"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1111": {
+      "id": "1111",
+      "name": "安东",
+      "type": "agent",
+      "rank": "A",
+      "icon": "assets/tuning/agent-1111.webp",
+      "aliases": [
+        "Anton",
+        "Antón",
+        "Антон",
+        "アンドー",
+        "安東",
+        "앤톤"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1121": {
+      "id": "1121",
+      "name": "本",
+      "type": "agent",
+      "rank": "A",
+      "icon": "assets/tuning/agent-1121.webp",
+      "aliases": [
+        "Ben",
+        "Бен",
+        "ベン",
+        "벤"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1131": {
+      "id": "1131",
+      "name": "苍角",
+      "type": "agent",
+      "rank": "A",
+      "icon": "assets/tuning/agent-1131.webp",
+      "aliases": [
+        "Soukaku",
+        "Сокаку",
+        "蒼角",
+        "소우카쿠"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1141": {
+      "id": "1141",
+      "name": "莱卡恩",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1141.webp",
+      "aliases": [
+        "Lycaon",
+        "Ликаон",
+        "ライカン",
+        "萊卡恩",
+        "리카온"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1151": {
+      "id": "1151",
+      "name": "露西",
+      "type": "agent",
+      "rank": "A",
+      "icon": "assets/tuning/agent-1151.webp",
+      "aliases": [
+        "Lucy",
+        "Люси",
+        "ルーシー",
+        "루시"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1161": {
+      "id": "1161",
+      "name": "莱特",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1161.webp",
+      "aliases": [
+        "Lighter",
+        "Лайтер",
+        "ライト",
+        "萊特",
+        "라이터"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1171": {
+      "id": "1171",
+      "name": "柏妮思",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1171.webp",
+      "aliases": [
+        "Bernice",
+        "Burnice",
+        "Бёрнис",
+        "バーニス",
+        "버니스"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1181": {
+      "id": "1181",
+      "name": "格莉丝",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1181.webp",
+      "aliases": [
+        "Grace",
+        "Грейс",
+        "グレース",
+        "格莉絲",
+        "그레이스"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1191": {
+      "id": "1191",
+      "name": "艾莲",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1191.webp",
+      "aliases": [
+        "Ellen",
+        "Эллен",
+        "エレン",
+        "艾蓮",
+        "엘렌"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1201": {
+      "id": "1201",
+      "name": "悠真",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1201.webp",
+      "aliases": [
+        "Harumasa",
+        "Харумаса",
+        "浅羽悠真",
+        "하루마사"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1211": {
+      "id": "1211",
+      "name": "丽娜",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1211.webp",
+      "aliases": [
+        "Rina",
+        "Рина",
+        "リナ",
+        "麗娜",
+        "리나"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1221": {
+      "id": "1221",
+      "name": "柳",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1221.webp",
+      "aliases": [
+        "Yanagi",
+        "Янаги",
+        "月城柳",
+        "야나기"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1241": {
+      "id": "1241",
+      "name": "朱鸢",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1241.webp",
+      "aliases": [
+        "Zhu Yuan",
+        "Чжу Юань",
+        "朱鳶",
+        "주연"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1251": {
+      "id": "1251",
+      "name": "青衣",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1251.webp",
+      "aliases": [
+        "Qingyi",
+        "Цинъи",
+        "청의"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1261": {
+      "id": "1261",
+      "name": "简",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1261.webp",
+      "aliases": [
+        "Jane",
+        "Джейн",
+        "ジェーン",
+        "簡",
+        "제인"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1271": {
+      "id": "1271",
+      "name": "赛斯",
+      "type": "agent",
+      "rank": "A",
+      "icon": "assets/tuning/agent-1271.webp",
+      "aliases": [
+        "Seth",
+        "Сет",
+        "セス",
+        "賽斯",
+        "세스"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1281": {
+      "id": "1281",
+      "name": "派派",
+      "type": "agent",
+      "rank": "A",
+      "icon": "assets/tuning/agent-1281.webp",
+      "aliases": [
+        "Piper",
+        "Пайпер",
+        "パイパー",
+        "파이퍼"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1291": {
+      "id": "1291",
+      "name": "雨果",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1291.webp",
+      "aliases": [
+        "Hugo",
+        "Хуго",
+        "ヒューゴ",
+        "휴고"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1301": {
+      "id": "1301",
+      "name": "奥菲丝&「鬼火」",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1301.webp",
+      "aliases": [
+        "Orfeu & Magus",
+        "Orfia y Magas",
+        "Orphie & \"Magus\"",
+        "Orphie & Magus",
+        "Orphie và Magus",
+        "Orphie & Magus",
+        "Орфея и Магус",
+        "オルペウス&「鬼火」",
+        "奧菲絲&「鬼火」",
+        "오피&「도깨비불」"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1311": {
+      "id": "1311",
+      "name": "耀嘉音",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1311.webp",
+      "aliases": [
+        "Astra Yao",
+        "Астра Яо",
+        "アストラ",
+        "아스트라"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1321": {
+      "id": "1321",
+      "name": "伊芙琳",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1321.webp",
+      "aliases": [
+        "Evelyn",
+        "Évelyne",
+        "Эвелин",
+        "イヴリン",
+        "이블린"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1331": {
+      "id": "1331",
+      "name": "薇薇安",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1331.webp",
+      "aliases": [
+        "Vivian",
+        "Viviane",
+        "Вивиан",
+        "ビビアン",
+        "비비안"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1341": {
+      "id": "1341",
+      "name": "照",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1341.webp",
+      "aliases": [
+        "Zhao",
+        "Чжао",
+        "자오"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1351": {
+      "id": "1351",
+      "name": "波可娜",
+      "type": "agent",
+      "rank": "A",
+      "icon": "assets/tuning/agent-1351.webp",
+      "aliases": [
+        "Pulchra",
+        "Пульхра",
+        "プルクラ",
+        "펄크라"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1361": {
+      "id": "1361",
+      "name": "「扳机」",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1361.webp",
+      "aliases": [
+        "\"Trigger\"",
+        "Gatillo",
+        "Gâchette",
+        "Trigger",
+        "Гашетка",
+        "「トリガー」",
+        "「扳機」",
+        "「트리거」"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1371": {
+      "id": "1371",
+      "name": "仪玄",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1371.webp",
+      "aliases": [
+        "Yixuan",
+        "Исюань",
+        "儀玄",
+        "의현"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1381": {
+      "id": "1381",
+      "name": "零号·安比",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1381.webp",
+      "aliases": [
+        "0号・アンビー",
+        "0호·엔비",
+        "Chiến Binh 0 - Anby",
+        "N.º 0: Anby",
+        "Soldado\nN.º0 - Anby",
+        "Soldat 0 - Anby",
+        "Soldatin Nr. 0 – Anby",
+        "Soldier 0 - Anby",
+        "Солдат 0 Энби",
+        "零號·安比"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1391": {
+      "id": "1391",
+      "name": "橘福福",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1391.webp",
+      "aliases": [
+        "Ju Fufu",
+        "Цзюй Фуфу",
+        "귤복복"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1401": {
+      "id": "1401",
+      "name": "爱丽丝",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1401.webp",
+      "aliases": [
+        "Alice",
+        "Элис",
+        "アリス",
+        "愛麗絲",
+        "앨리스"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1411": {
+      "id": "1411",
+      "name": "柚叶",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1411.webp",
+      "aliases": [
+        "Yuzuha",
+        "Юдзуха",
+        "柚葉",
+        "浮波柚葉",
+        "유즈하"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1421": {
+      "id": "1421",
+      "name": "潘引壶",
+      "type": "agent",
+      "rank": "A",
+      "icon": "assets/tuning/agent-1421.webp",
+      "aliases": [
+        "Pan Yinhu",
+        "Пань Иньху",
+        "潘引壺",
+        "반인호"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1431": {
+      "id": "1431",
+      "name": "叶瞬光",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1431.webp",
+      "aliases": [
+        "Ye Shunguang",
+        "Е Шуньгуан",
+        "葉瞬光",
+        "엽빛나"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1441": {
+      "id": "1441",
+      "name": "真斗",
+      "type": "agent",
+      "rank": "A",
+      "icon": "assets/tuning/agent-1441.webp",
+      "aliases": [
+        "Manato",
+        "Манато",
+        "狛野真斗",
+        "마나토"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1451": {
+      "id": "1451",
+      "name": "卢西娅",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1451.webp",
+      "aliases": [
+        "Lucia",
+        "Lucía",
+        "Lúcia",
+        "Люсия",
+        "リュシア",
+        "盧西婭",
+        "루시아"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1461": {
+      "id": "1461",
+      "name": "「席德」",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1461.webp",
+      "aliases": [
+        "\"Seed\"",
+        "Seed",
+        "Sporos",
+        "Сид",
+        "「シード」",
+        "「시드」"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1471": {
+      "id": "1471",
+      "name": "般岳",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1471.webp",
+      "aliases": [
+        "Banyue",
+        "Баньюэ",
+        "盤岳",
+        "반악"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1481": {
+      "id": "1481",
+      "name": "琉音",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1481.webp",
+      "aliases": [
+        "Dialyn",
+        "Диалинь",
+        "ダイアリン",
+        "다이아린"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1491": {
+      "id": "1491",
+      "name": "千夏",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1491.webp",
+      "aliases": [
+        "Sunna",
+        "Sunniva",
+        "Санна",
+        "수나"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1501": {
+      "id": "1501",
+      "name": "爱芮",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1501.webp",
+      "aliases": [
+        "Aria",
+        "Ария",
+        "アリア",
+        "愛芮",
+        "아리아"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1511": {
+      "id": "1511",
+      "name": "南宫羽",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1511.webp",
+      "aliases": [
+        "Nangong Yu",
+        "Наньгун Юй",
+        "南宮羽",
+        "남궁우"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1521": {
+      "id": "1521",
+      "name": "希希芙",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1521.webp",
+      "aliases": [
+        "Cissia",
+        "Císsia",
+        "Циссия",
+        "シーシィア",
+        "시시아"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1531": {
+      "id": "1531",
+      "name": "星徽·比利",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1531.webp",
+      "aliases": [
+        "Billy - Stellaire",
+        "Billy Estelar",
+        "Starlight - Billy",
+        "Sternenlicht – Billy",
+        "Ánh Sao - Billy",
+        "Звёздный Билли",
+        "スターライト･ビリー",
+        "스타라이트·빌리"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1541": {
+      "id": "1541",
+      "name": "普罗米娅",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1541.webp",
+      "aliases": [
+        "Promeia",
+        "Промея",
+        "プロメイア",
+        "普羅米婭",
+        "프로미아"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1551": {
+      "id": "1551",
+      "name": "佩洛伊斯",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1551.webp",
+      "aliases": [
+        "Pyrois",
+        "Pyroïs",
+        "Пироис",
+        "ピュロイス",
+        "피로이스"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1561": {
+      "id": "1561",
+      "name": "维琳娜",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1561.webp",
+      "aliases": [
+        "Velina",
+        "Vélina",
+        "Велина",
+        "ヴェリナ",
+        "維琳娜",
+        "벨리나"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1571": {
+      "id": "1571",
+      "name": "诺姆",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1571.webp",
+      "aliases": [
+        "Norma",
+        "Норма",
+        "ノルムー",
+        "諾姆",
+        "노르마"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1581": {
+      "id": "1581",
+      "name": "蕾米埃尔",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1581.webp",
+      "aliases": [
+        "Remielle",
+        "Rémielle",
+        "Ремиэлла",
+        "レミエール",
+        "蕾米埃爾",
+        "레미엘"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "1591": {
+      "id": "1591",
+      "name": "希格莉德",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1591.webp",
+      "aliases": [
+        "Sigrid",
+        "Сигрид",
+        "シグリッド",
+        "시그리드"
+      ],
+      "width": 142,
+      "height": 142
+    },
+    "12001": {
+      "id": "12001",
+      "name": "「月相」-望",
+      "type": "engine",
+      "rank": "B",
+      "icon": "assets/tuning/engine-12001.webp",
+      "aliases": [
+        "Fase lunar - Plenilunio",
+        "[Lunaire] Pleine lune",
+        "[Lunar] - Pleniluna",
+        "[Lunar] Pleniluna",
+        "[Lunar] Plenilúnio",
+        "[Pha Mặt Trăng] Pleniluna",
+        "Фаза луны: Полнолуние",
+        "„Mondphase“ – Pleniluna",
+        "「루나」-보름달"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "12002": {
+      "id": "12002",
+      "name": "「月相」-晦",
+      "type": "engine",
+      "rank": "B",
+      "icon": "assets/tuning/engine-12002.webp",
+      "aliases": [
+        "Fase lunar - Luna menguante",
+        "[Lunaire] Décroissante",
+        "[Lunar] - Decrescent",
+        "[Lunar] Decrescent",
+        "[Lunar] Decrescente",
+        "[Pha Mặt Trăng] Decrescent",
+        "Фаза луны: Убывающая",
+        "„Mondphase“ – Abnehmend",
+        "「루나」-그믐달"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "12003": {
+      "id": "12003",
+      "name": "「月相」-朔",
+      "type": "engine",
+      "rank": "B",
+      "icon": "assets/tuning/engine-12003.webp",
+      "aliases": [
+        "Fase lunar - Novilunio",
+        "[Lunaire] Nouvelle lune",
+        "[Lunar] - Noviluna",
+        "[Lunar] Noviluna",
+        "[Lunar] Novilúnio",
+        "[Pha Mặt Trăng] Noviluna",
+        "Фаза луны: Новолуние",
+        "„Mondphase“ – Noviluna",
+        "「루나」-초승달"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "12004": {
+      "id": "12004",
+      "name": "「残响」-Ⅰ型",
+      "type": "engine",
+      "rank": "B",
+      "icon": "assets/tuning/engine-12004.webp",
+      "aliases": [
+        "Repercusión - Modelo I",
+        "[Reverb] - Mark I",
+        "[Reverb] Mark I",
+        "[Reverberação] Tipo I",
+        "[Réverbération] Mark I",
+        "[Âm Vang] Loại I",
+        "Ревербератор I",
+        "„Nachhall“ – Typ I",
+        "「残響」-Ⅰ型",
+        "「殘響」-Ⅰ型",
+        "「잔향」-Ⅰ형"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "12005": {
+      "id": "12005",
+      "name": "「残响」-Ⅱ型",
+      "type": "engine",
+      "rank": "B",
+      "icon": "assets/tuning/engine-12005.webp",
+      "aliases": [
+        "Repercusión - Modelo II",
+        "[Reverb] - Mark II",
+        "[Reverb] Mark II",
+        "[Reverberação] Tipo II",
+        "[Réverbération] Mark II",
+        "[Âm Vang] Loại II",
+        "Ревербератор II",
+        "„Nachhall“ – Typ II",
+        "「残響」-Ⅱ型",
+        "「殘響」-Ⅱ型",
+        "「잔향」-Ⅱ형"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "12006": {
+      "id": "12006",
+      "name": "「残响」-Ⅲ型",
+      "type": "engine",
+      "rank": "B",
+      "icon": "assets/tuning/engine-12006.webp",
+      "aliases": [
+        "Repercusión - Modelo III",
+        "[Reverb] - Mark III",
+        "[Reverb] Mark III",
+        "[Reverberação] Tipo III",
+        "[Réverbération] Mark III",
+        "[Âm Vang] Loại III",
+        "Ревербератор III",
+        "„Nachhall“ – Typ III",
+        "「残響」-Ⅲ型",
+        "「殘響」-Ⅲ型",
+        "「잔향」-Ⅲ형"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "12007": {
+      "id": "12007",
+      "name": "「湍流」-铳型",
+      "type": "engine",
+      "rank": "B",
+      "icon": "assets/tuning/engine-12007.webp",
+      "aliases": [
+        "Turbulencia - Arcabuz",
+        "[Nước Xiết] Dạng Súng",
+        "[Vortex] - Revolver",
+        "[Vortex] Revolver",
+        "[Vórtice] Revólver",
+        "Турбулентность: Револьвер",
+        "„Turbulenz“ – Revolver",
+        "「湍流」-銃型",
+        "「激流」-銃型",
+        "「급류」-총"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "12008": {
+      "id": "12008",
+      "name": "「湍流」-矢型",
+      "type": "engine",
+      "rank": "B",
+      "icon": "assets/tuning/engine-12008.webp",
+      "aliases": [
+        "Turbulencia - Flecha",
+        "[Nước Xiết] Dạng Tiễn",
+        "[Vortex] - Arrow",
+        "[Vortex] Arrow",
+        "[Vortex] Flèche",
+        "[Vórtice] Flecha",
+        "Турбулентность: Стрела",
+        "„Turbulenz“ – Pfeil",
+        "「激流」-矢型",
+        "「급류」-화살"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "12009": {
+      "id": "12009",
+      "name": "「湍流」-斧型",
+      "type": "engine",
+      "rank": "B",
+      "icon": "assets/tuning/engine-12009.webp",
+      "aliases": [
+        "Turbulencia - Hacha",
+        "[Nước Xiết] Dạng Rìu",
+        "[Vortex] - Hatchet",
+        "[Vortex] Hachette",
+        "[Vortex] Hatchet",
+        "[Vórtice] Machado",
+        "Турбулентность: Топор",
+        "„Turbulenz“ – Beil",
+        "「激流」-斧型",
+        "「급류」-도끼"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "12010": {
+      "id": "12010",
+      "name": "「电磁暴」-壹式",
+      "type": "engine",
+      "rank": "B",
+      "icon": "assets/tuning/engine-12010.webp",
+      "aliases": [
+        "Tormenta magnética - Alfa",
+        "[Bão Từ] Alpha",
+        "[Magnetic Storm] - Alpha",
+        "[Magnetic Storm] Alpha",
+        "[Tempestade Magnética] Alfa",
+        "[Tempête magnétique] Alpha",
+        "Магнитная буря: Альфа",
+        "„Magnetischer Sturm“ – Alpha",
+        "「磁気嵐」-壱式",
+        "「電磁暴」-壹式",
+        "「자기 폭풍」-알파"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "12011": {
+      "id": "12011",
+      "name": "「电磁暴」-贰式",
+      "type": "engine",
+      "rank": "B",
+      "icon": "assets/tuning/engine-12011.webp",
+      "aliases": [
+        "Tormenta magnética - Bravo",
+        "[Bão Từ] Bravo",
+        "[Magnetic Storm] - Bravo",
+        "[Magnetic Storm] Bravo",
+        "[Tempestade Magnética] Bravo",
+        "[Tempête magnétique] Bravo",
+        "Магнитная буря: Браво",
+        "„Magnetischer Sturm“ – Bravo",
+        "「磁気嵐」-弐式",
+        "「電磁暴」-貳式",
+        "「자기 폭풍」-브라보"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "12012": {
+      "id": "12012",
+      "name": "「电磁暴」-叁式",
+      "type": "engine",
+      "rank": "B",
+      "icon": "assets/tuning/engine-12012.webp",
+      "aliases": [
+        "Tormenta magnética - Charlie",
+        "[Bão Từ] Charlie",
+        "[Magnetic Storm] - Charlie",
+        "[Magnetic Storm] Charlie",
+        "[Tempestade Magnética] Charlie",
+        "[Tempête magnétique] Charlie",
+        "Магнитная буря: Чарли",
+        "„Magnetischer Sturm“ – Charlie",
+        "「磁気嵐」-参式",
+        "「電磁暴」-參式",
+        "「자기 폭풍」-찰리"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "12013": {
+      "id": "12013",
+      "name": "「恒等式」-本格",
+      "type": "engine",
+      "rank": "B",
+      "icon": "assets/tuning/engine-12013.webp",
+      "aliases": [
+        "Identidad - Raíz",
+        "[Hằng Đẳng Thức] Cơ Bản",
+        "[Identidade] Base",
+        "[Identity] - Base",
+        "[Identity] Base",
+        "[Identité] Base",
+        "Идентичность: Постоянство",
+        "„Identität“ – Basis",
+        "「恆等式」-本格",
+        "「아이덴티티」-베이스"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "12014": {
+      "id": "12014",
+      "name": "「恒等式」-变格",
+      "type": "engine",
+      "rank": "B",
+      "icon": "assets/tuning/engine-12014.webp",
+      "aliases": [
+        "Identidad - Desinencia",
+        "[Hằng Đẳng Thức] Biến Cách",
+        "[Identidade] Inflexão",
+        "[Identity] - Inflection",
+        "[Identity] Inflection",
+        "[Identité] Déclinaison",
+        "Идентичность: Изменчивость",
+        "„Identität“ – Flexion",
+        "「恆等式」-變格",
+        "「恒等式」-変格",
+        "「아이덴티티」-인플렉션"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "12015": {
+      "id": "12015",
+      "name": "「灰烬」-钴蓝",
+      "type": "engine",
+      "rank": "B",
+      "icon": "assets/tuning/engine-12015.webp",
+      "aliases": [
+        "Ceniza - Cobalto",
+        "[Cendres] Cobalt",
+        "[Cinder] Cobalt",
+        "[Cinzas] Cobalto",
+        "[Tro Tàn] Xanh Coban",
+        "Пепел: Кобальт",
+        "„Asche“ – Kobalt",
+        "「灰燼」-蒼藍",
+        "「灰燼」-鈷藍",
+        "「잿더미」-코발트블루"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "13001": {
+      "id": "13001",
+      "name": "街头巨星",
+      "type": "engine",
+      "rank": "A",
+      "icon": "assets/tuning/engine-13001.webp",
+      "aliases": [
+        "Estrella callejera",
+        "Siêu Sao Đường Phố",
+        "Star de la rue",
+        "Straßenstar",
+        "Street Superstar",
+        "Superestrela das Ruas",
+        "Звезда улиц",
+        "ストリートスター",
+        "街頭巨星",
+        "거리의 슈퍼스타"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "13002": {
+      "id": "13002",
+      "name": "时光切片",
+      "type": "engine",
+      "rank": "A",
+      "icon": "assets/tuning/engine-13002.webp",
+      "aliases": [
+        "Figeur temporel",
+        "Fração de Tempo",
+        "Lapso de tiempo",
+        "Mảnh Ghép Thời Gian",
+        "Slice of Time",
+        "Zeitfragment",
+        "Кадр на память",
+        "時光切片",
+        "歳月の薄片",
+        "시간의 파편"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "13003": {
+      "id": "13003",
+      "name": "雨林饕客",
+      "type": "engine",
+      "rank": "A",
+      "icon": "assets/tuning/engine-13003.webp",
+      "aliases": [
+        "Gastrónomo selvático",
+        "Gourmet Tropical",
+        "Gourmet sylvestre",
+        "Khách Tham Ăn Rừng Mưa",
+        "Rainforest Gourmet",
+        "Regenwald-Gourmet",
+        "Тропический гурман",
+        "密林の食いしん坊",
+        "우림의 식객"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "13004": {
+      "id": "13004",
+      "name": "星徽引擎",
+      "type": "engine",
+      "rank": "A",
+      "icon": "assets/tuning/engine-13004.webp",
+      "aliases": [
+        "Engine Ánh Sao",
+        "Moteur stellaire",
+        "Motor da Constelação",
+        "Motor estelar",
+        "Starlight Engine",
+        "Sternenlicht-Engine",
+        "Звёздный двигатель",
+        "スターライトエンジン",
+        "별빛 엔진"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "13005": {
+      "id": "13005",
+      "name": "人为刀俎",
+      "type": "engine",
+      "rank": "A",
+      "icon": "assets/tuning/engine-13005.webp",
+      "aliases": [
+        "Cozido a Vapor",
+        "Cá Nằm Trên Thớt",
+        "Dampfofen",
+        "Four à vapeur",
+        "Steam Oven",
+        "Última cena",
+        "Пароварка",
+        "まな板の鯉",
+        "人為刀俎",
+        "스팀오븐"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "13006": {
+      "id": "13006",
+      "name": "贵重骨核",
+      "type": "engine",
+      "rank": "A",
+      "icon": "assets/tuning/engine-13006.webp",
+      "aliases": [
+        "Fósil preciado",
+        "Kostbarer Fossilkern",
+        "Lõi Hóa Thạch Quý",
+        "Noyau fossilisé précieux",
+        "Precious Fossilized Core",
+        "Relíquia Óssea",
+        "Драгоценная окаменелость",
+        "貴重な石化コア",
+        "貴重骨核",
+        "귀중한 화석 코어"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "13007": {
+      "id": "13007",
+      "name": "正版变身器",
+      "type": "engine",
+      "rank": "A",
+      "icon": "assets/tuning/engine-13007.webp",
+      "aliases": [
+        "Máy Biến Hình Chính Hãng",
+        "Original Transmorpher",
+        "Original-Verwandler",
+        "Transformateur originel",
+        "Transmorfer original",
+        "Transmorfo Original",
+        "Оригинальный трансформатор",
+        "正版變身器",
+        "正規版変身装置",
+        "오리지널 변신 아이템"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "13008": {
+      "id": "13008",
+      "name": "双生泣星",
+      "type": "engine",
+      "rank": "A",
+      "icon": "assets/tuning/engine-13008.webp",
+      "aliases": [
+        "Gémeaux éplorés",
+        "Lamento das Estrelas",
+        "Llanto mielgo",
+        "Song Tinh Rơi Lệ",
+        "Weeping Gemini",
+        "Weinende Gemini",
+        "Плачущие близнецы",
+        "双生の涙",
+        "雙生泣星",
+        "쌍둥이의 눈물"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "13009": {
+      "id": "13009",
+      "name": "触电唇彩",
+      "type": "engine",
+      "rank": "A",
+      "icon": "assets/tuning/engine-13009.webp",
+      "aliases": [
+        "Batom Elétrico",
+        "Brillant à lèvres électro",
+        "Brillo labial electrizante",
+        "Electro-Lip Gloss",
+        "Elektro-Lippenglanz",
+        "Son Môi Nhiễm Điện",
+        "Электроблеск для губ",
+        "觸電唇彩",
+        "電撃リップグロス",
+        "감전 립글로스"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "13010": {
+      "id": "13010",
+      "name": "兔能环",
+      "type": "engine",
+      "rank": "A",
+      "icon": "assets/tuning/engine-13010.webp",
+      "aliases": [
+        "Band de Coelhinho",
+        "Bunny Band",
+        "Cesta conejera",
+        "Häschenband",
+        "Panier-lapin",
+        "Vòng Năng Lượng Thỏ",
+        "Заячья корзинка",
+        "ラビットチャージャー",
+        "兔能環",
+        "버니 밴드"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "13011": {
+      "id": "13011",
+      "name": "春日融融",
+      "type": "engine",
+      "rank": "A",
+      "icon": "assets/tuning/engine-13011.webp",
+      "aliases": [
+        "Abraço da Primavera",
+        "Frühlingsumarmung",
+        "Ngày Xuân Ấm Áp",
+        "Primavera termal",
+        "Source printanière",
+        "Spring Embrace",
+        "Весеннее тепло",
+        "ホットスプリング",
+        "봄날의 포옹"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "13012": {
+      "id": "13012",
+      "name": "幻变魔方",
+      "type": "engine",
+      "rank": "A",
+      "icon": "assets/tuning/engine-13012.webp",
+      "aliases": [
+        "Casse-tête sphérique",
+        "Cubo Mágico",
+        "Puzzle Sphere",
+        "Rompecabezas ilusorio",
+        "Rubik Ảo Diệu",
+        "Rätselsphäre",
+        "Шар-головоломка",
+        "幻變魔方",
+        "魔法の立体パズル",
+        "기변의 큐브"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "13013": {
+      "id": "13013",
+      "name": "鎏金花信",
+      "type": "engine",
+      "rank": "A",
+      "icon": "assets/tuning/engine-13013.webp",
+      "aliases": [
+        "Floraison dorée",
+        "Florescencia aurífera",
+        "Florescer Dourado",
+        "Gilded Blossom",
+        "Mùa Hoa Vàng Rực",
+        "Vergoldete Blüte",
+        "Златоцвет",
+        "金メッキの花信",
+        "도금된 화신풍"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "13014": {
+      "id": "13014",
+      "name": "电波漫步",
+      "type": "engine",
+      "rank": "A",
+      "icon": "assets/tuning/engine-13014.webp",
+      "aliases": [
+        "Passeio Eletromagnético",
+        "Radio-baladeur",
+        "Radiowave Journey",
+        "Radiowellenreise",
+        "Sóng Âm Rảo Bước",
+        "Tránsito herciano",
+        "Радиопрогулка",
+        "エレクトロウォーク",
+        "電波漫步",
+        "일렉트로 워크"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "13015": {
+      "id": "13015",
+      "name": "强音热望",
+      "type": "engine",
+      "rank": "A",
+      "icon": "assets/tuning/engine-13015.webp",
+      "aliases": [
+        "Anhelo marcato",
+        "Capriccio marcato",
+        "Desejo Irreprimível",
+        "Khát Vọng Cường Âm",
+        "Marcato Desire",
+        "Sehnsucht in Marcato",
+        "Маркато-реверб",
+        "強音デザイア",
+        "強音熱望",
+        "열망의 악센트"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "13016": {
+      "id": "13016",
+      "name": "光影刻刀",
+      "type": "engine",
+      "rank": "A",
+      "icon": "assets/tuning/engine-13016.webp",
+      "aliases": [
+        "Filmrollenprojektor",
+        "Khắc Họa Tối Sáng",
+        "Projecteur à bobines",
+        "Projetor Analógico",
+        "Proyector de celuloide",
+        "Reel Projector",
+        "Кинопроектор",
+        "光と影のカット",
+        "조명을 새기는 칼"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "13018": {
+      "id": "13018",
+      "name": "咚哒回声",
+      "type": "engine",
+      "rank": "A",
+      "icon": "assets/tuning/engine-13018.webp",
+      "aliases": [
+        "Ausgelassene Echos",
+        "Boisterous Echoes",
+        "Eco Rítmico",
+        "Ecos bulliciosos",
+        "Tiếng Vọng Vang Dội",
+        "Échos retentissants",
+        "Тадам-барабан",
+        "ドンカツエコー",
+        "咚噠回聲",
+        "둥둥 메아리"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "13019": {
+      "id": "13019",
+      "name": "青漪灵鼎",
+      "type": "engine",
+      "rank": "A",
+      "icon": "assets/tuning/engine-13019.webp",
+      "aliases": [
+        "Caldeirão da Lucidez",
+        "Caldero de la claridad",
+        "Cauldron of Clarity",
+        "Chaudron d'émeraude",
+        "Kessel der Klarheit",
+        "Thanh Y Linh Đỉnh",
+        "Треножник поднебесья",
+        "蒼き波の霊器",
+        "青漪靈鼎",
+        "푸른 물결의 솥"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "13020": {
+      "id": "13020",
+      "name": "炎炙沸釜",
+      "type": "engine",
+      "rank": "A",
+      "icon": "assets/tuning/engine-13020.webp",
+      "aliases": [
+        "Caldeirão Fervente",
+        "Caldero ardiente",
+        "Der simmernde Topf",
+        "Marmite mijotante",
+        "Nồi Lửa Sục Sôi",
+        "The Simmering Pot",
+        "Клокочущий котелок",
+        "炎々沸々鍋一丁",
+        "들끓는 가마솥"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "13101": {
+      "id": "13101",
+      "name": "德玛拉电池Ⅱ型",
+      "type": "engine",
+      "rank": "A",
+      "icon": "assets/tuning/engine-13101.webp",
+      "aliases": [
+        "Bateria da Demara - Tipo II",
+        "Batería de Demara (II)",
+        "Batterie Demara Mark II",
+        "Demara Battery Mark II",
+        "Demara-Batterie Typ II",
+        "Pin Demara Loại II",
+        "Аккумулятор Демары II",
+        "デマラ式電池Ⅱ型",
+        "德瑪拉電池Ⅱ型",
+        "데마라 배터리 Ⅱ형"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "13103": {
+      "id": "13103",
+      "name": "聚宝箱",
+      "type": "engine",
+      "rank": "A",
+      "icon": "assets/tuning/engine-13103.webp",
+      "aliases": [
+        "Baú da Fortuna",
+        "Chambre forte",
+        "Cámara acorazada",
+        "Füllhorn",
+        "Rương Kho Báu",
+        "The Vault",
+        "Сундук сокровищ",
+        "ザ・ボールト",
+        "聚寶箱",
+        "보물함"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "13106": {
+      "id": "13106",
+      "name": "家政员",
+      "type": "engine",
+      "rank": "A",
+      "icon": "assets/tuning/engine-13106.webp",
+      "aliases": [
+        "Aide à domicile",
+        "Amo de llaves",
+        "Assistente Doméstico",
+        "Haushälter",
+        "Housekeeper",
+        "Nhân Viên Nội Trợ",
+        "Домработница",
+        "ハウスキーパー",
+        "居家服務員",
+        "하우스키퍼"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "13108": {
+      "id": "13108",
+      "name": "仿制星徽引擎",
+      "type": "engine",
+      "rank": "A",
+      "icon": "assets/tuning/engine-13108.webp",
+      "aliases": [
+        "Engine Ánh Sao Mô Phỏng",
+        "Replikat der Sternenlicht-Engine",
+        "Réplica de Motor da Constelação",
+        "Réplica de motor estelar",
+        "Réplique du moteur stellaire",
+        "Starlight Engine Replica",
+        "Реплика Звёздного двигателя",
+        "なんちゃってスターライトエンジン",
+        "仿製星徽引擎",
+        "별빛 엔진 레플리카"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "13111": {
+      "id": "13111",
+      "name": "旋钻机-赤轴",
+      "type": "engine",
+      "rank": "A",
+      "icon": "assets/tuning/engine-13111.webp",
+      "aliases": [
+        "Drehbohrer – Rote Achse",
+        "Drill Rig - Red Axis",
+        "Foreuse – Axe rouge",
+        "Máy Khoan-Trục Đỏ",
+        "Perfuratriz - Eixo Vermelho",
+        "Taladradora giratoria - Eje rojo",
+        "Бур — красная ось",
+        "ドリルリグ-レッドシャフト",
+        "旋鑽機-赤軸",
+        "굴착기-붉은 축"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "13112": {
+      "id": "13112",
+      "name": "比格气缸",
+      "type": "engine",
+      "rank": "A",
+      "icon": "assets/tuning/engine-13112.webp",
+      "aliases": [
+        "Big Cylinder",
+        "Big-Cylinder",
+        "Big-cylindre",
+        "Cilindro Grande",
+        "Cilindro neumático de Bigger",
+        "Xi Lanh Lớn",
+        "Большой цилиндр",
+        "ビガー・シリンダー",
+        "比格氣缸",
+        "빅 실린더"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "13113": {
+      "id": "13113",
+      "name": "含羞恶面",
+      "type": "engine",
+      "rank": "A",
+      "icon": "assets/tuning/engine-13113.webp",
+      "aliases": [
+        "Bashful Demon",
+        "Demonio cohibido",
+        "Demônio Bisonho",
+        "Démon pudique",
+        "Verwegener Dämon",
+        "Ác Diện Thẹn Thùng",
+        "Застенчивый монстр",
+        "含羞惡面",
+        "恥じらう悪面",
+        "수줍은 악마"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "13115": {
+      "id": "13115",
+      "name": "好斗的阿炮",
+      "type": "engine",
+      "rank": "A",
+      "icon": "assets/tuning/engine-13115.webp",
+      "aliases": [
+        "Canhão Cabum",
+        "Canon Kaboum",
+        "Cañón bombástico",
+        "Kaboom Hiếu Chiến",
+        "Kaboom the Cannon",
+        "Kanone Kaboom",
+        "Бум-пушка",
+        "喧嘩腰のボンバルダム",
+        "好鬥的阿炮",
+        "호전적인 꽝꽝이"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "13127": {
+      "id": "13127",
+      "name": "维序者-特化型",
+      "type": "engine",
+      "rank": "A",
+      "icon": "assets/tuning/engine-13127.webp",
+      "aliases": [
+        "Duy Trì Trật Tự - Đặc Biệt",
+        "Défenseur de la paix – Spécialisé",
+        "Friedenswächter – Spezialisiert",
+        "Pacificador especializado",
+        "Pacificador — Especializado",
+        "Peacekeeper - Specialized",
+        "Миротворец — специализированный",
+        "秩序の守り手・特化型",
+        "維序者-特化型",
+        "평화 수호자-특화형"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "13128": {
+      "id": "13128",
+      "name": "轰鸣座驾",
+      "type": "engine",
+      "rank": "A",
+      "icon": "assets/tuning/engine-13128.webp",
+      "aliases": [
+        "Donnerndes Gefährt",
+        "Ghế Lái Rền Vang",
+        "Moteur hurlant",
+        "Roaring Ride",
+        "Rugido das Chamas",
+        "Viaje estruendoso",
+        "Ревущая тачка",
+        "グロウル・マイ・カー",
+        "轟鳴座駕",
+        "뛰뛰빵빵"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "13135": {
+      "id": "13135",
+      "name": "裁纸刀",
+      "type": "engine",
+      "rank": "A",
+      "icon": "assets/tuning/engine-13135.webp",
+      "aliases": [
+        "Box Cutter",
+        "Cutter",
+        "Cúter",
+        "Dao Rọc Giấy",
+        "Estilete",
+        "Kartonmesser",
+        "Бумагорезка",
+        "ペーパーカッター",
+        "裁紙刀",
+        "커터칼"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "13142": {
+      "id": "13142",
+      "name": "震元奇枢",
+      "type": "engine",
+      "rank": "A",
+      "icon": "assets/tuning/engine-13142.webp",
+      "aliases": [
+        "Boîtier du trigramme sismique",
+        "Chấn Nguyên Kỳ Thuật",
+        "Núcleo Sísmico",
+        "Receptáculo de trigramas sísmico",
+        "Schocktrigramm-Gefäß",
+        "Tremor Trigram Vessel",
+        "Триграмма Гром",
+        "雷鳴が如き八卦",
+        "震元奇樞",
+        "진괘를 담은 함"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "13144": {
+      "id": "13144",
+      "name": "燔火胧夜",
+      "type": "engine",
+      "rank": "A",
+      "icon": "assets/tuning/engine-13144.webp",
+      "aliases": [
+        "Fogo Fátuo",
+        "Fournaise follette",
+        "Grill O'Wisp",
+        "Ignición fatua",
+        "Irres Grilllicht",
+        "Đêm Đen Rực Lửa",
+        "Жарево заката",
+        "燔火の朧夜",
+        "燔火朧夜",
+        "어스름한 밤의 화염"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14001": {
+      "id": "14001",
+      "name": "加农转子",
+      "type": "engine",
+      "rank": "A",
+      "icon": "assets/tuning/engine-14001.webp",
+      "aliases": [
+        "Cannon Rotor",
+        "Con Quay Cannon",
+        "Kanonenrotor",
+        "Rotor de Canhão",
+        "Rotor de canon",
+        "Rotor de cañón",
+        "Артиллерийский ротор",
+        "キャノンローラー",
+        "加農轉子",
+        "캐논 로터"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14002": {
+      "id": "14002",
+      "name": "逍遥游球",
+      "type": "engine",
+      "rank": "A",
+      "icon": "assets/tuning/engine-14002.webp",
+      "aliases": [
+        "Bola de juego desenfrenada",
+        "Bóng Bay Tự Do",
+        "Jogada Livre",
+        "Sphère ludique endiablée",
+        "Unfettered Game Ball",
+        "Ungezügelter Spielball",
+        "Мяч для игры без правил",
+        "ゲームボール",
+        "逍遙遊球",
+        "내 맘대로 게임 볼"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14003": {
+      "id": "14003",
+      "name": "左轮转子",
+      "type": "engine",
+      "rank": "A",
+      "icon": "assets/tuning/engine-14003.webp",
+      "aliases": [
+        "Barillet à six coups",
+        "Barril giratorio",
+        "Khẩu Súng Ổ Xoay",
+        "Revolver-Rotor",
+        "Revólver Giratório",
+        "Six Shooter",
+        "Шестизарядник",
+        "シックスシューター",
+        "左輪轉子",
+        "리볼버 로터"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14102": {
+      "id": "14102",
+      "name": "钢铁肉垫",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14102.webp",
+      "aliases": [
+        "Almofada de Aço",
+        "Almohadillas férreas",
+        "Coussinets d'acier",
+        "Stahlpfote",
+        "Steel Cushion",
+        "Đệm Thịt Thép",
+        "Стальная лапа",
+        "鋼の肉球",
+        "鋼鐵肉墊",
+        "스틸 쿠션"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14104": {
+      "id": "14104",
+      "name": "硫磺石",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14104.webp",
+      "aliases": [
+        "O Enxofre",
+        "Petrazufre",
+        "Schwefelstein",
+        "Soufre",
+        "The Brimstone",
+        "Đá Lưu Huỳnh",
+        "Сера",
+        "ブリムストーン",
+        "유황석"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14105": {
+      "id": "14105",
+      "name": "海妖摇篮",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14105.webp",
+      "aliases": [
+        "Berceau du kraken",
+        "Chiếc Nôi Hải Yêu",
+        "Cuna del <i>kraken</i>",
+        "Kraken's Cradle",
+        "Krakenwiege",
+        "Ninho do Kraken",
+        "Колыбель кракена",
+        "セイレーンクレードル",
+        "海妖搖籃",
+        "크라켄의 요람"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14107": {
+      "id": "14107",
+      "name": "奔袭獠牙",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14107.webp",
+      "aliases": [
+        "Colmillos furibundos",
+        "Défenses de la fureur",
+        "Hauer der Furie",
+        "Nanh Nhọn Tập Kích",
+        "Presas da Investida",
+        "Tusks of Fury",
+        "Клыки ярости",
+        "奔襲獠牙",
+        "猛進するキバ",
+        "저돌적인 송곳니"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14109": {
+      "id": "14109",
+      "name": "霰落星殿",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14109.webp",
+      "aliases": [
+        "Hailstorm Shrine",
+        "Santuário da Tormenta",
+        "Schrein des Hagelsturms",
+        "Sảnh Đường Tuyết Rơi",
+        "Temple de la grêle",
+        "Templo a la granizada estelífera",
+        "Храм вьюги",
+        "あられ落つ星殿",
+        "싸락눈 내린 별각"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14110": {
+      "id": "14110",
+      "name": "燃狱齿轮",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14110.webp",
+      "aliases": [
+        "Bánh Răng Thiêu Đốt",
+        "Engranaje infernal",
+        "Engrenage infernal",
+        "Engrenagens Infernais",
+        "Hellfire Gears",
+        "Höllenfeuer-Zahnräder",
+        "Шестерни адского пламени",
+        "燃獄ギア",
+        "燃獄齒輪",
+        "헬파이어 기어"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14114": {
+      "id": "14114",
+      "name": "拘缚者",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14114.webp",
+      "aliases": [
+        "Der Gefesselte",
+        "El sometido",
+        "L'enchaîné",
+        "Người Trói Buộc",
+        "O Restrito",
+        "The Restrained",
+        "Сдержанность",
+        "拘縛されし者",
+        "拘縛者",
+        "구속된 자"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14116": {
+      "id": "14116",
+      "name": "焰心桂冠",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14116.webp",
+      "aliases": [
+        "Blazing Laurel",
+        "Coroa Flamejante",
+        "Laurier flamboyant",
+        "Lodernde Lorbeeren",
+        "Láurea ardiente",
+        "Vòng Nguyệt Quế Rực Rỡ",
+        "Пламенный венец",
+        "炎心の桂冠",
+        "화염의 월계관"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14117": {
+      "id": "14117",
+      "name": "灼心摇壶",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14117.webp",
+      "aliases": [
+        "Bình Lắc Lửa Thiêu",
+        "Coctelera incandescente",
+        "Coqueteleira Ardente",
+        "Entflammender Mixbecher",
+        "Flamemaker Shaker",
+        "Shakeur à flammes",
+        "Шейкер-огнемейкер",
+        "バーニング・シェイカー",
+        "灼心搖壺",
+        "타오르는 셰이커"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14118": {
+      "id": "14118",
+      "name": "嵌合编译器",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14118.webp",
+      "aliases": [
+        "Compilador de Fusão",
+        "Compilador quimérico",
+        "Compilateur chimérique",
+        "Fusion Compiler",
+        "Fusion Complier",
+        "Integrierter Compiler",
+        "Trình Biên Dịch Tích Hợp",
+        "Встроенный компилятор",
+        "嵌合編譯器",
+        "複合コンパイラ",
+        "감입 컴파일러"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14119": {
+      "id": "14119",
+      "name": "深海访客",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14119.webp",
+      "aliases": [
+        "Deep Sea Visitor",
+        "Tiefseebesucher",
+        "Visitante das Profundezas",
+        "Visitante de altamar",
+        "Visiteur des abysses",
+        "Vị Khách Biển Sâu",
+        "Гость из глубин",
+        "ディープシー・ビジター",
+        "深海訪客",
+        "심해 방문객"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14120": {
+      "id": "14120",
+      "name": "残心青囊",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14120.webp",
+      "aliases": [
+        "Caixa de Ervas Zanshin",
+        "Dispensador de fármacos zanshin",
+        "Hộp Thuốc Tàn Tâm",
+        "Pilulier Zanshin",
+        "Zanshin Herb Case",
+        "Zanshin-Sanitätsorb",
+        "Аптечка дзансин",
+        "残心の青籠",
+        "殘心青囊",
+        "잔심의 청낭"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14121": {
+      "id": "14121",
+      "name": "啜泣摇篮",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14121.webp",
+      "aliases": [
+        "Berceau des sanglots",
+        "Berço Choroso",
+        "Chiếc Nôi Nức Nở",
+        "Cuna plañidera",
+        "Weeping Cradle",
+        "Weinende Wiege",
+        "Колыбель плача",
+        "啜り泣くゆりかご",
+        "啜泣搖籃",
+        "흐느끼는 요람"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14122": {
+      "id": "14122",
+      "name": "时流贤者",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14122.webp",
+      "aliases": [
+        "Chronotisseur",
+        "Hiền Giả Thời Gian",
+        "Sábio do Tempo",
+        "Timeweaver",
+        "Urdidor del tiempo",
+        "Weberin der Zeit",
+        "Ткач времени",
+        "刻流の賢者",
+        "時流賢者",
+        "시류의 현자"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14124": {
+      "id": "14124",
+      "name": "防暴者Ⅵ型",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14124.webp",
+      "aliases": [
+        "Antidisturbios (VI)",
+        "Chống Bạo Động VI",
+        "Force anti-émeute Mark VI",
+        "Krawall-Unterdrücker Typ VI",
+        "Riot Suppressor Mark VI",
+        "Supressora de Motim - Tipo VI",
+        "Усмиритель беспорядков VI",
+        "サプレッサーⅥ型",
+        "서프레서 Ⅵ형"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14125": {
+      "id": "14125",
+      "name": "玉壶青冰",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14125.webp",
+      "aliases": [
+        "Bule Jade-Gelo",
+        "Ice-Jade Teapot",
+        "Ngọc Hồ Thanh Băng",
+        "Teekanne aus Jade",
+        "Tetera esmeraldina",
+        "Théière en jade",
+        "Чайник нефритовой чистоты",
+        "玉壺青冰",
+        "玉壺青氷",
+        "맑은 옥주전자"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14126": {
+      "id": "14126",
+      "name": "淬锋钳刺",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14126.webp",
+      "aliases": [
+        "Aguijón agudo",
+        "Espinhaço Afiado",
+        "Geschliffener Stachel",
+        "Gọng Kìm Sắc Bén",
+        "Pinces acérées",
+        "Sharpened Stinger",
+        "Заострённые шипы",
+        "淬鋒鉗刺",
+        "磨き抜かれた切っ先",
+        "예리한 집게칼"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14129": {
+      "id": "14129",
+      "name": "千面日陨",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14129.webp",
+      "aliases": [
+        "Eclipse de Mil Faces",
+        "Mille facettes du soleil déchu",
+        "Miríada de eclipses",
+        "Myriad Eclipse",
+        "Myriadenfinsternis",
+        "Thiên Diện Bách Biến",
+        "Тысяча затмений",
+        "千面の落日",
+        "千面日隕",
+        "천변하는 태양의 몰락"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14130": {
+      "id": "14130",
+      "name": "嚣枪喧焰",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14130.webp",
+      "aliases": [
+        "Angriffslustiges Geloder",
+        "Bellicose Blaze",
+        "Brasier belliqueux",
+        "Chamas Estrondosas",
+        "Fogonazo belicoso",
+        "Nòng Súng Rực Lửa",
+        "Пламя брани",
+        "囂槍喧焰",
+        "憤怒の銃騒",
+        "소란한 총성과 화염"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14131": {
+      "id": "14131",
+      "name": "玲珑妆匣",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14131.webp",
+      "aliases": [
+        "Elegant Vanity",
+        "Elegante Kosmetiktasche",
+        "Envanecimiento primoroso",
+        "Hộp Trang Điểm Sành Điệu",
+        "Trousse coquette",
+        "Vaidade Elegante",
+        "Стильная штучка",
+        "優美のヴァニティ",
+        "玲瓏妝匣",
+        "우아한 베니티백"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14132": {
+      "id": "14132",
+      "name": "心弦夜响",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14132.webp",
+      "aliases": [
+        "Acordes del corazón nocturno",
+        "Appassionato nocturne",
+        "Heartstring Nocturne",
+        "Rührende Nachtmelodie",
+        "Soar do Coração Noturno",
+        "Tiếng Lòng Trong Đêm",
+        "Струны ночи",
+        "心弦のノクターン",
+        "心弦夜響",
+        "심금을 울리는 야상곡"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14133": {
+      "id": "14133",
+      "name": "飞鸟星梦",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14133.webp",
+      "aliases": [
+        "Envol de l'oiseau des rêves",
+        "Flight of Fancy",
+        "Phi Điểu Tinh Mộng",
+        "Revoloteo ensoñador",
+        "Sonho Estelar do Pássaro",
+        "Träumereiflug",
+        "Полёт среди грёз",
+        "飛鳥星夢",
+        "鳥は夢へと羽ばたいて",
+        "별빛 꿈을 누비는 새"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14134": {
+      "id": "14134",
+      "name": "半糖雪兔",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14134.webp",
+      "aliases": [
+        "Coelhinha Meio Açucarada",
+        "Conejita semiazucarada",
+        "Halbzuckerhäschen",
+        "Half-Sugar Bunny",
+        "Lapin givré allégé",
+        "Thỏ Tuyết Ít Đường",
+        "Сладковатая зайка",
+        "甘さ控えめ雪うさぎ",
+        "당도 50% 눈토끼"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14136": {
+      "id": "14136",
+      "name": "索魂影眸",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14136.webp",
+      "aliases": [
+        "Olhos da Ceifadora",
+        "Regard spectral",
+        "Spectral Gaze",
+        "Spektralvision",
+        "Visión espectral",
+        "Ánh Mắt Tìm Hồn",
+        "Призрачный взор",
+        "奪魂の瞑目",
+        "탐혼의 눈동자"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14137": {
+      "id": "14137",
+      "name": "青溟笼舍",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14137.webp",
+      "aliases": [
+        "Abrigo de Qingming",
+        "Cage à oiseau Qingming",
+        "Käfig des Qingming",
+        "Nidal Qingming",
+        "Qingming Birdcage",
+        "Thanh Minh Điểu Cư",
+        "Клетка Небесной птицы",
+        "青溟の鳥籠",
+        "青溟籠舍",
+        "청명의 보금자리"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14138": {
+      "id": "14138",
+      "name": "牺牲洁纯",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14138.webp",
+      "aliases": [
+        "Hy Sinh Thuần Khiết",
+        "Innocence brisée",
+        "Inocencia sacrificada",
+        "Sacrifício da Pureza",
+        "Severed Innocence",
+        "Zerrissene Unschuld",
+        "Чистота утраты",
+        "犧牲潔純",
+        "純然たる犠牲",
+        "순결한 희생"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14139": {
+      "id": "14139",
+      "name": "福虓炉炉",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14139.webp",
+      "aliases": [
+        "Fornalha Fufuriosa",
+        "Fu-fourneau rugissant",
+        "Mäch-tiger Brüllofen",
+        "Phúc Khí Phun Trào",
+        "Roaring Fur-nace",
+        "Rugiente urna de la fortuna",
+        "Вместилище фурчаний",
+        "招福の虎炉",
+        "福虓爐爐",
+        "복을 뿜는 맹호"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14140": {
+      "id": "14140",
+      "name": "十方锻星",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14140.webp",
+      "aliases": [
+        "Excelencia disciplinada",
+        "Forja das Dez Direções",
+        "Geübte Perfektion",
+        "Practiced Perfection",
+        "Sphère stellaire 10D",
+        "Thập Phương Rèn Tinh Tú",
+        "Всесторонняя отточенность",
+        "十方鍛星",
+        "十面百錬の星",
+        "완벽하게 단조된 별"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14141": {
+      "id": "14141",
+      "name": "狸法七变化",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14141.webp",
+      "aliases": [
+        "Metanukimorfosis",
+        "Metanukimorphose",
+        "Metanukimorphosis",
+        "Métanukimorphose",
+        "Sete Mudanças de Tanuki",
+        "Tanuki Thất Biến",
+        "Семь уловок тануки",
+        "狸の七変化",
+        "狸法七變化",
+        "너구리의 7단 변신"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14143": {
+      "id": "14143",
+      "name": "云霓孤光",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14143.webp",
+      "aliases": [
+        "Cloudcleave Radiance",
+        "Esplendor surcanimbos",
+        "Radiância das Nuvens",
+        "Tia Sáng Giữa Làn Mây",
+        "Wolkenspaltglanz",
+        "Éclat fend-nuages",
+        "Проблеск в облаках",
+        "孤光彩雲",
+        "雲霓孤光",
+        "구름을 헤친 빛"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14145": {
+      "id": "14145",
+      "name": "铸梦炉歌",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14145.webp",
+      "aliases": [
+        "Dreamlit Hearth",
+        "Forja dos Sonhos",
+        "Fourneau des rêves",
+        "Hogar de ensueño",
+        "Khúc Ca Rèn Mộng",
+        "Traumlichtherd",
+        "Очаг грёз",
+        "炉で歌い上げられる夢",
+        "鑄夢爐歌",
+        "꿈을 빚는 용광로의 노래"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14146": {
+      "id": "14146",
+      "name": "机巧心种",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14146.webp",
+      "aliases": [
+        "Cordis Germina",
+        "Cordis germina",
+        "Hạt Giống Con Tim",
+        "Рукотворное сердце",
+        "機巧心種",
+        "駆動する種",
+        "기계 심장에 내린 씨앗"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14147": {
+      "id": "14147",
+      "name": "怒目金刚",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14147.webp",
+      "aliases": [
+        "Nộ Mục Kim Cang",
+        "Vajra Enfurecido",
+        "Vajra courroucé",
+        "Vajra iracundo",
+        "Wrathful Vajra",
+        "Zorniger Vajra",
+        "Грозный страж",
+        "怒目金剛",
+        "金剛不壊怒髪衝冠",
+        "성난 눈의 금강"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14148": {
+      "id": "14148",
+      "name": "昨夜来电",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14148.webp",
+      "aliases": [
+        "Anruf des Gestrigen",
+        "Appel de la nuit dernière",
+        "Chamadas do Passado",
+        "Cuộc Gọi Đêm Qua",
+        "Llamada del ayer",
+        "Yesterday Calls",
+        "Звонок из прошлого",
+        "昨夜からの着信",
+        "昨夜來電",
+        "지난밤의 전화"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14149": {
+      "id": "14149",
+      "name": "思络成歌",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14149.webp",
+      "aliases": [
+        "Ballade au fil des pensées",
+        "Gedankentakt",
+        "Pensamentos em Canção",
+        "Pensamientos hechos canción",
+        "Thoughtbop",
+        "Tư Duy Hóa Nhạc Khúc",
+        "Мысли в бит",
+        "思絡成歌",
+        "想いが織りなす歌",
+        "사유로 빚은 노래"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14150": {
+      "id": "14150",
+      "name": "壳中之灵",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14150.webp",
+      "aliases": [
+        "Ange dans la coquille",
+        "Angel in the Shell",
+        "Anjo na Concha",
+        "El ángel en la carcasa",
+        "Engel in Verhüllung",
+        "Lớp Vỏ Ẩn Linh Hồn",
+        "Душа в доспехах",
+        "殻の中の魂",
+        "殼中之靈",
+        "껍데기 속 영혼"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14151": {
+      "id": "14151",
+      "name": "霓虹妄想",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14151.webp",
+      "aliases": [
+        "Delusiones de neón",
+        "Fantaisie de néon",
+        "Fantasias de Neon",
+        "Neon Fantasies",
+        "Neon-Fantasie",
+        "Vọng Tưởng Neon",
+        "Неоновое наваждение",
+        "妄想ディスコテック",
+        "네온사인 망상"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14152": {
+      "id": "14152",
+      "name": "鳞齿寻踪",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14152.webp",
+      "aliases": [
+        "Nanh Vảy Tầm Vết",
+        "Rastreador serpentino",
+        "Rastro Serpentino",
+        "Schlängelnde Spurensuche",
+        "Serpentine Seeker",
+        "Traque serpentine",
+        "Рептилокатор",
+        "影を追う白き牙",
+        "鱗齒尋蹤",
+        "추적하는 송곳니"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14153": {
+      "id": "14153",
+      "name": "辉骑面铠",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14153.webp",
+      "aliases": [
+        "Heaume du Chevalier stellaire",
+        "Máscara do Cavaleiro Radiante",
+        "Mặt Nạ Huy Hoàng",
+        "Starlight Rider Faceplate",
+        "Sternenlicht-Bikervisier",
+        "Yelmo de motorista estelar",
+        "Звёздное забрало",
+        "スターライトバイザー",
+        "輝騎面鎧",
+        "별빛 기사의 가면"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14154": {
+      "id": "14154",
+      "name": "朔月裁霜",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14154.webp",
+      "aliases": [
+        "Falce escarchada",
+        "Faucilles de marbre",
+        "Frostfall Sickle",
+        "Frostschlitz-Sichel",
+        "Lua Gélida",
+        "Phán Quyết Sương Giá",
+        "Ледяное новолуние",
+        "フロスト・クレセント",
+        "삭월에 끊어지는 서리"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14155": {
+      "id": "14155",
+      "name": "日冕遗蜕",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14155.webp",
+      "aliases": [
+        "Exúvia Solar",
+        "Sol Exuvia",
+        "Sol exuvia",
+        "Thái Dương Thánh Xác",
+        "Солярный экзувий",
+        "太陽の抜け殻",
+        "日冕遺蛻",
+        "태양의 유체"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14156": {
+      "id": "14156",
+      "name": "琳琅鎏心",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14156.webp",
+      "aliases": [
+        "Coração de Jade",
+        "Joyau Dore",
+        "Joyau Doré",
+        "Joyau doré",
+        "Viên Ngọc Lưu Ly",
+        "Драгоценная прохлада",
+        "金襴の心",
+        "영롱한 금빛 마음"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14157": {
+      "id": "14157",
+      "name": "首席跟班",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14157.webp",
+      "aliases": [
+        "Assistente-Chefe",
+        "Bras droit en chef",
+        "Chief Sidekick",
+        "Leitendes Helferlein",
+        "Subalterno jefe",
+        "Trợ Thủ Đắc Lực",
+        "Старший ассистент",
+        "エースのオトモ",
+        "수석 조수"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14158": {
+      "id": "14158",
+      "name": "空羽复归之诗",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14158.webp",
+      "aliases": [
+        "Khúc Ca Đôi Cánh Tái Sinh",
+        "Oda de alas renacidas",
+        "Ode aux ailes ressuscitées",
+        "Ode der auferstandenen Flügel",
+        "Ode of Resurrected Wings",
+        "Ode à Ressurreição das Asas",
+        "Ода о возвращении крыльев",
+        "目覚めし翼の聖歌",
+        "空羽復歸之詩",
+        "돌아온 날개의 시"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "14159": {
+      "id": "14159",
+      "name": "骁骑礼赞",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14159.webp",
+      "aliases": [
+        "Exaltación de caballería",
+        "Exaltação do Cavaleiro",
+        "Knight's Extolment",
+        "Lobpreisung der Ritterin",
+        "Tán Dương Kỵ Sĩ Dũng Mãnh",
+        "Éloge du cavalier",
+        "Ход конём",
+        "栄光の騎士道",
+        "驍騎禮讚",
+        "기사 예찬"
+      ],
+      "width": 400,
+      "height": 400
+    },
+    "53001": {
+      "id": "53001",
+      "name": "企鹅布",
+      "type": "bangboo",
+      "rank": "A",
+      "icon": "assets/tuning/bangboo-53001.webp",
+      "aliases": [],
+      "width": 512,
+      "height": 512
+    },
+    "53003": {
+      "id": "53003",
+      "name": "寻宝布",
+      "type": "bangboo",
+      "rank": "A",
+      "icon": "assets/tuning/bangboo-53003.webp",
+      "aliases": [],
+      "width": 512,
+      "height": 512
+    },
+    "53004": {
+      "id": "53004",
+      "name": "扑击布",
+      "type": "bangboo",
+      "rank": "A",
+      "icon": "assets/tuning/bangboo-53004.webp",
+      "aliases": [],
+      "width": 512,
+      "height": 512
+    },
+    "53005": {
+      "id": "53005",
+      "name": "纸壳布",
+      "type": "bangboo",
+      "rank": "A",
+      "icon": "assets/tuning/bangboo-53005.webp",
+      "aliases": [],
+      "width": 512,
+      "height": 512
+    },
+    "53006": {
+      "id": "53006",
+      "name": "纸袋布",
+      "type": "bangboo",
+      "rank": "A",
+      "icon": "assets/tuning/bangboo-53006.webp",
+      "aliases": [],
+      "width": 512,
+      "height": 512
+    },
+    "53007": {
+      "id": "53007",
+      "name": "泪眼布",
+      "type": "bangboo",
+      "rank": "A",
+      "icon": "assets/tuning/bangboo-53007.webp",
+      "aliases": [],
+      "width": 512,
+      "height": 512
+    },
+    "53008": {
+      "id": "53008",
+      "name": "果核布",
+      "type": "bangboo",
+      "rank": "A",
+      "icon": "assets/tuning/bangboo-53008.webp",
+      "aliases": [],
+      "width": 512,
+      "height": 512
+    },
+    "53009": {
+      "id": "53009",
+      "name": "飞靶布",
+      "type": "bangboo",
+      "rank": "A",
+      "icon": "assets/tuning/bangboo-53009.webp",
+      "aliases": [],
+      "width": 512,
+      "height": 512
+    },
+    "53010": {
+      "id": "53010",
+      "name": "电击布",
+      "type": "bangboo",
+      "rank": "A",
+      "icon": "assets/tuning/bangboo-53010.webp",
+      "aliases": [],
+      "width": 512,
+      "height": 512
+    },
+    "53011": {
+      "id": "53011",
+      "name": "磁力布",
+      "type": "bangboo",
+      "rank": "A",
+      "icon": "assets/tuning/bangboo-53011.webp",
+      "aliases": [],
+      "width": 512,
+      "height": 576
+    },
+    "53013": {
+      "id": "53013",
+      "name": "不良布",
+      "type": "bangboo",
+      "rank": "A",
+      "icon": "assets/tuning/bangboo-53013.webp",
+      "aliases": [],
+      "width": 512,
+      "height": 512
+    },
+    "54001": {
+      "id": "54001",
+      "name": "鲨牙布",
+      "type": "bangboo",
+      "rank": "S",
+      "icon": "assets/tuning/bangboo-54001.webp",
+      "aliases": [],
+      "width": 512,
+      "height": 576
+    },
+    "54002": {
+      "id": "54002",
+      "name": "阿全",
+      "type": "bangboo",
+      "rank": "S",
+      "icon": "assets/tuning/bangboo-54002.webp",
+      "aliases": [],
+      "width": 512,
+      "height": 512
+    },
+    "54003": {
+      "id": "54003",
+      "name": "恶魔布",
+      "type": "bangboo",
+      "rank": "A",
+      "icon": "assets/tuning/bangboo-54003.webp",
+      "aliases": [],
+      "width": 512,
+      "height": 512
+    },
+    "54004": {
+      "id": "54004",
+      "name": "巴特勒",
+      "type": "bangboo",
+      "rank": "S",
+      "icon": "assets/tuning/bangboo-54004.webp",
+      "aliases": [],
+      "width": 512,
+      "height": 512
+    },
+    "54005": {
+      "id": "54005",
+      "name": "艾米莉安",
+      "type": "bangboo",
+      "rank": "S",
+      "icon": "assets/tuning/bangboo-54005.webp",
+      "aliases": [],
+      "width": 512,
+      "height": 512
+    },
+    "54006": {
+      "id": "54006",
+      "name": "飚速布",
+      "type": "bangboo",
+      "rank": "S",
+      "icon": "assets/tuning/bangboo-54006.webp",
+      "aliases": [],
+      "width": 512,
+      "height": 512
+    },
+    "54008": {
+      "id": "54008",
+      "name": "插头布",
+      "type": "bangboo",
+      "rank": "S",
+      "icon": "assets/tuning/bangboo-54008.webp",
+      "aliases": [],
+      "width": 512,
+      "height": 576
+    },
+    "54009": {
+      "id": "54009",
+      "name": "共鸣布",
+      "type": "bangboo",
+      "rank": "S",
+      "icon": "assets/tuning/bangboo-54009.webp",
+      "aliases": [],
+      "width": 512,
+      "height": 512
+    },
+    "54010": {
+      "id": "54010",
+      "name": "阿饭",
+      "type": "bangboo",
+      "rank": "S",
+      "icon": "assets/tuning/bangboo-54010.webp",
+      "aliases": [],
+      "width": 512,
+      "height": 512
+    },
+    "54011": {
+      "id": "54011",
+      "name": "赤红莫库斯",
+      "type": "bangboo",
+      "rank": "S",
+      "icon": "assets/tuning/bangboo-54011.webp",
+      "aliases": [],
+      "width": 512,
+      "height": 512
+    },
+    "54012": {
+      "id": "54012",
+      "name": "阿崔巡查",
+      "type": "bangboo",
+      "rank": "S",
+      "icon": "assets/tuning/bangboo-54012.webp",
+      "aliases": [],
+      "width": 512,
+      "height": 512
+    },
+    "54013": {
+      "id": "54013",
+      "name": "左轮布",
+      "type": "bangboo",
+      "rank": "S",
+      "icon": "assets/tuning/bangboo-54013.webp",
+      "aliases": [],
+      "width": 512,
+      "height": 576
+    },
+    "54014": {
+      "id": "54014",
+      "name": "格列佛探员",
+      "type": "bangboo",
+      "rank": "S",
+      "icon": "assets/tuning/bangboo-54014.webp",
+      "aliases": [],
+      "width": 512,
+      "height": 512
+    },
+    "54015": {
+      "id": "54015",
+      "name": "咔嚓仔",
+      "type": "bangboo",
+      "rank": "S",
+      "icon": "assets/tuning/bangboo-54015.webp",
+      "aliases": [],
+      "width": 512,
+      "height": 512
+    },
+    "54016": {
+      "id": "54016",
+      "name": "罗宾",
+      "type": "bangboo",
+      "rank": "S",
+      "icon": "assets/tuning/bangboo-54016.webp",
+      "aliases": [],
+      "width": 512,
+      "height": 512
+    },
+    "54017": {
+      "id": "54017",
+      "name": "狮耶",
+      "type": "bangboo",
+      "rank": "S",
+      "icon": "assets/tuning/bangboo-54017.webp",
+      "aliases": [],
+      "width": 512,
+      "height": 512
+    },
+    "54018": {
+      "id": "54018",
+      "name": "艾丝弥小姐",
+      "type": "bangboo",
+      "rank": "S",
+      "icon": "assets/tuning/bangboo-54018.webp",
+      "aliases": [],
+      "width": 512,
+      "height": 512
+    },
+    "54019": {
+      "id": "54019",
+      "name": "「墨丘利」",
+      "type": "bangboo",
+      "rank": "S",
+      "icon": "assets/tuning/bangboo-54019.webp",
+      "aliases": [],
+      "width": 512,
+      "height": 512
+    },
+    "54020": {
+      "id": "54020",
+      "name": "比克布利克",
+      "type": "bangboo",
+      "rank": "S",
+      "icon": "assets/tuning/bangboo-54020.webp",
+      "aliases": [],
+      "width": 512,
+      "height": 576
+    },
+    "54021": {
+      "id": "54021",
+      "name": "芽芽",
+      "type": "bangboo",
+      "rank": "S",
+      "icon": "assets/tuning/bangboo-54021.webp",
+      "aliases": [],
+      "width": 512,
+      "height": 512
+    },
+    "54022": {
+      "id": "54022",
+      "name": "超极杰克",
+      "type": "bangboo",
+      "rank": "S",
+      "icon": "assets/tuning/bangboo-54022.webp",
+      "aliases": [],
+      "width": 512,
+      "height": 512
+    },
+    "54023": {
+      "id": "54023",
+      "name": "艾瑞儿",
+      "type": "bangboo",
+      "rank": "S",
+      "icon": "assets/tuning/bangboo-54023.webp",
+      "aliases": [],
+      "width": 512,
+      "height": 512
+    },
+    "1611": {
+      "id": "1611",
+      "name": "克拉蕾",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1611.webp",
+      "aliases": [
+        "Claret",
+        "Clarette",
+        "Кларет",
+        "クラレッタ",
+        "클라렛"
+      ],
+      "width": 142,
+      "height": 142,
+      "introducedVersion": "3.2.0",
+      "availability": {
+        "status": "released",
+        "phase": "first-half",
+        "label": "3.2 上期"
+      }
+    },
+    "1621": {
+      "id": "1621",
+      "name": "洛克茜",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1621.webp",
+      "aliases": [
+        "Roxy",
+        "Рокси",
+        "ロクシー",
+        "록시",
+        "洛克西",
+        "洛克茜·伊芙莉塔·普莱斯"
+      ],
+      "width": 142,
+      "height": 142,
+      "introducedVersion": "3.2.0",
+      "availability": {
+        "status": "released",
+        "phase": "second-half",
+        "label": "3.2 下期 · 9 月 30 日开放",
+        "note": "官方公告：2026/09/30 12:00—2026/10/20 14:59（服务器时间）。各服务器按自身时间开放，请以游戏内频段倒计时为准。",
+        "startTime": "2026-09-30 12:00",
+        "endTime": "2026-10-20 14:59",
+        "timeBasis": "server-time",
+        "sourceUrl": "https://zenless.hoyoverse.com/en-us/news/166475?catchSpider=1"
+      }
+    },
+    "12016": {
+      "id": "12016",
+      "name": "「月相」-弦",
+      "type": "engine",
+      "rank": "B",
+      "icon": "assets/tuning/engine-12016.webp",
+      "aliases": [
+        "\"Lunar\" Semiluna",
+        "Fase lunar - Semiluna",
+        "[Lunaire] Croissante",
+        "[Lunar] Crescente",
+        "[Lunar] Semiluna",
+        "[Pha Mặt Trăng] Semiluna",
+        "Фаза луны: Полумесяц",
+        "„Mondphase“ – Semiluna",
+        "「루나」-반달"
+      ],
+      "width": 156,
+      "height": 156,
+      "introducedVersion": "3.2.0",
+      "availability": {
+        "status": "released",
+        "phase": "first-half",
+        "label": "3.2 上期"
+      }
+    },
+    "13017": {
+      "id": "13017",
+      "name": "喵运当头",
+      "type": "engine",
+      "rank": "A",
+      "icon": "assets/tuning/engine-13017.webp",
+      "aliases": [
+        "Catty Luck",
+        "Enormiaues Glück",
+        "Felis Fortuna",
+        "Fortuna felina",
+        "Sorte Felina",
+        "Vận Meow Gõ Cửa",
+        "Котик удачи",
+        "ニャン運到来",
+        "喵運當頭",
+        "묘운이 눈앞에"
+      ],
+      "width": 156,
+      "height": 156,
+      "introducedVersion": "3.2.0",
+      "availability": {
+        "status": "released",
+        "phase": "first-half",
+        "label": "3.2 上期"
+      }
+    },
+    "13021": {
+      "id": "13021",
+      "name": "血髓秘匣",
+      "type": "engine",
+      "rank": "A",
+      "icon": "assets/tuning/engine-13021.webp",
+      "aliases": [
+        "Arca de Medula Sangrenta",
+        "Arca de médula ósea",
+        "Bloodmarrow Coffer",
+        "Blutmarktruhe",
+        "Coffre de moelle sanguine",
+        "Huyết Tủy Bí Hạp",
+        "Кроветворный ларец",
+        "ブラッドボックス",
+        "진혈의 비갑"
+      ],
+      "width": 156,
+      "height": 156,
+      "introducedVersion": "3.2.0",
+      "availability": {
+        "status": "released",
+        "phase": "first-half",
+        "label": "3.2 上期"
+      }
+    },
+    "14161": {
+      "id": "14161",
+      "name": "猩红渴望",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14161.webp",
+      "aliases": [
+        "Blutroter Durst",
+        "Crimson Thirst",
+        "Khát Vọng Đỏ Thẫm",
+        "Sed escarlata",
+        "Sede Escarlate",
+        "Soif écarlate",
+        "Алая жажда",
+        "深紅の渇望",
+        "猩紅渴望",
+        "핏빛 갈망"
+      ],
+      "width": 156,
+      "height": 156,
+      "introducedVersion": "3.2.0",
+      "availability": {
+        "status": "released",
+        "phase": "first-half",
+        "label": "3.2 上期"
+      }
+    },
+    "14162": {
+      "id": "14162",
+      "name": "绯月银棺",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14162.webp",
+      "aliases": [
+        "Caixão da Lua Carmesim",
+        "Cercueil de la lune pourpre",
+        "Crimson Moon Casket",
+        "Féretro de la luna carmesí",
+        "Huyết Nguyệt Ngân Quan",
+        "Sarg des Karmesinmonds",
+        "Багряный гроб",
+        "緋月の銀棺",
+        "緋月銀棺",
+        "진홍달의 은관"
+      ],
+      "width": 156,
+      "height": 156,
+      "introducedVersion": "3.2.0",
+      "availability": {
+        "status": "released",
+        "phase": "second-half",
+        "label": "3.2 下期 · 9 月 30 日开放",
+        "note": "官方公告：2026/09/30 12:00—2026/10/20 14:59（服务器时间）。各服务器按自身时间开放，请以游戏内频段倒计时为准。",
+        "startTime": "2026-09-30 12:00",
+        "endTime": "2026-10-20 14:59",
+        "timeBasis": "server-time",
+        "sourceUrl": "https://zenless.hoyoverse.com/en-us/news/166475?catchSpider=1"
+      }
+    },
+    "1641": {
+      "id": "1641",
+      "name": "菲欧妮",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1641.webp",
+      "aliases": [
+        "Phoenix",
+        "Phoenix Reffaella",
+        "Phénix",
+        "Феникс",
+        "フィオニー",
+        "菲欧妮·蕾法爱菈",
+        "菲歐妮",
+        "피닉스"
+      ],
+      "introducedVersion": "3.3.0",
+      "availability": {
+        "status": "released",
+        "phase": "first-half",
+        "label": "3.3 上期 · 10 月 21 日开放",
+        "note": "官方公告：3.3 版本更新后—2026/11/11 11:59（服务器时间）。各服务器按自身时间开放，请以游戏内频段倒计时为准。",
+        "startTime": "2026-10-21 06:00",
+        "endTime": "2026-11-11 11:59",
+        "timeBasis": "server-time",
+        "sourceUrl": "https://www.miyoushe.com/zzz/article/79004828"
+      },
+      "width": 142,
+      "height": 142,
+      "imageSource": {
+        "clientBuild": "OSPRODWin3.3.0",
+        "name": "IconRoleCircle1641",
+        "type": "Texture2D",
+        "cab": "CAB-4f62a7986d4d96459442b24179b92339",
+        "pathId": "-5880937805303013585",
+        "source": "client/ZenlessZoneZero_Data/StreamingAssets/Blocks/3686378050.blk",
+        "sourceSha256": "7319e3d9c5205796a08f645ea22cfbc5ac3606655fed20f02705219fa6f5a722",
+        "container": "14932597438890898877",
+        "offset": 263527,
+        "width": 142,
+        "height": 142,
+        "pngSha256": "de6cd7649cbfc158fad13ce67cbc94ab03c1b9190b6a4a662ceaeedcf78dca0a"
+      }
+    },
+    "14164": {
+      "id": "14164",
+      "name": "涅槃初翎",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14164.webp",
+      "aliases": [
+        "Feder der Wiedergeburt",
+        "Pluma Renascente",
+        "Pluma del renacimiento",
+        "Plume of Rebirth",
+        "Plumes de la renaissance",
+        "Sơ Linh Niết Bàn",
+        "Перо перерождения",
+        "転生の炎翼",
+        "열반의 첫 깃"
+      ],
+      "introducedVersion": "3.3.0",
+      "availability": {
+        "status": "released",
+        "phase": "first-half",
+        "label": "3.3 上期 · 10 月 21 日开放",
+        "note": "官方公告：3.3 版本更新后—2026/11/11 11:59（服务器时间）。各服务器按自身时间开放，请以游戏内频段倒计时为准。",
+        "startTime": "2026-10-21 06:00",
+        "endTime": "2026-11-11 11:59",
+        "timeBasis": "server-time",
+        "sourceUrl": "https://www.miyoushe.com/zzz/article/79004828"
+      },
+      "width": 400,
+      "height": 400,
+      "imageSource": {
+        "clientBuild": "OSPRODWin3.3.0",
+        "name": "Weapon_S_1641",
+        "type": "Texture2D",
+        "cab": "CAB-50fb87df57ed7d40bb04cd8864d1cd81",
+        "pathId": "-3320927591989627852",
+        "source": "client/ZenlessZoneZero_Data/StreamingAssets/Blocks/3686378050.blk",
+        "sourceSha256": "7319e3d9c5205796a08f645ea22cfbc5ac3606655fed20f02705219fa6f5a722",
+        "container": "2042479499244215528",
+        "offset": 1193821,
+        "width": 400,
+        "height": 400,
+        "pngSha256": "241c67015f357e9e8a6ce507b38af42776dbc61d5272ac7295c1579eaf73ea2c"
+      }
+    },
+    "1631": {
+      "id": "1631",
+      "name": "赛维里安",
+      "type": "agent",
+      "rank": "S",
+      "icon": "assets/tuning/agent-1631.webp",
+      "aliases": [
+        "Severian",
+        "Severian Lowell",
+        "Севериан",
+        "セヴェリアン",
+        "塞维里安",
+        "賽維里安",
+        "赛维利安",
+        "세베리안"
+      ],
+      "introducedVersion": "3.3.0",
+      "availability": {
+        "status": "released",
+        "phase": "second-half",
+        "label": "3.3 下半 · 已开放",
+        "note": "限时频段：11月11日12:00至12月1日14:59（服务器时间）。",
+        "startTime": "2026-11-11 12:00",
+        "timeBasis": "server-time",
+        "sourceUrl": "https://zenless.hoyoverse.com/zh-cn/news/167269",
+        "endTime": "2026-12-01 14:59",
+        "checkedAt": "2026-11-11"
+      },
+      "width": 142,
+      "height": 142,
+      "imageSource": {
+        "clientBuild": "OSPRODWin3.3.0",
+        "name": "IconRoleCircle1631",
+        "type": "Texture2D",
+        "cab": "CAB-ce90a5567aa2c5d33f47d7aa8f7e483d",
+        "pathId": "241786233895045147",
+        "source": "client/ZenlessZoneZero_Data/StreamingAssets/Blocks/3686378050.blk",
+        "sourceSha256": "7319e3d9c5205796a08f645ea22cfbc5ac3606655fed20f02705219fa6f5a722",
+        "container": "13033042757164952515",
+        "offset": 202144,
+        "width": 142,
+        "height": 142,
+        "pngSha256": "149bb6679387ac9c41776bd6465c6760950cef35cdf93c21bf8a2bae8a20c4e9"
+      }
+    },
+    "14163": {
+      "id": "14163",
+      "name": "禁罪囚笼",
+      "type": "engine",
+      "rank": "S",
+      "icon": "assets/tuning/engine-14163.webp",
+      "aliases": [
+        "Agarre de encarcelación",
+        "Eiserne Kerkerhaft",
+        "Garra Aprisionadora",
+        "Incarcerating Grip",
+        "Lồng Giam Tội Lỗi",
+        "Poigne d'incarcération",
+        "Карательный захват",
+        "禁罪囚籠",
+        "罪捕らえる牢獄",
+        "금단의 감옥"
+      ],
+      "introducedVersion": "3.3.0",
+      "availability": {
+        "status": "released",
+        "phase": "second-half",
+        "label": "3.3 下半 · 已开放",
+        "note": "限时频段：11月11日12:00至12月1日14:59（服务器时间）。",
+        "startTime": "2026-11-11 12:00",
+        "timeBasis": "server-time",
+        "sourceUrl": "https://zenless.hoyoverse.com/zh-cn/news/167269",
+        "endTime": "2026-12-01 14:59",
+        "checkedAt": "2026-11-11"
+      },
+      "width": 400,
+      "height": 400,
+      "imageSource": {
+        "clientBuild": "OSPRODWin3.3.0",
+        "name": "Weapon_S_1631",
+        "type": "Texture2D",
+        "cab": "CAB-00be5cf2f2453c07dee65d8f83612573",
+        "pathId": "-3417043686893883273",
+        "source": "client/ZenlessZoneZero_Data/StreamingAssets/Blocks/3686378050.blk",
+        "sourceSha256": "7319e3d9c5205796a08f645ea22cfbc5ac3606655fed20f02705219fa6f5a722",
+        "container": "13259205571701158039",
+        "offset": 1160817,
+        "width": 400,
+        "height": 400,
+        "pngSha256": "19e356b7e34b12695a67d3dbaa4f659310cc5e9be6c93cab0ffb28303e7cd90b"
+      }
+    },
+    "13022": {
+      "id": "13022",
+      "name": "烛光诡计",
+      "type": "engine",
+      "rank": "A",
+      "icon": "assets/tuning/engine-13022.webp",
+      "aliases": [
+        "Candlelit Scheme",
+        "Complot aux chandelles",
+        "Intrige im Kerzenlicht",
+        "Quỷ Kế Ánh Nến",
+        "Travessuras à Luz de Vela",
+        "Truco de las velas",
+        "Шалость при свечах",
+        "キャンドル・トリック",
+        "燭光詭計",
+        "촛불 트릭"
+      ],
+      "introducedVersion": "3.3.0",
+      "availability": {
+        "status": "released",
+        "phase": "event",
+        "label": "3.3 活动音擎 · 活动期间可领取",
+        "note": "「怪奇诡屋惊魂记」活动奖励：完成「异梦海岸·其一」领取，活动至11月30日03:59（服务器时间）。",
+        "startTime": "2026-10-22 10:00",
+        "endTime": "2026-11-30 03:59",
+        "timeBasis": "server-time",
+        "sourceUrl": "https://www.miyoushe.com/zzz/article/79024238",
+        "checkedAt": "2026-11-06"
+      },
+      "width": 400,
+      "height": 400,
+      "imageSource": {
+        "clientBuild": "OSPRODWin3.3.0",
+        "name": "Weapon_A_Common_22",
+        "type": "Texture2D",
+        "cab": "CAB-9b780381392c25818dd0ae579b3b189f",
+        "pathId": "-9110688229638011905",
+        "source": "client/ZenlessZoneZero_Data/StreamingAssets/Blocks/3686378050.blk",
+        "sourceSha256": "7319e3d9c5205796a08f645ea22cfbc5ac3606655fed20f02705219fa6f5a722",
+        "container": "9090265513365372546",
+        "offset": 1129900,
+        "width": 400,
+        "height": 400,
+        "pngSha256": "5e02913bf2ea0978e0372caa2f842b6c968351836ef3041c5346f81e9b2fda9b"
+      }
+    }
+  }
+}
