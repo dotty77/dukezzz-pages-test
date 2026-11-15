@@ -10,7 +10,7 @@ export function mountHoyolabSync(root,{getAgentId,getAgentName=()=>'',onImport,r
   if(!root)return ()=>{};
   const githubTest=location.origin==='https://dotty77.github.io'&&location.pathname==='/dukezzz-pages-test/disc-planner.html';
   const knownOrigin=['https://dukezzz.com', 'https://www.dukezzz.com', 'http://127.0.0.1:8877', 'http://localhost:8877'].includes(location.origin);
-  if(!githubTest&&(!knownOrigin||location.pathname!=='/disc-planner.html'))return ()=>{};
+  if(!githubTest&&(!knownOrigin||!['/disc-planner','/disc-planner.html'].includes(location.pathname)))return ()=>{};
   const targetBase=githubTest?'https://dotty77.github.io/dukezzz-pages-test/':location.origin+'/';
   const bookmarkTarget=githubTest?targetBase:location.origin;
   const matchesTarget=message=>message.targetBase===targetBase||(!githubTest&&message.targetBase===undefined);

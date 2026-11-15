@@ -1,7 +1,7 @@
 // Only the published Pages project uses the fixed DUKE API; never read an API host from input.
 const API_ROOT=globalThis.location?.origin==='https://dotty77.github.io'&&globalThis.location.pathname.startsWith('/dukezzz-pages-test/')?'https://dukezzz.com':'';
-import {mountMiyousheBrowserSync} from './mys-browser-sync.js?v=20261114-direct-tools-1';
-import {mountHoyolabSync} from './hoyolab-sync.js?v=20261114-direct-tools-1';
+import {mountMiyousheBrowserSync} from './mys-browser-sync.js?v=20261114-canonical-sync-1';
+import {mountHoyolabSync} from './hoyolab-sync.js?v=20261114-canonical-sync-1';
 import {officialToConfiguration} from './official-equipment.js?v=20261107-refresh-launch-1';
 import {scoreDisc,getDiscScoreProfile,SCORE_RULES} from './disc-score.js?v=20261107-refresh-launch-1';
 import {newConfiguration,normalizedToConfiguration,validateConfiguration,calculatePanel,formatProperty,resolveTargets,compareDisc,inspectDiscRolls} from './disc-planner-core.js?v=20261107-refresh-launch-1';
