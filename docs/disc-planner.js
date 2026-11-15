@@ -2,9 +2,9 @@
 const API_ROOT=globalThis.location?.origin==='https://dotty77.github.io'&&globalThis.location.pathname.startsWith('/dukezzz-pages-test/')?'https://dukezzz.com':'';
 import {mountMiyousheBrowserSync} from './mys-browser-sync.js?v=20261114-canonical-sync-1';
 import {mountHoyolabSync} from './hoyolab-sync.js?v=20261114-canonical-sync-1';
-import {officialToConfiguration} from './official-equipment.js?v=20261107-refresh-launch-1';
-import {scoreDisc,getDiscScoreProfile,SCORE_RULES} from './disc-score.js?v=20261107-refresh-launch-1';
-import {newConfiguration,normalizedToConfiguration,validateConfiguration,calculatePanel,formatProperty,resolveTargets,compareDisc,inspectDiscRolls} from './disc-planner-core.js?v=20261107-refresh-launch-1';
+import {officialToConfiguration} from './official-equipment.js?v=20261115-rotation-launch-1';
+import {scoreDisc,getDiscScoreProfile,SCORE_RULES} from './disc-score.js?v=20261115-rotation-launch-1';
+import {newConfiguration,normalizedToConfiguration,validateConfiguration,calculatePanel,formatProperty,resolveTargets,compareDisc,inspectDiscRolls} from './disc-planner-core.js?v=20261115-rotation-launch-1';
 import {evaluateContext,assessUsable} from './disc-context.js?v=20261027-agents-launch-1';
 import {applyPlanningScope} from './disc-scope.js?v=20260913-disc-planner-1';
 const $=id=>document.getElementById(id),el=(tag,cls='',text='')=>{const n=document.createElement(tag);n.className=cls;n.textContent=text;return n;};
@@ -164,7 +164,7 @@ function searchPlan(operation){
   const revision=searchRevision;
   return new Promise((resolve,reject)=>{
     let worker;
-    try{worker=new Worker(new URL('./disc-planner-worker.js?v=20261107-refresh-launch-1',import.meta.url),{type:'module'});}
+    try{worker=new Worker(new URL('./disc-planner-worker.js?v=20261115-rotation-launch-1',import.meta.url),{type:'module'});}
     catch(error){setSearchControls(false);reject(error);return;}
     searchTask={worker,reject,revision};
     const finish=()=>{worker.terminate();if(searchTask?.revision===revision){searchTask=null;setSearchControls(false);}};
@@ -324,7 +324,7 @@ function renderDiscScore(d,build){
   const result=scoreDisc(d,build,data),box=el('div','disc-card-score');
   box.dataset.status=result.status;box.dataset.mainStatus=result.mainStatus;box.dataset.score=result.score??'';box.dataset.grade=result.grade||result.estimatedGrade||'';box.dataset.gradeType=result.grade?'final':result.estimatedGrade?'estimated':'none';
   const partial=['partial','unleveled'].includes(result.status);
-  box.append(uiText('span',partial?'已录入分':'词条评分',partial?'Recorded score':'Substat score','disc-card-score-label'));
+  box.append(uiText('span',result.profile.mode==='supplement-only'?(partial?'已录入补充分':'补充输出评分'):(partial?'已录入加权分':'加权评分'),result.profile.mode==='supplement-only'?(partial?'Recorded supplement score':'Supplemental damage score'):(partial?'Recorded weighted score':'Weighted score'),'disc-card-score-label'));
   const row=el('div','disc-card-score-line'),value=el('div','disc-card-score-number');
   value.append(el('strong','',Number.isFinite(result.score)?String(Number(result.score.toFixed(1))):'—'));
   if(Number.isFinite(result.score))value.append(el('small','','/100'));
@@ -332,6 +332,14 @@ function renderDiscScore(d,build){
   if(result.grade||result.estimatedGrade){const grade=el('div','disc-card-grade');grade.append(uiText('span',result.grade?'评级':'预估评级',result.grade?'Grade':'Est.'),el('strong','',result.grade||result.estimatedGrade));row.append(grade);}
   else row.append(uiText('span','暂不评级','Unrated','disc-card-score-note'));
   box.append(row);
+  if(result.lines.length){
+    const primary=new Set(result.profile.primaryIds),secondary=new Set(result.profile.secondaryIds);
+    const core=result.lines.filter(line=>primary.has(line.id)).reduce((n,line)=>n+line.rolls,0);
+    const supplement=result.lines.filter(line=>!primary.has(line.id)&&secondary.has(line.id)).reduce((n,line)=>n+line.rolls,0);
+    box.dataset.coreRolls=String(core);box.dataset.supplementRolls=String(supplement);
+    box.dataset.totalRolls=String(result.lines.reduce((n,line)=>n+line.rolls,0));
+    box.append(uiText('p',`核心 ${core} 份 · 补充 ${supplement} 份`,`Core ${core} rolls · Supplement ${supplement} rolls`,'disc-card-score-note disc-card-roll-totals'));
+  }
   const notes={
     partial:['副词条未填全','Incomplete substats'],
     unleveled:['未满 15 级','Below Lv.15'],
@@ -350,7 +358,7 @@ function renderScoreGuide(){
   const box=$('disc-score-guide');if(!box)return;
   const profile=getDiscScoreProfile(currentBuild(),data),weights=el('div','disc-score-weights');
   box.replaceChildren(uiText('summary','评分依据','Scoring basis'));
-  box.append(uiText('p','按当前角色与玩法计算词条评分；与上方金色 S 稀有度不同。它不是官方评分，也不代表毕业或实战伤害。','Scores follow the selected agent and build. Grades are separate from the gold S-Rank rarity badge. This is a site reference, not an official rating, graduation verdict, or damage estimate.'));
+  box.append(uiText('p','份数按与角色练度相同的成长规则统计；这里再按当前玩法加权计分，练度页的自选属性不随配装带入。分数不代表毕业或实战伤害。','Roll counts follow the same growth rules as the showcase, then receive weights for the current build. Custom showcase attribute choices are not imported with equipment. Scores are not graduation verdicts or damage estimates.'));
   for(const [id,weight]of Object.entries(profile.weights||{}).filter(([,weight])=>weight>0).sort((a,b)=>b[1]-a[1]||Number(a[0])-Number(b[0]))){
     const chip=el('span');chip.append(el('span','',name(id)),el('b','',`×${weight}`));weights.append(chip);
   }

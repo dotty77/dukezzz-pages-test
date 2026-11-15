@@ -1,4 +1,4 @@
-import {inspectDiscRolls, validateConfiguration} from './disc-planner-core.js?v=20261107-refresh-launch-1';
+import {inspectDiscRolls, validateConfiguration} from './disc-planner-core.js?v=20261115-rotation-launch-1';
 
 // Raw MYS /avatar/info fields, verified against genshin.py commit
 // 4cf0cdd42af1a70013bc873fdcf4f51ecd5366ff, genshin/models/zzz/character.py.

@@ -98,10 +98,10 @@ export function normalizedToConfiguration(agent,data){
     if(!d){config.discs.push({slot,setId:'',mainId:defaultMain,level:15,initial:4,subs:[],locked:false,absent:true,unsupported:false});continue;}
     const reasons=[],countReasons=[],badCounts=message=>{countReasons.push(message);reasons.push(message);};
     if(matches.length!==1)badCounts('同一号位出现多条源盘记录');
-    const level=sourceNumber(d.level),rarity=sourceNumber(d.rarity),main=numericId(d.mainStats?.[0]?.propertyId);
+    const level=sourceNumber(d.level),rarity=sourceNumber(d.rarity),mainStats=Array.isArray(d.mainStats)?d.mainStats:[],mainStat=mainStats.length===1?mainStats[0]:null,main=numericId(mainStat?.propertyId);
     if(rarity!==4)reasons.push('原盘不是已支持的 S 级盘');
     if(!integer(level,0,15))badCounts('原盘等级缺失或超出 S 级范围');
-    if(main===null||!owns(data.mainBases[slot],main))reasons.push('原盘主属性缺失或不属于该号位');
+    if(main===null||!owns(data.mainBases[slot],main)||!Number.isFinite(mainStat?.value)||mainStat.value<=0)reasons.push('原盘主属性缺失、数值无效或不属于该号位');
     if(d.suitId&&!owns(data.setProps,d.suitId))reasons.push('原盘套装未收录');
     const rawSubs=Array.isArray(d.subStats)?d.subStats:[];
     if(!Array.isArray(d.subStats)||rawSubs.length<3||rawSubs.length>4)badCounts('原盘副属性列表不完整，不能推断初始条数');
