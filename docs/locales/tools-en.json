@@ -2728,7 +2728,22 @@
     "链接含临时读取凭证，仅交给 DUKE 读取服务和游戏官方接口，不会写入备份。无需提供账号密码。": "The link contains a temporary access key sent only to the DUKE import service and the official game API. It is not included in backups. No account password is needed.",
     "获取脚本从 DUKE 下载。复制命令后，在 PowerShell 粘贴并按回车。": "The script is downloaded from DUKE. Copy the command, paste it into PowerShell, and press Enter.",
     "可以粘贴官方调频记录链接自动读取，或导入 rng.moe 整站备份、UIGF JSON、CSV 文件。rng.moe 备份会先预览账号、时区和记录数量，只合并调频明细。链接导入通过 DUKE 服务访问游戏官方接口，凭证仅临时使用，不写入档案。": "Paste an official signal search history link, or import an rng.moe backup, UIGF JSON, or CSV file. The rng.moe preview shows accounts, time zones and record counts; only search records are merged. Link import uses the DUKE service to access the official game API. Access keys are temporary and are not saved in your archive.",
-    "档案仅保存在当前浏览器；链接读取通过 DUKE 服务连接游戏官方接口，服务不保存链接或记录。请定期导出完整备份，清理浏览器数据或换设备后需重新导入。": "Archives stay in this browser. Link import connects to the official game API through the DUKE service, which does not save links or records. Export complete backups regularly; clearing browser data or changing devices requires importing again."
+    "档案仅保存在当前浏览器；链接读取通过 DUKE 服务连接游戏官方接口，服务不保存链接或记录。请定期导出完整备份，清理浏览器数据或换设备后需重新导入。": "Archives stay in this browser. Link import connects to the official game API through the DUKE service, which does not save links or records. Export complete backups regularly; clearing browser data or changing devices requires importing again.",
+    "有效副词条": "Useful substats",
+    "补充副词条 · 单独统计": "Supplementary substats · counted separately",
+    "调整补充副词条": "Adjust supplementary substats",
+    "仅统计副词条。生命、攻击、防御的固定值可在补充项中选择。": "Only substats are counted. Flat HP, ATK and DEF can be selected as supplementary stats.",
+    "主属性检查 · 4–6 号位": "Main stat checks · slots 4–6",
+    "异常掌控、冲击力、能量自动回复、穿透率和属性增伤属于主属性，不计入副词条份数。": "Anomaly Mastery, Impact, Energy Regen, PEN Ratio and attribute DMG bonuses are main stats, not substat rolls.",
+    "S 级满级盘：初始 3 条共 8 份，初始 4 条共 9 份。有效份数只统计勾选的核心副词条，主属性不计入。": "Max-level S-Rank discs have 8 total rolls when starting with 3 substats, or 9 when starting with 4. Useful rolls count only selected priority substats; main stats are excluded.",
+    "首次出现计 1 份，+N 表示后续增长 N 次。例如暴击率 7.2% 是 3 份，显示 +2；不是 2 份或 4 份。主属性不计入。": "The first occurrence counts as 1 roll; +N means N later increases. For example, 7.2% CRIT Rate is 3 rolls, shown as +2. Main stats are excluded.",
+    "原始词条 · 暂不汇总": "Raw substats · not included in totals",
+    "非S级盘暂仅展示原始词条，未纳入已确认汇总。": "Non-S-Rank discs currently show raw substats only and are not included in verified totals.",
+    "主属性缺失、数值无效或不属于该号位，暂不汇总。": "The main stat is missing, has an invalid value, or is not allowed in this slot. This disc is excluded from totals.",
+    "S级盘的副属性种类、总份数或单条份数不符合当前等级的成长规则，暂不汇总。": "The S-Rank disc has inconsistent substat types or roll counts for its level. This disc is excluded from totals.",
+    "存在无效或重复盘位；重复盘位不纳入已确认词条。": "Invalid or duplicate slots were found. Duplicate slots are excluded from verified totals.",
+    "同一号位有多张驱动盘记录，无法确认实际装备，暂不汇总。": "Multiple discs were reported for this slot. The equipped disc cannot be confirmed, so the slot is excluded from totals.",
+    "重复盘位待确认": "Duplicate slot needs verification"
   },
   "patterns": [
     {
@@ -3261,7 +3276,7 @@
     },
     {
       "source": "^首次出现 (\\d+) 份 \\+ 后续追加 (\\d+) 份$",
-      "target": "$1 initial rolls + $2 upgrade rolls"
+      "target": "$1 first occurrences + $2 later rolls"
     },
     {
       "source": "^UID (.+) · 绳网等级 (.+) · (\\d+) 位公开展示角色$",
@@ -3766,6 +3781,18 @@
     {
       "source": "^(.+)；(.+)$",
       "target": "$1; $2"
+    },
+    {
+      "source": "^核心副词条 · 选择 1–(\\d+) 项$",
+      "target": "Priority substats · select 1–$1"
+    },
+    {
+      "source": "^副词条合计 (\\d+) 份 · 初始 (\\d+) 条$",
+      "target": "$1 total substat rolls · $2 starting substats"
+    },
+    {
+      "source": "^(\\d+) 张盘可确认词条 · 共 (\\d+) 份(.*)$",
+      "target": "$1 verified discs · $2 total rolls$3"
     }
   ]
 }
