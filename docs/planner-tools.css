@@ -292,3 +292,23 @@ html[data-theme="dark"] .planner-page{--ok:#7fd2ad;--ok-bg:#1d3329;--warn:#efc07
 @media(max-width:700px){.rotation-guide-anchor{scroll-margin-top:140px}.rotation-config,.rotation-workflow{padding:17px 14px}.rotation-section-head{gap:10px;flex-wrap:wrap}.rotation-section-head h2{font-size:20px}.rotation-gold{flex-direction:row;align-items:baseline;gap:8px;flex-wrap:wrap;text-align:left}.rotation-gold strong{font-size:23px}.rotation-gold span{max-width:none}.rotation-builds{grid-template-columns:minmax(0,1fr);gap:8px}.rotation-build{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:10px;padding:12px}.rotation-build-heading{margin:0;gap:8px}.rotation-build-heading img{width:32px;height:32px}.rotation-build-heading h3{font-size:13px}.rotation-build-fields{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:7px}.rotation-field{font-size:11px}.rotation-guide .rotation-field select{padding:6px;font-size:12px}.rotation-plan-settings{grid-template-columns:minmax(0,1fr);gap:10px}.rotation-guide .rotation-button{min-height:44px}.rotation-guide-heading h3{font-size:18px}.rotation-phases{gap:6px;margin-top:16px}.rotation-guide .rotation-phase{flex-direction:column;align-items:flex-start;gap:5px;padding:9px;font-size:12px}.rotation-objective{font-size:13px}.rotation-timeline-table .rotation-lane-heading{width:94px;min-width:94px;padding:7px}.rotation-lane-agent{display:block}.rotation-lane-agent img{display:block;margin-bottom:5px}.rotation-timeline-table th,.rotation-timeline-table td{width:152px;min-width:152px;padding:6px}.rotation-guide .rotation-lane-action{padding:8px;min-height:78px}.rotation-current{padding:17px 14px}.rotation-current h4{font-size:22px}.rotation-action{font-size:15px}.rotation-instruction{grid-template-columns:minmax(0,1fr);gap:3px}.rotation-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.rotation-practice-state{grid-column:1/-1;margin:0;text-align:center}.rotation-key-fields{grid-template-columns:minmax(0,1fr)}.rotation-unavailable{padding:22px 14px}}
 @media(prefers-reduced-motion:reduce){.rotation-guide *{scroll-behavior:auto}}
 /* End rotation guide */
+
+/* BEGIN ROTATION ORDER UI */
+.team-slot-card{min-width:0;display:flex;flex-direction:column;gap:6px}
+.team-slot-card .team-slot{width:100%;height:100%;min-width:0}
+.team-slot-card .team-slot-copy{min-width:0;overflow-wrap:anywhere}
+.team-slot-card .team-slot img{flex-shrink:0}
+.team-slot-card .team-slot-position{color:var(--accent);font-weight:600;margin-bottom:3px}
+.team-order-controls{display:flex;gap:6px}
+.team-order-button{flex:1;min-width:0;min-height:36px;border:1px solid var(--line);border-radius:9px;background:var(--surface-muted);color:var(--text);padding:5px 8px;font:inherit;font-size:12px;white-space:nowrap;cursor:pointer}
+.team-order-button:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}
+.team-order-button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.team-order-button:disabled{opacity:.35;cursor:default}
+.team-order-status{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.rotation-position-plan{margin:14px 0;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--surface-muted)}
+.rotation-position-plan h4{margin:0 0 6px;font-size:13px}
+.rotation-position-plan p{margin:0;font-size:13px;line-height:1.7;overflow-wrap:anywhere}
+.rotation-position-plan .rotation-position-detail{margin-top:8px}
+.rotation-transfer-row .rotation-transfer-direction{color:var(--accent)}
+@media(max-width:640px){.team-slot-card{display:grid;grid-template-columns:minmax(0,1fr) 76px;gap:8px}.team-order-controls{flex-direction:column;gap:4px}.team-order-button{min-height:32px;padding:3px 5px}.team-slot-card .team-slot{padding:8px 10px}.team-slot-card .team-slot img{width:40px;height:40px}}
+/* END ROTATION ORDER UI */
