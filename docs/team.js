@@ -988,6 +988,204 @@ function compileRotationGuide(team,rawConfig,knowledge,abilityResults=[]) {
 }
 
 /**
+ * Read-only Chinese presentation aliases for the rotation workspace.
+ * Names are classified by the verified skill-name prefix, never action.kind:
+ * an EX-class skill may use a held Basic or a resource other than Energy.
+ * Inputs, thresholds, action IDs, event order and all English remain unchanged.
+ */
+function createRotationPlainTerms(knowledge, config = {}, teamIds = []) {
+  const ids = [...new Set(teamIds.map(String))].filter(id => knowledge?.agents?.[id]);
+  const profiles = new Map(ids.map(id => {
+    const base = knowledge.agents[id], rank = config.characters?.[id]?.potential;
+    const patch = Number.isInteger(rank) && rank > 0 ? knowledge.potentialProfiles?.[id]?.[rank] : null;
+    return [id, patch ? {...base, ...patch} : base];
+  }));
+  const groups = new Map(), allSkills = new Map();
+  const prefixes = new Map([
+    ['普通攻击', '普攻'], ['特殊技', '特殊技'], ['强化特殊技', '强化特殊技'],
+    ['终结技', '终结技'], ['连携技', '连携技'], ['快速支援', '快速支援'],
+    ['招架支援', '招架支援'], ['回避支援', '回避支援'], ['支援突击', '支援突击'],
+    ['闪避反击', '闪避反击'], ['冲刺攻击', '冲刺攻击'], ['闪避', '闪避']
+  ]);
+  // Exact reviewed exceptions. The input explanation is grounded in each skill
+  // description; keeping separate EX branches avoids losing resource conditions.
+  const overrides = {
+    '158100001': ['普通攻击：蹁跹', '点按普攻'],
+    '158100002': ['普通攻击：独舞', '长按普攻·独舞'],
+    '158100003': ['普通攻击：垂虹', '长按普攻·消耗虚曜'],
+    '158100004': ['普通攻击：惊鸿', '强化长按普攻·惊鸿'],
+    '158100005': ['特殊技：薄明', '特殊技'],
+    '158100006': ['强化特殊技：曙色颂', '强化特殊技'],
+    '158100007': ['特殊技：曙色颂·转辉', '长按特殊技·转姿态'],
+    '158100017': ['支援技：花羽轮舞', '返场支援攻击'],
+    '164100002': ['普通攻击：焚罪', '长按普攻·消耗燔焰'],
+    '164100003': ['普通攻击：熔毁', '特殊技后接普攻·熔毁'],
+    '164100005': ['强化特殊技：燎斩', '强化特殊技·消耗升变'],
+    '164100006': ['强化特殊技：眩焰', '强化特殊技·起手'],
+    '164100007': ['强化特殊技：坠阳', '强化特殊技·续段'],
+    '156100003': ['强化特殊技：风切变·扬清', '强化特殊技·起手'],
+    '156100004': ['强化特殊技：风切变·三重绝息', '强化特殊技·续段'],
+    '156100005': ['强化特殊技：风切变·风暴眼', '强化特殊技·长按分支（风暴眼）'],
+    '148100002': ['普通攻击：猜拳把戏', '石头／剪刀后接普攻'],
+    '148100003': ['强化特殊技：送客！', '强化特殊技·送客（长按普攻）'],
+    '148100005': ['强化特殊技：石头', '强化特殊技·石头'],
+    '148100006': ['强化特殊技：剪刀', '强化特殊技·剪刀'],
+    '148100007': ['强化特殊技：布！', '强化特殊技·布']
+  };
+  function addSkill(id, skill) {
+    if (!skill || typeof skill.name !== 'string') return;
+    const skillRef = String(skill.skillRef || skill.id || '');
+    const key = id + ':' + skillRef + ':' + skill.name;
+    if (!allSkills.has(key)) allSkills.set(key, {agentId: id, skillRef, name: skill.name, description: skill.description || ''});
+  }
+  for (const [id, profile] of profiles) {
+    for (const actions of Object.values(profile.actionChoices || {})) for (const action of actions || []) addSkill(id, action);
+    for (const action of Object.values(profile.actions || {})) addSkill(id, action);
+    for (const action of profile.potentialEffects || []) addSkill(id, action);
+    // Curated and recovery projections must not overwrite a selected Potential
+    // skill with the base version sharing its ID.
+    const found = new Set([...allSkills.values()].filter(s => s.agentId === id).map(s => s.skillRef));
+    for (const source of [knowledge.curatedActions, knowledge.positionSkills]) {
+      for (const [ref, skill] of Object.entries(source || {})) {
+        if (String(ref).startsWith(id) && !found.has(String(ref))) { addSkill(id, skill); found.add(String(ref)); }
+      }
+    }
+    for (const rule of Object.values(knowledge.expertRules || {})) {
+      for (const move of rule.mechanicsActions || []) {
+        const ref = String(move.skillId || '');
+        if (String(move.agentId) === id && !found.has(ref)) {
+          addSkill(id, {id:ref, name:move.title}); found.add(ref);
+        }
+      }
+    }
+  }
+  for (const skill of allSkills.values()) {
+    const match = skill.name.match(/^([^：:]+)[：:](.+)$/);
+    if (!match || !prefixes.has(match[1])) continue;
+    const key = skill.agentId + ':' + match[1];
+    if (!groups.has(key)) groups.set(key, new Set());
+    groups.get(key).add(skill.name);
+  }
+  const entries = [];
+  function add(original, alias, agentId, skillRef = '', kind = 'skill') {
+    if (!original || original === alias) return;
+    if (!entries.some(e => e.original === original && e.alias === alias && e.agentId === agentId))
+      entries.push({original, alias, short: alias, agentId, skillRef, kind});
+  }
+  for (const skill of allSkills.values()) {
+    const reviewed = overrides[skill.skillRef];
+    if (reviewed && reviewed[0] === skill.name) {
+      add(skill.name, reviewed[1], skill.agentId, skill.skillRef); continue;
+    }
+    const match = skill.name.match(/^([^：:]+)[：:](.+)$/);
+    if (!match || !prefixes.has(match[1])) continue;
+    const category = prefixes.get(match[1]);
+    const count = groups.get(skill.agentId + ':' + match[1])?.size || 0;
+    // One verified name in the category: the action category suffices. Multiple
+    // distinct branches: preserve their distinguishing names instead of guessing.
+    add(skill.name, count === 1 ? category : category + '·' + match[2], skill.agentId, skill.skillRef);
+  }
+  // Authored lessons also mention short skill names inside ordinary sentences.
+  // Only these individually reviewed names are replaced there, not every suffix.
+  const bare = [
+    ['1581', '158100007', '曙色颂·转辉', '长按特殊技·转姿态'],
+    ['1581', '158100007', '转辉', '长按特殊技·转姿态'],
+    ['1581', '158100006', '曙色颂', '强化特殊技'],
+    ['1581', '158100003', '垂虹', '长按普攻·消耗虚曜'],
+    ['1581', '158100004', '惊鸿', '强化长按普攻·惊鸿'],
+    ['1581', '158100017', '花羽轮舞', '返场支援攻击'],
+    ['1641', '164100005', '燎斩', '强化特殊技·消耗升变'],
+    ['1641', '164100006', '眩焰', '强化特殊技·起手'],
+    ['1641', '164100007', '坠阳', '强化特殊技·续段'],
+    ['1641', '164100002', '焚罪', '长按普攻·消耗燔焰'],
+    ['1641', '164100004', '掠火', '特殊技'],
+    ['1641', '164100003', '熔毁', '特殊技后接普攻·熔毁'],
+    ['1561', '156100003', '风切变·扬清', '强化特殊技·起手'],
+    ['1561', '156100003', '扬清', '强化特殊技·起手'],
+    ['1561', '156100004', '风切变·三重绝息', '强化特殊技·续段'],
+    ['1561', '156100004', '三重绝息', '强化特殊技·续段'],
+    ['1561', '156100005', '风切变·风暴眼', '长按特殊技／普攻·风暴眼'],
+    ['1561', '156100005', '风暴眼', '长按特殊技／普攻·风暴眼']
+  ];
+  for (const [id, ref, original, alias] of bare) {
+    const skill = [...allSkills.values()].find(s => s.agentId === id && s.skillRef === ref);
+    if (skill && skill.name.includes(original)) add(original, alias, id, ref);
+  }
+  // Dedicated resources stay named in prose to keep phrases and thresholds
+  // natural. Their explanations are offered only by entriesFor(), not rewritten
+  // into ordinary Energy or an assumed UI bar/color/location.
+  const resources = [
+    ['1581', '浮晖', '丹的专属资源'], ['1581', '虚曜', '丹的储存资源'],
+    ['1641', '燔焰', '菲欧妮的专属资源'], ['1641', '升变', '菲欧妮的升变资源'],
+    ['1561', '风华', '维琳娜的专属资源']
+  ];
+  for (const [id, original, alias] of resources) if (profiles.has(id)) add(original, alias, id, '', 'resource');
+  const byOriginal = new Map();
+  for (const entry of entries) {
+    if (!byOriginal.has(entry.original)) byOriginal.set(entry.original, []);
+    byOriginal.get(entry.original).push(entry);
+  }
+  const escape = input => input.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const matcher = byOriginal.size ? new RegExp([...byOriginal.keys()].sort((a, b) => b.length - a.length).map(escape).join('|'), 'g') : null;
+  function resolve(original, actorId) {
+    const candidates = byOriginal.get(original) || [];
+    const own = candidates.filter(e => e.agentId === String(actorId || ''));
+    const selected = own.length ? own : candidates;
+    return new Set(selected.map(e => e.alias)).size === 1 ? selected[0] : null;
+  }
+  function rewrite(input, actorId) {
+    if (!matcher || typeof input !== 'string') return input;
+    // One pass: aliases are never recursively replaced, so generated labels
+    // containing the original term cannot grow on their own within this call.
+    return input.replace(matcher, original => {
+      const entry = resolve(original, actorId);
+      return entry && entry.kind !== 'resource' ? entry.alias : original;
+    });
+  }
+  function text(item, actorId) {
+    if (typeof item === 'string') return rewrite(item, actorId);
+    if (item && typeof item === 'object' && typeof item.zh === 'string') return {...item, zh: rewrite(item.zh, actorId)};
+    return item;
+  }
+  function entriesFor(step) {
+    const parts = [];
+    const gather = value => {
+      if (typeof value === 'string') parts.push(value);
+      else if (Array.isArray(value)) value.forEach(gather);
+      else if (value && typeof value === 'object') {
+        if (typeof value.zh === 'string') parts.push(value.zh);
+        else for (const [key, item] of Object.entries(value)) if (!['sourceRefs','evidence','actionId','id'].includes(key)) gather(item);
+      }
+    };
+    gather(step);
+    const found = new Map();
+    if (matcher) for (const part of parts) for (const match of part.matchAll(matcher)) {
+      const entry = resolve(match[0], step?.actorId);
+      if (entry) found.set(entry.agentId + ':' + entry.original, {...entry});
+    }
+    return [...found.values()];
+  }
+  // Keep reviewed authored headlines as natural sentences after replacing their
+  // short move names. These exact phrases do not affect their original fields.
+  const titles = new Map([
+    ['满浮晖转辉，白闪交菲', '浮晖满后长按特殊技，白闪切菲'],
+    ['扬清补风华，确认真实风异常', '强化特殊技起手，补风华并确认风异常'],
+    ['90风华风暴眼 → 上一位菲快支', '风华达到90，长按特殊技／普攻 → 上一位菲快支'],
+    ['焚罪已经启动，再交维准备', '长按普攻已经发动，再切维琳娜准备'],
+    ['花羽轮舞已解锁，再返丹', '返场支援攻击已解锁，再切回丹'],
+    ['长普兑现现存虚曜，再回到转辉', '长按普攻消耗现存虚曜，再长按特殊技转姿态']
+  ]);
+  function title(step) {
+    const original = step?.title;
+    const zh = typeof original === 'string' ? original : original?.zh;
+    if (!titles.has(zh)) return text(original, step?.actorId);
+    return typeof original === 'string' ? titles.get(zh) : {...original, zh:titles.get(zh)};
+  }
+  return {text, title, entriesFor,
+    entries: entries.map(entry => ({...entry}))};
+}
+
+/**
  * Generic, display-only rotation workspace. The compiler owns all combat facts,
  * selected-agent eligibility, copy counts, available phases and overlap claims.
  * Bilingual text accepts a string or {zh, en}. No game input is sent or captured.
@@ -1010,6 +1208,7 @@ function mountRotationGuide(container, options = {}) {
   let team = teamIds(options.team), data = options.data || {}, config = normalize(options.config);
   let phaseId = '', index = 0, started = false, paused = true, pending = false, destroyed = false;
   let lastSignature = '', lastChange = null, revealStep = false;
+  let plainTerms = null, plainSignature = '';
   const openDetails = new Map();
   const root = element('section', 'rotation-guide rotation-universal-guide');
   container.replaceChildren(root);
@@ -1021,6 +1220,8 @@ function mountRotationGuide(container, options = {}) {
     if (typeof item === 'object') return String(isEnglish() ? (item.en ?? item.zh ?? '') : (item.zh ?? item.en ?? ''));
     return String(item);
   }
+  function plain(item, actorId) { return plainTerms ? plainTerms.text(item, actorId) : item; }
+  function actionTitle(step) { return plainTerms ? plainTerms.title(step) : step.title; }
   function element(tag, cls = '', content = '') {
     const item = doc.createElement(tag);
     if (cls) item.className = cls;
@@ -1214,13 +1415,15 @@ function mountRotationGuide(container, options = {}) {
         const front = String(step.actorId) === id;
         if (front) {
           const action = button('', () => moveStep(at), `lane-${id}-${at}`, 'rotation-lane-action rotation-lane-front');
-          action.append(element('small', '', text('前台', 'On field')), element('span', '', step.title));
+          action.append(element('small', '', text('前台', 'On field')), element('span', '', actionTitle(step)));
+          action.title = value(step.title);
           action.setAttribute('aria-current', index === at ? 'step' : 'false'); cell.append(action);
         }
         const backgrounds = (step.background || []).filter(item => String(item.actorId) === id && ['persistent', 'overlap'].includes(item.kind));
         for (const [n, background] of backgrounds.entries()) {
           const action = button('', () => moveStep(at), `background-${id}-${at}-${n}`, `rotation-lane-action rotation-lane-${background.kind}`);
-          action.append(element('small', '', background.kind === 'persistent' ? text('后台效果', 'Off-field effect') : text('脱手续招', 'Continuing attack')), element('span', '', background.label));
+          action.append(element('small', '', background.kind === 'persistent' ? text('后台效果', 'Off-field effect') : text('脱手续招', 'Continuing attack')), element('span', '', plain(background.label, background.actorId)));
+          action.title = value(background.label);
           cell.append(action);
         }
         if (!front && !backgrounds.length) cell.append(element('span', 'rotation-lane-empty', '—'));
@@ -1250,38 +1453,54 @@ function mountRotationGuide(container, options = {}) {
     const step = activeSteps[index], block = element('section', 'rotation-practice');
     const card = element('article', 'rotation-current'); card.setAttribute('aria-live', 'polite');
     const meta = element('div', 'rotation-step-meta'); meta.append(element('span', '', `${value(activePhase.label)} · ${text(`第 ${index + 1}/${activeSteps.length} 步`, `Step ${index + 1}/${activeSteps.length}`)}`), element('span', '', agentName(step.actorId)));
-    card.append(meta, element('h4', '', step.title));
+    card.append(meta, element('h4', '', actionTitle(step)));
     const action = element('div', 'rotation-action'), key = config.keyBindings[step.actionId];
     if (key) action.append(element('kbd', '', key));
-    action.append(element('strong', '', step.input || step.title)); card.append(action);
+    action.append(element('strong', '', plain(step.input || step.title, step.actorId))); card.append(action);
     if(step.actionBranches?.length){
       const branches=element('div','rotation-action-branches');
       branches.append(element('p','rotation-next-hint',text('技能与状态 · 展开查看条件','Skills and states · expand to check conditions')));
       for(const branch of step.actionBranches){
-        const label=(branch.context?text('状态／自动效果 · ','State / automatic effect · '):'')+value(branch.title);
+        const label=(branch.context?text('状态／自动效果 · ','State / automatic effect · '):'')+value(plain(branch.title, step.actorId));
         const item=details(`branch-${step.id}-${branch.skillRef}`,label,'rotation-why');
         item.append(element('p','',branch.description));branches.append(item);
       }
       card.append(branches);
     }
     const info = element('dl', 'rotation-instructions');
-    info.append(instruction(text('开始条件', 'Start when'), step.trigger));
+    info.append(instruction(text('开始条件', 'Start when'), plain(step.trigger, step.actorId)));
     if (step.handoff?.signal || step.handoff?.input) {
-      const cue = instruction(text('切人信号', 'Switch cue'), step.handoff.signal || '', 'rotation-handoff-cue');
+      const cue = instruction(text('切人信号', 'Switch cue'), plain(step.handoff.signal || '', step.actorId), 'rotation-handoff-cue');
       if (step.handoff.input) {
         const description = cue.querySelector('dd');
         if (!step.handoff.signal) description.replaceChildren();
         else description.prepend(element('br'));
-        description.prepend(element('strong', 'rotation-handoff-input', step.handoff.input));
+        description.prepend(element('strong', 'rotation-handoff-input', plain(step.handoff.input, step.actorId)));
       }
       info.append(cue);
     }
-    info.append(instruction(text('完成标志', 'Finish when'), step.complete));
-    if (step.warning) info.append(instruction(text('注意', 'Watch out'), step.warning, 'rotation-step-warning'));
-    if (step.fallback) info.append(instruction(text('没接上怎么办', 'If the setup fails'), step.fallback, 'rotation-recovery'));
+    info.append(instruction(text('完成标志', 'Finish when'), plain(step.complete, step.actorId)));
+    if (step.warning) info.append(instruction(text('注意', 'Watch out'), plain(step.warning, step.actorId), 'rotation-step-warning'));
+    if (step.fallback) info.append(instruction(text('没接上怎么办', 'If the setup fails'), plain(step.fallback, step.actorId), 'rotation-recovery'));
     card.append(info);
+    const originals = details(`original-${step.id}`, text('技能原名与说明', 'Original names & instructions'), 'rotation-original-details');
+    originals.append(element('h5', '', step.title));
+    const source = element('dl', 'rotation-instructions');
+    const entries = isEnglish() ? [] : plainTerms?.entriesFor(step) || [];
+    for (const entry of entries) source.append(instruction(entry.short, entry.original));
+    for (const [label, content] of [
+      [text('操作原文', 'Original input'), step.input],
+      [text('开始条件', 'Start when'), step.trigger],
+      [text('切人信号', 'Switch cue'), step.handoff?.signal],
+      [text('切换操作', 'Switch input'), step.handoff?.input],
+      [text('完成标志', 'Finish when'), step.complete],
+      [text('注意', 'Watch out'), step.warning],
+      [text('没接上怎么办', 'If the setup fails'), step.fallback]
+    ]) if (content) source.append(instruction(label, content));
+    for (const background of step.background || []) source.append(instruction(text('后台原文', 'Original off-field effect'), background.label));
+    originals.append(source); card.append(originals);
     if (step.reason) { const why = details(`why-${step.id}`, text('为什么这样安排', 'Why this order'), 'rotation-why'); why.append(element('p', '', step.reason)); card.append(why); }
-    card.append(element('p', 'rotation-next-hint', activeSteps[index + 1] ? `${text('下一步：', 'Next: ')}${agentName(activeSteps[index + 1].actorId)} · ${value(activeSteps[index + 1].title)}` : activePhase.repeat || text('本段结束；按实际状态选下一段。', 'Phase complete. Choose the next phase based on the actual state.')));
+    card.append(element('p', 'rotation-next-hint', activeSteps[index + 1] ? `${text('下一步：', 'Next: ')}${agentName(activeSteps[index + 1].actorId)} · ${value(actionTitle(activeSteps[index + 1]))}` : plain(activePhase.repeat) || text('本段结束；按实际状态选下一段。', 'Phase complete. Choose the next phase based on the actual state.')));
     block.append(card);
     const controls = element('div', 'rotation-controls');
     const previous = button(text('上一步', 'Previous'), () => moveStep(index - 1), 'previous'); previous.disabled = index === 0;
@@ -1300,7 +1519,9 @@ function mountRotationGuide(container, options = {}) {
     const fields = element('div', 'rotation-key-fields');
     for (const id of used) {
       const label = data.actions?.find(item => item.id === id)?.label || allSteps.find(item => item.actionId === id)?.input || id;
-      const wrap = element('label', 'rotation-field'); wrap.append(element('span', '', label));
+      const owner = allSteps.find(item => item.actionId === id)?.actorId;
+      const wrap = element('label', 'rotation-field'); wrap.append(element('span', '', `${owner ? agentName(owner) + ' · ' : ''}${value(plain(label, owner))}`));
+      wrap.title = value(label);
       const input = element('input'); input.type = 'text'; input.maxLength = 32; input.value = config.keyBindings[id] || '';
       input.placeholder = text('例如 E / 鼠标侧键', 'e.g. E / mouse side button'); input.dataset.rotationControl = `key-${id}`;
       input.addEventListener('change', () => { config.keyBindings[id] = input.value.slice(0, 32); emitConfig({kind: 'keys', actionId: id}); });
@@ -1325,11 +1546,11 @@ function mountRotationGuide(container, options = {}) {
     if (!plan?.summary) return null;
     const section = element('section', 'rotation-position-plan');
     section.dataset.positionKind = plan.kind || '';
-    section.append(element('h4', '', plan.label || text('当前站位', 'Current order')), element('p', '', plan.summary));
+    section.append(element('h4', '', plan.label || text('当前站位', 'Current order')), element('p', '', plain(plan.summary)));
     if (plan.notes?.length) {
       const more = details('position-notes', text('站位说明', 'Order details'), 'rotation-position-detail');
       const list = element('ul');
-      for (const note of plan.notes) list.append(element('li', '', note));
+      for (const note of plan.notes) list.append(element('li', '', plain(note)));
       more.append(list); section.append(more);
     }
     return section;
@@ -1341,11 +1562,11 @@ function mountRotationGuide(container, options = {}) {
     if (activeGuide.coverage?.label) header.append(element('span', 'rotation-coverage', activeGuide.coverage.label));
     section.append(header);
     if (activeGuide.validationText) section.append(element('p', 'rotation-muted', activeGuide.validationText));
-    if (activeGuide.recommendation) section.append(element('p', 'rotation-recommendation', activeGuide.recommendation));
+    if (activeGuide.recommendation) section.append(element('p', 'rotation-recommendation', plain(activeGuide.recommendation)));
     const positionPlan = renderPositionPlan(activeGuide.positionPlan); if (positionPlan) section.append(positionPlan);
     if (activeGuide.conditions?.length) {
       const conditions = details('conditions', text('开打前确认', 'Before you start'), 'rotation-conditions');
-      const list = element('ul'); for (const condition of activeGuide.conditions) list.append(element('li', '', condition)); conditions.append(list); section.append(conditions);
+      const list = element('ul'); for (const condition of activeGuide.conditions) list.append(element('li', '', plain(condition))); conditions.append(list); section.append(conditions);
     }
     const phases = element('nav', 'rotation-phases'); phases.setAttribute('aria-label', text('选择操作段', 'Choose a phase'));
     const activePhase = phase();
@@ -1357,10 +1578,10 @@ function mountRotationGuide(container, options = {}) {
     section.append(phases);
     if (!activePhase?.steps?.length) { section.append(renderUnavailable()); return section; }
     const activeSteps = activePhase.steps; phaseId = activePhase.id; index = Math.max(0, Math.min(activeSteps.length - 1, index));
-    if (activePhase.objective) section.append(element('p', 'rotation-objective', activePhase.objective));
+    if (activePhase.objective) section.append(element('p', 'rotation-objective', plain(activePhase.objective)));
     if (activePhase.prep?.length) {
       const prep = details(`prep-${activePhase.id}`, text('这一段要准备什么', 'Prepare for this phase'), 'rotation-phase-prep');
-      const list = element('ul'); for (const entry of activePhase.prep) list.append(element('li', '', entry)); prep.append(list); section.append(prep);
+      const list = element('ul'); for (const entry of activePhase.prep) list.append(element('li', '', plain(entry))); prep.append(list); section.append(prep);
     }
     section.append(renderTimeline(activeSteps), renderCurrent(activePhase, activeSteps));
     const keys = renderKeys(activeGuide); if (keys) section.append(keys);
@@ -1368,6 +1589,11 @@ function mountRotationGuide(container, options = {}) {
   }
   function render() {
     if (destroyed) return;
+    const nextPlainSignature = JSON.stringify([team, team.map(id => config.characters[id]?.potential || 0)]);
+    if (plainSignature !== nextPlainSignature) {
+      plainTerms = createRotationPlainTerms(ROTATION_KNOWLEDGE, config, team);
+      plainSignature = nextPlainSignature;
+    }
     const active = root.contains(doc.activeElement) ? doc.activeElement : null;
     const focus = active?.dataset.rotationControl;
     const selection = active?.tagName === 'INPUT' ? [active.selectionStart, active.selectionEnd] : null;
