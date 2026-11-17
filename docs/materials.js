@@ -307,7 +307,7 @@ async function switchMode(next, updateUrl = true) {
   modeLoading = next === 'beta' && !betaData; renderModeControls();
   try {
     if (next === 'beta' && !betaData) {
-      betaRequest ||= loadJSON('cultivation-beta.json?v=20261114-refresh-launch-1').then(prepareBeta).finally(() => { betaRequest = null; });
+      betaRequest ||= loadJSON('cultivation-beta.json?v=20261117-team-lazy-beta-launch-1').then(prepareBeta).finally(() => { betaRequest = null; });
       const loaded = await betaRequest;
       if (request !== modeRequest) return;
       betaData = loaded;

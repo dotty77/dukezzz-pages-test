@@ -28,7 +28,7 @@ const assets = {
   equipment:'agent-equipment.json?v=20261111-refresh-launch-1',
   builds:'agent-builds.json?v=20261111-refresh-launch-1',
   graduation:'agent-graduation.json?v=20261027-agents-launch-1',
-  beta:'agent-beta.json?v=20261114-refresh-launch-1',
+  beta:'agent-beta.json?v=20261117-team-lazy-beta-launch-1',
 };
 const downloads = new Map(), failures = new Set();
 const dialog = $('agent-dialog');

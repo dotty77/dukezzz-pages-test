@@ -190,7 +190,7 @@ function renderAbout() {
 async function init() {
   state.ready=false;$('load-error').hidden=true;
   try {
-    const [catalogResponse,mediaResponse]=await Promise.all([fetch('item-catalog.json?v=20261021-v33-launch-1'),fetch('assets/items/manifest.json?v=20261021-v33-launch-1')]);
+    const [catalogResponse,mediaResponse]=await Promise.all([fetch('item-catalog.json?v=20261021-v33-launch-1'),fetch('assets/items/manifest.json?v=20261117-team-lazy-beta-launch-1')]);
     if(!catalogResponse.ok)throw new Error('物资清单读取失败');
     if(!mediaResponse.ok)throw new Error('物资媒体索引读取失败');
     const catalog=await catalogResponse.json(),mediaData=await mediaResponse.json();
@@ -236,7 +236,7 @@ $('clear-filters').addEventListener('click',resetFilters);$('reset-empty').addEv
 $('load-more').addEventListener('click',()=>{state.shown+=72;renderGrid();});
 $('favorite-item').addEventListener('click',()=>{const id=state.selected?.id;if(!id)return;if(favorites.has(id))favorites.delete(id);else favorites.add(id);const saved=saveFavorites();renderFavorite();updateFilters();updatePreviousNext();$('item-action-status').textContent=saved?(favorites.has(id)?'已加入本机收藏。':'已取消收藏。'):'浏览器无法保存，收藏仅在本次页面有效。';});
 $('copy-item-link').addEventListener('click',async()=>{const url=new URL(location.href);url.hash=`item=${encodeURIComponent(state.selected.id)}`;try{await navigator.clipboard.writeText(url.href);$('item-action-status').textContent='已复制这件物资的链接。';}catch{$('item-action-status').textContent=`可以复制地址栏链接：${url.href}`;}});
-$('item-tv-link').addEventListener('click',()=>{const url=new URL('tv-wall.html?v=20261114-refresh-launch-1',location.href),lang=new URLSearchParams(location.search).get('lang');if(lang)url.searchParams.set('lang',lang);url.hash=`item=${encodeURIComponent(state.selected.id)}`;location.href=url.pathname+url.search+url.hash;});
+$('item-tv-link').addEventListener('click',()=>{const url=new URL('tv-wall.html?v=20261117-team-lazy-beta-launch-1',location.href),lang=new URLSearchParams(location.search).get('lang');if(lang)url.searchParams.set('lang',lang);url.hash=`item=${encodeURIComponent(state.selected.id)}`;location.href=url.pathname+url.search+url.hash;});
 $('previous-item').addEventListener('click',()=>stepItem(-1));$('next-item').addEventListener('click',()=>stepItem(1));
 $('close-item').addEventListener('click',()=>$('item-dialog').close());
 $('item-dialog').addEventListener('close', () => {

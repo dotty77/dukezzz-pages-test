@@ -36,7 +36,7 @@ function renderLanguage() {
   document.title = `${t('tvWall')} · DUKE`;
   $('wall-search').placeholder = t('search');
   for (const [id, key] of [['wall-search','searchLabel'],['wall-price','priceLabel'],['wall-stage','stageLabel'],['wall-room','roomLabel'],['wall-zoom','zoomLabel'],['wall-minus','smaller'],['wall-plus','larger'],['wall-dialog-close','close'],['wall-prev','prevChannel'],['wall-next','nextChannel']]) $(id).setAttribute('aria-label',t(key));
-  document.querySelector('.wall-breadcrumb a').href = linkLanguage('gallery.html?v=20261114-refresh-launch-1');
+  document.querySelector('.wall-breadcrumb a').href = linkLanguage('gallery.html?v=20261117-team-lazy-beta-launch-1');
   for (const [code, unit] of state.units) {
     const record = state.records.find(record => record.code === code);
     unit.querySelector('.tv-name').textContent = nameOf(record);
