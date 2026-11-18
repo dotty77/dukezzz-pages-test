@@ -197,6 +197,14 @@ html[data-theme="dark"] .disc-card-score[data-main-status="mismatch"],html[data-
 .disc-hoyolab-sync .hoyolab-sync-privacy{font-size:11px}.hoyolab-sync-fields{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto;gap:12px;align-items:end;margin-top:16px}
 .hoyolab-sync-fields>div{min-width:0}.hoyolab-sync-fields label{display:block;margin-bottom:7px;font-size:12px;color:var(--muted)}
 .hoyolab-sync-fields select,.hoyolab-sync-fields .hoyolab-agent-search{width:100%;min-width:0;min-height:42px;padding:10px;background:var(--surface-muted);color:var(--text);border:1px solid var(--line);border-radius:8px}
+#disc-farm-advice{margin:0 0 14px;padding:15px 18px;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:8px;background:var(--surface);font-size:13px}
+#disc-farm-advice h3{font-size:17px;margin:0 0 6px;color:var(--text)}
+#disc-farm-advice p{line-height:1.6;margin:5px 0}
+.disc-farm-row{display:grid;grid-template-columns:6.2em minmax(0,1fr);align-items:baseline;gap:8px;margin:10px 0}
+.disc-farm-label{color:var(--accent);font-weight:650}
+.disc-farm-row p,.disc-farm-method{font-size:12px;color:var(--muted)}
+.disc-farm-method{margin-top:10px}.disc-farm-method summary{cursor:pointer;width:fit-content}
+@media(max-width:650px){#disc-farm-advice{padding:12px}.disc-farm-row{grid-template-columns:5.5em minmax(0,1fr);gap:6px}}
 .hoyolab-agent-search{margin-bottom:8px}.hoyolab-agent-search::placeholder{color:var(--muted)}
 .hoyolab-sync-fields button{min-height:42px}.hoyolab-sync-status:empty{display:none}.disc-hoyolab-sync .hoyolab-sync-status{margin-top:12px;color:var(--text)}
 .disc-hoyolab-sync [hidden]{display:none!important}.disc-cn-fold>summary{font-size:15px;cursor:pointer;line-height:1.6}.disc-cn-fold[open]>summary{margin-bottom:15px}.disc-cn-fold .official-sync-head h2{display:none}

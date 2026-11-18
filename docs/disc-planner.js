@@ -2,15 +2,20 @@
 const API_ROOT=globalThis.location?.origin==='https://dotty77.github.io'&&globalThis.location.pathname.startsWith('/dukezzz-pages-test/')?'https://dukezzz.com':'';
 import {mountMiyousheBrowserSync} from './mys-browser-sync.js?v=20261114-canonical-sync-1';
 import {mountHoyolabSync} from './hoyolab-sync.js?v=20261114-canonical-sync-1';
-import {officialToConfiguration} from './official-equipment.js?v=20261117-disc-panel-launch-1';
-import {scoreDisc,getDiscScoreProfile,SCORE_RULES} from './disc-score.js?v=20261117-disc-panel-launch-1';
-import {newConfiguration,normalizedToConfiguration,validateConfiguration,calculatePanel,formatProperty,resolveTargets,compareDisc,inspectDiscRolls} from './disc-planner-core.js?v=20261117-disc-panel-launch-1';
+import {officialToConfiguration} from './official-equipment.js?v=20261117-disc-farming-launch-1';
+import {scoreDisc,getDiscScoreProfile,SCORE_RULES} from './disc-score.js?v=20261117-disc-farming-launch-1';
+import {newConfiguration,normalizedToConfiguration,validateConfiguration,calculatePanel,formatProperty,resolveTargets,compareDisc,inspectDiscRolls} from './disc-planner-core.js?v=20261117-disc-farming-launch-1';
 import {evaluateContext,assessUsable} from './disc-context.js?v=20261027-agents-launch-1';
 import {renderPanelEffects} from './disc-panel-display.js?v=20261117-disc-panel-launch-1';
 import {applyPlanningScope} from './disc-scope.js?v=20260913-disc-planner-1';
 const $=id=>document.getElementById(id),el=(tag,cls='',text='')=>{const n=document.createElement(tag);n.className=cls;n.textContent=text;return n;};
 let data,builds,equipment,details,graduation,mechanics,config,alternative='',planIndex=0,team=['',''],tier='small',allocation=null,busy=false,controller,cacheUntil=0,cacheUid='',snapshot=null;
 let planningMode='improve',planningScope='solo',searchTask=null,searchRevision=0,slotReview=null;
+let planRequested=false,refreshTimer;
+function queuePlanRefresh(){
+  clearTimeout(refreshTimer);
+  if(planRequested||config.discs.some(d=>d.subs.length))refreshTimer=setTimeout(()=>generate(false),400);
+}
 function scrollToDiscSection(id){
   const target=document.getElementById(id);if(!target)return;
   target.style.scrollMarginTop=`${Math.ceil(document.querySelector('.site-header')?.getBoundingClientRect().height||74)+16}px`;
@@ -154,18 +159,19 @@ function sourceDetails(title,texts){const d=el('details','disc-source-details');
 function currentBuild(){const b=clone(builds.agents[config.id]),alt=mechanics.agents[config.id]?.alternatives?.find(a=>a.id===alternative);if(alt){b.mainStatIds=alt.mainStatIds;b.effectiveSubstats={...b.effectiveSubstats,primaryIds:alt.primaryIds,secondaryIds:alt.secondaryIds};b.reasons=[alt.label,...alt.conditions];b.alternativeSource=alt.sourceUrl;if(alt.sets)b.sets=alt.sets;else{b.setsUnverified=true;b.reasons.push('下方套装沿用原搭配，仅作参考；本流派的套装尚未独立核实，请结合原文选择。');}}return b;}
 function currentContext(){return evaluateContext({config,team,scope:planningScope,build:currentBuild(),profile:graduation.agents[config.id],agent:details.agents[config.id],details,alternative:mechanics.agents[config.id]?.alternatives?.find(a=>a.id===alternative)});}
 function checkList(checks){const root=el('div','disc-context-checks');for(const c of checks){const card=el('details',`disc-context-check is-${c.status}`);card.dataset.check=c.id;card.open=c.status==='unmet';card.append(el('summary','',`${c.status==='met'?'✓ 已确认':c.status==='excluded'?'本次不核对':c.status==='unmet'?'需调整':'待确认'} · ${c.label}`),el('p','',c.reason));root.append(card);}return root;}
-function setSearchControls(searching){$('disc-generate').disabled=searching;$('disc-compare').disabled=searching;$('disc-search-cancel').hidden=!searching;}
+function setSearchControls(searching,background=false){$('disc-generate').disabled=searching&&!background;$('disc-compare').disabled=searching&&!background;$('disc-search-cancel').hidden=!searching;}
 function cancelSearch(message=''){
+  clearTimeout(refreshTimer);
   searchRevision++;
   if(searchTask){const task=searchTask;searchTask=null;task.worker.terminate();task.reject(new DOMException('搜索已取消','AbortError'));}
   setSearchControls(false);if(message)$('disc-allocation-status').textContent=message;
 }
-function searchPlan(operation){
-  cancelSearch();setSearchControls(true);
+function searchPlan(operation,selected=null,background=false){
+  cancelSearch();setSearchControls(true,background);
   const revision=searchRevision;
   return new Promise((resolve,reject)=>{
     let worker;
-    try{worker=new Worker(new URL('./disc-planner-worker.js?v=20261117-disc-panel-launch-1',import.meta.url),{type:'module'});}
+    try{worker=new Worker(new URL('./disc-planner-worker.js?v=20261117-disc-farming-launch-1',import.meta.url),{type:'module'});}
     catch(error){setSearchControls(false);reject(error);return;}
     searchTask={worker,reject,revision};
     const finish=()=>{worker.terminate();if(searchTask?.revision===revision){searchTask=null;setSearchControls(false);}};
@@ -174,13 +180,13 @@ function searchPlan(operation){
       finish();if(message.error)reject(Error(message.error));else resolve(message.result);
     };
     worker.onerror=event=>{event.preventDefault();finish();reject(revision===searchRevision?Error('方案搜索未能完成，请刷新页面后重试。'):new DOMException('配置已改变','AbortError'));};
-    try{worker.postMessage({operation,config:clone(config),data,rows:targetRows().rows,build:currentBuild(),options:{mode:planningMode,scope:planningScope,useReference:true}});}
+    try{worker.postMessage({operation,config:clone(config),data,rows:targetRows().rows,build:currentBuild(),allocation:selected,options:{mode:planningMode,scope:planningScope,useReference:true,planIndex,pinFarmMains:!!selected}});}
     catch(error){finish();reject(error);}
   });
 }
-function invalidate(){cancelSearch();allocation=null;slotReview=null;$('disc-allocation-status').textContent='';$('disc-candidates').replaceChildren();updateTargets();updateSlotGoals();updateDiscScores();saveCurrentPlan();}
+function invalidate(){cancelSearch();allocation=null;slotReview=null;$('disc-allocation-status').textContent='';$('disc-candidates').replaceChildren();updateTargets();updateSlotGoals();updateDiscScores();saveCurrentPlan();queuePlanRefresh();}
 function setAgent(id,imported=null){
-  cancelSearch();
+  cancelSearch();planRequested=!!imported;
   if(!data.agents[id])throw Error('该角色尚未收录正式服配装数据');
   config=maximumPlanningLevels(imported||newConfiguration(id,builds.agents[id],equipment,data));alternative='';planIndex=0;setPlanningTeam([]);snapshot=imported?clone(config):null;allocation=null;slotReview=null;
   $('disc-file-status').textContent='';savedPlanStatus();
@@ -472,7 +478,78 @@ function renderSlots(){
   }
   updateSlotGoals();renderScoreGuide();
 }
+function farmChance(low,high){
+  const percent=n=>{
+    const value=100*Math.max(0,Math.min(1,n));
+    if(value>0&&value<0.01)return '<0.01%';
+    return Number(value.toFixed(value<1?2:1))+'%';
+  };
+  const lo=percent(low),hi=percent(high??low);
+  return lo===hi?lo:`${lo}–${hi}`;
+}
+function farmAction(action,entry){
+  const row=el('div','disc-farm-row'),title=el('strong'),body=el('div');
+  row.dataset.farmAction=action;row.dataset.slot=entry.slot;
+  const tune=action==='tuning';
+  row.append(tune?uiText('span','调律校音器','Tuning Calibrator','disc-farm-label'):uiText('span','优先刷','Farm first','disc-farm-label'));
+  title.append(uiText('span',`${entry.slot}号位`,`Slot ${entry.slot}`));
+  const set=equipment.discs[entry.setId];
+  if(set?.name){title.append(' · ',uiText('span',set.name,set.nameEn||''));}
+  if(tune)title.append(' · ',el('span','',name(entry.mainId)));
+  body.append(title);
+  if(tune){
+    const gain=farmChance(entry.tuningGain);
+    body.append(uiText('p',`比只定号位多用 1 个校音器，保守估算平均多补回当前缺口的 ${gain}。`,`Using one Calibrator on top of slot tuning closes an estimated extra ${gain} of your current gap on average (conservative estimate).`));
+  }else{
+    const chance=farmChance(entry.randomChance,entry.randomChanceMax);
+    body.append(uiText('p',`估算每张这个套装的随机 S 盘，有 ${chance} 的机会在此号位缩小缺口。`,`Estimated chance per random S-Rank disc from this set to close a gap in this slot: ${chance}.`));
+  }
+  row.append(body);return row;
+}
+function renderFarmAdvice(){
+  const root=$('disc-farm-advice'),farm=allocation?.farming;
+  const status=slotReview==='usable'?'usable':allocation?.guidanceOnly?'no-targets':farm?.status||(slotReview==='plan'&&allocation?.configuration?'calculating':'');
+  root.replaceChildren();root.hidden=!status;
+  if(!status){delete root.dataset.status;return;}
+  root.dataset.status=status;
+  root.append(uiText('h3','还值得刷吗？','Worth farming?'));
+  if(status!=='ready'){
+    const text={
+      calculating:['正在估算这组方案的优先号位…','Estimating farming priorities for this build…'],
+      met:farm?.partial?['按已录入属性，本次面板下限已达到，先保留现有盘。','The recorded stats already meet the target minimums. Keep your discs.']:['已达到本次可比较的面板目标，先保留现有盘和校音器。','Your build meets the comparable targets. Keep your discs and save the Calibrator.'],
+      locked:['所有可调整号位都已锁定，先保留校音器。','All eligible slots are locked. Save the Calibrator.'],
+      'no-targets':['当前没有可比较的面板目标，先按方案选套装与主属性。','There are no comparable stat targets. Follow the plan’s set and main-stat recommendations.'],
+      unknown:farm?.reason==='partial-ceiling'?['已录入的面板在参考范围内。补全副属性即可复核上限，再决定是否继续刷。','The recorded stats are within the reference range. Complete the missing substats to check the cap before farming.']:['导入当前配装或在盘卡上补全资料后，会自动估算优先号位。','Import your build or fill in the disc stats. Farming priorities update automatically.'],
+      'no-gain':['按本次目标，单换一张盘暂未找到能改善的号位。先保留校音器，可参考组合换盘方案。','No single replacement improved the current targets in this model. Save the Calibrator and review the multi-disc plan.'],
+      usable:['能用档先看套装与主属性，暂不需要为面板目标消耗校音器。','For the usable tier, focus on sets and main stats. Save the Calibrator for a stat target.'],
+      unavailable:['刷盘估算暂不可用，可先查看本次换盘方案。','Farming estimates are unavailable. Your disc plan is shown below.']
+    }[status]||[];
+    root.append(uiText('p',text[0]||'',text[1]||''));return;
+  }
+  const gaps=(farm.deficits||[]).filter(r=>Number.isFinite(r.current)&&Number.isFinite(r.targetRaw));
+  if(gaps.length){
+    const line=el('p','disc-muted');line.append(uiText('span','当前 → 目标　','Current → target  '));
+    gaps.forEach((r,i)=>{if(i)line.append(' · ');line.append(el('span','',name(r.group)),' ',fmt(r.group,r.current),' → ',fmt(r.group,r.targetRaw));});
+    root.append(line);
+  }
+  if(farm.priority)root.append(farmAction('priority',farm.priority));
+  if(farm.tuning)root.append(farmAction('tuning',farm.tuning));
+  else root.append(uiText('p','校音器先留着，当前没有适合定向主属性的号位。','Save the Calibrator for now. None of the eligible slots warrants choosing a main stat.'));
+  if(farm.partial)root.append(uiText('p','部分盘的副属性未录全，按已录入的面板估算。','Some substats are missing. Estimates use the recorded build.','disc-muted'));
+  const method=el('details','disc-farm-method');
+  method.append(uiText('summary','估算依据','How this is estimated'));
+  method.append(uiText('p','每次只换一张盘，保留其余五张与已达到的门槛。优先刷能平均补回更多目标缺口的号位，校音器优先给锁定主属性后额外收益最大的号位。','Each estimate changes one disc and keeps the other five and their met thresholds. The farm recommendation prioritizes expected gap reduction. The Calibrator goes where choosing the main stat adds the most expected gain.'),
+    uiText('p','按目标套装的满级 S 盘估算，假设同一池内的主属性、副属性与强化落点等可能。分别计算初始三条和四条的结果，显示两者范围。','The model uses max-level S-Rank discs from the target set. Eligible main stats, substats and upgrade destinations are assumed equally likely within their respective pools. Ranges span the three- and four-starting-substat cases.'));
+  if(farm.tuning){
+    const t=farm.tuning,slot=farmChance(t.slotChance,t.slotChanceMax),main=farmChance(t.mainChance,t.mainChanceMax);
+    method.append(uiText('p',`${t.slot}号位只定号位的改善机会约 ${slot}，再定主属性约 ${main}。校音器按能补回多少缺口排序，也计入每次改善的幅度。`,`Slot ${t.slot} has an estimated ${slot} chance of improvement with slot tuning and ${main} with the main stat fixed. The Calibrator ranking accounts for how much each successful disc improves the build.`));
+  }
+  const plannedSlot=allocation.slotChanges?.find(change=>change.slot===farm.priority?.slot);
+  if(plannedSlot?.action==='keep')method.append(uiText('p','下方方案保留了这个号位。先刷到合适的替换盘，也能从这个号位补缺口，换上后会重新规划。','The plan below keeps this slot. A good drop here offers another way to close the same gaps. Updating the equipped disc recalculates the plan.'));
+  root.append(method);
+}
 function updateSlotGoals(){
+  renderFarmAdvice();
   const resultNote=$('disc-slot-result-note');resultNote.replaceChildren();resultNote.hidden=!slotReview;
   if(slotReview==='usable')resultNote.append(uiText('span','已完成基础检查；尚未生成逐号位换盘目标。','Basic checks complete; no per-slot changes have been generated.'));
   else if(allocation?.guidanceOnly)resultNote.append(uiText('span','先看各号位的培养方向；尚未确定需要调整的号位。','Review each slot’s build direction; specific changes have not been determined.'));
@@ -482,10 +559,11 @@ function updateSlotGoals(){
   }
   for(const d of config.discs){const root=$(`disc-slot-goal-${d.slot}`);if(!root)continue;root.replaceChildren();root.removeAttribute('data-action');const target=allocation?.configuration?.discs?.find(x=>x.slot===d.slot),change=allocation?.slotChanges?.find(x=>x.slot===d.slot);
     const card=root.closest('.disc-slot'),adjust=!!(target&&!allocation.guidanceOnly&&!allocation.blocked&&!d.locked&&['fill','replace'].includes(change?.action));
+    const farmAlternative=change?.action==='keep'&&[allocation?.farming?.priority?.slot,allocation?.farming?.tuning?.slot].includes(d.slot);
     card.classList.toggle('is-adjustment',adjust);card.classList.toggle('is-locked',!!d.locked);card.querySelector('.disc-slot-plan-state')?.remove();
     if(adjust)card.querySelector('.disc-section-head').append(uiText('span','建议调整','Suggested change','disc-slot-plan-state is-adjustment'));
     else if(d.locked)card.querySelector('.disc-section-head').append(uiText('span','已锁定保留','Locked · keep','disc-slot-plan-state'));
-    else if(target&&change?.action==='keep')card.querySelector('.disc-section-head').append(uiText('span','本次保留','Keep for this plan','disc-slot-plan-state'));
+    else if(target&&change?.action==='keep')card.querySelector('.disc-section-head').append(farmAlternative?uiText('span','原盘可留，有提升再换','Keep until a better drop','disc-slot-plan-state'):uiText('span','本次保留','Keep for this plan','disc-slot-plan-state'));
     if(allocation?.guidanceOnly){
       const b=currentBuild(),mainIds=d.slot<=3?Object.keys(data.mainBases[d.slot]).map(Number):b.mainStatIds[d.slot]||[];
       root.dataset.action='guidance';root.append(el('strong','','本号位的个人培养方向'),el('p','',`主属性参考：${mainIds.map(name).join(' / ')||'待核对'}。`));
@@ -496,7 +574,7 @@ function updateSlotGoals(){
     if(!target){if(d.locked)root.append(el('p','disc-muted','保留此盘：现有属性参与整套目标计算。'));continue;}
     root.dataset.action=change?.action||'';
     if(change?.action==='keep'){
-      root.append(el('strong','','保留现有盘'),el('p','',`${equipment.discs[d.setId]?.name||'套装未选择'} · ${name(d.mainId)} · 当前 ${d.level} 级。${change.reason||'已录入属性参与整套计算，本方案保留此盘。'}`));
+      root.append(farmAlternative?uiText('strong','原盘可留，有提升再换','Keep until a better drop'):el('strong','','保留现有盘'),el('p','',`${equipment.discs[d.setId]?.name||'套装未选择'} · ${name(d.mainId)} · 当前 ${d.level} 级。${change.reason||'已录入属性参与整套计算，本方案保留此盘。'}`));
       continue;
     }
     root.append(el('strong','',change?.action==='fill'?'补齐空缺号位':d.locked?'保留当前盘':compareDisc(d,target)?'已录入属性覆盖本号位参考目标':'本号位的换盘目标'));
@@ -529,25 +607,41 @@ function renderAllocationSummary(){
   if(allocation.unresolvedRows?.length)root.append(textList(allocation.unresolvedRows.map(r=>`${r.label||name(r.group)} ${r.target??''}${r.unit||''} 尚未评估：${r.reason}。`)));
   root.append(sourceDetails('方案计算范围',[allocation.method,'仅比较所列属性目标与当前套装范围；技能循环、全部战斗增益和实战伤害没有统一纳入本次目标，不将这组结果称为最高伤害配装。']));
 }
-async function generate(){
-  cancelSearch();allocation=null;slotReview=null;$('disc-candidates').replaceChildren();updateSlotGoals();
+async function generate(scroll=true){
+  planRequested=true;cancelSearch();allocation=null;slotReview=null;$('disc-candidates').replaceChildren();updateSlotGoals();
   try{const errors=validateConfiguration(config,data);if(errors.length)throw Error(errors.join('；'));
     if(tier==='usable'){
       allocation=null;const checks=assessUsable(config,currentBuild(),data,currentContext());
-      $('disc-allocation-status').replaceChildren(el('p','','能用档先看下面的结构与条件检查。未规定全角色通用的副词条份数；数值功能门槛仍需查看技能依据。'),checkList(checks));slotReview='usable';updateSlotGoals();revealSlotResults();return;
+      $('disc-allocation-status').replaceChildren(el('p','','能用档先看下面的结构与条件检查。未规定全角色通用的副词条份数；数值功能门槛仍需查看技能依据。'),checkList(checks));slotReview='usable';updateSlotGoals();if(scroll)revealSlotResults();return;
     }
     $('disc-allocation-status').textContent=planningMode==='improve'?'正在从现有配装寻找更少换盘的方案…':'正在搜索逐号位目标…';
-    allocation=await searchPlan('generate');
-    if(allocation.guidanceOnly&&planningScope==='solo'){slotReview='guidance';renderPersonalGuidance(allocation);revealSlotResults();return;}
+    allocation=await searchPlan('generate',null,!scroll);
+    if(allocation.guidanceOnly&&planningScope==='solo'){slotReview='guidance';renderPersonalGuidance(allocation);if(scroll)revealSlotResults();return;}
     if(allocation.blocked){$('disc-allocation-status').textContent=allocation.blocked;allocation=null;return;}
-    slotReview='plan';renderAllocationSummary();updateSlotGoals();revealSlotResults();
+    slotReview='plan';renderAllocationSummary();updateSlotGoals();if(scroll)revealSlotResults();
   }catch(e){if(e.name!=='AbortError'){allocation=null;slotReview=null;updateSlotGoals();$('disc-allocation-status').textContent=e.message;}}
+}
+async function showCandidate(candidate){
+  cancelSearch();allocation=candidate;slotReview='plan';planRequested=true;
+  renderAllocationSummary();updateSlotGoals();
+  if(candidate.farming){revealSlotResults();return;}
+  try{
+    const pending=searchPlan('farming',candidate);
+    revealSlotResults();
+    candidate.farming=await pending;
+    if(allocation===candidate)updateSlotGoals();
+  }catch(error){
+    if(error.name!=='AbortError'&&allocation===candidate){
+      candidate.farming={status:'unavailable'};
+      updateSlotGoals();
+    }
+  }
 }
 async function compare(){
   cancelSearch();allocation=null;slotReview=null;updateSlotGoals();
   const box=$('disc-candidates');box.replaceChildren(el('p','','正在从同一套原装备比较推荐主词条组合…'));$('disc-allocation-status').textContent='';
   try{const errors=validateConfiguration(config,data);if(errors.length)throw Error(errors.join('；'));const candidates=await searchPlan('compare');box.replaceChildren();if(!candidates.length){if(planningScope==='solo'){const guidance=await searchPlan('generate');if(guidance.guidanceOnly){renderPersonalGuidance(guidance);return;}}box.append(uiText('p','当前条件下暂无法比较。','Comparison is unavailable under the current conditions.'));}
-    for(const c of candidates){const row=el('div','disc-candidate'),choices=c.configuration.discs.filter(d=>d.slot>=4).map(d=>`${d.slot}号 ${name(d.mainId)}`).join(' · ');row.append(el('strong','',choices),uiText('span',`${c.met?'覆盖所列参考目标':'尚有参考目标缺口'} · 调整 ${c.changeCount??0} 个号位${c.search?.truncated?' · 部分组合未完成搜索':''}`,`${c.met?'Reference targets covered':'Reference targets still missing'} · Change ${c.changeCount??0} slots${c.search?.truncated?' · Some combinations were not searched':''}`),button('查看这组目标',()=>{allocation=c;slotReview='plan';renderAllocationSummary();updateSlotGoals();}));box.append(row);}
+    for(const c of candidates){const row=el('div','disc-candidate'),choices=c.configuration.discs.filter(d=>d.slot>=4).map(d=>`${d.slot}号 ${name(d.mainId)}`).join(' · ');row.append(el('strong','',choices),uiText('span',`${c.met?'覆盖所列参考目标':'尚有参考目标缺口'} · 调整 ${c.changeCount??0} 个号位${c.search?.truncated?' · 部分组合未完成搜索':''}`,`${c.met?'Reference targets covered':'Reference targets still missing'} · Change ${c.changeCount??0} slots${c.search?.truncated?' · Some combinations were not searched':''}`),button('查看这组目标',()=>showCandidate(c)));box.append(row);}
   }catch(e){if(e.name!=='AbortError')box.replaceChildren(el('p','disc-warning',e.message));}
 }
 function renderEvidence(){
@@ -577,7 +671,7 @@ function skillText(s,context=config){
   if(Array.isArray(levels)&&levels.length){const requested=s.levelType==='核心强化'?context.core+1:12+(context.cinema>=3?2:0)+(context.cinema>=5?2:0),found=levels.find(l=>l.level===requested);if(found)return [`${s.levelType==='核心强化'?`核心${context.core?'ABCDEF'[context.core-1]:'基础'}`:`招式培养12级，影画加成后${requested}级`}：`,found.description||found.text||s.description];return ['当前来源未提供所选等级完整文本；以下为基础说明，精确数值请在完整资料页核对。\n',s.description||''];}
   return [s.description||s.text||'请在完整技能页切换等级查看。'];
 }
-function renderAll(){renderConfig();renderPlans();renderTiers();renderStrategy();renderRollGuide();renderSlots();updateTargets();renderEvidence();$('disc-candidates').replaceChildren();$('disc-allocation-status').textContent='';saveCurrentPlan();}
+function renderAll(){renderConfig();renderPlans();renderTiers();renderStrategy();renderRollGuide();renderSlots();updateTargets();renderEvidence();$('disc-candidates').replaceChildren();$('disc-allocation-status').textContent='';saveCurrentPlan();queuePlanRefresh();}
 function setBusy(value){busy=value;$('disc-fetch').disabled=value;$('disc-demo').disabled=value;$('disc-cancel').hidden=!value;}
 function consumeShowcase(result,isDemo=false){
   if(!result||!Array.isArray(result.agents))throw Error('展柜资料不完整');const agents=result.agents.filter(a=>data.agents[String(a.id)]);
@@ -596,7 +690,7 @@ $('disc-uid-form').onsubmit=async e=>{
 $('disc-cancel').onclick=()=>controller?.abort();
 $('disc-demo').onclick=async()=>{if(busy)return;try{const r=await fetch('showcase-demo.json?v=20261117-disc-panel-launch-1');if(!r.ok)throw Error('示例暂不可用');consumeShowcase(await r.json(),true);}catch(e){$('disc-import-status').textContent=e.message;}};
 $('disc-reset').onclick=()=>setAgent(config.id);
-$('disc-generate').onclick=generate;$('disc-compare').onclick=compare;
+$('disc-generate').onclick=()=>generate();$('disc-compare').onclick=compare;
 $('disc-search-cancel').onclick=()=>{cancelSearch('搜索已取消，已录入配装保留。');$('disc-candidates').replaceChildren();};
 $('disc-export').onclick=()=>{const errors=validateConfiguration(config,data);if(errors.length){$('disc-validation').textContent=errors.join('；');return;}const blob=new Blob([JSON.stringify({schema:'bagel-disc-plan-1',config,team,scope:planningScope,alternative,tier,mode:planningMode},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=el('a');a.href=url;a.download=`${details.agents[config.id].name}-驱动盘方案.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
 $('disc-file').onchange=async e=>{try{const f=e.target.files[0];if(!f)return;if(f.size>100000)throw Error('方案文件过大');const x=JSON.parse(await f.text());if(x.schema!=='bagel-disc-plan-1')throw Error('不是本站驱动盘方案');const imported=maximumPlanningLevels(x.config);const errors=validateConfiguration(imported,data);if(errors.length)throw Error(errors.join('；'));setAgent(imported.id,clone(imported));setPlanningTeam(x.team);alternative=mechanics.agents[config.id]?.alternatives?.some(a=>a.id===x.alternative)?x.alternative:'';tier=['usable','small','large'].includes(x.tier)?x.tier:'small';planningMode=x.mode==='fresh'?'fresh':'improve';renderAll();setImportStatus('已导入方案（不含UID）；角色与音擎按60级满突破、核心F规划，非来源实测等级。','Plan imported without a UID. Agent and W-Engine target Lv.60 and full promotion, with Core Skill F; these are planning levels, not imported measurements.');}catch(err){$('disc-import-status').textContent=`导入失败：${err.message}`;}finally{$('disc-file-status').replaceChildren(...[...$('disc-import-status').childNodes].map(node=>node.cloneNode(true)));e.target.value='';}};

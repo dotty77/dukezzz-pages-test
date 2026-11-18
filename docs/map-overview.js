@@ -13,7 +13,7 @@
     const tiles = tools.map(([key, label, hint], index) => {
       const content = `<span class="tool-art" aria-hidden="true">${window.bagelToolIcons?.[key] || ''}</span><span class="tool-label">${label}</span>`;
       const attrs = `class="tool-tile" style="--tool-order:${index}" title="${hint}"`;
-      return key === 'gallery' ? `<a ${attrs} href="gallery.html?v=20261117-disc-panel-launch-1">${content}</a>` : `<button ${attrs} type="button" data-overview-action="${key}">${content}</button>`;
+      return key === 'gallery' ? `<a ${attrs} href="gallery.html?v=20261117-disc-farming-launch-1">${content}</a>` : `<button ${attrs} type="button" data-overview-action="${key}">${content}</button>`;
     }).join('');
     return `<section class="map-overview" aria-labelledby="map-tools-heading">
       <div class="overview-heading"><h2 id="map-tools-heading">地图工具</h2><span class="overview-view-label">${native ? '坐标图' : '资料图'}</span></div>

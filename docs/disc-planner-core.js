@@ -96,6 +96,19 @@ export function applyPanelMechanics(config,baseValues,data){
   }
   return {values,effects};
 }
+const panelGroups=[111,121,131,122,123,201,211,231,232,305,312,314,315,316,317,318,319,320,322,323,213,324,325];
+function panelFromProperties(config,data,props,groups=panelGroups){
+  const values={};
+  for(const g of groups){
+    const b=props[g*100+1]||0,r=props[g*100+2]||0,f=props[g*100+3]||0;
+    values[g]=g===111?b+Math.ceil(b*r/10000)+f:Math.floor(b*(10000+r)/10000)+f;
+  }
+  if(String(config.id)==='1121'&&121 in values)values[121]+=Math.floor(values[131]*[40,46,52,60,66,72,80][config.core]/100);
+  if(String(config.id)==='1611'&&201 in values)values[201]+=Math.floor(values[211]*35/100);
+  if(data.agents[config.id].ProfessionType==='Rupture'&&123 in values)values[123]+=Math.floor(values[121]*3/10)+Math.floor(values[111]/10);
+  values[30502]=props[30502]||0;
+  return applyPanelMechanics(config,values,data);
+}
 export function calculatePanel(config,data){
   const errors=validateConfiguration(config,data);if(errors.length)throw Error(errors.join('；'));
   const a=data.agents[config.id],props={},add=(k,v)=>props[k]=(props[k]||0)+Number(v),promotion=config.promotion?a.PromotionProps[config.promotion-1]:{};
@@ -110,16 +123,7 @@ export function calculatePanel(config,data){
     if(d.setId)counts[d.setId]=(counts[d.setId]||0)+1;
   }
   for(const[id,n]of Object.entries(counts))if(n>=2)for(const[k,v]of Object.entries(data.setProps[id]))add(k,v);
-  const values={};
-  for(const g of [111,121,131,122,123,201,211,231,232,305,312,314,315,316,317,318,319,320,322,323,213,324,325]){
-    const b=props[g*100+1]||0,r=props[g*100+2]||0,f=props[g*100+3]||0;
-    values[g]=g===111?b+Math.ceil(b*r/10000)+f:Math.floor(b*(10000+r)/10000)+f;
-  }
-  if(String(config.id)==='1121')values[121]+=Math.floor(values[131]*[40,46,52,60,66,72,80][config.core]/100);
-  if(String(config.id)==='1611')values[201]+=Math.floor(values[211]*35/100);
-  if(a.ProfessionType==='Rupture')values[123]+=Math.floor(values[121]*3/10)+Math.floor(values[111]/10);
-  values[30502]=props[30502]||0;
-  return {...applyPanelMechanics(config,values,data),props,counts};
+  return {...panelFromProperties(config,data,props),props,counts};
 }
 export function normalizedToConfiguration(agent,data){
   const config={id:String(agent.id),level:sourceNumber(agent.level),promotion:sourceNumber(agent.promotionLevel),core:sourceNumber(agent.coreSkillEnhancement),cinema:sourceNumber(agent.mindscape),
@@ -301,6 +305,151 @@ export function allocateTargets(config,data,rows,build,options={}){
 }
 export function compareDisc(current,target){
   return !current.absent&&Number(current.mainId)===Number(target.mainId)&&String(current.setId)===String(target.setId)&&current.level===15&&!current.unsupported&&target.subs.every(t=>(current.subs.find(s=>Number(s.id)===Number(t.id))?.rolls||0)>=t.rolls);
+}
+
+// Only these raw groups can affect a target. Other legal substats still occupy
+// slots and receive upgrades in the distribution below.
+function farmGroups(config,data,rows){
+  const groups=new Set(rows.map(row=>row.group));
+  for(const rule of data.panelMechanics?.[config.id]?.rules||[]){
+    if(groups.has(rule.group)&&rule.scope==='passive'&&rule.inputGroup!=null)groups.add(rule.inputGroup);
+  }
+  if(groups.has(123)&&data.agents[config.id].ProfessionType==='Rupture'){groups.add(111);groups.add(121);}
+  if(groups.has(121)&&String(config.id)==='1121')groups.add(131);
+  if(groups.has(201)&&String(config.id)==='1611')groups.add(211);
+  return groups;
+}
+const farmGap=(row,values)=>Math.max(0,(row.bound==='maximum'?1:-1)*(values[row.group]-row.targetRaw))/Math.max(1,row.targetRaw);
+const factorial=[1,1,2,6,24,120];
+function choose(n,k){
+  if(k<0||k>n)return 0;
+  let value=1;
+  for(let i=1;i<=k;i++)value=value*(n-i+1)/i;
+  return value;
+}
+
+// For a given actual main, first choose four distinct legal lines. A disc
+// starting with three lines gains its fourth before its four random upgrades;
+// a four-line start has five upgrades. Marginalise irrelevant lines exactly.
+function farmMainDistribution(config,data,disc,mainId,setId,rows,groups,baselineLoss){
+  const trial={...config,discs:config.discs.map(d=>d.slot===disc.slot?
+    {...d,mainId,setId,absent:false,level:15,initial:4,subs:[]}:d)};
+  const props=calculatePanel(trial,data).props;
+  const legal=Object.keys(data.subBases).map(Number).filter(id=>id!==mainId);
+  const active=legal.filter(id=>groups.has(Math.floor(id/100)));
+  const inactive=legal.length-active.length,selected=[],groupList=[...groups];
+  const totals=[{chance:0,gain:0},{chance:0,gain:0}];
+  const divisor=choose(legal.length,4);
+  function evaluate(mass3,mass4){
+    if(!mass3&&!mass4)return;
+    const {values}=panelFromProperties(config,data,props,groupList);
+    let loss=0;
+    for(const row of rows){
+      const gap=farmGap(row,values);
+      if(row.met&&gap>1e-10)return;
+      loss+=gap;
+    }
+    const gain=(baselineLoss-loss)/baselineLoss;
+    if(!(gain>1e-10))return;
+    totals[0].chance+=mass3;totals[0].gain+=mass3*gain;
+    totals[1].chance+=mass4;totals[1].gain+=mass4*gain;
+  }
+  function upgrades(line,used,mass,otherLines){
+    if(line===selected.length){
+      const tail=draws=>used>draws?0:
+        factorial[draws]/(4**draws)*otherLines**(draws-used)/factorial[draws-used];
+      evaluate(mass*tail(4),mass*tail(5));
+      return;
+    }
+    const id=selected[line],base=props[id]||0;
+    for(let hits=0;hits<=5-used;hits++){
+      props[id]=base+(1+hits)*data.subBases[id];
+      upgrades(line+1,used+hits,mass/factorial[hits],otherLines);
+    }
+    props[id]=base;
+  }
+  function subsets(start){
+    const otherLines=4-selected.length,combinations=choose(inactive,otherLines);
+    if(combinations)upgrades(0,0,combinations/divisor,otherLines);
+    if(otherLines)for(let i=start;i<active.length;i++){
+      selected.push(active[i]);subsets(i+1);selected.pop();
+    }
+  }
+  subsets(0);
+  for(const result of totals){
+    result.chance=Math.min(1,result.chance);
+    result.gain=Math.min(1,result.gain);
+  }
+  return {mainId,initial3:totals[0],initial4:totals[1],chance:Math.min(totals[0].chance,totals[1].chance),gain:Math.min(totals[0].gain,totals[1].gain)};
+}
+
+/** Expected fraction of the current normalised panel deficit closed by a
+ * single replacement. Compare like-for-like S discs of the selected set.
+ * Bounds cover any mixture of three- and four-line starts under uniform
+ * main, substat and upgrade draws. They are model results, not game rates.
+ */
+export function rankFarmSlots(config,data,rows,build,options={},allocation=null){
+  const result={status:'no-targets',partial:false,deficits:[],protected:[],priority:null,tuning:null,slots:[]};
+  const targets=rows.filter(row=>!(options.scope==='solo'&&row.scopeExcluded)&&!row.contextBlocked&&row.applicable!==false&&
+    !['in-combat','unspecified-combat-bonus'].includes(row.scope??row.panelContext)&&(row.comparable||options.useReference)&&
+    (row.planning||row.bound==='maximum')&&Number.isFinite(row.targetRaw));
+  if(!targets.length||allocation?.guidanceOnly||config.level!==60||config.core!==6)return result;
+  if(validateConfiguration(config,data).length){result.status='unknown';return result;}
+  if(!config.discs.some(d=>!d.absent&&d.subs.length)){
+    result.status='unknown';result.reason='empty-equipment';return result;
+  }
+  const panel=calculatePanel(config,data).values;
+  if(targets.some(row=>!Number.isFinite(panel[row.group]))){result.status='unknown';return result;}
+  result.partial=config.discs.some(d=>!d.absent&&!inspectDiscRolls(d,data).complete);
+  const constraints=targets.map(row=>({...row,met:farmGap(row,panel)<=1e-10}));
+  for(const row of constraints){
+    result[row.met?'protected':'deficits'].push({key:row.key,group:row.group,label:row.label,current:panel[row.group],targetRaw:row.targetRaw,bound:row.bound});
+  }
+  const baselineLoss=constraints.reduce((n,row)=>n+farmGap(row,panel),0);
+  if(baselineLoss<=1e-10){
+    if(result.partial&&constraints.some(row=>row.bound==='maximum')){
+      result.status='unknown';result.reason='partial-ceiling';
+    }else result.status='met';
+    return result;
+  }
+  if(config.discs.every(d=>d.locked)){result.status='locked';return result;}
+  const groups=farmGroups(config,data,constraints);
+  for(const disc of config.discs){
+    if(disc.locked)continue;
+    const slot=disc.slot,planned=allocation?.configuration?.discs?.find(d=>d.slot===slot);
+    const legalMains=Object.keys(data.mainBases[slot]).map(Number);
+    const mainIds=options.pinFarmMains&&planned?[Number(planned.mainId)]:
+      [...new Set([...(build.mainStatIds?.[slot]||[]).map(Number),Number(planned?.mainId??disc.mainId)])];
+    const setPlan=build.sets?.[options.planIndex??0];
+    const setId=String(planned?.setId||disc.setId||(slot<=4?setPlan?.fourPieceId:setPlan?.twoPieceIds?.[0])||'');
+    if(!setId||!owns(data.setProps,setId))continue;
+    const mains=mainIds.filter(id=>legalMains.includes(id)).map(id=>farmMainDistribution(config,data,disc,id,setId,constraints,groups,baselineLoss));
+    if(!mains.length)continue;
+    // Other main stats do not fit this build. Their probability mass counts
+    // as a miss when the main stat is random.
+    const mean=(start,key)=>mains.reduce((n,m)=>n+m[start][key],0)/legalMains.length;
+    const chances=[mean('initial3','chance'),mean('initial4','chance')];
+    const gains=[mean('initial3','gain'),mean('initial4','gain')];
+    const slotChance=Math.min(...chances),slotChanceMax=Math.max(...chances);
+    const tuningKey=(m,key,reference)=>Math.min(m.initial3[key]-reference[0],m.initial4[key]-reference[1]);
+    const main=mains.slice().sort((a,b)=>tuningKey(b,'gain',gains)-tuningKey(a,'gain',gains)||b.gain-a.gain||b.chance-a.chance)[0];
+    result.slots.push({slot,setId,mainId:main.mainId,mains,
+      gain:Math.min(...gains),gainMax:Math.max(...gains),randomChance:slotChance/6,randomChanceMax:slotChanceMax/6,slotChance,slotChanceMax,
+      mainChance:main.chance,mainChanceMax:Math.max(main.initial3.chance,main.initial4.chance),
+      mainLift:tuningKey(main,'chance',chances),tuningGain:tuningKey(main,'gain',gains)});
+  }
+  if(!result.slots.length){result.status='unknown';result.reason='missing-set';return result;}
+  // Treat rounding noise as a tie and prefer a slot already changed by the
+  // visible plan. Resolve remaining ties by slot so repeated runs are stable.
+  const changed=new Set(allocation?.changedSlots||[]);
+  const prefer=(a,b)=>Number(changed.has(b.slot))-Number(changed.has(a.slot))||a.slot-b.slot;
+  const difference=(a,b)=>Math.abs(b-a)<1e-10?0:b-a;
+  result.slots.sort((a,b)=>difference(a.gain,b.gain)||difference(a.gainMax,b.gainMax)||prefer(a,b));
+  result.priority=result.slots.find(s=>s.gainMax>1e-10)||null;
+  result.tuning=result.slots.filter(s=>s.slot>=4&&s.tuningGain>1e-10)
+    .sort((a,b)=>difference(a.tuningGain,b.tuningGain)||prefer(a,b))[0]||null;
+  result.status=result.priority?'ready':'no-gain';
+  return result;
 }
 export function compareMainOptions(config,data,rows,build,options={}){
   const choices=[4,5,6].map(slot=>config.discs.find(d=>d.slot===slot).locked?[config.discs.find(d=>d.slot===slot).mainId]:(build.mainStatIds[slot]||[]).filter(id=>data.mainBases[slot]?.[id]));

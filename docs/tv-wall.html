@@ -7,22 +7,22 @@
   <meta name="description" content="DUKE 电视墙：在复古电视里播放奥蒙德研究站的物资动画，金额越高，电视越大。">
   <title>电视墙 · DUKE</title>
   <link rel="icon" href="assets/brand/duke-patrick-sketch-v1-132.png" type="image/png">
-  <script src="resource-cache.js?v=20261117-pages-disc-panel-1" data-cache-build="9f64efd27b7f7011f89afc9cf15b1e8a99ca525124ecda3615ad91185933580f"></script>
+  <script src="resource-cache.js?v=20261117-pages-disc-farming-1" data-cache-build="f2f782c7fd14b1d986073654d7633a6398e5ae0889258c1e93574338e5917ea2"></script>
   <script src="theme.js?v=20260909-version-3-2-1"></script>
   <script src="i18n.js?v=20261114-refresh-launch-1"></script>
   <link rel="stylesheet" href="brand-refresh.css?v=20260914-duke-brand-1">
   <link rel="stylesheet" href="site-nav.css?v=20261001-planner-tuning-1">
   <link rel="stylesheet" href="i18n.css?v=20260919-site-refresh-1">
   <link rel="stylesheet" href="tv-wall.css?v=20261009-v33-tvwall-1">
-<meta name="robots" content="noindex,nofollow"><link rel="stylesheet" href="pages-test.css?v=20261117-pages-disc-panel-1"><script src="pages-test.js?v=20261117-pages-disc-panel-1" defer></script></head>
+<meta name="robots" content="noindex,nofollow"><link rel="stylesheet" href="pages-test.css?v=20261117-pages-disc-farming-1"><script src="pages-test.js?v=20261117-pages-disc-farming-1" defer></script></head>
 <body class="tv-wall-page">
   <header class="site-header">
     <a class="site-brand" href="./" aria-label="DUKE首页"><img class="brand-logo" src="assets/brand/duke-patrick-sketch-v1-132.png" width="44" height="44" alt=""><span class="site-brand-copy"><b>DUKE</b><small>绝区零 · 贝果计划</small></span></a>
-    <nav class="site-navigation" aria-label="主要导航"><a href="./">探索地图</a><a href="gallery.html?v=20261117-disc-panel-launch-1" aria-current="page">物资图鉴</a><a href="tuning.html?v=20261117-disc-panel-launch-1">调频分析</a><a href="agents.html?v=20261117-disc-panel-launch-1">代理人资料</a></nav>
+    <nav class="site-navigation" aria-label="主要导航"><a href="./">探索地图</a><a href="gallery.html?v=20261117-disc-farming-launch-1" aria-current="page">物资图鉴</a><a href="tuning.html?v=20261117-disc-farming-launch-1">调频分析</a><a href="agents.html?v=20261117-disc-farming-launch-1">代理人资料</a></nav>
     <div class="site-header-actions"><button class="theme-toggle" type="button" data-theme-toggle aria-label="深色模式" aria-pressed="false" title="切换为深色模式"><svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 13.1A8.8 8.8 0 0 1 10.9 3.2a8.8 8.8 0 1 0 9.9 9.9Z"/></svg><svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42m0-14.14-1.42 1.42M6.35 17.65l-1.42 1.42"/></svg><span data-theme-label>深色模式</span></button></div>
   </header>
   <main class="wall-page" data-i18n-skip>
-    <div class="wall-breadcrumb"><a href="gallery.html?v=20261117-disc-panel-launch-1" data-copy="atlas">物资图鉴</a><span>/</span><span data-copy="tvWall">电视墙</span></div>
+    <div class="wall-breadcrumb"><a href="gallery.html?v=20261117-disc-farming-launch-1" data-copy="atlas">物资图鉴</a><span>/</span><span data-copy="tvWall">电视墙</span></div>
     <section class="wall-intro" aria-labelledby="wall-title">
       <div><p class="wall-kicker"><span></span><span data-copy="location">奥蒙德研究站 · 仓储枢纽</span></p><h1 id="wall-title"><span data-copy="headline">收获，正在放映。</span><span class="live-tag">ON AIR</span></h1><p class="wall-description" data-copy="description">金额越高，屏幕越大。</p></div>
       <div class="wall-intro-meta"><b>DUKE <i>COLLECTION</i></b><span><strong id="channel-total">—</strong> <span data-copy="channels">个频道</span><em> / </em><span data-copy="original">游戏原始动画</span></span></div>
@@ -50,8 +50,8 @@
     <div class="focus-tv"><div id="wall-focus-screen" class="focus-screen"><video id="wall-focus-video" muted playsinline loop controls preload="none"></video><div class="screen-vignette" aria-hidden="true"></div></div><div class="focus-speaker" aria-hidden="true"></div></div>
     <div class="focus-info"><div><div class="focus-channel-row"><button id="wall-prev" class="focus-step" type="button" aria-label="上一个频道">‹</button><span id="wall-dialog-channel" class="focus-channel"></span><button id="wall-next" class="focus-step" type="button" aria-label="下一个频道">›</button></div><h2 id="wall-dialog-title"></h2></div><strong id="wall-dialog-price"></strong></div>
     <p id="wall-dialog-note" class="focus-note" hidden></p>
-    <div class="focus-bottom"><span id="wall-dialog-status"></span><span class="focus-links"><button id="wall-copy-link" class="focus-link" type="button" data-copy="copyLink">复制链接</button><a id="wall-item-link" class="focus-link" href="gallery.html?v=20261117-disc-panel-launch-1" data-copy="viewItem">查看物资档案 ↗</a></span></div>
+    <div class="focus-bottom"><span id="wall-dialog-status"></span><span class="focus-links"><button id="wall-copy-link" class="focus-link" type="button" data-copy="copyLink">复制链接</button><a id="wall-item-link" class="focus-link" href="gallery.html?v=20261117-disc-farming-launch-1" data-copy="viewItem">查看物资档案 ↗</a></span></div>
   </dialog>
-  <script type="module" src="tv-wall.js?v=20261117-disc-panel-launch-1"></script>
+  <script type="module" src="tv-wall.js?v=20261117-disc-farming-launch-1"></script>
 </body>
 </html>
