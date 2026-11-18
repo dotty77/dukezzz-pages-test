@@ -30,6 +30,73 @@ function bilingual(tag, zh, en) {
   return node;
 }
 
+const discFitParts = {
+  substats: ['副词条', 'Substats'],
+  main: ['主属性', 'Main stat'],
+  set: ['套装搭配', 'Set fit'],
+  target: ['目标贡献', 'Target contribution']
+};
+
+export function discFitMethod() {
+  return bilingual('p','配装评分最多计副词条 60 分、主属性 20 分、套装 10 分、目标贡献 10 分。固定主属性、没有可靠参考的项目跳过，按适用项目的满分折算为百分制。目标贡献根据卸下这张盘后重新出现或扩大的面板缺口计算。',
+    'Build fit allows up to 60 points for substats, 20 for the main stat, 10 for set fit and 10 for the target gaps this disc closes. Fixed main stats and criteria without a reliable reference are omitted. Points are scaled to 100 using the remaining criteria.');
+}
+
+export function renderDiscFitScore(result, contribution, className) {
+  const box=document.createElement('div'), grade=result.grade||result.estimatedGrade;
+  const hasScore=Number.isFinite(result.score), estimated=Boolean(result.estimatedGrade);
+  const hasSubstats=Boolean(result.lines?.length)&&Number.isFinite(result.substatScore);
+  box.className=className+' disc-fit-score';
+  Object.assign(box.dataset,{status:result.status,mainStatus:result.mainStatus,score:hasScore?result.score:'',
+    grade:grade||'',gradeType:grade?(estimated?'estimated':'final'):'none',
+    substatScore:hasSubstats?result.substatScore:'',contextStatus:result.contextStatus});
+  const label=bilingual('span',estimated?'配装评分 · 估算':'配装评分',estimated?'Build fit score · estimate':'Build fit score');
+  label.className='disc-card-score-label';
+  const row=document.createElement('div'),value=document.createElement('div'),number=document.createElement('strong');
+  row.className='disc-card-score-line';value.className='disc-card-score-number';
+  number.textContent=hasScore?result.score:'—';value.append(number);
+  if(hasScore){const scale=document.createElement('small');scale.textContent='/100';value.append(scale);}
+  row.append(value);
+  if(grade){
+    const badge=document.createElement('div'),letter=document.createElement('strong');
+    badge.className='disc-card-grade';letter.textContent=grade;
+    badge.append(bilingual('span',estimated?'预估评级':'评级',estimated?'Est.':'Grade'),letter);row.append(badge);
+  }
+  box.append(label,row);
+  const notes={
+    absent:['空缺号位','Empty slot'],unsupported:['盘位资料待核对','Disc data unverified'],
+    invalid:['词条记录有误','Invalid substat record'],empty:['待填写副词条','Enter substats'],
+    'no-profile':['暂缺角色评分依据','No scoring profile'],
+    'main-mismatch':['主属性偏离当前参考','Main stat outside this build'],
+    'unverified-main':['该号位暂无主属性参考','No verified main stat for this slot'],
+    partial:['副词条未填全','Incomplete substats'],unleveled:['未满 15 级','Below Lv. 15']
+  };
+  let missingContext=['整套面板资料不足','Insufficient equipment stats'];
+  if(contribution?.status==='ready')missingContext=contribution.completeBuild?['缺少可核对的配装参考','No verified reference for this build']:['需补齐六张盘的配装资料','Complete all six disc records to score this build'];
+  const note=(hasScore&&result.mainStatus==='mismatch'?notes['main-mismatch']:notes[result.status])
+    ||(result.mainStatus==='conditional'?['主属性为条件备选','Conditional main stat']:null)
+    ||(!hasScore?missingContext:null);
+  if(note){const text=bilingual('p',...note);text.className='disc-card-score-note';box.append(text);}
+  if(hasSubstats){
+    const detail=document.createElement('details'),score=result.substatScore;
+    detail.className='disc-fit-breakdown';
+    detail.append(bilingual('summary',`副词条分 ${score}/100 · 查看构成`,`Substat score ${score}/100 · Breakdown`));
+    const parts=Object.entries(discFitParts).filter(([key])=>result.parts?.[key]?.max>0);
+    if(hasScore&&parts.length){
+      const text=lang=>parts.map(([key,names])=>names[lang]+' '+result.parts[key].points+'/'+result.parts[key].max).join(' · ');
+      detail.append(bilingual('p',text(0),text(1)));
+    }
+    const core=new Set(result.profile.primaryIds),supplement=new Set(result.profile.secondaryIds);
+    const rollCount=accept=>result.lines.reduce((n,line)=>n+(accept(line.id)?line.rolls:0),0);
+    const coreRolls=rollCount(id=>core.has(id)),supplementRolls=rollCount(id=>!core.has(id)&&supplement.has(id));
+    Object.assign(box.dataset,{coreRolls,supplementRolls,totalRolls:rollCount(()=>true)});
+    const counts=bilingual('p',`核心 ${coreRolls} 份 · 补充 ${supplementRolls} 份`,`Core ${coreRolls} rolls · Supplement ${supplementRolls} rolls`);
+    counts.className='disc-card-roll-totals';detail.append(counts);box.append(detail);
+  }
+  if(contribution?.status==='ready')box.append(renderDiscContribution(contribution));
+  return box;
+}
+
 export function renderDiscContribution(item) {
   const box=document.createElement('div');
   box.className='disc-build-contribution';

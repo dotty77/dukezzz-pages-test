@@ -167,6 +167,9 @@ html[data-theme="dark"] .disc-card-count-details[data-status="invalid"]>summary,
 .disc-card-grade span{font-size:10px;color:var(--muted)}
 .disc-card-grade strong{font-size:18px;line-height:1.1}
 .disc-card-score-note{font-size:11px;line-height:1.5;margin:5px 0 0;color:var(--muted)}
+.disc-fit-breakdown{font-size:11px;line-height:1.5;color:var(--muted);margin-top:4px}
+.disc-fit-breakdown summary{cursor:pointer;padding:3px 0}
+.disc-fit-breakdown p{margin:3px 0}
 .disc-card-score[data-main-status="mismatch"],.disc-card-score[data-main-status="conditional"]{color:#93601c}
 html[data-theme="dark"] .disc-card-score[data-main-status="mismatch"],html[data-theme="dark"] .disc-card-score[data-main-status="conditional"]{color:#e8ba78}
 .disc-card-score[data-main-status="mismatch"] .disc-card-score-note,.disc-card-score[data-main-status="conditional"] .disc-card-score-note{color:inherit}

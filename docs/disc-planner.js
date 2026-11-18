@@ -3,11 +3,11 @@ const API_ROOT=globalThis.location?.origin==='https://dotty77.github.io'&&global
 const demoUrl='showcase-demo.json?v=20261117-disc-panel-launch-1';
 import {mountMiyousheBrowserSync} from './mys-browser-sync.js?v=20261114-canonical-sync-1';
 import {mountHoyolabSync} from './hoyolab-sync.js?v=20261114-canonical-sync-1';
-import {officialToConfiguration} from './official-equipment.js?v=20261117-disc-farm-matching-launch-1';
-import {scoreDisc,getDiscScoreProfile,SCORE_RULES,withDiscScoreDefaults} from './disc-score.js?v=20261117-disc-farm-matching-launch-1';
-import {newConfiguration,normalizedToConfiguration,validateConfiguration,calculatePanel,formatProperty,resolveTargets,compareDisc,inspectDiscRolls,evaluateDiscContributions} from './disc-planner-core.js?v=20261117-disc-farm-matching-launch-1';
+import {officialToConfiguration} from './official-equipment.js?v=20261118-disc-context-score-launch-1';
+import {scoreEquippedDisc,getDiscScoreProfile,SCORE_RULES,withDiscScoreDefaults} from './disc-score.js?v=20261118-disc-context-score-launch-1';
+import {newConfiguration,normalizedToConfiguration,validateConfiguration,calculatePanel,formatProperty,resolveTargets,compareDisc,inspectDiscRolls,evaluateDiscContributions} from './disc-planner-core.js?v=20261118-disc-context-score-launch-1';
 import {evaluateContext,assessUsable} from './disc-context.js?v=20261027-agents-launch-1';
-import {renderPanelEffects,renderDiscContribution} from './disc-panel-display.js?v=20261117-disc-farm-matching-launch-1';
+import {renderPanelEffects,renderDiscFitScore,discFitMethod} from './disc-panel-display.js?v=20261118-disc-context-score-launch-1';
 import {applyPlanningScope} from './disc-scope.js?v=20260913-disc-planner-1';
 const $=id=>document.getElementById(id),el=(tag,cls='',text='')=>{const n=document.createElement(tag);n.className=cls;n.textContent=text;return n;};
 let data,builds,equipment,details,graduation,mechanics,config,alternative='',planIndex=0,team=['',''],tier='small',allocation=null,busy=false,controller,cacheUntil=0,cacheUid='',snapshot=null;
@@ -185,7 +185,7 @@ function searchPlan(operation,selected=null,background=false){
   const revision=searchRevision;
   return new Promise((resolve,reject)=>{
     let worker;
-    try{worker=new Worker(new URL('./disc-planner-worker.js?v=20261117-disc-farm-matching-launch-1',import.meta.url),{type:'module'});}
+    try{worker=new Worker(new URL('./disc-planner-worker.js?v=20261118-disc-context-score-launch-1',import.meta.url),{type:'module'});}
     catch(error){setSearchControls(false);reject(error);return;}
     searchTask={worker,reject,revision};
     const finish=()=>{worker.terminate();if(searchTask?.revision===revision){searchTask=null;setSearchControls(false);}};
@@ -374,49 +374,18 @@ function renderRollSummary(d){
 }
 // Per-agent reference score presentation.
 function currentContributions(){
-  return evaluateDiscContributions(config,data,targetRows().rows,{scope:planningScope,useReference:true});
+  return evaluateDiscContributions(config,data,tier==='usable'?[]:targetRows().rows,{scope:planningScope,useReference:true});
 }
 function renderDiscScore(d,build,contribution){
-  const result=scoreDisc(d,build,data,config),box=el('div','disc-card-score');
-  box.dataset.status=result.status;box.dataset.mainStatus=result.mainStatus;box.dataset.score=result.score??'';box.dataset.grade=result.grade||result.estimatedGrade||'';box.dataset.gradeType=result.grade?'final':result.estimatedGrade?'estimated':'none';
-  const partial=['partial','unleveled'].includes(result.status);
-  box.append(uiText('span',partial?'副词条评分 · 已录入':'副词条评分',partial?'Substat score · recorded':'Substat score','disc-card-score-label'));
-  const row=el('div','disc-card-score-line'),value=el('div','disc-card-score-number');
-  value.append(el('strong','',Number.isFinite(result.score)?String(Number(result.score.toFixed(1))):'—'));
-  if(Number.isFinite(result.score))value.append(el('small','','/100'));
-  row.append(value);
-  if(result.grade||result.estimatedGrade){const grade=el('div','disc-card-grade');grade.append(uiText('span',result.grade?'评级':'预估评级',result.grade?'Grade':'Est.'),el('strong','',result.grade||result.estimatedGrade));row.append(grade);}
-  else row.append(uiText('span','暂不评级','Unrated','disc-card-score-note'));
-  box.append(row);
-  if(result.lines.length){
-    const primary=new Set(result.profile.primaryIds),secondary=new Set(result.profile.secondaryIds);
-    const core=result.lines.filter(line=>primary.has(line.id)).reduce((n,line)=>n+line.rolls,0);
-    const supplement=result.lines.filter(line=>!primary.has(line.id)&&secondary.has(line.id)).reduce((n,line)=>n+line.rolls,0);
-    box.dataset.coreRolls=String(core);box.dataset.supplementRolls=String(supplement);
-    box.dataset.totalRolls=String(result.lines.reduce((n,line)=>n+line.rolls,0));
-    box.append(uiText('p',`核心 ${core} 份 · 补充 ${supplement} 份`,`Core ${core} rolls · Supplement ${supplement} rolls`,'disc-card-score-note disc-card-roll-totals'));
-  }
-  const notes={
-    partial:['副词条未填全','Incomplete substats'],
-    unleveled:['未满 15 级','Below Lv.15'],
-    empty:['待填写副词条','Enter substats'],
-    absent:['空缺号位','Empty slot'],
-    unsupported:['原盘资料待核对','Disc data unverified'],
-    invalid:['词条记录有误','Invalid substat record'],
-    'no-profile':['暂缺角色评分依据','No scoring profile'],
-    'main-mismatch':['主属性不符','Main stat mismatch']
-  };
-  if(notes[result.status])box.append(uiText('p',...notes[result.status],'disc-card-score-note'));
-  if(result.mainStatus==='conditional')box.append(uiText('p','条件适用','Conditional main stat','disc-card-score-note'));
-  if(contribution?.status==='ready')box.append(renderDiscContribution(contribution));
-  return box;
+  const score=scoreEquippedDisc(d,build,data,config,contribution);
+  return renderDiscFitScore(score,contribution,'disc-card-score');
 }
 function renderScoreGuide(){
   const box=$('disc-score-guide');if(!box)return;
   const profile=getDiscScoreProfile(currentBuild(),data,config),weights=el('div','disc-score-weights');
   box.replaceChildren(uiText('summary','评分依据','Scoring basis'));
-  box.append(uiText('p','整套贡献按其余五盘不动、单独卸下本盘重算。计入主副词条、两件套面板和常驻被动。四件套只标记套装是否完整，触发后的战斗收益另计。各张盘的贡献可能重叠。','Build contribution compares the equipped build with this slot empty and the other five discs unchanged. It includes main stats, substats, two-piece stats and permanent passives. The four-piece label shows set activation. Combat triggers are evaluated separately. Contributions can overlap across slots.'));
-  box.append(uiText('p','份数按与角色练度相同的成长规则统计；这里再按当前玩法加权计分，练度页的自选属性不随配装带入。分数不代表毕业或实战伤害。','Roll counts follow the same growth rules as the showcase, then receive weights for the current build. Custom showcase attribute choices are not imported with equipment. Scores are not graduation verdicts or damage estimates.'));
+  box.append(discFitMethod());
+  box.append(uiText('p','本页按角色与音擎 60 级、核心 F 的规划面板评分。展柜页采用实际等级。','The planner rates the planned Lv. 60 agent and W-Engine with Core F. The showcase uses the equipped levels.'));
   for(const [id,weight]of Object.entries(profile.weights||{}).filter(([,weight])=>weight>0).sort((a,b)=>b[1]-a[1]||Number(a[0])-Number(b[0]))){
     const chip=el('span');chip.append(el('span','',name(id)),el('b','',`×${weight}`));weights.append(chip);
   }
@@ -424,9 +393,8 @@ function renderScoreGuide(){
   const basis=uiText('p',profile.basis.zh,profile.basis.en);box.append(basis);
   if(profile.basis.sourceUrl){const source=link(profile.basis.sourceUrl,'角色或流派依据 ↗');source.dataset.i18nEn='Agent or build reference ↗';box.append(source);}
   if(profile.mode==='supplement-only')box.append(uiText('p','此角色的副词条仅作输出补充；功能属性仍看主词条与装备。','This agent uses substats only for supplemental damage; functional stats still depend on main stats and equipment.'));
-  box.append(uiText('p','其余副属性权重为 0。评分 = 加权份数 ÷ 同主属性的初四满级最佳份数 × 100；最佳分母按四种最高权重各 1 份，再将 5 次追加给最高权重。初三盘满级共 8 份。未满级或录入不全时，按已录入份数估分。','Other substats have weight 0. Score = weighted rolls ÷ the best legal Lv.15 four-start disc with the same main stat × 100. The denominator includes one roll in each of the four highest-weight substats plus five additions to the highest weight. Three-start discs have eight rolls at Lv.15. Estimates for unfinished discs or incomplete records use the rolls entered so far.'));
+  box.append(uiText('p','副词条分按已录入的加权份数，除以同主属性、初始四词条满级 S 盘的最佳加权份数，再乘 100。','The separate substat score divides recorded weighted rolls by the best legal weighted rolls on a max-level four-start S-Rank disc with the same main stat, then multiplies by 100.'));
   const grades=el('p','disc-score-thresholds');grades.append(uiText('span','评级阈值：','Grade thresholds: '),document.createTextNode(SCORE_RULES.grades.map(item=>`${item.grade} ≥ ${item.min}`).join(' · ')));box.append(grades);
-  box.append(uiText('p','完整、合法的 S 级 15 级盘显示正式评级。未填全或未满级按已录入词条显示预估评级，不推算缺失词条或后续强化；主属性不符合方案时不评级，条件备选仍需满足实际条件。套装、触发效果与属性上限不计入此分数，请结合当前配装检查。','Complete, valid S-Rank Lv.15 discs receive a final grade. Incomplete or lower-level discs receive an estimated grade from recorded substats; missing rolls and future upgrades are not projected. A mismatched main stat is unrated; conditional choices still require their actual conditions. Sets, triggered effects, and stat caps are not included: check the complete build as well.'));
   for(const adjustment of profile.adjustments||[]){
     const reason=adjustment.reason==='claret-crit-conversion'?[
       '克拉蕾的初始暴击伤害以 0.35 倍转为初始暴击率；每份 4.8% 暴伤折为 1.68% 暴率，所以相对每份 2.4% 暴率按 0.7 权重计入。',

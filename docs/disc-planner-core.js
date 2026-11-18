@@ -355,9 +355,11 @@ export function evaluateDiscContributions(config,data,rows=[],options={}){
   const full=valid?calculatePanel(config,data):null;
   const targets=comparableDiscTargets(rows,options).filter(row=>row.comparable||
     ['initial-reference-unqualified','signature-conditioned'].includes(row.scope??row.panelContext));
+  const comparableTargetCount=targets.filter(row=>row.targetRaw>0&&Number.isFinite(full?.values[row.group])).length;
   const partial=config.discs.some(d=>!d.absent&&!inspectDiscRolls(d,data).complete);
+  const completeBuild=valid&&!partial&&config.discs.every(d=>!d.absent&&d.setId);
   for(const disc of config.discs){
-    const item={status:disc.absent?'absent':valid?'ready':'unknown',partial,targets:[],effects:[],setLoss:null,main:null};
+    const item={status:disc.absent?'absent':valid?'ready':'unknown',partial,completeBuild,comparableTargetCount,targets:[],effects:[],setLoss:null,main:null};
     result[disc.slot]=item;
     if(item.status!=='ready')continue;
     const removed=calculatePanel({...config,discs:config.discs.map(d=>d===disc?{...d,absent:true,locked:false}:d)},data);

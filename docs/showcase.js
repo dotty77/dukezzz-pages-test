@@ -2,11 +2,11 @@
 const API_ROOT=globalThis.location?.origin==='https://dotty77.github.io'&&globalThis.location.pathname.startsWith('/dukezzz-pages-test/')?'https://dukezzz.com':'';
 const demoUrl='showcase-demo.json?v=20261117-disc-panel-launch-1';
 import {scoreAgent} from './showcase-analysis.js?v=20261114-showcase-review-1';
-import {getDiscScoreProfile,scoreDisc,withDiscScoreDefaults} from './disc-score.js?v=20261117-disc-farm-matching-launch-1';
-import {applyPanelMechanics,calculatePanel,evaluateDiscContributions,normalizedToConfiguration,resolveTargets,validateConfiguration} from './disc-planner-core.js?v=20261117-disc-farm-matching-launch-1';
+import {getDiscScoreProfile,scoreEquippedDisc,withDiscScoreDefaults} from './disc-score.js?v=20261118-disc-context-score-launch-1';
+import {applyPanelMechanics,calculatePanel,evaluateDiscContributions,normalizedToConfiguration,resolveTargets,validateConfiguration} from './disc-planner-core.js?v=20261118-disc-context-score-launch-1';
 import {assessUsable,evaluateContext} from './disc-context.js?v=20261027-gachabase-all-1';
 import {applyPlanningScope} from './disc-scope.js?v=20260913-disc-planner-1';
-import {renderPanelEffects,renderDiscContribution,formatPanelValue} from './disc-panel-display.js?v=20261117-disc-farm-matching-launch-1';
+import {renderPanelEffects,renderDiscFitScore,discFitMethod,formatPanelValue} from './disc-panel-display.js?v=20261118-disc-context-score-launch-1';
 import {SUBSTAT_OPTIONS,CORE_OPTIONS,MAX_CORE_ATTRIBUTES,substatName,referenceSelection,setSelection,selectionBuild,countOccurrences} from './showcase-preferences.js?v=20261117-disc-farm-matching-launch-1';
 import {ARTICLE_REFERENCE,evaluateArticleRules} from './showcase-article-rules.js?v=20260909-version-3-2-1';
 const $=id=>document.getElementById(id);
@@ -56,19 +56,18 @@ function personalTargets(agent,guide,reference,config,values){
   const profile=graduation?.agents?.[config.id],out={profile,rows:[],contributions:{}};
   if(!guide?.id||!Number.isInteger(config.cinema))return out;
   const context=evaluateContext({scope:'solo',config,profile:profile||{},agent:guide,details,build:reference||{}});
-  if(graduationTier==='usable'){
-    out.checks=assessUsable(config,reference||{},panelData,context);
-    out.contributions=evaluateDiscContributions(config,panelData,[],{scope:'solo'});
+  const incomplete=(agent.notes||[]).some(s=>/尚未收录，未将|尚未计入/.test(s)&&/音擎尚未收录|驱动盘尚未收录|潜能强化/.test(s));
+  const knownEquipment=!validateConfiguration(config,panelData).length;
+  if(graduationTier==='usable'||!profile){
+    if(graduationTier==='usable')out.checks=assessUsable(config,reference||{},panelData,context);
+    if(knownEquipment&&!incomplete)out.contributions=evaluateDiscContributions(config,panelData,[],{scope:'solo'});
     return out;
   }
-  if(!profile)return out;
   const resolved=resolveTargets(config,guide,profile,equipment,panelData,graduationTier);
   const scoped=applyPlanningScope({scope:'solo',context,rows:resolved.rows});
-  const knownEquipment=!validateConfiguration(config,panelData).length;
   // Energy Regen bonus is a percentage of base Regen, a different stat from Regen/s.
   const missingBonus=scoped.rows.some(r=>r.group===30502)&&!Number.isFinite(values[30502]);
   if(missingBonus&&knownEquipment)values[30502]=calculatePanel(config,panelData).values[30502];
-  const incomplete=(agent.notes||[]).some(s=>/尚未收录，未将|尚未计入/.test(s)&&/音擎尚未收录|驱动盘尚未收录|潜能强化/.test(s));
   for(const row of scoped.rows){
     if(!Number.isFinite(row.targetRaw))continue;
     const current=values[row.group],cap=row.bound==='maximum';
@@ -110,7 +109,7 @@ function usableCheck(check){
   header.append(el('span','',check.label),localized('strong',...(labels[check.status]||labels.unknown)));
   row.append(header,el('p','',check.reason));return row;
 }
-function graduationOverview(agent,targets,counts,score,hasCore){
+function graduationOverview(agent,targets,counts,score,hasCore,fitScores){
   const root=el('section','showcase-section showcase-targets');root.id='showcase-graduation';
   const header=el('div','showcase-target-head'),title=localized('h3','个人毕业进度','Personal build progress'),label=el('label'),tier=el('select');
   tier.id='showcase-graduation-tier';label.append(localized('span','目标档位','Target tier'),tier);
@@ -147,12 +146,18 @@ function graduationOverview(agent,targets,counts,score,hasCore){
     const total=score.discScores.reduce((n,d)=>n+(d.valid?d.totalRolls:0),0);
     rolls.append(' · ',localized('span',`已确认 ${total} 份副词条，其中核心有效 ${counts.effective} 份`,`${counts.effective} core rolls in ${total} verified substat rolls`));
   }
-  overview.append(strengths,engine,rolls);
+  const rated=fitScores.filter(item=>item.grade&&Number.isFinite(item.score));
+  const average=rated.length===6?Number((rated.reduce((sum,item)=>sum+item.score,0)/6).toFixed(1)):null;
+  const fitAverage=average===null
+    ?localized('div',`六盘配装均分 —（已正式评级 ${rated.length}/6）`,`Six-disc fit average — (${rated.length}/6 graded)`)
+    :localized('div',`六盘配装均分 ${average}/100`,`Six-disc fit average ${average}/100`);
+  fitAverage.id='showcase-disc-fit-average';fitAverage.dataset.score=average??'';fitAverage.dataset.rated=rated.length;
+  overview.append(fitAverage,strengths,engine,rolls);
   if(Number.isFinite(score.scoreRatio)&&score.maxRolls>0){
     const ratio=Number((100*score.scoreRatio).toFixed(1));
     overview.append(localized('div',`六盘核心覆盖 ${ratio}%（${score.knownEffectiveRolls} / ${score.maxRolls} 份理论上限）`,`Six-disc core roll coverage ${ratio}% (${score.knownEffectiveRolls} of ${score.maxRolls} possible)`));
   }
-  if(attributeChoices.has(agent.id))overview.append(localized('div','核心份数按本页自选属性统计，单盘评分仍按角色默认权重。','Core roll counts use your selection. Individual scores use the agent’s default weights.'));
+  if(attributeChoices.has(agent.id))overview.append(localized('div','核心份数采用自选属性。配装评分采用角色默认词条权重。','Core roll counts use your selection. Build fit scores use the agent’s default substat weights.'));
   root.append(overview);
   const fold=el('details','showcase-target-info'),others=targets.rows.filter(r=>r.reason);
   fold.append(localized('summary',others.length?`参考条件与未计入的 ${others.length} 项`:'目标来源与条件',others.length?`Reference conditions and ${others.length} excluded target(s)`:'Target sources and conditions'));
@@ -160,7 +165,7 @@ function graduationOverview(agent,targets,counts,score,hasCore){
   if(usable){
     for(const check of targets.checks||[])if(!structuralIds.includes(check.id))fold.append(usableCheck(check));
   }
-  if(Number.isFinite(score.scoreRatio))fold.append(localized('p','六盘核心覆盖按已确认核心副词条份数，除以六张满级 S 盘在现有主属性下的理论核心份数上限。单盘评分按角色默认词条权重另算。','Six-disc coverage divides verified core substat rolls by their theoretical maximum across six max-level S-Rank discs with these main stats. Individual disc scores use the agent’s default weighted substats.'));
+  if(Number.isFinite(score.scoreRatio))fold.append(localized('p','六盘核心覆盖按已确认核心副词条份数，除以六张满级 S 盘在现有主属性下的理论核心份数上限。六盘配装均分取六张已评级盘的配装评分平均值。','Six-disc coverage divides verified core substat rolls by their theoretical maximum across six max-level S-Rank discs with these main stats. The six-disc fit average is the mean of six fully graded disc scores.'));
   if(others.length){const list=el('div','showcase-target-excluded');for(const r of others)list.append(targetLine(r));fold.append(list);}
   const conditions=[...new Set(eligible.map(row=>row.configurationNote||row.bound==='mechanic-threshold'&&row.note).filter(Boolean))];
   for(const condition of conditions)fold.append(el('p','',condition));
@@ -229,18 +234,19 @@ function attributePanel(agent,reference,selection,config){
   if(profile.available)panel.append(discWeightDetails(profile));
   const reasons=reference?.reasons||[];if(reasons.length)panel.append(el('p','showcase-reference-reason',reasons[0]));
   const source=el('p','showcase-reference-source',custom?'本页自选方案，可按队伍调整。':'本站配装参考，可按队伍调整。');
-  const link=el('a','','查看角色依据 ↗');link.href=`agents.html?v=20261117-disc-farm-matching-launch-1#agent=${agent.id}`;source.append(link);panel.append(source,el('p','showcase-reference-note','选择仅在本页保留；刷新后恢复建议，不保存 UID 或账号资料。'));
+  const link=el('a','','查看角色依据 ↗');link.href=`agents.html?v=20261118-disc-context-score-launch-1#agent=${agent.id}`;source.append(link);panel.append(source,el('p','showcase-reference-note','选择仅在本页保留；刷新后恢复建议，不保存 UID 或账号资料。'));
   const status=el('p','showcase-preference-status',preferenceMessages.get(agent.id)||'');status.id='showcase-preference-status';status.setAttribute('role','status');status.setAttribute('aria-live','polite');panel.append(status);
   return panel;
 }
 function discWeightDetails(profile){
   const fold=el('details','showcase-panel-notes');fold.id='showcase-default-weights';
-  fold.append(localized('summary','单盘评分的角色默认权重','Default weights for individual disc scores'));
+  fold.append(localized('summary','配装评分与角色权重','Build fit scoring and agent weights'),discFitMethod());
+  fold.append(localized('p','本页按展柜的实际等级评分。驱动盘规划按角色与音擎 60 级、核心 F 评分。','This page uses the equipped levels. The planner rates a Lv. 60 agent and W-Engine with Core F.'));
   const weights=el('div','showcase-attribute-chips');
   for(const [id,weight] of Object.entries(profile.weights).filter(([,w])=>w>0).sort((a,b)=>b[1]-a[1]||Number(a[0])-Number(b[0]))){
     const chip=el('span','',substatName(id));chip.append(` ×${weight}`);weights.append(chip);
   }
-  fold.append(weights,localized('p','未列出的副词条权重为 0。单盘得分用加权份数除以同主属性满级 S 盘可达到的最高加权份数，再乘 100。自选属性只用于本页的核心、补充份数统计。','Unlisted substats have weight 0. Each disc’s score divides its weighted rolls by the best legal weighted roll total for a max-level S-Rank disc with the same main stat, then multiplies by 100. Custom choices only change the core and supplemental roll counts on this page.'));
+  fold.append(weights,localized('p','未列出的副词条权重为 0。副词条分用加权份数除以同主属性满级 S 盘可达到的最高加权份数，再乘 100。自选属性只用于本页的核心、补充份数统计。','Unlisted substats have weight 0. The substat score divides its weighted rolls by the best legal weighted roll total for a max-level S-Rank disc with the same main stat, then multiplies by 100. Custom choices only change the core and supplemental roll counts on this page.'));
   if(profile.basis?.zh)fold.append(localized('p',profile.basis.zh,profile.basis.en));
   if(profile.adjustments?.some(a=>a.reason==='claret-crit-conversion'))fold.append(localized('p','克拉蕾核心被动将每份 4.8% 暴击伤害折为 1.68% 暴击率，相当于一份 2.4% 暴击率的 0.7 倍。','Claret’s Core Passive converts each 4.8% CRIT DMG roll into 1.68% CRIT Rate, or 0.7 of a direct 2.4% CRIT Rate roll.'));
   if(/^https:\/\//.test(profile.basis?.sourceUrl||'')){
@@ -278,7 +284,7 @@ function renderResult(){
   const info=el('div');info.append(el('p','',guide.faction||'代理人'),el('h2','',agent.name));
   const meta=el('div','showcase-hero-meta');for(const value of [`${agent.rank} 级`,`Lv. ${agent.level}`,guide.element,guide.specialty].filter(Boolean))meta.append(el('span','',value));
   const cinema=el('div','showcase-mindscape');cinema.setAttribute('aria-label',`已解锁 ${agent.mindscape} 层影画`);for(let i=1;i<=6;i++)cinema.append(el('span',i<=agent.mindscape?'active':'',i));
-  info.append(meta,cinema);const link=el('a','showcase-guide-link','查看角色资料与配装 ↗');link.href=`agents.html?v=20261117-disc-farm-matching-launch-1#agent=${agent.id}`;hero.append(img(agent.icon),info,link);
+  info.append(meta,cinema);const link=el('a','showcase-guide-link','查看角色资料与配装 ↗');link.href=`agents.html?v=20261118-disc-context-score-launch-1#agent=${agent.id}`;hero.append(img(agent.icon),info,link);
   if(portraits[agent.id]?.src)hero.append(img(portraits[agent.id].src,'showcase-hero-art'));
   const planner=el('button','primary-button','带入当前配装，规划驱动盘 ↗');planner.type='button';planner.onclick=()=>{try{sessionStorage.setItem('bagel-disc-planner-handoff',JSON.stringify({...agent,planningTier:graduationTier}));location.href=`disc-planner.html?agent=${encodeURIComponent(agent.id)}&v=20260916-english-2`;}catch{planner.textContent='浏览器存储受限，请在驱动盘规划页重新读取展柜';}};hero.append(planner);
   const config=normalizedToConfiguration(agent,panelData);
@@ -287,7 +293,8 @@ function renderResult(){
   if(Object.keys(stats).length&&!Object.hasOwn(stats,123))stats[123]=0;
   const currentPanel=applyPanelMechanics(config,stats,panelData);
   const targets=personalTargets(agent,guide,reference,config,currentPanel.values);
-  const overview=graduationOverview(agent,targets,counts,score,hasCore);
+  const fitScores=config.discs.map(disc=>scoreEquippedDisc(disc,reference,panelData,config,targets.contributions[disc.slot]));
+  const overview=graduationOverview(agent,targets,counts,score,hasCore,fitScores);
   const columns=el('div','showcase-columns'),panel=agentPanel(agent,currentPanel);
   const weaponPanel=section('音擎','当前展示角色装备');
   if(agent.weapon){const w=agent.weapon,head=el('div','showcase-weapon'),copy=el('div');copy.append(el('h4','',w.name),el('p','',`${w.rank} 级 · Lv. ${w.level} · 叠影 ${w.refinement} 阶`));head.append(img(w.icon),copy);weaponPanel.append(head,statRows(w.stats,'showcase-weapon-stats'));}
@@ -317,7 +324,7 @@ function renderResult(){
   const ruleIntro=el('div','showcase-article-intro');
   const ruleCopy=el('div');ruleCopy.append(el('h4','','判断顺序：套装 → 主属性 → 副属性'));
   const ruleSource=el('a','','17173 攻略原文 ↗');ruleSource.href=ARTICLE_REFERENCE.url;ruleSource.target='_blank';ruleSource.rel='noreferrer';ruleIntro.append(ruleCopy,ruleSource);discs.append(ruleIntro);
-  discs.append(localized('p','单盘副词条评分与驱动盘规划共用角色默认权重，满分 100。核心份数随本页勾选调整，整套贡献按卸下该盘后重算的面板变化显示。','Individual disc scores use the planner’s default agent weights, out of 100. Core roll counts follow the selection on this page. Build contribution compares the full build against the same build with that disc removed.','section-note'));
+  discs.append(localized('p','配装评分与驱动盘规划共用同一算法，综合副词条、主属性、套装及对当前毕业目标的贡献。展开「副词条分」可查看构成。','Build fit scores use the planner’s formula for substats, main stat, set fit and contribution to the selected targets. Expand the substat score for the breakdown.','section-note'));
   const mainReview=notes('主属性检查 · 4–6 号位',(score.mainStatChecks||[]).filter(check=>check.slot>=4).map(check=>`${check.slot} 号位：${(check.actual||[]).join(' / ')||'暂无'}；参考 ${(check.expected||[]).join(' / ')||'暂无'}${check.conditional?' · 条件备选，需核对角色与队伍需求':check.matched===true?' · 符合参考':check.matched===false?' · 建议核对':''}`));
   mainReview.id='showcase-main-check';mainReview.open=true;mainReview.append(el('p','showcase-reference-note','异常掌控、冲击力、能量自动回复、穿透率和属性增伤属于主属性，不计入副词条份数。'));
   discs.append(mainReview);
@@ -349,15 +356,7 @@ function renderResult(){
     if(ds?.valid){card.dataset.totalRolls=String(ds.totalRolls);foot.append(el('span','showcase-disc-total',`副词条合计 ${ds.totalRolls} 份 · 初始 ${ds.initialTypes} 条`));foot.append(el('strong','',hasCore?`有效 ${dc.effective} 份`:'先选择核心属性'));if(hasCore)foot.append(el('span','',`首次 ${dc.effectiveFirst} + 追加 ${dc.effectiveAdditional}`));foot.append(el('span','',`补充 ${dc.supplement} 份`));}
     else{foot.append(el('strong','',ds?.status==='unsupported-rarity'?'原始词条 · 暂不汇总':'词条数据待确认'));for(const warning of ds?.warnings||[])foot.append(el('span','',warning.replace(/暂停评分/g,'暂不汇总').replace(/评分/g,'计数')));}
     card.append(foot);
-    const weighted=scoreDisc(config.discs.find(disc=>disc.slot===slot),reference,panelData,config);
-    const mark=el('div','showcase-disc-subscore');mark.dataset.score=weighted.score??'';mark.dataset.status=weighted.status;
-    const estimate=weighted.status==='partial'||weighted.status==='unleveled';
-    mark.append(estimate?localized('span','副词条评分 · 已录入','Substat score · recorded'):localized('span','副词条评分','Substat score'));
-    if(Number.isFinite(weighted.score))mark.append(el('strong','',`${Number(weighted.score.toFixed(1))} / 100`));
-    else mark.append(weighted.status==='main-mismatch'?localized('span','当前主属性不符合参考','Main stat outside the reference'):localized('span','暂无评分','Unrated'));
-    card.append(mark);
-    const contribution=targets.contributions[slot];
-    if(contribution?.status==='ready')card.append(renderDiscContribution(contribution));
+    card.append(renderDiscFitScore(fitScores[slot-1],targets.contributions[slot],'showcase-disc-subscore'));
     const judgement=articleRules.discs.find(entry=>entry.slot===slot);
     if(judgement){const verdict=el('div','showcase-disc-verdict');verdict.dataset.status=judgement.status;verdict.append(el('strong','',judgement.title),el('p','',judgement.note));verdict.dataset.coreTypes=String(judgement.coreTypes??'');card.append(verdict);}
     grid.append(card);
@@ -371,7 +370,6 @@ function renderResult(){
     '首次出现计 1 份，+N 表示后续增长 N 次。例如暴击率 7.2% 是 3 份，显示 +2；不是 2 份或 4 份。主属性不计入。',
     '核心与补充属性分别汇总；不同属性的 1 份不代表相同伤害收益。更换方案后计数会变化。',
     '只汇总记录完整、词条值与份数一致的驱动盘。缺少盘位或资料矛盾时，明确显示部分计数。',
-    '本页不复刻未公开的服务端评分，也不提供字母评级。选择套装、主属性与队伍所需面板后，再考虑副词条。',
   ]));
   // Main-stat checks are displayed before the substat selector.
   $('showcase-agent-detail').replaceChildren(hero,overview,columns,skills,training,discs);

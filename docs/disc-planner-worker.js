@@ -1,4 +1,4 @@
-import {allocateTargets,compareMainOptions,rankFarmSlots} from './disc-planner-core.js?v=20261117-disc-farm-matching-launch-1';
+import {allocateTargets,compareMainOptions,rankFarmSlots} from './disc-planner-core.js?v=20261118-disc-context-score-launch-1';
 
 self.onmessage=({data:request})=>{
   try{
