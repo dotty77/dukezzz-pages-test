@@ -218,8 +218,8 @@ export function setupLinkImport({onRecords,onBusy,onMessage,getImportState=async
   $('link-view-results').onclick=()=>{
     if(running||committing)return;
     close();
-    const dashboard=$('dashboard');
-    if(dashboard&&!dashboard.hidden){dashboard.tabIndex=-1;dashboard.focus({preventScroll:true});dashboard.scrollIntoView({block:'start',behavior:'auto'});}
+    const stats=$('tuning-signal-stats');
+    if(stats){window.tuningWorkspace?.select('stats');stats.tabIndex=-1;stats.focus({preventScroll:true});stats.scrollIntoView({block:'start',behavior:'auto'});}
   };
   dialog.addEventListener('cancel',e=>{e.preventDefault();close();});
   $('link-cancel').onclick=()=>running?.abort();

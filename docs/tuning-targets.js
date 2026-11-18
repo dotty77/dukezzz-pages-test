@@ -1,5 +1,5 @@
 import {analyzeUpPairs,UP_CHANNELS} from './tuning-up-core.js?v=20261001-planner-tuning-1';
-import {classifySignal} from './tuning-summary.js?v=20261111-refresh-launch-1';
+import {classifySignal} from './tuning-summary.js?v=20261118-tuning-records-launch-1';
 import {fetchTuningJSON} from './tuning-resources.js?v=20260909-tuning-win11-1';
 import {estimateTarget,EXPECTATION_RULES,EXPECTATION_METHOD,EXPECTATION_SOURCES} from './tuning-expectation.js?v=20260909-version-3-2-1';
 

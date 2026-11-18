@@ -1,5 +1,5 @@
-import {BUDGET_STORAGE_KEY,BUDGET_POOLS,newBudget,budgetScope,calculateBudget,snapshotPool,recordFingerprint,restoreBudget} from './tuning-personal-budget-core.js?v=20260918-personal-budget-1';
-import {guaranteeState} from './tuning-summary.js?v=20261111-refresh-launch-1';
+import {BUDGET_STORAGE_KEY,BUDGET_POOLS,newBudget,budgetScope,calculateBudget,snapshotPool,recordFingerprint,restoreBudget,recordedWallet,applyRecordedWallet} from './tuning-personal-budget-core.js?v=20261118-tuning-records-launch-1';
+import {guaranteeState} from './tuning-summary.js?v=20261118-tuning-records-launch-1';
 import {EXPECTATION_SOURCES} from './tuning-expectation.js?v=20260909-version-3-2-1';
 
 // This self-contained bilingual component owns its text. Numeric values and drafts
@@ -65,7 +65,7 @@ export const PERSONAL_BUDGET_COPY = {
 const el=(tag,cls='',text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!=null)n.textContent=text;return n;};
 const clone=value=>JSON.parse(JSON.stringify(value));
 
-export function mountPersonalBudget(host) {
+export function mountPersonalBudget(host,{onWalletChange=()=>{}}={}) {
   if(!host)return null;
   host.dataset.i18nSkip='';
   let context={account:null,stats:null,catalog:{},demo:false},scope='',draft=newBudget(),currentFingerprint='',storageNotice='',crossTab=false,confirmed=false,notice='',resultNode,inputs={},poolNotes={},contextNode,savedNode,readButton,confirmInput,ownedDetails;
@@ -96,7 +96,11 @@ export function mountPersonalBudget(host) {
   function load() {
     storageNotice='';crossTab=false;
     if(memory.has(scope))return clone(memory.get(scope));
-    if(scope==='demo')return newBudget();
+    if(scope==='demo'){
+      const sample=newBudget();
+      applyRecordedWallet(sample,{polychrome:1412,monochrome:7487,encryptedTapes:35,masterTapes:8,boopons:24});
+      return sample;
+    }
     try{const raw=localStorage.getItem(scopeKey());return raw?restoreBudget(JSON.parse(raw)):newBudget();}
     catch(error){storageNotice=error instanceof SyntaxError||error instanceof TypeError||error instanceof RangeError?'corrupt':'storageError';return newBudget();}
   }
@@ -119,8 +123,17 @@ export function mountPersonalBudget(host) {
     const [kind,part]=key.split('.');control.value=part?draft.pools[kind][part]:draft[key];
     control.addEventListener('input',()=>{
       if(part){draft.pools[kind][part]=control.value;if(draft.recordSnapshot?.pools[kind])draft.recordSnapshot.pools[kind][part+'FromRecords']=false;}
-      else draft[key]=control.value;
+      else {
+        draft[key]=control.value;
+        if(key==='polychrome'||key==='tapes'){
+          const walletKey=key==='tapes'?'encryptedTapes':key;
+          draft.recordWallet??={};
+          if(control.value!==''&&control.checkValidity())draft.recordWallet[walletKey]=Number(control.value);
+          else delete draft.recordWallet[walletKey];
+        }
+      }
       notice='';save();renderResult();
+      if(key==='polychrome'||key==='tapes')onWalletChange();
     });
     inputs[key]=control;wrap.append(caption,control);parent.append(wrap);return control;
   }
@@ -184,7 +197,7 @@ export function mountPersonalBudget(host) {
     const heading=el('div','personal-budget-heading'),titles=el('div');
     const title=el('h2','',t('title'));title.id='personal-budget-title';
     titles.append(title,el('p','personal-budget-note',t('intro')),el('p','personal-budget-scope',t('scopeShort')));
-    const reset=el('button','quiet-button',t('reset'));reset.type='button';reset.onclick=()=>{if(window.confirm(t('resetConfirm'))){draft=newBudget();confirmed=false;notice='';save();build();}};
+    const reset=el('button','quiet-button',t('reset'));reset.type='button';reset.onclick=()=>{if(window.confirm(t('resetConfirm'))){draft=newBudget();confirmed=false;notice='';save();build();onWalletChange();}};
     heading.append(titles,reset);contextNode=el('p','personal-budget-context');savedNode=el('p','personal-budget-note');
     const grid=el('div','personal-budget-input-grid');
     const wallet=el('fieldset','personal-budget-group');wallet.append(el('legend','',t('wallet')));const walletFields=el('div','personal-budget-fields');
@@ -226,8 +239,43 @@ export function mountPersonalBudget(host) {
     if(switching||!resultNode)build();else{confirmInput.checked=confirmed;renderResult();}
   }
   window.addEventListener('dukelanguagechange',()=>build());
-  window.addEventListener('storage',e=>{if(scope!=='demo'&&e.key===scopeKey()){crossTab=true;renderResult();}});
-  const api={updateContext,getState:()=>({scope,draft:clone(draft),stale:isStale(),effective:effectiveDraft(),result:(()=>{try{return calculateBudget(effectiveDraft());}catch{return null;}})()})};
+  window.addEventListener('storage',event=>{
+    const prefix=BUDGET_STORAGE_KEY+':';
+    if(!event.key?.startsWith(prefix))return;
+    if(event.key!==scopeKey()){memory.delete(event.key.slice(prefix.length));return;}
+    if(scope==='demo')return;
+    crossTab=true;
+    try{
+      const walletFrom=raw=>recordedWallet(raw?restoreBudget(JSON.parse(raw)):newBudget());
+      const before=walletFrom(event.oldValue),latest=walletFrom(localStorage.getItem(scopeKey()));
+      const changes=Object.fromEntries(Object.entries(latest).filter(([key,value])=>value!==before[key]));
+      if(Object.keys(changes).length){
+        applyRecordedWallet(draft,changes);
+        if('polychrome' in changes)inputs.polychrome.value=draft.polychrome;
+        if('encryptedTapes' in changes)inputs.tapes.value=draft.tapes;
+        memory.set(scope,clone(draft));
+        onWalletChange();
+      }
+    }catch{storageNotice='storageError';}
+    renderResult();
+  });
+  function setWallet(changes){
+    applyRecordedWallet(draft,changes);
+    memory.set(scope,clone(draft));
+    if(scope!=='demo'){
+      try{
+        // Keep unrelated budget edits from another tab, or an unfinished local text field.
+        const persisted=localStorage.getItem(scopeKey());
+        const last=persisted?restoreBudget(JSON.parse(persisted)):newBudget();
+        applyRecordedWallet(last,changes);
+        localStorage.setItem(scopeKey(),JSON.stringify(last));
+        if(storageNotice==='storageError')storageNotice='';
+      }catch{storageNotice='storageError';}
+    }
+    build();
+    return storageNotice!=='storageError';
+  }
+  const api={updateContext,getWallet:()=>recordedWallet(draft),setWallet,getState:()=>({scope,draft:clone(draft),stale:isStale(),effective:effectiveDraft(),result:(()=>{try{return calculateBudget(effectiveDraft());}catch{return null;}})()})};
   updateContext(context);
   return api;
 }

@@ -32,7 +32,7 @@ function prepareUpdate(update,accounts,storedSync,expectedRevision,expectedAccou
   return {result,nextSync:{version:1,revision:current.revision+1,checkpoints}};
 }
 
-export async function openStorage() {
+export async function openStorage({includeSync=false}={}) {
   try {
     database = await new Promise((resolve, reject) => {
       let finished=false;
@@ -54,10 +54,11 @@ export async function openStorage() {
       request.onsuccess = () => finish(null,request.result);
     });
     database.onversionchange = () => database.close();
-    return await readAccounts();
+    const state=await readImportState();
+    return includeSync?state:state.accounts;
   } catch {
     persistent = false;
-    return memory;
+    return includeSync?cloneData({accounts:memory,...memorySync}):memory;
   }
 }
 
@@ -86,11 +87,11 @@ export function readImportState({signal,timeout=8000}={}) {
   });
 }
 
-export function updateAccounts(update,{expectedRevision,expectedAccounts}={}) {
+export function updateAccounts(update,{expectedRevision,expectedAccounts,includeSync=false}={}) {
   if (!persistent) {
     const {result,nextSync}=prepareUpdate(update,cloneData(memory),cloneData(memorySync),expectedRevision,expectedAccounts);
     memory = result.accounts;memorySync=nextSync;
-    return Promise.resolve(result);
+    return Promise.resolve(includeSync?{...result,checkpoints:nextSync.checkpoints}:result);
   }
   return new Promise((resolve, reject) => {
     const transaction = database.transaction('records', 'readwrite');
@@ -100,7 +101,7 @@ export function updateAccounts(update,{expectedRevision,expectedAccounts}={}) {
     syncRequest.onsuccess = () => {
       try {
         const prepared=prepareUpdate(update,request.result||[],syncRequest.result,expectedRevision,expectedAccounts);
-        result=prepared.result;
+        result=includeSync?{...prepared.result,checkpoints:prepared.nextSync.checkpoints}:prepared.result;
         store.put(result.accounts, 'accounts');
         store.put(prepared.nextSync,'linkSync');
       } catch (error) {

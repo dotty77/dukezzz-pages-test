@@ -10,6 +10,7 @@ export async function loadBannerData(){
   const data=await fetchTuningJSON('tuning-banners.json?v=20261111-refresh-launch-1');
   if(!data||!Array.isArray(data.windows))throw new Error('卡池资料格式异常，请刷新重试。');
   bannerData=data;
+  return bannerData;
 }
 const el=(tag,cls='',text='')=>{const node=document.createElement(tag);node.className=cls;node.textContent=text;return node;};
 const format=n=>n==null?'—':new Intl.NumberFormat('zh-CN',{maximumFractionDigits:1}).format(n);

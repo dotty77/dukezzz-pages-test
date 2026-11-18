@@ -1,5 +1,5 @@
 // Hard-pity resource planning only. No probability model, requests, or record mutation.
-import {EXPECTATION_RULES} from "./tuning-expectation.js?v=20260909-version-3-2-1";
+import {EXPECTATION_RULES} from './tuning-expectation.js?v=20260909-version-3-2-1';
 
 export const BUDGET_STORAGE_KEY = 'duke-personal-budget-v1';
 export const BUDGET_COST = 160;
@@ -14,6 +14,31 @@ const integer = (value,min,max,field) => {
 };
 export function newBudget() {
   return {version:1,polychrome:'0',tapes:'0',mindscape:'0',refinement:'0',ownedCharacter:'0',ownedWeapon:'0',pools:{character:{pity:'',guarantee:'unknown'},weapon:{pity:'',guarantee:'unknown'}},recordSnapshot:null};
+}
+
+const walletKeys=['polychrome','monochrome','encryptedTapes','masterTapes','boopons'];
+const budgetWalletFields={polychrome:'polychrome',encryptedTapes:'tapes'};
+
+export function recordedWallet(budget) {
+  const saved=budget.recordWallet||{};
+  return Object.fromEntries(walletKeys.map(key=>{
+    const shared=budgetWalletFields[key], value=shared?budget[shared]:saved[key];
+    // Older budgets have an automatic zero even when the wallet was never entered.
+    const entered=Object.hasOwn(saved,key)||(shared&&Number(value)>0);
+    const valid=entered&&value!=null&&/^\d+$/.test(String(value))&&Number(value)<=MAX_WALLET;
+    return [key,valid?Number(value):null];
+  }));
+}
+
+export function applyRecordedWallet(budget,changes) {
+  const values=recordedWallet(budget);
+  for(const key of walletKeys) {
+    if(Object.hasOwn(changes,key))values[key]=changes[key]===null?null:integer(changes[key],0,MAX_WALLET,key);
+  }
+  budget.recordWallet=Object.fromEntries(Object.entries(values).filter(([,v])=>v!==null));
+  for(const [key,shared] of Object.entries(budgetWalletFields)){
+    if(Object.hasOwn(changes,key))budget[shared]=String(values[key]??0);
+  }
 }
 export function budgetScope(account,demo=false) {
   // Demo is memory-only; a real account with an identical UID remains separate.
@@ -88,6 +113,9 @@ export function restoreBudget(raw) {
   validateBudget(raw);
   const clean=newBudget();
   for(const field of ['polychrome','tapes','mindscape','refinement','ownedCharacter','ownedWeapon'])clean[field]=String(raw[field]);
+  if(raw.recordWallet&&typeof raw.recordWallet==='object')clean.recordWallet=Object.fromEntries(
+    walletKeys.filter(key=>Number.isSafeInteger(raw.recordWallet[key])&&raw.recordWallet[key]>=0&&raw.recordWallet[key]<=MAX_WALLET)
+      .map(key=>[key,raw.recordWallet[key]]));
   for(const kind of Object.keys(BUDGET_POOLS)){clean.pools[kind]={pity:raw.pools[kind].pity==null?'':String(raw.pools[kind].pity),guarantee:raw.pools[kind].guarantee};}
   if(raw.recordSnapshot&&typeof raw.recordSnapshot.fingerprint==='string'&&typeof raw.recordSnapshot.at==='string'&&raw.recordSnapshot.pools&&typeof raw.recordSnapshot.pools==='object') {
     clean.recordSnapshot={fingerprint:raw.recordSnapshot.fingerprint.slice(0,100),at:raw.recordSnapshot.at.slice(0,40),confirmed:raw.recordSnapshot.confirmed===true,pools:{}};
