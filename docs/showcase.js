@@ -1,12 +1,14 @@
 // Only the published Pages project uses the fixed DUKE API; never read an API host from input.
 const API_ROOT=globalThis.location?.origin==='https://dotty77.github.io'&&globalThis.location.pathname.startsWith('/dukezzz-pages-test/')?'https://dukezzz.com':'';
 import {scoreAgent} from './showcase-analysis.js?v=20261114-showcase-review-1';
+import {applyPanelMechanics} from './disc-planner-core.js?v=20261117-disc-panel-launch-1';
+import {renderPanelEffects, formatPanelValue} from './disc-panel-display.js?v=20261117-disc-panel-launch-1';
 import {SUBSTAT_OPTIONS,CORE_OPTIONS,MAX_CORE_ATTRIBUTES,substatName,referenceSelection,setSelection,selectionBuild,countOccurrences} from './showcase-preferences.js?v=20260909-version-3-2-1';
 import {ARTICLE_REFERENCE,evaluateArticleRules} from './showcase-article-rules.js?v=20260909-version-3-2-1';
 const $=id=>document.getElementById(id);
 const el=(tag,cls='',text='')=>{const node=document.createElement(tag);node.className=cls;node.textContent=text;return node;};
 let result=null,selectedId='',builds={},equipment={},details={},portraits={},isDemo=false,busy=false,controller=null;
-let cacheDeadline=0,cacheTimer=null,previousData=false;
+let panelData=null,cacheDeadline=0,cacheTimer=null,previousData=false;
 const attributeChoices=new Map(),supplementPanels=new Set(),preferenceMessages=new Map();
 const tones={物理:'#b39b6e',火:'#d47b67',冰:'#6cabb7',电:'#9174b4',以太:'#c777a0',烈霜:'#6eadd0',风:'#67ad91',流明:'#c5a56a',玄墨:'#8266b3'};
 function img(path,cls=''){const image=el('img',cls);image.alt='';image.decoding='async';if(/^assets\/[\w/-]+\.(?:webp|png|jpg)$/.test(path||''))image.src=path;else image.hidden=true;image.onerror=()=>{image.hidden=true;};return image;}
@@ -14,6 +16,38 @@ function message(value,tone='info'){$('showcase-status').textContent=value;$('sh
 function section(title,description){const node=el('section','showcase-section');node.append(el('h3','',title));if(description)node.append(el('p','section-note',description));return node;}
 function notes(title,entries){const node=el('details','showcase-panel-notes');node.append(el('summary','',title));const list=el('ul');for(const entry of entries)list.append(el('li','',entry));node.append(list);return node;}
 function statRows(stats,cls){const grid=el('div',cls);for(const stat of stats||[]){const row=el('div');row.append(el('span','',stat.name),el('strong','',stat.formatted??String(stat.value)));grid.append(row);}return grid;}
+function agentPanel(agent){
+  const stats=agent.stats||[];
+  if(!panelData){
+    const box=section('代理人属性',agent.statsLabel||'基础装备面板估算');
+    const notice=el('p','section-note','未能读取核心技能数据，刷新后可查看转换明细。');
+    notice.dataset.i18nEn='Core Skill data could not be loaded. Refresh to see the conversions.';
+    box.append(statRows(stats,'showcase-stat-grid'),notice);
+    return box;
+  }
+  // Both showcase normalizers omit Sheer Force when its calculated value is zero.
+  const base={123:0,...Object.fromEntries(stats.map(row=>[row.propertyId,row.value]))};
+  const config={id:String(agent.id),core:agent.coreSkillEnhancement,cinema:agent.mindscape};
+  const {values,effects}=applyPanelMechanics(config,base,panelData);
+  const rows=stats.map(row=>{
+    const value=values[row.propertyId];
+    return value===row.value ? row : {...row,value,formatted:formatPanelValue(row.propertyId,value)};
+  });
+  const box=section('代理人属性');
+  const includesPassive=effects.some(effect=>effect.scope==='passive');
+  const label=el('p','section-note',includesPassive?'装备与角色被动估算':agent.statsLabel||'基础装备面板估算');
+  if(includesPassive)label.dataset.i18nEn='Equipment and personal passive estimate';
+  // Older API responses can still carry the former conversion warning.
+  const scopeNotes=(agent.notes||[]).filter(note=>!panelData.panelMechanics?.[agent.id]||!(/局外/.test(note)&&/尚未计入|未计入基础装备面板/.test(note)&&/核对/.test(note)));
+  const scope=notes('面板计算范围',scopeNotes);
+  if(includesPassive&&scopeNotes[0]?.startsWith('面板为基础装备估算')){
+    const baseNote=scope.querySelector('li');
+    baseNote.textContent='装备部分包括角色成长、突破、核心强化属性、音擎属性、驱动盘主副词条和 2 件套效果。';
+    baseNote.dataset.i18nEn='The equipment subtotal includes Agent growth, promotions, Core Skill stat nodes, W-Engine stats, disc stats, and 2-piece set effects.';
+  }
+  box.append(label,statRows(rows,'showcase-stat-grid'),renderPanelEffects(effects),scope);
+  return box;
+}
 function mask(uid){return uid==='DEMO'?'示例':String(uid).slice(0,2)+'****'+String(uid).slice(-4);}
 function cacheSeconds(){return Math.max(0,Math.ceil((cacheDeadline-Date.now())/1000));}
 function stopCacheTimer(){if(cacheTimer!==null)clearInterval(cacheTimer);cacheTimer=null;}
@@ -71,7 +105,7 @@ function attributePanel(agent,reference,selection){
   adjust.append(el('p','showcase-reference-note','同一属性只能归入一类，选择补充会取消其核心选择。'),supplementOptions);panel.append(adjust);
   const reasons=reference?.reasons||[];if(reasons.length)panel.append(el('p','showcase-reference-reason',reasons[0]));
   const source=el('p','showcase-reference-source',custom?'本页自选方案，可按队伍调整。':'本站配装参考，可按队伍调整。');
-  const link=el('a','','查看角色依据 ↗');link.href=`agents.html?v=20261021-v33-complete-1#agent=${agent.id}`;source.append(link);panel.append(source,el('p','showcase-reference-note','选择仅在本页保留；刷新后恢复建议，不保存 UID 或账号资料。'));
+  const link=el('a','','查看角色依据 ↗');link.href=`agents.html?v=20261117-disc-panel-launch-1#agent=${agent.id}`;source.append(link);panel.append(source,el('p','showcase-reference-note','选择仅在本页保留；刷新后恢复建议，不保存 UID 或账号资料。'));
   const status=el('p','showcase-preference-status',preferenceMessages.get(agent.id)||'');status.id='showcase-preference-status';status.setAttribute('role','status');status.setAttribute('aria-live','polite');panel.append(status);
   return panel;
 }
@@ -105,10 +139,10 @@ function renderResult(){
   const info=el('div');info.append(el('p','',guide.faction||'代理人'),el('h2','',agent.name));
   const meta=el('div','showcase-hero-meta');for(const value of [`${agent.rank} 级`,`Lv. ${agent.level}`,guide.element,guide.specialty].filter(Boolean))meta.append(el('span','',value));
   const cinema=el('div','showcase-mindscape');cinema.setAttribute('aria-label',`已解锁 ${agent.mindscape} 层影画`);for(let i=1;i<=6;i++)cinema.append(el('span',i<=agent.mindscape?'active':'',i));
-  info.append(meta,cinema);const link=el('a','showcase-guide-link','查看角色资料与配装 ↗');link.href=`agents.html?v=20261021-v33-complete-1#agent=${agent.id}`;hero.append(img(agent.icon),info,link);
+  info.append(meta,cinema);const link=el('a','showcase-guide-link','查看角色资料与配装 ↗');link.href=`agents.html?v=20261117-disc-panel-launch-1#agent=${agent.id}`;hero.append(img(agent.icon),info,link);
   if(portraits[agent.id]?.src)hero.append(img(portraits[agent.id].src,'showcase-hero-art'));
   const planner=el('button','primary-button','带入当前配装，规划驱动盘 ↗');planner.type='button';planner.onclick=()=>{try{sessionStorage.setItem('bagel-disc-planner-handoff',JSON.stringify(agent));location.href=`disc-planner.html?agent=${encodeURIComponent(agent.id)}&v=20260916-english-2`;}catch{planner.textContent='浏览器存储受限，请在驱动盘规划页重新读取展柜';}};hero.append(planner);
-  const columns=el('div','showcase-columns'),panel=section('代理人属性',agent.statsLabel||'基础装备面板估算');panel.append(statRows(agent.stats,'showcase-stat-grid'),notes('面板计算范围',agent.notes||[]));
+  const columns=el('div','showcase-columns'),panel=agentPanel(agent);
   const weaponPanel=section('音擎','当前展示角色装备');
   if(agent.weapon){const w=agent.weapon,head=el('div','showcase-weapon'),copy=el('div');copy.append(el('h4','',w.name),el('p','',`${w.rank} 级 · Lv. ${w.level} · 叠影 ${w.refinement} 阶`));head.append(img(w.icon),copy);weaponPanel.append(head,statRows(w.stats,'showcase-weapon-stats'));}
   else weaponPanel.append(el('p','section-note','没有读取到已收录的音擎。'));
@@ -119,14 +153,20 @@ function renderResult(){
   const training=section('养成检查','先检查等级与技能投入，再结合主词条和队伍需求优化驱动盘。');
   const trainingTips=[];
   if(String(agent.id)==='1611'&&reference?.mechanicFlags?.allowsOvercapCrit)trainingTips.push('克拉蕾的初始暴击率超过 100% 后仍参与额外锐暴判定，不按普通暴击溢出处理。上方面板已计入核心被动的初始暴伤转暴击；是否压低暴击率仍需结合驱动盘、队伍增益和实际输出目标判断。');
-  if(reference?.mechanicFlags?.energyRegenThreshold)trainingTips.push(`洛克茜的技能按初始能量自动回复提供攻击和冲击增益，核心 F 时 3.12 为该项增益的上限门槛；先检查回复，再考虑条件备选的 6 号冲击盘。上方面板未计入这项技能转换。`);
   if(agent.level<60)trainingTips.push(`代理人当前 ${agent.level} 级；提升等级与突破能增加基础属性，请按养成资源安排。`);
   if(agent.weapon?.level<60)trainingTips.push(`音擎当前 ${agent.weapon.level} 级，仍有等级与改装提升空间。`);
   if(agent.coreSkillEnhancement<6)trainingTips.push(`核心强化当前为${agent.coreSkillEnhancement?'ABCDEF'[agent.coreSkillEnhancement-1]:'基础'}，可查看角色技能页确认后续强化收益。`);
   const lowSkills=(agent.skills||[]).filter(s=>s.id!==5&&s.baseLevel<12);
   if(lowSkills.length)trainingTips.push(`${lowSkills.map(s=>`${s.name} ${s.baseLevel} 级`).join('、')}尚未到基础 12 级；优先升级角色主要输出或功能技能。`);
-  if(!trainingTips.length)trainingTips.push('角色、音擎等级与基础技能已达到本页检查上限；可继续结合队伍检查套装触发和词条收益。');
-  const trainingList=el('ul','showcase-suggestions');for(const tip of trainingTips)trainingList.append(el('li','',tip));training.append(trainingList);
+  if(!trainingTips.length&&!reference?.mechanicFlags?.energyRegenThreshold)trainingTips.push('角色、音擎等级与基础技能已达到本页检查上限；可继续结合队伍检查套装触发和词条收益。');
+  const trainingList=el('ul','showcase-suggestions');
+  if(reference?.mechanicFlags?.energyRegenThreshold){
+    const tip=el('li','','洛克茜核心 F 时，初始能量自动回复达到 3.12/秒即可取满攻击力与冲击力加成，可据此比较 6 号盘。');
+    tip.dataset.i18nEn='At Core F, Roxy reaches both her ATK and Impact caps at 3.12 Energy Regen per second. Use this to compare slot 6 options.';
+    trainingList.append(tip);
+  }
+  for(const tip of trainingTips)trainingList.append(el('li','',tip));
+  training.append(trainingList);
   const discs=section('驱动盘词条','按当前方案统计副词条份数。金色标记核心属性，蓝色标记单列的补充属性。');discs.id='showcase-disc-analysis';
   const ruleIntro=el('div','showcase-article-intro');
   const ruleCopy=el('div');ruleCopy.append(el('h4','','判断顺序：套装 → 主属性 → 副属性'));
@@ -201,13 +241,13 @@ async function queryShowcase(uid){
 }
 $('showcase-form').addEventListener('submit',e=>{e.preventDefault();queryShowcase($('showcase-uid').value.trim());});
 $('showcase-refresh').onclick=()=>{if(result&&!isDemo)queryShowcase(String(result.uid));};
-$('showcase-demo').onclick=async()=>{if(busy)return;setBusy(true);try{const response=await fetch('showcase-demo.json?v=20261107-refresh-launch-1');if(!response.ok)throw new Error('示例资料暂未就绪，请稍后刷新。');result=await response.json();isDemo=true;previousData=false;selectedId='';cacheDeadline=0;stopCacheTimer();renderResult();message('正在浏览虚构的练度示例，可输入 UID 查询自己的公开展柜。');}catch(error){message(error.message,'error');}finally{setBusy(false);}};
+$('showcase-demo').onclick=async()=>{if(busy)return;setBusy(true);try{const response=await fetch('showcase-demo.json?v=20261117-disc-panel-launch-1');if(!response.ok)throw new Error('示例资料暂未就绪，请稍后刷新。');result=await response.json();isDemo=true;previousData=false;selectedId='';cacheDeadline=0;stopCacheTimer();renderResult();message('正在浏览虚构的练度示例，可输入 UID 查询自己的公开展柜。');}catch(error){message(error.message,'error');}finally{setBusy(false);}};
 document.addEventListener('visibilitychange',()=>{if(!document.hidden)startCacheTimer();});
 window.addEventListener('pagehide',()=>{controller?.abort();stopCacheTimer();});
 window.addEventListener('pageshow',startCacheTimer);
 try{
-  setBusy(true);const responses=await Promise.all(['agent-builds.json?v=20261111-refresh-launch-1','agent-equipment.json?v=20261111-refresh-launch-1','agent-details.json?v=20261111-refresh-launch-1','agent-portraits.json?v=20261021-v33-launch-1'].map(async path=>{const r=await fetch(path);if(!r.ok)throw new Error('角色资料暂未读取成功，请刷新重试。');return r.json();}));
-  [builds,equipment,details]=responses;portraits=responses[3].images||{};setBusy(false);
+  setBusy(true);const responses=await Promise.all(['agent-builds.json?v=20261111-refresh-launch-1','agent-equipment.json?v=20261111-refresh-launch-1','agent-details.json?v=20261111-refresh-launch-1','agent-portraits.json?v=20261021-v33-launch-1','disc-planner-data.json?v=20261117-disc-panel-launch-1'].map(async path=>{const r=await fetch(path);if(!r.ok)throw new Error('角色资料暂未读取成功，请刷新重试。');return r.json();}));
+  [builds,equipment,details,,panelData]=responses;portraits=responses[3].images||{};setBusy(false);
   window.showcaseAnalysis={getState:()=>({ready:true,demo:isDemo,selectedId,count:result?.agents.length||0,busy})};
   if(new URL(location.href).searchParams.get('demo')==='1')$('showcase-demo').click();
 }catch(error){setBusy(false);message(error.message,'error');}

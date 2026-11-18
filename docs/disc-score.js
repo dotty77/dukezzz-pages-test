@@ -1,4 +1,4 @@
-import {inspectDiscRolls} from './disc-planner-core.js?v=20261115-rotation-launch-1';
+import {inspectDiscRolls} from './disc-planner-core.js?v=20261117-disc-panel-launch-1';
 
 // DUKE's transparent allocation rubric, not official ratings or a damage model.
 export const SCORE_RULES=Object.freeze({

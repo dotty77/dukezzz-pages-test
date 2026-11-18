@@ -64,6 +64,38 @@ export function validateConfiguration(config,data){
   }
   return [...new Set(problems)];
 }
+// baseValues are equipment totals. All rules read that same snapshot, so
+// a conversion cannot feed itself or amplify another initial-stat conversion.
+export function applyPanelMechanics(config,baseValues,data){
+  const values={...baseValues}, effects=[];
+  const agent=data.panelMechanics?.[config.id];
+  if(!agent||!integer(config.core,0,6))return {values,effects};
+  for(const rule of agent.rules){
+    if(rule.minCinema&&!(config.cinema>=rule.minCinema))continue;
+    const params=rule.parameters[rule.ranks.length===1?rule.ranks[0]:rule.ranks[config.core]];
+    const {group,scope,inputGroup=null}=rule;
+    const inputValue=inputGroup===null?null:baseValues[inputGroup];
+    const before=values[group];
+    if(!Number.isFinite(before)||(inputGroup!==null&&!Number.isFinite(inputValue)))continue;
+    const units=inputGroup===null?1:Math.floor(Math.max(0,inputValue-params.threshold)/params.step);
+    let bonus=Math.min(units*params.gain,params.limit??Infinity);
+    let {description,descriptionEn}=params;
+    if(rule.modifier&&config.cinema>=rule.modifier.minCinema){
+      bonus*=rule.modifier.multiplier;
+      description+=' '+rule.modifier.description;
+      descriptionEn+=' '+rule.modifier.descriptionEn;
+    }
+    // Preserve half-points and decimal caps in the source; discard binary
+    // floating-point noise before display or comparison to a decimal target.
+    bonus=Math.round(bonus*1e6)/1e6;
+    const after=Math.round((before+bonus)*1e6)/1e6;
+    if(scope==='passive')values[group]=after;
+    effects.push({group,inputGroup,inputValue,before,bonus,after,scope,description,descriptionEn,
+      condition:rule.condition,conditionEn:rule.conditionEn,sourceUrl:agent.sourceUrl,
+      minCinema:rule.minCinema,modifierCinema:config.cinema>=rule.modifier?.minCinema?rule.modifier.minCinema:undefined});
+  }
+  return {values,effects};
+}
 export function calculatePanel(config,data){
   const errors=validateConfiguration(config,data);if(errors.length)throw Error(errors.join('；'));
   const a=data.agents[config.id],props={},add=(k,v)=>props[k]=(props[k]||0)+Number(v),promotion=config.promotion?a.PromotionProps[config.promotion-1]:{};
@@ -87,7 +119,7 @@ export function calculatePanel(config,data){
   if(String(config.id)==='1611')values[201]+=Math.floor(values[211]*35/100);
   if(a.ProfessionType==='Rupture')values[123]+=Math.floor(values[121]*3/10)+Math.floor(values[111]/10);
   values[30502]=props[30502]||0;
-  return {values,props,counts,pending:data.pendingPanelMechanics[config.id]||null};
+  return {...applyPanelMechanics(config,values,data),props,counts};
 }
 export function normalizedToConfiguration(agent,data){
   const config={id:String(agent.id),level:sourceNumber(agent.level),promotion:sourceNumber(agent.promotionLevel),core:sourceNumber(agent.coreSkillEnhancement),cinema:sourceNumber(agent.mindscape),
@@ -172,14 +204,21 @@ export function allocateTargets(config,data,rows,build,options={}){
   const planningScope=options.scope==='solo'?'solo':'team';
   const activeRows=rows.filter(r=>planningScope!=='solo'||!r.scopeExcluded),excludedRows=planningScope==='solo'?rows.filter(r=>r.scopeExcluded).map(r=>({...r})):[];
   const scopeResult={planningScope,excludedRows,guidanceOnly:false};
-  const pending=data.pendingPanelMechanics[config.id],eligible=activeRows.filter(r=>r.planning&&!r.contextBlocked&&(r.comparable||useReference));
-  const unresolvedRows=activeRows.filter(r=>r.planning&&!eligible.includes(r)).map(r=>({...r,reason:r.contextBlocked?'当前配队未满足或尚未确认该目标的前提':'参考口径与当前装备估算尚未对齐'}));
+  const combatReference=row=>['in-combat','unspecified-combat-bonus'].includes(row.scope??row.panelContext);
+  const canCompare=row=>!row.contextBlocked&&!combatReference(row)&&(row.comparable||useReference);
+  const eligible=activeRows.filter(row=>row.planning&&canCompare(row));
+  const unresolvedRows=activeRows.filter(row=>(row.planning&&!eligible.includes(row))||
+    (row.bound==='maximum'&&row.applicable!==false&&combatReference(row))).map(row=>{
+      if(combatReference(row))return {...row,reasonCode:'combat-reference',reason:'战斗目标需要实际增益；当前装备数值只供对照。'};
+      return {...row,reason:row.contextBlocked?'当前配队未满足或尚未确认该目标的前提':'参考口径与当前装备估算尚未对齐'};
+    });
+  if(!eligible.length&&unresolvedRows.length&&unresolvedRows.every(row=>row.reasonCode==='combat-reference'))
+    return {...scopeResult,guidanceOnly:true,met:false,baselineMet:false,reasonCode:'combat-reference',blocked:'当前数值目标均依赖战斗增益。可查看装备与参考的差值以及逐号位建议。',unresolvedRows};
   if(!eligible.length&&planningScope==='solo')return {...scopeResult,guidanceOnly:true,met:false,baselineMet:false,reasonCode:'no-personal-numeric-targets',blocked:unresolvedRows.some(r=>r.contextBlocked)?'当前个人目标仍有前提待核对，采用参考口径也不能绕过；先查看主属性、套装与逐号位建议。':unresolvedRows.length?'当前个人数值参考的口径尚未对齐；先查看主属性、套装与逐号位建议，明确采用参考口径后再试算。':'当前没有可直接比较的个人数值目标；可继续查看主属性、套装与逐号位建议。',unresolvedRows};
   if(config.level!==60||config.core!==6)return {...scopeResult,blocked:'攻略目标按角色60级、核心F整理；先调整规划等级或只查看逐号位建议。'};
-  if(pending&&!useReference)return {...scopeResult,blocked:'该角色存在尚未对齐的面板转换。可查看机制或明确选择按参考口径试算，不能直接判定毕业。'};
   if(!eligible.length)return {...scopeResult,guidanceOnly:true,met:false,baselineMet:false,reasonCode:'no-comparable-numeric-targets',blocked:unresolvedRows.some(r=>r.contextBlocked)?'当前配队未满足目标的适用条件，不能通过勾选参考口径绕过；请核对队友与目标前提。':'当前没有可直接比较的目标。可选择按攻略参考口径试算，或查看可用档的套装与主属性建议。',unresolvedRows};
   const pool=[...new Set([...(build.effectiveSubstats?.primaryIds||[]),...(build.effectiveSubstats?.secondaryIds||[])].map(Number))].filter(id=>data.subBases[id]);
-  const ceilings=activeRows.filter(r=>r.bound==='maximum'&&r.applicable!==false&&!r.contextBlocked&&(r.comparable||useReference)&&Number.isFinite(r.targetRaw));
+  const ceilings=activeRows.filter(r=>r.bound==='maximum'&&r.applicable!==false&&canCompare(r)&&Number.isFinite(r.targetRaw));
   const loss=panel=>{
     if(!panel)return Infinity;
     return eligible.reduce((n,r)=>n+(Number.isFinite(panel.values[r.group])&&Number.isFinite(r.targetRaw)?Math.max(0,r.targetRaw-panel.values[r.group])/Math.max(1,r.targetRaw):Infinity),0)+ceilings.reduce((n,r)=>n+Math.max(0,panel.values[r.group]-r.targetRaw)/Math.max(1,r.targetRaw),0);
@@ -208,7 +247,7 @@ export function allocateTargets(config,data,rows,build,options={}){
     const changedSlots=slotChanges.filter(x=>x.action!=='keep').map(x=>x.slot),retainedSlots=slotChanges.filter(x=>x.action==='keep').map(x=>x.slot);
     return {...scopeResult,configuration:state.configuration,panel:state.panel,rows:eligible.map(r=>({...r,shortfall:Math.max(0,r.targetRaw-state.panel.values[r.group])})),unresolvedRows:unresolved,
       met:validSix(state.configuration)&&loss(state.panel)<1e-8&&unresolved.length===0,baselineMet,steps:state.steps,mode,changedSlots,retainedSlots,changeCount:changedSlots.length,slotChanges,incompleteCeilingCheck,incompleteCeilingSlots:incompleteSlots,
-      provisional:!!pending||unresolved.length>0||eligible.some(r=>!r.comparable),
+      provisional:unresolved.length>0||eligible.some(r=>!r.comparable),
       search:{evaluations:budget.evaluations-started,maxEvaluations:limit,truncated,migrations,exhaustedChangeCounts,method:'按换盘号位子集递增，贪心分配后尝试跨盘迁移；子集枚举完成不代表穷尽全部副属性状态'},
       method:mode==='fresh'?'从空白目标重新分配未保留盘；遵守单盘约束，未声称全局最少材料或最大伤害。':
         baselineCovered?(incompleteCeilingCheck?'已录入属性已满足下限目标，保持原盘；部分副属性未录入，上限仍待核对。':'现有六盘已覆盖本次可比较的数值目标，保持原等级和录入属性；未填全的副属性不作补全或猜测。'):
@@ -277,6 +316,6 @@ export function compareMainOptions(config,data,rows,build,options={}){
   }
   const totalEvaluations=budget.evaluations;
   for(const result of results)Object.assign(result.search,{totalEvaluations,totalMaxEvaluations:budget.maxEvaluations,mainOptionsEvaluated,mainOptionsTotal:combinations.length,truncated:!baselineShortcut&&(anyTruncated||mainOptionsEvaluated<combinations.length)});
-  const rankLoss=result=>result.rows.reduce((n,r)=>n+r.shortfall/Math.max(1,r.targetRaw),0)+result.unresolvedRows.filter(r=>r.bound==='maximum').reduce((n,r)=>n+Math.max(0,result.panel.values[r.group]-r.targetRaw)/Math.max(1,r.targetRaw),0);
+  const rankLoss=result=>result.rows.reduce((n,r)=>n+r.shortfall/Math.max(1,r.targetRaw),0)+result.unresolvedRows.filter(r=>r.reasonCode==='above-ceiling').reduce((n,r)=>n+Math.max(0,result.panel.values[r.group]-r.targetRaw)/Math.max(1,r.targetRaw),0);
   return results.sort((a,b)=>Number(b.met)-Number(a.met)||(a.met&&b.met?a.changeCount-b.changeCount:0)||rankLoss(a)-rankLoss(b)||a.changeCount-b.changeCount||a.steps-b.steps).slice(0,3);
 }

@@ -2,10 +2,11 @@
 const API_ROOT=globalThis.location?.origin==='https://dotty77.github.io'&&globalThis.location.pathname.startsWith('/dukezzz-pages-test/')?'https://dukezzz.com':'';
 import {mountMiyousheBrowserSync} from './mys-browser-sync.js?v=20261114-canonical-sync-1';
 import {mountHoyolabSync} from './hoyolab-sync.js?v=20261114-canonical-sync-1';
-import {officialToConfiguration} from './official-equipment.js?v=20261115-rotation-launch-1';
-import {scoreDisc,getDiscScoreProfile,SCORE_RULES} from './disc-score.js?v=20261115-rotation-launch-1';
-import {newConfiguration,normalizedToConfiguration,validateConfiguration,calculatePanel,formatProperty,resolveTargets,compareDisc,inspectDiscRolls} from './disc-planner-core.js?v=20261115-rotation-launch-1';
+import {officialToConfiguration} from './official-equipment.js?v=20261117-disc-panel-launch-1';
+import {scoreDisc,getDiscScoreProfile,SCORE_RULES} from './disc-score.js?v=20261117-disc-panel-launch-1';
+import {newConfiguration,normalizedToConfiguration,validateConfiguration,calculatePanel,formatProperty,resolveTargets,compareDisc,inspectDiscRolls} from './disc-planner-core.js?v=20261117-disc-panel-launch-1';
 import {evaluateContext,assessUsable} from './disc-context.js?v=20261027-agents-launch-1';
+import {renderPanelEffects} from './disc-panel-display.js?v=20261117-disc-panel-launch-1';
 import {applyPlanningScope} from './disc-scope.js?v=20260913-disc-planner-1';
 const $=id=>document.getElementById(id),el=(tag,cls='',text='')=>{const n=document.createElement(tag);n.className=cls;n.textContent=text;return n;};
 let data,builds,equipment,details,graduation,mechanics,config,alternative='',planIndex=0,team=['',''],tier='small',allocation=null,busy=false,controller,cacheUntil=0,cacheUid='',snapshot=null;
@@ -164,7 +165,7 @@ function searchPlan(operation){
   const revision=searchRevision;
   return new Promise((resolve,reject)=>{
     let worker;
-    try{worker=new Worker(new URL('./disc-planner-worker.js?v=20261115-rotation-launch-1',import.meta.url),{type:'module'});}
+    try{worker=new Worker(new URL('./disc-planner-worker.js?v=20261117-disc-panel-launch-1',import.meta.url),{type:'module'});}
     catch(error){setSearchControls(false);reject(error);return;}
     searchTask={worker,reject,revision};
     const finish=()=>{worker.terminate();if(searchTask?.revision===revision){searchTask=null;setSearchControls(false);}};
@@ -242,36 +243,45 @@ function targetGapText(row,panel){
   if(row.applicable===false)return message('当前方案不适用','Not applicable to this build');
   if(row.scopeExcluded)return message('选择队友后核对','Select teammates to check');
   if(row.contextBlocked)return message('先核对配队条件','Check team requirements first');
-  if(panel.pending)return message('面板转换尚未核对','Panel conversion needs checking');
   if(!row.planning&&row.bound!=='maximum')return message('未列入本次目标','Not part of this target');
-  const reference=!row.comparable;
-  if(reference&&!['initial-reference-unqualified','signature-conditioned'].includes(row.scope))return message(
-    ['in-combat','unspecified-combat-bonus'].includes(row.scope)?'需计入战斗增益后比较':'参考条件未明确，暂不比较',
-    ['in-combat','unspecified-combat-bonus'].includes(row.scope)?'Account for combat buffs before comparing':'Reference conditions are unspecified');
+  const reference=!row.comparable,combatReference=['in-combat','unspecified-combat-bonus'].includes(row.scope);
+  if(reference&&row.scope==='initial')return message('目标按核心 F 核定','Target assumes Core F');
+  if(reference&&!combatReference&&!['initial-reference-unqualified','signature-conditioned'].includes(row.scope))
+    return message('参考条件未明确，暂不比较','Reference conditions are unspecified');
   const current=panel.values[row.group];
   if(!Number.isFinite(current)||!Number.isFinite(row.targetRaw))return message('暂不能计算','Cannot calculate yet');
-  const delta=current-row.targetRaw,absolute=Math.abs(delta),percent=data.properties[row.group]?.percent;
-  const amount=fmt(row.group,absolute).replace(/%$/,'');
-  const zh=percent?`${amount} 个百分点`:fmt(row.group,absolute),en=percent?`${amount} percentage points`:fmt(row.group,absolute);
+  const property=data.properties[row.group],scale=property.percent?100:property.divisor||1;
+  // Compare at the precision shown in both numeric columns.
+  const delta=Math.round(current*100/scale)-Math.round(row.targetRaw*100/scale);
+  const amount=(Math.abs(delta)/100).toLocaleString('zh-CN',{maximumFractionDigits:2});
+  const zh=property.percent?`${amount} 个百分点`:amount+(row.group===305?'/秒':'');
+  const en=property.percent?`${amount} percentage points`:amount+(row.group===305?'/s':'');
+  if(combatReference){
+    if(delta===0)return message('当前面板等于战斗参考，战斗增益另计','Current stats match the combat reference before combat buffs');
+    return message(`当前面板${delta<0?'低于':'高于'}战斗参考 ${zh}，战斗增益另计`,
+      `Current stats are ${en} ${delta<0?'below':'above'} the combat reference before combat buffs`);
+  }
   if(row.bound==='maximum'){
     if(delta>0)return message(reference?`高于参考上限 ${zh}`:`高于上限 ${zh}`,reference?`${en} above the reference ceiling`:`${en} above the ceiling`);
     if(config.discs.some(d=>inspectDiscRolls(d,data).partial))return message('副属性未填全，上限待核对','Substats are incomplete; the ceiling is unverified');
     return message(reference?'已录入值未超参考上限':'已录入值未超上限',reference?'Recorded value is within the reference ceiling':'Recorded value is within the ceiling');
   }
   if(reference)return delta<0?message(`低于参考 ${zh}`,`${en} below the reference`):delta>0?message(`高于参考 ${zh}`,`${en} above the reference`):message('与参考相同','Equal to the reference');
-  return delta<0?message(`按已录入值还差 ${zh}`,`${en} short based on recorded values`):message('已录入值达到参考','Recorded value reaches the reference');
+  if(delta<0)return message(`按已录入值还差 ${zh}`,`${en} short based on recorded values`);
+  if(delta>0)return message(`高于目标 ${zh}`,`${en} above the target`);
+  return message('与目标相同','Equal to the target');
 }
 function targetConditions(row,panel){
   const cell=el('td','disc-target-conditions'),parts=[];
   if(row.scopeExcluded)parts.push(['队伍条件目标；选好队友后自动核对','Team-dependent target; checked after teammates are selected']);
   else if(row.comparable)parts.push(['初始 / 场外面板','Initial / out-of-combat stats']);
+  else if(row.scope==='initial')parts.push(['初始 / 场外面板；该目标按核心 F 核定','Initial / out-of-combat stats; this target assumes Core F']);
   else if(row.scope==='signature-conditioned')parts.push(['专武方案参考；仅作数值对照','Signature W-Engine reference; numeric comparison only']);
   else if(row.scope==='initial-reference-unqualified')parts.push(['攻略培养参考；原文未详述场内 / 场外','Build-guide reference; in/out-of-combat assumptions are unspecified']);
   else if(['in-combat','unspecified-combat-bonus'].includes(row.scope))parts.push(['战斗参考；当前估算未计入完整战斗增益','Combat reference; the estimate does not include all combat buffs']);
   else parts.push(['原攻略未明确比较条件','Comparison conditions are unspecified in the guide']);
   if(row.contextBlocked&&!row.scopeExcluded)parts.push(['配队前提尚未满足或确认','Team requirements are unmet or unconfirmed']);
   if(row.applicable===false)parts.push([row.requiresSignature?'当前未装备专武':'当前方案不适用',row.requiresSignature?'Signature W-Engine is not equipped':'Not applicable to this build']);
-  if(panel.pending)parts.push(['该角色的面板转换尚未核对','This agent’s panel conversion is unverified']);
   if(String(config.id)==='1611'&&row.key==='critRate')parts.push(['当前值已含暴伤转暴率，未加战斗增益','Current value includes CRIT DMG conversion, without combat buffs']);
   for(const [zh,en]of parts){if(cell.childNodes.length)cell.append(el('br'));cell.append(uiText('span',zh,en));}
   const notes=[...new Set([row.configurationNote,row.note,row.scopeExclusionReason].filter(Boolean))];
@@ -287,12 +297,20 @@ function updateTargets(){
   for(const r of activeRows){
     const row=el('tr'),gap=targetGapText(r,panel);
     if(r.scopeExcluded)row.dataset.teamConditional='true';
-    row.append(el('th','',r.label),el('td','',fmt(r.group,panel.values[r.group]||0)),el('td','',`${r.bound==='maximum'?'≤ ':''}${r.target}${r.unit||''}${r.optional?'（可选）':''}`),uiText('td',gap.zh,gap.en,'disc-target-gap'),targetConditions(r,panel));tbody.append(row);
+    const value=panel.values[r.group],recorded=Number.isFinite(value)?fmt(r.group,value):'—';
+    const target=(r.bound==='maximum'?'≤ ':'')+r.target;
+    const perSecond=r.group===305,unit=r.unit||'';
+    row.append(el('th','',r.label),
+      uiText('td',recorded+(perSecond&&Number.isFinite(value)?'/秒':''),recorded+(perSecond&&Number.isFinite(value)?'/s':'')),
+      uiText('td',target+unit+(r.optional?'（可选）':''),target+(perSecond?'/s':unit)+(r.optional?' (optional)':'')),
+      uiText('td',gap.zh,gap.en,'disc-target-gap'),targetConditions(r,panel));
+    tbody.append(row);
   }
   if(!activeRows.length){const row=el('tr');const c=el('td','',planningScope==='solo'?'当前没有已收录的个人数值目标，可先查看主属性、套装与技能培养方向。':'暂缺成熟区间；查看下方技能门槛，不编造数值。');c.colSpan=5;row.append(c);tbody.append(row);}table.append(tbody);const wrap=el('div','disc-table-wrap');wrap.append(table);root.append(wrap);
   const blanks=config.discs.filter(d=>!inspectDiscRolls(d,data).complete).length;
-  root.append(el('p','disc-muted',`${blanks?`${blanks} 张盘为空或未填全副属性，表中只计算已录入内容。`:'表中为基础装备面板估算。'}音擎被动、四件套战斗效果、队友增益和未确认转换另列。没有把这个数值当作实战伤害。`));
-  if(panel.pending)root.append(el('p','disc-warning',panel.pending));
+  root.append(uiText('p',`${blanks?`${blanks} 张盘为空或未填全副属性，按已录入内容估算。`:''}表中按装备及已收录的常驻核心技能、影画加成估算；音擎被动、四件套战斗效果及队友增益另计。`,
+    `${blanks?`Only recorded stats are included for ${blanks} empty or incomplete disc(s). `:''}Estimates include equipment and the recorded unconditional Core Skill and Mindscape bonuses. W-Engine passives, combat set effects and squad buffs are separate.`,'disc-muted'));
+  root.append(renderPanelEffects(panel.effects));
   if(config.core!==6)root.append(el('p','disc-warning','当前核心未到F，不能直接套用核心F的阈值；下方提供所选等级技能原文。'));
   if(equipment.engines[config.weaponId]&&equipment.engines[config.weaponId].profession!==details.agents[config.id].specialty)root.append(el('p','disc-warning','当前音擎特性不匹配：基础属性仍计入，被动不会生效。'));
 }
@@ -576,14 +594,14 @@ $('disc-uid-form').onsubmit=async e=>{
   }catch(e){$('disc-import-status').textContent=e.name==='AbortError'?'读取已取消或超时，原方案保留。':`${e.message}，原方案保留。`;}finally{clearTimeout(timer);setBusy(false);}
 };
 $('disc-cancel').onclick=()=>controller?.abort();
-$('disc-demo').onclick=async()=>{if(busy)return;try{const r=await fetch('showcase-demo.json?v=20261107-refresh-launch-1');if(!r.ok)throw Error('示例暂不可用');consumeShowcase(await r.json(),true);}catch(e){$('disc-import-status').textContent=e.message;}};
+$('disc-demo').onclick=async()=>{if(busy)return;try{const r=await fetch('showcase-demo.json?v=20261117-disc-panel-launch-1');if(!r.ok)throw Error('示例暂不可用');consumeShowcase(await r.json(),true);}catch(e){$('disc-import-status').textContent=e.message;}};
 $('disc-reset').onclick=()=>setAgent(config.id);
 $('disc-generate').onclick=generate;$('disc-compare').onclick=compare;
 $('disc-search-cancel').onclick=()=>{cancelSearch('搜索已取消，已录入配装保留。');$('disc-candidates').replaceChildren();};
 $('disc-export').onclick=()=>{const errors=validateConfiguration(config,data);if(errors.length){$('disc-validation').textContent=errors.join('；');return;}const blob=new Blob([JSON.stringify({schema:'bagel-disc-plan-1',config,team,scope:planningScope,alternative,tier,mode:planningMode},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=el('a');a.href=url;a.download=`${details.agents[config.id].name}-驱动盘方案.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
 $('disc-file').onchange=async e=>{try{const f=e.target.files[0];if(!f)return;if(f.size>100000)throw Error('方案文件过大');const x=JSON.parse(await f.text());if(x.schema!=='bagel-disc-plan-1')throw Error('不是本站驱动盘方案');const imported=maximumPlanningLevels(x.config);const errors=validateConfiguration(imported,data);if(errors.length)throw Error(errors.join('；'));setAgent(imported.id,clone(imported));setPlanningTeam(x.team);alternative=mechanics.agents[config.id]?.alternatives?.some(a=>a.id===x.alternative)?x.alternative:'';tier=['usable','small','large'].includes(x.tier)?x.tier:'small';planningMode=x.mode==='fresh'?'fresh':'improve';renderAll();setImportStatus('已导入方案（不含UID）；角色与音擎按60级满突破、核心F规划，非来源实测等级。','Plan imported without a UID. Agent and W-Engine target Lv.60 and full promotion, with Core Skill F; these are planning levels, not imported measurements.');}catch(err){$('disc-import-status').textContent=`导入失败：${err.message}`;}finally{$('disc-file-status').replaceChildren(...[...$('disc-import-status').childNodes].map(node=>node.cloneNode(true)));e.target.value='';}};
 try{
-  const paths=['disc-planner-data.json?v=20261027-agents-launch-1','agent-builds.json?v=20261111-refresh-launch-1','agent-equipment.json?v=20261111-refresh-launch-1','agent-details.json?v=20261111-refresh-launch-1','agent-graduation.json?v=20261027-agents-launch-1','disc-planner-mechanics.json?v=20261027-agents-launch-1'];
+  const paths=['disc-planner-data.json?v=20261117-disc-panel-launch-1','agent-builds.json?v=20261111-refresh-launch-1','agent-equipment.json?v=20261111-refresh-launch-1','agent-details.json?v=20261111-refresh-launch-1','agent-graduation.json?v=20261027-agents-launch-1','disc-planner-mechanics.json?v=20261027-agents-launch-1'];
   [data,builds,equipment,details,graduation,mechanics]=await Promise.all(paths.map(async p=>{const r=await fetch(p);if(!r.ok)throw Error(`资料读取失败：${p}`);return r.json();}));
   const requested=new URL(location.href).searchParams.get('agent'),remembered=readSavedPlan();
   const restore=remembered&&(!Object.hasOwn(data.agents,requested)||requested===remembered.config.id);

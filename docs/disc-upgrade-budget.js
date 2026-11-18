@@ -1,5 +1,5 @@
 import {costFor, attempts, coreCraftEquivalent, validateTargets} from './disc-budget.js?v=20260913-disc-planner-1';
-import {calculatePanel, formatProperty} from './disc-planner-core.js?v=20261115-rotation-launch-1';
+import {calculatePanel, formatProperty} from './disc-planner-core.js?v=20261117-disc-panel-launch-1';
 
 export const UPGRADE_MODES={random:'随机号位',slot:'指定号位',main:'指定主属性',sub1:'主属性 + 1条副属性',sub2:'主属性 + 2条副属性'};
 const KEYS=['hiFi','calibrators','cores','dennies'];

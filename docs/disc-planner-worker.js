@@ -1,4 +1,4 @@
-import {allocateTargets,compareMainOptions} from './disc-planner-core.js?v=20261115-rotation-launch-1';
+import {allocateTargets,compareMainOptions} from './disc-planner-core.js?v=20261117-disc-panel-launch-1';
 
 self.onmessage=({data:request})=>{
   try{
