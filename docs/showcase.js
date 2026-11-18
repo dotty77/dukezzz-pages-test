@@ -1,14 +1,18 @@
 // Only the published Pages project uses the fixed DUKE API; never read an API host from input.
 const API_ROOT=globalThis.location?.origin==='https://dotty77.github.io'&&globalThis.location.pathname.startsWith('/dukezzz-pages-test/')?'https://dukezzz.com':'';
+const demoUrl='showcase-demo.json?v=20261117-disc-panel-launch-1';
 import {scoreAgent} from './showcase-analysis.js?v=20261114-showcase-review-1';
-import {applyPanelMechanics} from './disc-planner-core.js?v=20261117-disc-farming-launch-1';
-import {renderPanelEffects, formatPanelValue} from './disc-panel-display.js?v=20261117-disc-panel-launch-1';
-import {SUBSTAT_OPTIONS,CORE_OPTIONS,MAX_CORE_ATTRIBUTES,substatName,referenceSelection,setSelection,selectionBuild,countOccurrences} from './showcase-preferences.js?v=20260909-version-3-2-1';
+import {getDiscScoreProfile,scoreDisc,withDiscScoreDefaults} from './disc-score.js?v=20261117-disc-farm-matching-launch-1';
+import {applyPanelMechanics,calculatePanel,evaluateDiscContributions,normalizedToConfiguration,resolveTargets,validateConfiguration} from './disc-planner-core.js?v=20261117-disc-farm-matching-launch-1';
+import {assessUsable,evaluateContext} from './disc-context.js?v=20261027-gachabase-all-1';
+import {applyPlanningScope} from './disc-scope.js?v=20260913-disc-planner-1';
+import {renderPanelEffects,renderDiscContribution,formatPanelValue} from './disc-panel-display.js?v=20261117-disc-farm-matching-launch-1';
+import {SUBSTAT_OPTIONS,CORE_OPTIONS,MAX_CORE_ATTRIBUTES,substatName,referenceSelection,setSelection,selectionBuild,countOccurrences} from './showcase-preferences.js?v=20261117-disc-farm-matching-launch-1';
 import {ARTICLE_REFERENCE,evaluateArticleRules} from './showcase-article-rules.js?v=20260909-version-3-2-1';
 const $=id=>document.getElementById(id);
 const el=(tag,cls='',text='')=>{const node=document.createElement(tag);node.className=cls;node.textContent=text;return node;};
 let result=null,selectedId='',builds={},equipment={},details={},portraits={},isDemo=false,busy=false,controller=null;
-let panelData=null,cacheDeadline=0,cacheTimer=null,previousData=false;
+let panelData=null,graduation=null,graduationTier='small',cacheDeadline=0,cacheTimer=null,previousData=false;
 const attributeChoices=new Map(),supplementPanels=new Set(),preferenceMessages=new Map();
 const tones={物理:'#b39b6e',火:'#d47b67',冰:'#6cabb7',电:'#9174b4',以太:'#c777a0',烈霜:'#6eadd0',风:'#67ad91',流明:'#c5a56a',玄墨:'#8266b3'};
 function img(path,cls=''){const image=el('img',cls);image.alt='';image.decoding='async';if(/^assets\/[\w/-]+\.(?:webp|png|jpg)$/.test(path||''))image.src=path;else image.hidden=true;image.onerror=()=>{image.hidden=true;};return image;}
@@ -16,7 +20,7 @@ function message(value,tone='info'){$('showcase-status').textContent=value;$('sh
 function section(title,description){const node=el('section','showcase-section');node.append(el('h3','',title));if(description)node.append(el('p','section-note',description));return node;}
 function notes(title,entries){const node=el('details','showcase-panel-notes');node.append(el('summary','',title));const list=el('ul');for(const entry of entries)list.append(el('li','',entry));node.append(list);return node;}
 function statRows(stats,cls){const grid=el('div',cls);for(const stat of stats||[]){const row=el('div');row.append(el('span','',stat.name),el('strong','',stat.formatted??String(stat.value)));grid.append(row);}return grid;}
-function agentPanel(agent){
+function agentPanel(agent,panel){
   const stats=agent.stats||[];
   if(!panelData){
     const box=section('代理人属性',agent.statsLabel||'基础装备面板估算');
@@ -25,10 +29,7 @@ function agentPanel(agent){
     box.append(statRows(stats,'showcase-stat-grid'),notice);
     return box;
   }
-  // Both showcase normalizers omit Sheer Force when its calculated value is zero.
-  const base={123:0,...Object.fromEntries(stats.map(row=>[row.propertyId,row.value]))};
-  const config={id:String(agent.id),core:agent.coreSkillEnhancement,cinema:agent.mindscape};
-  const {values,effects}=applyPanelMechanics(config,base,panelData);
+  const {values,effects}=panel;
   const rows=stats.map(row=>{
     const value=values[row.propertyId];
     return value===row.value ? row : {...row,value,formatted:formatPanelValue(row.propertyId,value)};
@@ -47,6 +48,127 @@ function agentPanel(agent){
   }
   box.append(label,statRows(rows,'showcase-stat-grid'),renderPanelEffects(effects),scope);
   return box;
+}
+function localized(tag,zh,en,cls=''){
+  const node=el(tag,cls,zh);node.dataset.i18nEn=en;return node;
+}
+function personalTargets(agent,guide,reference,config,values){
+  const profile=graduation?.agents?.[config.id],out={profile,rows:[],contributions:{}};
+  if(!guide?.id||!Number.isInteger(config.cinema))return out;
+  const context=evaluateContext({scope:'solo',config,profile:profile||{},agent:guide,details,build:reference||{}});
+  if(graduationTier==='usable'){
+    out.checks=assessUsable(config,reference||{},panelData,context);
+    out.contributions=evaluateDiscContributions(config,panelData,[],{scope:'solo'});
+    return out;
+  }
+  if(!profile)return out;
+  const resolved=resolveTargets(config,guide,profile,equipment,panelData,graduationTier);
+  const scoped=applyPlanningScope({scope:'solo',context,rows:resolved.rows});
+  const knownEquipment=!validateConfiguration(config,panelData).length;
+  // Energy Regen bonus is a percentage of base Regen, a different stat from Regen/s.
+  const missingBonus=scoped.rows.some(r=>r.group===30502)&&!Number.isFinite(values[30502]);
+  if(missingBonus&&knownEquipment)values[30502]=calculatePanel(config,panelData).values[30502];
+  const incomplete=(agent.notes||[]).some(s=>/尚未收录，未将|尚未计入/.test(s)&&/音擎尚未收录|驱动盘尚未收录|潜能强化/.test(s));
+  for(const row of scoped.rows){
+    if(!Number.isFinite(row.targetRaw))continue;
+    const current=values[row.group],cap=row.bound==='maximum';
+    let reason;
+    if(row.applicable===false)reason=['此目标要求专属音擎','Requires the signature W-Engine'];
+    else if(row.scopeExcluded||context.blockedTargetKeys.includes(row.key))reason=['需确认队伍条件','Requires a confirmed squad'];
+    else if(row.choiceGroup||row.optional)reason=['可选培养路线','Optional build route'];
+    else if(['in-combat','unspecified-combat-bonus'].includes(row.scope))reason=['需要战斗增益','Requires combat buffs'];
+    else if(row.scope==='initial'&&config.core!==6)reason=['目标按核心 F 计算','Target assumes Core F'];
+    else if(row.bound==='mechanic-threshold'&&config.id==='1151'&&agent.skills?.find(s=>s.id===1)?.baseLevel!==12)reason=['目标按基础特殊技 12 级计算','Target assumes base Special Attack Lv. 12'];
+    else if(!row.planning&&!cap||!['initial','initial-reference-unqualified','signature-conditioned'].includes(row.scope))reason=['参考条件未明确','Reference conditions unspecified'];
+    else if(incomplete||!Number.isFinite(current))reason=['展柜资料不足','Insufficient showcase data'];
+    const diff=Number((current-row.targetRaw).toFixed(6)),met=cap?diff<=0:diff>=0;
+    out.rows.push({...row,current,cap,diff,reason,status:reason?'excluded':met?'met':cap?'over':'short'});
+  }
+  if(knownEquipment&&!incomplete)out.contributions=evaluateDiscContributions(config,panelData,out.rows.filter(r=>!r.reason),{scope:'solo',useReference:true});
+  return out;
+}
+function targetLine(row){
+  const node=el('div','showcase-target-line');node.dataset.targetStatus=row.status;node.dataset.stat=String(row.group);
+  const title=el('strong','',row.label),numbers=el('span','showcase-target-values');
+  const value=(raw,lang)=>formatPanelValue(row.group,raw,lang),sign=row.cap?'≤ ':'';
+  numbers.append(localized('span',value(row.current),value(row.current,'en-US')),' / ',localized('span',sign+value(row.targetRaw),sign+value(row.targetRaw,'en-US')));
+  node.append(title,numbers);
+  if(row.reason){node.append(localized('span',...row.reason,'showcase-target-status'));return node;}
+  const bar=el('progress');bar.max=100;
+  const ratio=row.cap?(row.current<=row.targetRaw?1:row.targetRaw/row.current):row.targetRaw?row.current/row.targetRaw:1;
+  bar.value=Math.max(0,Math.min(100,ratio*100));
+  bar.setAttribute('aria-label',row.label);node.append(bar);
+  const zh=value(Math.abs(row.diff)).replace('%',' 个百分点'),en=value(Math.abs(row.diff),'en-US').replace('%',' percentage points');
+  const label=row.status==='met'?(row.cap?['符合上限','Within cap']:['已达到参考','Target met']):row.cap?[`高出上限 ${zh}`,`${en} above cap`]:[`还差 ${zh}`,`${en} short`];
+  const rounded=Number((ratio*100).toFixed(1));
+  const percent=row.cap?'':`${row.status==='short'?Math.min(99.9,rounded):rounded}% · `;
+  node.append(localized('span',percent+label[0],percent+label[1],'showcase-target-status'));return node;
+}
+function usableCheck(check){
+  const row=el('details','showcase-usable-check');row.dataset.check=check.id;row.dataset.status=check.status;
+  const header=el('summary'),labels={met:['已确认','Confirmed'],unmet:['需调整','Needs adjustment'],unknown:['待确认','Unverified'],excluded:['本档不核对','Outside this check']};
+  header.append(el('span','',check.label),localized('strong',...(labels[check.status]||labels.unknown)));
+  row.append(header,el('p','',check.reason));return row;
+}
+function graduationOverview(agent,targets,counts,score,hasCore){
+  const root=el('section','showcase-section showcase-targets');root.id='showcase-graduation';
+  const header=el('div','showcase-target-head'),title=localized('h3','个人毕业进度','Personal build progress'),label=el('label'),tier=el('select');
+  tier.id='showcase-graduation-tier';label.append(localized('span','目标档位','Target tier'),tier);
+  for(const [key,zh,en] of [['usable','能用','Usable'],['small','小毕业参考','Standard target'],['large','大毕业参考','Advanced target']]){
+    const option=localized('option',zh,en);option.value=key;tier.append(option);
+  }
+  tier.value=graduationTier;tier.onchange=()=>{graduationTier=tier.value;renderResult();$('showcase-graduation-tier')?.focus({preventScroll:true});};
+  header.append(title,label);root.append(header);
+  const eligible=targets.rows.filter(r=>!r.reason),met=eligible.filter(r=>r.status==='met').length;
+  root.dataset.met=String(met);root.dataset.total=String(eligible.length);
+  const meta=el('div','showcase-target-meta');
+  const usable=graduationTier==='usable';root.dataset.tier=graduationTier;
+  if(usable)meta.append(localized('strong','装备基础检查','Equipment checks'));
+  else if(eligible.length)meta.append(localized('strong',`${met} / ${eligible.length} 项达到参考`,`${met} / ${eligible.length} targets met`));
+  else meta.append(localized('strong',targets.profile?'暂无可直接比较的个人目标':'暂无角色培养参考',targets.profile?'No comparable personal targets':'No build reference available'));
+  if(!usable)meta.append(isDemo?localized('span','示例装备估算 / 60 级目标','Simulated equipment estimate / Lv. 60 target'):localized('span','公开装备估算 / 60 级目标','Public equipment estimate / Lv. 60 target'));
+  root.append(meta);
+  const structuralIds=['six-slots','main-stats','set-fit'];
+  if(usable){
+    const checks=el('div','showcase-usable-grid');
+    for(const check of targets.checks||[])if(structuralIds.includes(check.id))checks.append(usableCheck(check));
+    root.append(checks);
+  }
+  if(eligible.length){const grid=el('div','showcase-target-grid');for(const row of eligible)grid.append(targetLine(row));root.append(grid);}
+  const overview=el('div','showcase-target-overview'),core=agent.coreSkillEnhancement?'ABCDEF'[agent.coreSkillEnhancement-1]:'';
+  const skills=(agent.skills||[]).filter(s=>s.id!==5&&Number.isInteger(s.baseLevel)),maxed=skills.filter(s=>s.baseLevel>=12).length;
+  const strengths=el('div');strengths.append(localized('span',`影画 ${agent.mindscape} · 核心 ${core||'基础'}`,`M${agent.mindscape} · Core ${core||'Base'}`));
+  if(skills.length)strengths.append(' · ',localized('span',`基础 12 级技能 ${maxed}/${skills.length}`,`Base Lv. 12 skills ${maxed}/${skills.length}`));
+  const engine=el('div');
+  if(agent.weapon){engine.append(el('span','',agent.weapon.name),' · ',localized('span',`${agent.weapon.level} 级 · 叠影 ${agent.weapon.refinement}`,`Lv. ${agent.weapon.level} · R${agent.weapon.refinement}`));}
+  else engine.append(localized('span','未装备音擎','No W-Engine equipped'));
+  const rolls=el('div');rolls.append(localized('span',`驱动盘 ${score.presentDiscCount}/6`,`Discs ${score.presentDiscCount}/6`));
+  if(counts.confirmedDiscs&&hasCore){
+    const total=score.discScores.reduce((n,d)=>n+(d.valid?d.totalRolls:0),0);
+    rolls.append(' · ',localized('span',`已确认 ${total} 份副词条，其中核心有效 ${counts.effective} 份`,`${counts.effective} core rolls in ${total} verified substat rolls`));
+  }
+  overview.append(strengths,engine,rolls);
+  if(Number.isFinite(score.scoreRatio)&&score.maxRolls>0){
+    const ratio=Number((100*score.scoreRatio).toFixed(1));
+    overview.append(localized('div',`六盘核心覆盖 ${ratio}%（${score.knownEffectiveRolls} / ${score.maxRolls} 份理论上限）`,`Six-disc core roll coverage ${ratio}% (${score.knownEffectiveRolls} of ${score.maxRolls} possible)`));
+  }
+  if(attributeChoices.has(agent.id))overview.append(localized('div','核心份数按本页自选属性统计，单盘评分仍按角色默认权重。','Core roll counts use your selection. Individual scores use the agent’s default weights.'));
+  root.append(overview);
+  const fold=el('details','showcase-target-info'),others=targets.rows.filter(r=>r.reason);
+  fold.append(localized('summary',others.length?`参考条件与未计入的 ${others.length} 项`:'目标来源与条件',others.length?`Reference conditions and ${others.length} excluded target(s)`:'Target sources and conditions'));
+  fold.append(localized('p','目标与 DUKE 驱动盘规划一致。能用档检查盘位、主属性和套装。按公开展柜的实际等级、影画、音擎和装备估算当前面板。小毕业取攻略下限，大毕业取区间上沿。未注明场内或场外的攻略按培养参考比较，组队与战斗条件另计。','Targets match the DUKE Drive Disc Planner. The usable tier checks slots, main stats and sets. Current stats are estimated for the displayed levels, Mindscapes, W-Engine and discs. Standard targets use the guide minimums and advanced targets use the upper end when listed. Unspecified combat context is treated as a build reference. Team and combat conditions are separate.'));
+  if(usable){
+    for(const check of targets.checks||[])if(!structuralIds.includes(check.id))fold.append(usableCheck(check));
+  }
+  if(Number.isFinite(score.scoreRatio))fold.append(localized('p','六盘核心覆盖按已确认核心副词条份数，除以六张满级 S 盘在现有主属性下的理论核心份数上限。单盘评分按角色默认词条权重另算。','Six-disc coverage divides verified core substat rolls by their theoretical maximum across six max-level S-Rank discs with these main stats. Individual disc scores use the agent’s default weighted substats.'));
+  if(others.length){const list=el('div','showcase-target-excluded');for(const r of others)list.append(targetLine(r));fold.append(list);}
+  const conditions=[...new Set(eligible.map(row=>row.configurationNote||row.bound==='mechanic-threshold'&&row.note).filter(Boolean))];
+  for(const condition of conditions)fold.append(el('p','',condition));
+  const url=targets.profile?.source?.url;
+  if(/^https:\/\//.test(url||'')){
+    const link=localized('a','查看角色培养参考原文 ↗','Read the original build reference ↗');link.href=url;link.target='_blank';link.rel='noopener noreferrer';fold.append(link);
+  }
+  root.append(fold);return root;
 }
 function mask(uid){return uid==='DEMO'?'示例':String(uid).slice(0,2)+'****'+String(uid).slice(-4);}
 function cacheSeconds(){return Math.max(0,Math.ceil((cacheDeadline-Date.now())/1000));}
@@ -81,7 +203,7 @@ function updateChoices(agent,selection,option,category,checked,focusId){
   }
   renderResult();$(focusId)?.focus({preventScroll:true});
 }
-function attributePanel(agent,reference,selection){
+function attributePanel(agent,reference,selection,config){
   const custom=attributeChoices.has(agent.id),panel=el('div','showcase-reference');
   const heading=el('div','showcase-reference-heading'),copy=el('div');copy.append(el('h4','','有效副词条'),el('p','',custom?'本页自选方案':'角色建议 · 配装参考'));
   const reset=el('button','showcase-reset','恢复角色建议');reset.id='showcase-reset-attributes';reset.type='button';reset.disabled=!custom;
@@ -103,11 +225,28 @@ function attributePanel(agent,reference,selection){
     input.onchange=()=>updateChoices(agent,selection,option,'supplement',input.checked,input.id);label.append(input,el('span','',option.name));supplementOptions.append(label);
   }
   adjust.append(el('p','showcase-reference-note','同一属性只能归入一类，选择补充会取消其核心选择。'),supplementOptions);panel.append(adjust);
+  const profile=getDiscScoreProfile(reference,panelData,config);
+  if(profile.available)panel.append(discWeightDetails(profile));
   const reasons=reference?.reasons||[];if(reasons.length)panel.append(el('p','showcase-reference-reason',reasons[0]));
   const source=el('p','showcase-reference-source',custom?'本页自选方案，可按队伍调整。':'本站配装参考，可按队伍调整。');
-  const link=el('a','','查看角色依据 ↗');link.href=`agents.html?v=20261117-disc-farming-launch-1#agent=${agent.id}`;source.append(link);panel.append(source,el('p','showcase-reference-note','选择仅在本页保留；刷新后恢复建议，不保存 UID 或账号资料。'));
+  const link=el('a','','查看角色依据 ↗');link.href=`agents.html?v=20261117-disc-farm-matching-launch-1#agent=${agent.id}`;source.append(link);panel.append(source,el('p','showcase-reference-note','选择仅在本页保留；刷新后恢复建议，不保存 UID 或账号资料。'));
   const status=el('p','showcase-preference-status',preferenceMessages.get(agent.id)||'');status.id='showcase-preference-status';status.setAttribute('role','status');status.setAttribute('aria-live','polite');panel.append(status);
   return panel;
+}
+function discWeightDetails(profile){
+  const fold=el('details','showcase-panel-notes');fold.id='showcase-default-weights';
+  fold.append(localized('summary','单盘评分的角色默认权重','Default weights for individual disc scores'));
+  const weights=el('div','showcase-attribute-chips');
+  for(const [id,weight] of Object.entries(profile.weights).filter(([,w])=>w>0).sort((a,b)=>b[1]-a[1]||Number(a[0])-Number(b[0]))){
+    const chip=el('span','',substatName(id));chip.append(` ×${weight}`);weights.append(chip);
+  }
+  fold.append(weights,localized('p','未列出的副词条权重为 0。单盘得分用加权份数除以同主属性满级 S 盘可达到的最高加权份数，再乘 100。自选属性只用于本页的核心、补充份数统计。','Unlisted substats have weight 0. Each disc’s score divides its weighted rolls by the best legal weighted roll total for a max-level S-Rank disc with the same main stat, then multiplies by 100. Custom choices only change the core and supplemental roll counts on this page.'));
+  if(profile.basis?.zh)fold.append(localized('p',profile.basis.zh,profile.basis.en));
+  if(profile.adjustments?.some(a=>a.reason==='claret-crit-conversion'))fold.append(localized('p','克拉蕾核心被动将每份 4.8% 暴击伤害折为 1.68% 暴击率，相当于一份 2.4% 暴击率的 0.7 倍。','Claret’s Core Passive converts each 4.8% CRIT DMG roll into 1.68% CRIT Rate, or 0.7 of a direct 2.4% CRIT Rate roll.'));
+  if(/^https:\/\//.test(profile.basis?.sourceUrl||'')){
+    const link=localized('a','角色或流派依据 ↗','Agent or build reference ↗');link.href=profile.basis.sourceUrl;link.target='_blank';link.rel='noopener noreferrer';fold.append(link);
+  }
+  return fold;
 }
 function countCard(title,total,first,additional,cls='',emptyNote='先勾选至少 1 项核心属性'){
   const card=el('div',`showcase-count-card ${cls}`),value=el('strong','showcase-count-value',total==null?'—':total);value.append(el('small','','份'));
@@ -132,17 +271,24 @@ function renderResult(){
     if(result.hiddenCount||result.unsupportedCount)empty.append(el('p','section-note',`已隐藏 ${result.hiddenCount||0} 位；当前资料暂不支持 ${result.unsupportedCount||0} 位。`));
     $('showcase-agent-detail').replaceChildren(empty);return;
   }
-  const guide=details.agents?.[agent.id]||{},reference=builds.agents?.[agent.id],selection=attributeChoices.has(agent.id)?referenceSelection({role:reference?.role,effectiveSubstats:attributeChoices.get(agent.id)}):referenceSelection(reference);
+  const guide=details.agents?.[agent.id]||{},reference=withDiscScoreDefaults(builds.agents?.[agent.id]),selection=attributeChoices.has(agent.id)?referenceSelection({role:reference?.role,effectiveSubstats:attributeChoices.get(agent.id)}):referenceSelection(reference);
   const build={...selectionBuild(reference,agent.id,selection),conditionalMainStatIds:{5:reference?.role==='命破'?[]:[23103],...(reference?.conditionalMainStatIds||{})}};
   const score=scoreAgent(agent,build),counts=countOccurrences(score.discScores),hasCore=selection.primaryIds.length>0,articleRules=evaluateArticleRules(agent,build,score,selection);
   const hero=el('header','showcase-hero');hero.style.setProperty('--showcase-color',tones[guide.element?.replace('属性','')]||'#917eaa');
   const info=el('div');info.append(el('p','',guide.faction||'代理人'),el('h2','',agent.name));
   const meta=el('div','showcase-hero-meta');for(const value of [`${agent.rank} 级`,`Lv. ${agent.level}`,guide.element,guide.specialty].filter(Boolean))meta.append(el('span','',value));
   const cinema=el('div','showcase-mindscape');cinema.setAttribute('aria-label',`已解锁 ${agent.mindscape} 层影画`);for(let i=1;i<=6;i++)cinema.append(el('span',i<=agent.mindscape?'active':'',i));
-  info.append(meta,cinema);const link=el('a','showcase-guide-link','查看角色资料与配装 ↗');link.href=`agents.html?v=20261117-disc-farming-launch-1#agent=${agent.id}`;hero.append(img(agent.icon),info,link);
+  info.append(meta,cinema);const link=el('a','showcase-guide-link','查看角色资料与配装 ↗');link.href=`agents.html?v=20261117-disc-farm-matching-launch-1#agent=${agent.id}`;hero.append(img(agent.icon),info,link);
   if(portraits[agent.id]?.src)hero.append(img(portraits[agent.id].src,'showcase-hero-art'));
-  const planner=el('button','primary-button','带入当前配装，规划驱动盘 ↗');planner.type='button';planner.onclick=()=>{try{sessionStorage.setItem('bagel-disc-planner-handoff',JSON.stringify(agent));location.href=`disc-planner.html?agent=${encodeURIComponent(agent.id)}&v=20260916-english-2`;}catch{planner.textContent='浏览器存储受限，请在驱动盘规划页重新读取展柜';}};hero.append(planner);
-  const columns=el('div','showcase-columns'),panel=agentPanel(agent);
+  const planner=el('button','primary-button','带入当前配装，规划驱动盘 ↗');planner.type='button';planner.onclick=()=>{try{sessionStorage.setItem('bagel-disc-planner-handoff',JSON.stringify({...agent,planningTier:graduationTier}));location.href=`disc-planner.html?agent=${encodeURIComponent(agent.id)}&v=20260916-english-2`;}catch{planner.textContent='浏览器存储受限，请在驱动盘规划页重新读取展柜';}};hero.append(planner);
+  const config=normalizedToConfiguration(agent,panelData);
+  const stats=Object.fromEntries((agent.stats||[]).filter(s=>Number.isFinite(s.value)).map(s=>[s.propertyId,s.value]));
+  // Both public showcase normalizers omit zero Sheer Force.
+  if(Object.keys(stats).length&&!Object.hasOwn(stats,123))stats[123]=0;
+  const currentPanel=applyPanelMechanics(config,stats,panelData);
+  const targets=personalTargets(agent,guide,reference,config,currentPanel.values);
+  const overview=graduationOverview(agent,targets,counts,score,hasCore);
+  const columns=el('div','showcase-columns'),panel=agentPanel(agent,currentPanel);
   const weaponPanel=section('音擎','当前展示角色装备');
   if(agent.weapon){const w=agent.weapon,head=el('div','showcase-weapon'),copy=el('div');copy.append(el('h4','',w.name),el('p','',`${w.rank} 级 · Lv. ${w.level} · 叠影 ${w.refinement} 阶`));head.append(img(w.icon),copy);weaponPanel.append(head,statRows(w.stats,'showcase-weapon-stats'));}
   else weaponPanel.append(el('p','section-note','没有读取到已收录的音擎。'));
@@ -171,10 +317,11 @@ function renderResult(){
   const ruleIntro=el('div','showcase-article-intro');
   const ruleCopy=el('div');ruleCopy.append(el('h4','','判断顺序：套装 → 主属性 → 副属性'));
   const ruleSource=el('a','','17173 攻略原文 ↗');ruleSource.href=ARTICLE_REFERENCE.url;ruleSource.target='_blank';ruleSource.rel='noreferrer';ruleIntro.append(ruleCopy,ruleSource);discs.append(ruleIntro);
+  discs.append(localized('p','单盘副词条评分与驱动盘规划共用角色默认权重，满分 100。核心份数随本页勾选调整，整套贡献按卸下该盘后重算的面板变化显示。','Individual disc scores use the planner’s default agent weights, out of 100. Core roll counts follow the selection on this page. Build contribution compares the full build against the same build with that disc removed.','section-note'));
   const mainReview=notes('主属性检查 · 4–6 号位',(score.mainStatChecks||[]).filter(check=>check.slot>=4).map(check=>`${check.slot} 号位：${(check.actual||[]).join(' / ')||'暂无'}；参考 ${(check.expected||[]).join(' / ')||'暂无'}${check.conditional?' · 条件备选，需核对角色与队伍需求':check.matched===true?' · 符合参考':check.matched===false?' · 建议核对':''}`));
   mainReview.id='showcase-main-check';mainReview.open=true;mainReview.append(el('p','showcase-reference-note','异常掌控、冲击力、能量自动回复、穿透率和属性增伤属于主属性，不计入副词条份数。'));
   discs.append(mainReview);
-  discs.append(attributePanel(agent,reference,selection));
+  discs.append(attributePanel(agent,reference,selection,config));
   const counters=el('div','showcase-count-grid');counters.id='showcase-counts';counters.setAttribute('aria-live','polite');counters.setAttribute('aria-atomic','true');
   const effectiveKnown=hasCore&&counts.confirmedDiscs>0;
   const effective=countCard(counts.confirmedDiscs===6?'总有效副词条':'已确认的有效副词条',effectiveKnown?counts.effective:null,counts.effectiveFirst,counts.effectiveAdditional,'is-core',hasCore?'词条资料待确认':'先勾选至少 1 项核心属性');effective.id='showcase-effective-count';effective.dataset.count=effectiveKnown?String(counts.effective):'';
@@ -202,6 +349,15 @@ function renderResult(){
     if(ds?.valid){card.dataset.totalRolls=String(ds.totalRolls);foot.append(el('span','showcase-disc-total',`副词条合计 ${ds.totalRolls} 份 · 初始 ${ds.initialTypes} 条`));foot.append(el('strong','',hasCore?`有效 ${dc.effective} 份`:'先选择核心属性'));if(hasCore)foot.append(el('span','',`首次 ${dc.effectiveFirst} + 追加 ${dc.effectiveAdditional}`));foot.append(el('span','',`补充 ${dc.supplement} 份`));}
     else{foot.append(el('strong','',ds?.status==='unsupported-rarity'?'原始词条 · 暂不汇总':'词条数据待确认'));for(const warning of ds?.warnings||[])foot.append(el('span','',warning.replace(/暂停评分/g,'暂不汇总').replace(/评分/g,'计数')));}
     card.append(foot);
+    const weighted=scoreDisc(config.discs.find(disc=>disc.slot===slot),reference,panelData,config);
+    const mark=el('div','showcase-disc-subscore');mark.dataset.score=weighted.score??'';mark.dataset.status=weighted.status;
+    const estimate=weighted.status==='partial'||weighted.status==='unleveled';
+    mark.append(estimate?localized('span','副词条评分 · 已录入','Substat score · recorded'):localized('span','副词条评分','Substat score'));
+    if(Number.isFinite(weighted.score))mark.append(el('strong','',`${Number(weighted.score.toFixed(1))} / 100`));
+    else mark.append(weighted.status==='main-mismatch'?localized('span','当前主属性不符合参考','Main stat outside the reference'):localized('span','暂无评分','Unrated'));
+    card.append(mark);
+    const contribution=targets.contributions[slot];
+    if(contribution?.status==='ready')card.append(renderDiscContribution(contribution));
     const judgement=articleRules.discs.find(entry=>entry.slot===slot);
     if(judgement){const verdict=el('div','showcase-disc-verdict');verdict.dataset.status=judgement.status;verdict.append(el('strong','',judgement.title),el('p','',judgement.note));verdict.dataset.coreTypes=String(judgement.coreTypes??'');card.append(verdict);}
     grid.append(card);
@@ -218,7 +374,7 @@ function renderResult(){
     '本页不复刻未公开的服务端评分，也不提供字母评级。选择套装、主属性与队伍所需面板后，再考虑副词条。',
   ]));
   // Main-stat checks are displayed before the substat selector.
-  $('showcase-agent-detail').replaceChildren(hero,columns,skills,training,discs);
+  $('showcase-agent-detail').replaceChildren(hero,overview,columns,skills,training,discs);
 }
 function setBusy(value){busy=value;for(const id of ['showcase-query','showcase-demo','showcase-uid'])$(id).disabled=value;$('showcase-query').textContent=value?'读取中…':'查询练度';renderRefresh();}
 async function queryShowcase(uid){
@@ -241,13 +397,13 @@ async function queryShowcase(uid){
 }
 $('showcase-form').addEventListener('submit',e=>{e.preventDefault();queryShowcase($('showcase-uid').value.trim());});
 $('showcase-refresh').onclick=()=>{if(result&&!isDemo)queryShowcase(String(result.uid));};
-$('showcase-demo').onclick=async()=>{if(busy)return;setBusy(true);try{const response=await fetch('showcase-demo.json?v=20261117-disc-panel-launch-1');if(!response.ok)throw new Error('示例资料暂未就绪，请稍后刷新。');result=await response.json();isDemo=true;previousData=false;selectedId='';cacheDeadline=0;stopCacheTimer();renderResult();message('正在浏览虚构的练度示例，可输入 UID 查询自己的公开展柜。');}catch(error){message(error.message,'error');}finally{setBusy(false);}};
+$('showcase-demo').onclick=async()=>{if(busy)return;setBusy(true);try{const response=await fetch(demoUrl);if(!response.ok)throw new Error('示例资料暂未就绪，请稍后刷新。');result=await response.json();isDemo=true;previousData=false;selectedId='';cacheDeadline=0;stopCacheTimer();renderResult();message('正在浏览虚构的练度示例，可输入 UID 查询自己的公开展柜。');}catch(error){message(error.message,'error');}finally{setBusy(false);}};
 document.addEventListener('visibilitychange',()=>{if(!document.hidden)startCacheTimer();});
 window.addEventListener('pagehide',()=>{controller?.abort();stopCacheTimer();});
 window.addEventListener('pageshow',startCacheTimer);
 try{
-  setBusy(true);const responses=await Promise.all(['agent-builds.json?v=20261111-refresh-launch-1','agent-equipment.json?v=20261111-refresh-launch-1','agent-details.json?v=20261111-refresh-launch-1','agent-portraits.json?v=20261021-v33-launch-1','disc-planner-data.json?v=20261117-disc-panel-launch-1'].map(async path=>{const r=await fetch(path);if(!r.ok)throw new Error('角色资料暂未读取成功，请刷新重试。');return r.json();}));
-  [builds,equipment,details,,panelData]=responses;portraits=responses[3].images||{};setBusy(false);
+  setBusy(true);const responses=await Promise.all(['agent-builds.json?v=20261111-refresh-launch-1','agent-equipment.json?v=20261111-refresh-launch-1','agent-details.json?v=20261111-refresh-launch-1','agent-portraits.json?v=20261021-v33-launch-1','disc-planner-data.json?v=20261117-disc-panel-launch-1','agent-graduation.json?v=20261027-gachabase-all-1'].map(async path=>{try{const r=await fetch(path);if(!r.ok)throw new Error('角色资料暂未读取成功，请刷新重试。');return await r.json();}catch(error){if(path.startsWith('agent-graduation.json'))return null;throw error;}}));
+  [builds,equipment,details,,panelData,graduation]=responses;portraits=responses[3].images||{};setBusy(false);
   window.showcaseAnalysis={getState:()=>({ready:true,demo:isDemo,selectedId,count:result?.agents.length||0,busy})};
   if(new URL(location.href).searchParams.get('demo')==='1')$('showcase-demo').click();
 }catch(error){setBusy(false);message(error.message,'error');}

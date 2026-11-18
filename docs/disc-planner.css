@@ -158,6 +158,11 @@ html[data-theme="dark"] .disc-card-count-details[data-status="invalid"]>summary,
 .disc-card-score-number strong{font-size:25px;line-height:1.2;letter-spacing:-.025em}
 .disc-card-score-number small{font-size:11px;font-weight:500;color:var(--muted)}
 .disc-card-score-label{display:block;font-size:10px;color:var(--muted);line-height:1.4;margin-bottom:3px}
+.disc-build-contribution{margin-top:8px;color:var(--text);line-height:1.45;overflow-wrap:anywhere}
+.disc-contribution-label{display:block;font-size:10px;color:var(--muted)}
+.disc-build-contribution p{margin:2px 0 0;font-size:12px}
+.disc-build-contribution [data-kind="threshold"]{font-weight:650}
+.disc-build-contribution [data-kind="set"]{font-size:11px;color:var(--muted)}
 .disc-card-grade{display:flex;align-items:center;gap:5px;padding:5px 7px;border-radius:7px;background:var(--theme-accent-bg);flex:0 0 auto}
 .disc-card-grade span{font-size:10px;color:var(--muted)}
 .disc-card-grade strong{font-size:18px;line-height:1.1}

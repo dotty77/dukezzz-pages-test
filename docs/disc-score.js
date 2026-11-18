@@ -1,8 +1,8 @@
-import {inspectDiscRolls} from './disc-planner-core.js?v=20261117-disc-farming-launch-1';
+import {inspectDiscRolls,baseEquipmentProperties} from './disc-planner-core.js?v=20261117-disc-farm-matching-launch-1';
 
 // DUKE's transparent allocation rubric, not official ratings or a damage model.
 export const SCORE_RULES=Object.freeze({
-  version:'duke-disc-score-v1',scale:100,primaryWeight:1,secondaryWeight:0.5,
+  version:'duke-disc-score-v2',scale:100,primaryWeight:1,secondaryWeight:0.5,
   grades:Object.freeze([
     {grade:'SSS',min:90},{grade:'SS',min:80},{grade:'S',min:70},
     {grade:'A',min:60},{grade:'B',min:45},{grade:'C',min:30},{grade:'D',min:0}
@@ -11,14 +11,57 @@ export const SCORE_RULES=Object.freeze({
 const round=value=>Math.round((value+Number.EPSILON)*10)/10;
 const uniqueIds=values=>[...new Set((Array.isArray(values)?values:[]).map(Number).filter(Number.isSafeInteger))];
 
-export function getDiscScoreProfile(build,data){
+// The recorded Workshop default lists percentage and flat ATK under a single
+// ATK heading. Nine ATK% rolls plus two flat ATK rolls total 9.6 in its detail.
+const velinaWeights=Object.freeze({31203:1,12102:0.75,23203:0.3,12103:0.75*0.3});
+function velinaDefault(build){
+  if(String(build?.id)!=='1561'||build.customSubstats||build.alternativeId||build.alternativeSource)return false;
+  const primary=uniqueIds(build.effectiveSubstats?.primaryIds),secondary=uniqueIds(build.effectiveSubstats?.secondaryIds);
+  return primary.length===2&&primary.includes(31203)&&primary.includes(12102)&&secondary.includes(12103)&&secondary.every(id=>id===12103||id===23203);
+}
+export function withDiscScoreDefaults(build){
+  if(!velinaDefault(build)||uniqueIds(build.effectiveSubstats.secondaryIds).includes(23203))return build;
+  return {...build,effectiveSubstats:{...build.effectiveSubstats,secondaryIds:[...build.effectiveSubstats.secondaryIds,23203]}};
+}
+
+export function getDiscScoreProfile(build,data,config){
+  build=withDiscScoreDefaults(build);
   const primaryIds=uniqueIds(build?.effectiveSubstats?.primaryIds);
   const secondaryIds=uniqueIds(build?.effectiveSubstats?.secondaryIds);
   const weights=Object.fromEntries(Object.keys(data.subBases||{}).map(id=>[id,0]));
   for(const id of secondaryIds)if(Object.hasOwn(weights,id))weights[id]=SCORE_RULES.secondaryWeight;
   for(const id of primaryIds)if(Object.hasOwn(weights,id))weights[id]=SCORE_RULES.primaryWeight;
   const agentId=String(build?.id||''),adjustments=[];
-  if(agentId==='1611'&&weights[20103]>0&&weights[21103]>0){
+  let basis={zh:'DUKE 按当前玩法的词条分类赋予基础权重，优先为 1，补充为 0.5。',
+    en:'DUKE assigns 1 to this build’s priority substats and 0.5 to its supplementary substats.',
+    sourceUrl:build?.alternativeSource||build?.mechanicsSource?.url};
+  if(build?.personalDamageSubstatsAreOptional)basis={
+    zh:'本流派按个人输出方向赋权，优先 1、补充 0.5。护盾与击破功能另看主属性和整套面板。',
+    en:'These priorities (1) and supplementary stats (0.5) rate this personal damage variant. Check shields and Daze separately against main stats and the equipped build.',
+    sourceUrl:build.alternativeSource};
+  if(velinaDefault(build)){
+    for(const [id,weight] of Object.entries(velinaWeights))if(Object.hasOwn(weights,id))weights[id]=Math.round(weight*1000)/1000;
+    basis={zh:'维琳娜采用工坊样本的精通 1、攻击% 0.75、穿透值 0.3。',
+      en:'Velina uses the Workshop sample’s Proficiency weight of 1, ATK% weight of 0.75 and PEN weight of 0.3.'};
+  }
+  const flatConversions=[];
+  const base=!build?.customSubstats&&String(config?.id)===agentId?baseEquipmentProperties(config,data):null;
+  for(const [group,zh,en] of [[111,'生命','HP'],[121,'攻击','ATK'],[131,'防御','DEF']]){
+    const flatId=group*100+3,percentId=group*100+2,percentWeight=weights[percentId];
+    if(!(percentWeight>0&&weights[flatId]>0))continue;
+    const baseValue=base?.[group*100+1],flatUnit=Number(data.subBases[flatId]),percentUnit=Number(data.subBases[percentId])/100;
+    if(!(Number.isFinite(baseValue)&&baseValue>0&&Number.isFinite(flatUnit)&&flatUnit>0&&Number.isFinite(percentUnit)&&percentUnit>0))continue;
+    const weight=Math.round(flatUnit/(baseValue*percentUnit/100)*percentWeight*1000)/1000;
+    weights[flatId]=weight;
+    flatConversions.push({flatId,percentId,baseValue,flatUnit,percentUnit,percentWeight,weight});
+    basis.zh+=` 按当前基础${zh} ${baseValue}，固定${zh}单份权重为 ${flatUnit} ÷（${baseValue} × ${percentUnit}%）× ${percentWeight} ≈ ${weight}。`;
+    basis.en+=` At ${baseValue} base ${en}, one flat ${en} roll has weight ${flatUnit} ÷ (${baseValue} × ${percentUnit}%) × ${percentWeight} ≈ ${weight}.`;
+  }
+  if(velinaDefault(build)&&!flatConversions.length){
+    basis.zh+=' 基础攻击资料不全时，按样本中 9 份攻击% 与 2 份固定攻击合计 9.6 份，推算固定攻击权重为 0.225。';
+    basis.en+=' When base ATK is unavailable, the sample’s nine ATK% rolls and two flat ATK rolls total 9.6 ATK rolls, implying a flat ATK weight of 0.225.';
+  }
+  if(!build?.customSubstats&&agentId==='1611'&&weights[20103]>0&&weights[21103]>0){
     // Fixed Gachabase release 3.3.0 D/R19815450: initial CD -> initial CR at 0.35.
     // 4.8% CD per roll gives 1.68% CR, compared with 2.4% per direct CR roll.
     const critRate=Number(data.subBases[20103]),critDamage=Number(data.subBases[21103]);
@@ -28,7 +71,7 @@ export function getDiscScoreProfile(build,data){
         sourceUrl:build.mechanicsSource?.url||'https://zzz.gachabase.net/agents/1611/claret/release/3.3.0/19815450?lang=zh-CN'});
     }
   }
-  return {agentId,weights,adjustments,primaryIds,secondaryIds,mode:build?.effectiveSubstats?.mode||'core-substats',
+  return {agentId,weights,adjustments,basis,flatConversions,primaryIds,secondaryIds,mode:primaryIds.length?'core-substats':'supplement-only',
     available:Object.values(weights).some(weight=>weight>0)};
 }
 
@@ -41,8 +84,8 @@ function mainStatStatus(disc,build,data){
   return 'mismatch';
 }
 
-export function scoreDisc(disc,build,data){
-  const d=disc||{},profile=getDiscScoreProfile(build,data),weights=profile.weights;
+export function scoreDisc(disc,build,data,config){
+  const d=disc||{},profile=getDiscScoreProfile(build,data,config),weights=profile.weights;
   const mainStatus=mainStatStatus(d,build,data),count=inspectDiscRolls(d,data);
   const result={status:'invalid',mainStatus,score:null,grade:null,estimatedGrade:null,substatScore:null,
     weightedRolls:0,maxWeightedRolls:0,weights,lines:[],reasons:[],profile};

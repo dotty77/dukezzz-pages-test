@@ -38,8 +38,11 @@ export function setSelection(selection, propertyId, category, checked) {
 export function selectionBuild(build, agentId, selection) {
   if (!selection) return build;
   const picked = referenceSelection({role: build?.role, effectiveSubstats: selection});
+  const reference = referenceSelection(build);
+  const changed = ['primaryIds','secondaryIds'].some(key => picked[key].length !== reference[key].length ||
+    picked[key].some(id => !reference[key].includes(id)));
   return {
-    ...(build || {}), id: String(agentId),
+    ...(build || {}), id: String(agentId), customSubstats: changed,
     effectiveSubstats: {
       ...(build?.effectiveSubstats || {}), ...picked,
       mode: picked.primaryIds.length ? 'core-substats' : 'supplement-only',

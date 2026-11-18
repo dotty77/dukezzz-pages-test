@@ -48,14 +48,18 @@ export function weaponStats(config,data){
   if(!w||!l||!s)throw Error('音擎等级资料不完整');
   return ['MainStat','SecondaryStat'].map((k,i)=>({propertyId:w[k].PropertyId,value:Math.floor(w[k].PropertyValue*(10000+(i?s.secondary:l.main+s.main))/10000)}));
 }
-export function validateConfiguration(config,data){
+function validateAgentEquipment(config,data){
   const problems=[];
   if(numericId(config.id)===null||!owns(data.agents,config.id))problems.push('请选择已收录的正式服代理人');
-  for(const [k,min,max]of [['level',1,60],['promotion',0,6],['core',0,6],['cinema',0,6],['refinement',1,5],['weaponLevel',1,60],['weaponBreak',0,5]])if(!integer(config[k],min,max))problems.push(`${k} 数值超出范围`);
+  for(const [k,min,max]of [['level',1,60],['promotion',0,6],['core',0,6],['cinema',0,6],['refinement',1,5],['weaponLevel',0,60],['weaponBreak',0,5]])if(!integer(config[k],min,max))problems.push(`${k} 数值超出范围`);
   if(integer(config.level,1,60)&&integer(config.core,1,6)&&config.level<CORE_LEVEL_REQUIREMENTS[config.core])problems.push(`核心强化 ${'ABCDEF'[config.core-1]} 需要角色达到 ${CORE_LEVEL_REQUIREMENTS[config.core]} 级`);
   if(config.weaponId&&(numericId(config.weaponId)===null||!owns(data.weapons,config.weaponId)))problems.push('音擎未收录');
   if(config.level>10*(config.promotion+1))problems.push('角色突破阶段不足以支持当前等级');
   if(config.weaponId&&config.weaponLevel>10*(config.weaponBreak+1))problems.push('音擎改装阶段不足以支持当前等级');
+  return problems;
+}
+export function validateConfiguration(config,data){
+  const problems=validateAgentEquipment(config,data);
   if(!Array.isArray(config.discs)||config.discs.length!==6)return [...problems,'需要六个号位'];
   const seen=new Set();
   for(const d of config.discs){
@@ -109,12 +113,29 @@ function panelFromProperties(config,data,props,groups=panelGroups){
   values[30502]=props[30502]||0;
   return applyPanelMechanics(config,values,data);
 }
-export function calculatePanel(config,data){
-  const errors=validateConfiguration(config,data);if(errors.length)throw Error(errors.join('；'));
-  const a=data.agents[config.id],props={},add=(k,v)=>props[k]=(props[k]||0)+Number(v),promotion=config.promotion?a.PromotionProps[config.promotion-1]:{};
+// Properties before discs and set bonuses. Percentage ATK/HP/DEF rolls scale
+// the corresponding base property, including the character and W-Engine.
+export function baseEquipmentProperties(config,data){
+  if(!config||!data?.agents||config.weaponId&&!data.weapons||validateAgentEquipment(config,data).length)return null;
+  return equipmentProperties(config,data);
+}
+function equipmentProperties(config,data){
+  const a=data.agents[config.id],props={},add=(k,v)=>props[k]=(props[k]||0)+Number(v),promotion=config.promotion?a.PromotionProps?.[config.promotion-1]:{};
+  if(!a.BaseProps||!a.GrowthProps||!a.CoreEnhancementProps?.[config.core]||!promotion)return null;
+  if(config.weaponId){
+    const w=data.weapons[config.weaponId];
+    if(!w.MainStat||!w.SecondaryStat||!data.weaponLevels?.[`${w.Rarity}:${config.weaponLevel}`]||!data.weaponStars?.[`${w.Rarity}:${config.weaponBreak}`])return null;
+  }
   for(const[k,v]of Object.entries(a.BaseProps))add(k,v+Math.floor((a.GrowthProps[k]||0)*(config.level-1)/10000)+(promotion[k]||0));
   for(const[k,v]of Object.entries(a.CoreEnhancementProps[config.core]))add(k,Math.floor(v));
   for(const s of weaponStats(config,data))add(s.propertyId,s.value);
+  return props;
+}
+export function calculatePanel(config,data){
+  const errors=validateConfiguration(config,data);if(errors.length)throw Error(errors.join('；'));
+  const props=equipmentProperties(config,data);
+  if(!props)throw Error('角色或音擎的基础属性资料不完整');
+  const add=(k,v)=>props[k]=(props[k]||0)+Number(v);
   const counts={};
   for(const d of config.discs){
     if(d.absent)continue;
@@ -320,6 +341,53 @@ function farmGroups(config,data,rows){
   return groups;
 }
 const farmGap=(row,values)=>Math.max(0,(row.bound==='maximum'?1:-1)*(values[row.group]-row.targetRaw))/Math.max(1,row.targetRaw);
+function comparableDiscTargets(rows,options){
+  return rows.filter(row=>!(options.scope==='solo'&&row.scopeExcluded)&&!row.contextBlocked&&row.applicable!==false&&
+    !['in-combat','unspecified-combat-bonus'].includes(row.scope??row.panelContext)&&(row.comparable||options.useReference)&&
+    (row.planning||row.bound==='maximum')&&Number.isFinite(row.targetRaw));
+}
+
+/** Compare each equipped disc with an empty slot, holding the other five
+ * fixed. Recalculate the whole panel so set breakpoints and nonlinear Core
+ * Skill conversions retain their actual in-build marginal contribution. */
+export function evaluateDiscContributions(config,data,rows=[],options={}){
+  const result={},valid=!validateConfiguration(config,data).length;
+  const full=valid?calculatePanel(config,data):null;
+  const targets=comparableDiscTargets(rows,options).filter(row=>row.comparable||
+    ['initial-reference-unqualified','signature-conditioned'].includes(row.scope??row.panelContext));
+  const partial=config.discs.some(d=>!d.absent&&!inspectDiscRolls(d,data).complete);
+  for(const disc of config.discs){
+    const item={status:disc.absent?'absent':valid?'ready':'unknown',partial,targets:[],effects:[],setLoss:null,main:null};
+    result[disc.slot]=item;
+    if(item.status!=='ready')continue;
+    const removed=calculatePanel({...config,discs:config.discs.map(d=>d===disc?{...d,absent:true,locked:false}:d)},data);
+    const group=Math.floor(Number(disc.mainId)/100);
+    item.main={group,withDisc:full.values[group],withoutDisc:removed.values[group],delta:full.values[group]-removed.values[group]};
+    const pieces=full.counts[disc.setId];
+    if(pieces===2||pieces===4)item.setLoss={id:disc.setId,pieces};
+    for(const row of targets){
+      const withDisc=full.values[row.group],withoutDisc=removed.values[row.group];
+      if(!Number.isFinite(withDisc)||!Number.isFinite(withoutDisc)||withDisc===withoutDisc)continue;
+      const sign=row.bound==='maximum'?1:-1;
+      const currentGap=Math.max(0,sign*(withDisc-row.targetRaw)),removedGap=Math.max(0,sign*(withoutDisc-row.targetRaw));
+      item.targets.push({group:row.group,key:row.key,bound:row.bound,targetRaw:row.targetRaw,withDisc,withoutDisc,
+        closed:Math.max(0,removedGap-currentGap),breakpoint:currentGap<1e-8&&removedGap>1e-8,
+        excess:row.bound==='maximum'?Math.max(0,currentGap-removedGap):0});
+    }
+    // Both panels use the same character, Core level and Mindscapes, hence
+    // applyPanelMechanics evaluates the same rules in the same order.
+    full.effects.forEach((effect,i)=>{
+      const previous=removed.effects[i];
+      if(effect.scope!=='passive'||!previous||effect.bonus===previous.bonus)return;
+      item.effects.push({group:effect.group,inputGroup:effect.inputGroup,withBonus:effect.bonus,withoutBonus:previous.bonus,
+        withDisc:full.values[effect.group],withoutDisc:removed.values[effect.group],delta:effect.bonus-previous.bonus});
+    });
+    const tier=r=>r.excess>0?3:r.breakpoint?2:r.closed>0?1:0;
+    item.targets.sort((a,b)=>tier(b)-tier(a)||Number(b.group===group)-Number(a.group===group)||
+      (b.closed+b.excess)/Math.max(1,b.targetRaw)-(a.closed+a.excess)/Math.max(1,a.targetRaw));
+  }
+  return result;
+}
 const factorial=[1,1,2,6,24,120];
 function choose(n,k){
   if(k<0||k>n)return 0;
@@ -390,9 +458,7 @@ function farmMainDistribution(config,data,disc,mainId,setId,rows,groups,baseline
  */
 export function rankFarmSlots(config,data,rows,build,options={},allocation=null){
   const result={status:'no-targets',partial:false,deficits:[],protected:[],priority:null,tuning:null,slots:[]};
-  const targets=rows.filter(row=>!(options.scope==='solo'&&row.scopeExcluded)&&!row.contextBlocked&&row.applicable!==false&&
-    !['in-combat','unspecified-combat-bonus'].includes(row.scope??row.panelContext)&&(row.comparable||options.useReference)&&
-    (row.planning||row.bound==='maximum')&&Number.isFinite(row.targetRaw));
+  const targets=comparableDiscTargets(rows,options);
   if(!targets.length||allocation?.guidanceOnly||config.level!==60||config.core!==6)return result;
   if(validateConfiguration(config,data).length){result.status='unknown';return result;}
   if(!config.discs.some(d=>!d.absent&&d.subs.length)){

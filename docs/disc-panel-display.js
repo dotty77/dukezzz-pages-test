@@ -5,7 +5,10 @@ const statNames = {
   201: ['暴击率', 'CRIT Rate'], 211: ['暴击伤害', 'CRIT DMG'],
   231: ['穿透率', 'PEN Ratio'], 232: ['穿透值', 'PEN'],
   305: ['能量自动回复', 'Energy Regen'], 30502: ['能量自动回复加成', 'Energy Regen bonus'],
-  312: ['异常精通', 'Anomaly Proficiency'], 314: ['异常掌控', 'Anomaly Mastery']
+  312: ['异常精通', 'Anomaly Proficiency'], 314: ['异常掌控', 'Anomaly Mastery'],
+  315: ['物理伤害加成', 'Physical DMG Bonus'], 316: ['火属性伤害加成', 'Fire DMG Bonus'],
+  317: ['冰属性伤害加成', 'Ice DMG Bonus'], 318: ['电属性伤害加成', 'Electric DMG Bonus'],
+  319: ['以太伤害加成', 'Ether DMG Bonus'], 323: ['风属性伤害加成', 'Wind DMG Bonus']
 };
 
 const percentGroups = new Set([201, 202, 211, 212, 213, 231, 306, 307, 308, 309, 310, 311, 313, 315, 316, 317, 318, 319, 321, 322, 323, 325, 30502]);
@@ -25,6 +28,47 @@ function bilingual(tag, zh, en) {
   node.textContent = zh;
   node.dataset.i18nEn = en;
   return node;
+}
+
+export function renderDiscContribution(item) {
+  const box=document.createElement('div');
+  box.className='disc-build-contribution';
+  box.dataset.status=item.status;
+  const label=bilingual('span',item.partial?'整套贡献 · 按已录入估算':'整套贡献',item.partial?'Build contribution · recorded stats':'Build contribution');
+  label.className='disc-contribution-label';
+  box.append(label);
+  function add(kind,group,value,describe){
+    const text=english=>{
+      const stat=statNames[group]?.[english?1:0]||String(group);
+      const amount=formatPanelValue(group,value,english?'en-US':'zh-CN');
+      const delta=amount.replace(/%$/,english?' percentage points':' 个百分点');
+      return describe(english,stat,amount,delta);
+    };
+    const row=bilingual('p',text(false),text(true));
+    row.dataset.kind=kind;
+    if(group!=null){row.dataset.group=String(group);row.dataset.value=String(value);}
+    box.append(row);
+    return row;
+  }
+  const target=item.targets.find(r=>r.excess>0||r.closed>0);
+  if(target?.excess>0){
+    add('excess',target.group,target.excess,(en,stat,amount,delta)=>en?`${stat} exceeds the cap by an extra ${delta}`:`${stat}超出上限的部分增加 ${delta}`);
+  }else if(target?.breakpoint){
+    add('threshold',target.group,target.targetRaw,(en,stat,amount)=>en?`Keeps ${stat} at or ${target.bound==='maximum'?'below':'above'} ${amount}`:`守住${stat} ${amount}`);
+  }else if(target){
+    add('gap',target.group,target.closed,(en,stat,amount,delta)=>en?`${stat} gap reduced by ${delta}`:`${stat}缺口缩小 ${delta}`);
+  }else if(!item.effects.length&&item.main?.delta>0){
+    add('panel',item.main.group,item.main.delta,(en,stat,amount)=>`${stat} +${amount}`);
+  }
+  for(const effect of item.effects){
+    add('passive',effect.group,effect.delta,(en,stat,amount)=>`${en?'Passive conversion · ':'常驻转换 · '}${stat} ${effect.delta>0?'+':''}${amount}`);
+  }
+  if(item.setLoss){
+    const pieces=item.setLoss.pieces;
+    add('set',null,null,en=>en?`Maintains ${pieces}-piece set`:`维持 ${pieces} 件套`).dataset.pieces=String(pieces);
+  }
+  if(box.childElementCount===1)box.append(bilingual('p','当前参考目标无差值','No change to the current target gaps'));
+  return box;
 }
 
 function effectText(effect, english) {

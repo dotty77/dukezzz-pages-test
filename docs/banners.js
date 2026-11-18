@@ -146,7 +146,7 @@ function renderNext(state) {
   const note = el('p', 'planner-muted');
   note.append(el('span', '', '前瞻为开发中内容，以游戏内调频公告为准。'));
   for (const source of upcoming.sources || (upcoming.source ? [upcoming.source] : [])) note.append(' ', sourceLink(source));
-  const link = el('a', '', '在调频分析里规划抽卡 →'); link.href = 'tuning.html?v=20261117-disc-farming-launch-1';
+  const link = el('a', '', '在调频分析里规划抽卡 →'); link.href = 'tuning.html?v=20261117-disc-farm-matching-launch-1';
   side.append(note, link);
   box.replaceChildren(copy, side);
 }
