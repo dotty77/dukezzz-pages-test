@@ -28,7 +28,7 @@ const colors = {物理:'#b59b64',火:'#d97657',冰:'#63acbc',电:'#9578c4',以�
 let roster = [], equipment = {}, builds = {}, catalog = {}, selected = null, selectedTab = 'intro', opener = null;
 let version = '', graduation = {}, detailsBytes = 0, detailGeneration = 0;
 const assets = {
-  directory:'agent-previews.json?v=20261118-archive-roam-launch-1',
+  directory:'agent-previews.json?v=20261118-reviewed-ui-launch-1',
   details:'agent-details.json?v=20261111-refresh-launch-1',
   equipment:'agent-equipment.json?v=20261111-refresh-launch-1',
   builds:'agent-builds.json?v=20261111-refresh-launch-1',
@@ -199,6 +199,8 @@ function portrait(agent, cls) {
 function normalizeAgentSearch(value) {
   return String(value || '').normalize('NFKD').replace(/\p{M}/gu,'').toLowerCase().replace(/[\s’'·-]+/g,'');
 }
+const filterIds = ['agent-element','agent-specialty','agent-rank','agent-version'];
+let directoryResults = [];
 function renderGrid() {
   releasePackedPicturesIn($('agent-grid'));
   const query = normalizeAgentSearch($('agent-search').value);
@@ -208,17 +210,31 @@ function renderGrid() {
     && (!$('agent-rank').value || filterRank(a) === $('agent-rank').value)
     && matchesVersion(a,$('agent-version').value));
   const previewCount=roster.filter(a=>a.officialPreview).length;
-  $('agent-results').textContent = `共 ${roster.length} 位${previewCount ? `（含 ${previewCount} 位官方预告）` : ''} · 当前显示 ${filtered.length} 位`;
+  directoryResults = filtered;
+  const activeCount = filterIds.filter(id => $(id).value).length;
+  const searching = !!$('agent-search').value;
+  const count = $('agent-filter-toggle').querySelector('.filter-count');
+  count.textContent = activeCount;
+  count.hidden = !activeCount;
+  $('agent-filter-reset').hidden = !activeCount && !searching;
+  if (activeCount || searching) {
+    setLocalizedText($('agent-results'), `显示 ${filtered.length} / ${roster.length} 位代理人`, `Showing ${filtered.length} of ${roster.length} agents`);
+  } else {
+    const released = roster.length - previewCount;
+    setLocalizedText($('agent-results'), `${released} 位正式代理人 · ${previewCount} 位官方预告`, `${released} released agents · ${previewCount} official previews`);
+  }
   $('agent-grid').replaceChildren(...filtered.map(agent => {
     const card = el('a',`agent-card${agent.officialPreview ? ' agent-preview-card' : ''}`); card.href = `${location.pathname}${location.search}#agent=${encodeURIComponent(agent.id)}`; card.dataset.rank = filterRank(agent);
     card.style.setProperty('--agent-color', color(agent)); card.setAttribute('aria-label', `查看${agent.name}的资料`);
     const img = portrait(agent,'agent-card-portrait');
     if(filterRank(agent)){const rank=el('span','agent-card-rank',filterRank(agent));if(!agent.rank)rank.title='稀有度来自测试服数据';card.append(rank);}
     card.append(img,localized('h3','',agent.name,agent.nameEn),el('p','',[agent.element,agent.specialty].filter(Boolean).join(' · ') || '战斗资料待公布'),el('p','agent-card-faction',agent.faction || '代理人档案'));
-    if(agent.officialPreview)card.append(el('span','agent-version-badge agent-preview-badge',agent.availability?.badge || '官方预告 · 资料先览'));
-    else if(agent.introducedVersion==='3.3.0')card.append(el('span','agent-version-badge',agent.availability?.status==='announced' ? '3.3 下期 · 11月11日开放' : '3.3 新增'));
-    else if(agent.introducedVersion==='3.2.0')card.append(el('span','agent-version-badge',agent.availability?.status==='announced' ? '3.2 下期 · 资料先览' : '3.2 新增'));
-    if(agent.beta)card.append(bilingual('span','agent-version-badge agent-beta-badge',betaLabel(agent),`${betaVersion(agent)} ${agent.beta?.kind==='changes' ? 'Beta changes' : 'Beta data'}`.trim()));
+    const badges = el('div','archive-card-badges');
+    if(agent.officialPreview)badges.append(el('span','agent-version-badge agent-preview-badge',agent.availability?.badge || '官方预告 · 资料先览'));
+    else if(agent.introducedVersion==='3.3.0')badges.append(el('span','agent-version-badge',agent.availability?.status==='announced' ? '3.3 下期 · 11月11日开放' : '3.3 新增'));
+    else if(agent.introducedVersion==='3.2.0')badges.append(el('span','agent-version-badge',agent.availability?.status==='announced' ? '3.2 下期 · 资料先览' : '3.2 新增'));
+    if(agent.beta)badges.append(bilingual('span','agent-version-badge agent-beta-badge',betaLabel(agent),`${betaVersion(agent)} ${agent.beta?.kind==='changes' ? 'Beta changes' : 'Beta data'}`.trim()));
+    if(badges.childElementCount)card.append(badges);
     card.addEventListener('click', e => { if(!e.ctrlKey && !e.metaKey && !e.shiftKey && e.button===0){e.preventDefault();opener=card;history.pushState(null,'',card.href);openAgent(agent.id);} });
     return card;
   }));
@@ -230,7 +246,6 @@ function setFilters() {
     const entries = [...new Set(roster.map(a=>a[key]).filter(Boolean))];
     for(const entry of entries){const option=el('option','',entry);option.value=entry;$(id).append(option);}
   }
-  $('agent-total').textContent = roster.length;
   const releases = new Map();
   for (const agent of roster) {
     const key = debutVersion(agent.introducedVersion);
@@ -244,8 +259,15 @@ function setFilters() {
     option.value = key;
     $('agent-version').append(option);
   }
-  for(const id of ['agent-search','agent-element','agent-specialty','agent-rank','agent-version']) $(id).addEventListener(id==='agent-search'?'input':'change',renderGrid);
-  $('agent-filter-reset').onclick = () => {for(const id of ['agent-search','agent-element','agent-specialty','agent-rank','agent-version']) $(id).value='';renderGrid();};
+  $('agent-search').addEventListener('input',renderGrid);
+  for(const id of filterIds) $(id).addEventListener('change',renderGrid);
+  $('agent-filter-reset').onclick = () => {
+    for(const id of ['agent-search',...filterIds]) $(id).value='';
+    renderGrid();
+    $('agent-search').focus();
+  };
+  const toggle = $('agent-filter-toggle');
+  toggle.onclick = () => toggle.setAttribute('aria-expanded',String(toggle.getAttribute('aria-expanded')!=='true'));
 }
 function releasePreviewMedia() {
   for(const video of $('agent-detail-content').querySelectorAll('video.agent-preview-video')){if(video.releasePreviewMedia)video.releasePreviewMedia();else {video.pause();video.removeAttribute('src');video.load();}}
@@ -258,9 +280,38 @@ function closeAgent() {
   if(new URLSearchParams(location.hash.slice(1)).has('agent')) history.replaceState(null,'',location.pathname+location.search);
   selected=null;opener?.focus({preventScroll:true});
 }
+function archiveLink(id, tab) {
+  const url = new URL(location.href);
+  const params = new URLSearchParams({agent:id});
+  if (tab !== 'intro') params.set('tab', tab);
+  url.hash = params.toString();
+  return url;
+}
+function selectTab(tab) {
+  selectedTab = tab;
+  history.replaceState(null, '', archiveLink(selected.id, tab));
+  renderDetail();
+}
+function showNeighbor(step) {
+  const index = directoryResults.findIndex(agent => agent.id === selected?.id);
+  const neighbor = directoryResults[index + step];
+  if (index < 0 || !neighbor) return;
+  const sameTab = agentTabs(neighbor).some(([key]) => key === selectedTab);
+  history.replaceState(null, '', archiveLink(neighbor.id, sameTab ? selectedTab : 'intro'));
+  opener = $('agent-grid').children[index + step];
+  openAgent(neighbor.id);
+  if (step < 0 && $('agent-prev').disabled) $('agent-next').focus({preventScroll:true});
+  if (step > 0 && $('agent-next').disabled) $('agent-prev').focus({preventScroll:true});
+}
+$('agent-prev').onclick = () => showNeighbor(-1);
+$('agent-next').onclick = () => showNeighbor(1);
 function openAgent(id) {
   id=({'phoenix-reffaella':'1641','severian-lowell':'1631'})[id] || id;
   const agent=roster.find(a=>a.id===String(id)); if(!agent) return;
+  const index = directoryResults.findIndex(result => result.id === agent.id);
+  $('archive-neighbors').hidden = index < 0 || directoryResults.length < 2;
+  $('agent-prev').disabled = index <= 0;
+  $('agent-next').disabled = index < 0 || index >= directoryResults.length - 1;
   selected=agent;selectedTab=new URLSearchParams(location.hash.slice(1)).get('tab') || 'intro';
   const currentTabs=agentTabs(agent);
   if(!currentTabs.some(([key])=>key===selectedTab))selectedTab='intro';
@@ -277,7 +328,7 @@ function openAgent(id) {
   if(agent.portrait)hero.append(picture(agent.portrait,'','agent-detail-art'));
   $('agent-detail-tabs').replaceChildren(...currentTabs.map(([key,label])=>{
     const button=el('button','',label);button.type='button';button.id=`agent-tab-${key}`;button.dataset.tab=key;button.setAttribute('role','tab');button.setAttribute('aria-controls','agent-detail-content');
-    button.onclick=()=>{selectedTab=key;renderDetail();};
+    button.onclick=()=>selectTab(key);
     button.onkeydown=e=>{
       const index=currentTabs.findIndex(([k])=>k===key);
       let next;
@@ -286,13 +337,13 @@ function openAgent(id) {
       else if(e.key==='Home')next=0;
       else if(e.key==='End')next=currentTabs.length-1;
       else return;
-      e.preventDefault();selectedTab=currentTabs[next][0];renderDetail();$(`agent-tab-${selectedTab}`).focus();
+      e.preventDefault();selectTab(currentTabs[next][0]);$(`agent-tab-${selectedTab}`).focus();
     };
     return button;
   }));
   renderDetail();
-  if(!dialog.open)dialog.showModal();
-  dialog.scrollTop=0;$('agent-close').focus({preventScroll:true});
+  if(!dialog.open){dialog.showModal();$('agent-close').focus({preventScroll:true});}
+  dialog.scrollTop=0;
 }
 function sectionTitle(title,description) {const fragment=new DocumentFragment();fragment.append(el('h3','',title));if(description)fragment.append(note(description));return fragment;}
 function officialArtPath(agent) {return window.DUKE_I18N.language==='en' && agent.officialArtEn ? agent.officialArtEn : agent.officialArt;}
@@ -383,7 +434,7 @@ function renderIntro(agent) {
     if(agent.signatureEngine){const e=agent.signatureEngine;status.append(el('p','agent-role-engine',`专属音擎：${e.name} · ${e.rank}级 · ${e.specialty}`));}
     // Official team suggestions come from the mechanics post; they are a recommendation, not a game rule.
     if(agent.officialTeams?.length){const list=el('ul','agent-role-teams');for(const team of agent.officialTeams){const row=el('li');[agent.name,...team.map(id=>catalog[id]?.name||id)].forEach((name,index)=>{if(index)row.append(' + ');row.append(el('span','',name));});list.append(row);}status.append(el('h5','agent-role-title','官方推荐配队'),list);}
-    if(agent.beta){const button=bilingual('button','agent-beta-open',`查看 ${betaLabel(agent)}`,`View ${betaVersion(agent)} beta data`);button.type='button';button.onclick=()=>{selectedTab='beta';renderDetail();$('agent-tab-beta').focus();};status.append(button);}
+    if(agent.beta){const button=bilingual('button','agent-beta-open',`查看 ${betaLabel(agent)}`,`View ${betaVersion(agent)} beta data`);button.type='button';button.onclick=()=>{selectTab('beta');$('agent-tab-beta').focus();};status.append(button);}
     frag.append(status);
     if(agent.media?.length)frag.append(renderPreviewMedia(agent));
     if(agent.officialArt){

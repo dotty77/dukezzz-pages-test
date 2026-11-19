@@ -7,7 +7,7 @@ import {officialToConfiguration} from './official-equipment.js?v=20261118-disc-c
 import {scoreEquippedDisc,getDiscScoreProfile,SCORE_RULES,withDiscScoreDefaults} from './disc-score.js?v=20261118-disc-context-score-launch-1';
 import {newConfiguration,normalizedToConfiguration,validateConfiguration,calculatePanel,formatProperty,resolveTargets,compareDisc,inspectDiscRolls,evaluateDiscContributions} from './disc-planner-core.js?v=20261118-disc-context-score-launch-1';
 import {evaluateContext,assessUsable} from './disc-context.js?v=20261027-agents-launch-1';
-import {renderPanelEffects,renderDiscFitScore,discFitMethod} from './disc-panel-display.js?v=20261118-disc-context-score-launch-1';
+import {renderPanelEffects,renderDiscFitScore,discFitMethod} from './disc-panel-display.js?v=20261118-reviewed-ui-launch-1';
 import {applyPlanningScope} from './disc-scope.js?v=20260913-disc-planner-1';
 const $=id=>document.getElementById(id),el=(tag,cls='',text='')=>{const n=document.createElement(tag);n.className=cls;n.textContent=text;return n;};
 let data,builds,equipment,details,graduation,mechanics,config,alternative='',planIndex=0,team=['',''],tier='small',allocation=null,busy=false,controller,cacheUntil=0,cacheUid='',snapshot=null;
@@ -19,8 +19,9 @@ function queuePlanRefresh(){
   clearTimeout(refreshTimer);
   if(planRequested||config.discs.some(d=>d.subs.length))refreshTimer=setTimeout(()=>generate(false),400);
 }
-function scrollToDiscSection(id){
+function scrollToDiscSection(id,focus=false){
   const target=document.getElementById(id);if(!target)return;
+  if(focus){target.tabIndex=-1;target.focus({preventScroll:true});}
   target.style.scrollMarginTop=`${Math.ceil(document.querySelector('.site-header')?.getBoundingClientRect().height||74)+16}px`;
   target.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});
 }
@@ -28,9 +29,29 @@ function revealSlotResults(){
   const revision=searchRevision;
   requestAnimationFrame(()=>{if(revision===searchRevision&&slotReview)scrollToDiscSection('disc-slot-results');});
 }
+function mountBuildSettings(){
+  const dialog=$('disc-character'), trigger=$('disc-settings-open');
+  const open=()=>{
+    if(dialog.open)return;
+    dialog.showModal();
+    $('disc-agent').focus({preventScroll:true});
+  };
+  trigger.disabled=false;
+  trigger.addEventListener('click',open);
+  dialog.addEventListener('change',({target})=>{
+    if(target.id&&!target.isConnected)$(target.id)?.focus({preventScroll:true});
+  });
+  dialog.addEventListener('close',()=>{
+    if(location.hash==='#disc-character')history.replaceState(history.state,'',location.pathname+location.search);
+    trigger.focus({preventScroll:true});
+  });
+  const followLink=()=>{if(location.hash==='#disc-character')open();};
+  window.addEventListener('hashchange',followLink);
+  followLink();
+}
 // Section controls stay on this document even with a site-root <base>.
 for(const control of document.querySelectorAll('[data-disc-section]')){
-  control.addEventListener('click',()=>scrollToDiscSection(control.dataset.discSection));
+  control.addEventListener('click',()=>scrollToDiscSection(control.dataset.discSection,true));
 }
 const clone=x=>JSON.parse(JSON.stringify(x)),name=id=>data.properties[id]?.name||String(id),fmt=(id,v)=>formatProperty(id,v,data);
 function uiText(tag,zh,en,cls=''){const n=el(tag,cls,zh);n.dataset.i18nEn=en;return n;}
@@ -242,9 +263,16 @@ function renderPlans(){
 }
 function applySetPlan(){const p=currentBuild().sets?.[planIndex];if(!p)return;for(const d of config.discs)if(!d.locked)d.setId=String(d.slot<=4?p.fourPieceId:p.twoPieceIds?.[0]||'');invalidate();renderPlans();renderSlots();renderEvidence();}
 function renderTiers(){
-  const root=$('disc-tier-controls');root.replaceChildren();
+  const root=$('disc-tier-controls'),moveFocus=root.contains(document.activeElement);root.replaceChildren();
+  const agent=details.agents[config.id],avatar=el('img');avatar.src=agent.icon;avatar.alt='';avatar.width=32;avatar.height=32;
   for(const [id,title,desc]of [['usable','能用','先匹配套装、主属性和功能条件；不强求每盘固定份数。'],['small','小毕业参考','以逐角色攻略的区间下限规划，核对当前配置条件。'],['large','大毕业参考','以攻略区间上沿作为进阶目标；没有上沿时保留原目标。']]){
-    const b=button('',()=>{tier=id;renderTiers();invalidate();},'disc-tier');b.dataset.tier=id;b.setAttribute('aria-pressed',String(tier===id));b.append(el('strong','',title),el('span','',desc));root.append(b);
+    const b=button('',()=>{tier=id;renderTiers();invalidate();},'disc-tier');
+    b.dataset.tier=id;b.setAttribute('aria-pressed',String(tier===id));b.append(el('strong','',title));root.append(b);
+    if(tier===id){
+      $('disc-tier-description').textContent=desc;
+      $('disc-active-build').replaceChildren(avatar,uiText('strong',agent.name,agent.nameEn),el('span','',title));
+      if(moveFocus)b.focus({preventScroll:true});
+    }
   }
 }
 function renderStrategy(){
@@ -378,7 +406,7 @@ function currentContributions(){
 }
 function renderDiscScore(d,build,contribution){
   const score=scoreEquippedDisc(d,build,data,config,contribution);
-  return renderDiscFitScore(score,contribution,'disc-card-score');
+  return renderDiscFitScore(score,contribution,'disc-card-score',{showDetails:false});
 }
 function renderScoreGuide(){
   const box=$('disc-score-guide');if(!box)return;
@@ -427,7 +455,7 @@ function renderDiscFace(d,build,contribution){
     const image=el('img');image.src=set.icon;image.alt='';image.width=72;image.height=72;image.loading='lazy';image.decoding='async';
     image.addEventListener('error',()=>{image.remove();art.classList.add('is-empty');},{once:true});art.append(image);
   }else art.classList.add('is-empty');
-  identity.append(art);face.append(identity);
+  identity.append(art,renderDiscScore(d,build,contribution));face.append(identity);
   const main=el('div','disc-card-main');
   const knownMain=!d.absent&&!d.unsupported&&Number.isFinite(data.mainBases[d.slot]?.[d.mainId])&&Number.isFinite(data.discLevels[`4:${d.level}`]);
   main.append(knownMain?el('span','disc-card-main-name',name(d.mainId)):uiText('span','主属性待核对','Main stat unverified','disc-card-main-name'),
@@ -446,7 +474,7 @@ function renderDiscFace(d,build,contribution){
     const knownSub=!d.absent&&!d.unsupported&&Number.isFinite(data.subBases[sub.id])&&Number.isFinite(sub.rolls);
     row.append(label,el('strong','disc-card-stat-value',knownSub?fmt(sub.id,data.subBases[sub.id]*sub.rolls):'—'));subs.append(row);
   }
-  face.append(subs,renderDiscScore(d,build,contribution));return face;
+  face.append(subs);return face;
 }
 function renderDiscCountDetails(d){
   const count=inspectDiscRolls(d,data),box=el('details','disc-card-count-details');box.dataset.status=count.status;
@@ -459,7 +487,7 @@ function renderDiscCountDetails(d){
 function renderSlots(){
   const root=$('disc-slot-grid'),openSlots=new Set([...root.querySelectorAll('.disc-slot-editor[open]')].map(n=>Number(n.dataset.slot)));root.replaceChildren();const b=currentBuild(),contributions=currentContributions();
   for(const d of config.discs){
-    const card=el('article','panel disc-slot');card.dataset.slot=d.slot;
+    const card=el('article','panel disc-slot');card.dataset.slot=d.slot;card.id='disc-card-'+d.slot;
     const head=el('div','disc-section-head disc-card-toolbar');head.append(el('span','disc-card-slot',`#${String(d.slot).padStart(2,'0')}`),checkbox('保留此盘',d.locked,v=>{d.locked=v;invalidate();}));
     card.append(head,renderDiscFace(d,b,contributions[d.slot]));
     const editor=el('details','disc-slot-editor');editor.dataset.slot=d.slot;editor.open=openSlots.has(d.slot);editor.append(uiText('summary','编辑当前盘','Edit current disc'));
@@ -520,7 +548,7 @@ function renderFarmAdvice(){
   else if(allocation?.blocked)status='blocked';
   root.replaceChildren();root.hidden=false;
   root.dataset.status=status;
-  root.append(uiText('h3','还值得刷吗？','Worth farming?'));
+  const heading=uiText('h3','还值得刷吗？','Worth farming?');heading.setAttribute('aria-level','2');root.append(heading);
   if(status==='invalid'){
     const slots=config.discs.filter(d=>inspectDiscRolls(d,data).invalid).map(d=>d.slot);
     root.append(slots.length?uiText('p',`先核对 ${slots.join('、')} 号盘的装备记录。修正后会自动重算刷盘建议。`,`Check the equipment in slot(s) ${slots.join(', ')}. Farming advice updates when the records are corrected.`):
@@ -566,8 +594,29 @@ function renderFarmAdvice(){
   if(plannedSlot?.action==='keep')method.append(uiText('p','下方方案保留了这个号位。先刷到合适的替换盘，也能从这个号位补缺口，换上后会重新规划。','The plan below keeps this slot. A good drop here offers another way to close the same gaps. Updating the equipped disc recalculates the plan.'));
   root.append(method);
 }
+function renderSlotShortcuts(){
+  const index=$('disc-slot-index');
+  for(const disc of config.discs){
+    let control=index.querySelector(`[data-jump-slot="${disc.slot}"]`);
+    if(!control){
+      control=button('',()=>scrollToDiscSection('disc-card-'+disc.slot,true));
+      control.dataset.jumpSlot=disc.slot;
+      const image=el('img');image.alt='';image.width=44;image.height=44;
+      control.append(image,uiText('span',`${disc.slot}号位`,`Slot ${disc.slot}`));
+      index.append(control);
+    }
+    const icon=disc.absent?'':equipment.discs[disc.setId]?.icon;
+    const image=control.firstElementChild;
+    if(icon){
+      if(image.getAttribute('src')!==icon)image.src=icon;
+    }else image.removeAttribute('src');
+    image.hidden=!icon;
+    control.classList.toggle('is-priority',allocation?.farming?.status==='ready'&&allocation.farming.priority?.slot===disc.slot);
+  }
+}
 function updateSlotGoals(){
   renderFarmAdvice();
+  renderSlotShortcuts();
   const resultNote=$('disc-slot-result-note');resultNote.replaceChildren();resultNote.hidden=!slotReview;
   if(slotReview==='usable')resultNote.append(uiText('span','已完成基础检查；尚未生成逐号位换盘目标。','Basic checks complete; no per-slot changes have been generated.'));
   else if(allocation?.guidanceOnly)resultNote.append(uiText('span','先看各号位的培养方向；尚未确定需要调整的号位。','Review each slot’s build direction; specific changes have not been determined.'));
@@ -589,17 +638,13 @@ function updateSlotGoals(){
       if(priority.length)root.append(el('p','',`副属性优先方向：${priority.map(name).join('、')}；最终不能与所选主属性重复。`));
       root.append(el('p','disc-muted',`${d.locked?'保留此盘；':''}当前只给出搭配方向，尚未分配指定词条份数或生成必须更换的盘。`));continue;
     }
-    if(!target){if(d.locked)root.append(el('p','disc-muted','保留此盘：现有属性参与整套目标计算。'));continue;}
+    if(!target)continue;
     root.dataset.action=change?.action||'';
-    if(change?.action==='keep'){
-      root.append(farmAlternative?uiText('strong','原盘可留，有提升再换','Keep until a better drop'):el('strong','','保留现有盘'),el('p','',`${equipment.discs[d.setId]?.name||'套装未选择'} · ${name(d.mainId)} · 当前 ${d.level} 级。${change.reason||'已录入属性参与整套计算，本方案保留此盘。'}`));
-      continue;
-    }
+    if(change?.action==='keep')continue;
     root.append(el('strong','',change?.action==='fill'?'补齐空缺号位':d.locked?'保留当前盘':compareDisc(d,target)?'已录入属性覆盖本号位参考目标':'本号位的换盘目标'));
     root.append(el('p','',`目标：${equipment.discs[target.setId]?.name||'套装待选'} · ${name(target.mainId)} ${fmt(target.mainId,data.mainBases[target.slot][target.mainId]*4)} · S级15级。${Number(d.mainId)!==Number(target.mainId)?`当前录入主属性为${name(d.mainId)}，这是换主属性后的目标。`:''}`));
     if(!target.subs.length)root.append(el('p','','当前整体目标不再要求此盘追加指定副属性；仍需符合主属性和套装条件。'));
     else root.append(textList(target.subs.map(s=>`${name(s.id)}至少 ${s.rolls} 份，共 ${fmt(s.id,data.subBases[s.id]*s.rolls)}`)));
-    root.append(el('p','disc-muted','这些是为补齐整套缺口分配的最低属性，不要求每一盘同时达到相同份数；其余副属性并未指定。'));
   }
 }
 function renderTargetGuidance(result){
@@ -816,6 +861,7 @@ try{
     const provider=meta.source==='hoyolab'?'HoYoLAB':'米游社',providerEn=meta.source==='hoyolab'?'HoYoLAB':'Miyoushe';
     loadSingleAgent(imported,[`已同步${provider}配装；角色与音擎按60级满突破、核心F规划，非来源实测等级。`,`${providerEn} build synced. Agent and W-Engine target Lv.60, full promotion, and Core Skill F; these are planning levels, not imported measurements.`]);
   };
+  if(/^#(?:hoyolab-sync=[0-9a-f]{32}|disc-hoyolab-sync)$/.test(location.hash))$('disc-global-sync').open=true;
   mountHoyolabSync($('disc-hoyolab-sync'),{getAgentId:()=>config.id,getAgentName:id=>details.agents[id]?.name||'',onImport:importOfficial,restoredBuild:!!restore&&!transferred});
   const chinaSection=$('disc-cn-sync');let chinaMounted=false;
   const chinaOptions=()=>({getAgentId:()=>config.id,getAgentName:id=>details.agents[id]?.name||'',onImport:importOfficial,restoredBuild:!!restore&&!transferred});
@@ -823,6 +869,7 @@ try{
   chinaSection?.addEventListener('toggle',mountChina);
   if(/^#miyoushe-sync=[0-9a-f]{32}$/.test(location.hash)&&chinaSection)chinaSection.open=true;
   mountChina();
+  mountBuildSettings();
   // End official sync sources mount.
   window.discPlanner={getState:()=>({ready:true,agentId:config.id,tier,alternative,busy,mode:planningMode,scope:planningScope,team:[...team],searching:!!searchTask,allocation:allocation?{met:allocation.met,steps:allocation.steps,blocked:allocation.blocked,guidanceOnly:allocation.guidanceOnly,baselineMet:allocation.baselineMet,changedSlots:allocation.changedSlots,retainedSlots:allocation.retainedSlots,search:allocation.search}:null}),getConfiguration:()=>clone(config),getAllocation:()=>allocation?clone(allocation):null};
 }catch(e){$('disc-import-status').textContent=e.message;$('disc-fetch').disabled=true;}

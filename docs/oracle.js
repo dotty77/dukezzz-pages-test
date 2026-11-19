@@ -18,19 +18,39 @@ function selectAllCities(checked){
 function readBirth(){
   if(document.querySelector('input[name="mode"]:checked').value==='general')return null;
   const number=id=>$(id).value.trim()===''?NaN:Number($(id).value);
-  return {calendar:$('birth-calendar').value,year:number('birth-year'),month:number('birth-month'),day:number('birth-day'),hour:$('birth-time-known').checked?Number($('birth-hour').value):null,minute:$('birth-time-known').checked?number('birth-minute'):0,leap:$('birth-calendar').value==='lunar'&&$('birth-leap').checked};
+  return {calendar:$('birth-calendar').value,year:number('birth-year'),month:number('birth-month'),day:number('birth-day'),hour:$('birth-time-known').checked?number('birth-hour'):null,minute:$('birth-time-known').checked?number('birth-minute'):0,leap:$('birth-calendar').value==='lunar'&&$('birth-leap').checked};
 }
-function syncForm(){const general=document.querySelector('input[name="mode"]:checked').value==='general';$('birth-fields').hidden=general;$('general-note').hidden=!general;$('leap-field').hidden=$('birth-calendar').value!=='lunar';$('birth-hour').disabled=!$('birth-time-known').checked;$('birth-minute').disabled=!$('birth-time-known').checked;}
-function clearResult(){drawVersion++;result=null;birthForResult=null;$('oracle-result').hidden=true;$('oracle-waiting').hidden=false;$('oracle-locations').hidden=true;$('oracle-explanation').hidden=true;for(const id of ['oracle-pillars','oracle-reasons','location-cards'])$(id).replaceChildren();if(ready)status('填写完成后求签，或选择今日通用签。');}
+function syncForm(){
+  const general=document.querySelector('input[name="mode"]:checked').value==='general';
+  const known=$('birth-time-known').checked;
+  $('birth-fields').hidden=general;
+  $('general-note').hidden=!general;
+  $('leap-field').hidden=$('birth-calendar').value!=='lunar';
+  $('birth-time-fields').hidden=!known;
+  $('birth-hour').disabled=$('birth-minute').disabled=!known;
+}
+function clearResult(){drawVersion++;result=null;birthForResult=null;$('oracle-result').hidden=true;$('oracle-waiting').hidden=false;$('oracle-locations').hidden=true;$('oracle-explanation').hidden=true;for(const id of ['oracle-pillars','oracle-reasons','location-cards'])$(id).replaceChildren();if(ready)status('');}
 function updateDate(){if(core){text('oracle-day',`${core.dailyKey()} · 当地时间`);$('oracle-day').title='跟随设备时区：'+Intl.DateTimeFormat().resolvedOptions().timeZone;}}
 function checkDay(){if(!ready)return;updateDate();if(result&&result.day!==core.dailyKey())status('当前签文的日期与当地日期不同，请重新求取今日签。');}
-function eraseBirth(){for(const id of ['birth-year','birth-month','birth-day'])$(id).value='';$('birth-minute').value='0';$('birth-hour').value='12';$('birth-calendar').value='solar';$('birth-leap').checked=false;$('birth-time-known').checked=true;clearResult();syncForm();}
+function eraseBirth(){
+  for(const id of ['birth-year','birth-month','birth-day','birth-hour','birth-minute'])$(id).value='';
+  $('birth-calendar').value='solar';
+  $('birth-leap').checked=$('birth-time-known').checked=false;
+  document.querySelector('input[name="mode"][value="general"]').checked=true;
+  clearResult();
+  syncForm();
+}
 function renderSign(sign,day){
   text('sign-number',`第 ${sign.id} 签${sign.code?' · 签序 '+sign.code:''}`);text('sign-grade',sign.grade||'原本未标');text('sign-title',sign.title||`第 ${sign.id} 签`);
   $('sign-poem').replaceChildren(...sign.poem.map(line=>{const p=document.createElement('p');p.textContent=line;return p;}));
   text('sign-summary',sign.summary);text('sign-advice',sign.calmAdvice||'');$('sign-source').href=safeURL(sign.sourceUrl);text('sign-date',`${day} · 当地时间`);
 }
 function renderLocations(){
+  if(!selectedCities().length){
+    $('location-cards').replaceChildren();
+    $('oracle-locations').hidden=true;
+    return;
+  }
   $('location-cards').innerHTML=result.spotRecommendations.map(({spot,score,scoreReasons},index)=>`<article class="location-card"><div class="location-heading"><span class="mini-label">${index===0?'今日主荐':'备选吉位 · '+index}</span><span class="location-element" title="本站设定的场景意象">${escape(spot.element)}</span><h3>${escape(spot.name)}</h3><p>${escape(spot.city)} · ${escape(spot.landmark)}</p></div><div class="location-body"><p class="location-direction">宜向 · ${escape(spot.orientation)}</p><ol>${spot.approach.map(step=>`<li>${escape(step)}</li>`).join('')}</ol><details><summary>为何选这里 · 查看依据</summary><p>${escape(spot.rationale)}</p><ul>${scoreReasons.map(reason=>`<li>${escape(reason)}</li>`).join('')}</ul><p>${spot.sourceUrls.map((url,i)=>sourceLink(url,`地标资料 ${i+1}`)).join(' ')}</p></details><div class="location-score"><span>地点匹配分 · ${score} 分</span><span>娱乐排序</span></div></div></article>`).join('');
   if(!result.spotRecommendations.length)$('location-cards').innerHTML='<p class="oracle-field-note">所选街区暂无已核对的点位。签文已保留，可调整街区选择。</p>';
   $('oracle-locations').hidden=false;
@@ -43,12 +63,11 @@ function renderExplanation(){
   $('oracle-reasons').innerHTML=`<p class="birth-summary">${escape(result.reason)}</p><ol class="oracle-rule-list">${result.rules.map(rule=>`<li><strong>${escape(rule.title)}</strong>：${escape(rule.text)}</li>`).join('')}</ol><details><summary>原签出处与校记</summary><p class="birth-summary">${escape(signData.edition.description||signData.edition.title)}<br>${escape(signData.edition.provenanceNote||'')}${sign.scanPage?'<br>古籍扫描页：'+escape(sign.scanPage):''}${sign.transcriptionNote?'<br>'+escape(sign.transcriptionNote):''}</p>${sourceLink(sign.sourceUrl,'原签转录')} ${sourceLink(signData.edition.scanUrl,'底本扫描')}</details>`;
   $('oracle-explanation').hidden=false;
 }
-function showResult(next){result=next;renderSign(result.sign,result.day);renderLocations();renderExplanation();$('oracle-waiting').hidden=true;$('oracle-result').hidden=false;$('oracle-paper').classList.remove('just-revealed');requestAnimationFrame(()=>$('oracle-paper').classList.add('just-revealed'));text('save-sign','收入签簿');status('签已落定。往下查看推荐地点与解签依据。');}
+function showResult(next){result=next;renderSign(result.sign,result.day);renderLocations();renderExplanation();$('oracle-waiting').hidden=true;$('oracle-result').hidden=false;$('oracle-paper').classList.remove('just-revealed');requestAnimationFrame(()=>$('oracle-paper').classList.add('just-revealed'));text('save-sign','收入签簿');status('签已落定。');}
 async function draw(event){
   event.preventDefault();if(busy)return;if(!ready){if(loadFailed)location.reload();else await init();return;}
   updateDate();const birth=readBirth(),cities=selectedCities();
-  if(!cities.length){status('请至少选择一个已解锁街区。');return;}
-  if(birth){const validation=core.validateBirth(birth);if(!validation.valid){status(validation.errors.join(' '));return;}}
+  if(birth){const validation=core.validateBirth(birth);if(!validation.valid){status(validation.errors[0]);return;}}
   let next;try{next=core.buildOracle({birth,day:core.dailyKey(),signs:signData.signs,spots:spotData.spots,selectedCities:cities});}catch{status('暂时无法完成排盘，请核对日期和历法后重试。');return;}
   busy=true;const token=++drawVersion;$('oracle-form').inert=true;$('draw-button').disabled=true;$('oracle-paper').classList.add('is-drawing');status('静候一签…');
   try{await new Promise(resolve=>setTimeout(resolve,matchMedia('(prefers-reduced-motion: reduce)').matches?30:1100));if(token!==drawVersion)return;birthForResult=birth;showResult(next);$('sign-title').focus({preventScroll:true});if(innerWidth<701)$('oracle-paper').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});}
@@ -107,14 +126,14 @@ async function init(){
   if(busy)return;busy=true;ready=false;$('draw-button').disabled=true;status('正在载入签谱与排盘工具…');
   try{
     const get=async url=>{const response=await fetch(url,{cache:'no-cache',credentials:'omit'});if(!response.ok)throw Error('data');return response.json();};
-    const [module,signs,spots]=await Promise.all([import('./oracle-core.js?v=20260909-version-3-2-1'),get('oracle-signs.json?v=20260914-duke-brand-1'),get('oracle-spots.json?v=20260909-version-3-2-1')]);
+    const [module,signs,spots]=await Promise.all([import('./oracle-core.js?v=20260909-version-3-2-1'),get('oracle-signs.json'),get('oracle-spots.json?v=20261118-reviewed-ui-launch-1')]);
     if(signs.signs?.length!==100||new Set(signs.signs.map(s=>s.id)).size!==100||signs.signs.some(s=>!Array.isArray(s.poem)||s.poem.length!==4||!s.summary)||!spots.cities?.length||!spots.spots?.length)throw Error('catalog');
     core=module;signData=signs;spotData=spots;ready=true;loadFailed=false;updateDate();
-    $('oracle-cities').innerHTML=spots.cities.map(city=>`<label><input type="checkbox" value="${escape(city.id)}" checked>${escape(city.name)}</label>`).join('');text('oracle-city-coverage',`已收录 ${spots.cities.length} 个街区 · ${spots.spots.length} 处地标`);syncCitySelection();$('oracle-cities-all').disabled=false;$('oracle-cities-none').disabled=false;journal=readJournal();renderJournal();$('catalog-open').disabled=false;status('签谱已备妥。填写生辰，或求一支今日通用签。');$('draw-button').innerHTML='<span aria-hidden="true">✦</span> 静心求一签';
+    $('oracle-cities').innerHTML=spots.cities.map(city=>`<label><input type="checkbox" value="${escape(city.id)}" checked>${escape(city.name)}</label>`).join('');text('oracle-city-coverage',`已收录 ${spots.cities.length} 个街区 · ${spots.spots.length} 处地标`);syncCitySelection();$('oracle-cities-all').disabled=false;$('oracle-cities-none').disabled=false;journal=readJournal();renderJournal();$('catalog-open').disabled=false;status('');$('draw-button').innerHTML='<span aria-hidden="true">✦</span> 静心求一签';
   }catch{loadFailed=true;status('签谱或排盘工具暂时未能载入，请刷新后重试。');text('draw-button','重新载入资料');}
   finally{busy=false;$('draw-button').disabled=false;}
 }
-$('birth-hour').innerHTML=Array.from({length:24},(_,i)=>`<option value="${i}" ${i===12?'selected':''}>${String(i).padStart(2,'0')} 时</option>`).join('');
+$('birth-hour').innerHTML='<option value="">选择小时</option>'+Array.from({length:24},(_,i)=>`<option value="${i}">${String(i).padStart(2,'0')} 时</option>`).join('');
 $('oracle-form').addEventListener('submit',draw);
 $('oracle-form').addEventListener('input',event=>{syncForm();if(event.target.closest('#oracle-cities'))syncCitySelection();if(event.target.closest('#oracle-cities')&&result&&ready){try{showResult(core.buildOracle({birth:birthForResult,day:result.day,signs:signData.signs,spots:spotData.spots,selectedCities:selectedCities()}));status('已更新地点候选，签文保持不变。');checkDay();}catch{status('地点更新失败，请重新求签。');}}else clearResult();});
 $('oracle-cities-all').onclick=()=>selectAllCities(true);$('oracle-cities-none').onclick=()=>selectAllCities(false);

@@ -3,38 +3,46 @@
 <head><base href="/dukezzz-pages-test/">
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f5f6fb">
   <meta name="referrer" content="no-referrer"><title>绳匠灵签 · DUKE</title>
-  <script src="resource-cache.js?v=20261118-pages-archive-roam-1" data-cache-build="ab6e6599ef2588dd1c126a2603dc28ee6cb7fb8cbc7e196189594f6277a1aaa7"></script>
+  <script src="resource-cache.js?v=20261118-pages-reviewed-ui-1" data-cache-build="44043625b65fe09f8d8885dc8545e7f2c9a1a7eb2435dc4e78e74c6a633514a0"></script>
   <script src="theme.js?v=20260909-version-3-2-1"></script>
   <link rel="icon" href="assets/brand/duke-patrick-sketch-v1-132.png?v=20261009-logo-1" type="image/png">
-  <link rel="stylesheet" href="site-ui.css?v=20260909-version-3-2-1"><link rel="stylesheet" href="dark-theme.css?v=20260909-version-3-2-1"><link rel="stylesheet" href="brand-refresh.css?v=20260914-duke-brand-1"><link rel="stylesheet" href="site-nav.css?v=20261001-planner-tuning-1"><link rel="stylesheet" href="oracle.css?v=20260909-version-3-2-1">
-<script src="i18n.js?v=20261114-refresh-launch-1"></script><link rel="stylesheet" href="i18n.css?v=20260919-site-refresh-1"><meta name="robots" content="noindex,nofollow"><link rel="stylesheet" href="pages-test.css?v=20261118-pages-archive-roam-1"><script src="pages-test.js?v=20261118-pages-archive-roam-1" defer></script></head>
+  <link rel="stylesheet" href="site-ui.css?v=20260909-version-3-2-1"><link rel="stylesheet" href="dark-theme.css?v=20260909-version-3-2-1"><link rel="stylesheet" href="brand-refresh.css?v=20260914-duke-brand-1"><link rel="stylesheet" href="site-nav.css?v=20261001-planner-tuning-1"><link rel="stylesheet" href="oracle.css?v=20261118-reviewed-ui-launch-1">
+<script src="i18n.js?v=20261118-reviewed-ui-launch-1"></script><link rel="stylesheet" href="i18n.css?v=20260919-site-refresh-1"><link rel="stylesheet" href="tool-directory.css?v=20261118-reviewed-ui-launch-1"><script defer src="tool-directory.js?v=20261118-reviewed-ui-launch-1"></script><meta name="robots" content="noindex,nofollow"><link rel="stylesheet" href="pages-test.css?v=20261118-pages-reviewed-ui-1"><script src="pages-test.js?v=20261118-pages-reviewed-ui-1" defer></script></head>
 <body class="oracle-page">
   <header class="site-header">
     <a class="site-brand" href="./" aria-label="DUKE首页"><img class="brand-logo" src="assets/brand/duke-patrick-sketch-v1-132.png?v=20261009-logo-1" width="44" height="44" alt=""><span class="site-brand-copy"><b>DUKE</b><small>绝区零 · 贝果计划</small></span></a>
-    <nav class="site-navigation" aria-label="主要导航"><a href="./">探索地图</a><a href="gallery.html?v=20261118-disc-context-score-launch-1">物资图鉴</a><a href="tuning.html?v=20261118-tuning-records-launch-1" aria-current="page">调频分析</a><a href="agents.html?v=20261118-archive-roam-launch-1">代理人资料</a></nav>
+    <nav class="site-navigation" aria-label="主要导航"><a href="./">探索地图</a><a href="gallery.html">物资图鉴</a><a href="tuning.html" aria-current="page">调频分析</a><a href="agents.html">代理人资料</a></nav>
     <div class="site-header-actions"><button class="theme-toggle" type="button" data-theme-toggle><span aria-hidden="true">◐</span><span data-theme-label>深色模式</span></button></div>
   </header>
   <main class="oracle-main">
-    <nav class="oracle-subnav" aria-label="调频功能"><a href="tuning.html?v=20261118-tuning-records-launch-1">调频分析</a><a href="banners.html?v=20261118-disc-context-score-launch-1">卡池日历</a><a href="oracle.html?v=20261118-disc-context-score-launch-1" aria-current="page">绳匠灵签</a></nav>
+    <nav class="oracle-subnav" aria-label="调频功能"><a href="tuning.html">调频分析</a><a href="banners.html">卡池日历</a><a href="oracle.html" aria-current="page">绳匠灵签</a></nav>
     <section class="oracle-heading"><div><p class="oracle-eyebrow">新艾利都 · 问签寻吉</p><h1>循一纸签诗，<br>寻今日吉位。</h1></div><div class="oracle-heading-aside"><span class="oracle-seal" aria-hidden="true">一日<br>一签</span><span id="oracle-day">正在载入今日日期</span><button id="catalog-open" class="text-button" type="button" disabled>翻阅百签 <span aria-hidden="true">↗</span></button></div></section>
     <div class="oracle-workspace">
       <section class="oracle-panel oracle-query" aria-labelledby="oracle-form-title">
         <div class="oracle-section-title"><span class="oracle-step">壹</span><div><h2 id="oracle-form-title">落笔问签</h2></div></div>
         <form id="oracle-form" novalidate autocomplete="off">
-          <fieldset class="oracle-mode"><legend class="sr-only">求签方式</legend><label><input type="radio" name="mode" value="birth" checked><span>生辰求签</span></label><label><input type="radio" name="mode" value="general"><span>今日通用签</span></label></fieldset>
-          <div id="birth-fields">
+          <fieldset class="oracle-mode"><legend class="sr-only">求签方式</legend><label><input type="radio" name="mode" value="general" checked><span>今日通用签</span></label><label><input type="radio" name="mode" value="birth"><span>生辰求签</span></label></fieldset>
+          <div id="birth-fields" hidden>
             <div class="oracle-calendar-row"><label for="birth-calendar">出生日期</label><select id="birth-calendar" aria-label="出生日期历法"><option value="solar">公历</option><option value="lunar">农历</option></select></div>
             <div class="oracle-date-fields"><label><span class="sr-only">出生年份</span><input id="birth-year" type="number" inputmode="numeric" min="1900" max="2100" placeholder="年" autocomplete="off"></label><label><span class="sr-only">出生月份</span><input id="birth-month" type="number" inputmode="numeric" min="1" max="12" placeholder="月" autocomplete="off"></label><label><span class="sr-only">出生日期</span><input id="birth-day" type="number" inputmode="numeric" min="1" max="31" placeholder="日" autocomplete="off"></label></div>
             <label id="leap-field" class="oracle-check" hidden><input id="birth-leap" type="checkbox">这是农历闰月</label>
-            <div class="oracle-time-label"><label for="birth-hour">出生时间</label><label class="oracle-check"><input id="birth-time-known" type="checkbox" checked>知道具体时间</label></div>
-            <div class="oracle-time-fields"><label><span class="sr-only">出生小时</span><select id="birth-hour"></select></label><span aria-hidden="true">：</span><label><span class="sr-only">出生分钟</span><input id="birth-minute" type="number" inputmode="numeric" value="0" min="0" max="59" autocomplete="off"></label></div>
+            <div class="oracle-time-label"><span>出生时间</span><label class="oracle-check"><input id="birth-time-known" type="checkbox" aria-controls="birth-time-fields">知道具体时间</label></div>
+            <div class="oracle-time-fields" id="birth-time-fields" hidden><label><span class="sr-only">出生小时</span><select id="birth-hour"></select></label><span aria-hidden="true">：</span><label><span class="sr-only">出生分钟</span><input id="birth-minute" type="number" inputmode="numeric" placeholder="分钟" min="0" max="59" autocomplete="off"></label></div>
             <p class="oracle-field-note">按东八区（UTC+8）民用时间填写。不知道时辰也可求签，时柱会留空。</p>
+            <p class="oracle-privacy">出生资料仅在本机内存中计算，刷新即清除。</p>
           </div>
-          <p id="general-note" class="oracle-field-note" hidden>无需生辰；按设备日期每日一签。</p>
-          <fieldset class="oracle-cities"><legend>我已解锁的街区</legend><p id="oracle-city-guide" class="oracle-field-note oracle-city-guide">勾选已解锁的街区。</p><div class="oracle-city-toolbar"><div class="oracle-city-counts"><span id="oracle-city-coverage">正在核对城市地标…</span><span id="oracle-city-selection" aria-live="polite"></span></div><div class="oracle-city-actions"><button id="oracle-cities-all" type="button" aria-label="全选已收录街区" disabled>全选</button><button id="oracle-cities-none" type="button" aria-label="清空街区选择" disabled>清空</button></div></div><div id="oracle-cities" aria-describedby="oracle-city-guide oracle-city-coverage oracle-city-note"></div><p id="oracle-city-note" class="oracle-field-note">地点从勾选街区中推荐，切换街区不会换签。</p></fieldset>
           <button id="draw-button" type="submit" class="oracle-primary" disabled><span aria-hidden="true">✦</span> 静心求一签</button>
+          <p id="general-note" class="oracle-field-note">无需生辰；按设备日期每日一签。</p>
           <p id="oracle-status" class="oracle-status" role="status" aria-live="polite">正在载入签谱与排盘工具…</p>
-          <p class="oracle-privacy">出生资料仅在本机内存中计算，刷新即清除。</p>
+          <details class="oracle-districts" id="district-options">
+            <summary><span>选择推荐地点（可选）</span><small id="oracle-city-selection" aria-live="polite"></small></summary>
+            <fieldset class="oracle-cities">
+              <legend class="sr-only">我已解锁的街区</legend>
+              <div class="oracle-city-toolbar"><span class="oracle-city-counts" id="oracle-city-coverage">正在核对城市地标…</span><div class="oracle-city-actions"><button id="oracle-cities-all" type="button" aria-label="全选已收录街区" disabled>全选</button><button id="oracle-cities-none" type="button" aria-label="清空街区选择" disabled>清空</button></div></div>
+              <div id="oracle-cities" aria-describedby="oracle-city-note"></div>
+              <p id="oracle-city-note" class="oracle-field-note">只想看签文时，可以清空街区。</p>
+            </fieldset>
+          </details>
         </form>
       </section>
       <section class="oracle-paper" id="oracle-paper" aria-label="今日签面">
@@ -46,9 +54,9 @@
     <section class="oracle-panel oracle-results" id="oracle-locations" hidden aria-labelledby="locations-title"><div class="oracle-section-title"><span class="oracle-step">贰</span><div><h2 id="locations-title">循签寻吉</h2></div><span class="oracle-small-badge">游戏趣味演绎</span></div><p class="oracle-location-note">地点按所选街区推荐，仅供娱乐，非实测导航。</p><div id="location-cards" class="oracle-location-grid"></div></section>
     <section class="oracle-panel oracle-explanation" id="oracle-explanation" hidden><details><summary><span class="oracle-step">叁</span><span>排盘与解签依据</span><span class="details-indicator" aria-hidden="true">＋</span></summary><div class="oracle-detail-body"><div id="oracle-pillars"></div><div id="oracle-reasons"></div><p class="oracle-field-note">八字排盘、每日选签与游戏点位对应是不同部分。选签及地点匹配采用本站公开的娱乐规则，不作为专业命理判断。</p></div></details></section>
     <section class="oracle-panel oracle-journal"><div class="oracle-section-title"><span class="oracle-step">簿</span><div><h2>我的签簿</h2></div><button id="clear-journal" class="text-button" type="button" hidden>清空签簿</button></div><div id="oracle-journal"><p class="oracle-field-note">签簿保存日期、签号与地点，不保存生辰。</p></div></section>
-    <footer class="oracle-footer"><p>民俗娱乐 · 调频概率以游戏规则为准。</p><p>签诗据传统签谱转录，白话解签与游戏地标关联由本站整理。</p><a href="oracle-sources.md?v=20260909-version-3-2-1" target="_blank" rel="noreferrer">来源、排盘口径与选签规则 ↗</a></footer>
+    <footer class="oracle-footer"><p>民俗娱乐 · 调频概率以游戏规则为准。</p><p>签诗据传统签谱转录，白话解签与游戏地标关联由本站整理。</p><a href="oracle-sources.md?v=20261118-reviewed-ui-launch-1" target="_blank" rel="noreferrer">来源、排盘口径与选签规则 ↗</a></footer>
   </main>
   <dialog id="catalog-dialog" aria-labelledby="catalog-title"><div class="oracle-dialog-top"><div><span class="mini-label">原签查阅</span><h2 id="catalog-title">关圣帝君灵签 · 百签</h2></div><button id="catalog-close" type="button" aria-label="关闭签谱">× 关闭</button></div><label class="oracle-catalog-search"><span class="sr-only">查找签号或签诗</span><input id="catalog-search" type="search" placeholder="查找签号、典故或签诗"></label><div id="catalog-list"></div><article id="catalog-detail" hidden></article></dialog>
-  <script type="module" src="oracle.js?v=20261107-refresh-launch-1"></script>
+  <script type="module" src="oracle.js?v=20261118-reviewed-ui-launch-1"></script>
 </body>
 </html>

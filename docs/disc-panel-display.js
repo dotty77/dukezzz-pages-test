@@ -42,7 +42,7 @@ export function discFitMethod() {
     'Build fit allows up to 60 points for substats, 20 for the main stat, 10 for set fit and 10 for the target gaps this disc closes. Fixed main stats and criteria without a reliable reference are omitted. Points are scaled to 100 using the remaining criteria.');
 }
 
-export function renderDiscFitScore(result, contribution, className) {
+export function renderDiscFitScore(result, contribution, className, {showDetails=true}={}) {
   const box=document.createElement('div'), grade=result.grade||result.estimatedGrade;
   const hasScore=Number.isFinite(result.score), estimated=Boolean(result.estimatedGrade);
   const hasSubstats=Boolean(result.lines?.length)&&Number.isFinite(result.substatScore);
@@ -78,6 +78,11 @@ export function renderDiscFitScore(result, contribution, className) {
     ||(!hasScore?missingContext:null);
   if(note){const text=bilingual('p',...note);text.className='disc-card-score-note';box.append(text);}
   if(hasSubstats){
+    const core=new Set(result.profile.primaryIds),supplement=new Set(result.profile.secondaryIds);
+    const rollCount=accept=>result.lines.reduce((n,line)=>n+(accept(line.id)?line.rolls:0),0);
+    const coreRolls=rollCount(id=>core.has(id)),supplementRolls=rollCount(id=>!core.has(id)&&supplement.has(id));
+    Object.assign(box.dataset,{coreRolls,supplementRolls,totalRolls:rollCount(()=>true)});
+    if(!showDetails)return box;
     const detail=document.createElement('details'),score=result.substatScore;
     detail.className='disc-fit-breakdown';
     detail.append(bilingual('summary',`副词条分 ${score}/100 · 查看构成`,`Substat score ${score}/100 · Breakdown`));
@@ -86,14 +91,10 @@ export function renderDiscFitScore(result, contribution, className) {
       const text=lang=>parts.map(([key,names])=>names[lang]+' '+result.parts[key].points+'/'+result.parts[key].max).join(' · ');
       detail.append(bilingual('p',text(0),text(1)));
     }
-    const core=new Set(result.profile.primaryIds),supplement=new Set(result.profile.secondaryIds);
-    const rollCount=accept=>result.lines.reduce((n,line)=>n+(accept(line.id)?line.rolls:0),0);
-    const coreRolls=rollCount(id=>core.has(id)),supplementRolls=rollCount(id=>!core.has(id)&&supplement.has(id));
-    Object.assign(box.dataset,{coreRolls,supplementRolls,totalRolls:rollCount(()=>true)});
     const counts=bilingual('p',`核心 ${coreRolls} 份 · 补充 ${supplementRolls} 份`,`Core ${coreRolls} rolls · Supplement ${supplementRolls} rolls`);
     counts.className='disc-card-roll-totals';detail.append(counts);box.append(detail);
   }
-  if(contribution?.status==='ready')box.append(renderDiscContribution(contribution));
+  if(showDetails&&contribution?.status==='ready')box.append(renderDiscContribution(contribution));
   return box;
 }
 

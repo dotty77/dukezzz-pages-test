@@ -10,7 +10,7 @@ const isClient33=p=>p?.sourceLayer==='client33';
 const STATUS = {fixed_source:'原图固定',random_source:'随机',conditional:'条件点',unknown:'待核验'};
 const DEFAULT_TYPES=['electronic','mechanical','gear','medical','spawn','exit','enemy','phantom','keyroom'];
 const LAYERS={overview:DEFAULT_TYPES,containers:['electronic','mechanical','gear','briefcase','trash','medical','spawn','exit'],enemies:['enemy','phantom','spawn','exit'],rooms:['keyroom','portal','spawn','exit']};
-const DEFAULT_STATUSES=['fixed_source','conditional'];
+const DEFAULT_STATUSES=['fixed_source','random_source','conditional'];
 const MAPS = {
  janus:{name:'雅努斯幻境',base:7,source:[1,3,5,7],bounds:[.2,.02,.99,.99],regions:[['construction','白鸽工地',.51,.35,.34],['street','六昏街',.78,.22,.4],['lumina','光映中心',.44,.80,.4]],spawns:['六昏街出生区域','白鸽工地出生区域'],routes:[['从六昏街开始',['street','construction','lumina']],['从工地开始',['construction','street','lumina']]]},
  suburbs:{name:'城郊幻境',base:8,source:[2,4,6,8],bounds:[.05,.08,.94,.98],regions:[['highway','风蚀公路',.28,.47,.4],['town','野人镇',.72,.31,.37],['warehouse','巴哈姆特仓库',.81,.75,.33],['beach','绮梦沙滩',.45,.76,.4]],spawns:['风蚀公路出生区域','餐厅出生区域','野人镇出生区域','仓库区出生区域'],routes:[['区域搜索顺序',['highway','town','warehouse','beach']],['沙滩内优先检查',['beach']]]}
@@ -19,11 +19,12 @@ const SOURCE_LABELS = {1:'雅努斯 · 容器 / 医疗 / 传送',2:'城郊 · �
 const STORAGE_KEY='bagel-atlas-local-v1';
 let personal;try{personal=JSON.parse(localStorage.getItem(STORAGE_KEY)||'{}')}catch{personal={}}
 personal.custom ||= [];personal.notes ||= {};personal.observations ||= {};personal.routes ||= {janus:[],suburbs:[]};
-const state={map:'janus',data:{},sourceLocations:{},oreSource:{},communityBoss:{},kelzeroSource:{},authorSources:[],images:{},types:new Set(DEFAULT_TYPES),statuses:new Set(DEFAULT_STATUSES),floor:'all',query:'',selected:null,labels:false,mode:'2d',source2d:'source',zoom:1,tx:0,ty:0,baseScale:1,w:0,h:0,hit:[],routeHits:[],hover:null,routeVisible:false,sourceRouteFit:false,adding:false,pending:null};
+const state={map:'janus',data:{},sourceLocations:{},oreSource:{},communityBoss:{},kelzeroSource:{},authorSources:[],images:{},types:new Set([...DEFAULT_TYPES,...Object.keys(CLIENT33_TYPES)]),statuses:new Set(DEFAULT_STATUSES),floor:'all',query:'',selected:null,labels:false,mode:'2d',source2d:'source',zoom:1,tx:0,ty:0,baseScale:1,w:0,h:0,hit:[],routeHits:[],hover:null,routeVisible:false,sourceRouteFit:false,adding:false,pending:null};
 const canvas=$('map-canvas'),ctx=window.DUKE_I18N.canvasContext(canvas.getContext('2d'));
 state.rotation=0;
 state.enemySource='configured';
-state.candidateData={maps:{}};state.candidatesEnabled=false;state.candidateTypes=new Set(Object.keys(CLIENT33_TYPES));
+state.candidateData={maps:{}};
+let candidateTypesExpanded=false;
 function rotateVector(x,y,a=state.rotation){return {x:x*Math.cos(a)-y*Math.sin(a),y:x*Math.sin(a)+y*Math.cos(a)}}
 function setRotation(a){const delta=a-state.rotation,q=rotateVector(state.tx,state.ty,delta);state.rotation=a;state.tx=q.x;state.ty=q.y;state.sourceRouteFit=false;draw();window.mapTools?.sync()}
 
@@ -36,8 +37,8 @@ const filterType=p=>p.type==='enemy'&&p.enemyClass==='phantom'?'phantom':p.type=
 const isEnemy=p=>p.type==='enemy'||p.type==='ore_boss';
 const enemyPool=p=>p.sourceKind==='kelzero'?'kelzero':p.sourceKind==='community_boss'?'community':p.type==='ore_boss'?'configured':'source';
 function matchesEnemySource(p){return p.personal||!isEnemy(p)||enemyPool(p)===state.enemySource;}
-function sourceDisplayPoints(){return allPoints().filter(p=>matchesEnemySource(p)&&(!isClient33(p)||state.candidatesEnabled));}
-function availableTypes(){return [...new Set(sourceDisplayPoints().filter(p=>!isClient33(p)).map(filterType))].filter(type=>TYPES[type]);}
+function sourceDisplayPoints(){return allPoints().filter(matchesEnemySource);}
+function availableTypes(){return [...new Set(sourceDisplayPoints().map(filterType))].filter(type=>TYPES[type]);}
 function syncTypeToggle(){const types=availableTypes(),all=types.length>0&&types.every(type=>state.types.has(type));$('types-all').textContent=all?'取消全选':'全选';$('types-all').setAttribute('aria-pressed',String(all));}
 async function loadSourceLocations(map) {
   const response = await fetch('research/' + map + '-source-locations.json');
@@ -99,8 +100,8 @@ function sourceLocationDetails(p){
 function regionName(id){if(id==='unknown')return '区域待核验';if(id==='patrol-reference')return '作者巡逻参考';if(id==='ore-config')return '奖励候选位置';return MAPS[state.map].regions.find(r=>r[0]===id)?.[1]||'个人位置'}
 function floorName(p){return p.floors?.length?p.floors.map(f=>f===-1?'B1':f+'F').join(' / '):isClient33(p)?'楼层待核验':'原图未注明'}
 function matchesQuery(p){return !state.query||window.DUKE_I18N.matches([p.id,p.label,p.labelEn,p.note,p.noteEn,CLIENT33_TYPES[p.type]?.[1],regionName(p.region),TYPES[p.type]?.[0],TYPES[filterType(p)]?.[0],p.enemyClass==='phantom'?'Phantom patrols':'',personal.notes[p.id]],state.query)}
-function matchesSourceFilters(p){return (!isClient33(p)||state.candidatesEnabled)&&matchesEnemySource(p)&&state.statuses.has(p.status)&&(state.floor==='all'||state.floor==='unknown'&&!p.floors?.length||p.floors?.includes(Number(state.floor)))&&matchesQuery(p)}
-function visible(){return allPoints().filter(p=>p.personal ? window.mapTools?.showPersonal!==false : !window.mapTools?.clean&&(isClient33(p)?state.candidateTypes.has(p.type):state.types.has(filterType(p)))&&matchesSourceFilters(p))}
+function matchesSourceFilters(p){return matchesEnemySource(p)&&state.statuses.has(p.status)&&(state.floor==='all'||state.floor==='unknown'&&!p.floors?.length||p.floors?.includes(Number(state.floor)))&&matchesQuery(p)}
+function visible(){return allPoints().filter(p=>p.personal ? window.mapTools?.showPersonal!==false : !window.mapTools?.clean&&state.types.has(filterType(p))&&matchesSourceFilters(p))}
 const sourceCountNote=document.createElement('div');sourceCountNote.id='source-count-note';sourceCountNote.className='callout';
 sourceCountNote.innerHTML='<span data-i18n-en="Shown / total">显示 / 总数</span>';sourceCountNote.title='数量随刷新分类、楼层和搜索变化';
 $('type-filters').before(sourceCountNote);
@@ -123,34 +124,49 @@ function setEnemySource(source){
  renderFilters();draw();
 }
 enemySourceControls.addEventListener('click',event=>{const button=event.target.closest('[data-enemy-source]');if(button)setEnemySource(button.dataset.enemySource);});
-const client33Controls=document.createElement('section');client33Controls.id='client33-controls';
-client33Controls.innerHTML=`<div class="client33-heading"><b data-i18n-en="3.3 candidates">3.3 配置候选</b><span data-i18n-en="Shown / total">显示 / 总数</span></div><label class="client33-master"><input type="checkbox" id="client33-toggle"><span data-i18n-en="Show candidate layer">显示候选点图层</span></label><div id="client33-types">${Object.entries(CLIENT33_TYPES).map(([key,label])=>`<label class="client33-type"><input type="checkbox" value="${key}" checked><span class="atlas-type-symbol">${window.DUKEMapSymbols.svg(key)}</span><span data-i18n-en="${label[1]}">${label[0]}</span><span class="n" data-candidate-count="${key}"></span></label>`).join('')}</div><p class="small muted" id="client33-hint" data-i18n-en="Estimated positions; check individual floor references. Activation remains unverified.">位置近似配准；楼层按点位依据标注，启用条件待核实。</p><p id="client33-error" class="small" hidden data-i18n-en="Candidates could not load. Refresh to retry.">配置候选暂未加载，请刷新重试。</p>`;
-$('spawn-filter-panel').after(client33Controls);
-function renderCandidateControls(){
- const failed=!!state.candidateLayerError,points=state.candidateData.maps[state.map]?.points||[],shown=visible().filter(isClient33);
- $('client33-toggle').checked=state.candidatesEnabled;$('client33-toggle').disabled=failed||!points.length;
- $('client33-error').hidden=!failed;$('client33-hint').hidden=failed;
- client33Controls.classList.toggle('enabled',state.candidatesEnabled);
- for(const input of $('client33-types').querySelectorAll('input')){input.checked=state.candidateTypes.has(input.value);input.disabled=failed||!state.candidatesEnabled;}
- for(const el of client33Controls.querySelectorAll('[data-candidate-count]')){const key=el.dataset.candidateCount,value=`${shown.filter(p=>p.type===key).length} / ${points.filter(p=>p.type===key).length}`;if(el.textContent!==value)el.textContent=value;}
- const credit=state.candidatesEnabled?'底图 © 游戏权利方 · 作者标点 @KELZERO · 配置候选 3.3':'底图 © 游戏权利方 · 标点 @KELZERO';
- if($('map-credit-note')?.textContent!==window.DUKE_I18N.t(credit))$('map-credit-note').textContent=window.DUKE_I18N.t(credit);
+function typeRow(type) {
+ const english=CLIENT33_TYPES[type]?.[1]||({enemy:'Enemies',phantom:'Phantom patrols'})[type];
+ return `<label class="type-row ${['enemy','phantom'].includes(type)?'enemy-filter-row':''}">
+  <input type="checkbox" value="${type}" ${state.types.has(type)?'checked':''}>
+  <span class="type-symbol atlas-type-symbol">${window.DUKEMapSymbols.svg(type)}</span>
+  <span ${english?`data-i18n-en="${english}"`:''}>${TYPES[type][0]}</span>
+  <span class="n" data-count-type="${type}"></span></label>`;
 }
-function applyCandidateSelection(){
- const selected=allPoints().find(p=>p.id===state.selected);
- if(isClient33(selected)&&(!state.candidatesEnabled||!state.candidateTypes.has(selected.type)))overview();
- renderFilters();draw();
+function candidateGroup(types) {
+ if(state.candidateLayerError)return '<p class="small muted" role="status" data-i18n-en="Candidates could not load. Refresh to retry.">配置候选暂未加载，请刷新重试。</p>';
+ if(!types.length)return '';
+ return `<div class="candidate-filter-group">
+  <div class="candidate-filter-head">
+   <label class="type-row"><input id="candidate-group-toggle" type="checkbox"><span data-i18n-en="3.3 candidates">3.3 配置候选</span><span class="n" id="candidate-group-count"></span></label>
+   <button type="button" class="text-btn" id="candidate-types-expand" aria-expanded="${candidateTypesExpanded}" aria-controls="candidate-type-options"><span data-i18n-en="Types">细分</span></button>
+  </div>
+  <div id="candidate-type-options" ${candidateTypesExpanded?'':'hidden'}>
+   ${types.map(typeRow).join('')}
+   <p class="small muted" data-i18n-en="Estimated positions. Check each marker for floor and spawn details.">位置为估算，楼层与刷新条件见点位详情。</p>
+  </div></div>`;
 }
-$('client33-toggle').onchange=e=>{state.candidatesEnabled=e.target.checked;applyCandidateSelection();};
-$('client33-types').onchange=e=>{if(!CLIENT33_TYPES[e.target.value])return;e.target.checked?state.candidateTypes.add(e.target.value):state.candidateTypes.delete(e.target.value);applyCandidateSelection();};
 function syncSourceCounts(){
- renderCandidateControls();
  const points=sourceDisplayPoints(),shown=visible();
+ const totals=new Map(),counts=new Map();
+ for(const p of points){const type=filterType(p);totals.set(type,(totals.get(type)||0)+1);}
+ for(const p of shown){const type=filterType(p);counts.set(type,(counts.get(type)||0)+1);}
+ let candidateTotal=0,candidateCount=0;
  for(const el of $('type-filters').querySelectorAll('[data-count-type]')){
-  const type=el.dataset.countType,total=points.filter(p=>filterType(p)===type).length,count=shown.filter(p=>filterType(p)===type).length,value=`${count} / ${total}`;
+  const type=el.dataset.countType,total=totals.get(type)||0,count=counts.get(type)||0,value=`${count} / ${total}`;
   if(el.textContent!==value)el.textContent=value;
-  el.title=`当前筛选可显示 ${count} 个；资料图共 ${total} 个标注。`;
+  if(CLIENT33_TYPES[type]){candidateTotal+=total;candidateCount+=count;}
  }
+ const group=$('candidate-group-toggle');
+ if(group){
+  const types=Object.keys(CLIENT33_TYPES).filter(type=>totals.has(type));
+  const selected=types.filter(type=>state.types.has(type)).length;
+  group.checked=selected===types.length;
+  group.indeterminate=selected>0&&!group.checked;
+  const value=`${candidateCount} / ${candidateTotal}`;
+  if($('candidate-group-count').textContent!==value)$('candidate-group-count').textContent=value;
+ }
+ const credit=candidateCount?'底图 © 游戏权利方 · 作者标点 @KELZERO · 配置候选 3.3':'底图 © 游戏权利方 · 标点 @KELZERO';
+ if($('map-credit-note').textContent!==window.DUKE_I18N.t(credit))$('map-credit-note').textContent=window.DUKE_I18N.t(credit);
 }
 function renderSearchResults(){
  const panel=$('search-results');panel.hidden=!state.query;$('search-clear').hidden=!$('search').value;
@@ -306,7 +322,13 @@ function renderFullMapImage(){
  context.fillText(candidatesShown?(en?'Game imagery © owners · Author markers @KELZERO · 3.3 estimated candidates':'底图 © 游戏权利方 · 作者标点 @KELZERO · 3.3 配置候选（估计位置）'):(en?'Game imagery © respective owners · Map annotations @KELZERO · Current filters and drawings':'底图 © 游戏权利方 · 标点 @KELZERO · 保留当前筛选与手绘'),24,h+49);
  return {canvas:out,map:state.map,name,geometry:{w,h,footer,density,rotation,baseScale,imageWidth:img.width,imageHeight:img.height},markerCount:renderState.hit.length};
 }
-function renderFilters(){syncLayerButtons();const points=sourceDisplayPoints();$('type-filters').innerHTML=Object.entries(TYPES).filter(([k])=>k!=='ore_boss'&&!CLIENT33_TYPES[k]&&points.some(p=>filterType(p)===k)).map(([k,t])=>`<label class="type-row ${['enemy','phantom'].includes(k)?'enemy-filter-row':''}"><input type="checkbox" value="${k}" ${state.types.has(k)?'checked':''}><span class="type-symbol atlas-type-symbol">${window.DUKEMapSymbols.svg(k)}</span><span ${k==='enemy'?'data-i18n-en="Enemies"':k==='phantom'?'data-i18n-en="Phantom patrols"':''}>${t[0]}</span><span class="n" data-count-type="${k}"></span></label>`).join('');$('status-filters').innerHTML=Object.entries(STATUS).map(([k,v])=>`<button type="button" data-status="${k}" aria-pressed="${state.statuses.has(k)}" class="${state.statuses.has(k)?'active':''}"><span class="status-check" aria-hidden="true"></span><span>${v}</span></button>`).join('');$('count-summary').innerHTML=`<span data-i18n-en="${points.filter(p=>!isClient33(p)).length} map markers">${points.filter(p=>!isClient33(p)).length} 个资料图标记</span>`;$('regions').innerHTML=MAPS[state.map].regions.map(([id,name])=>`<button class="region-btn" data-region="${id}">${name}<span>↗</span></button>`).join('');renderLocationLinks();syncTypeToggle();syncSourceCounts();renderEnemySourceControls()}
+function renderFilters(){
+ syncLayerButtons();
+ const points=sourceDisplayPoints(),types=availableTypes();
+ const candidates=types.filter(type=>CLIENT33_TYPES[type]);
+ const regular=Object.keys(TYPES).filter(type=>!CLIENT33_TYPES[type]&&types.includes(type));
+ $('type-filters').innerHTML=candidateGroup(candidates)+regular.map(typeRow).join('');
+ $('status-filters').innerHTML=Object.entries(STATUS).map(([k,v])=>`<button type="button" data-status="${k}" aria-pressed="${state.statuses.has(k)}" class="${state.statuses.has(k)?'active':''}"><span class="status-check" aria-hidden="true"></span><span>${v}</span></button>`).join('');$('count-summary').innerHTML=`<span data-i18n-en="${points.filter(p=>!isClient33(p)).length} map markers">${points.filter(p=>!isClient33(p)).length} 个资料图标记</span>`;$('regions').innerHTML=MAPS[state.map].regions.map(([id,name])=>`<button class="region-btn" data-region="${id}">${name}<span>↗</span></button>`).join('');renderLocationLinks();syncTypeToggle();syncSourceCounts();renderEnemySourceControls()}
 let configuredLocationSummaries=null,locationCountsFailed=false;
 function renderLocationLinks(){
  const summary=configuredLocationSummaries?.[state.map],pending=locationCountsFailed?'暂未读取':'读取中…';
@@ -323,7 +345,7 @@ async function showConfiguredLocations(kind){
    if (map !== state.map) return;
    if (!state.sourceLocations[map]) throw Error('出生 / 撤离图层暂未加载，请刷新重试');
    const type=kind==='spawn'?'spawn':'exit',points=allPoints().filter(p=>p.type===type);
-   state.types=new Set([type]);state.statuses=new Set(DEFAULT_STATUSES);state.query='';state.floor='all';state.selected=null;$('search').value='';$('floor').value='all';renderFilters();resetView();
+   applyRegularTypes([type]);state.statuses=new Set(DEFAULT_STATUSES);state.query='';state.floor='all';state.selected=null;$('search').value='';$('floor').value='all';renderFilters();resetView();
    $('detail').innerHTML=`<div class="detail-panel-header"><p class="eyebrow">SOURCE MAP LOCATIONS</p><button id="close-detail" class="detail-close-button" type="button" aria-label="关闭位置列表" title="关闭，返回地图工具"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg><span>关闭</span></button></div><h2>${type==='spawn'?'出生点位':'撤离点位'}</h2><p class="small muted">已补充到资料图。点击下方位置可定位并查看依据；待核验点默认隐藏，点选可单独展开。</p><div class="nearby-list">${points.map(p=>`<button data-point="${esc(p.id)}">${esc(p.label)}${p.status==='unknown'?' · 待核验':''}</button>`).join('')}</div>`;
    document.body.classList.remove('detail-collapsed');$('mobile-detail').hidden=false;document.querySelector('.right-panel').scrollTop=0;
   }
@@ -353,9 +375,9 @@ function pointNote(p){
  const text=`<p class="detail-note" ${p.noteEn?`data-i18n-en="${esc(p.noteEn)}"`:""}>${esc(p.note||'个人记录，未独立核验。')}</p>`;
  return p.type==='briefcase'?`<details class="atlas-detail-more"><summary data-i18n-en="Marker details & sources">点位与来源说明</summary>${text}</details>`:text;
 }
-function selectPoint(id,focus=false){const p=allPoints().find(p=>p.id===id);if(!p)return;if(p.personal&&window.mapTools){if(focus)focusPoint(p);window.mapTools.edit(p);return;}if(state.source2d!=='source')set2DSource('source');if(isClient33(p)){state.candidatesEnabled=true;state.candidateTypes.add(p.type);}if(isEnemy(p)){state.enemySourceTouched=true;state.enemySource=enemyPool(p);renderFilters();}state.selected=id;document.body.classList.remove('detail-collapsed','filters-open');$('mobile-detail').hidden=false;document.querySelector('.right-panel').scrollTop=0;const type=TYPES[p.enemyClass==='phantom'?'phantom':p.type]||TYPES.custom;const room=state.data[state.map]?.rooms?.find(r=>r.id===id||r.pointId===id);const ob=personal.observations[id]||{present:0,absent:0};const near=sourceDisplayPoints().filter(n=>n.id!==id&&Math.hypot(n.x-p.x,n.y-p.y)<.026);$('detail').innerHTML=`<div class="detail-panel-header"><div class="detail-eyebrow"><span class="type-symbol${p.enemyClass==='phantom'||isClient33(p)?' atlas-type-symbol':''}" style="${p.enemyClass==='phantom'||isClient33(p)?'':'background:'+type[2]}">${p.enemyClass==='phantom'||isClient33(p)?window.DUKEMapSymbols.svg(isClient33(p)?p.type:'phantom'):type[1]}</span><span class="detail-context-label">${esc(p.id)}</span></div><button id="close-detail" class="detail-close-button" type="button" aria-label="关闭点位详情" title="关闭，返回地图工具"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg><span>关闭</span></button></div><h2 class="detail-title" ${p.labelEn?`data-i18n-en="${esc(p.labelEn)}"`:""}>${esc(p.label)}</h2><span class="detail-status ${esc(p.status)}">${STATUS[p.status]||'待核验'}</span><dl class="detail-meta"><dt>区域</dt><dd>${esc(regionName(p.region))}</dd><dt>楼层</dt><dd>${esc(floorName(p))}</dd><dt>图像位置</dt><dd>${(p.x*100).toFixed(2)}%, ${(p.y*100).toFixed(2)}%</dd></dl>${pointNote(p)}${p.status==='fixed_source'?'<p class="small muted" data-i18n-en="A fixed marker does not guarantee a spawn or drop.">固定标记不保证本局刷新或掉落。</p>':''}${room?renderRoom(room):''}${sourceLocationDetails(p)}<div class="detail-buttons">${isClient33(p)?'':`<button class="primary-button" id="add-to-route">${(personal.routes[state.map]||[]).includes(id)?'已在清单 · 点击移除':'＋ 加入访问清单'}</button>`}${p.sourceImage?`<button class="secondary-button" data-source="${p.sourceImage}">查看原图证据 ↗</button>`:''}${p.currentReviewImage&&p.currentReviewImage!==p.sourceImage?`<button class="secondary-button" data-source="${p.currentReviewImage}" data-i18n-en="Compare the new map ↗">查看新版对照 ↗</button>`:''}</div><details class="atlas-detail-more"><summary data-i18n-en="My notes and observations">个人备注与观察</summary><h3>个人备注</h3><textarea id="point-note" placeholder="路线、门禁、出生情况…">${esc(personal.notes[id]||'')}</textarea><button id="save-note" class="text-btn" style="margin-top:8px">保存备注</button><h3>个人观察记录</h3><div class="observation-buttons"><button data-observe="present">本局见到 ＋1</button><button data-observe="absent">本局未见 ＋1</button></div><p class="observation-count">见到 ${ob.present} 次 · 未见 ${ob.absent} 次 <button class="text-btn" id="undo-observe">撤销上次</button></p><p class="small muted">手动记录，仅供个人对照，不自动推算必刷。</p></details>${near.length?`<h3>附近 / 重叠点位</h3><div class="nearby-list">${near.map(n=>isClient33(n)?`<button data-point="${esc(n.id)}"><span class="atlas-type-symbol">${window.DUKEMapSymbols.svg(n.type)}</span><span data-i18n-en="${esc(n.labelEn)}">${esc(n.label)}</span><small>${esc(n.id)}</small></button>`:`<button data-point="${n.id}">${n.id} · ${TYPES[n.type]?.[1]||'点'}</button>`).join('')}</div>`:''}${p.personal?'<button id="delete-personal" class="wide-button" style="margin-top:20px">删除此个人点位</button>':''}`;
+function selectPoint(id,focus=false){const p=allPoints().find(p=>p.id===id);if(!p)return;if(p.personal&&window.mapTools){if(focus)focusPoint(p);window.mapTools.edit(p);return;}if(state.source2d!=='source')set2DSource('source');if(isClient33(p)&&!state.types.has(p.type)){state.types.add(p.type);renderFilters();}if(isEnemy(p)){state.enemySourceTouched=true;state.enemySource=enemyPool(p);renderFilters();}state.selected=id;document.body.classList.remove('detail-collapsed','filters-open');$('mobile-detail').hidden=false;document.querySelector('.right-panel').scrollTop=0;const type=TYPES[p.enemyClass==='phantom'?'phantom':p.type]||TYPES.custom;const room=state.data[state.map]?.rooms?.find(r=>r.id===id||r.pointId===id);const ob=personal.observations[id]||{present:0,absent:0};const near=sourceDisplayPoints().filter(n=>n.id!==id&&Math.hypot(n.x-p.x,n.y-p.y)<.026);$('detail').innerHTML=`<div class="detail-panel-header"><div class="detail-eyebrow"><span class="type-symbol${p.enemyClass==='phantom'||isClient33(p)?' atlas-type-symbol':''}" style="${p.enemyClass==='phantom'||isClient33(p)?'':'background:'+type[2]}">${p.enemyClass==='phantom'||isClient33(p)?window.DUKEMapSymbols.svg(isClient33(p)?p.type:'phantom'):type[1]}</span><span class="detail-context-label">${esc(p.id)}</span></div><button id="close-detail" class="detail-close-button" type="button" aria-label="关闭点位详情" title="关闭，返回地图工具"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg><span>关闭</span></button></div><h2 class="detail-title" ${p.labelEn?`data-i18n-en="${esc(p.labelEn)}"`:""}>${esc(p.label)}</h2><span class="detail-status ${esc(p.status)}">${STATUS[p.status]||'待核验'}</span><dl class="detail-meta"><dt>区域</dt><dd>${esc(regionName(p.region))}</dd><dt>楼层</dt><dd>${esc(floorName(p))}</dd><dt>图像位置</dt><dd>${(p.x*100).toFixed(2)}%, ${(p.y*100).toFixed(2)}%</dd></dl>${pointNote(p)}${p.status==='fixed_source'?'<p class="small muted" data-i18n-en="A fixed marker does not guarantee a spawn or drop.">固定标记不保证本局刷新或掉落。</p>':''}${room?renderRoom(room):''}${sourceLocationDetails(p)}<div class="detail-buttons">${isClient33(p)?'':`<button class="primary-button" id="add-to-route">${(personal.routes[state.map]||[]).includes(id)?'已在清单 · 点击移除':'＋ 加入访问清单'}</button>`}${p.sourceImage?`<button class="secondary-button" data-source="${p.sourceImage}">查看原图证据 ↗</button>`:''}${p.currentReviewImage&&p.currentReviewImage!==p.sourceImage?`<button class="secondary-button" data-source="${p.currentReviewImage}" data-i18n-en="Compare the new map ↗">查看新版对照 ↗</button>`:''}</div><details class="atlas-detail-more"><summary data-i18n-en="My notes and observations">个人备注与观察</summary><h3>个人备注</h3><textarea id="point-note" placeholder="路线、门禁、出生情况…">${esc(personal.notes[id]||'')}</textarea><button id="save-note" class="text-btn" style="margin-top:8px">保存备注</button><h3>个人观察记录</h3><div class="observation-buttons"><button data-observe="present">本局见到 ＋1</button><button data-observe="absent">本局未见 ＋1</button></div><p class="observation-count">见到 ${ob.present} 次 · 未见 ${ob.absent} 次 <button class="text-btn" id="undo-observe">撤销上次</button></p><p class="small muted">手动记录，仅供个人对照，不自动推算必刷。</p></details>${near.length?`<h3>附近 / 重叠点位</h3><div class="nearby-list">${near.map(n=>isClient33(n)?`<button data-point="${esc(n.id)}"><span class="atlas-type-symbol">${window.DUKEMapSymbols.svg(n.type)}</span><span data-i18n-en="${esc(n.labelEn)}">${esc(n.label)}</span><small>${esc(n.id)}</small></button>`:`<button data-point="${n.id}">${n.id} · ${TYPES[n.type]?.[1]||'点'}</button>`).join('')}</div>`:''}${p.personal?'<button id="delete-personal" class="wide-button" style="margin-top:20px">删除此个人点位</button>':''}`;
  window.dispatchEvent(new CustomEvent('atlasselection',{detail:{map:state.map,point:p}}));
- if(focus){if(isClient33(p))state.candidateTypes.add(p.type);else state.types.add(filterType(p));state.statuses.add(p.status);state.floor='all';if(!matchesQuery(p)){state.query='';$('search').value=''}$('floor').value='all';renderFilters();focusPoint(p)}else draw()
+ if(focus){state.types.add(filterType(p));state.statuses.add(p.status);state.floor='all';if(!matchesQuery(p)){state.query='';$('search').value=''}$('floor').value='all';renderFilters();focusPoint(p)}else draw()
 }
 function renderRoom(room){const contents=room.contents||room.chests||{};return `<h3>门禁房资料</h3><p class="small muted">${esc(room.englishName||room.sourceEnglishName||room.name||'')}<br>${room.cardTier?'门卡等级 '+esc(room.cardTier):''} ${(room.listedCost||room.sourceListedPrice)?'· 图上标价 '+Number(room.listedCost||room.sourceListedPrice).toLocaleString():''}</p><div class="room-contents">${Object.entries(contents).map(([k,v])=>`<div><span>${TYPES[k]?.[0]||esc(k)}</span><b>× ${esc(v)}</b></div>`).join('')}</div><p class="small muted">房间内数量汇总，不能作为每个箱子的精确坐标。${esc(room.note||'')}</p>`}
 const pointFiles = new Map(), baseImages = new Map(), extraLayers = new Map();
@@ -443,7 +465,7 @@ async function setMap(id) {
   $('map-error').hidden = true;
   state.map = id; state.enemySourceTouched = false; state.enemySource = defaultEnemySource();
   state.selected = null; state.hover = null; state.floor = 'all'; state.query = '';
-  state.types = new Set(DEFAULT_TYPES);
+  applyRegularTypes(DEFAULT_TYPES);
   if (state.enemySource === 'source') state.types.add('enemy');
   state.statuses = new Set(DEFAULT_STATUSES);
   state.zoom = 1; state.tx = 0; state.ty = 0;
@@ -489,12 +511,47 @@ $('detail').addEventListener('click',e=>{
  const field=$('search');
  field?.focus({preventScroll:true});field?.scrollIntoView({block:'nearest'});
 });
-function syncLayerButtons(){
- document.querySelectorAll('[data-atlas-layer]').forEach(b=>{const ts=LAYERS[b.dataset.atlasLayer];const active=ts.length===state.types.size&&ts.every(t=>state.types.has(t));b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active))});
+function applyRegularTypes(types) {
+ state.types=new Set([...types,...[...state.types].filter(type=>CLIENT33_TYPES[type])]);
 }
-document.querySelectorAll('[data-atlas-layer]').forEach(button=>button.onclick=()=>{state.types=new Set(LAYERS[button.dataset.atlasLayer]);renderFilters();draw()});
+function syncLayerButtons(){
+ const regularCount=[...state.types].filter(type=>!CLIENT33_TYPES[type]).length;
+ document.querySelectorAll('[data-atlas-layer]').forEach(b=>{const ts=LAYERS[b.dataset.atlasLayer];const active=ts.length===regularCount&&ts.every(t=>state.types.has(t));b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active))});
+}
+document.querySelectorAll('[data-atlas-layer]').forEach(button=>button.onclick=()=>{applyRegularTypes(LAYERS[button.dataset.atlasLayer]);renderFilters();draw()});
 document.querySelectorAll('[data-map]').forEach(b=>b.onclick=()=>setMap(b.dataset.map));document.querySelectorAll('[data-side]').forEach(b=>b.onclick=()=>showSide(b.dataset.side));
-$('search').oninput=e=>{state.query=e.target.value.trim();draw()};$('search-clear').onclick=()=>{state.query='';$('search').value='';draw();$('search').focus()};$('search').onkeydown=e=>{if(e.key==='Escape'){$('search-clear').click();e.stopPropagation()}else if(e.key==='Enter'&&state.query){const p=visible()[0];if(p){e.preventDefault();selectPoint(p.id,true)}}};$('floor').onchange=e=>{state.floor=e.target.value;draw()};$('type-filters').onchange=e=>{if(e.target.checked)state.types.add(e.target.value);else state.types.delete(e.target.value);syncTypeToggle();syncLayerButtons();draw()};$('types-all').onclick=()=>{const types=availableTypes();state.types=types.every(type=>state.types.has(type))?new Set():new Set(types);renderFilters();draw()};$('status-filters').onclick=e=>{const b=e.target.closest('[data-status]');if(!b)return;const s=b.dataset.status;state.statuses.has(s)?state.statuses.delete(s):state.statuses.add(s);b.classList.toggle('active',state.statuses.has(s));b.setAttribute('aria-pressed',String(state.statuses.has(s)));draw()};
+$('search').oninput=e=>{state.query=e.target.value.trim();draw()};$('search-clear').onclick=()=>{state.query='';$('search').value='';draw();$('search').focus()};$('search').onkeydown=e=>{if(e.key==='Escape'){$('search-clear').click();e.stopPropagation()}else if(e.key==='Enter'&&state.query){const p=visible()[0];if(p){e.preventDefault();selectPoint(p.id,true)}}};$('floor').onchange=e=>{state.floor=e.target.value;draw()};
+function finishTypeSelection() {
+ syncTypeToggle();syncLayerButtons();
+ const selected=allPoints().find(p=>p.id===state.selected);
+ if(isClient33(selected)&&!state.types.has(selected.type))overview();else draw();
+}
+$('type-filters').onclick=event=>{
+ const expand=event.target.closest('#candidate-types-expand');
+ if(!expand)return;
+ candidateTypesExpanded=!candidateTypesExpanded;
+ expand.setAttribute('aria-expanded',String(candidateTypesExpanded));
+ $('candidate-type-options').hidden=!candidateTypesExpanded;
+};
+$('type-filters').onchange=event=>{
+ const input=event.target;
+ const changed=input.id==='candidate-group-toggle'
+  ? $('candidate-type-options').querySelectorAll('input')
+  : [input];
+ for(const row of changed){
+  row.checked=input.checked;
+  if(row.checked)state.types.add(row.value);else state.types.delete(row.value);
+ }
+ finishTypeSelection();
+};
+$('types-all').onclick=()=>{
+ const types=availableTypes(),checked=!types.every(type=>state.types.has(type));
+ // Some point layers may still be loading when the player selects all.
+ state.types=new Set(checked?Object.keys(TYPES).filter(type=>type!=='ore_boss'):[]);
+ for(const row of $('type-filters').querySelectorAll('input[value]'))row.checked=checked;
+ finishTypeSelection();
+};
+$('status-filters').onclick=e=>{const b=e.target.closest('[data-status]');if(!b)return;const s=b.dataset.status;state.statuses.has(s)?state.statuses.delete(s):state.statuses.add(s);b.classList.toggle('active',state.statuses.has(s));b.setAttribute('aria-pressed',String(state.statuses.has(s)));draw()};
 $('regions').onclick=e=>{const b=e.target.closest('[data-region]');if(!b)return;const r=MAPS[state.map].regions.find(r=>r[0]===b.dataset.region);if(state.source2d!=='source')set2DSource('source');focusPoint({x:r[2],y:r[3]},2.1)};
 document.addEventListener('click',e=>{const source=e.target.closest('[data-source]');if(source)showSource(Number(source.dataset.source));const point=e.target.closest('[data-point]');if(point)selectPoint(point.dataset.point,true)});
 $('detail').addEventListener('click',e=>{const p=allPoints().find(p=>p.id===state.selected);if(e.target.closest('#close-detail')){overview();return}if(!p)return;const id=p.id;

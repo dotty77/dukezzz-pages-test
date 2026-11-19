@@ -29,10 +29,9 @@ html[data-theme="dark"] .tuning-overview{--report-gold:#f2ce7b;--report-line:#ec
 .overview-basis summary{cursor:pointer}.overview-basis p{margin:10px 0 0}
 .overview-basis ul{padding-left:17px}
 .guarantee-box{margin-top:20px;padding:15px;border:1px solid var(--line);border-radius:10px;background:var(--surface-muted)}
-.guarantee-box[data-state="big"]{background:var(--tuning-gold-bg);border-color:color-mix(in srgb,var(--tuning-gold) 25%,var(--line))}
-.guarantee-box[data-state="small"]{background:var(--theme-accent-bg)}
+.guarantee-box[data-state="big"]{background:var(--theme-accent-bg);border-color:color-mix(in srgb,var(--accent) 30%,var(--line))}
 .guarantee-box>strong{font-size:13px;color:var(--text)}
-.guarantee-box[data-state="big"]>strong{color:var(--tuning-gold)}
+.guarantee-box[data-state="big"]>strong{color:var(--teal)}
 .guarantee-box>p{font-size:11px;line-height:1.9;color:var(--muted);margin:7px 0}
 .guarantee-box>small{display:block;font-size:10px;color:var(--muted);margin-top:5px}
 .guarantee-manual{display:flex;flex-direction:column;gap:7px;font-size:10px;color:var(--muted);margin-top:13px}

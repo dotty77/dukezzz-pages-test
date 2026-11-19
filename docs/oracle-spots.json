@@ -110,9 +110,19 @@
     {
       "id": "banbastrum",
       "name": "布亚斯特城区",
-      "description": "罗斯凯利法的城市步行区域，随主线第三季第一章解锁。贝克福德街等内部街道归在同一城区下，按你当前主线进度选择可达地点。",
+      "description": "罗斯凯利法的城区，随主线第三季第一章解锁。贝克福德街和齿轮街都可从这里前往。",
       "sourceUrls": [
-        "https://www.taptap.cn/moment/816024102270667939"
+        "https://www.taptap.cn/moment/816024102270667939",
+        "https://zzz.mihoyo.com/news/165415"
+      ]
+    },
+    {
+      "id": "vyrium",
+      "name": "维尔乌姆城区",
+      "description": "罗斯凯利法的离岛城区，在主线第三季第一章期间解锁。可在地图中查看弗林特工坊与熔光馆。",
+      "sourceUrls": [
+        "https://zzz.mihoyo.com/news/166026",
+        "https://www.miyoushe.com/zzz/article/78153353"
       ]
     }
   ],
@@ -611,6 +621,60 @@
       "sourceUrls": [
         "https://www.yangtuoyou.com/article/7886.html",
         "https://www.taptap.cn/moment/816024102270667939"
+      ]
+    },
+    {
+      "id": "banbastrum-gear-street-goal",
+      "cityId": "banbastrum",
+      "city": "布亚斯特城区",
+      "name": "齿轮街足球场",
+      "landmark": "齿轮街足球场的球门",
+      "element": "土",
+      "orientation": "站在球场边，让球门落在视野中央。",
+      "approach": [
+        "在布亚斯特城区打开齿轮街的地图，前往图上左下方的足球场。",
+        "沿场边走到能看清球门的位置。"
+      ],
+      "rationale": "这张签用「土」呼应脚下的球场。",
+      "sourceUrls": [
+        "https://zzz.mihoyo.com/news/165415",
+        "https://forum.gamer.com.tw/C.php?bsn=74860&snA=10670"
+      ]
+    },
+    {
+      "id": "vyrium-flint-workshop",
+      "cityId": "vyrium",
+      "city": "维尔乌姆城区",
+      "name": "弗林特工坊传送点",
+      "landmark": "城区地图上的「弗林特工坊」",
+      "element": "金",
+      "orientation": "在传送落点停下，面向工坊。",
+      "approach": [
+        "打开维尔乌姆城区地图，选择「弗林特工坊」传送。",
+        "抵达后留在落点附近，转动镜头看向工坊。"
+      ],
+      "rationale": "这张签用「金」呼应工坊锻造金属的手艺。",
+      "sourceUrls": [
+        "https://zzz.mihoyo.com/news/166026",
+        "https://www.miyoushe.com/zzz/article/78153353"
+      ]
+    },
+    {
+      "id": "vyrium-courtyard-topiary",
+      "cityId": "vyrium",
+      "city": "维尔乌姆城区",
+      "name": "熔光馆庭院绿雕",
+      "landmark": "熔光馆外庭院里的园艺绿雕",
+      "element": "木",
+      "orientation": "在庭院里找个能看清绿雕的位置，面向修剪过的枝叶。",
+      "approach": [
+        "在维尔乌姆城区选择「熔光馆」传送，从馆内的出口走到庭院。",
+        "在庭院找到园艺绿雕，停在绿雕旁的步道上。"
+      ],
+      "rationale": "庭院里的枝叶经园艺邦布修剪成形，对应这张签的「木」。",
+      "sourceUrls": [
+        "https://zzz.mihoyo.com/news/166026",
+        "https://www.miyoushe.com/zzz/article/78153353"
       ]
     }
   ],

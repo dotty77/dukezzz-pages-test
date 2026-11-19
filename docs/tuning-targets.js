@@ -19,26 +19,53 @@ const hiddenAnalysisAgents=new Set(['1021','1041','1071','1101','1141','1181','1
 
 export function mountExpectation(){
   const host=$('target-expectation');
-  host.innerHTML=`<summary class="target-tool-summary"><span><span class="target-tool-icon" aria-hidden="true">＋</span><span><strong>抽数期望</strong><small>0+0 到 6+5 · 不用导入记录</small></span></span><span class="target-open-hint">展开查看 ⌄</span></summary>
-    <div class="expectation-content"><p class="target-intro">想抽到什么配置？这里分别列出平均期望和最坏保底上限。</p>
-      <div id="expectation-route" class="expectation-route" aria-label="常用目标档位"></div>
-      <div class="expectation-hero"><div class="expectation-primary"><span class="target-eyebrow">从零开始 · 总抽数期望</span><h3><span id="expectation-target">0+1</span><span aria-hidden="true"> → </span><span class="expectation-approx">约</span> <strong id="expectation-total"></strong><small> 抽</small></h3><p id="expectation-detail"></p></div><div class="expectation-ceiling"><span>最坏保底上限</span><strong><span id="expectation-max"></span><small> 抽</small></strong><span>每次都歪，且每次都到硬保底</span></div></div>
-      <div class="expectation-controls"><span>也可自由选择目标</span><label>角色影画<select id="expectation-mindscape" aria-label="目标角色影画"></select></label><label>专武叠影<select id="expectation-refinement" aria-label="目标专武叠影"></select></label><span id="expectation-copies"></span></div>
-      <p class="expectation-scope">角色池、音擎池均从 <strong>0 垫抽、小保底</strong>开始；尚未拥有目标。期望是平均值，不是抽到的保证。</p>
-      <div class="expectation-table-wrap" tabindex="0" role="region" aria-label="常用配置期望表"><table class="expectation-table"><thead><tr><th scope="col">目标配置</th><th scope="col">总期望抽数</th><th scope="col">比上一档增加</th><th scope="col">最坏上限</th></tr></thead><tbody id="expectation-route-body"></tbody></table></div>
-      <details class="target-basis"><summary>怎么算的？查看规则与依据</summary><div id="expectation-basis"></div></details>
-    </div>`;
-  for(let i=0;i<=6;i++){const option=el('option','',`${i} 影 · ${i+1} 个角色`);option.value=i;$('expectation-mindscape').append(option);}
-  for(let i=0;i<=5;i++){const option=el('option','',i?`${i} 叠 · ${i} 把专武`:'无专武');option.value=i;$('expectation-refinement').append(option);}
+  host.innerHTML=`
+    <h2 id="expectation-title" data-i18n-en="Expected pulls">抽卡期望</h2>
+    <div class="expectation-controls">
+      <label><span data-i18n-en="Agent mindscape">角色影画</span><select id="expectation-mindscape"></select></label>
+      <label><span data-i18n-en="Signature W-Engine">专武叠影</span><select id="expectation-refinement"></select></label>
+    </div>
+    <dl class="expectation-results" aria-live="polite" aria-atomic="true">
+      <div><dt data-i18n-en="Average">平均期望</dt><dd><strong id="expectation-total"></strong> <small data-i18n-en="pulls">抽</small></dd></div>
+      <div><dt data-i18n-en="Maximum">保底上限</dt><dd><strong id="expectation-max"></strong> <small data-i18n-en="pulls">抽</small></dd></div>
+    </dl>
+    <p class="expectation-scope" data-i18n-en="Regular featured channels, starting with no copies, pity or guarantee.">普通限定池，按未持有、零垫抽、小保底估算。</p>
+    <details class="expectation-reference">
+      <summary id="expectation-reference-title" data-i18n-en="Compare builds &amp; see calculation">各档对照与计算依据</summary>
+      <div class="expectation-reference-scroll" tabindex="0" role="region" aria-labelledby="expectation-reference-title">
+        <table class="expectation-table"><thead><tr>
+          <th scope="col" data-i18n-en="Build">目标</th><th scope="col" data-i18n-en="Average">期望</th>
+          <th scope="col" data-i18n-en="Increase">较上档</th><th scope="col" data-i18n-en="Max">上限</th>
+        </tr></thead><tbody id="expectation-route-body"></tbody></table>
+        <p id="expectation-detail"></p>
+        <details class="target-basis"><summary>怎么算的？查看规则与依据</summary><div id="expectation-basis"></div></details>
+      </div>
+    </details>`;
+  const mindscapeSelect=$('expectation-mindscape'),refinementSelect=$('expectation-refinement');
+  for(let i=0;i<=6;i++){
+    const option=el('option','',i===0?'0 影（本体）':`${i} 影`);
+    option.value=i;
+    option.dataset.i18nEn=i===0?'M0 (base)':'M'+i;
+    mindscapeSelect.append(option);
+  }
+  for(let i=0;i<=5;i++){
+    const option=el('option','',i?`${i} 叠`:'无专武');
+    option.value=i;
+    option.dataset.i18nEn=i?'W'+i:'None';
+    refinementSelect.append(option);
+  }
+  const tableBody=$('expectation-route-body');
   let prior=null;
   for(const [mindscape,refinement] of route){
     const target=estimateTarget({mindscape,refinement});
-    const button=el('button','',target.label);button.type='button';button.dataset.target=target.label;
-    button.onclick=()=>select(mindscape,refinement);$('expectation-route').append(button);
+    const button=el('button','',target.label);
+    button.type='button';
+    button.dataset.i18nEn=`M${mindscape}W${refinement}`;
+    button.onclick=()=>select(mindscape,refinement);
     const row=el('tr');row.dataset.target=target.label;
-    const name=el('th','',target.label);name.scope='row';
-    row.append(name,el('td','',`约 ${number(target.totalExpected)} 抽`),el('td','',prior?`+${number(target.totalExpected-prior.totalExpected)} 抽`:'起点'),el('td','',`${number(target.maxPulls)} 抽`));
-    $('expectation-route-body').append(row);prior=target;
+    const name=el('th');name.scope='row';name.append(button);
+    row.append(name,el('td','',number(target.totalExpected)),el('td','',prior?'+'+number(target.totalExpected-prior.totalExpected):'—'),el('td','',number(target.maxPulls)));
+    tableBody.append(row);prior=target;
   }
   const basis=$('expectation-basis');
   basis.append(el('p','',EXPECTATION_METHOD.notation),el('p','',EXPECTATION_METHOD.formula));
@@ -48,17 +75,16 @@ export function mountExpectation(){
   const sources=el('p','target-sources','概率依据：');for(const source of EXPECTATION_SOURCES.slice(0,2)){const a=el('a','',source.label+' ↗');a.href=source.url;a.target='_blank';a.rel='noreferrer';sources.append(a);}basis.append(sources);
   function select(mindscape,refinement){
     const result=estimateTarget({mindscape,refinement});
-    $('expectation-mindscape').value=mindscape;$('expectation-refinement').value=refinement;
-    $('expectation-target').textContent=result.label;$('expectation-total').textContent=number(result.totalExpected);$('expectation-max').textContent=number(result.maxPulls);
+    mindscapeSelect.value=mindscape;refinementSelect.value=refinement;
+    $('expectation-total').textContent=number(result.totalExpected);$('expectation-max').textContent=number(result.maxPulls);
     $('expectation-detail').textContent=`角色约 ${number(result.characterExpected)} 抽 ＋ 专武约 ${number(result.weaponExpected)} 抽`;
-    $('expectation-copies').textContent=`共 ${result.characterCopies} 个角色本体、${result.weaponCopies} 把专武`;
-    for(const button of $('expectation-route').children)button.setAttribute('aria-pressed',String(button.dataset.target===result.label));
-    for(const row of $('expectation-route-body').children)row.dataset.selected=String(row.dataset.target===result.label);
+    for(const row of tableBody.rows){
+      row.dataset.selected=String(row.dataset.target===result.label);
+      row.querySelector('button').setAttribute('aria-pressed',row.dataset.selected);
+    }
   }
-  $('expectation-mindscape').onchange=$('expectation-refinement').onchange=()=>select(Number($('expectation-mindscape').value),Number($('expectation-refinement').value));
+  mindscapeSelect.onchange=refinementSelect.onchange=()=>select(Number(mindscapeSelect.value),Number(refinementSelect.value));
   select(0,1);
-  function reveal(){if(location.hash==='#target-expectation'){host.open=true;requestAnimationFrame(()=>host.scrollIntoView({block:'start'}));}}
-  addEventListener('hashchange',reveal);reveal();
 }
 
 export function mountUpPairs(){

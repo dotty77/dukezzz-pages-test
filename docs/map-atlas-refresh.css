@@ -124,18 +124,27 @@ html[data-theme] .map-page #map-stage { background-image:radial-gradient(#8996bc
   .map-page main:has(.right-panel .map-overview) { grid-template-columns:260px minmax(400px,1fr); }
 }
 
-/* A single scrollable tool strip saves map height on small screens. */
+.map-page #map-view-toggle { display:none; }
+.map-page #map-view-options { display:contents; }
 @media(max-width:700px) {
   .map-page #map-tools {
-    flex-wrap:nowrap; overflow-x:auto; gap:5px; padding:5px 8px;
-    scrollbar-width:thin; scrollbar-color:var(--line) transparent;
-    scroll-padding:8px; overscroll-behavior-x:contain;
+    display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:5px; padding:5px 8px;
   }
-  .map-page #map-tools>* { flex-shrink:0; }
-  .map-page #map-tools button,.map-page #map-tools summary { min-height:44px; padding:8px 10px; }
+  .map-page #map-view-toggle { display:block; }
+  .map-page #map-view-toggle::after { content:"⌄"; display:inline-block; margin-inline-start:4px; }
+  .map-page #map-view-toggle[aria-expanded=true]::after { transform:rotate(180deg); }
+  .map-page #map-view-options { display:none; }
+  .map-page #map-view-toggle[aria-expanded=true] + #map-view-options {
+    grid-column:1/-1; display:flex; flex-wrap:wrap; align-items:center; gap:6px;
+    border-top:1px solid var(--line); padding:7px 0 3px; max-height:34dvh; overflow:auto;
+  }
+  .map-page #map-tools button,.map-page #map-tools summary { min-height:44px; padding:6px 5px; white-space:normal; }
+  .map-page #map-tools-help[data-context=explore] { display:none; }
+  .map-page #map-tools .map-rotation-tools { margin:0; }
   .map-page #map-tools .map-rotation-tools button { min-width:44px; }
   .map-page .map-personal-toggle { min-height:44px; padding:0 5px; }
-  .map-page .map-backup-tools>div { position:fixed; top:auto; right:12px; bottom:16px; z-index:40; }
+  .map-page .map-backup-tools[open] { width:100%; }
+  .map-page .map-backup-tools>div { position:static; grid-template-columns:1fr 1fr; margin-top:4px; }
   .map-page .atlas-layer-tabs button { min-height:44px; padding:8px; }
   .map-page .atlas-filter-more>summary { min-height:44px; }
   .map-page .type-row { min-height:44px; }

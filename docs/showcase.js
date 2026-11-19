@@ -6,7 +6,7 @@ import {getDiscScoreProfile,scoreEquippedDisc,withDiscScoreDefaults} from './dis
 import {applyPanelMechanics,calculatePanel,evaluateDiscContributions,normalizedToConfiguration,resolveTargets,validateConfiguration} from './disc-planner-core.js?v=20261118-disc-context-score-launch-1';
 import {assessUsable,evaluateContext} from './disc-context.js?v=20261027-gachabase-all-1';
 import {applyPlanningScope} from './disc-scope.js?v=20260913-disc-planner-1';
-import {renderPanelEffects,renderDiscFitScore,discFitMethod,formatPanelValue} from './disc-panel-display.js?v=20261118-disc-context-score-launch-1';
+import {renderPanelEffects,renderDiscFitScore,discFitMethod,formatPanelValue} from './disc-panel-display.js?v=20261118-reviewed-ui-launch-1';
 import {SUBSTAT_OPTIONS,CORE_OPTIONS,MAX_CORE_ATTRIBUTES,substatName,referenceSelection,setSelection,selectionBuild,countOccurrences} from './showcase-preferences.js?v=20261117-disc-farm-matching-launch-1';
 import {ARTICLE_REFERENCE,evaluateArticleRules} from './showcase-article-rules.js?v=20260909-version-3-2-1';
 const $=id=>document.getElementById(id);
@@ -234,7 +234,7 @@ function attributePanel(agent,reference,selection,config){
   if(profile.available)panel.append(discWeightDetails(profile));
   const reasons=reference?.reasons||[];if(reasons.length)panel.append(el('p','showcase-reference-reason',reasons[0]));
   const source=el('p','showcase-reference-source',custom?'本页自选方案，可按队伍调整。':'本站配装参考，可按队伍调整。');
-  const link=el('a','','查看角色依据 ↗');link.href=`agents.html?v=20261118-archive-roam-launch-1#agent=${agent.id}`;source.append(link);panel.append(source,el('p','showcase-reference-note','选择仅在本页保留；刷新后恢复建议，不保存 UID 或账号资料。'));
+  const link=el('a','','查看角色依据 ↗');link.href=`agents.html?v=20261118-reviewed-ui-launch-1#agent=${agent.id}`;source.append(link);panel.append(source,el('p','showcase-reference-note','选择仅在本页保留；刷新后恢复建议，不保存 UID 或账号资料。'));
   const status=el('p','showcase-preference-status',preferenceMessages.get(agent.id)||'');status.id='showcase-preference-status';status.setAttribute('role','status');status.setAttribute('aria-live','polite');panel.append(status);
   return panel;
 }
@@ -284,7 +284,7 @@ function renderResult(){
   const info=el('div');info.append(el('p','',guide.faction||'代理人'),el('h2','',agent.name));
   const meta=el('div','showcase-hero-meta');for(const value of [`${agent.rank} 级`,`Lv. ${agent.level}`,guide.element,guide.specialty].filter(Boolean))meta.append(el('span','',value));
   const cinema=el('div','showcase-mindscape');cinema.setAttribute('aria-label',`已解锁 ${agent.mindscape} 层影画`);for(let i=1;i<=6;i++)cinema.append(el('span',i<=agent.mindscape?'active':'',i));
-  info.append(meta,cinema);const link=el('a','showcase-guide-link','查看角色资料与配装 ↗');link.href=`agents.html?v=20261118-archive-roam-launch-1#agent=${agent.id}`;hero.append(img(agent.icon),info,link);
+  info.append(meta,cinema);const link=el('a','showcase-guide-link','查看角色资料与配装 ↗');link.href=`agents.html?v=20261118-reviewed-ui-launch-1#agent=${agent.id}`;hero.append(img(agent.icon),info,link);
   if(portraits[agent.id]?.src)hero.append(img(portraits[agent.id].src,'showcase-hero-art'));
   const planner=el('button','primary-button','带入当前配装，规划驱动盘 ↗');planner.type='button';planner.onclick=()=>{try{sessionStorage.setItem('bagel-disc-planner-handoff',JSON.stringify({...agent,planningTier:graduationTier}));location.href=`disc-planner.html?agent=${encodeURIComponent(agent.id)}&v=20260916-english-2`;}catch{planner.textContent='浏览器存储受限，请在驱动盘规划页重新读取展柜';}};hero.append(planner);
   const config=normalizedToConfiguration(agent,panelData);

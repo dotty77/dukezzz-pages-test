@@ -36,7 +36,7 @@ function renderLanguage() {
   document.title = `${t('tvWall')} · DUKE`;
   $('wall-search').placeholder = t('search');
   for (const [id, key] of [['wall-search','searchLabel'],['wall-price','priceLabel'],['wall-stage','stageLabel'],['wall-room','roomLabel'],['wall-zoom','zoomLabel'],['wall-minus','smaller'],['wall-plus','larger'],['wall-dialog-close','close'],['wall-prev','prevChannel'],['wall-next','nextChannel']]) $(id).setAttribute('aria-label',t(key));
-  document.querySelector('.wall-breadcrumb a').href = linkLanguage('gallery.html?v=20261118-disc-context-score-launch-1');
+  document.querySelector('.wall-breadcrumb a').href = linkLanguage('gallery.html?v=20261118-reviewed-ui-launch-1');
   for (const [code, unit] of state.units) {
     const record = state.records.find(record => record.code === code);
     unit.querySelector('.tv-name').textContent = nameOf(record);
@@ -209,7 +209,7 @@ function syncPlayback() {
 function renderFocus(record) {
   $('wall-dialog-title').textContent=nameOf(record);$('wall-dialog-price').textContent=record.price==null ? '' : money(record.price);
   $('wall-dialog-channel').textContent=`DUKE / CHANNEL ${record.code}`;
-  const link=$('wall-item-link');link.hidden=!record.itemId;link.href=linkLanguage(`gallery.html?v=20261118-disc-context-score-launch-1#item=${record.itemId || ''}`);
+  const link=$('wall-item-link');link.hidden=!record.itemId;link.href=linkLanguage(`gallery.html?v=20261118-reviewed-ui-launch-1#item=${record.itemId || ''}`);
   copy($('wall-dialog-status'),'videoNote');
   // Some promo frames print another item's caption; the note says so instead of changing the catalog data.
   const note=$('wall-dialog-note'),frameText=record.frameTextNote;

@@ -15,6 +15,7 @@ function readTeam() {
   if (!ids.length) try { ids = JSON.parse(localStorage.getItem(STORAGE) || '[]'); } catch { ids = []; }
   const unique = [...new Set(ids.map(String))].filter(id => byId[id]).slice(0, 3);
   team = [0, 1, 2].map(i => unique[i] || null);
+  $('team-roster').open = unique.length < 3;
   readRotationHash();
 }
 function saveTeam() {
@@ -25,6 +26,8 @@ function saveTeam() {
 const members = () => team.filter(Boolean).map(id => byId[id]);
 
 function toggle(agent) {
+  const grid = $('team-picker').querySelector('.picker-grid');
+  const focusedIndex = Array.prototype.indexOf.call(grid.children, document.activeElement);
   const at = team.indexOf(agent.id);
   if (at >= 0) team[at] = null;
   else {
@@ -33,6 +36,12 @@ function toggle(agent) {
     team[free] = agent.id;
   }
   saveTeam(); render();
+  if (team.every(Boolean)) {
+    $('team-roster').open = false;
+    $('team-practice').focus();
+  } else {
+    grid.children[focusedIndex]?.focus({preventScroll: true});
+  }
 }
 
 // Slot changes move identities only; their saved builds remain keyed by agent ID.
@@ -51,19 +60,26 @@ function renderSlots() {
   const slots = $('team-slots');
   slots.replaceChildren(...team.map((id, index) => {
     const agent = byId[id], card = el('article', 'team-slot-card');
-    const slot = el('button', `team-slot${agent ? ' filled' : ''}`); slot.type = 'button';
     const letter = ['A', 'B', 'C'][index];
     if (!agent) {
-      slot.append(el('span', '', english() ? `${letter} · Select an agent below` : `${letter}位 · 从下方选择`));
-      slot.disabled = true; card.append(slot); return card;
+      const vacancy = el('div', 'team-slot team-vacancy');
+      vacancy.append(el('b', 'team-slot-letter', letter), el('span', '', english() ? 'Empty slot' : '待选队员'));
+      card.append(vacancy); return card;
     }
+    const slot = el('button', 'team-slot filled'); slot.type = 'button';
     const meta = el('small'); meta.append(el('span', '', agent.element), el('span', '', ' · '), el('span', '', agent.specialty), el('span', '', ' · '), el('span', '', agent.faction));
     const badge = el('small', 'team-slot-position', english() ? `${letter} · Slot ${index + 1}` : `${letter} · 第 ${index + 1} 位`); badge.dataset.i18nSkip = '';
     const copy = el('div', 'team-slot-copy'); copy.append(badge, el('strong', '', agent.name), meta);
     slot.append(picture(agent.icon, ''), copy, el('span', 'slot-remove', '×'));
     const displayName = english() ? i18n()?.english(agent.name) || agent.name : agent.name;
     slot.setAttribute('aria-label', english() ? `Remove agent: ${displayName}` : `移除队员：${agent.name}`); slot.title = english() ? 'Remove' : '移除';
-    slot.addEventListener('click', () => { team[index] = null; saveTeam(); render(); });
+    slot.addEventListener('click', () => {
+      team[index] = null;
+      $('team-roster').open = true;
+      saveTeam();
+      render();
+      $('team-picker').querySelector('input')?.focus();
+    });
     const controls = el('div', 'team-order-controls'); controls.dataset.i18nSkip = '';
     for (const direction of [-1, 1]) {
       const target = index + direction;
@@ -101,10 +117,15 @@ function renderResults() {
   const results = evaluateTeam(members());
   const toggle = $('team-result-toggle');
   toggle.disabled = results.length === 0;
+  toggle.hidden = toggle.disabled;
   if (toggle.disabled) setResultsExpanded(false);
   const active = results.filter(r => r.status === 'active').length;
   const summary = $('team-summary');
-  if (!results.length) summary.replaceChildren(el('span', 'planner-muted', '还没有选择代理人'));
+  if (!results.length) {
+    const hint = el('span', 'planner-muted', '选三名代理人，查看合轴与跟练。');
+    hint.dataset.i18nEn = 'Choose three agents to unlock rotation practice.';
+    summary.replaceChildren(hint);
+  }
   else {
     const label = el('span', '', '额外能力生效');
     label.dataset.i18nEn = 'abilities active';
@@ -141,7 +162,14 @@ function renderResults() {
   }));
 }
 
-function render() { renderSlots(); renderResults(); picker?.render(); renderRotationGuide(); }
+function render() {
+  const count = team.filter(Boolean).length;
+  $('team-count').textContent = `${count} / 3`;
+  $('team-actions').hidden = !count;
+  $('team-practice').hidden = count < 3;
+  $('team-rotation').hidden = !count;
+  renderSlots(); renderResults(); picker?.render(); renderRotationGuide();
+}
 
 async function main() {
   try {
@@ -165,7 +193,19 @@ function setResultsExpanded(expanded) {
 $('team-result-toggle').addEventListener('click', event => {
   setResultsExpanded(event.currentTarget.getAttribute('aria-expanded') !== 'true');
 });
-$('team-clear').addEventListener('click', () => { team = [null, null, null]; saveTeam(); render(); });
+$('team-clear').addEventListener('click', () => {
+  team = [null, null, null];
+  $('team-roster').open = true;
+  saveTeam();
+  render();
+  $('team-picker').querySelector('input')?.focus();
+});
+$('team-practice').addEventListener('click', () => {
+  const target = $('team-rotation').querySelector('.rotation-practice') || $('team-rotation');
+  target.tabIndex = -1;
+  target.focus({preventScroll: true});
+  target.scrollIntoView({block: 'start'});
+});
 $('team-share').addEventListener('click', async () => {
   saveTeam();
   try { await navigator.clipboard.writeText(location.href); toast('已复制队伍链接'); } catch { toast('复制失败，可直接复制地址栏'); }
@@ -278,8 +318,7 @@ function mountRotationGuide(container, options = {}) {
   function renderConfig() {
     const section = element('section', 'rotation-config');
     const head = element('div', 'rotation-section-head');
-    const title = element('div'); title.append(element('h2', '', text('合轴与排轴', 'Team rotation planner')));
-    title.append(element('p', 'rotation-muted', text('选好队友，按当前配置生成操作方案。', 'Choose your teammates to build a plan for their current configuration.')));
+    const title = element('div'); title.append(element('h2', '', text('队伍配置', 'Squad settings')));
     head.append(title);
     if (data.gold && !pending) {
       const gold = element('div', 'rotation-gold');
@@ -326,6 +365,9 @@ function mountRotationGuide(container, options = {}) {
     const shortcuts = element('div', 'rotation-presets');
     const picker = doc.getElementById('team-picker');
     if (picker) shortcuts.append(button(text('更换队友', 'Choose teammates'), () => {
+      const rosterPanel = picker.closest('details');
+      if (rosterPanel) rosterPanel.open = true;
+      picker.querySelector('input')?.focus({preventScroll:true});
       const headerHeight = doc.querySelector('.site-header')?.getBoundingClientRect().height || 0;
       const top = Math.max(0, win.scrollY + picker.getBoundingClientRect().top - headerHeight - 16);
       win.scrollTo({top, behavior: win.matchMedia?.('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
@@ -619,7 +661,8 @@ if (data.loading || data.loadError) {
     const focus = active?.dataset.rotationControl;
     const selection = active?.tagName === 'INPUT' ? [active.selectionStart, active.selectionEnd] : null;
     const scrollLeft = root.querySelector('.rotation-timeline-scroll')?.scrollLeft || 0;
-    root.replaceChildren(renderConfig(), guide() ? renderGuide(guide()) : renderUnavailable());
+    root.replaceChildren(renderConfig());
+    if (team.length === 3) root.append(guide() ? renderGuide(guide()) : renderUnavailable());
     const scroll = root.querySelector('.rotation-timeline-scroll');
     if (scroll) {
       scroll.scrollLeft = scrollLeft;

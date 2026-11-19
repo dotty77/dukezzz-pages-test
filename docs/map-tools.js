@@ -12,6 +12,20 @@
  const toast=atlas.toast;
  const bar=document.createElement('div');bar.id='map-tools';bar.setAttribute('aria-label','地图工具');
  bar.innerHTML=`<button id="map-add-marker" class="map-add-marker" type="button" aria-pressed="false">＋ 添加标记</button><button id="map-personal-list" type="button">我的标记 <span id="map-personal-count">0</span></button><button id="map-clean" type="button" aria-pressed="false">纯净底图</button><label class="map-personal-toggle"><input id="map-show-personal" type="checkbox" checked>个人标记</label><div class="map-rotation-tools" role="group" aria-label="旋转地图"><button id="map-rotate-left" type="button" aria-label="逆时针旋转45度">↶</button><button id="map-bearing" type="button" title="恢复默认朝向" aria-label="恢复默认朝向"><span id="map-compass">↑</span> <span id="map-degrees">0°</span></button><button id="map-rotate-right" type="button" aria-label="顺时针旋转45度">↷</button></div><button id="map-fullscreen" type="button" aria-pressed="false">⛶ 全屏</button><button id="map-export-image" type="button">导出图片</button><details class="map-backup-tools"><summary>备份</summary><div><button id="map-export-personal" type="button">导出个人记录</button><button id="map-import-personal" type="button">恢复个人记录</button></div></details>`;
+ const more=document.createElement('button');
+ more.id='map-view-toggle';more.type='button';
+ more.setAttribute('aria-expanded','false');more.setAttribute('aria-controls','map-view-options');
+ const moreLabel=document.createElement('span');moreLabel.dataset.i18nEn='More tools';moreLabel.textContent='更多工具';more.append(moreLabel);
+ const viewOptions=document.createElement('div');viewOptions.id='map-view-options';
+ const addMarker=bar.querySelector('#map-add-marker');
+ while(addMarker.nextSibling)viewOptions.append(addMarker.nextSibling);
+ bar.append(more,viewOptions);
+ more.addEventListener('click',()=>more.setAttribute('aria-expanded',String(more.getAttribute('aria-expanded')!=='true')));
+ bar.addEventListener('keydown',event=>{
+  if(event.key==='Escape'&&more.offsetWidth&&more.getAttribute('aria-expanded')==='true'){
+   event.stopPropagation();more.setAttribute('aria-expanded','false');more.focus();
+  }
+ });
  document.querySelector('.toolbar').after(bar);
  const help=document.createElement('div');help.id='map-tools-help';help.textContent='左键拖动平移 · 右键拖动旋转 · 滚轮缩放';bar.after(help);
  const dialog=document.createElement('dialog');dialog.id='map-marker-dialog';
@@ -30,6 +44,7 @@
   $('map-personal-count').textContent=ownPoints(source()).length;
   $('map-clean').setAttribute('aria-pressed',String(options.clean));$('map-clean').classList.toggle('active',options.clean);
   $('map-show-personal').checked=options.showPersonal;
+  help.dataset.context=placement?'placement':options.clean?'clean':'explore';
   help.textContent=placement?'点击地图选择位置；按 Esc 取消':options.clean?(source()==='source'?'公共点位已隐藏 · 原图自带标注保留 · 左键平移，右键旋转':'公共点位已隐藏 · 左键平移，右键旋转'):'左键拖动平移 · 右键拖动旋转 · 滚轮缩放';
   const full=document.fullscreenElement===workspace||workspace.classList.contains('map-expanded');
   $('map-fullscreen').textContent=full?'⛶ 退出全屏':'⛶ 全屏';$('map-fullscreen').setAttribute('aria-pressed',String(full));

@@ -146,7 +146,7 @@ function renderNext(state) {
   const note = el('p', 'planner-muted');
   note.append(el('span', '', '前瞻为开发中内容，以游戏内调频公告为准。'));
   for (const source of upcoming.sources || (upcoming.source ? [upcoming.source] : [])) note.append(' ', sourceLink(source));
-  const link = el('a', '', '在调频分析里规划抽卡 →'); link.href = 'tuning.html?v=20261118-tuning-records-launch-1';
+  const link = el('a', '', '在调频分析里规划抽卡 →'); link.href = 'tuning.html?v=20261118-reviewed-ui-launch-1';
   side.append(note, link);
   box.replaceChildren(copy, side);
 }
@@ -177,7 +177,7 @@ function render() {
 
 async function main() {
   try {
-    const [data, tuning] = await Promise.all([loadJSON('banner-calendar.json?v=20261111-refresh-launch-1'), loadJSON('tuning-catalog.json?v=20261118-archive-roam-launch-1')]);
+    const [data, tuning] = await Promise.all([loadJSON('banner-calendar.json?v=20261111-refresh-launch-1'), loadJSON('tuning-catalog.json?v=20261118-reviewed-ui-launch-1')]);
     calendar = data; catalog = tuning.items;
     region = defaultRegion();
     const select = $('banner-region');

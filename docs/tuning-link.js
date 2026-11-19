@@ -219,7 +219,7 @@ export function setupLinkImport({onRecords,onBusy,onMessage,getImportState=async
     if(running||committing)return;
     close();
     const stats=$('tuning-signal-stats');
-    if(stats){window.tuningWorkspace?.select('stats');stats.tabIndex=-1;stats.focus({preventScroll:true});stats.scrollIntoView({block:'start',behavior:'auto'});}
+    if(stats){stats.tabIndex=-1;stats.focus({preventScroll:true});stats.scrollIntoView({block:'start',behavior:'auto'});}
   };
   dialog.addEventListener('cancel',e=>{e.preventDefault();close();});
   $('link-cancel').onclick=()=>running?.abort();
