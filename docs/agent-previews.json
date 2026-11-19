@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-14",
+  "updatedAt": "2026-11-19",
   "scope": "官方已公开的角色档案与预告；开放时间和正式效果以游戏内公告为准。",
   "agents": [
     {
@@ -152,11 +152,18 @@
       },
       "previewNote": "已公开官方机制介绍、未归档影像与角色展示；正式技能和数值见本页对应标签，调频于11月11日12:00（服务器时间）开放。",
       "announcedAt": "2026-09-12T04:00:06Z",
-      "updatedAt": "2026-11-11",
+      "updatedAt": "2026-11-19",
       "icon": "assets/agent-previews/severian-official.jpeg",
       "officialArt": "assets/agent-previews/severian-official.jpeg",
       "artCaption": "2026-09-12 官方代理人档案原图 · © miHoYo / HoYoverse",
       "sources": [
+        {
+          "title": "赛维里安主题壁纸 · 官方下载",
+          "titleEn": "Severian themed wallpapers · Official download",
+          "url": "https://www.miyoushe.com/zzz/article/79645572",
+          "urlEn": "https://www.hoyolab.com/article/47485496",
+          "date": "2026-11-18"
+        },
         {
           "title": "米游社 · 赛维里安 EP · 险棋",
           "titleEn": "HoYoLAB · Severian EP · Gambit",
@@ -377,6 +384,194 @@
       ],
       "artworkGroups": [
         {
+          "id": "severian-wallpapers-20261118",
+          "title": "赛维里安主题壁纸 · 20 张",
+          "titleEn": "Severian themed wallpapers · 20 images",
+          "sourceUrl": "https://www.miyoushe.com/zzz/article/79645572",
+          "pages": [
+            {
+              "id": "severian-wallpapers-20261118-01",
+              "src": "assets/agent-previews/severian-wallpapers-20261118/01.webp",
+              "width": 960,
+              "height": 405,
+              "originalUrl": "https://upload-bbs.mihoyo.com/upload/2026/11/18/152039149/2f5b2c148619a13fffe21401f667841e_411182460099283035.png",
+              "caption": "壁纸 01 · 查看原图 ↗",
+              "captionEn": "Wallpaper 01 · Open original ↗"
+            },
+            {
+              "id": "severian-wallpapers-20261118-02",
+              "src": "assets/agent-previews/severian-wallpapers-20261118/02.webp",
+              "width": 960,
+              "height": 405,
+              "originalUrl": "https://upload-bbs.mihoyo.com/upload/2026/11/18/152039149/597a58ea3acc82cc00d78816636b7d28_5923861284110413847.png",
+              "caption": "壁纸 02 · 查看原图 ↗",
+              "captionEn": "Wallpaper 02 · Open original ↗"
+            },
+            {
+              "id": "severian-wallpapers-20261118-03",
+              "src": "assets/agent-previews/severian-wallpapers-20261118/03.webp",
+              "width": 960,
+              "height": 405,
+              "originalUrl": "https://upload-bbs.mihoyo.com/upload/2026/11/18/152039149/2ce7d0a946e80e99b0484b27cba8feae_3086562397759319045.png",
+              "caption": "壁纸 03 · 查看原图 ↗",
+              "captionEn": "Wallpaper 03 · Open original ↗"
+            },
+            {
+              "id": "severian-wallpapers-20261118-04",
+              "src": "assets/agent-previews/severian-wallpapers-20261118/04.webp",
+              "width": 960,
+              "height": 405,
+              "originalUrl": "https://upload-bbs.mihoyo.com/upload/2026/11/18/152039149/771c1d10853f4d775387e6e16b81dbe1_7403433470577490070.png",
+              "caption": "壁纸 04 · 查看原图 ↗",
+              "captionEn": "Wallpaper 04 · Open original ↗"
+            },
+            {
+              "id": "severian-wallpapers-20261118-05",
+              "src": "assets/agent-previews/severian-wallpapers-20261118/05.webp",
+              "width": 960,
+              "height": 405,
+              "originalUrl": "https://upload-bbs.mihoyo.com/upload/2026/11/18/152039149/67a9747a45fa13f8b42f18a392ec78fa_8143058612768951335.png",
+              "caption": "壁纸 05 · 查看原图 ↗",
+              "captionEn": "Wallpaper 05 · Open original ↗"
+            },
+            {
+              "id": "severian-wallpapers-20261118-06",
+              "src": "assets/agent-previews/severian-wallpapers-20261118/06.webp",
+              "width": 960,
+              "height": 405,
+              "originalUrl": "https://upload-bbs.mihoyo.com/upload/2026/11/18/152039149/76156b6fa8a43ea5acfe7fa9db09be54_5026728566535884634.png",
+              "caption": "壁纸 06 · 查看原图 ↗",
+              "captionEn": "Wallpaper 06 · Open original ↗"
+            },
+            {
+              "id": "severian-wallpapers-20261118-07",
+              "src": "assets/agent-previews/severian-wallpapers-20261118/07.webp",
+              "width": 960,
+              "height": 405,
+              "originalUrl": "https://upload-bbs.mihoyo.com/upload/2026/11/18/152039149/0478c73abc8f8463469928370a19446d_2829950593466260610.png",
+              "caption": "壁纸 07 · 查看原图 ↗",
+              "captionEn": "Wallpaper 07 · Open original ↗"
+            },
+            {
+              "id": "severian-wallpapers-20261118-08",
+              "src": "assets/agent-previews/severian-wallpapers-20261118/08.webp",
+              "width": 960,
+              "height": 405,
+              "originalUrl": "https://upload-bbs.mihoyo.com/upload/2026/11/18/152039149/b54357e14a08d10151691368b79030fb_7522436398011110372.png",
+              "caption": "壁纸 08 · 查看原图 ↗",
+              "captionEn": "Wallpaper 08 · Open original ↗"
+            },
+            {
+              "id": "severian-wallpapers-20261118-09",
+              "src": "assets/agent-previews/severian-wallpapers-20261118/09.webp",
+              "width": 960,
+              "height": 405,
+              "originalUrl": "https://upload-bbs.mihoyo.com/upload/2026/11/18/152039149/5e658d08449ed2d75b49704086f80487_4942621974186011354.png",
+              "caption": "壁纸 09 · 查看原图 ↗",
+              "captionEn": "Wallpaper 09 · Open original ↗"
+            },
+            {
+              "id": "severian-wallpapers-20261118-10",
+              "src": "assets/agent-previews/severian-wallpapers-20261118/10.webp",
+              "width": 960,
+              "height": 405,
+              "originalUrl": "https://upload-bbs.mihoyo.com/upload/2026/11/18/152039149/84a2409795a9ffbaf03cd10e1d2ed552_266200729655996233.png",
+              "caption": "壁纸 10 · 查看原图 ↗",
+              "captionEn": "Wallpaper 10 · Open original ↗"
+            },
+            {
+              "id": "severian-wallpapers-20261118-11",
+              "src": "assets/agent-previews/severian-wallpapers-20261118/11.webp",
+              "width": 960,
+              "height": 405,
+              "originalUrl": "https://upload-bbs.mihoyo.com/upload/2026/11/18/152039149/cff4296be8bd332d3c610f354b786b69_7430416326758066469.png",
+              "caption": "壁纸 11 · 查看原图 ↗",
+              "captionEn": "Wallpaper 11 · Open original ↗"
+            },
+            {
+              "id": "severian-wallpapers-20261118-12",
+              "src": "assets/agent-previews/severian-wallpapers-20261118/12.webp",
+              "width": 960,
+              "height": 405,
+              "originalUrl": "https://upload-bbs.mihoyo.com/upload/2026/11/18/152039149/857c8876e17d8dec03f37000a604a4d9_3271550815773532061.png",
+              "caption": "壁纸 12 · 查看原图 ↗",
+              "captionEn": "Wallpaper 12 · Open original ↗"
+            },
+            {
+              "id": "severian-wallpapers-20261118-13",
+              "src": "assets/agent-previews/severian-wallpapers-20261118/13.webp",
+              "width": 960,
+              "height": 405,
+              "originalUrl": "https://upload-bbs.mihoyo.com/upload/2026/11/18/152039149/8cb796ab014340567ead807f5d8c7aa0_5074590084533352434.png",
+              "caption": "壁纸 13 · 查看原图 ↗",
+              "captionEn": "Wallpaper 13 · Open original ↗"
+            },
+            {
+              "id": "severian-wallpapers-20261118-14",
+              "src": "assets/agent-previews/severian-wallpapers-20261118/14.webp",
+              "width": 960,
+              "height": 405,
+              "originalUrl": "https://upload-bbs.mihoyo.com/upload/2026/11/18/152039149/77a80657b834be978ce0e5263446d7a4_1183711714106630539.png",
+              "caption": "壁纸 14 · 查看原图 ↗",
+              "captionEn": "Wallpaper 14 · Open original ↗"
+            },
+            {
+              "id": "severian-wallpapers-20261118-15",
+              "src": "assets/agent-previews/severian-wallpapers-20261118/15.webp",
+              "width": 960,
+              "height": 405,
+              "originalUrl": "https://upload-bbs.mihoyo.com/upload/2026/11/18/152039149/955464bb11ff84457dbd935625d6f543_3095891699360277672.png",
+              "caption": "壁纸 15 · 查看原图 ↗",
+              "captionEn": "Wallpaper 15 · Open original ↗"
+            },
+            {
+              "id": "severian-wallpapers-20261118-16",
+              "src": "assets/agent-previews/severian-wallpapers-20261118/16.webp",
+              "width": 960,
+              "height": 405,
+              "originalUrl": "https://upload-bbs.mihoyo.com/upload/2026/11/18/152039149/8c0fe52ce1fa37e9086bf874d2f70f5f_6442906737118117597.png",
+              "caption": "壁纸 16 · 查看原图 ↗",
+              "captionEn": "Wallpaper 16 · Open original ↗"
+            },
+            {
+              "id": "severian-wallpapers-20261118-17",
+              "src": "assets/agent-previews/severian-wallpapers-20261118/17.webp",
+              "width": 960,
+              "height": 405,
+              "originalUrl": "https://upload-bbs.mihoyo.com/upload/2026/11/18/152039149/cf4a33bd784b8d4aaacb9fb4da8b772b_964206677483016099.png",
+              "caption": "壁纸 17 · 查看原图 ↗",
+              "captionEn": "Wallpaper 17 · Open original ↗"
+            },
+            {
+              "id": "severian-wallpapers-20261118-18",
+              "src": "assets/agent-previews/severian-wallpapers-20261118/18.webp",
+              "width": 960,
+              "height": 405,
+              "originalUrl": "https://upload-bbs.mihoyo.com/upload/2026/11/18/152039149/2a5c9364795b54198e64b569355b15ea_430626023455619992.png",
+              "caption": "壁纸 18 · 查看原图 ↗",
+              "captionEn": "Wallpaper 18 · Open original ↗"
+            },
+            {
+              "id": "severian-wallpapers-20261118-19",
+              "src": "assets/agent-previews/severian-wallpapers-20261118/19.webp",
+              "width": 960,
+              "height": 405,
+              "originalUrl": "https://upload-bbs.mihoyo.com/upload/2026/11/18/152039149/24a105a79b086e9c36c458220770deab_3835780452190418027.png",
+              "caption": "壁纸 19 · 查看原图 ↗",
+              "captionEn": "Wallpaper 19 · Open original ↗"
+            },
+            {
+              "id": "severian-wallpapers-20261118-20",
+              "src": "assets/agent-previews/severian-wallpapers-20261118/20.webp",
+              "width": 960,
+              "height": 405,
+              "originalUrl": "https://upload-bbs.mihoyo.com/upload/2026/11/18/152039149/9011b83034cb6cc3b981993fa2314047_7767016891662897455.png",
+              "caption": "壁纸 20 · 查看原图 ↗",
+              "captionEn": "Wallpaper 20 · Open original ↗"
+            }
+          ]
+        },
+        {
           "id": "severian-outfit",
           "title": "肃仪无犯 · 官方时装展示",
           "titleEn": "Solemnly Impeccable · Official outfit showcase",
@@ -524,7 +719,7 @@
       "status": "announced",
       "previewNote": "官方确认将于3.4版本以全新虚狩、首位结使代理人的身份登场；技能、音擎与具体调频时间待官方公布。",
       "announcedAt": "2026-10-23T04:00:13Z",
-      "updatedAt": "2026-10-27",
+      "updatedAt": "2026-11-19",
       "icon": "assets/agent-previews/sunbringer/sunbringer-poster.png",
       "artwork": "assets/agent-previews/sunbringer/sunbringer-poster.png",
       "officialArt": "assets/agent-previews/sunbringer/sunbringer-profile-zh.png",
@@ -601,6 +796,14 @@
       ],
       "sources": [
         {
+          "title": "3.4「长日终尽」前瞻特别节目预告",
+          "titleEn": "Version 3.4 “The Finality of the Day” Special Program announcement",
+          "url": "https://www.miyoushe.com/zzz/article/79603551",
+          "urlEn": "https://www.hoyolab.com/article/47459953",
+          "date": "2026-11-16",
+          "featured": true
+        },
+        {
           "title": "哔哩哔哩官方 · 挽昼先行展示",
           "url": "https://www.bilibili.com/video/BV1U3n46GEzY/",
           "date": "2026-10-24"
@@ -663,7 +866,7 @@
       "status": "announced",
       "previewNote": "已公开联动角色档案、阵营与中日配音；技能、音擎与调频时间待官方公布。",
       "announcedAt": "2026-10-09T12:07:09Z",
-      "updatedAt": "2026-11-06",
+      "updatedAt": "2026-11-19",
       "icon": "assets/agent-previews/robin/robin-poster.png",
       "artwork": "assets/agent-previews/robin/robin-poster.png",
       "officialArt": "assets/agent-previews/robin/robin-profile-zh.png",
@@ -695,6 +898,14 @@
         }
       ],
       "sources": [
+        {
+          "title": "3.4「长日终尽」前瞻特别节目预告",
+          "titleEn": "Version 3.4 “The Finality of the Day” Special Program announcement",
+          "url": "https://www.miyoushe.com/zzz/article/79603551",
+          "urlEn": "https://www.hoyolab.com/article/47459953",
+          "date": "2026-11-16",
+          "featured": true
+        },
         {
           "title": "米游社 · 未明通讯：知更鸟＆卡芙卡",
           "titleEn": "Miyoushe (Chinese) · Robin & Kafka crossover teaser",
@@ -744,7 +955,7 @@
       "status": "announced",
       "previewNote": "已公开联动角色档案、阵营与中日配音；技能、音擎与调频时间待官方公布。",
       "announcedAt": "2026-10-09T12:07:09Z",
-      "updatedAt": "2026-11-06",
+      "updatedAt": "2026-11-19",
       "icon": "assets/agent-previews/kafka/kafka-poster.png",
       "artwork": "assets/agent-previews/kafka/kafka-poster.png",
       "officialArt": "assets/agent-previews/kafka/kafka-profile-zh.png",
@@ -776,6 +987,14 @@
         }
       ],
       "sources": [
+        {
+          "title": "3.4「长日终尽」前瞻特别节目预告",
+          "titleEn": "Version 3.4 “The Finality of the Day” Special Program announcement",
+          "url": "https://www.miyoushe.com/zzz/article/79603551",
+          "urlEn": "https://www.hoyolab.com/article/47459953",
+          "date": "2026-11-16",
+          "featured": true
+        },
         {
           "title": "米游社 · 未明通讯：知更鸟＆卡芙卡",
           "titleEn": "Miyoushe (Chinese) · Robin & Kafka crossover teaser",
@@ -852,6 +1071,7 @@
         "specialtyEn": "Stun",
         "element": "电属性",
         "elementEn": "Electric",
+        "introducedVersion": "1.0.0",
         "id": "1011",
         "icon": "assets/tuning/agent-1011.webp",
         "rank": "A",
@@ -868,8 +1088,7 @@
           19815450,
           "7b4458100bb856f4b1074f63f90ba7616a9416171a511bc5dca27c15263145e0"
         ],
-        "portrait": "assets/agent-portraits/agent-1011.webp",
-        "introducedVersion": "1.0.0"
+        "portrait": "assets/agent-portraits/agent-1011.webp"
       },
       {
         "name": "猫又",
@@ -882,6 +1101,7 @@
         "specialtyEn": "Attack",
         "element": "物理",
         "elementEn": "Physical",
+        "introducedVersion": "1.0.0",
         "id": "1021",
         "icon": "assets/tuning/agent-1021.webp",
         "rank": "S",
@@ -898,8 +1118,7 @@
           19815450,
           "440276ef7fed5b9a37a491ef3147b7e67bc974f1fac20a3ec3a1d428100d8a8b"
         ],
-        "portrait": "assets/agent-portraits/agent-1021.webp",
-        "introducedVersion": "1.0.0"
+        "portrait": "assets/agent-portraits/agent-1021.webp"
       },
       {
         "name": "妮可",
@@ -912,6 +1131,7 @@
         "specialtyEn": "Support",
         "element": "以太",
         "elementEn": "Ether",
+        "introducedVersion": "1.0.0",
         "id": "1031",
         "icon": "assets/tuning/agent-1031.webp",
         "rank": "A",
@@ -928,8 +1148,7 @@
           19815450,
           "825118c198e356582a06b191396df4638f5934b5ad85d42fd51ba4b8ede7a5b8"
         ],
-        "portrait": "assets/agent-portraits/agent-1031.webp",
-        "introducedVersion": "1.0.0"
+        "portrait": "assets/agent-portraits/agent-1031.webp"
       },
       {
         "name": "「11号」",
@@ -942,6 +1161,7 @@
         "specialtyEn": "Attack",
         "element": "火属性",
         "elementEn": "Fire",
+        "introducedVersion": "1.0.0",
         "id": "1041",
         "icon": "assets/tuning/agent-1041.webp",
         "rank": "S",
@@ -964,8 +1184,7 @@
           19815450,
           "4b452473941f44d4076d54f4f0bed7f25b8b73e52b4660ed72734e0312de3ddb"
         ],
-        "portrait": "assets/agent-portraits/agent-1041.webp",
-        "introducedVersion": "1.0.0"
+        "portrait": "assets/agent-portraits/agent-1041.webp"
       },
       {
         "name": "伊德海莉",
@@ -978,6 +1197,7 @@
         "specialtyEn": "Rupture",
         "element": "冰属性",
         "elementEn": "Ice",
+        "introducedVersion": "2.3.0",
         "id": "1051",
         "icon": "assets/tuning/agent-1051.webp",
         "rank": "S",
@@ -994,8 +1214,7 @@
           19815450,
           "edcb29d07410c095fd9b0b64cdeac7309da4d746fbca1e0904974f460ae05dc1"
         ],
-        "portrait": "assets/agent-portraits/agent-1051.webp",
-        "introducedVersion": "2.3.0"
+        "portrait": "assets/agent-portraits/agent-1051.webp"
       },
       {
         "name": "可琳",
@@ -1008,6 +1227,7 @@
         "specialtyEn": "Attack",
         "element": "物理",
         "elementEn": "Physical",
+        "introducedVersion": "1.0.0",
         "id": "1061",
         "icon": "assets/tuning/agent-1061.webp",
         "rank": "A",
@@ -1024,8 +1244,7 @@
           19815450,
           "1f56711212f7810ad921844d8b733f6acaca0fe37a564f5c1fb389cd8fd10879"
         ],
-        "portrait": "assets/agent-portraits/agent-1061.webp",
-        "introducedVersion": "1.0.0"
+        "portrait": "assets/agent-portraits/agent-1061.webp"
       },
       {
         "name": "凯撒",
@@ -1038,6 +1257,7 @@
         "specialtyEn": "Defense",
         "element": "物理",
         "elementEn": "Physical",
+        "introducedVersion": "1.2.0",
         "id": "1071",
         "icon": "assets/tuning/agent-1071.webp",
         "rank": "S",
@@ -1056,8 +1276,7 @@
           19815450,
           "65b244542694fbf74a48c38f26a9c0c8539e238d3f712c73188e149604ff95fa"
         ],
-        "portrait": "assets/agent-portraits/agent-1071.webp",
-        "introducedVersion": "1.2.0"
+        "portrait": "assets/agent-portraits/agent-1071.webp"
       },
       {
         "name": "比利",
@@ -1070,6 +1289,7 @@
         "specialtyEn": "Attack",
         "element": "物理",
         "elementEn": "Physical",
+        "introducedVersion": "1.0.0",
         "id": "1081",
         "icon": "assets/tuning/agent-1081.webp",
         "rank": "A",
@@ -1086,8 +1306,7 @@
           19815450,
           "3ff044bedf27d1ebe3db281b4b4b9b5723507e820f2c203adc342ed7a7be59fa"
         ],
-        "portrait": "assets/agent-portraits/agent-1081.webp",
-        "introducedVersion": "1.0.0"
+        "portrait": "assets/agent-portraits/agent-1081.webp"
       },
       {
         "name": "雅",
@@ -1100,6 +1319,7 @@
         "specialtyEn": "Anomaly",
         "element": "烈霜",
         "elementEn": "Frost",
+        "introducedVersion": "1.4.0",
         "id": "1091",
         "icon": "assets/tuning/agent-1091.webp",
         "rank": "S",
@@ -1116,8 +1336,7 @@
           19815450,
           "7306651828fdad5d7103a43eaacde5483bceafc3987a1d535cb91440a9f9716f"
         ],
-        "portrait": "assets/agent-portraits/agent-1091.webp",
-        "introducedVersion": "1.4.0"
+        "portrait": "assets/agent-portraits/agent-1091.webp"
       },
       {
         "name": "珂蕾妲",
@@ -1130,6 +1349,7 @@
         "specialtyEn": "Stun",
         "element": "火属性",
         "elementEn": "Fire",
+        "introducedVersion": "1.0.0",
         "id": "1101",
         "icon": "assets/tuning/agent-1101.webp",
         "rank": "S",
@@ -1146,8 +1366,7 @@
           19815450,
           "2d44f4ae3d91ae2bf444633f7db94edaf9e8c014f2ad1ecbaf290efec1c5c5a4"
         ],
-        "portrait": "assets/agent-portraits/agent-1101.webp",
-        "introducedVersion": "1.0.0"
+        "portrait": "assets/agent-portraits/agent-1101.webp"
       },
       {
         "name": "安东",
@@ -1160,6 +1379,7 @@
         "specialtyEn": "Attack",
         "element": "电属性",
         "elementEn": "Electric",
+        "introducedVersion": "1.0.0",
         "id": "1111",
         "icon": "assets/tuning/agent-1111.webp",
         "rank": "A",
@@ -1178,8 +1398,7 @@
           19815450,
           "a2860fe012e50aed934251fd1dc467d7de05b7f20e23ffa38cc126dc5610275b"
         ],
-        "portrait": "assets/agent-portraits/agent-1111.webp",
-        "introducedVersion": "1.0.0"
+        "portrait": "assets/agent-portraits/agent-1111.webp"
       },
       {
         "name": "本",
@@ -1192,6 +1411,7 @@
         "specialtyEn": "Defense",
         "element": "火属性",
         "elementEn": "Fire",
+        "introducedVersion": "1.0.0",
         "id": "1121",
         "icon": "assets/tuning/agent-1121.webp",
         "rank": "A",
@@ -1208,8 +1428,7 @@
           19815450,
           "7bfe34560ce1bc2404a1a46b97f52ea72d1f91ee4482823dfe7f5a9db6997fa4"
         ],
-        "portrait": "assets/agent-portraits/agent-1121.webp",
-        "introducedVersion": "1.0.0"
+        "portrait": "assets/agent-portraits/agent-1121.webp"
       },
       {
         "name": "苍角",
@@ -1222,6 +1441,7 @@
         "specialtyEn": "Support",
         "element": "冰属性",
         "elementEn": "Ice",
+        "introducedVersion": "1.0.0",
         "id": "1131",
         "icon": "assets/tuning/agent-1131.webp",
         "rank": "A",
@@ -1238,8 +1458,7 @@
           19815450,
           "a86574bb94c6b2ee4ad60e251bf20d8a7b4187cf025d82c5153d78ad4545778e"
         ],
-        "portrait": "assets/agent-portraits/agent-1131.webp",
-        "introducedVersion": "1.0.0"
+        "portrait": "assets/agent-portraits/agent-1131.webp"
       },
       {
         "name": "莱卡恩",
@@ -1252,6 +1471,7 @@
         "specialtyEn": "Stun",
         "element": "冰属性",
         "elementEn": "Ice",
+        "introducedVersion": "1.0.0",
         "id": "1141",
         "icon": "assets/tuning/agent-1141.webp",
         "rank": "S",
@@ -1269,8 +1489,7 @@
           19815450,
           "030abd11bf1812c9b3786b4ec0fe8b4061cd0ee0d226257c344eb56b4f60a454"
         ],
-        "portrait": "assets/agent-portraits/agent-1141.webp",
-        "introducedVersion": "1.0.0"
+        "portrait": "assets/agent-portraits/agent-1141.webp"
       },
       {
         "name": "露西",
@@ -1283,6 +1502,7 @@
         "specialtyEn": "Support",
         "element": "火属性",
         "elementEn": "Fire",
+        "introducedVersion": "1.0.0",
         "id": "1151",
         "icon": "assets/tuning/agent-1151.webp",
         "rank": "A",
@@ -1299,8 +1519,7 @@
           19815450,
           "51844ca4519fe4c21a5fb668f85d9027388549e1e0da6db676be1152e1665cdb"
         ],
-        "portrait": "assets/agent-portraits/agent-1151.webp",
-        "introducedVersion": "1.0.0"
+        "portrait": "assets/agent-portraits/agent-1151.webp"
       },
       {
         "name": "莱特",
@@ -1313,6 +1532,7 @@
         "specialtyEn": "Stun",
         "element": "火属性",
         "elementEn": "Fire",
+        "introducedVersion": "1.3.0",
         "id": "1161",
         "icon": "assets/tuning/agent-1161.webp",
         "rank": "S",
@@ -1330,8 +1550,7 @@
           19815450,
           "14605a962de82fb39698d86ac107c1d550feb93e1ebc00863dca8959c380b4de"
         ],
-        "portrait": "assets/agent-portraits/agent-1161.webp",
-        "introducedVersion": "1.3.0"
+        "portrait": "assets/agent-portraits/agent-1161.webp"
       },
       {
         "name": "柏妮思",
@@ -1344,6 +1563,7 @@
         "specialtyEn": "Anomaly",
         "element": "火属性",
         "elementEn": "Fire",
+        "introducedVersion": "1.2.0",
         "id": "1171",
         "icon": "assets/tuning/agent-1171.webp",
         "rank": "S",
@@ -1361,8 +1581,7 @@
           19815450,
           "c6d268464740d5cb9a16b6c9f9a488c3b85e7373f09819c3815e2e772bc501e4"
         ],
-        "portrait": "assets/agent-portraits/agent-1171.webp",
-        "introducedVersion": "1.2.0"
+        "portrait": "assets/agent-portraits/agent-1171.webp"
       },
       {
         "name": "格莉丝",
@@ -1375,6 +1594,7 @@
         "specialtyEn": "Anomaly",
         "element": "电属性",
         "elementEn": "Electric",
+        "introducedVersion": "1.0.0",
         "id": "1181",
         "icon": "assets/tuning/agent-1181.webp",
         "rank": "S",
@@ -1392,8 +1612,7 @@
           19815450,
           "cf6e3561d35acea10d7ccab68216f80c05996e71b21dfc471db6c80d508e3e48"
         ],
-        "portrait": "assets/agent-portraits/agent-1181.webp",
-        "introducedVersion": "1.0.0"
+        "portrait": "assets/agent-portraits/agent-1181.webp"
       },
       {
         "name": "艾莲",
@@ -1406,6 +1625,7 @@
         "specialtyEn": "Attack",
         "element": "冰属性",
         "elementEn": "Ice",
+        "introducedVersion": "1.0.0",
         "id": "1191",
         "icon": "assets/tuning/agent-1191.webp",
         "rank": "S",
@@ -1423,8 +1643,7 @@
           19815450,
           "f4e6d2ad89f13178c123d6fa61df4b326b29d8af1624fcc929355f716bed72bc"
         ],
-        "portrait": "assets/agent-portraits/agent-1191.webp",
-        "introducedVersion": "1.0.0"
+        "portrait": "assets/agent-portraits/agent-1191.webp"
       },
       {
         "name": "悠真",
@@ -1437,6 +1656,7 @@
         "specialtyEn": "Attack",
         "element": "电属性",
         "elementEn": "Electric",
+        "introducedVersion": "1.4.0",
         "id": "1201",
         "icon": "assets/tuning/agent-1201.webp",
         "rank": "S",
@@ -1453,8 +1673,7 @@
           19815450,
           "200afc8324257cb6a4bab1dad8c4a137d48d3b04b535c78f164fc63b4c55f51f"
         ],
-        "portrait": "assets/agent-portraits/agent-1201.webp",
-        "introducedVersion": "1.4.0"
+        "portrait": "assets/agent-portraits/agent-1201.webp"
       },
       {
         "name": "丽娜",
@@ -1467,6 +1686,7 @@
         "specialtyEn": "Support",
         "element": "电属性",
         "elementEn": "Electric",
+        "introducedVersion": "1.0.0",
         "id": "1211",
         "icon": "assets/tuning/agent-1211.webp",
         "rank": "S",
@@ -1484,8 +1704,7 @@
           19815450,
           "16030c9a3a08e46c7c04ca8cf5499977545ac8a446dbe861f1eb1fd9fea8bc58"
         ],
-        "portrait": "assets/agent-portraits/agent-1211.webp",
-        "introducedVersion": "1.0.0"
+        "portrait": "assets/agent-portraits/agent-1211.webp"
       },
       {
         "name": "柳",
@@ -1498,6 +1717,7 @@
         "specialtyEn": "Anomaly",
         "element": "电属性",
         "elementEn": "Electric",
+        "introducedVersion": "1.3.0",
         "id": "1221",
         "icon": "assets/tuning/agent-1221.webp",
         "rank": "S",
@@ -1514,8 +1734,7 @@
           19815450,
           "bc0b23fc257445c346a0fa9ed8cf0944ca14f452b3fe77e2f549eacb6cf458b9"
         ],
-        "portrait": "assets/agent-portraits/agent-1221.webp",
-        "introducedVersion": "1.3.0"
+        "portrait": "assets/agent-portraits/agent-1221.webp"
       },
       {
         "name": "朱鸢",
@@ -1528,6 +1747,7 @@
         "specialtyEn": "Attack",
         "element": "以太",
         "elementEn": "Ether",
+        "introducedVersion": "1.0.0",
         "id": "1241",
         "icon": "assets/tuning/agent-1241.webp",
         "rank": "S",
@@ -1544,8 +1764,7 @@
           19815450,
           "a259af875001c191a60a06b07430dd23212a12e33eb880989edcd5c280ece3a5"
         ],
-        "portrait": "assets/agent-portraits/agent-1241.webp",
-        "introducedVersion": "1.0.0"
+        "portrait": "assets/agent-portraits/agent-1241.webp"
       },
       {
         "name": "青衣",
@@ -1558,6 +1777,7 @@
         "specialtyEn": "Stun",
         "element": "电属性",
         "elementEn": "Electric",
+        "introducedVersion": "1.1.0",
         "id": "1251",
         "icon": "assets/tuning/agent-1251.webp",
         "rank": "S",
@@ -1573,8 +1793,7 @@
           19815450,
           "6b67597140cd80fa2fa9b8c063e8dc70b6cdee451bb9571c21480655fd430bb4"
         ],
-        "portrait": "assets/agent-portraits/agent-1251.webp",
-        "introducedVersion": "1.1.0"
+        "portrait": "assets/agent-portraits/agent-1251.webp"
       },
       {
         "name": "简",
@@ -1587,6 +1806,7 @@
         "specialtyEn": "Anomaly",
         "element": "物理",
         "elementEn": "Physical",
+        "introducedVersion": "1.1.0",
         "id": "1261",
         "icon": "assets/tuning/agent-1261.webp",
         "rank": "S",
@@ -1604,8 +1824,7 @@
           19815450,
           "3dd6675a450f97cd1153b64ed8d8e4f68d806cdd25f2ba2752d5b9c8e8cf2f4f"
         ],
-        "portrait": "assets/agent-portraits/agent-1261.webp",
-        "introducedVersion": "1.1.0"
+        "portrait": "assets/agent-portraits/agent-1261.webp"
       },
       {
         "name": "赛斯",
@@ -1618,6 +1837,7 @@
         "specialtyEn": "Defense",
         "element": "电属性",
         "elementEn": "Electric",
+        "introducedVersion": "1.1.0",
         "id": "1271",
         "icon": "assets/tuning/agent-1271.webp",
         "rank": "A",
@@ -1635,8 +1855,7 @@
           19815450,
           "776741a3a242e8ae7d815ef94a7d8528f1c92850b3cc7d584588085eff49de1c"
         ],
-        "portrait": "assets/agent-portraits/agent-1271.webp",
-        "introducedVersion": "1.1.0"
+        "portrait": "assets/agent-portraits/agent-1271.webp"
       },
       {
         "name": "派派",
@@ -1649,6 +1868,7 @@
         "specialtyEn": "Anomaly",
         "element": "物理",
         "elementEn": "Physical",
+        "introducedVersion": "1.0.0",
         "id": "1281",
         "icon": "assets/tuning/agent-1281.webp",
         "rank": "A",
@@ -1665,8 +1885,7 @@
           19815450,
           "3715f589c7e84f17c47861a3615acc61bbc864548e285ddbc9dfe56d256bf78a"
         ],
-        "portrait": "assets/agent-portraits/agent-1281.webp",
-        "introducedVersion": "1.0.0"
+        "portrait": "assets/agent-portraits/agent-1281.webp"
       },
       {
         "name": "雨果",
@@ -1679,6 +1898,7 @@
         "specialtyEn": "Attack",
         "element": "冰属性",
         "elementEn": "Ice",
+        "introducedVersion": "1.7.0",
         "id": "1291",
         "icon": "assets/tuning/agent-1291.webp",
         "rank": "S",
@@ -1695,8 +1915,7 @@
           19815450,
           "e208cd9e2e3ca9aa9dfdd5b644e2668d2b76b54025cce9265fde57e0605a858a"
         ],
-        "portrait": "assets/agent-portraits/agent-1291.webp",
-        "introducedVersion": "1.7.0"
+        "portrait": "assets/agent-portraits/agent-1291.webp"
       },
       {
         "name": "奥菲丝&「鬼火」",
@@ -1709,6 +1928,7 @@
         "specialtyEn": "Attack",
         "element": "火属性",
         "elementEn": "Fire",
+        "introducedVersion": "2.2.0",
         "id": "1301",
         "icon": "assets/tuning/agent-1301.webp",
         "rank": "S",
@@ -1731,8 +1951,7 @@
           19815450,
           "046d09508f1a7be60228029da9c590495b1575b9c2d4b932b8bf6c2492a61fe4"
         ],
-        "portrait": "assets/agent-portraits/agent-1301.webp",
-        "introducedVersion": "2.2.0"
+        "portrait": "assets/agent-portraits/agent-1301.webp"
       },
       {
         "name": "耀嘉音",
@@ -1745,6 +1964,7 @@
         "specialtyEn": "Support",
         "element": "以太",
         "elementEn": "Ether",
+        "introducedVersion": "1.5.0",
         "id": "1311",
         "icon": "assets/tuning/agent-1311.webp",
         "rank": "S",
@@ -1761,8 +1981,7 @@
           19815450,
           "7aec84dc8e9e59364ccd46b70282fcd8a468e46d05e8e3771a30c8ddb0d5e198"
         ],
-        "portrait": "assets/agent-portraits/agent-1311.webp",
-        "introducedVersion": "1.5.0"
+        "portrait": "assets/agent-portraits/agent-1311.webp"
       },
       {
         "name": "伊芙琳",
@@ -1775,6 +1994,7 @@
         "specialtyEn": "Attack",
         "element": "火属性",
         "elementEn": "Fire",
+        "introducedVersion": "1.5.0",
         "id": "1321",
         "icon": "assets/tuning/agent-1321.webp",
         "rank": "S",
@@ -1792,8 +2012,7 @@
           19815450,
           "36415c71e91decfa2950f51afe0a245e68f4d016ddbd08d7a893d5dda736bb67"
         ],
-        "portrait": "assets/agent-portraits/agent-1321.webp",
-        "introducedVersion": "1.5.0"
+        "portrait": "assets/agent-portraits/agent-1321.webp"
       },
       {
         "name": "薇薇安",
@@ -1806,6 +2025,7 @@
         "specialtyEn": "Anomaly",
         "element": "以太",
         "elementEn": "Ether",
+        "introducedVersion": "1.7.0",
         "id": "1331",
         "icon": "assets/tuning/agent-1331.webp",
         "rank": "S",
@@ -1823,8 +2043,7 @@
           19815450,
           "b36a8f844d539af8ad3cf06129dcd27ea980a2a858862a72061ccd9f86b55a9c"
         ],
-        "portrait": "assets/agent-portraits/agent-1331.webp",
-        "introducedVersion": "1.7.0"
+        "portrait": "assets/agent-portraits/agent-1331.webp"
       },
       {
         "name": "照",
@@ -1837,6 +2056,7 @@
         "specialtyEn": "Defense",
         "element": "冰属性",
         "elementEn": "Ice",
+        "introducedVersion": "2.5.0",
         "id": "1341",
         "icon": "assets/tuning/agent-1341.webp",
         "rank": "S",
@@ -1852,8 +2072,7 @@
           19815450,
           "0e5b6dfde96903a95339140b589742de201b30457b86a615d748f51d5b5b1604"
         ],
-        "portrait": "assets/agent-portraits/agent-1341.webp",
-        "introducedVersion": "2.5.0"
+        "portrait": "assets/agent-portraits/agent-1341.webp"
       },
       {
         "name": "波可娜",
@@ -1866,6 +2085,7 @@
         "specialtyEn": "Stun",
         "element": "物理",
         "elementEn": "Physical",
+        "introducedVersion": "1.6.0",
         "id": "1351",
         "icon": "assets/tuning/agent-1351.webp",
         "rank": "A",
@@ -1882,8 +2102,7 @@
           19815450,
           "34a21b836dd9b741a09f4d487f85e6b2e6c1c0cabca15e88ac0245547a074330"
         ],
-        "portrait": "assets/agent-portraits/agent-1351.webp",
-        "introducedVersion": "1.6.0"
+        "portrait": "assets/agent-portraits/agent-1351.webp"
       },
       {
         "name": "「扳机」",
@@ -1896,6 +2115,7 @@
         "specialtyEn": "Stun",
         "element": "电属性",
         "elementEn": "Electric",
+        "introducedVersion": "1.6.0",
         "id": "1361",
         "icon": "assets/tuning/agent-1361.webp",
         "rank": "S",
@@ -1916,8 +2136,7 @@
           19815450,
           "ba7aa2747ac387637ff2e00ebed524e9f1a8efd61650249d57d4663288b215e9"
         ],
-        "portrait": "assets/agent-portraits/agent-1361.webp",
-        "introducedVersion": "1.6.0"
+        "portrait": "assets/agent-portraits/agent-1361.webp"
       },
       {
         "name": "仪玄",
@@ -1930,6 +2149,7 @@
         "specialtyEn": "Rupture",
         "element": "玄墨",
         "elementEn": "Auric Ink",
+        "introducedVersion": "2.0.0",
         "id": "1371",
         "icon": "assets/tuning/agent-1371.webp",
         "rank": "S",
@@ -1946,8 +2166,7 @@
           19815450,
           "1164ef11ca7cb1d47f75f3a966b3c7c4899b2f5d0323d65815787587d4cd2074"
         ],
-        "portrait": "assets/agent-portraits/agent-1371.webp",
-        "introducedVersion": "2.0.0"
+        "portrait": "assets/agent-portraits/agent-1371.webp"
       },
       {
         "name": "零号·安比",
@@ -1960,6 +2179,7 @@
         "specialtyEn": "Attack",
         "element": "电属性",
         "elementEn": "Electric",
+        "introducedVersion": "1.6.0",
         "id": "1381",
         "icon": "assets/tuning/agent-1381.webp",
         "rank": "S",
@@ -1982,8 +2202,7 @@
           19815450,
           "afd98706ed376da94b5340ec8e12b52e734574d3db108190955efe8b6cd98689"
         ],
-        "portrait": "assets/agent-portraits/agent-1381.webp",
-        "introducedVersion": "1.6.0"
+        "portrait": "assets/agent-portraits/agent-1381.webp"
       },
       {
         "name": "橘福福",
@@ -1996,6 +2215,7 @@
         "specialtyEn": "Stun",
         "element": "火属性",
         "elementEn": "Fire",
+        "introducedVersion": "2.0.0",
         "id": "1391",
         "icon": "assets/tuning/agent-1391.webp",
         "rank": "S",
@@ -2011,8 +2231,7 @@
           19815450,
           "90990a5cd52cc1f4ff99e4c50fe2f0ec4b85d4579328f7e49aa4244067f6dae9"
         ],
-        "portrait": "assets/agent-portraits/agent-1391.webp",
-        "introducedVersion": "2.0.0"
+        "portrait": "assets/agent-portraits/agent-1391.webp"
       },
       {
         "name": "爱丽丝",
@@ -2025,6 +2244,7 @@
         "specialtyEn": "Anomaly",
         "element": "物理",
         "elementEn": "Physical",
+        "introducedVersion": "2.1.0",
         "id": "1401",
         "icon": "assets/tuning/agent-1401.webp",
         "rank": "S",
@@ -2042,8 +2262,7 @@
           19815450,
           "279279146ef317ec65f1142efad0a72468ab306fea7f34df7be5349b18227213"
         ],
-        "portrait": "assets/agent-portraits/agent-1401.webp",
-        "introducedVersion": "2.1.0"
+        "portrait": "assets/agent-portraits/agent-1401.webp"
       },
       {
         "name": "柚叶",
@@ -2056,6 +2275,7 @@
         "specialtyEn": "Support",
         "element": "物理",
         "elementEn": "Physical",
+        "introducedVersion": "2.1.0",
         "id": "1411",
         "icon": "assets/tuning/agent-1411.webp",
         "rank": "S",
@@ -2073,8 +2293,7 @@
           19815450,
           "b4e6714b78d807ff1e165926e1eb757b41a13513504df46d5e1c072ac779455b"
         ],
-        "portrait": "assets/agent-portraits/agent-1411.webp",
-        "introducedVersion": "2.1.0"
+        "portrait": "assets/agent-portraits/agent-1411.webp"
       },
       {
         "name": "潘引壶",
@@ -2087,6 +2306,7 @@
         "specialtyEn": "Defense",
         "element": "物理",
         "elementEn": "Physical",
+        "introducedVersion": "2.0.0",
         "id": "1421",
         "icon": "assets/tuning/agent-1421.webp",
         "rank": "A",
@@ -2103,8 +2323,7 @@
           19815450,
           "f90bf2f9fd7f334dbc2f7d09a047419acd7cda1fb451fb07d3d95ea950618318"
         ],
-        "portrait": "assets/agent-portraits/agent-1421.webp",
-        "introducedVersion": "2.0.0"
+        "portrait": "assets/agent-portraits/agent-1421.webp"
       },
       {
         "name": "叶瞬光",
@@ -2117,6 +2336,7 @@
         "specialtyEn": "Attack",
         "element": "凛刃",
         "elementEn": "Honed Edge",
+        "introducedVersion": "2.5.0",
         "id": "1431",
         "icon": "assets/tuning/agent-1431.webp",
         "rank": "S",
@@ -2133,8 +2353,7 @@
           19815450,
           "d100ddb5006a391f2efba352e972a7532583bf0d7f18b14758aeaab21da58e5f"
         ],
-        "portrait": "assets/agent-portraits/agent-1431.webp",
-        "introducedVersion": "2.5.0"
+        "portrait": "assets/agent-portraits/agent-1431.webp"
       },
       {
         "name": "真斗",
@@ -2147,6 +2366,7 @@
         "specialtyEn": "Rupture",
         "element": "火属性",
         "elementEn": "Fire",
+        "introducedVersion": "2.3.0",
         "id": "1441",
         "icon": "assets/tuning/agent-1441.webp",
         "rank": "A",
@@ -2163,8 +2383,7 @@
           19815450,
           "bc80be6e3c4ac2907cb54824171b9ae1720c1dcca0c7bdae673d6269eb6d5b59"
         ],
-        "portrait": "assets/agent-portraits/agent-1441.webp",
-        "introducedVersion": "2.3.0"
+        "portrait": "assets/agent-portraits/agent-1441.webp"
       },
       {
         "name": "卢西娅",
@@ -2177,6 +2396,7 @@
         "specialtyEn": "Support",
         "element": "以太",
         "elementEn": "Ether",
+        "introducedVersion": "2.3.0",
         "id": "1451",
         "icon": "assets/tuning/agent-1451.webp",
         "rank": "S",
@@ -2196,8 +2416,7 @@
           19815450,
           "bb79d93fe74f897fc0f0dc37b1b595de7e8f77a44ba44a50a0e761a1bac51a58"
         ],
-        "portrait": "assets/agent-portraits/agent-1451.webp",
-        "introducedVersion": "2.3.0"
+        "portrait": "assets/agent-portraits/agent-1451.webp"
       },
       {
         "name": "「席德」",
@@ -2210,6 +2429,7 @@
         "specialtyEn": "Attack",
         "element": "电属性",
         "elementEn": "Electric",
+        "introducedVersion": "2.2.0",
         "id": "1461",
         "icon": "assets/tuning/agent-1461.webp",
         "rank": "S",
@@ -2228,8 +2448,7 @@
           19815450,
           "cfcd7019fef7ebd5ecd6bcaa10877c3c65cc23f199f0abafdcebeea682564167"
         ],
-        "portrait": "assets/agent-portraits/agent-1461.webp",
-        "introducedVersion": "2.2.0"
+        "portrait": "assets/agent-portraits/agent-1461.webp"
       },
       {
         "name": "般岳",
@@ -2242,6 +2461,7 @@
         "specialtyEn": "Rupture",
         "element": "火属性",
         "elementEn": "Fire",
+        "introducedVersion": "2.4.0",
         "id": "1471",
         "icon": "assets/tuning/agent-1471.webp",
         "rank": "S",
@@ -2258,8 +2478,7 @@
           19815450,
           "64238fdf06c5638db1db47b6dc93ec5c3428177be05a10efed851d78e0de5d3a"
         ],
-        "portrait": "assets/agent-portraits/agent-1471.webp",
-        "introducedVersion": "2.4.0"
+        "portrait": "assets/agent-portraits/agent-1471.webp"
       },
       {
         "name": "琉音",
@@ -2272,6 +2491,7 @@
         "specialtyEn": "Stun",
         "element": "物理",
         "elementEn": "Physical",
+        "introducedVersion": "2.4.0",
         "id": "1481",
         "icon": "assets/tuning/agent-1481.webp",
         "rank": "S",
@@ -2288,8 +2508,7 @@
           19815450,
           "42c359913db41d5b1b72f0bffc86e6101de41dbb207d73aece2d1df0d2a28d99"
         ],
-        "portrait": "assets/agent-portraits/agent-1481.webp",
-        "introducedVersion": "2.4.0"
+        "portrait": "assets/agent-portraits/agent-1481.webp"
       },
       {
         "name": "千夏",
@@ -2302,6 +2521,7 @@
         "specialtyEn": "Support",
         "element": "物理",
         "elementEn": "Physical",
+        "introducedVersion": "2.6.0",
         "id": "1491",
         "icon": "assets/tuning/agent-1491.webp",
         "rank": "S",
@@ -2318,8 +2538,7 @@
           19815450,
           "db7feeb7a387f7bc3cb9a6d4dfce6cb3a1a0aefbeb7d505b0f4c272d0044d0d5"
         ],
-        "portrait": "assets/agent-portraits/agent-1491.webp",
-        "introducedVersion": "2.6.0"
+        "portrait": "assets/agent-portraits/agent-1491.webp"
       },
       {
         "name": "爱芮",
@@ -2332,6 +2551,7 @@
         "specialtyEn": "Anomaly",
         "element": "以太",
         "elementEn": "Ether",
+        "introducedVersion": "2.6.0",
         "id": "1501",
         "icon": "assets/tuning/agent-1501.webp",
         "rank": "S",
@@ -2349,8 +2569,7 @@
           19815450,
           "1b040377ce9be2f6960249a8b9623f9ef8d59616485984a7899e722e5ff91f35"
         ],
-        "portrait": "assets/agent-portraits/agent-1501.webp",
-        "introducedVersion": "2.6.0"
+        "portrait": "assets/agent-portraits/agent-1501.webp"
       },
       {
         "name": "南宫羽",
@@ -2363,6 +2582,7 @@
         "specialtyEn": "Stun",
         "element": "以太",
         "elementEn": "Ether",
+        "introducedVersion": "2.7.0",
         "id": "1511",
         "icon": "assets/tuning/agent-1511.webp",
         "rank": "S",
@@ -2379,8 +2599,7 @@
           19815450,
           "c401f607e3594d70c7391605a449548bcac428fd333d334e05890948939a4ffb"
         ],
-        "portrait": "assets/agent-portraits/agent-1511.webp",
-        "introducedVersion": "2.7.0"
+        "portrait": "assets/agent-portraits/agent-1511.webp"
       },
       {
         "name": "希希芙",
@@ -2393,6 +2612,7 @@
         "specialtyEn": "Attack",
         "element": "电属性",
         "elementEn": "Electric",
+        "introducedVersion": "2.7.0",
         "id": "1521",
         "icon": "assets/tuning/agent-1521.webp",
         "rank": "S",
@@ -2410,8 +2630,7 @@
           19815450,
           "33abee86175892914a2578ac27f6bade85f90d5099aba5f3621392fc65844133"
         ],
-        "portrait": "assets/agent-portraits/agent-1521.webp",
-        "introducedVersion": "2.7.0"
+        "portrait": "assets/agent-portraits/agent-1521.webp"
       },
       {
         "name": "星徽·比利",
@@ -2424,6 +2643,7 @@
         "specialtyEn": "Rupture",
         "element": "物理",
         "elementEn": "Physical",
+        "introducedVersion": "2.8.0",
         "id": "1531",
         "icon": "assets/tuning/agent-1531.webp",
         "rank": "S",
@@ -2444,8 +2664,7 @@
           19815450,
           "bcf042838f3f41f77e2bb03da1d1360137e62495ffeed423ca6f63ffe97c85e9"
         ],
-        "portrait": "assets/agent-portraits/agent-1531.webp",
-        "introducedVersion": "2.8.0"
+        "portrait": "assets/agent-portraits/agent-1531.webp"
       },
       {
         "name": "普罗米娅",
@@ -2458,6 +2677,7 @@
         "specialtyEn": "Anomaly",
         "element": "冰属性",
         "elementEn": "Ice",
+        "introducedVersion": "2.8.0",
         "id": "1541",
         "icon": "assets/tuning/agent-1541.webp",
         "rank": "S",
@@ -2475,8 +2695,7 @@
           19815450,
           "ca40fd8fb1cb4ea290015d95cba53e3f663e005fdc0c532f11c7df0c10e1a557"
         ],
-        "portrait": "assets/agent-portraits/agent-1541.webp",
-        "introducedVersion": "2.8.0"
+        "portrait": "assets/agent-portraits/agent-1541.webp"
       },
       {
         "name": "佩洛伊斯",
@@ -2489,6 +2708,7 @@
         "specialtyEn": "Attack",
         "element": "以太",
         "elementEn": "Ether",
+        "introducedVersion": "3.0.0",
         "id": "1551",
         "icon": "assets/tuning/agent-1551.webp",
         "rank": "S",
@@ -2506,8 +2726,7 @@
           19815450,
           "b10e849d9824dea7bdfc37cca9bf1deb6a121910246cc23b4270f154a7589e0e"
         ],
-        "portrait": "assets/agent-portraits/agent-1551.webp",
-        "introducedVersion": "3.0.0"
+        "portrait": "assets/agent-portraits/agent-1551.webp"
       },
       {
         "name": "维琳娜",
@@ -2520,6 +2739,7 @@
         "specialtyEn": "Anomaly",
         "element": "风属性",
         "elementEn": "Wind",
+        "introducedVersion": "3.0.0",
         "id": "1561",
         "icon": "assets/tuning/agent-1561.webp",
         "rank": "S",
@@ -2538,8 +2758,7 @@
           19815450,
           "83cca7f3dc9d8ea8ef09ccd327f6af81098f06f5cff5d3353ea5524e0932f6be"
         ],
-        "portrait": "assets/agent-portraits/agent-1561.webp",
-        "introducedVersion": "3.0.0"
+        "portrait": "assets/agent-portraits/agent-1561.webp"
       },
       {
         "name": "诺姆",
@@ -2552,6 +2771,7 @@
         "specialtyEn": "Stun",
         "element": "火属性",
         "elementEn": "Fire",
+        "introducedVersion": "3.0.0",
         "id": "1571",
         "icon": "assets/tuning/agent-1571.webp",
         "rank": "S",
@@ -2569,8 +2789,7 @@
           19815450,
           "aaa8d010d66ce7660a93910daa6aa0c4a3c2f79dc6f20ccf24161afe35081b7f"
         ],
-        "portrait": "assets/agent-portraits/agent-1571.webp",
-        "introducedVersion": "3.0.0"
+        "portrait": "assets/agent-portraits/agent-1571.webp"
       },
       {
         "name": "蕾米埃尔",
@@ -2583,6 +2802,7 @@
         "specialtyEn": "Anomaly",
         "element": "流明",
         "elementEn": "Lumiflux",
+        "introducedVersion": "3.1.0",
         "id": "1581",
         "icon": "assets/tuning/agent-1581.webp",
         "rank": "S",
@@ -2601,8 +2821,7 @@
           19815450,
           "6ec8f0ff1c9c6f36aeb34e9effc9df052391c252f69e051dc8efea1edc3daa69"
         ],
-        "portrait": "assets/agent-portraits/agent-1581.webp",
-        "introducedVersion": "3.1.0"
+        "portrait": "assets/agent-portraits/agent-1581.webp"
       },
       {
         "name": "希格莉德",
@@ -2615,6 +2834,7 @@
         "specialtyEn": "Attack",
         "element": "冰属性",
         "elementEn": "Ice",
+        "introducedVersion": "3.1.0",
         "id": "1591",
         "icon": "assets/tuning/agent-1591.webp",
         "rank": "S",
@@ -2631,8 +2851,7 @@
           19815450,
           "f4ba06285ffa94ae7ffb47aef417ab8fb5ad71b4456e4933cdceaf45453d85da"
         ],
-        "portrait": "assets/agent-portraits/agent-1591.webp",
-        "introducedVersion": "3.1.0"
+        "portrait": "assets/agent-portraits/agent-1591.webp"
       },
       {
         "name": "克拉蕾",
@@ -2927,6 +3146,11 @@
         "path": "assets/agent-previews/bundles/agents-20261114-001.bin",
         "bytes": 1568540,
         "sha256": "3ea875787fd68eb840bcad2f2cda8d08f3b60244c651463aaba0437974cd59a6"
+      },
+      {
+        "path": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+        "bytes": 708214,
+        "sha256": "a8ce2a36a3d246b62268157d38bd34ebffa4e255409657462003008f705fa17f"
       }
     ],
     "assets": {
@@ -3664,6 +3888,266 @@
             "offset": 1560482,
             "length": 8058,
             "sha256": "d7656bd1827ad71cd3bd190d3e92af26a757bd47d2d6403ba2ea72e67ea62399"
+          }
+        ]
+      },
+      "assets/agent-previews/severian-wallpapers-20261118/01.webp": {
+        "bytes": 36718,
+        "sha256": "2d7eebebeae1c7fd93c21c0287f83cfb2eaa6b624367e8841c856b70ef109b91",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 0,
+            "length": 36718,
+            "sha256": "2d7eebebeae1c7fd93c21c0287f83cfb2eaa6b624367e8841c856b70ef109b91"
+          }
+        ]
+      },
+      "assets/agent-previews/severian-wallpapers-20261118/02.webp": {
+        "bytes": 30514,
+        "sha256": "0374fafc197b2e3a37e5ad8442ace60467b6a89994d53673a45c821329d5bcb9",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 36718,
+            "length": 30514,
+            "sha256": "0374fafc197b2e3a37e5ad8442ace60467b6a89994d53673a45c821329d5bcb9"
+          }
+        ]
+      },
+      "assets/agent-previews/severian-wallpapers-20261118/03.webp": {
+        "bytes": 26436,
+        "sha256": "750f8ef26337bf1e4e1ecf95704dde012c64d9e6ef8450929fe966c48c1e38ff",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 67232,
+            "length": 26436,
+            "sha256": "750f8ef26337bf1e4e1ecf95704dde012c64d9e6ef8450929fe966c48c1e38ff"
+          }
+        ]
+      },
+      "assets/agent-previews/severian-wallpapers-20261118/04.webp": {
+        "bytes": 21710,
+        "sha256": "f088b49f9757573e595ed822c9ac9c94554976b8d12a6370cba4bf895fbcc1ab",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 93668,
+            "length": 21710,
+            "sha256": "f088b49f9757573e595ed822c9ac9c94554976b8d12a6370cba4bf895fbcc1ab"
+          }
+        ]
+      },
+      "assets/agent-previews/severian-wallpapers-20261118/05.webp": {
+        "bytes": 21842,
+        "sha256": "2a5f1288d53a37875cd76c14f221f39078c24c8eb1f3e39882eb1de895ff4764",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 115378,
+            "length": 21842,
+            "sha256": "2a5f1288d53a37875cd76c14f221f39078c24c8eb1f3e39882eb1de895ff4764"
+          }
+        ]
+      },
+      "assets/agent-previews/severian-wallpapers-20261118/06.webp": {
+        "bytes": 36042,
+        "sha256": "bb05c721dbd09d4cc78abcb68024ab40ffaeae2b7d66626ad04113c3075341fc",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 137220,
+            "length": 36042,
+            "sha256": "bb05c721dbd09d4cc78abcb68024ab40ffaeae2b7d66626ad04113c3075341fc"
+          }
+        ]
+      },
+      "assets/agent-previews/severian-wallpapers-20261118/07.webp": {
+        "bytes": 37062,
+        "sha256": "e3d352c2a1c6718582074ec4f67811b751034587bbfe5d3a7d6e0f78f3fa15b9",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 173262,
+            "length": 37062,
+            "sha256": "e3d352c2a1c6718582074ec4f67811b751034587bbfe5d3a7d6e0f78f3fa15b9"
+          }
+        ]
+      },
+      "assets/agent-previews/severian-wallpapers-20261118/08.webp": {
+        "bytes": 23378,
+        "sha256": "e76a33ab6af78d6733019099da88a9ecfdfa81bb9be4ee4693944d5adf5c7133",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 210324,
+            "length": 23378,
+            "sha256": "e76a33ab6af78d6733019099da88a9ecfdfa81bb9be4ee4693944d5adf5c7133"
+          }
+        ]
+      },
+      "assets/agent-previews/severian-wallpapers-20261118/09.webp": {
+        "bytes": 24244,
+        "sha256": "1fdc5df9d2587f1e9af82dc55fef55e255b68e899897ba9e5f8e92f559442126",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 233702,
+            "length": 24244,
+            "sha256": "1fdc5df9d2587f1e9af82dc55fef55e255b68e899897ba9e5f8e92f559442126"
+          }
+        ]
+      },
+      "assets/agent-previews/severian-wallpapers-20261118/10.webp": {
+        "bytes": 25228,
+        "sha256": "7df303e0084aa548e2387deb1a7b21ee7ef0e3636f13ec89df8971eef36cb7d7",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 257946,
+            "length": 25228,
+            "sha256": "7df303e0084aa548e2387deb1a7b21ee7ef0e3636f13ec89df8971eef36cb7d7"
+          }
+        ]
+      },
+      "assets/agent-previews/severian-wallpapers-20261118/11.webp": {
+        "bytes": 49730,
+        "sha256": "285378063a5737ebb81fcf4b8825fa4e0147df253f413c5778646da27d8aee32",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 283174,
+            "length": 49730,
+            "sha256": "285378063a5737ebb81fcf4b8825fa4e0147df253f413c5778646da27d8aee32"
+          }
+        ]
+      },
+      "assets/agent-previews/severian-wallpapers-20261118/12.webp": {
+        "bytes": 38146,
+        "sha256": "4d10d8fd5e31c123ef442fc375cd616ec6104e87759a26abfb627464cd49753d",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 332904,
+            "length": 38146,
+            "sha256": "4d10d8fd5e31c123ef442fc375cd616ec6104e87759a26abfb627464cd49753d"
+          }
+        ]
+      },
+      "assets/agent-previews/severian-wallpapers-20261118/13.webp": {
+        "bytes": 26008,
+        "sha256": "e35e221a6bfce142effc5910e53060021c7e87b680a15f90e526f1d32fee1a95",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 371050,
+            "length": 26008,
+            "sha256": "e35e221a6bfce142effc5910e53060021c7e87b680a15f90e526f1d32fee1a95"
+          }
+        ]
+      },
+      "assets/agent-previews/severian-wallpapers-20261118/14.webp": {
+        "bytes": 50802,
+        "sha256": "c7a32c1e5360ac24e63f1c2a5adaeb9071ffd7adfb9aea56dee8b7d3aca9ed66",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 397058,
+            "length": 50802,
+            "sha256": "c7a32c1e5360ac24e63f1c2a5adaeb9071ffd7adfb9aea56dee8b7d3aca9ed66"
+          }
+        ]
+      },
+      "assets/agent-previews/severian-wallpapers-20261118/15.webp": {
+        "bytes": 39346,
+        "sha256": "6551121b6944f24e0793cd2285e0a56850d5cc497cc0fa2c1ba3dd82b9b1c78e",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 447860,
+            "length": 39346,
+            "sha256": "6551121b6944f24e0793cd2285e0a56850d5cc497cc0fa2c1ba3dd82b9b1c78e"
+          }
+        ]
+      },
+      "assets/agent-previews/severian-wallpapers-20261118/16.webp": {
+        "bytes": 24716,
+        "sha256": "7ce517c23aecb9ee9851897d34e7eaefac366ea062ac7b39b9b086fdd77a0cfe",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 487206,
+            "length": 24716,
+            "sha256": "7ce517c23aecb9ee9851897d34e7eaefac366ea062ac7b39b9b086fdd77a0cfe"
+          }
+        ]
+      },
+      "assets/agent-previews/severian-wallpapers-20261118/17.webp": {
+        "bytes": 56134,
+        "sha256": "f941fc5d4afce538d598fa4019abb23849984c87116aafdd0aebe5d3a058efe4",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 511922,
+            "length": 56134,
+            "sha256": "f941fc5d4afce538d598fa4019abb23849984c87116aafdd0aebe5d3a058efe4"
+          }
+        ]
+      },
+      "assets/agent-previews/severian-wallpapers-20261118/18.webp": {
+        "bytes": 40134,
+        "sha256": "ffd8fb5a26b27fb2f07f9ee6e6003e28b79805dfe0627a521c35313680bc5f59",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 568056,
+            "length": 40134,
+            "sha256": "ffd8fb5a26b27fb2f07f9ee6e6003e28b79805dfe0627a521c35313680bc5f59"
+          }
+        ]
+      },
+      "assets/agent-previews/severian-wallpapers-20261118/19.webp": {
+        "bytes": 40684,
+        "sha256": "9f37f78a77df0d9da7d2caffc70d8e93d139475d97fe7de050e5eb38dff75600",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 608190,
+            "length": 40684,
+            "sha256": "9f37f78a77df0d9da7d2caffc70d8e93d139475d97fe7de050e5eb38dff75600"
+          }
+        ]
+      },
+      "assets/agent-previews/severian-wallpapers-20261118/20.webp": {
+        "bytes": 59340,
+        "sha256": "2c3ed66084c486b1adfc33272bdfb1608d66504fedbabbc54d41032f8f5e8d79",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 648874,
+            "length": 59340,
+            "sha256": "2c3ed66084c486b1adfc33272bdfb1608d66504fedbabbc54d41032f8f5e8d79"
           }
         ]
       }

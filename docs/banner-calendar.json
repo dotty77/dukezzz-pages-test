@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updatedAt": "2026-11-11",
+ "updatedAt": "2026-11-19",
  "regions": [
   {
    "id": "prod_gf_cn",
@@ -663,5 +663,13 @@
     }
    ]
   }
- ]
+ ],
+ "specialProgram": {
+  "title": "3.4「长日终尽」前瞻特别节目",
+  "titleEn": "Version 3.4 “The Finality of the Day” Special Program",
+  "startsAt": "2026-11-20T18:30:00+08:00",
+  "showUntil": "2026-11-21T00:00:00+08:00",
+  "url": "https://zzz.mihoyo.com/news/167359",
+  "urlEn": "https://zenless.hoyoverse.com/en-us/news/167352"
+ }
 }

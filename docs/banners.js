@@ -81,6 +81,31 @@ function nextEntry(entry, kind) {
   return span;
 }
 const english = () => window.DUKE_I18N?.language === 'en';
+function renderProgram() {
+  const panel = $('banner-program');
+  if (!panel) return;
+  const program = calendar.specialProgram;
+  const start = new Date(program?.startsAt);
+  panel.hidden = !(Number.isFinite(start.getTime()) && Date.now() < Date.parse(program.showUntil));
+  if (panel.hidden) return;
+
+  const en = english(), locale = en ? 'en-US' : 'zh-CN';
+  const options = {month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', hourCycle: 'h23'};
+  const beijingTime = new Intl.DateTimeFormat(locale, {...options, timeZone: 'Asia/Shanghai'}).format(start);
+  let label = en ? `${beijingTime} (UTC+8)` : `北京时间 ${beijingTime}（UTC+8）`;
+  if (start.getTimezoneOffset() !== -480) {
+    const localTime = new Intl.DateTimeFormat(locale, options).format(start);
+    label += en ? ` · Your time ${localTime}` : ` · 你的时间 ${localTime}`;
+  }
+  $('banner-program-title').textContent = en ? program.titleEn : program.title;
+  const time = $('banner-program-time');
+  time.dateTime = program.startsAt;
+  time.textContent = label;
+  const link = $('banner-program-source');
+  link.href = en ? program.urlEn : program.url;
+  link.textContent = en ? 'Official announcement ↗' : '官方预告 ↗';
+}
+
 function sourceLink(source) {
   const link = el('a', '', `${source.title} ↗`);
   link.href = english() && source.urlEn ? source.urlEn : source.url;
@@ -172,12 +197,13 @@ function renderHistory(state) {
 
 function render() {
   const state = renderCurrent();
+  renderProgram();
   renderNext(state); renderHistory(state);
 }
 
 async function main() {
   try {
-    const [data, tuning] = await Promise.all([loadJSON('banner-calendar.json?v=20261111-refresh-launch-1'), loadJSON('tuning-catalog.json?v=20261118-reviewed-ui-launch-1')]);
+    const [data, tuning] = await Promise.all([loadJSON('banner-calendar.json?v=20261119-v34-preview-launch-1'), loadJSON('tuning-catalog.json?v=20261118-reviewed-ui-launch-1')]);
     calendar = data; catalog = tuning.items;
     region = defaultRegion();
     const select = $('banner-region');

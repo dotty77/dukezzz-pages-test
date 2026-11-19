@@ -28,7 +28,7 @@ const colors = {物理:'#b59b64',火:'#d97657',冰:'#63acbc',电:'#9578c4',以�
 let roster = [], equipment = {}, builds = {}, catalog = {}, selected = null, selectedTab = 'intro', opener = null;
 let version = '', graduation = {}, detailsBytes = 0, detailGeneration = 0;
 const assets = {
-  directory:'agent-previews.json?v=20261118-reviewed-ui-launch-1',
+  directory:'agent-previews.json?v=20261119-v34-preview-launch-1',
   details:'agent-details.json?v=20261111-refresh-launch-1',
   equipment:'agent-equipment.json?v=20261111-refresh-launch-1',
   builds:'agent-builds.json?v=20261111-refresh-launch-1',
@@ -428,6 +428,8 @@ function renderIntro(agent) {
   if(agent.officialPreview){
     const status=el('div','agent-preview-notice');
     status.append(el('h4','','官方已公开资料'),prose(agent.previewNote));
+    const featured=(agent.sources || []).filter(source=>source.featured);
+    if(featured.length)status.append(officialSources(featured));
 
 
     if(agent.roleTags?.length){const list=el('ul','agent-role-tags');for(const tag of agent.roleTags)list.append(el('li','',tag));status.append(el('h5','agent-role-title','官方定位'),list);}
@@ -443,12 +445,7 @@ function renderIntro(agent) {
       figure.append(img,el('figcaption','',agent.artCaption || '官方角色档案图 · © miHoYo / HoYoverse'));
       fold.append(el('summary','','查看官方完整档案图'),figure);frag.append(fold);
     }
-    const links=el('div','agent-official-sources');
-    for(const source of agent.sources || []){
-      try{const url=new URL(source.url);if(url.protocol!=='https:')continue;
-        const link=el('a','',`${source.title}${source.date ? ` · ${source.date}` : ''} ↗`);link.href=url.href;link.target='_blank';link.rel='noopener noreferrer';links.append(link);
-      }catch{}
-    }
+    const links=officialSources((agent.sources || []).filter(source=>!source.featured));
     const sources=el('details','agent-source-fold');sources.append(localized('summary','','官方来源','Official sources'),links,localized('p','agent-source-note',`核对：${agent.updatedAt} · 开放时间以官方公告为准。`,`Checked: ${agent.updatedAt} · Availability follows official announcements.`));frag.append(sources);
     return frag;
   }
@@ -456,6 +453,21 @@ function renderIntro(agent) {
   if(agent.profile) for(const item of values(agent.profile).filter(item=>!['entity.profile.height','entity.profile.birthday','entity.profile.gender'].includes(item?.sourceField))){if(typeof item==='string')frag.append(prose(item));else {if(item.name||item.title)frag.append(localized('h4','',item.name||item.title,item.nameEn||item.titleEn));frag.append(prose(item.description||item.text,item.descriptionEn||item.textEn));}}
 
   return frag;
+}
+function officialSources(sources) {
+  const links=el('div','agent-official-sources');
+  for(const source of sources){
+    try{
+      const url=new URL(source.url);if(url.protocol!=='https:')continue;
+      const suffix=source.date ? ' · '+source.date+' ↗' : ' ↗';
+      const link=localized('a','',source.title+suffix,source.titleEn ? source.titleEn+suffix : undefined);
+      link.dataset.sourceZh=url.href;
+      if(source.urlEn){const en=new URL(source.urlEn);if(en.protocol==='https:')link.dataset.sourceEn=en.href;}
+      link.href=window.DUKE_I18N.language==='en' && link.dataset.sourceEn ? link.dataset.sourceEn : url.href;
+      link.target='_blank';link.rel='noopener noreferrer';links.append(link);
+    }catch{}
+  }
+  return links;
 }
 function renderOfficialDossier(agent) {
   const dossier=agent.officialDossier,box=el('details','agent-official-art-fold');
@@ -479,30 +491,25 @@ function renderOfficialDossier(agent) {
       fold.addEventListener('toggle',()=>{
         if(!fold.open || imagesBuilt)return;
         imagesBuilt=true;
+        const hasOriginals=group.pages?.some(page=>page.originalUrl);
+        const grid=hasOriginals ? el('div','agent-wallpaper-grid') : fold;
+        if(hasOriginals)fold.append(grid);
         for(const page of group.pages || []){
           const english=window.DUKE_I18N.language==='en';
           const figure=el('figure','agent-official-art'),img=picture(english && page.srcEn ? page.srcEn : page.src,page.caption);
           img.loading='lazy';img.dataset.officialImageZh=page.src;if(page.srcEn)img.dataset.officialImageEn=page.srcEn;
           img.width=Number(english ? page.widthEn || page.width : page.width)||1080;
           img.height=Number(english ? page.heightEn || page.height : page.height)||2160;
-          figure.append(img,localized('figcaption','',page.caption,page.captionEn));fold.append(figure);
+          figure.append(img,localized('figcaption','',page.caption,page.captionEn));
+          if(page.originalUrl && new URL(page.originalUrl).protocol==='https:'){
+            const link=el('a');link.href=page.originalUrl;link.target='_blank';link.rel='noopener noreferrer';
+            img.alt='';link.append(figure);grid.append(link);
+          }else grid.append(figure);
         }
       });
       body.append(fold);
     }
-    const links=el('div','agent-official-sources');
-    for(const source of dossier.sources||[]){
-      try{
-        const url=new URL(source.url);if(url.protocol!=='https:')continue;
-        const suffix=source.date ? ' · '+source.date+' ↗' : ' ↗';
-        const link=localized('a','',source.title+suffix,source.titleEn ? source.titleEn+suffix : undefined);
-        link.dataset.sourceZh=url.href;
-        if(source.urlEn){const en=new URL(source.urlEn);if(en.protocol==='https:')link.dataset.sourceEn=en.href;}
-        link.href=window.DUKE_I18N.language==='en' && link.dataset.sourceEn ? link.dataset.sourceEn : url.href;
-        link.target='_blank';link.rel='noopener noreferrer';links.append(link);
-      }catch{}
-    }
-    body.append(links);box.append(body);
+    body.append(officialSources(dossier.sources || []));box.append(body);
   });
   return box;
 }
