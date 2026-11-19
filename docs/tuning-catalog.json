@@ -1,7 +1,7 @@
 {
   "version": 1,
   "gameVersion": "3.3.0",
-  "updatedAt": "2026-10-21",
+  "updatedAt": "2026-11-18",
   "sources": [
     {
       "name": "绝区零已安装正式客户端 UI 原始纹理",
@@ -45,7 +45,8 @@
         "엔비"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "1.0.0"
     },
     "1021": {
       "id": "1021",
@@ -60,7 +61,8 @@
         "네코마타"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "1.0.0"
     },
     "1031": {
       "id": "1031",
@@ -75,7 +77,8 @@
         "니콜"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "1.0.0"
     },
     "1041": {
       "id": "1041",
@@ -96,7 +99,8 @@
         "「11호」"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "1.0.0"
     },
     "1051": {
       "id": "1051",
@@ -111,7 +115,8 @@
         "이드하리"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "2.3.0"
     },
     "1061": {
       "id": "1061",
@@ -126,7 +131,8 @@
         "코린"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "1.0.0"
     },
     "1071": {
       "id": "1071",
@@ -143,7 +149,8 @@
         "카이사르"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "1.2.0"
     },
     "1081": {
       "id": "1081",
@@ -158,7 +165,8 @@
         "빌리"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "1.0.0"
     },
     "1091": {
       "id": "1091",
@@ -173,7 +181,8 @@
         "미야비"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "1.4.0"
     },
     "1101": {
       "id": "1101",
@@ -188,7 +197,8 @@
         "콜레다"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "1.0.0"
     },
     "1111": {
       "id": "1111",
@@ -205,7 +215,8 @@
         "앤톤"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "1.0.0"
     },
     "1121": {
       "id": "1121",
@@ -220,7 +231,8 @@
         "벤"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "1.0.0"
     },
     "1131": {
       "id": "1131",
@@ -235,7 +247,8 @@
         "소우카쿠"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "1.0.0"
     },
     "1141": {
       "id": "1141",
@@ -251,7 +264,8 @@
         "리카온"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "1.0.0"
     },
     "1151": {
       "id": "1151",
@@ -266,7 +280,8 @@
         "루시"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "1.0.0"
     },
     "1161": {
       "id": "1161",
@@ -282,7 +297,8 @@
         "라이터"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "1.3.0"
     },
     "1171": {
       "id": "1171",
@@ -298,7 +314,8 @@
         "버니스"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "1.2.0"
     },
     "1181": {
       "id": "1181",
@@ -314,7 +331,8 @@
         "그레이스"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "1.0.0"
     },
     "1191": {
       "id": "1191",
@@ -330,7 +348,8 @@
         "엘렌"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "1.0.0"
     },
     "1201": {
       "id": "1201",
@@ -345,7 +364,8 @@
         "하루마사"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "1.4.0"
     },
     "1211": {
       "id": "1211",
@@ -361,7 +381,8 @@
         "리나"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "1.0.0"
     },
     "1221": {
       "id": "1221",
@@ -376,7 +397,8 @@
         "야나기"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "1.3.0"
     },
     "1241": {
       "id": "1241",
@@ -391,7 +413,8 @@
         "주연"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "1.0.0"
     },
     "1251": {
       "id": "1251",
@@ -405,7 +428,8 @@
         "청의"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "1.1.0"
     },
     "1261": {
       "id": "1261",
@@ -421,7 +445,8 @@
         "제인"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "1.1.0"
     },
     "1271": {
       "id": "1271",
@@ -437,7 +462,8 @@
         "세스"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "1.1.0"
     },
     "1281": {
       "id": "1281",
@@ -452,7 +478,8 @@
         "파이퍼"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "1.0.0"
     },
     "1291": {
       "id": "1291",
@@ -467,7 +494,8 @@
         "휴고"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "1.7.0"
     },
     "1301": {
       "id": "1301",
@@ -488,7 +516,8 @@
         "오피&「도깨비불」"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "2.2.0"
     },
     "1311": {
       "id": "1311",
@@ -503,7 +532,8 @@
         "아스트라"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "1.5.0"
     },
     "1321": {
       "id": "1321",
@@ -519,7 +549,8 @@
         "이블린"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "1.5.0"
     },
     "1331": {
       "id": "1331",
@@ -535,7 +566,8 @@
         "비비안"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "1.7.0"
     },
     "1341": {
       "id": "1341",
@@ -549,7 +581,8 @@
         "자오"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "2.5.0"
     },
     "1351": {
       "id": "1351",
@@ -564,7 +597,8 @@
         "펄크라"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "1.6.0"
     },
     "1361": {
       "id": "1361",
@@ -583,7 +617,8 @@
         "「트리거」"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "1.6.0"
     },
     "1371": {
       "id": "1371",
@@ -598,7 +633,8 @@
         "의현"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "2.0.0"
     },
     "1381": {
       "id": "1381",
@@ -619,7 +655,8 @@
         "零號·安比"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "1.6.0"
     },
     "1391": {
       "id": "1391",
@@ -633,7 +670,8 @@
         "귤복복"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "2.0.0"
     },
     "1401": {
       "id": "1401",
@@ -649,7 +687,8 @@
         "앨리스"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "2.1.0"
     },
     "1411": {
       "id": "1411",
@@ -665,7 +704,8 @@
         "유즈하"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "2.1.0"
     },
     "1421": {
       "id": "1421",
@@ -680,7 +720,8 @@
         "반인호"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "2.0.0"
     },
     "1431": {
       "id": "1431",
@@ -695,7 +736,8 @@
         "엽빛나"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "2.5.0"
     },
     "1441": {
       "id": "1441",
@@ -710,7 +752,8 @@
         "마나토"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "2.3.0"
     },
     "1451": {
       "id": "1451",
@@ -728,7 +771,8 @@
         "루시아"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "2.3.0"
     },
     "1461": {
       "id": "1461",
@@ -745,7 +789,8 @@
         "「시드」"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "2.2.0"
     },
     "1471": {
       "id": "1471",
@@ -760,7 +805,8 @@
         "반악"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "2.4.0"
     },
     "1481": {
       "id": "1481",
@@ -775,7 +821,8 @@
         "다이아린"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "2.4.0"
     },
     "1491": {
       "id": "1491",
@@ -790,7 +837,8 @@
         "수나"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "2.6.0"
     },
     "1501": {
       "id": "1501",
@@ -806,7 +854,8 @@
         "아리아"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "2.6.0"
     },
     "1511": {
       "id": "1511",
@@ -821,7 +870,8 @@
         "남궁우"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "2.7.0"
     },
     "1521": {
       "id": "1521",
@@ -837,7 +887,8 @@
         "시시아"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "2.7.0"
     },
     "1531": {
       "id": "1531",
@@ -856,7 +907,8 @@
         "스타라이트·빌리"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "2.8.0"
     },
     "1541": {
       "id": "1541",
@@ -872,7 +924,8 @@
         "프로미아"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "2.8.0"
     },
     "1551": {
       "id": "1551",
@@ -888,7 +941,8 @@
         "피로이스"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "3.0.0"
     },
     "1561": {
       "id": "1561",
@@ -905,7 +959,8 @@
         "벨리나"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "3.0.0"
     },
     "1571": {
       "id": "1571",
@@ -921,7 +976,8 @@
         "노르마"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "3.0.0"
     },
     "1581": {
       "id": "1581",
@@ -938,7 +994,8 @@
         "레미엘"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "3.1.0"
     },
     "1591": {
       "id": "1591",
@@ -953,7 +1010,8 @@
         "시그리드"
       ],
       "width": 142,
-      "height": 142
+      "height": 142,
+      "introducedVersion": "3.1.0"
     },
     "12001": {
       "id": "12001",

@@ -177,7 +177,7 @@ function render() {
 
 async function main() {
   try {
-    const [data, tuning] = await Promise.all([loadJSON('banner-calendar.json?v=20261111-refresh-launch-1'), loadJSON('tuning-catalog.json?v=20261111-refresh-launch-1')]);
+    const [data, tuning] = await Promise.all([loadJSON('banner-calendar.json?v=20261111-refresh-launch-1'), loadJSON('tuning-catalog.json?v=20261118-archive-roam-launch-1')]);
     calendar = data; catalog = tuning.items;
     region = defaultRegion();
     const select = $('banner-region');

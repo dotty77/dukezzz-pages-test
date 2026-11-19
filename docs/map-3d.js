@@ -220,7 +220,7 @@ function setupRenderer() {
   scene=new THREE.Scene();scene.background=new THREE.Color('#b7bec9');
   const environmentScene=new THREE.Scene();environmentScene.background=new THREE.Color(.35,.35,.35);const pmrem=new THREE.PMREMGenerator(renderer);scene.environment=pmrem.fromScene(environmentScene,0,.1,100).texture;scene.environmentIntensity=.4;pmrem.dispose();
   camera=new THREE.PerspectiveCamera(45,1,.5,8000);camera.position.set(480,610,620);
-  controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.dampingFactor=.12;controls.minDistance=8;controls.maxDistance=2200;controls.maxPolarAngle=DEFAULT_MAX_POLAR_ANGLE;controls.target.set(15,10,-5);controls.screenSpacePanning=true;controls.addEventListener('change',requestRender);controls.addEventListener('start',()=>{viewChosen=true;state.top=false;$('top-view').setAttribute('aria-pressed','false');$('view-label').textContent=t('perspective');});
+  controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.dampingFactor=.12;controls.minDistance=8;controls.maxDistance=2200;controls.maxPolarAngle=DEFAULT_MAX_POLAR_ANGLE;controls.target.set(15,10,-5);controls.screenSpacePanning=true;controls.addEventListener('change',requestRender);controls.addEventListener('start',()=>{if(roamBusy)stopRoam();viewChosen=true;state.top=false;$('top-view').setAttribute('aria-pressed','false');$('view-label').textContent=t('perspective');});
   scene.add(new THREE.HemisphereLight(0xf5f3ef,0x9f9280,.6));const sun=new THREE.DirectionalLight(0xfff2dc,2.5);sun.name='Preview sunlight';sun.position.set(-220,480,280);sun.target.position.set(15,45,-5);sun.castShadow=true;sun.shadow.mapSize.set(4096,4096);sun.shadow.camera.near=1;sun.shadow.camera.far=1600;sun.shadow.camera.left=-370;sun.shadow.camera.right=370;sun.shadow.camera.top=370;sun.shadow.camera.bottom=-370;sun.shadow.bias=-.0004;sun.shadow.normalBias=.25;sun.shadow.autoUpdate=false;sun.shadow.needsUpdate=true;scene.add(sun,sun.target);
   resizeObserver=new ResizeObserver(resize);resizeObserver.observe($('map-stage'));resize();
   $('scene-canvas').addEventListener('webglcontextlost',event=>{event.preventDefault();state.sceneReady=false;showError(new Error(t('contextLost')));});
@@ -265,7 +265,7 @@ function closeView() {
   setCamera(view.position,view.target,view.fov);perspectiveState();
 }
 function focusPoint(p) {if(!validPosition(p.position)||!controls)return;stopRoam();const target=new THREE.Vector3(...p.position);const offset=camera.position.clone().sub(controls.target).normalize().multiplyScalar(64);if(offset.y<20)offset.y=35;setCamera(target.clone().add(offset).toArray(),target.toArray());state.top=false;$('top-view').setAttribute('aria-pressed','false');$('view-label').textContent=t('perspective');}
-function zoom(factor){if(!controls)return;viewChosen=true;const offset=camera.position.clone().sub(controls.target);offset.multiplyScalar(factor);offset.clampLength(controls.minDistance,controls.maxDistance);camera.position.copy(controls.target).add(offset);controls.update();requestRender();}
+function zoom(factor){if(!controls)return;if(roamBusy)stopRoam();viewChosen=true;const offset=camera.position.clone().sub(controls.target);offset.multiplyScalar(factor);offset.clampLength(controls.minDistance,controls.maxDistance);camera.position.copy(controls.target).add(offset);controls.update();requestRender();}
 function updateLoadingText() {
   if(state.error){$('loading-title').textContent=t('loadFailed');$('loading-detail').textContent=state.error;return;}
   $('loading-title').textContent=t('loadingTitle');const info=state.loading;
@@ -325,7 +325,10 @@ async function start() {
       if (!pointsReady || !model || state.sceneReady || state.error) return;
       state.sceneReady = true;
       configureMapLighting();
-      if (!viewChosen) overview();
+      if (!viewChosen) {
+        overview();
+        void beginRoam();
+      }
       $('empty-points').hidden = state.filtered.length !== 0;
       $('loading-panel').classList.add('compact');
       renderRoamUi();

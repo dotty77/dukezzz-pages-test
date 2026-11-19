@@ -12,18 +12,23 @@ const betaFilter = 'beta';
 const betaVersion = agent => String(agent.beta?.source?.version || '').match(/\d+\.\d+/)?.[0] || '';
 const betaLabel = agent => `${betaVersion(agent) ? betaVersion(agent)+' ' : ''}${agent.beta?.kind==='changes' ? '测试服变化' : '测试服资料'}`;
 const bilingual = (tag,cls,zh,en) => {const node=el(tag,cls,zh);node.dataset.i18nEn=en;return node;};
+// Archive links use X.Y.0, while preview dossiers may store X.Y.
+function debutVersion(value) {
+  const match = /^(\d+\.\d+)(?:\.\d+)?$/.exec(value || '');
+  return match ? match[1] + '.0' : '';
+}
 function matchesVersion(agent,value) {
   if(!value)return true;
+  if(value==='released')return !agent.officialPreview;
   if(value===previewFilter)return !!agent.officialPreview;
   if(value===betaFilter)return !!agent.beta;
-  if(value==='3.4.0')return !!agent.officialPreview && /^3\.4(?:\.|$)/.test(agent.introducedVersion || '');
-  return !agent.officialPreview && agent.introducedVersion===value;
+  return debutVersion(agent.introducedVersion) === value;
 }
 const colors = {物理:'#b59b64',火:'#d97657',冰:'#63acbc',电:'#9578c4',以太:'#b677a8',烈霜:'#67a1bd',玄墨:'#8266b3',风:'#67ad91',流明:'#c5a56a'};
 let roster = [], equipment = {}, builds = {}, catalog = {}, selected = null, selectedTab = 'intro', opener = null;
 let version = '', graduation = {}, detailsBytes = 0, detailGeneration = 0;
 const assets = {
-  directory:'agent-previews.json?v=20261114-refresh-launch-1',
+  directory:'agent-previews.json?v=20261118-archive-roam-launch-1',
   details:'agent-details.json?v=20261111-refresh-launch-1',
   equipment:'agent-equipment.json?v=20261111-refresh-launch-1',
   builds:'agent-builds.json?v=20261111-refresh-launch-1',
@@ -226,6 +231,19 @@ function setFilters() {
     for(const entry of entries){const option=el('option','',entry);option.value=entry;$(id).append(option);}
   }
   $('agent-total').textContent = roster.length;
+  const releases = new Map();
+  for (const agent of roster) {
+    const key = debutVersion(agent.introducedVersion);
+    if (key) releases.set(key, releases.get(key) || !agent.officialPreview);
+  }
+  const latestFirst = (a, b) => b.localeCompare(a, 'en', {numeric:true});
+  for (const key of [...releases.keys()].sort(latestFirst)) {
+    const label = key.slice(0, -2);
+    const released = releases.get(key);
+    const option = bilingual('option', '', released ? label + ' 新增' : label + ' 预告', released ? 'Added in ' + label : label + ' preview');
+    option.value = key;
+    $('agent-version').append(option);
+  }
   for(const id of ['agent-search','agent-element','agent-specialty','agent-rank','agent-version']) $(id).addEventListener(id==='agent-search'?'input':'change',renderGrid);
   $('agent-filter-reset').onclick = () => {for(const id of ['agent-search','agent-element','agent-specialty','agent-rank','agent-version']) $(id).value='';renderGrid();};
 }
@@ -701,7 +719,10 @@ try {
   roster.sort((a,b)=>Number(!!b.officialPreview)-Number(!!a.officialPreview)||(a.officialPreview&&b.officialPreview ? b.updatedAt.localeCompare(a.updatedAt) : (a.rank===b.rank?0:a.rank==='S'?-1:1)||Number(b.id)-Number(a.id)));
   setFilters();
   const requestedVersion=new URL(location.href).searchParams.get('version');
-  if(['3.2.0','3.3.0','3.4.0',previewFilter,betaFilter].includes(requestedVersion))$('agent-version').value=requestedVersion;
+  const selectedVersion = debutVersion(requestedVersion) || requestedVersion;
+  if (Array.from($('agent-version').options).some(option => option.value === selectedVersion)) {
+    $('agent-version').value = selectedVersion;
+  }
   renderGrid();
   readHash();
   window.agentArchive={getState:()=>({ready:true,count:roster.length,detailCount:directory.agents.filter(a=>a.detailRange).length,previewCount:previews.length,betaCount:roster.filter(a=>a.officialPreview&&a.beta).length,betaChangesCount:roster.filter(a=>!a.officialPreview&&a.beta).length,selected:selected?.id,tab:selectedTab,failures:[...failures]})};

@@ -1617,7 +1617,7 @@ function setup() {
 async function initialize() {
   try {
     announce("正在加载调频工具…");
-    const results = await Promise.allSettled([openStorage({ includeSync: true }), fetchTuningJSON("tuning-catalog.json?v=20261111-refresh-launch-1"), loadBannerData()]);
+    const results = await Promise.allSettled([openStorage({ includeSync: true }), fetchTuningJSON("tuning-catalog.json?v=20261118-archive-roam-launch-1"), loadBannerData()]);
     if (results[0].status === "fulfilled") setArchive(results[0].value);
     if (results[1].status === "fulfilled") {
       catalog = results[1].value.items || {};

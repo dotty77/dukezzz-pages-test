@@ -335,7 +335,7 @@ function renderModeError() {
 async function main() {
   try {
     const [cultivation, catalog, details] = await Promise.all([
-      loadJSON('cultivation-data.json?v=20261111-refresh-launch-1'), loadJSON('tuning-catalog.json?v=20261111-refresh-launch-1'),
+      loadJSON('cultivation-data.json?v=20261111-refresh-launch-1'), loadJSON('tuning-catalog.json?v=20261118-archive-roam-launch-1'),
       loadJSON('team-abilities.json?v=20261111-refresh-launch-1')]);
     releaseData = cultivation;
     factions = Object.fromEntries(details.agents.map(a => [a.id, a.faction]));

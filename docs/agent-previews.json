@@ -868,7 +868,8 @@
           19815450,
           "7b4458100bb856f4b1074f63f90ba7616a9416171a511bc5dca27c15263145e0"
         ],
-        "portrait": "assets/agent-portraits/agent-1011.webp"
+        "portrait": "assets/agent-portraits/agent-1011.webp",
+        "introducedVersion": "1.0.0"
       },
       {
         "name": "猫又",
@@ -897,7 +898,8 @@
           19815450,
           "440276ef7fed5b9a37a491ef3147b7e67bc974f1fac20a3ec3a1d428100d8a8b"
         ],
-        "portrait": "assets/agent-portraits/agent-1021.webp"
+        "portrait": "assets/agent-portraits/agent-1021.webp",
+        "introducedVersion": "1.0.0"
       },
       {
         "name": "妮可",
@@ -926,7 +928,8 @@
           19815450,
           "825118c198e356582a06b191396df4638f5934b5ad85d42fd51ba4b8ede7a5b8"
         ],
-        "portrait": "assets/agent-portraits/agent-1031.webp"
+        "portrait": "assets/agent-portraits/agent-1031.webp",
+        "introducedVersion": "1.0.0"
       },
       {
         "name": "「11号」",
@@ -961,7 +964,8 @@
           19815450,
           "4b452473941f44d4076d54f4f0bed7f25b8b73e52b4660ed72734e0312de3ddb"
         ],
-        "portrait": "assets/agent-portraits/agent-1041.webp"
+        "portrait": "assets/agent-portraits/agent-1041.webp",
+        "introducedVersion": "1.0.0"
       },
       {
         "name": "伊德海莉",
@@ -990,7 +994,8 @@
           19815450,
           "edcb29d07410c095fd9b0b64cdeac7309da4d746fbca1e0904974f460ae05dc1"
         ],
-        "portrait": "assets/agent-portraits/agent-1051.webp"
+        "portrait": "assets/agent-portraits/agent-1051.webp",
+        "introducedVersion": "2.3.0"
       },
       {
         "name": "可琳",
@@ -1019,7 +1024,8 @@
           19815450,
           "1f56711212f7810ad921844d8b733f6acaca0fe37a564f5c1fb389cd8fd10879"
         ],
-        "portrait": "assets/agent-portraits/agent-1061.webp"
+        "portrait": "assets/agent-portraits/agent-1061.webp",
+        "introducedVersion": "1.0.0"
       },
       {
         "name": "凯撒",
@@ -1050,7 +1056,8 @@
           19815450,
           "65b244542694fbf74a48c38f26a9c0c8539e238d3f712c73188e149604ff95fa"
         ],
-        "portrait": "assets/agent-portraits/agent-1071.webp"
+        "portrait": "assets/agent-portraits/agent-1071.webp",
+        "introducedVersion": "1.2.0"
       },
       {
         "name": "比利",
@@ -1079,7 +1086,8 @@
           19815450,
           "3ff044bedf27d1ebe3db281b4b4b9b5723507e820f2c203adc342ed7a7be59fa"
         ],
-        "portrait": "assets/agent-portraits/agent-1081.webp"
+        "portrait": "assets/agent-portraits/agent-1081.webp",
+        "introducedVersion": "1.0.0"
       },
       {
         "name": "雅",
@@ -1108,7 +1116,8 @@
           19815450,
           "7306651828fdad5d7103a43eaacde5483bceafc3987a1d535cb91440a9f9716f"
         ],
-        "portrait": "assets/agent-portraits/agent-1091.webp"
+        "portrait": "assets/agent-portraits/agent-1091.webp",
+        "introducedVersion": "1.4.0"
       },
       {
         "name": "珂蕾妲",
@@ -1137,7 +1146,8 @@
           19815450,
           "2d44f4ae3d91ae2bf444633f7db94edaf9e8c014f2ad1ecbaf290efec1c5c5a4"
         ],
-        "portrait": "assets/agent-portraits/agent-1101.webp"
+        "portrait": "assets/agent-portraits/agent-1101.webp",
+        "introducedVersion": "1.0.0"
       },
       {
         "name": "安东",
@@ -1168,7 +1178,8 @@
           19815450,
           "a2860fe012e50aed934251fd1dc467d7de05b7f20e23ffa38cc126dc5610275b"
         ],
-        "portrait": "assets/agent-portraits/agent-1111.webp"
+        "portrait": "assets/agent-portraits/agent-1111.webp",
+        "introducedVersion": "1.0.0"
       },
       {
         "name": "本",
@@ -1197,7 +1208,8 @@
           19815450,
           "7bfe34560ce1bc2404a1a46b97f52ea72d1f91ee4482823dfe7f5a9db6997fa4"
         ],
-        "portrait": "assets/agent-portraits/agent-1121.webp"
+        "portrait": "assets/agent-portraits/agent-1121.webp",
+        "introducedVersion": "1.0.0"
       },
       {
         "name": "苍角",
@@ -1226,7 +1238,8 @@
           19815450,
           "a86574bb94c6b2ee4ad60e251bf20d8a7b4187cf025d82c5153d78ad4545778e"
         ],
-        "portrait": "assets/agent-portraits/agent-1131.webp"
+        "portrait": "assets/agent-portraits/agent-1131.webp",
+        "introducedVersion": "1.0.0"
       },
       {
         "name": "莱卡恩",
@@ -1256,7 +1269,8 @@
           19815450,
           "030abd11bf1812c9b3786b4ec0fe8b4061cd0ee0d226257c344eb56b4f60a454"
         ],
-        "portrait": "assets/agent-portraits/agent-1141.webp"
+        "portrait": "assets/agent-portraits/agent-1141.webp",
+        "introducedVersion": "1.0.0"
       },
       {
         "name": "露西",
@@ -1285,7 +1299,8 @@
           19815450,
           "51844ca4519fe4c21a5fb668f85d9027388549e1e0da6db676be1152e1665cdb"
         ],
-        "portrait": "assets/agent-portraits/agent-1151.webp"
+        "portrait": "assets/agent-portraits/agent-1151.webp",
+        "introducedVersion": "1.0.0"
       },
       {
         "name": "莱特",
@@ -1315,7 +1330,8 @@
           19815450,
           "14605a962de82fb39698d86ac107c1d550feb93e1ebc00863dca8959c380b4de"
         ],
-        "portrait": "assets/agent-portraits/agent-1161.webp"
+        "portrait": "assets/agent-portraits/agent-1161.webp",
+        "introducedVersion": "1.3.0"
       },
       {
         "name": "柏妮思",
@@ -1345,7 +1361,8 @@
           19815450,
           "c6d268464740d5cb9a16b6c9f9a488c3b85e7373f09819c3815e2e772bc501e4"
         ],
-        "portrait": "assets/agent-portraits/agent-1171.webp"
+        "portrait": "assets/agent-portraits/agent-1171.webp",
+        "introducedVersion": "1.2.0"
       },
       {
         "name": "格莉丝",
@@ -1375,7 +1392,8 @@
           19815450,
           "cf6e3561d35acea10d7ccab68216f80c05996e71b21dfc471db6c80d508e3e48"
         ],
-        "portrait": "assets/agent-portraits/agent-1181.webp"
+        "portrait": "assets/agent-portraits/agent-1181.webp",
+        "introducedVersion": "1.0.0"
       },
       {
         "name": "艾莲",
@@ -1405,7 +1423,8 @@
           19815450,
           "f4e6d2ad89f13178c123d6fa61df4b326b29d8af1624fcc929355f716bed72bc"
         ],
-        "portrait": "assets/agent-portraits/agent-1191.webp"
+        "portrait": "assets/agent-portraits/agent-1191.webp",
+        "introducedVersion": "1.0.0"
       },
       {
         "name": "悠真",
@@ -1434,7 +1453,8 @@
           19815450,
           "200afc8324257cb6a4bab1dad8c4a137d48d3b04b535c78f164fc63b4c55f51f"
         ],
-        "portrait": "assets/agent-portraits/agent-1201.webp"
+        "portrait": "assets/agent-portraits/agent-1201.webp",
+        "introducedVersion": "1.4.0"
       },
       {
         "name": "丽娜",
@@ -1464,7 +1484,8 @@
           19815450,
           "16030c9a3a08e46c7c04ca8cf5499977545ac8a446dbe861f1eb1fd9fea8bc58"
         ],
-        "portrait": "assets/agent-portraits/agent-1211.webp"
+        "portrait": "assets/agent-portraits/agent-1211.webp",
+        "introducedVersion": "1.0.0"
       },
       {
         "name": "柳",
@@ -1493,7 +1514,8 @@
           19815450,
           "bc0b23fc257445c346a0fa9ed8cf0944ca14f452b3fe77e2f549eacb6cf458b9"
         ],
-        "portrait": "assets/agent-portraits/agent-1221.webp"
+        "portrait": "assets/agent-portraits/agent-1221.webp",
+        "introducedVersion": "1.3.0"
       },
       {
         "name": "朱鸢",
@@ -1522,7 +1544,8 @@
           19815450,
           "a259af875001c191a60a06b07430dd23212a12e33eb880989edcd5c280ece3a5"
         ],
-        "portrait": "assets/agent-portraits/agent-1241.webp"
+        "portrait": "assets/agent-portraits/agent-1241.webp",
+        "introducedVersion": "1.0.0"
       },
       {
         "name": "青衣",
@@ -1550,7 +1573,8 @@
           19815450,
           "6b67597140cd80fa2fa9b8c063e8dc70b6cdee451bb9571c21480655fd430bb4"
         ],
-        "portrait": "assets/agent-portraits/agent-1251.webp"
+        "portrait": "assets/agent-portraits/agent-1251.webp",
+        "introducedVersion": "1.1.0"
       },
       {
         "name": "简",
@@ -1580,7 +1604,8 @@
           19815450,
           "3dd6675a450f97cd1153b64ed8d8e4f68d806cdd25f2ba2752d5b9c8e8cf2f4f"
         ],
-        "portrait": "assets/agent-portraits/agent-1261.webp"
+        "portrait": "assets/agent-portraits/agent-1261.webp",
+        "introducedVersion": "1.1.0"
       },
       {
         "name": "赛斯",
@@ -1610,7 +1635,8 @@
           19815450,
           "776741a3a242e8ae7d815ef94a7d8528f1c92850b3cc7d584588085eff49de1c"
         ],
-        "portrait": "assets/agent-portraits/agent-1271.webp"
+        "portrait": "assets/agent-portraits/agent-1271.webp",
+        "introducedVersion": "1.1.0"
       },
       {
         "name": "派派",
@@ -1639,7 +1665,8 @@
           19815450,
           "3715f589c7e84f17c47861a3615acc61bbc864548e285ddbc9dfe56d256bf78a"
         ],
-        "portrait": "assets/agent-portraits/agent-1281.webp"
+        "portrait": "assets/agent-portraits/agent-1281.webp",
+        "introducedVersion": "1.0.0"
       },
       {
         "name": "雨果",
@@ -1668,7 +1695,8 @@
           19815450,
           "e208cd9e2e3ca9aa9dfdd5b644e2668d2b76b54025cce9265fde57e0605a858a"
         ],
-        "portrait": "assets/agent-portraits/agent-1291.webp"
+        "portrait": "assets/agent-portraits/agent-1291.webp",
+        "introducedVersion": "1.7.0"
       },
       {
         "name": "奥菲丝&「鬼火」",
@@ -1703,7 +1731,8 @@
           19815450,
           "046d09508f1a7be60228029da9c590495b1575b9c2d4b932b8bf6c2492a61fe4"
         ],
-        "portrait": "assets/agent-portraits/agent-1301.webp"
+        "portrait": "assets/agent-portraits/agent-1301.webp",
+        "introducedVersion": "2.2.0"
       },
       {
         "name": "耀嘉音",
@@ -1732,7 +1761,8 @@
           19815450,
           "7aec84dc8e9e59364ccd46b70282fcd8a468e46d05e8e3771a30c8ddb0d5e198"
         ],
-        "portrait": "assets/agent-portraits/agent-1311.webp"
+        "portrait": "assets/agent-portraits/agent-1311.webp",
+        "introducedVersion": "1.5.0"
       },
       {
         "name": "伊芙琳",
@@ -1762,7 +1792,8 @@
           19815450,
           "36415c71e91decfa2950f51afe0a245e68f4d016ddbd08d7a893d5dda736bb67"
         ],
-        "portrait": "assets/agent-portraits/agent-1321.webp"
+        "portrait": "assets/agent-portraits/agent-1321.webp",
+        "introducedVersion": "1.5.0"
       },
       {
         "name": "薇薇安",
@@ -1792,7 +1823,8 @@
           19815450,
           "b36a8f844d539af8ad3cf06129dcd27ea980a2a858862a72061ccd9f86b55a9c"
         ],
-        "portrait": "assets/agent-portraits/agent-1331.webp"
+        "portrait": "assets/agent-portraits/agent-1331.webp",
+        "introducedVersion": "1.7.0"
       },
       {
         "name": "照",
@@ -1820,7 +1852,8 @@
           19815450,
           "0e5b6dfde96903a95339140b589742de201b30457b86a615d748f51d5b5b1604"
         ],
-        "portrait": "assets/agent-portraits/agent-1341.webp"
+        "portrait": "assets/agent-portraits/agent-1341.webp",
+        "introducedVersion": "2.5.0"
       },
       {
         "name": "波可娜",
@@ -1849,7 +1882,8 @@
           19815450,
           "34a21b836dd9b741a09f4d487f85e6b2e6c1c0cabca15e88ac0245547a074330"
         ],
-        "portrait": "assets/agent-portraits/agent-1351.webp"
+        "portrait": "assets/agent-portraits/agent-1351.webp",
+        "introducedVersion": "1.6.0"
       },
       {
         "name": "「扳机」",
@@ -1882,7 +1916,8 @@
           19815450,
           "ba7aa2747ac387637ff2e00ebed524e9f1a8efd61650249d57d4663288b215e9"
         ],
-        "portrait": "assets/agent-portraits/agent-1361.webp"
+        "portrait": "assets/agent-portraits/agent-1361.webp",
+        "introducedVersion": "1.6.0"
       },
       {
         "name": "仪玄",
@@ -1911,7 +1946,8 @@
           19815450,
           "1164ef11ca7cb1d47f75f3a966b3c7c4899b2f5d0323d65815787587d4cd2074"
         ],
-        "portrait": "assets/agent-portraits/agent-1371.webp"
+        "portrait": "assets/agent-portraits/agent-1371.webp",
+        "introducedVersion": "2.0.0"
       },
       {
         "name": "零号·安比",
@@ -1946,7 +1982,8 @@
           19815450,
           "afd98706ed376da94b5340ec8e12b52e734574d3db108190955efe8b6cd98689"
         ],
-        "portrait": "assets/agent-portraits/agent-1381.webp"
+        "portrait": "assets/agent-portraits/agent-1381.webp",
+        "introducedVersion": "1.6.0"
       },
       {
         "name": "橘福福",
@@ -1974,7 +2011,8 @@
           19815450,
           "90990a5cd52cc1f4ff99e4c50fe2f0ec4b85d4579328f7e49aa4244067f6dae9"
         ],
-        "portrait": "assets/agent-portraits/agent-1391.webp"
+        "portrait": "assets/agent-portraits/agent-1391.webp",
+        "introducedVersion": "2.0.0"
       },
       {
         "name": "爱丽丝",
@@ -2004,7 +2042,8 @@
           19815450,
           "279279146ef317ec65f1142efad0a72468ab306fea7f34df7be5349b18227213"
         ],
-        "portrait": "assets/agent-portraits/agent-1401.webp"
+        "portrait": "assets/agent-portraits/agent-1401.webp",
+        "introducedVersion": "2.1.0"
       },
       {
         "name": "柚叶",
@@ -2034,7 +2073,8 @@
           19815450,
           "b4e6714b78d807ff1e165926e1eb757b41a13513504df46d5e1c072ac779455b"
         ],
-        "portrait": "assets/agent-portraits/agent-1411.webp"
+        "portrait": "assets/agent-portraits/agent-1411.webp",
+        "introducedVersion": "2.1.0"
       },
       {
         "name": "潘引壶",
@@ -2063,7 +2103,8 @@
           19815450,
           "f90bf2f9fd7f334dbc2f7d09a047419acd7cda1fb451fb07d3d95ea950618318"
         ],
-        "portrait": "assets/agent-portraits/agent-1421.webp"
+        "portrait": "assets/agent-portraits/agent-1421.webp",
+        "introducedVersion": "2.0.0"
       },
       {
         "name": "叶瞬光",
@@ -2092,7 +2133,8 @@
           19815450,
           "d100ddb5006a391f2efba352e972a7532583bf0d7f18b14758aeaab21da58e5f"
         ],
-        "portrait": "assets/agent-portraits/agent-1431.webp"
+        "portrait": "assets/agent-portraits/agent-1431.webp",
+        "introducedVersion": "2.5.0"
       },
       {
         "name": "真斗",
@@ -2121,7 +2163,8 @@
           19815450,
           "bc80be6e3c4ac2907cb54824171b9ae1720c1dcca0c7bdae673d6269eb6d5b59"
         ],
-        "portrait": "assets/agent-portraits/agent-1441.webp"
+        "portrait": "assets/agent-portraits/agent-1441.webp",
+        "introducedVersion": "2.3.0"
       },
       {
         "name": "卢西娅",
@@ -2153,7 +2196,8 @@
           19815450,
           "bb79d93fe74f897fc0f0dc37b1b595de7e8f77a44ba44a50a0e761a1bac51a58"
         ],
-        "portrait": "assets/agent-portraits/agent-1451.webp"
+        "portrait": "assets/agent-portraits/agent-1451.webp",
+        "introducedVersion": "2.3.0"
       },
       {
         "name": "「席德」",
@@ -2184,7 +2228,8 @@
           19815450,
           "cfcd7019fef7ebd5ecd6bcaa10877c3c65cc23f199f0abafdcebeea682564167"
         ],
-        "portrait": "assets/agent-portraits/agent-1461.webp"
+        "portrait": "assets/agent-portraits/agent-1461.webp",
+        "introducedVersion": "2.2.0"
       },
       {
         "name": "般岳",
@@ -2213,7 +2258,8 @@
           19815450,
           "64238fdf06c5638db1db47b6dc93ec5c3428177be05a10efed851d78e0de5d3a"
         ],
-        "portrait": "assets/agent-portraits/agent-1471.webp"
+        "portrait": "assets/agent-portraits/agent-1471.webp",
+        "introducedVersion": "2.4.0"
       },
       {
         "name": "琉音",
@@ -2242,7 +2288,8 @@
           19815450,
           "42c359913db41d5b1b72f0bffc86e6101de41dbb207d73aece2d1df0d2a28d99"
         ],
-        "portrait": "assets/agent-portraits/agent-1481.webp"
+        "portrait": "assets/agent-portraits/agent-1481.webp",
+        "introducedVersion": "2.4.0"
       },
       {
         "name": "千夏",
@@ -2271,7 +2318,8 @@
           19815450,
           "db7feeb7a387f7bc3cb9a6d4dfce6cb3a1a0aefbeb7d505b0f4c272d0044d0d5"
         ],
-        "portrait": "assets/agent-portraits/agent-1491.webp"
+        "portrait": "assets/agent-portraits/agent-1491.webp",
+        "introducedVersion": "2.6.0"
       },
       {
         "name": "爱芮",
@@ -2301,7 +2349,8 @@
           19815450,
           "1b040377ce9be2f6960249a8b9623f9ef8d59616485984a7899e722e5ff91f35"
         ],
-        "portrait": "assets/agent-portraits/agent-1501.webp"
+        "portrait": "assets/agent-portraits/agent-1501.webp",
+        "introducedVersion": "2.6.0"
       },
       {
         "name": "南宫羽",
@@ -2330,7 +2379,8 @@
           19815450,
           "c401f607e3594d70c7391605a449548bcac428fd333d334e05890948939a4ffb"
         ],
-        "portrait": "assets/agent-portraits/agent-1511.webp"
+        "portrait": "assets/agent-portraits/agent-1511.webp",
+        "introducedVersion": "2.7.0"
       },
       {
         "name": "希希芙",
@@ -2360,7 +2410,8 @@
           19815450,
           "33abee86175892914a2578ac27f6bade85f90d5099aba5f3621392fc65844133"
         ],
-        "portrait": "assets/agent-portraits/agent-1521.webp"
+        "portrait": "assets/agent-portraits/agent-1521.webp",
+        "introducedVersion": "2.7.0"
       },
       {
         "name": "星徽·比利",
@@ -2393,7 +2444,8 @@
           19815450,
           "bcf042838f3f41f77e2bb03da1d1360137e62495ffeed423ca6f63ffe97c85e9"
         ],
-        "portrait": "assets/agent-portraits/agent-1531.webp"
+        "portrait": "assets/agent-portraits/agent-1531.webp",
+        "introducedVersion": "2.8.0"
       },
       {
         "name": "普罗米娅",
@@ -2423,7 +2475,8 @@
           19815450,
           "ca40fd8fb1cb4ea290015d95cba53e3f663e005fdc0c532f11c7df0c10e1a557"
         ],
-        "portrait": "assets/agent-portraits/agent-1541.webp"
+        "portrait": "assets/agent-portraits/agent-1541.webp",
+        "introducedVersion": "2.8.0"
       },
       {
         "name": "佩洛伊斯",
@@ -2453,7 +2506,8 @@
           19815450,
           "b10e849d9824dea7bdfc37cca9bf1deb6a121910246cc23b4270f154a7589e0e"
         ],
-        "portrait": "assets/agent-portraits/agent-1551.webp"
+        "portrait": "assets/agent-portraits/agent-1551.webp",
+        "introducedVersion": "3.0.0"
       },
       {
         "name": "维琳娜",
@@ -2484,7 +2538,8 @@
           19815450,
           "83cca7f3dc9d8ea8ef09ccd327f6af81098f06f5cff5d3353ea5524e0932f6be"
         ],
-        "portrait": "assets/agent-portraits/agent-1561.webp"
+        "portrait": "assets/agent-portraits/agent-1561.webp",
+        "introducedVersion": "3.0.0"
       },
       {
         "name": "诺姆",
@@ -2514,7 +2569,8 @@
           19815450,
           "aaa8d010d66ce7660a93910daa6aa0c4a3c2f79dc6f20ccf24161afe35081b7f"
         ],
-        "portrait": "assets/agent-portraits/agent-1571.webp"
+        "portrait": "assets/agent-portraits/agent-1571.webp",
+        "introducedVersion": "3.0.0"
       },
       {
         "name": "蕾米埃尔",
@@ -2545,7 +2601,8 @@
           19815450,
           "6ec8f0ff1c9c6f36aeb34e9effc9df052391c252f69e051dc8efea1edc3daa69"
         ],
-        "portrait": "assets/agent-portraits/agent-1581.webp"
+        "portrait": "assets/agent-portraits/agent-1581.webp",
+        "introducedVersion": "3.1.0"
       },
       {
         "name": "希格莉德",
@@ -2574,7 +2631,8 @@
           19815450,
           "f4ba06285ffa94ae7ffb47aef417ab8fb5ad71b4456e4933cdceaf45453d85da"
         ],
-        "portrait": "assets/agent-portraits/agent-1591.webp"
+        "portrait": "assets/agent-portraits/agent-1591.webp",
+        "introducedVersion": "3.1.0"
       },
       {
         "name": "克拉蕾",
