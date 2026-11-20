@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-19",
+  "updatedAt": "2026-11-20",
   "scope": "官方已公开的角色档案与预告；开放时间和正式效果以游戏内公告为准。",
   "agents": [
     {
@@ -714,12 +714,13 @@
       "availability": {
         "status": "announced",
         "badge": "3.4 官方预告",
-        "label": "3.4 版本登场，具体调频时间待公布"
+        "label": "12月2日更新后至2027年1月12日 14:59（服务器时间）。",
+        "labelEn": "After the December 2 update through January 12, 2027 at 14:59 (server time)."
       },
       "status": "announced",
-      "previewNote": "官方确认将于3.4版本以全新虚狩、首位结使代理人的身份登场；技能、音擎与具体调频时间待官方公布。",
+      "previewNote": "挽昼的三个分身可为敌人积累残痕。触发毁伤可积攒愿火；愿火与喧响值充足时，可发动双重终结技引爆烬痕，以烬灭造成真实伤害。",
       "announcedAt": "2026-10-23T04:00:13Z",
-      "updatedAt": "2026-11-19",
+      "updatedAt": "2026-11-20",
       "icon": "assets/agent-previews/sunbringer/sunbringer-poster.png",
       "artwork": "assets/agent-previews/sunbringer/sunbringer-poster.png",
       "officialArt": "assets/agent-previews/sunbringer/sunbringer-profile-zh.png",
@@ -796,12 +797,20 @@
       ],
       "sources": [
         {
+          "id": "v34-program",
+          "title": "3.4 前瞻总览 · 代理人、音擎与调频时间",
+          "titleEn": "Version 3.4 program recap · Agents, W-Engines and Signal Searches",
+          "url": "https://www.miyoushe.com/zzz/article/79679827",
+          "urlEn": "https://www.hoyolab.com/article/47507255",
+          "date": "2026-11-20",
+          "featured": true
+        },
+        {
           "title": "3.4「长日终尽」前瞻特别节目预告",
           "titleEn": "Version 3.4 “The Finality of the Day” Special Program announcement",
           "url": "https://www.miyoushe.com/zzz/article/79603551",
           "urlEn": "https://www.hoyolab.com/article/47459953",
-          "date": "2026-11-16",
-          "featured": true
+          "date": "2026-11-16"
         },
         {
           "title": "哔哩哔哩官方 · 挽昼先行展示",
@@ -840,7 +849,18 @@
         }
       ],
       "introducedVersion": "3.4",
-      "role": "虚狩 · 首位结使代理人"
+      "role": "虚狩 · 首位结使代理人",
+      "element": "燎源属性",
+      "specialty": "锋御",
+      "signatureEngine": {
+        "name": "蜃炎梦火",
+        "nameEn": "Dragonfire Mirage",
+        "rank": "S",
+        "specialty": "锋御",
+        "specialtyEn": "Armorer"
+      },
+      "previewNoteEn": "The three Sunbringer incarnations build Gash on enemies. Triggering Maim builds Wishfire. With sufficient Wishfire and Decibels, her dual Ultimate detonates Embermark, dealing True DMG with Emberburst.",
+      "rank": "S"
     },
     {
       "id": "robin",
@@ -861,12 +881,13 @@
       "availability": {
         "status": "announced",
         "badge": "3.4 联动预告",
-        "label": "3.4 版本联动登场，具体调频时间待公布"
+        "label": "12月2日更新后至2027年1月12日 14:59（服务器时间）。活动期间登录还可免费领取知更鸟、升至40级的养成材料，以及一整套推荐主属性驱动盘。",
+        "labelEn": "After the December 2 update through January 12, 2027 at 14:59 (server time). Log in during the event to claim Robin, materials to raise her to Level 40, and a full set of Drive Discs with recommended Main Stats."
       },
       "status": "announced",
-      "previewNote": "已公开联动角色档案、阵营与中日配音；技能、音擎与调频时间待官方公布。",
+      "previewNote": "知更鸟可在后台协奏，为全队提供护盾，提高防御力和伤害。她的终结技还能为锋御代理人回复锐能。",
       "announcedAt": "2026-10-09T12:07:09Z",
-      "updatedAt": "2026-11-19",
+      "updatedAt": "2026-11-20",
       "icon": "assets/agent-previews/robin/robin-poster.png",
       "artwork": "assets/agent-previews/robin/robin-poster.png",
       "officialArt": "assets/agent-previews/robin/robin-profile-zh.png",
@@ -899,12 +920,28 @@
       ],
       "sources": [
         {
+          "id": "v34-program",
+          "title": "3.4 前瞻总览 · 代理人、音擎与调频时间",
+          "titleEn": "Version 3.4 program recap · Agents, W-Engines and Signal Searches",
+          "url": "https://www.miyoushe.com/zzz/article/79679827",
+          "urlEn": "https://www.hoyolab.com/article/47507255",
+          "date": "2026-11-20",
+          "featured": true
+        },
+        {
+          "title": "3.4 版本福利 · 知更鸟登录赠礼",
+          "titleEn": "Version 3.4 rewards · Robin login gift",
+          "url": "https://www.miyoushe.com/zzz/article/79680052",
+          "urlEn": "https://zenless.hoyoverse.com/en-us/news/167400",
+          "date": "2026-11-20",
+          "featured": true
+        },
+        {
           "title": "3.4「长日终尽」前瞻特别节目预告",
           "titleEn": "Version 3.4 “The Finality of the Day” Special Program announcement",
           "url": "https://www.miyoushe.com/zzz/article/79603551",
           "urlEn": "https://www.hoyolab.com/article/47459953",
-          "date": "2026-11-16",
-          "featured": true
+          "date": "2026-11-16"
         },
         {
           "title": "米游社 · 未明通讯：知更鸟＆卡芙卡",
@@ -929,7 +966,18 @@
         }
       ],
       "portraitLayout": "poster",
-      "artworkCaption": "官方角色图 · © miHoYo / HoYoverse"
+      "artworkCaption": "官方角色图 · © miHoYo / HoYoverse",
+      "element": "以太属性",
+      "specialty": "防护",
+      "signatureEngine": {
+        "name": "星韵流彩",
+        "nameEn": "Iridescent Starsong",
+        "rank": "S",
+        "specialty": "防护",
+        "specialtyEn": "Defense"
+      },
+      "previewNoteEn": "Robin performs her Concerto from off-field, shields the squad and increases its DEF and damage. Her Ultimate also restores Sharpness for Armorer Agents.",
+      "rank": "S"
     },
     {
       "id": "kafka",
@@ -950,12 +998,13 @@
       "availability": {
         "status": "announced",
         "badge": "3.4 联动预告",
-        "label": "3.4 版本联动登场，具体调频时间待公布"
+        "label": "2027年1月1日 12:00 至1月21日 14:59（服务器时间）。",
+        "labelEn": "January 1, 2027 at 12:00 through January 21 at 14:59 (server time)."
       },
       "status": "announced",
-      "previewNote": "已公开联动角色档案、阵营与中日配音；技能、音擎与调频时间待官方公布。",
+      "previewNote": "进入狩猎序曲后，卡芙卡可用斩击提高直接伤害，或用射击加快异常积蓄。斩击命中已陷入属性异常的敌人时会触发掣电，对附近敌人造成额外紊乱伤害。",
       "announcedAt": "2026-10-09T12:07:09Z",
-      "updatedAt": "2026-11-19",
+      "updatedAt": "2026-11-20",
       "icon": "assets/agent-previews/kafka/kafka-poster.png",
       "artwork": "assets/agent-previews/kafka/kafka-poster.png",
       "officialArt": "assets/agent-previews/kafka/kafka-profile-zh.png",
@@ -988,12 +1037,20 @@
       ],
       "sources": [
         {
+          "id": "v34-program",
+          "title": "3.4 前瞻总览 · 代理人、音擎与调频时间",
+          "titleEn": "Version 3.4 program recap · Agents, W-Engines and Signal Searches",
+          "url": "https://www.miyoushe.com/zzz/article/79679827",
+          "urlEn": "https://www.hoyolab.com/article/47507255",
+          "date": "2026-11-20",
+          "featured": true
+        },
+        {
           "title": "3.4「长日终尽」前瞻特别节目预告",
           "titleEn": "Version 3.4 “The Finality of the Day” Special Program announcement",
           "url": "https://www.miyoushe.com/zzz/article/79603551",
           "urlEn": "https://www.hoyolab.com/article/47459953",
-          "date": "2026-11-16",
-          "featured": true
+          "date": "2026-11-16"
         },
         {
           "title": "米游社 · 未明通讯：知更鸟＆卡芙卡",
@@ -1018,7 +1075,18 @@
         }
       ],
       "portraitLayout": "poster",
-      "artworkCaption": "官方角色图 · © miHoYo / HoYoverse"
+      "artworkCaption": "官方角色图 · © miHoYo / HoYoverse",
+      "element": "电属性",
+      "specialty": "异常",
+      "signatureEngine": {
+        "name": "蛛蜕遗歌",
+        "nameEn": "Requiem Araneae",
+        "rank": "S",
+        "specialty": "异常",
+        "specialtyEn": "Anomaly"
+      },
+      "previewNoteEn": "During Hunter’s Overture, Kafka can use slashes for direct damage or gunfire for faster Anomaly Buildup. Slashing a target affected by an Attribute Anomaly triggers Lightning Surge, dealing extra Disorder damage to nearby enemies.",
+      "rank": "S"
     },
     {
       "id": "norma-hollowell",
@@ -4151,6 +4219,16 @@
           }
         ]
       }
+    }
+  },
+  "previewDiscNames": {
+    "34300": {
+      "name": "星之碑",
+      "nameEn": "Monument of the Star"
+    },
+    "34400": {
+      "name": "赤翼夜曲",
+      "nameEn": "Bloodwing Nocturne"
     }
   }
 }

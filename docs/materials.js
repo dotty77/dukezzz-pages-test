@@ -97,8 +97,17 @@ function buildCard(plan) {
   const skillsRow = el('div', 'plan-row'), skillsWrap = el('div', 'plan-skills-wrap');
   skillsWrap.append(skillBox, maxSkills);
   skillsRow.append(el('span', '', '技能'), skillsWrap);
+  body.append(rangeRow('等级', levelFrom, levelPromoted.wrap, el('span', '', '→'), levelTo));
+  if (agent.eventLevelMaterials) {
+    const {throughLevel, url, urlEn} = agent.eventLevelMaterials;
+    const note = el('p', 'planner-muted', bilingual(
+      `3.4 活动赠送升至 ${throughLevel} 级的材料。使用后，把当前等级设为实际等级即可。 `,
+      `The Version 3.4 event grants materials to reach Lv. ${throughLevel}. After using them, set your current level above. `));
+    const link = el('a', '', bilingual('活动公告 ↗', 'Event details ↗'));
+    link.href = bilingual(url, urlEn); link.target = '_blank'; link.rel = 'noopener noreferrer';
+    note.append(link); body.append(note);
+  }
   body.append(
-    rangeRow('等级', levelFrom, levelPromoted.wrap, el('span', '', '→'), levelTo),
     skillsRow,
     rangeRow('核心技', coreFrom, el('span', '', '→'), coreTo),
     rangeRow('音擎', weapon, weaponLevels),
@@ -307,7 +316,7 @@ async function switchMode(next, updateUrl = true) {
   modeLoading = next === 'beta' && !betaData; renderModeControls();
   try {
     if (next === 'beta' && !betaData) {
-      betaRequest ||= loadJSON('cultivation-beta.json?v=20261117-team-lazy-beta-launch-1').then(prepareBeta).finally(() => { betaRequest = null; });
+      betaRequest ||= loadJSON('cultivation-beta.json?v=20261120-v34-reveal-launch-1').then(prepareBeta).finally(() => { betaRequest = null; });
       const loaded = await betaRequest;
       if (request !== modeRequest) return;
       betaData = loaded;

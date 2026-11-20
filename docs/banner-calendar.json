@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updatedAt": "2026-11-19",
+ "updatedAt": "2026-11-20",
  "regions": [
   {
    "id": "prod_gf_cn",
@@ -31,7 +31,138 @@
  "notes": [
   "时间为各服务器时间。收录 3.1 版本起已核验的限时频段；欧服暂未收录。"
  ],
- "upcoming": null,
+ "upcoming": {
+  "version": "3.4",
+  "name": "长日终尽",
+  "nameEn": "The Finality of the Day",
+  "release": "2026-12-02",
+  "confirmed": true,
+  "phases": [
+   {
+    "label": "版本首发",
+    "labelEn": "Version launch",
+    "afterUpdate": "2026-12-02",
+    "end": "2027-01-12 14:59:59",
+    "agents": [
+     {
+      "id": "1601",
+      "name": "挽昼",
+      "nameEn": "Sunbringer",
+      "profile": "sunbringer"
+     },
+     {
+      "id": "1661",
+      "name": "知更鸟",
+      "nameEn": "Robin",
+      "profile": "robin"
+     }
+    ],
+    "engines": [
+     {
+      "id": "14160",
+      "name": "蜃炎梦火",
+      "nameEn": "Dragonfire Mirage"
+     },
+     {
+      "id": "14166",
+      "name": "星韵流彩",
+      "nameEn": "Iridescent Starsong"
+     }
+    ]
+   },
+   {
+    "label": "联动调频",
+    "labelEn": "Collaboration channel",
+    "start": "2027-01-01 12:00:00",
+    "end": "2027-01-21 14:59:59",
+    "agents": [
+     {
+      "id": "1651",
+      "name": "卡芙卡",
+      "nameEn": "Kafka",
+      "profile": "kafka"
+     }
+    ],
+    "engines": [
+     {
+      "id": "14165",
+      "name": "蛛蜕遗歌",
+      "nameEn": "Requiem Araneae"
+     }
+    ]
+   },
+   {
+    "label": "复刻调频",
+    "labelEn": "Rerun channel",
+    "start": "2027-01-01 12:00:00",
+    "end": "2027-01-12 14:59:59",
+    "agents": [
+     {
+      "id": "1401",
+      "name": "爱丽丝",
+      "nameEn": "Alice",
+      "profile": "1401"
+     }
+    ],
+    "engines": [
+     {
+      "id": "14140",
+      "name": "十方锻星",
+      "nameEn": "Practiced Perfection"
+     }
+    ]
+   }
+  ],
+  "codes": {
+   "expires": "2026-11-22 23:59:59",
+   "timezone": 8,
+   "polychromes": 300,
+   "byRegion": {
+    "prod_gf_cn": "WANZHOU1202",
+    "prod_gf_jp": "SUNCHASER",
+    "prod_gf_us": "SUNCHASER"
+   }
+  },
+  "rewards": [
+   {
+    "text": "活动期间登录领 S 级知更鸟、升至 40 级的养成材料和一套推荐主属性驱动盘。",
+    "textEn": "Log in during the event for S-Rank Robin, materials to raise her to Lv. 40, and a Drive Disc set with recommended main stats."
+   },
+   {
+    "text": "12 月 2 日 05:59（UTC+8）前完成网页预约与活动玩法，更新后登录可领 160 菲林和纪念名片。",
+    "textEn": "Pre-register and finish the web activity before Dec 2 at 05:59 (UTC+8), then log in after the update for 160 Polychromes and a commemorative namecard.",
+    "until": "2026-12-02T05:59:00+08:00",
+    "source": {
+     "title": "预约活动",
+     "titleEn": "Pre-registration",
+     "url": "https://www.miyoushe.com/zzz/article/79679325",
+     "urlEn": "https://zenless.hoyoverse.com/en-us/news/167395"
+    }
+   },
+   {
+    "text": "「决战于黎明之前」累计签到 7 天送 480 菲林。版本签到另有 1,840 菲林、10 加密母带、10 邦布券及帕姆主题配饰。",
+    "textEn": "Check in for seven days in The Final Battle Before Dawn for 480 Polychromes. Version check-ins also give 1,840 Polychromes, 10 Encrypted Master Tapes, 10 Boopons, and a Pom-Pom accessory."
+   },
+   {
+    "text": "参与「戏梦不知归处」可免费领取邦布帕姆。",
+    "textEn": "Play Lost in a Theatrical Dream to claim the Pom-Pom Bangboo."
+   }
+  ],
+  "sources": [
+   {
+    "title": "官方排期",
+    "titleEn": "Official schedule",
+    "url": "https://www.miyoushe.com/zzz/article/79679827",
+    "urlEn": "https://www.hoyolab.com/article/47507255"
+   },
+   {
+    "title": "福利公告",
+    "titleEn": "Reward details",
+    "url": "https://www.miyoushe.com/zzz/article/79680052",
+    "urlEn": "https://zenless.hoyoverse.com/en-us/news/167400"
+   }
+  ]
+ },
  "phases": [
   {
    "id": "3.1-1",
@@ -663,13 +794,5 @@
     }
    ]
   }
- ],
- "specialProgram": {
-  "title": "3.4「长日终尽」前瞻特别节目",
-  "titleEn": "Version 3.4 “The Finality of the Day” Special Program",
-  "startsAt": "2026-11-20T18:30:00+08:00",
-  "showUntil": "2026-11-21T00:00:00+08:00",
-  "url": "https://zzz.mihoyo.com/news/167359",
-  "urlEn": "https://zenless.hoyoverse.com/en-us/news/167352"
- }
+ ]
 }

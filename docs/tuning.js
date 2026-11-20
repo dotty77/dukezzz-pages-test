@@ -1748,7 +1748,7 @@ async function initialize() {
     recordView = mountTuningRecords($("tuning-signal-stats"));
     recordWalletView = mountRecordWallet($("tuning-records-wallet"));
     render();
-    void fetchTuningJSON("banner-calendar.json?v=20261119-v34-preview-launch-1").then((value) => {
+    void fetchTuningJSON("banner-calendar.json?v=20261120-v34-reveal-launch-1").then((value) => {
       calendar = value;
       updateRecordView();
     }).catch(() => {

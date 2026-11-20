@@ -24,11 +24,11 @@ function matchesVersion(agent,value) {
   if(value===betaFilter)return !!agent.beta;
   return debutVersion(agent.introducedVersion) === value;
 }
-const colors = {物理:'#b59b64',火:'#d97657',冰:'#63acbc',电:'#9578c4',以太:'#b677a8',烈霜:'#67a1bd',玄墨:'#8266b3',风:'#67ad91',流明:'#c5a56a'};
+const colors = {物理:'#b59b64',火:'#d97657',燎源:'#d97657',冰:'#63acbc',电:'#9578c4',以太:'#b677a8',烈霜:'#67a1bd',玄墨:'#8266b3',风:'#67ad91',流明:'#c5a56a'};
 let roster = [], equipment = {}, builds = {}, catalog = {}, selected = null, selectedTab = 'intro', opener = null;
-let version = '', graduation = {}, detailsBytes = 0, detailGeneration = 0;
+let version = '', graduation = {}, detailsBytes = 0, detailGeneration = 0, previewDiscNames = {};
 const assets = {
-  directory:'agent-previews.json?v=20261119-v34-preview-launch-1',
+  directory:'agent-previews.json?v=20261120-v34-reveal-launch-1',
   details:'agent-details.json?v=20261111-refresh-launch-1',
   equipment:'agent-equipment.json?v=20261111-refresh-launch-1',
   builds:'agent-builds.json?v=20261111-refresh-launch-1',
@@ -421,19 +421,23 @@ function renderIntro(agent) {
   const card=el('div','agent-prose-card');card.append(prose(agent.description || '这位代理人的介绍资料暂未收录。',agent.descriptionEn));frag.append(card);
   if(agent.descriptionSource)frag.append(localized('p','agent-source-note',agent.descriptionSource,agent.descriptionSourceEn));
   const facts=el('dl','agent-facts');
-  for(const [key,value] of [['所属阵营',agent.faction],['身份',agent.role],['英文名',agent.englishName],['属性',agent.element],['特性',agent.specialty],['稀有度',rankLabel(agent)],['收录版本',agent.introducedVersion],['开放说明',agent.availability?.label],['中文配音',agent.voiceActors?.zh],['日文配音',agent.voiceActors?.ja],['生日',agent.birthday],['身高',agent.height],['性别',agent.gender]]) {
-    if(!value)continue;const item=el('div');item.append(el('dt','',key),el('dd','',text(value)));facts.append(item);
+  for(const [key,value,valueEn] of [['所属阵营',agent.faction],['身份',agent.role],['英文名',agent.englishName],['属性',agent.element],['特性',agent.specialty],['稀有度',rankLabel(agent)],['收录版本',agent.introducedVersion],['开放说明',agent.availability?.label,agent.availability?.labelEn],['中文配音',agent.voiceActors?.zh],['日文配音',agent.voiceActors?.ja],['生日',agent.birthday],['身高',agent.height],['性别',agent.gender]]) {
+    if(!value)continue;const item=el('div');item.append(el('dt','',key),localized('dd','',value,valueEn));facts.append(item);
   }
   frag.append(facts);
   if(agent.officialPreview){
     const status=el('div','agent-preview-notice');
-    status.append(el('h4','','官方已公开资料'),prose(agent.previewNote));
+    status.append(el('h4','','官方已公开资料'),prose(agent.previewNote,agent.previewNoteEn));
     const featured=(agent.sources || []).filter(source=>source.featured);
     if(featured.length)status.append(officialSources(featured));
 
 
     if(agent.roleTags?.length){const list=el('ul','agent-role-tags');for(const tag of agent.roleTags)list.append(el('li','',tag));status.append(el('h5','agent-role-title','官方定位'),list);}
-    if(agent.signatureEngine){const e=agent.signatureEngine;status.append(el('p','agent-role-engine',`专属音擎：${e.name} · ${e.rank}级 · ${e.specialty}`));}
+    if(agent.signatureEngine){
+      const e=agent.signatureEngine;
+      const english=e.nameEn && e.specialtyEn ? `Signature W-Engine: ${e.nameEn} · ${e.rank}-Rank · ${e.specialtyEn}` : '';
+      status.append(localized('p','agent-role-engine',`专属音擎：${e.name} · ${e.rank}级 · ${e.specialty}`,english));
+    }
     // Official team suggestions come from the mechanics post; they are a recommendation, not a game rule.
     if(agent.officialTeams?.length){const list=el('ul','agent-role-teams');for(const team of agent.officialTeams){const row=el('li');[agent.name,...team.map(id=>catalog[id]?.name||id)].forEach((name,index)=>{if(index)row.append(' + ');row.append(el('span','',name));});list.append(row);}status.append(el('h5','agent-role-title','官方推荐配队'),list);}
     if(agent.beta){const button=bilingual('button','agent-beta-open',`查看 ${betaLabel(agent)}`,`View ${betaVersion(agent)} beta data`);button.type='button';button.onclick=()=>{selectTab('beta');$('agent-tab-beta').focus();};status.append(button);}
@@ -702,6 +706,15 @@ async function prepareTab(agent,tab) {
   if(tab.startsWith('beta')){
     const beta=(await loadArchive('beta')).agents[agent.id];
     if(!beta)throw new Error('Beta record missing');
+    const nameSource=agent.sources?.find(source=>source.id==='v34-program');
+    if(nameSource && tab==='beta-discs' && beta.discs?.some(disc=>previewDiscNames[disc.id])){
+      const discs=beta.discs.map(disc=>({...disc,...previewDiscNames[disc.id]}));
+      return {...agent,beta:{...beta,discs},nameSource};
+    }
+    if(nameSource && tab==='beta-engine' && agent.signatureEngine && beta.engine){
+      const {name,nameEn}=agent.signatureEngine;
+      return {...agent,beta:{...beta,engine:{...beta.engine,name,nameEn}},nameSource};
+    }
     return {...agent,beta};
   }
   if(agent.officialPreview)return agent;
@@ -734,6 +747,7 @@ async function renderDetail() {
     const agent=await prepareTab(selected,tab);
     if(generation!==detailGeneration || !dialog.open)return;
     content.replaceChildren(tab.startsWith('beta') && agent.beta ? renderBetaTab(agent.beta,tab) : (renderers[tab] || renderIntro)(agent));
+    if(agent.nameSource)content.append(officialSources([{...agent.nameSource,title:'装备名称 · 3.4 官方前瞻',titleEn:'Equipment names · Version 3.4 Special Program'}]));
     if(!agent.officialPreview && ['intro','skills','cinema','engine'].includes(tab)){
       const source=tab==='engine' ? equipment.engines?.[equipment.agents?.[agent.id]?.signatureEngineId]?.source : agent.source;
       if(source?.provider==='Gachabase')content.prepend(releaseSource(source));
@@ -760,6 +774,7 @@ try {
   if(directory?.version!==1 || !Array.isArray(directory.agents))throw new Error('Directory unavailable');
   installPreviewBundles(previewData.assetBundles);
   const dossiers=previewData.agents,previews=dossiers.filter(p=>!p.supersededBy);
+  previewDiscNames=previewData.previewDiscNames || {};
   version=directory.gameVersion;detailsBytes=directory.detailsBytes;
   roster=directory.agents.map(agent=>({...agent,beta:directory.beta[agent.id],officialDossier:dossiers.find(p=>p.supersededBy===agent.id)}));
   catalog=Object.fromEntries(roster.map(agent=>[agent.id,agent]));

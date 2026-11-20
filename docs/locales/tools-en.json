@@ -2769,7 +2769,12 @@
     "S级盘的副属性种类、总份数或单条份数不符合当前等级的成长规则，暂不汇总。": "The S-Rank disc has inconsistent substat types or roll counts for its level. This disc is excluded from totals.",
     "存在无效或重复盘位；重复盘位不纳入已确认词条。": "Invalid or duplicate slots were found. Duplicate slots are excluded from verified totals.",
     "同一号位有多张驱动盘记录，无法确认实际装备，暂不汇总。": "Multiple discs were reported for this slot. The equipped disc cannot be confirmed, so the slot is excluded from totals.",
-    "重复盘位待确认": "Duplicate slot needs verification"
+    "重复盘位待确认": "Duplicate slot needs verification",
+    "燎源属性": "Genesis Flare",
+    "燎源属性 · 锋御": "Genesis Flare · Armorer",
+    "以太属性": "Ether",
+    "以太属性 · 防护": "Ether · Defense",
+    "电属性 · 异常": "Electric · Anomaly"
   },
   "patterns": [
     {

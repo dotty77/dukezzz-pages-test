@@ -114,7 +114,7 @@
     if(loaded)return;if(loading)return loading;
     loading=(async()=>{
       const names=['map-tuning-en','tools-en','game-en'];
-      const data=await Promise.all(names.map(async name=>{const r=await fetch(`locales/${name}.json?v=${name==='tools-en'?'20261118-oracle-districts-1':VERSION}`,{cache:'no-cache'});if(!r.ok)throw Error('English catalog unavailable');return r.json();}));
+      const data=await Promise.all(names.map(async name=>{const r=await fetch(`locales/${name}.json?v=${name==='tools-en'?'20261120-v34-reveal-launch-1':VERSION}`,{cache:'no-cache'});if(!r.ok)throw Error('English catalog unavailable');return r.json();}));
       for(const d of data)register(d);compile();loaded=true;
       window.dispatchEvent(new Event('dukelanguageready'));
     })().finally(()=>{loading=null;});return loading;
@@ -136,6 +136,11 @@
   }
   function updateLink(link){
     const href=link.getAttribute('href');if(!href||href.startsWith('#')||link.hasAttribute('download')||link.closest('[data-i18n-skip]'))return;
+    const localized = language === 'en' ? link.dataset.hrefEn : link.dataset.hrefZh;
+    if (localized && localized.startsWith('https://')) {
+      if (href !== localized) link.href = localized;
+      return;
+    }
     let u;try{u=new URL(href,location.href);}catch{return;}
     if(u.origin!==location.origin||!/^\/(?:index|gallery|tuning|agents|showcase|disc-planner|tv-wall|oracle|banners|team|materials)?(?:\.html)?\/?$/.test(u.pathname))return;
     // Only concrete DOM URLs are updated; template literals in source files never pass through URL serialization.
