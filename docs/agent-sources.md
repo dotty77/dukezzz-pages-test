@@ -1,5 +1,11 @@
 # 代理人资料来源
 
+## 2026-11-20 测试服资料核对
+
+- 测试资料采用 Gachabase 3.4.5，设计与资源修订均为 20694646。各角色详情可查中英文原文及修订对照。[测试服变更日志](https://zzz.gachabase.net/changelog/beta?lang=zh-CN)
+- 已核对挽昼、知更鸟和卡芙卡的技能、影画、专属音擎，以及 2 套驱动盘。装备的官方公布名称见 [3.4 前瞻](https://www.miyoushe.com/zzz/article/79679827)。
+- 8 位已实装角色可以在图鉴中查看测试服变化，每份档案注明比较基线。对应数值和养成消耗均在测试服页签展示。[测试养成](materials.html?version=beta)
+
 ## 2026-11-17 测试服资料核对
 
 - 本站测试服资料采用 Gachabase 3.4.4，设计修订 D20541895，资源修订 R20550679。测试阶段内容可能继续变动。[Gachabase 更新日志](https://zzz.gachabase.net/changelog/beta?lang=en)

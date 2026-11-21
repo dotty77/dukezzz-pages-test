@@ -1,28 +1,28 @@
 {
   "version": 1,
-  "gameVersion": "3.4.4",
-  "builtAt": "2026-11-17",
+  "gameVersion": "3.4.5",
+  "builtAt": "2026-11-20",
   "source": {
     "provider": "Gachabase",
     "branch": "beta",
-    "version": "3.4.4",
-    "gameVersion": "3.4.4",
-    "revision": 20541895,
-    "resourceRevision": 20550679,
-    "checkedAt": "2026-11-17",
+    "version": "3.4.5",
+    "gameVersion": "3.4.5",
+    "revision": 20694646,
+    "resourceRevision": 20694646,
+    "checkedAt": "2026-11-20",
     "url": "https://zzz.gachabase.net/changelog/beta?lang=zh-CN",
     "urlEn": "https://zzz.gachabase.net/changelog/beta?lang=en"
   },
   "notes": [
-    "3.4.4 测试服资料，可能变动。",
+    "3.4.5 测试服资料，可能变动。",
     "角色与测试音擎的经验曲线未公开，本表不计经验材料或等级提升丁尼。",
     "劫日凶刃、高维数据：劣梦残纱的图标暂缺。",
     "技能与核心技解锁等级采用来源网站的通用规则。"
   ],
   "notesEn": [
-    "3.4.4 beta data; subject to change.",
+    "3.4.5 beta data; subject to change.",
     "Agent and beta W-Engine EXP curves are unavailable. EXP materials and level-up Denny are not included.",
-    "Icons for Doomsun Edge and Higher Dimensional Data: Tattered Veil of Nightmares are unavailable.",
+    "Icons for Doomsday Blade and Higher Dimensional Data: Tattered Dreamveil are unavailable.",
     "Skill and Core Skill level requirements use the source website's shared rules."
   ],
   "agentExp": null,
@@ -433,7 +433,7 @@
     },
     "110012": {
       "name": "劫日凶刃",
-      "nameEn": "Doomsun Edge",
+      "nameEn": "Doomsday Blade",
       "rarity": 4,
       "group": "core",
       "exp": null,
@@ -448,16 +448,16 @@
       "source": {
         "provider": "Gachabase",
         "branch": "beta",
-        "version": "3.4.4",
-        "gameVersion": "3.4.4",
-        "revision": 20541895,
-        "resourceRevision": 20550679,
-        "checkedAt": "2026-11-17",
-        "url": "https://zzz.gachabase.net/items/materials/110012/doomsun-edge/beta/3.4.4/20541895/20550679?lang=zh-CN",
-        "urlEn": "https://zzz.gachabase.net/items/materials/110012/doomsun-edge/beta/3.4.4/20541895/20550679?lang=en",
+        "version": "3.4.5",
+        "gameVersion": "3.4.5",
+        "revision": 20694646,
+        "resourceRevision": 20694646,
+        "checkedAt": "2026-11-20",
+        "url": "https://zzz.gachabase.net/items/materials/110012/doomsday-blade/beta/3.4.5/20694646/20694646?lang=zh-CN",
+        "urlEn": "https://zzz.gachabase.net/items/materials/110012/doomsday-blade/beta/3.4.5/20694646/20694646?lang=en",
         "snapshotSha256": {
-          "zh": "17ce671c67f644f1e8d373a14bab30d99f309084b700e591c06b9e6375d3a1c1",
-          "en": "a8c42395d84f02af86f4714cf20024ab62e7962bcc7b54aacb535827a440095e"
+          "zh": "36a9f4ed1a1b7f0db8651590979c89fa4041107cc7f6bf14b7684846eafce89e",
+          "en": "427d8fd26c1d2568fee73033a399bf72915cfed8f0ca67fff82e1820c9c5b0ee"
         }
       }
     },
@@ -476,7 +476,7 @@
     },
     "110517": {
       "name": "高维数据：劣梦残纱",
-      "nameEn": "Higher Dimensional Data: Tattered Veil of Nightmares",
+      "nameEn": "Higher Dimensional Data: Tattered Dreamveil",
       "rarity": 3,
       "group": "core",
       "exp": null,
@@ -491,16 +491,16 @@
       "source": {
         "provider": "Gachabase",
         "branch": "beta",
-        "version": "3.4.4",
-        "gameVersion": "3.4.4",
-        "revision": 20541895,
-        "resourceRevision": 20550679,
-        "checkedAt": "2026-11-17",
-        "url": "https://zzz.gachabase.net/items/materials/110517/higher-dimensional-data-tattered-veil-of-nightmares/beta/3.4.4/20541895/20550679?lang=zh-CN",
-        "urlEn": "https://zzz.gachabase.net/items/materials/110517/higher-dimensional-data-tattered-veil-of-nightmares/beta/3.4.4/20541895/20550679?lang=en",
+        "version": "3.4.5",
+        "gameVersion": "3.4.5",
+        "revision": 20694646,
+        "resourceRevision": 20694646,
+        "checkedAt": "2026-11-20",
+        "url": "https://zzz.gachabase.net/items/materials/110517/higher-dimensional-data-tattered-dreamveil/beta/3.4.5/20694646/20694646?lang=zh-CN",
+        "urlEn": "https://zzz.gachabase.net/items/materials/110517/higher-dimensional-data-tattered-dreamveil/beta/3.4.5/20694646/20694646?lang=en",
         "snapshotSha256": {
-          "zh": "9c5db67a4673993c27e00257e477363e4f1746e35834e100504c0b5b06a2c2b7",
-          "en": "2bd42a30755bae35f30f49b195857fc23be102ec2fe2358d6dcffe88b65e84cd"
+          "zh": "93f773ad480a0ced703f6f43ad4379d97a5e72e02aaed2b67a1d425b51641a22",
+          "en": "a9e65c3221da0d4b15a4933a17fef0351af2b704da0cd9e5ad58dd3be6dd0f4e"
         }
       }
     }
@@ -829,16 +829,16 @@
       "source": {
         "provider": "Gachabase",
         "branch": "beta",
-        "version": "3.4.4",
-        "gameVersion": "3.4.4",
-        "revision": 20541895,
-        "resourceRevision": 20550679,
-        "checkedAt": "2026-11-17",
-        "url": "https://zzz.gachabase.net/agents/1601/sunbringer/beta/3.4.4/20541895/20550679?lang=zh-CN",
-        "urlEn": "https://zzz.gachabase.net/agents/1601/sunbringer/beta/3.4.4/20541895/20550679?lang=en",
+        "version": "3.4.5",
+        "gameVersion": "3.4.5",
+        "revision": 20694646,
+        "resourceRevision": 20694646,
+        "checkedAt": "2026-11-20",
+        "url": "https://zzz.gachabase.net/agents/1601/sunbringer/beta/3.4.5/20694646/20694646?lang=zh-CN",
+        "urlEn": "https://zzz.gachabase.net/agents/1601/sunbringer/beta/3.4.5/20694646/20694646?lang=en",
         "snapshotSha256": {
-          "zh": "a5431eb373b10283c8988058e80c59f532dce6e42fcdf28ec3d78516c9b166a1",
-          "en": "ca4ee251c7c567d2463f0d76167340dae37fd788b712bf48c067dd48fa7d9ad1"
+          "zh": "8ffb90a7fd042bbbc10ef3a2a1701d98a4d6f9ed6ebe12bf6550bbc173802527",
+          "en": "e3fcc56d83f0438cca8c0fe1569937c1d70f26cd6b4d678ef9aee41a3dbb48e5"
         }
       }
     },
@@ -847,6 +847,11 @@
       "gameId": 1661,
       "name": "知更鸟",
       "nameEn": "Robin",
+      "eventLevelMaterials": {
+        "throughLevel": 40,
+        "url": "https://www.miyoushe.com/zzz/article/79680052",
+        "urlEn": "https://zenless.hoyoverse.com/en-us/news/167400"
+      },
       "rank": "S",
       "element": "以太",
       "elementEn": "Ether",
@@ -1165,22 +1170,17 @@
       "source": {
         "provider": "Gachabase",
         "branch": "beta",
-        "version": "3.4.4",
-        "gameVersion": "3.4.4",
-        "revision": 20541895,
-        "resourceRevision": 20550679,
-        "checkedAt": "2026-11-17",
-        "url": "https://zzz.gachabase.net/agents/1661/robin/beta/3.4.4/20541895/20550679?lang=zh-CN",
-        "urlEn": "https://zzz.gachabase.net/agents/1661/robin/beta/3.4.4/20541895/20550679?lang=en",
+        "version": "3.4.5",
+        "gameVersion": "3.4.5",
+        "revision": 20694646,
+        "resourceRevision": 20694646,
+        "checkedAt": "2026-11-20",
+        "url": "https://zzz.gachabase.net/agents/1661/robin/beta/3.4.5/20694646/20694646?lang=zh-CN",
+        "urlEn": "https://zzz.gachabase.net/agents/1661/robin/beta/3.4.5/20694646/20694646?lang=en",
         "snapshotSha256": {
-          "zh": "18c308cc4f0ebb8347a8784950088c2d2c861ca4584e922bcdf496fade34d1ae",
-          "en": "cc2c464a3dab89fb69b0ddd07aa7867ba5d02e69a8f0b5f8933104f7344378d6"
+          "zh": "f57131268c19f1d4e76ee87418872e1871decbe9666c83ed64506e7926e2309a",
+          "en": "d46fe79ad2e1eee82ec2fd27f16d64e001dbec2b2d77bc8a4b369a9b3b374a44"
         }
-      },
-      "eventLevelMaterials": {
-        "throughLevel": 40,
-        "url": "https://www.miyoushe.com/zzz/article/79680052",
-        "urlEn": "https://zenless.hoyoverse.com/en-us/news/167400"
       }
     },
     "kafka": {
@@ -1506,16 +1506,16 @@
       "source": {
         "provider": "Gachabase",
         "branch": "beta",
-        "version": "3.4.4",
-        "gameVersion": "3.4.4",
-        "revision": 20541895,
-        "resourceRevision": 20550679,
-        "checkedAt": "2026-11-17",
-        "url": "https://zzz.gachabase.net/agents/1651/kafka/beta/3.4.4/20541895/20550679?lang=zh-CN",
-        "urlEn": "https://zzz.gachabase.net/agents/1651/kafka/beta/3.4.4/20541895/20550679?lang=en",
+        "version": "3.4.5",
+        "gameVersion": "3.4.5",
+        "revision": 20694646,
+        "resourceRevision": 20694646,
+        "checkedAt": "2026-11-20",
+        "url": "https://zzz.gachabase.net/agents/1651/kafka/beta/3.4.5/20694646/20694646?lang=zh-CN",
+        "urlEn": "https://zzz.gachabase.net/agents/1651/kafka/beta/3.4.5/20694646/20694646?lang=en",
         "snapshotSha256": {
-          "zh": "2e92d467b8aca953e77d1d36f00a063a4389adf76eeb020ea95257988393db29",
-          "en": "8afd7055651c7b1a2b99bbc17100446f5faf084854ba8c8abc7acc276d4db670"
+          "zh": "504f03f3a47ba855fcb579e12bc54653a6de8a959152f2f8fb84824ec5fbac82",
+          "en": "eb5f24426abde330ddd3666e720a00a0978910816d55130911a7a7ed8dc4a7fe"
         }
       }
     }
@@ -1589,16 +1589,16 @@
       "source": {
         "provider": "Gachabase",
         "branch": "beta",
-        "version": "3.4.4",
-        "gameVersion": "3.4.4",
-        "revision": 20541895,
-        "resourceRevision": 20550679,
-        "checkedAt": "2026-11-17",
-        "url": "https://zzz.gachabase.net/w-engines/14160/dragonfire-mirage/beta/3.4.4/20541895/20550679?lang=zh-CN",
-        "urlEn": "https://zzz.gachabase.net/w-engines/14160/dragonfire-mirage/beta/3.4.4/20541895/20550679?lang=en",
+        "version": "3.4.5",
+        "gameVersion": "3.4.5",
+        "revision": 20694646,
+        "resourceRevision": 20694646,
+        "checkedAt": "2026-11-20",
+        "url": "https://zzz.gachabase.net/w-engines/14160/dragonfire-mirage/beta/3.4.5/20694646/20694646?lang=zh-CN",
+        "urlEn": "https://zzz.gachabase.net/w-engines/14160/dragonfire-mirage/beta/3.4.5/20694646/20694646?lang=en",
         "snapshotSha256": {
-          "zh": "f885dbce49b549a18efd1c91e8e9e7a2abf635f77d5bc42125674d6f80a316eb",
-          "en": "163874f8d043b650c611f9f80b22b58f6c05d8ba8a17237c1a8e40610a8d8582"
+          "zh": "e9c8a40141b8cb232100c2e62af4b884690d75efcf91a414ac5aaabb2da38916",
+          "en": "e95ab26625b8ee215c9f39bf6503524232ceb1d88888f8d6781ea3fd2d2058eb"
         }
       },
       "sourceNameMissing": {
@@ -1674,16 +1674,16 @@
       "source": {
         "provider": "Gachabase",
         "branch": "beta",
-        "version": "3.4.4",
-        "gameVersion": "3.4.4",
-        "revision": 20541895,
-        "resourceRevision": 20550679,
-        "checkedAt": "2026-11-17",
-        "url": "https://zzz.gachabase.net/w-engines/14166/starlit-chroma/beta/3.4.4/20541895/20550679?lang=zh-CN",
-        "urlEn": "https://zzz.gachabase.net/w-engines/14166/starlit-chroma/beta/3.4.4/20541895/20550679?lang=en",
+        "version": "3.4.5",
+        "gameVersion": "3.4.5",
+        "revision": 20694646,
+        "resourceRevision": 20694646,
+        "checkedAt": "2026-11-20",
+        "url": "https://zzz.gachabase.net/w-engines/14166/iridescent-starsong/beta/3.4.5/20694646/20694646?lang=zh-CN",
+        "urlEn": "https://zzz.gachabase.net/w-engines/14166/iridescent-starsong/beta/3.4.5/20694646/20694646?lang=en",
         "snapshotSha256": {
-          "zh": "b4ad546e4cf63e0760e6968b8d15755b2105108e921391c483d8e518c3ab64f3",
-          "en": "e53e4c107dd6a217db0ff74b531097af39e6ff546b888ed0b92c05bffc1226a5"
+          "zh": "7d0d7b069435d4d5377e044b3e69c79f0512272127526422960268205cde9ecf",
+          "en": "e1e00a0a92524a11dc66b9bd220c0ed33f7e9b16ecfe1f6bf9199bf80db9e2f1"
         }
       },
       "sourceNameMissing": {
@@ -1759,16 +1759,16 @@
       "source": {
         "provider": "Gachabase",
         "branch": "beta",
-        "version": "3.4.4",
-        "gameVersion": "3.4.4",
-        "revision": 20541895,
-        "resourceRevision": 20550679,
-        "checkedAt": "2026-11-17",
-        "url": "https://zzz.gachabase.net/w-engines/14165/elegy-of-the-molted-spider/beta/3.4.4/20541895/20550679?lang=zh-CN",
-        "urlEn": "https://zzz.gachabase.net/w-engines/14165/elegy-of-the-molted-spider/beta/3.4.4/20541895/20550679?lang=en",
+        "version": "3.4.5",
+        "gameVersion": "3.4.5",
+        "revision": 20694646,
+        "resourceRevision": 20694646,
+        "checkedAt": "2026-11-20",
+        "url": "https://zzz.gachabase.net/w-engines/14165/requiem-araneae/beta/3.4.5/20694646/20694646?lang=zh-CN",
+        "urlEn": "https://zzz.gachabase.net/w-engines/14165/requiem-araneae/beta/3.4.5/20694646/20694646?lang=en",
         "snapshotSha256": {
-          "zh": "22c6dec7b1e7502b57a215ec35ee91ac9a32fb60b2bcf04c3fb4aaacd0bcf5b9",
-          "en": "7125a1355ff79cf536c2315bf9adb8ca406aecd41a54620d3203dd4cdef33f7c"
+          "zh": "ea7d632b9954d809f1c7e23d349609895eb51daac80d62153f55d701f6cc0dee",
+          "en": "d77de483ae09966c21e56850566caf1a5f8f345fe80db27165baecadc62d9766"
         }
       },
       "sourceNameMissing": {
@@ -1779,9 +1779,9 @@
   },
   "provenance": {
     "costs": {
-      "revision": 20541895,
-      "resourceRevision": 20550679,
-      "checkedAt": "2026-11-17",
+      "revision": 20694646,
+      "resourceRevision": 20694646,
+      "checkedAt": "2026-11-20",
       "scope": "Three agent cost ladders and three W-Engine promotion cost ladders; bilingual DTOs."
     },
     "itemMetadata": {
@@ -1810,16 +1810,16 @@
         110012,
         110517
       ],
-      "revision": 20541895,
-      "resourceRevision": 20550679,
-      "checkedAt": "2026-11-17",
+      "revision": 20694646,
+      "resourceRevision": 20694646,
+      "checkedAt": "2026-11-20",
       "scope": "Names and descriptions rechecked against individual bilingual material pages; icons remain unavailable. See each item source."
     },
     "weaponIcons": {
-      "checkedAt": "2026-11-17",
-      "version": "3.4.4",
-      "revision": 20541895,
-      "resourceRevision": 20550679,
+      "checkedAt": "2026-11-20",
+      "version": "3.4.5",
+      "revision": 20694646,
+      "resourceRevision": 20694646,
       "scope": "Three original W-Engine PNGs reused from the same frozen bilingual DTOs; source URLs remain in each weapon iconSource.",
       "sha256": {
         "beta-14160": "57b25e0064232abc93a2d481c1ff537fe650851605575acf64d8e7a1fdef8500",

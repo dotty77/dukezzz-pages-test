@@ -6,10 +6,15 @@ function setText(node,text,textEn){
   node.textContent=text??'';
 }
 export const betaTabs=[['beta','测试服概览'],['beta-skills','技能与倍率'],['beta-cinema','测试服影画'],['beta-engine','测试服音擎']];
-function link(source,label='Gachabase 原文',labelEn='Gachabase source'){
+function link(source,label='Gachabase 原文',labelEn='Gachabase source',languageFromQuery=false){
   const a=el('a','agent-beta-link',`${label} ↗`,`${labelEn} ↗`);
-  for(const [key,value]of [['sourceZh',source?.url],['sourceEn',source?.urlEn]]){
-    try{const url=new URL(value);if(url.protocol==='https:' && url.hostname==='zzz.gachabase.net')a.dataset[key]=url.href;}catch{}
+  for(const [key,value,lang]of [['sourceZh',source?.url,'zh-CN'],['sourceEn',languageFromQuery?source?.url:source?.urlEn,'en']]){
+    try{
+      const url=new URL(value);
+      if(url.protocol!=='https:' || url.hostname!=='zzz.gachabase.net')continue;
+      if(languageFromQuery)url.searchParams.set('lang',lang);
+      a.dataset[key]=url.href;
+    }catch{}
   }
   if(a.dataset.sourceZh){a.href=window.DUKE_I18N?.language==='en'&&a.dataset.sourceEn?a.dataset.sourceEn:a.dataset.sourceZh;a.target='_blank';a.rel='noopener noreferrer';}
   return a;
@@ -30,7 +35,7 @@ function sourceNote(data){
   const label=['Gachabase',...revisions].join(' · '),details=el('details','agent-beta-story');
   box.append(el('strong','',`${version?version+' ':''}测试服 · 可能变动`,`${version?version+' ':''}Beta · Subject to change`));
   details.append(el('summary','','来源与修订','Source and revision'),paragraph(label+(source.checkedAt?` · 核对：${source.checkedAt}`:''),'agent-beta-version',label+(source.checkedAt?` · Checked: ${source.checkedAt}`:'')),link(source));
-  if(source.changelogUrl)details.append(document.createTextNode(' · '),link({url:source.changelogUrl},'测试服更新日志','Beta changelog'));
+  if(source.changelogUrl)details.append(document.createTextNode(' · '),link({url:source.changelogUrl},'测试服更新日志','Beta changelog',true));
   box.append(details);return box;
 }
 function renderOverview(data){

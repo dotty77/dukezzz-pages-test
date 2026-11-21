@@ -1,6 +1,6 @@
 import portraitAssets from './agent-card-portraits.js?v=20261107-refresh-launch-1';
 import {renderGraduation} from './agent-graduation.js?v=20261107-refresh-launch-1';
-import {betaTabsFor,renderBetaTab} from './agent-beta.js?v=20261114-refresh-launch-1';
+import {betaTabsFor,renderBetaTab} from './agent-beta.js?v=20261120-beta345-launch-1';
 const $ = id => document.getElementById(id);
 const el = (tag, cls = '', text = '') => { const node = document.createElement(tag); node.className = cls; node.textContent = text; return node; };
 const tabs = [['intro','角色介绍'],['graduation','毕业面板'],['skills','技能'],['cinema','影画'],['engine','专属音擎'],['discs','驱动盘']];
@@ -9,7 +9,7 @@ const rankLabel = agent => agent.rank ? `${agent.rank} 级` : '';
 const filterRank = agent => agent.rank || agent.beta?.rank || '';
 const previewFilter = 'official-preview';
 const betaFilter = 'beta';
-const betaVersion = agent => String(agent.beta?.source?.version || '').match(/\d+\.\d+/)?.[0] || '';
+const betaVersion = agent => String(agent.beta?.source?.version || '').match(/\d+\.\d+(?:\.\d+)?/)?.[0] || '';
 const betaLabel = agent => `${betaVersion(agent) ? betaVersion(agent)+' ' : ''}${agent.beta?.kind==='changes' ? '测试服变化' : '测试服资料'}`;
 const bilingual = (tag,cls,zh,en) => {const node=el(tag,cls,zh);node.dataset.i18nEn=en;return node;};
 // Archive links use X.Y.0, while preview dossiers may store X.Y.
@@ -28,12 +28,12 @@ const colors = {物理:'#b59b64',火:'#d97657',燎源:'#d97657',冰:'#63acbc',�
 let roster = [], equipment = {}, builds = {}, catalog = {}, selected = null, selectedTab = 'intro', opener = null;
 let version = '', graduation = {}, detailsBytes = 0, detailGeneration = 0, previewDiscNames = {};
 const assets = {
-  directory:'agent-previews.json?v=20261120-v34-reveal-launch-1',
+  directory:'agent-previews.json?v=20261120-beta345-launch-1',
   details:'agent-details.json?v=20261111-refresh-launch-1',
   equipment:'agent-equipment.json?v=20261111-refresh-launch-1',
   builds:'agent-builds.json?v=20261111-refresh-launch-1',
   graduation:'agent-graduation.json?v=20261027-agents-launch-1',
-  beta:'agent-beta.json?v=20261117-team-lazy-beta-launch-1',
+  beta:'agent-beta.json?v=20261120-beta345-launch-1',
 };
 const downloads = new Map(), failures = new Set();
 const dialog = $('agent-dialog');

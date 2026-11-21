@@ -3074,70 +3074,77 @@
         "rank": "S",
         "kind": "full",
         "source": {
-          "version": "3.4.4 BETA"
+          "version": "3.4.5 BETA"
         }
       },
       "robin": {
         "rank": "S",
         "kind": "full",
         "source": {
-          "version": "3.4.4 BETA"
+          "version": "3.4.5 BETA"
         }
       },
       "kafka": {
         "rank": "S",
         "kind": "full",
         "source": {
-          "version": "3.4.4 BETA"
+          "version": "3.4.5 BETA"
         }
       },
       "1071": {
         "rank": "S",
         "kind": "changes",
         "source": {
-          "version": "3.4.4 BETA"
+          "version": "3.4.5 BETA"
         }
       },
       "1241": {
         "rank": "S",
         "kind": "changes",
         "source": {
-          "version": "3.4.4 BETA"
+          "version": "3.4.5 BETA"
         }
       },
       "1271": {
         "rank": "A",
         "kind": "changes",
         "source": {
-          "version": "3.4.4 BETA"
+          "version": "3.4.5 BETA"
         }
       },
       "1331": {
         "rank": "S",
         "kind": "changes",
         "source": {
-          "version": "3.4.4 BETA"
+          "version": "3.4.5 BETA"
         }
       },
       "1391": {
         "rank": "S",
         "kind": "changes",
         "source": {
-          "version": "3.4.4 BETA"
+          "version": "3.4.5 BETA"
+        }
+      },
+      "1411": {
+        "rank": "S",
+        "kind": "changes",
+        "source": {
+          "version": "3.4.5 BETA"
         }
       },
       "1551": {
         "rank": "S",
         "kind": "changes",
         "source": {
-          "version": "3.4.4 BETA"
+          "version": "3.4.5 BETA"
         }
       },
       "1631": {
         "rank": "S",
         "kind": "changes",
         "source": {
-          "version": "3.4.4 BETA"
+          "version": "3.4.5 BETA"
         }
       }
     },
