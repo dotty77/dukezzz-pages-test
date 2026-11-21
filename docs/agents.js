@@ -1,6 +1,6 @@
 import portraitAssets from './agent-card-portraits.js?v=20261107-refresh-launch-1';
 import {renderGraduation} from './agent-graduation.js?v=20261107-refresh-launch-1';
-import {betaTabsFor,renderBetaTab} from './agent-beta.js?v=20261120-beta345-launch-1';
+import {betaTabsFor,renderBetaTab} from './agent-beta.js?v=20261120-sunbringer-rev2-launch-1';
 const $ = id => document.getElementById(id);
 const el = (tag, cls = '', text = '') => { const node = document.createElement(tag); node.className = cls; node.textContent = text; return node; };
 const tabs = [['intro','角色介绍'],['graduation','毕业面板'],['skills','技能'],['cinema','影画'],['engine','专属音擎'],['discs','驱动盘']];
@@ -33,7 +33,7 @@ const assets = {
   equipment:'agent-equipment.json?v=20261111-refresh-launch-1',
   builds:'agent-builds.json?v=20261111-refresh-launch-1',
   graduation:'agent-graduation.json?v=20261027-agents-launch-1',
-  beta:'agent-beta.json?v=20261120-beta345-launch-1',
+  beta:'agent-beta.json?v=20261120-sunbringer-rev2-launch-1',
 };
 const downloads = new Map(), failures = new Set();
 const dialog = $('agent-dialog');

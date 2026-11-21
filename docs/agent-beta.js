@@ -188,12 +188,13 @@ function renderDiscs(data){
   for(const disc of data.discs||[]){
     const card=el('article','agent-equipment-card');card.append(equipmentHeading(disc));
     for(const effect of disc.effects){card.append(el('h5','',`${effect.pieces} 件套`,`${effect.pieces}-Piece Set`),paragraph(effect.description,'agent-prose',effect.descriptionEn));}
-    card.append(link(disc.source,'驱动盘原文','Drive Disc source'));frag.append(card);
+    card.append(sourceNote(disc));frag.append(card);
   }
   return frag;
 }
 export function renderBetaTab(data,key){
-  const frag=new DocumentFragment();frag.append(sourceNote(key==='beta-engine'&&data.engine?.source?{source:data.engine.source}:data));
+  const frag=new DocumentFragment();
+  if(key!=='beta-discs')frag.append(sourceNote(key==='beta-engine'&&data.engine?.source?{source:data.engine.source}:data));
   const renderers={beta:data.kind==='changes'?renderChanges:renderOverview,'beta-skills':renderSkills,'beta-cinema':renderCinema,'beta-engine':renderEngine,'beta-discs':renderDiscs};
   frag.append((renderers[key]||renderOverview)(data));return frag;
 }
