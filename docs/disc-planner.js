@@ -7,7 +7,7 @@ import {officialToConfiguration} from './official-equipment.js?v=20261118-disc-c
 import {scoreEquippedDisc,getDiscScoreProfile,SCORE_RULES,withDiscScoreDefaults} from './disc-score.js?v=20261118-disc-context-score-launch-1';
 import {newConfiguration,normalizedToConfiguration,validateConfiguration,calculatePanel,formatProperty,resolveTargets,compareDisc,inspectDiscRolls,evaluateDiscContributions} from './disc-planner-core.js?v=20261118-disc-context-score-launch-1';
 import {evaluateContext,assessUsable} from './disc-context.js?v=20261027-agents-launch-1';
-import {renderPanelEffects,renderDiscFitScore,discFitMethod} from './disc-panel-display.js?v=20261118-reviewed-ui-launch-1';
+import {renderPanelEffects,renderDiscFitScore,discFitMethod,formatPanelValue} from './disc-panel-display.js?v=20261118-reviewed-ui-launch-1';
 import {applyPlanningScope} from './disc-scope.js?v=20260913-disc-planner-1';
 const $=id=>document.getElementById(id),el=(tag,cls='',text='')=>{const n=document.createElement(tag);n.className=cls;n.textContent=text;return n;};
 let data,builds,equipment,details,graduation,mechanics,config,alternative='',planIndex=0,team=['',''],tier='small',allocation=null,busy=false,controller,cacheUntil=0,cacheUid='',snapshot=null;
@@ -27,7 +27,7 @@ function scrollToDiscSection(id,focus=false){
 }
 function revealSlotResults(){
   const revision=searchRevision;
-  requestAnimationFrame(()=>{if(revision===searchRevision&&slotReview)scrollToDiscSection('disc-slot-results');});
+  requestAnimationFrame(()=>{if(revision===searchRevision&&slotReview)scrollToDiscSection('disc-allocation-status',true);});
 }
 function mountBuildSettings(){
   const dialog=$('disc-character'), trigger=$('disc-settings-open');
@@ -223,6 +223,7 @@ function invalidate(){cancelSearch();allocation=null;slotReview=null;farmNotice=
 function setAgent(id,imported=null,rememberAgent=true){
   cancelSearch();planRequested=!!imported;
   if(!data.agents[id])throw Error('该角色尚未收录正式服配装数据');
+  if($('disc-slot-dialog').open)$('disc-slot-dialog').close();
   preferredAgentId=rememberAgent?String(id):'';
   config=maximumPlanningLevels(imported||newConfiguration(id,builds.agents[id],equipment,data));alternative='';planIndex=0;setPlanningTeam([]);snapshot=imported?clone(config):null;allocation=null;slotReview=null;
   $('disc-file-status').textContent='';savedPlanStatus();
@@ -264,13 +265,11 @@ function renderPlans(){
 function applySetPlan(){const p=currentBuild().sets?.[planIndex];if(!p)return;for(const d of config.discs)if(!d.locked)d.setId=String(d.slot<=4?p.fourPieceId:p.twoPieceIds?.[0]||'');invalidate();renderPlans();renderSlots();renderEvidence();}
 function renderTiers(){
   const root=$('disc-tier-controls'),moveFocus=root.contains(document.activeElement);root.replaceChildren();
-  const agent=details.agents[config.id],avatar=el('img');avatar.src=agent.icon;avatar.alt='';avatar.width=32;avatar.height=32;
   for(const [id,title,desc]of [['usable','能用','先匹配套装、主属性和功能条件；不强求每盘固定份数。'],['small','小毕业参考','以逐角色攻略的区间下限规划，核对当前配置条件。'],['large','大毕业参考','以攻略区间上沿作为进阶目标；没有上沿时保留原目标。']]){
     const b=button('',()=>{tier=id;renderTiers();invalidate();},'disc-tier');
     b.dataset.tier=id;b.setAttribute('aria-pressed',String(tier===id));b.append(el('strong','',title));root.append(b);
     if(tier===id){
       $('disc-tier-description').textContent=desc;
-      $('disc-active-build').replaceChildren(avatar,uiText('strong',agent.name,agent.nameEn),el('span','',title));
       if(moveFocus)b.focus({preventScroll:true});
     }
   }
@@ -351,11 +350,66 @@ function targetConditions(row,panel){
   if(notes.length){const more=el('details','disc-source-details');more.append(uiText('summary','条件详情','Condition details'));for(const note of notes)more.append(el('p','',note));cell.append(more);}
   return cell;
 }
+function renderProfileIdentity(){
+  const agent=details.agents[config.id],engine=equipment.engines[config.weaponId];
+  $('disc-profile-card').dataset.element=String(agent.elementId);
+  const identity=$('disc-profile-identity');
+  const meta=el('p','disc-profile-meta');
+  meta.append(uiText('span',agent.element,agent.elementEn),' · ',uiText('span',agent.specialty,agent.specialtyEn),' · ',
+    uiText('span',`规划 Lv.${config.level} · ${config.cinema} 影`,`Plan Lv.${config.level} · M${config.cinema}`));
+  identity.replaceChildren(uiText('h2',agent.name,agent.nameEn,'disc-profile-name'),meta);
+
+  const art=$('disc-profile-art');
+  if(art.dataset.agent!==config.id){
+    art.dataset.agent=config.id;art.alt='';art.hidden=false;art.classList.remove('is-avatar');
+    art.onerror=()=>{art.onerror=()=>{art.hidden=true;};art.classList.add('is-avatar');art.src=agent.icon;};
+    art.src=`assets/agent-portraits/agent-${agent.id}.webp`;
+  }
+  for(const control of $('disc-showcase-agents').querySelectorAll('[data-agent-id]')){
+    control.setAttribute('aria-pressed',String(control.dataset.agentId===config.id));
+  }
+  const center=$('disc-profile-engine');center.replaceChildren();
+  if(engine){
+    const image=el('img');image.alt='';image.src=engine.icon;image.onerror=()=>{image.hidden=true;};
+    center.append(image,uiText('strong',engine.name,engine.nameEn||engine.name),
+      uiText('small',`Lv.${config.weaponLevel} · 叠影 ${config.refinement}`,`Lv.${config.weaponLevel} · R${config.refinement}`));
+  }else center.append(uiText('strong','无音擎','No W-Engine'));
+  const counts=new Map();
+  for(const disc of config.discs){
+    if(!disc.absent&&!disc.unsupported&&equipment.discs[disc.setId])counts.set(disc.setId,(counts.get(disc.setId)||0)+1);
+  }
+  const sets=$('disc-profile-sets');
+  sets.replaceChildren(...[...counts].sort((a,b)=>b[1]-a[1]).map(([id,count])=>{
+    const set=equipment.discs[id],item=el('span','disc-profile-set');
+    item.append(el('b','',`×${count}`),uiText('span',set.name,set.nameEn||set.name));return item;
+  }));
+  if(!counts.size)sets.append(uiText('span','尚无套装记录','No sets recorded'));
+}
+function renderProfileStats(panel,targets){
+  const stats=$('disc-profile-stats');stats.replaceChildren();
+  if(!panel){
+    stats.append(uiText('div','请先修正装备输入，再计算面板。','Correct the equipment entries to calculate stats.'));
+    return;
+  }
+  const role=details.agents[config.id].specialty;
+  const recovery=panel.values[324]>0?324:panel.values[320]>0?320:305;
+  const groups=[...new Set([...targets.rows.filter(row=>row.applicable!==false).map(row=>Number(row.group)),
+    ...({'异常':[312,314],'击破':[122],'命破':[123],'锋御':[213]}[role]||[]),121,111,131,201,211,recovery])];
+  for(const group of groups.filter(id=>Number.isFinite(panel.values[id])).slice(0,8)){
+    const entry=el('div');
+    entry.dataset.group=String(group);
+    const label=group===30502?uiText('dt','能量自动回复加成','Energy Regen bonus'):el('dt','',name(group));
+    entry.append(label,uiText('dd',formatPanelValue(group,panel.values[group]),formatPanelValue(group,panel.values[group],'en-US')));
+    stats.append(entry);
+  }
+}
 function updateTargets(){
+  renderProfileIdentity();
   const root=$('disc-target-table');root.replaceChildren();const errors=validateConfiguration(config,data);$('disc-validation').textContent=errors.join('；');
-  if(errors.length){root.append(el('p','disc-warning','请先修正上面的输入，再计算面板。'));return;}
+  if(errors.length){renderProfileStats(null);root.append(el('p','disc-warning','请先修正上面的输入，再计算面板。'));return;}
   const context=currentContext();root.append(checkList(tier==='usable'?assessUsable(config,currentBuild(),data,context):context.checks));
   const panel=calculatePanel(config,data),targets=targetRows(),table=el('table','disc-table'),thead=el('thead'),tr=el('tr');for(const t of ['属性','当前录入 / 装备估算',tier==='usable'?'后续培养参考（非能用门槛）':'本档参考','距本次目标','条件与口径'])tr.append(el('th','',t));thead.append(tr);table.append(thead);const tbody=el('tbody');
+  renderProfileStats(panel,targets);
   const activeRows=targets.rows;
   for(const r of activeRows){
     const row=el('tr'),gap=targetGapText(r,panel);
@@ -384,7 +438,7 @@ function renderRollGuide(){
   const units=el('dl','disc-roll-units');
   for(const [id,value]of Object.entries(data.subBases)){const pair=el('div');pair.append(el('dt','',name(id)),el('dd','',`${fmt(id,value)} / 份`));units.append(pair);}root.append(units);
   root.append(el('p','','S 级盘每到 3、6、9、12、15 级有一次成长节点。初始三条盘在 3 级补出第四种副属性，其后才有四次追加；初始四条盘有五次追加。因此满级总份数分别为 3 + 5 = 8、4 + 5 = 9；最多仍只有四种副属性。主属性不计入副属性份数。'));
-  root.append(el('p','','“有效词条”要结合角色、玩法、技能、影画、音擎与配队判断，还要考虑属性上限和转换。下方“优先副属性”是所选攻略的培养方向，不是所有份数都有相同收益，也不等同游戏内战备评估的计数。'));
+  root.append(el('p','','“有效词条”要结合角色、玩法、技能、影画、音擎与配队判断，还要考虑属性上限和转换。“编辑当前盘”中的优先副属性是所选攻略的培养方向。'));
   root.append(el('p','','换盘规划先算当前六盘，再比较适用的面板目标，把缺口分配到可调整号位。它不会把总份数当作毕业分数，也不要求六张盘各自凑同样多的词条。未填全的盘只计算已录入内容；换盘目标中的“至少几份”是最低要求，其余属性仍未指定。'));
   root.append(link('https://www.hoyolab.com/article/34243548','玩家教程：驱动光碟效果与词条介绍 · 第 3.1 节 ↗'));
   root.append(el('p','disc-muted','此处引用教程的副属性固定数值与成长规则；文中的套装等效词条和队伍权重未用作本站统一评分。'));
@@ -403,10 +457,6 @@ function renderRollSummary(d){
 // Per-agent reference score presentation.
 function currentContributions(){
   return evaluateDiscContributions(config,data,tier==='usable'?[]:targetRows().rows,{scope:planningScope,useReference:true});
-}
-function renderDiscScore(d,build,contribution){
-  const score=scoreEquippedDisc(d,build,data,config,contribution);
-  return renderDiscFitScore(score,contribution,'disc-card-score',{showDetails:false});
 }
 function renderScoreGuide(){
   const box=$('disc-score-guide');if(!box)return;
@@ -435,8 +485,14 @@ function renderScoreGuide(){
 }
 function updateDiscScores(){
   const build=currentBuild(),contributions=currentContributions();
-  for(const d of config.discs){const previous=$('disc-slot-grid')?.querySelector(`.disc-slot[data-slot="${d.slot}"] .disc-card-score`);if(previous)previous.replaceWith(renderDiscScore(d,build,contributions[d.slot]));}
-  renderScoreGuide();
+  for(const disc of config.discs){
+    const contribution=contributions[disc.slot],score=scoreEquippedDisc(disc,build,data,config,contribution);
+    renderOrbitSlot(disc,score);
+    if($('disc-slot-dialog').open&&disc.slot===Number($('disc-slot-dialog').dataset.slot)){
+      $('disc-slot-content').querySelector('.disc-card-score')?.replaceWith(renderDiscFitScore(score,contribution,'disc-card-score',{showDetails:false}));
+    }
+  }
+  renderProfileRolls(build);renderScoreGuide();
 }
 // End per-agent reference score presentation.
 // Drive Disc cards: presentation only; all values use the existing planner model.
@@ -455,7 +511,8 @@ function renderDiscFace(d,build,contribution){
     const image=el('img');image.src=set.icon;image.alt='';image.width=72;image.height=72;image.loading='lazy';image.decoding='async';
     image.addEventListener('error',()=>{image.remove();art.classList.add('is-empty');},{once:true});art.append(image);
   }else art.classList.add('is-empty');
-  identity.append(art,renderDiscScore(d,build,contribution));face.append(identity);
+  const score=scoreEquippedDisc(d,build,data,config,contribution);
+  identity.append(art,renderDiscFitScore(score,contribution,'disc-card-score',{showDetails:false}));face.append(identity);
   const main=el('div','disc-card-main');
   const knownMain=!d.absent&&!d.unsupported&&Number.isFinite(data.mainBases[d.slot]?.[d.mainId])&&Number.isFinite(data.discLevels[`4:${d.level}`]);
   main.append(knownMain?el('span','disc-card-main-name',name(d.mainId)):uiText('span','主属性待核对','Main stat unverified','disc-card-main-name'),
@@ -485,30 +542,50 @@ function renderDiscCountDetails(d){
 }
 // End Drive Disc card presentation.
 function renderSlots(){
-  const root=$('disc-slot-grid'),openSlots=new Set([...root.querySelectorAll('.disc-slot-editor[open]')].map(n=>Number(n.dataset.slot)));root.replaceChildren();const b=currentBuild(),contributions=currentContributions();
-  for(const d of config.discs){
-    const card=el('article','panel disc-slot');card.dataset.slot=d.slot;card.id='disc-card-'+d.slot;
-    const head=el('div','disc-section-head disc-card-toolbar');head.append(el('span','disc-card-slot',`#${String(d.slot).padStart(2,'0')}`),checkbox('保留此盘',d.locked,v=>{d.locked=v;invalidate();}));
-    card.append(head,renderDiscFace(d,b,contributions[d.slot]));
-    const editor=el('details','disc-slot-editor');editor.dataset.slot=d.slot;editor.open=openSlots.has(d.slot);editor.append(uiText('summary','编辑当前盘','Edit current disc'));
-    if(d.absent)card.append(el('p','disc-warning','展柜未提供此盘。当前不计入面板；下面填写的是待补目标。'),button('加入此号位的目标盘',()=>{d.absent=false;invalidate();renderSlots();}));
-    if(d.unsupported)card.append(el('p','disc-warning',d.unsupportedReason||'原盘为非S级或属性资料不一致，未按金盘计算。'),button('改为S级15级空白目标',()=>{d.unsupported=false;delete d.unsupportedReason;delete d.unsupportedReasons;d.absent=false;d.level=15;d.initial=4;d.subs=[];invalidate();renderSlots();}));
-    const fields=el('div','disc-slot-fields');fields.append(selectField(`${d.slot}号位套装`,[['','未选择'],...Object.values(equipment.discs).map(s=>[s.id,s.name])],d.setId,v=>{d.setId=v;invalidate();renderSlots();renderEvidence();}));
-    const recommended=d.slot<=3?Object.keys(data.mainBases[d.slot]).map(Number):(b.mainStatIds[d.slot]||[]).map(Number),conditional=(b.conditionalMainStatIds?.[d.slot]||[]).map(Number);
-    fields.append(selectField(`${d.slot}号位主属性`,Object.keys(data.mainBases[d.slot]).map(id=>[id,`${name(id)} ${fmt(id,data.mainBases[d.slot][id]*4)}${recommended.includes(Number(id))?' · 推荐':conditional.includes(Number(id))?' · 条件备选':''}`]),d.mainId,v=>{d.mainId=Number(v);d.subs=d.subs.filter(s=>Number(s.id)!==d.mainId);invalidate();renderSlots();}),numberField(`${d.slot}号盘等级`,d.level,0,15,v=>{d.level=v;invalidate();renderSlots();}),selectField(`${d.slot}号盘初始副属性`,[...([3,4].includes(d.initial)?[]:[['unknown','未确认 · 请核对原盘']]),[3,'3条 · 满级8份'],[4,'4条 · 满级9份']],[3,4].includes(d.initial)?d.initial:'unknown',v=>{if(v==='unknown')return;d.initial=Number(v);invalidate();renderSlots();}));editor.append(fields);
-    const rec=el('p','disc-slot-recommend',`主属性建议：${recommended.map(id=>name(id)).join(' / ')}。优先副属性：${(b.effectiveSubstats?.primaryIds||[]).filter(id=>Number(id)!==d.mainId).map(id=>name(id)).join('、')||'按循环与功能判断'}。`);editor.append(rec);
-    const subgrid=el('div','disc-sub-grid'),conversions=[];
-    for(let i=0;i<4;i++){
-      const sub=d.subs[i],line=el('div','disc-sub-row');
-      line.append(selectField(`${d.slot}号盘副属性${i+1}`,[['','未填写'],...Object.keys(data.subBases).filter(id=>Number(id)!==d.mainId).map(id=>[id,name(id)])],sub?.id||'',v=>{if(v){if(d.subs.some((s,j)=>j!==i&&s.id===Number(v))){$('disc-validation').textContent='同一张盘不能有重复副属性';renderSlots();return;}d.subs[i]={id:Number(v),rolls:sub?.rolls||1};d.subs=d.subs.filter(Boolean);}else d.subs.splice(i,1);invalidate();renderSlots();}),selectField(`${d.slot}号盘副属性${i+1}总份数`,range(6,1).map(([n])=>[n,`${n}份`]),sub?.rolls||1,v=>{if(d.subs[i])d.subs[i].rolls=Number(v);invalidate();renderSlots();}));
-      if(sub){
-        const raw=data.subBases[sub.id]*sub.rolls;line.append(el('span','disc-sub-value',fmt(sub.id,raw)));
-        if(Number.isInteger(sub.rolls)&&sub.rolls>=1&&data.subBases[sub.id])conversions.push(`${fmt(sub.id,raw)} ÷ ${fmt(sub.id,data.subBases[sub.id])} = ${sub.rolls} 份；${sub.rolls===1?'首次出现，尚未追加。':`游戏标记 +${sub.rolls-1}（追加 ${sub.rolls-1} 次）。`}`);
-      }subgrid.append(line);
-    }
-    editor.append(subgrid);if(conversions.length){const conversionDetails=sourceDetails('份数换算',conversions);conversionDetails.querySelector('summary').dataset.i18nEn='Roll calculations';editor.append(conversionDetails);}card.append(editor,renderDiscCountDetails(d));const goal=el('div','disc-slot-goal');goal.id=`disc-slot-goal-${d.slot}`;card.append(goal);root.append(card);
+  updateDiscScores();
+  const dialog=$('disc-slot-dialog');
+  if(dialog.open)renderSlotDetail(config.discs.find(d=>d.slot===Number(dialog.dataset.slot)));
+  updateSlotGoals();
+}
+function renderSlotDetail(d){
+  const root=$('disc-slot-content'),b=currentBuild();
+  const editing=root.querySelector('.disc-slot-editor[open]')?.dataset.slot===String(d.slot);
+  const focused=root.contains(document.activeElement)?document.activeElement.getAttribute('aria-label'):null;
+  root.replaceChildren();
+  const card=el('article','panel disc-slot');card.dataset.slot=d.slot;card.id='disc-card-'+d.slot;
+  const head=el('div','disc-section-head disc-card-toolbar');head.append(checkbox('保留此盘',d.locked,v=>{d.locked=v;invalidate();}));
+  card.append(head,renderDiscFace(d,b,currentContributions()[d.slot]));
+  const goal=el('div','disc-slot-goal');goal.id=`disc-slot-goal-${d.slot}`;card.append(goal);
+  const editor=el('details','disc-slot-editor');editor.dataset.slot=d.slot;editor.open=editing;editor.append(uiText('summary','编辑当前盘','Edit current disc'));
+  if(d.absent)card.append(el('p','disc-warning','展柜未提供此盘。当前不计入面板；下面填写的是待补目标。'),button('加入此号位的目标盘',()=>{d.absent=false;invalidate();renderSlots();}));
+  if(d.unsupported)card.append(el('p','disc-warning',d.unsupportedReason||'原盘为非S级或属性资料不一致，未按金盘计算。'),button('改为S级15级空白目标',()=>{d.unsupported=false;delete d.unsupportedReason;delete d.unsupportedReasons;d.absent=false;d.level=15;d.initial=4;d.subs=[];invalidate();renderSlots();}));
+  const fields=el('div','disc-slot-fields');fields.append(selectField(`${d.slot}号位套装`,[['','未选择'],...Object.values(equipment.discs).map(s=>[s.id,s.name])],d.setId,v=>{d.setId=v;invalidate();renderSlots();renderEvidence();}));
+  const recommended=d.slot<=3?Object.keys(data.mainBases[d.slot]).map(Number):(b.mainStatIds[d.slot]||[]).map(Number),conditional=(b.conditionalMainStatIds?.[d.slot]||[]).map(Number);
+  fields.append(selectField(`${d.slot}号位主属性`,Object.keys(data.mainBases[d.slot]).map(id=>[id,`${name(id)} ${fmt(id,data.mainBases[d.slot][id]*4)}${recommended.includes(Number(id))?' · 推荐':conditional.includes(Number(id))?' · 条件备选':''}`]),d.mainId,v=>{d.mainId=Number(v);d.subs=d.subs.filter(s=>Number(s.id)!==d.mainId);invalidate();renderSlots();}),numberField(`${d.slot}号盘等级`,d.level,0,15,v=>{d.level=v;invalidate();renderSlots();}),selectField(`${d.slot}号盘初始副属性`,[...([3,4].includes(d.initial)?[]:[['unknown','未确认 · 请核对原盘']]),[3,'3条 · 满级8份'],[4,'4条 · 满级9份']],[3,4].includes(d.initial)?d.initial:'unknown',v=>{if(v==='unknown')return;d.initial=Number(v);invalidate();renderSlots();}));editor.append(fields);
+  const rec=el('p','disc-slot-recommend',`主属性建议：${recommended.map(id=>name(id)).join(' / ')}。优先副属性：${(b.effectiveSubstats?.primaryIds||[]).filter(id=>Number(id)!==d.mainId).map(id=>name(id)).join('、')||'按循环与功能判断'}。`);editor.append(rec);
+  const subgrid=el('div','disc-sub-grid'),conversions=[];
+  const feedback=el('p','disc-input-error');feedback.setAttribute('role','alert');editor.append(feedback);
+  for(let i=0;i<4;i++){
+    const sub=d.subs[i],line=el('div','disc-sub-row');
+    const statField=selectField(`${d.slot}号盘副属性${i+1}`,[['','未填写'],...Object.keys(data.subBases).filter(id=>Number(id)!==d.mainId).map(id=>[id,name(id)])],sub?.id||'',v=>{
+      if(v&&d.subs.some((other,j)=>j!==i&&other.id===Number(v))){
+        statField.querySelector('select').value=sub?.id||'';
+        feedback.replaceChildren(uiText('span','同一张盘不能有重复副属性。','Each substat must be unique on a disc.'));
+        return;
+      }
+      if(v){d.subs[i]={id:Number(v),rolls:sub?.rolls||1};d.subs=d.subs.filter(Boolean);}
+      else d.subs.splice(i,1);
+      invalidate();renderSlots();
+    });
+    line.append(statField,selectField(`${d.slot}号盘副属性${i+1}总份数`,range(6,1).map(([n])=>[n,`${n}份`]),sub?.rolls||1,v=>{if(d.subs[i])d.subs[i].rolls=Number(v);invalidate();renderSlots();}));
+    if(sub){
+      const raw=data.subBases[sub.id]*sub.rolls;line.append(el('span','disc-sub-value',fmt(sub.id,raw)));
+      if(Number.isInteger(sub.rolls)&&sub.rolls>=1&&data.subBases[sub.id])conversions.push(`${fmt(sub.id,raw)} ÷ ${fmt(sub.id,data.subBases[sub.id])} = ${sub.rolls} 份；${sub.rolls===1?'首次出现，尚未追加。':`游戏标记 +${sub.rolls-1}（追加 ${sub.rolls-1} 次）。`}`);
+    }subgrid.append(line);
   }
-  updateSlotGoals();renderScoreGuide();
+  editor.append(subgrid);if(conversions.length){const conversionDetails=sourceDetails('份数换算',conversions);conversionDetails.querySelector('summary').dataset.i18nEn='Roll calculations';editor.append(conversionDetails);}card.append(editor,renderDiscCountDetails(d));root.append(card);
+  renderSlotGoal(d,goal);
+  if(focused)Array.from(editor.querySelectorAll('[aria-label]')).find(field=>field.getAttribute('aria-label')===focused)?.focus({preventScroll:true});
 }
 function farmChance(low,high){
   const percent=n=>{
@@ -524,7 +601,7 @@ function farmAction(action,entry){
   row.dataset.farmAction=action;row.dataset.slot=entry.slot;
   const tune=action==='tuning';
   row.append(tune?uiText('span','调律校音器','Tuning Calibrator','disc-farm-label'):uiText('span','优先刷','Farm first','disc-farm-label'));
-  title.append(uiText('span',`${entry.slot}号位`,`Slot ${entry.slot}`));
+  title.append(slotDetailButton(entry.slot));
   const set=equipment.discs[entry.setId];
   if(set?.name){title.append(' · ',uiText('span',set.name,set.nameEn||''));}
   if(tune)title.append(' · ',el('span','',name(entry.mainId)));
@@ -566,12 +643,12 @@ function renderFarmAdvice(){
       calculating:['正在估算这组方案的优先号位…','Estimating farming priorities for this build…'],
       met:farm?.partial?['按已录入属性，本次面板下限已达到，先保留现有盘。','The recorded stats already meet the target minimums. Keep your discs.']:['已达到本次可比较的面板目标，先保留现有盘和校音器。','Your build meets the comparable targets. Keep your discs and save the Calibrator.'],
       locked:['所有可调整号位都已锁定，先保留校音器。','All eligible slots are locked. Save the Calibrator.'],
-      'no-targets':allocation?.reasonCode==='combat-reference'?['本档目标需要战斗增益。先保留校音器，按下方建议核对各号位的套装与主属性。','These targets depend on combat buffs. Save the Calibrator and check each slot’s set and main stat below.']:['当前条件下没有可比较的面板目标，先按方案选套装与主属性。','There are no comparable stat targets for this setup. Follow the plan’s set and main-stat recommendations.'],
+      'no-targets':allocation?.reasonCode==='combat-reference'?['本档目标需要战斗增益。先保留校音器，可点总览中的盘位核对套装与主属性。','These targets depend on combat buffs. Save the Calibrator and select a slot to check its set and main stat.']:['当前条件下没有可比较的面板目标，先按方案选套装与主属性。','There are no comparable stat targets for this setup. Follow the plan’s set and main-stat recommendations.'],
       blocked:['当前装备或锁定条件限制了换盘方案。请查看换盘建议中的具体原因。','The current equipment or slot locks prevent a plan. See the reason under Recommended changes.'],
       cancelled:['已取消估算。点击「规划换盘方案」可继续使用当前配装计算。','Estimate cancelled. Select Plan disc changes to calculate again with this build.'],
       comparing:['正在比较推荐主词条组合…','Comparing recommended main-stat combinations…'],
       'select-candidate':['选择一个主词条组合，可查看对应的刷盘建议。','Select a main-stat combination to see its farming advice.'],
-      unknown:farm?.reason==='partial-ceiling'?['已录入的面板在参考范围内。补全副属性即可复核上限，再决定是否继续刷。','The recorded stats are within the reference range. Complete the missing substats to check the cap before farming.']:['导入当前配装或在盘卡上补全资料后，会自动估算优先号位。','Import your build or fill in the disc stats. Farming priorities update automatically.'],
+      unknown:farm?.reason==='partial-ceiling'?['已录入的面板在参考范围内。补全副属性即可复核上限，再决定是否继续刷。','The recorded stats are within the reference range. Complete the missing substats to check the cap before farming.']:['导入配装，或点总览中的盘位填写属性，即可查看优先刷哪个号位。','Import a build or select a slot to enter its stats and see which disc to farm first.'],
       'no-gain':['按本次目标，单换一张盘暂未找到能改善的号位。先保留校音器，可参考组合换盘方案。','No single replacement improved the current targets in this model. Save the Calibrator and review the multi-disc plan.'],
       usable:['能用档先看套装与主属性，暂不需要为面板目标消耗校音器。','For the usable tier, focus on sets and main stats. Save the Calibrator for a stat target.'],
       unavailable:['本次刷盘估算未完成。点击「规划换盘方案」可重试。','The farming estimate could not finish. Select Plan disc changes to retry.']
@@ -594,58 +671,145 @@ function renderFarmAdvice(){
   if(plannedSlot?.action==='keep')method.append(uiText('p','下方方案保留了这个号位。先刷到合适的替换盘，也能从这个号位补缺口，换上后会重新规划。','The plan below keeps this slot. A good drop here offers another way to close the same gaps. Updating the equipped disc recalculates the plan.'));
   root.append(method);
 }
-function renderSlotShortcuts(){
-  const index=$('disc-slot-index');
-  for(const disc of config.discs){
-    let control=index.querySelector(`[data-jump-slot="${disc.slot}"]`);
-    if(!control){
-      control=button('',()=>scrollToDiscSection('disc-card-'+disc.slot,true));
-      control.dataset.jumpSlot=disc.slot;
-      const image=el('img');image.alt='';image.width=44;image.height=44;
-      control.append(image,uiText('span',`${disc.slot}号位`,`Slot ${disc.slot}`));
-      index.append(control);
+function rollPriority(profile,id){
+  if(!(profile.weights[id]>0))return 'other';
+  return profile.primaryIds.includes(Number(id))?'primary':'secondary';
+}
+function slotDetailButton(slot,action=''){
+  const control=button('',event=>showProfileSlot(slot,event.currentTarget),'disc-slot-link');
+  control.append(uiText('span',action==='fill'?`补齐 ${slot} 号位`:action==='replace'?`调整 ${slot} 号位`:`${slot}号位`,
+    action==='fill'?`Fill slot ${slot}`:action==='replace'?`Change slot ${slot}`:`Slot ${slot}`));
+  control.dataset.detailSlot=slot;
+  control.setAttribute('aria-controls','disc-slot-dialog');
+  control.setAttribute('aria-haspopup','dialog');
+  return control;
+}
+let slotOpener;
+function showProfileSlot(slot,trigger){
+  const dialog=$('disc-slot-dialog'),disc=config.discs.find(entry=>entry.slot===slot);
+  if(!disc||dialog.open)return;
+  slotOpener=trigger;
+  dialog.dataset.slot=slot;
+  $('disc-slot-title').replaceChildren(uiText('span',`${slot}号驱动盘`,`Drive Disc · Slot ${slot}`));
+  renderSlotDetail(disc);
+  dialog.showModal();
+  dialog.scrollTop=0;
+}
+$('disc-slot-dialog').addEventListener('close',()=>{
+  const dialog=$('disc-slot-dialog');
+  if(dialog.open)return;
+  const slot=dialog.dataset.slot;
+  $('disc-slot-content').replaceChildren();
+  delete dialog.dataset.slot;
+  for(const guide of dialog.querySelectorAll('details[open]'))guide.open=false;
+  const farm=slotOpener?.closest('[data-farm-action]')?.dataset.farmAction;
+  const fallback=farm?document.querySelector(`[data-farm-action="${farm}"] [data-detail-slot="${slot}"]`):null;
+  const origin=slotOpener?.isConnected?slotOpener:fallback||document.querySelector(`[data-jump-slot="${slot}"]`);
+  if(origin?.getClientRects().length)origin.focus({preventScroll:true});
+  else $('disc-view-stats').focus({preventScroll:true});
+  slotOpener=null;
+});
+function renderOrbitSlot(disc,score){
+  const index=$('disc-slot-index'),slot=disc.slot;
+  let control=index.querySelector(`[data-jump-slot="${slot}"]`);
+  if(!control){
+    control=button('',event=>showProfileSlot(slot,event.currentTarget));
+    control.dataset.jumpSlot=slot;control.setAttribute('aria-controls','disc-slot-dialog');
+    control.setAttribute('aria-haspopup','dialog');
+    index.append(control);
+  }
+  const grade=score.grade||score.estimatedGrade||'';
+  Object.assign(control.dataset,{grade,status:score.status,gradeType:score.estimatedGrade?'estimated':grade?'final':'none'});
+  control.classList.toggle('is-locked',Boolean(disc.locked));
+  const icon=disc.absent?'':equipment.discs[disc.setId]?.icon;
+  const image=control.querySelector('img')||el('img');
+  image.alt='';image.width=52;image.height=52;
+  if(icon&&image.getAttribute('src')!==icon)image.src=icon;
+  if(!icon)image.removeAttribute('src');
+  image.hidden=!icon;
+  const label=uiText('span',`${slot}号位`,`Slot ${slot}`,'disc-orbit-label');
+  const scoreText=Number.isFinite(score.score)?String(score.score):'—';
+  const value=score.estimatedGrade?uiText('span','约 '+scoreText,'Est. '+scoreText,'disc-orbit-score'):el('span','disc-orbit-score',scoreText);
+  const gradeLabel=el('span','disc-orbit-grade',grade||'—');
+  if(!grade){
+    const reason={absent:['空缺号位','Empty slot'],empty:['待填副词条','Needs substats'],unsupported:['资料待核对','Unverified data'],invalid:['词条有误','Invalid stats']}[score.status]||['暂未评分','Unrated'];
+    value.replaceChildren(uiText('span',...reason));
+  }
+  const stats=el('span','disc-orbit-stats'),count=inspectDiscRolls(disc,data);
+  if(!['complete','partial'].includes(count.status)){
+    const absent=count.status==='absent';
+    stats.append(uiText('span',absent?'空缺号位':'资料待核对',absent?'Empty slot':'Unverified data'));
+  }else{
+    stats.append(el('span','disc-orbit-main',name(disc.mainId)));
+    for(const line of count.lines){
+      const row=el('span');row.dataset.priority=rollPriority(score.profile,line.id);
+      row.append(el('span','',name(line.id)));
+      if(line.additionalRolls>0)row.append(el('b','','+'+line.additionalRolls));
+      stats.append(row);
     }
-    const icon=disc.absent?'':equipment.discs[disc.setId]?.icon;
-    const image=control.firstElementChild;
-    if(icon){
-      if(image.getAttribute('src')!==icon)image.src=icon;
-    }else image.removeAttribute('src');
-    image.hidden=!icon;
-    control.classList.toggle('is-priority',allocation?.farming?.status==='ready'&&allocation.farming.priority?.slot===disc.slot);
+    if(!count.lines.length)stats.append(uiText('span','未录入副词条','No substats entered'));
+  }
+  control.replaceChildren(image,label,gradeLabel,value,stats);
+}
+function renderProfileRolls(build){
+  const root=$('disc-profile-rolls'),profile=getDiscScoreProfile(build,data,config),totals=new Map();
+  let complete=0,recorded=0;
+  for(const disc of config.discs){
+    const count=inspectDiscRolls(disc,data);
+    if(!['complete','partial'].includes(count.status))continue;
+    if(count.complete)complete++;
+    for(const line of count.lines){
+      recorded+=line.rolls;
+      if(profile.weights[line.id]>0)totals.set(line.id,(totals.get(line.id)||0)+line.rolls);
+    }
+  }
+  const label=complete===6?['有效词条份数','Effective substat rolls']:['已录入有效词条份数','Recorded effective rolls'];
+  root.replaceChildren(uiText('span',...label,'disc-roll-total-label'));
+  for(const [id,rolls]of [...totals].sort((a,b)=>b[1]-a[1]||a[0]-b[0])){
+    const chip=el('span','disc-roll-chip');chip.dataset.priority=rollPriority(profile,id);
+    chip.append(el('b','',String(rolls)),el('span','',name(id)));root.append(chip);
+  }
+  if(!totals.size){
+    if(!recorded)root.append(uiText('span','待录入','No recorded rolls'));
+    else if(!profile.available)root.append(uiText('span','暂无角色权重','No agent weights'));
+    else root.append(el('b','','0'));
   }
 }
 function updateSlotGoals(){
   renderFarmAdvice();
-  renderSlotShortcuts();
-  const resultNote=$('disc-slot-result-note');resultNote.replaceChildren();resultNote.hidden=!slotReview;
-  if(slotReview==='usable')resultNote.append(uiText('span','已完成基础检查；尚未生成逐号位换盘目标。','Basic checks complete; no per-slot changes have been generated.'));
-  else if(allocation?.guidanceOnly)resultNote.append(uiText('span','先看各号位的培养方向；尚未确定需要调整的号位。','Review each slot’s build direction; specific changes have not been determined.'));
-  else if(slotReview&&allocation?.configuration){
-    const count=allocation.slotChanges?.filter(c=>['fill','replace'].includes(c.action)&&!config.discs.find(d=>d.slot===c.slot)?.locked).length||0;
-    resultNote.append(count?uiText('span',`本次参考方案建议调整 ${count} 个号位，已用同色标出。`,`This reference plan suggests changes to ${count} slots, highlighted in the same color.`):uiText('span','本次方案保留现有盘；请结合下方条件核对。','This plan keeps your current discs; check the listed conditions.'));
+  const priority=allocation?.farming?.status==='ready'?allocation.farming.priority?.slot:null;
+  for(const control of $('disc-slot-index').querySelectorAll('[data-jump-slot]')){
+    control.classList.toggle('is-priority',Number(control.dataset.jumpSlot)===priority);
   }
-  for(const d of config.discs){const root=$(`disc-slot-goal-${d.slot}`);if(!root)continue;root.replaceChildren();root.removeAttribute('data-action');const target=allocation?.configuration?.discs?.find(x=>x.slot===d.slot),change=allocation?.slotChanges?.find(x=>x.slot===d.slot);
-    const card=root.closest('.disc-slot'),adjust=!!(target&&!allocation.guidanceOnly&&!allocation.blocked&&!d.locked&&['fill','replace'].includes(change?.action));
-    const farmAlternative=change?.action==='keep'&&[allocation?.farming?.priority?.slot,allocation?.farming?.tuning?.slot].includes(d.slot);
-    card.classList.toggle('is-adjustment',adjust);card.classList.toggle('is-locked',!!d.locked);card.querySelector('.disc-slot-plan-state')?.remove();
-    if(adjust)card.querySelector('.disc-section-head').append(uiText('span','建议调整','Suggested change','disc-slot-plan-state is-adjustment'));
-    else if(d.locked)card.querySelector('.disc-section-head').append(uiText('span','已锁定保留','Locked · keep','disc-slot-plan-state'));
-    else if(target&&change?.action==='keep')card.querySelector('.disc-section-head').append(farmAlternative?uiText('span','原盘可留，有提升再换','Keep until a better drop','disc-slot-plan-state'):uiText('span','本次保留','Keep for this plan','disc-slot-plan-state'));
-    if(allocation?.guidanceOnly){
-      const b=currentBuild(),mainIds=d.slot<=3?Object.keys(data.mainBases[d.slot]).map(Number):b.mainStatIds[d.slot]||[];
-      root.dataset.action='guidance';root.append(el('strong','','本号位的个人培养方向'),el('p','',`主属性参考：${mainIds.map(name).join(' / ')||'待核对'}。`));
-      const priority=b.effectiveSubstats?.primaryIds||[];
-      if(priority.length)root.append(el('p','',`副属性优先方向：${priority.map(name).join('、')}；最终不能与所选主属性重复。`));
-      root.append(el('p','disc-muted',`${d.locked?'保留此盘；':''}当前只给出搭配方向，尚未分配指定词条份数或生成必须更换的盘。`));continue;
-    }
-    if(!target)continue;
-    root.dataset.action=change?.action||'';
-    if(change?.action==='keep')continue;
-    root.append(el('strong','',change?.action==='fill'?'补齐空缺号位':d.locked?'保留当前盘':compareDisc(d,target)?'已录入属性覆盖本号位参考目标':'本号位的换盘目标'));
-    root.append(el('p','',`目标：${equipment.discs[target.setId]?.name||'套装待选'} · ${name(target.mainId)} ${fmt(target.mainId,data.mainBases[target.slot][target.mainId]*4)} · S级15级。${Number(d.mainId)!==Number(target.mainId)?`当前录入主属性为${name(d.mainId)}，这是换主属性后的目标。`:''}`));
-    if(!target.subs.length)root.append(el('p','','当前整体目标不再要求此盘追加指定副属性；仍需符合主属性和套装条件。'));
-    else root.append(textList(target.subs.map(s=>`${name(s.id)}至少 ${s.rolls} 份，共 ${fmt(s.id,data.subBases[s.id]*s.rolls)}`)));
+  const dialog=$('disc-slot-dialog');
+  if(dialog.open){
+    const d=config.discs.find(entry=>entry.slot===Number(dialog.dataset.slot));
+    renderSlotGoal(d,$(`disc-slot-goal-${d.slot}`));
   }
+}
+function renderSlotGoal(d,root){
+  root.replaceChildren();root.removeAttribute('data-action');
+  const target=allocation?.configuration?.discs?.find(x=>x.slot===d.slot),change=allocation?.slotChanges?.find(x=>x.slot===d.slot);
+  const card=root.closest('.disc-slot'),adjust=!!(target&&!allocation.guidanceOnly&&!allocation.blocked&&!d.locked&&['fill','replace'].includes(change?.action));
+  const farmAlternative=change?.action==='keep'&&[allocation?.farming?.priority?.slot,allocation?.farming?.tuning?.slot].includes(d.slot);
+  card.classList.toggle('is-adjustment',adjust);card.classList.toggle('is-locked',!!d.locked);card.querySelector('.disc-slot-plan-state')?.remove();
+  if(adjust)card.querySelector('.disc-section-head').append(uiText('span','建议调整','Suggested change','disc-slot-plan-state is-adjustment'));
+  else if(d.locked)card.querySelector('.disc-section-head').append(uiText('span','已锁定保留','Locked · keep','disc-slot-plan-state'));
+  else if(target&&change?.action==='keep')card.querySelector('.disc-section-head').append(farmAlternative?uiText('span','原盘可留，有提升再换','Keep until a better drop','disc-slot-plan-state'):uiText('span','本次保留','Keep for this plan','disc-slot-plan-state'));
+  if(allocation?.guidanceOnly){
+    const b=currentBuild(),mainIds=d.slot<=3?Object.keys(data.mainBases[d.slot]).map(Number):b.mainStatIds[d.slot]||[];
+    root.dataset.action='guidance';root.append(el('strong','','本号位的个人培养方向'),el('p','',`主属性参考：${mainIds.map(name).join(' / ')||'待核对'}。`));
+    const priority=b.effectiveSubstats?.primaryIds||[];
+    if(priority.length)root.append(el('p','',`副属性优先方向：${priority.map(name).join('、')}；最终不能与所选主属性重复。`));
+    root.append(el('p','disc-muted',`${d.locked?'保留此盘；':''}当前只给出搭配方向，尚未分配指定词条份数或生成必须更换的盘。`));return;
+  }
+  if(!target)return;
+  root.dataset.action=change?.action||'';
+  if(change?.action==='keep')return;
+  root.append(el('strong','',change?.action==='fill'?'补齐空缺号位':d.locked?'保留当前盘':compareDisc(d,target)?'已录入属性覆盖本号位参考目标':'本号位的换盘目标'));
+  root.append(el('p','',`目标：${equipment.discs[target.setId]?.name||'套装待选'} · ${name(target.mainId)} ${fmt(target.mainId,data.mainBases[target.slot][target.mainId]*4)} · S级15级。${Number(d.mainId)!==Number(target.mainId)?`当前录入主属性为${name(d.mainId)}，这是换主属性后的目标。`:''}`));
+  if(!target.subs.length)root.append(el('p','','当前整体目标不再要求此盘追加指定副属性；仍需符合主属性和套装条件。'));
+  else root.append(textList(target.subs.map(s=>`${name(s.id)}至少 ${s.rolls} 份，共 ${fmt(s.id,data.subBases[s.id]*s.rolls)}`)));
 }
 function renderTargetGuidance(result){
   slotReview='guidance';const root=$('disc-allocation-status');root.replaceChildren(uiText('p','当前没有可直接比较的数值目标，可先核对套装和各号位的主属性。','There are no directly comparable stat targets for this build. Check the set and main stat for each slot.','disc-result-lead'));
@@ -662,6 +826,12 @@ function renderAllocationSummary(){
   const summary=pendingCeiling?`${count===0?'先保留现有盘':`已给出调整 ${count} 个号位的参考方案`}；${allocation.incompleteCeilingSlots.join('、')}号位的副属性尚未完整，上限待核对，暂不判定完成。`:allocation.met&&count===0?'现有配装已覆盖本档参考目标，无需为此目标换盘。':allocation.met?`找到覆盖本档参考目标的方案：调整 ${count} 个号位，保留 ${retained} 个号位。`:`当前搜索尚未找到覆盖全部目标的方案，先展示找到的参考分配：调整 ${count} 个号位。`;
   const summaryEn=pendingCeiling?`${count===0?'Keep your current discs':`A reference plan changes ${count} slots`}; substats in slots ${allocation.incompleteCeilingSlots.join(', ')} are incomplete, so upper limits remain unverified.`:allocation.met&&count===0?'Your current build covers this tier’s reference targets; no disc changes are needed for them.':allocation.met?`Found a plan covering this tier’s reference targets: change ${count} slots and keep ${retained}.`:`The search has not covered every target; the current reference plan changes ${count} slots.`;
   root.append(uiText('p',summary,summaryEn,'disc-result-lead'));
+  const changes=(allocation.slotChanges||[]).filter(change=>['fill','replace'].includes(change.action));
+  if(changes.length){
+    const slots=el('div','disc-plan-slots');
+    for(const change of changes)slots.append(slotDetailButton(change.slot,change.action));
+    root.append(slots);
+  }
   if(planningScope==='solo')root.append(el('p','disc-muted','本次只比较当前代理人的个人配装目标；保留自身辅助技能门槛，特定队伍组成的参考不参与完成判断。队友增益和未核实的战斗效果未自动加入面板。'));
   if(allocation.excludedRows?.length)root.append(excludedTargetDetails(allocation.excludedRows));
   if(allocation.provisional)root.append(el('p','disc-muted','本次采用攻略参考口径；请结合配装条件核对，不据此认定实际毕业。'));
@@ -771,11 +941,17 @@ function consumeShowcase(result,isDemo){
   const agents=result.agents.filter(a=>a&&Object.hasOwn(data.agents,String(a.id)));
   if(!agents.length)throw Error('展柜没有可规划的正式服角色');
   const configs=new Map(agents.map(a=>[String(a.id),normalizedToConfiguration(a,data)]));
-  const buttons=agents.map(a=>button(a.name||details.agents[a.id].name,()=>selectPlannerAgent(String(a.id))));
+  const buttons=[...configs.keys()].map(id=>{
+    const agent=details.agents[id],control=button('',()=>selectPlannerAgent(id),'disc-profile-agent'),image=el('img');
+    image.src=agent.icon;image.alt='';image.width=36;image.height=36;
+    control.append(image,uiText('span',agent.name,agent.nameEn));control.dataset.agentId=id;
+    control.setAttribute('aria-pressed',String(config.id===id));return control;
+  });
   const notice=isDemo?['虚构展柜示例；角色与音擎按60级满突破、核心F规划。','Fictional showcase. Agent and W-Engine target Lv.60 and full promotion, with Core Skill F.']:
     ['已载入公开配装；角色与音擎按60级满突破、核心F规划，非来源实测等级。','Public build loaded. Agent and W-Engine target Lv.60 and full promotion, with Core Skill F; these are planning levels, not imported measurements.'];
   activeImport={configs,notice};$('disc-showcase-agents').replaceChildren(...buttons);
-  selectPlannerAgent(!isDemo&&configs.has(preferredAgentId)?preferredAgentId:String(agents[0].id));
+  const first=isDemo?agents.reduce((best,a)=>(a.discs?.length||0)>(best.discs?.length||0)?a:best):agents[0];
+  selectPlannerAgent(!isDemo&&configs.has(preferredAgentId)?preferredAgentId:String(first.id));
 }
 function beginImport(){
   controller?.abort();controller=new AbortController();setBusy(true);return controller;
