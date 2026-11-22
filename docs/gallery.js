@@ -1,5 +1,5 @@
 import {createSpritePlayer, prefetchAnimation} from './gallery-media.js?v=20260909-version-3-2-1';
-import {renderItemSources} from './item-sources.js?v=20261021-map-launch-1';
+import {renderItemSources} from './item-sources.js?v=20261121-roam-minimap-launch-1';
 
 const $ = id => document.getElementById(id);
 const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));

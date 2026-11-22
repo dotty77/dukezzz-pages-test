@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { loadMapScene } from './map-3d-loader.js?v=20261031-optimization-launch-1';
 import { createNavigation } from './map-3d-navigation.js?v=20261022-map3d-launch-1';
-import { createRoamController } from './map-3d-roam.js?v=20261022-map3d-left-drag-launch-1';
+import { createRoamController, createRoamMinimap } from './map-3d-roam.js?v=20261121-roam-minimap-launch-1';
 
 const VERSION = '20261111-refresh-launch-1';
 const MAPS = {
@@ -49,6 +49,7 @@ const SYMBOLS = {
 const CANDIDATE_TYPES = new Set(['gem_enemy','trial_table','spooky_box','withdraw_beacon']);
 const state = { data:null, points:[], filtered:[], filteredMarkers:[], filteredPlaced:0, markerRevision:0, markers:new Map(), types:new Set(), statuses:new Set(), layers:new Set(), query:'', floor:'all', labels:false, quality:null, selected:null, language:'zh-CN', sceneReady:false, ready:false, modelStats:null, textureFailures:[], top:false, onScreen:0, renderRequested:false, pointPositions:new Map(), loading:{kind:'loadingData'}, error:null };
 let roam=null,roamBusy=false,roamGeneration=0,lastFrameTime=0;
+let minimap=null;
 let savedFilters = null;
 try { savedFilters = JSON.parse(localStorage.getItem(FILTER_KEY) || 'null'); } catch { /* Invalid saved filters use defaults. */ }
 state.quality=['clear','fast'].includes(savedFilters?.quality)?savedFilters.quality:innerWidth>=900?'clear':'fast';
@@ -367,6 +368,8 @@ async function start() {
 
 function renderRoamUi() {
   const current=roam?.getState(),active=Boolean(current?.active),flying=current?.mode==='fly';
+  if(active)minimap?.update(current.position[0],current.position[2],current.heading);
+  else minimap?.hide();
   const setText=(element,text)=>{if(element.textContent!==text)element.textContent=text;};
   const setPressed=(id,pressed)=>{const element=$(id),value=String(pressed);if(element.getAttribute('aria-pressed')!==value)element.setAttribute('aria-pressed',value);};
   $('roam-toggle').disabled=!state.sceneReady||roamBusy;setText($('roam-toggle'),t(roamBusy?'roamLoading':'roamEnter'));setPressed('roam-toggle',active);
@@ -391,7 +394,12 @@ async function beginRoam() {
       const data=await readJson(`${DATA_ROOT}navigation.json?v=${VERSION}`);
       if(generation!==roamGeneration)return false;
       const navigation=createNavigation(data);
-      roam=createRoamController({scene,camera,canvas:$('scene-canvas'),controls,navigation,collisionMeshes:model.children,requestRender,onChange:renderRoamUi,onError:reason=>{if(reason!=='no-ground')toast(t('roamLoadFailed'));}});
+      minimap=createRoamMinimap($('map-stage'),state.data.coordinateSystem);
+      roam=createRoamController({
+        scene,camera,canvas:$('scene-canvas'),controls,navigation,collisionMeshes:model.children,
+        requestRender,onChange:renderRoamUi,onPoseChange:(x,z,heading)=>minimap?.update(x,z,heading),
+        onError:reason=>{if(reason!=='no-ground')toast(t('roamLoadFailed'));}
+      });
     }
     if(generation!==roamGeneration)return false;
     const preferred=validPosition(state.selected?.position)?state.selected.position:manifest?.camera?.target;

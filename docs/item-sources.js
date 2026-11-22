@@ -85,12 +85,12 @@ function currentConfigurationMarkup(record) {
   return `<details class="drop-more drop-current-config" data-config-version="${escape(info.checkedVersion)}"><summary data-i18n-en="Current 3.3 client configuration review">当前 3.3 客户端配置复核</summary><div class="drop-map-summary" data-map-status="${escape(info.status)}"><span class="drop-map-kicker">${escape(info.checkedVersion)} · ${escape(info.sourceClientBuild)}</span><h4 data-i18n-en="${en}">${title}</h4>${mapIds.length?`<div class="drop-map-tags">${mapIds.map(id=>`<span>${escape(maps[id])}</span>`).join('')}</div>`:''}<p class="drop-footnote" data-i18n-en="${escape(info.limitationEn)}">${escape(info.limitation)}</p><div class="drop-links"><a href="research/map-drop-chain-3.3.json?v=20261021-map-launch-1" target="_blank" rel="noreferrer" data-i18n-en="Current configuration evidence ↗">当前配置核对记录 ↗</a></div></div></details>`;
 }
 function renderMapSources(record) {
-  const rows=record?.sources||[];
-  const info=record?.mapAvailability,full=info?.fullEvidencePath;
-  const official=info?.evidenceKind==='client_obtain_description';
-  const fullLink=typeof full==='string'&&/^research\/[\w-]+\.json(?:#[\w/-]+)?$/.test(full)?`<a href="${escape(full)}" target="_blank" rel="noreferrer">完整配置关联记录 ↗</a>`:'';
-  const historical=official?`<details class="drop-more"><summary>查看历史配置与玩家资料</summary><p class="drop-note">以下保留原始版本、证据等级和来源；旧记录不覆盖上方 3.3 正式获取说明。</p>${record?.communityAvailability?communityMapMarkup(record.communityAvailability)+communityEvidenceMarkup(record.communityAvailability):''}${record?.configuredMapAvailability?mapAvailabilityMarkup({mapAvailability:record.configuredMapAvailability}):''}${communityTableMarkup(record?.communityTableReference)}${rows.length?`<h4>历史来源记录</h4>${rows.map(sourceRow).join('')}`:''}</details>`:`${record?.communityAvailability?communityEvidenceMarkup(record.communityAvailability):''}${communityTableMarkup(record?.communityTableReference)}`;
-  return `<div class="drop-title"><h3>在哪里能出</h3><span>${official?'3.3 获取说明与配置复核':'按地图查询 · 非官方掉落表'}</span></div>${mapAvailabilityMarkup(record)}${currentConfigurationMarkup(record)}${historical}<details class="drop-more"><summary>查看判断依据</summary><p class="drop-note">客户端奖励配置与其他玩家实机记录分开标注。未核实的地图不按“不能产出”处理，配置记录也不代表每局必出。</p>${info?.difficultyNote?`<p class="drop-note">${escape(info.difficultyNote)}</p>`:''}<div class="drop-links"><a href="item-sources.json?v=20261021-map-launch-1" target="_blank" rel="noreferrer">地图来源与核验状态 ↗</a>${fullLink}</div>${!official&&rows.length?`<details class="drop-more"><summary>历史来源记录</summary><p class="drop-footnote">以下是既有配置或其他玩家记录；原作者见链接。</p>${rows.map(sourceRow).join('')}</details>`:''}</details>`;
+  const official=record?.mapAvailability?.evidenceKind==='client_obtain_description';
+  const title=official?'3.3 获取说明与配置复核':'按地图查询 · 非官方掉落表';
+  const summary=`<div class="drop-title"><h3>在哪里能出</h3><span>${title}</span></div>${mapAvailabilityMarkup(record)}${currentConfigurationMarkup(record)}`;
+  if(official)return summary;
+  const community=record?.communityAvailability;
+  return summary+(community?communityEvidenceMarkup(community):'')+communityTableMarkup(record?.communityTableReference);
 }
 export async function renderItemSources(item, element) {
   element.dataset.item=String(item.id);

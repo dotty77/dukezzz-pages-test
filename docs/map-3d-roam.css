@@ -4,3 +4,161 @@
 @media(max-width:720px){.view-actions button{padding:6px 8px}.roam-dpad{left:11px;bottom:12px}.roam-motion-controls{right:11px;bottom:12px}.roam-panel{max-width:calc(100% - 22px);padding:8px 9px}.roam-panel-foot{gap:12px}.roam-actions button{font-size:11px;padding:6px 10px}}
 @media(max-width:390px){.view-actions{gap:3px}.view-actions button{font-size:10px;padding:6px}.view-toolbar{gap:5px}.view-toolbar #open-filters{padding:6px 8px}.roam-panel{top:53px}.roam-dpad{grid-template:repeat(3,44px)/repeat(3,44px);gap:2px}.roam-motion-controls{right:10px}.roam-help-content{font-size:10px}}
 @media(max-height:540px) and (any-pointer:coarse){.roam-panel{top:54px;left:50%;min-width:205px}.roam-dpad{bottom:10px}.roam-motion-controls{bottom:10px}body[data-roaming=true] .compass{top:52px;bottom:auto}.roam-panel-foot{margin-top:5px}body[data-roaming=true] .point-detail{max-height:calc(100% - 80px);bottom:10px;left:165px;right:116px;width:auto}}
+
+.map-stage {
+  --minimap-side: clamp(148px, 19vmin, 196px);
+  --minimap-inset: 16px;
+  --minimap-button: 32px;
+  --minimap-gap: 5px;
+}
+.roam-minimap {
+  position: absolute;
+  top: var(--minimap-inset);
+  right: var(--minimap-inset);
+  width: var(--minimap-side);
+  aspect-ratio: 1;
+  z-index: 4;
+  isolation: isolate;
+  pointer-events: none;
+  user-select: none;
+}
+.roam-minimap-viewport {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: #c1c0c2;
+  border: 2px solid #22273b;
+  border-radius: 11px;
+  box-shadow: 0 4px 14px #10142755, 0 0 0 1px #ffffff50;
+}
+.roam-minimap-zoom {
+  position: absolute;
+  top: calc(100% + var(--minimap-gap));
+  right: 0;
+  display: flex;
+  gap: var(--minimap-gap);
+}
+.roam-minimap-zoom button {
+  display: grid;
+  place-items: center;
+  width: var(--minimap-button);
+  height: var(--minimap-button);
+  padding: 0;
+  border-radius: 8px;
+  background: var(--panel);
+  color: var(--ink);
+  font-size: 20px;
+  font-weight: 650;
+  line-height: 1;
+  box-shadow: 0 2px 8px #10142738;
+  touch-action: manipulation;
+  pointer-events: auto;
+}
+.roam-minimap-zoom button:enabled:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.roam-minimap-zoom button:disabled {
+  background: var(--panel-alt);
+  border-color: var(--line);
+  color: var(--muted);
+  cursor: default;
+}
+.roam-minimap-zoom button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px var(--panel);
+}
+.roam-minimap-map {
+  display: block;
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: contain;
+}
+.roam-minimap[data-state="inside"] .roam-minimap-map {
+  width: var(--region-width);
+  height: var(--region-height);
+  transform: var(--region-offset);
+}
+.roam-minimap-player {
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 1px 2px #12152c);
+}
+.roam-minimap-arrow {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.roam-minimap-arrow::before, .roam-minimap-arrow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #fff;
+  clip-path: polygon(50% 0, 92% 90%, 50% 73%, 8% 90%);
+}
+.roam-minimap-arrow::after {
+  inset: 4px 3px 4px;
+  background: #485bd9;
+}
+.roam-minimap-notice {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 5px 4px;
+  background: #171b30eb;
+  color: #fff;
+  font-size: 10px;
+  line-height: 1.25;
+  text-align: center;
+}
+body[data-roaming=true] .stage-top {
+  right: calc(var(--minimap-side) + var(--minimap-inset) + 10px);
+  justify-content: flex-start;
+  gap: 8px;
+}
+@media (min-width: 721px) and (pointer: fine) {
+  body[data-roaming=true] .point-detail {
+    top: calc(var(--minimap-inset) + var(--minimap-side) + var(--minimap-gap) + var(--minimap-button) + 10px);
+    max-height: calc(100% - var(--minimap-side) - var(--minimap-button) - 60px);
+  }
+}
+@media (max-width: 720px), (any-pointer: coarse) {
+  .map-stage {
+    --minimap-side: clamp(92px, 28vw, 150px);
+    --minimap-inset: 11px;
+    --minimap-button: 44px;
+  }
+}
+@media (max-width: 560px) {
+  body[data-roaming=true] .view-label {display: none}
+  body[data-roaming=true] .roam-panel {
+    left: var(--minimap-inset);
+    width: min(250px, calc(100% - var(--minimap-side) - 32px));
+    min-width: 0;
+    transform: none;
+  }
+  .roam-actions {gap: 4px}
+  .roam-actions button {min-width: 0; padding-inline: clamp(3px, 1vw, 8px)}
+  .roam-actions .roam-exit {margin-left: 0}
+  .roam-panel-foot {gap: 5px}
+  .roam-minimap-player {width: 19px; height: 19px}
+}
+@media (max-height: 540px) and (orientation: landscape) {
+  .map-stage {
+    --minimap-side: clamp(72px, 27dvh, 112px);
+    --minimap-inset: 8px;
+  }
+}
+@media (max-height: 340px) and (orientation: landscape) {
+  .roam-motion-controls {
+    top: var(--minimap-inset);
+    bottom: auto;
+    right: calc(var(--minimap-inset) + var(--minimap-side) + 8px);
+  }
+}

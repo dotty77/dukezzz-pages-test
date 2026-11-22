@@ -83,7 +83,7 @@ function makeCameraGuard(meshes){
 }
 
 /** Third-person local preview controller. All positions use the existing Three world space. */
-export function createRoamController({scene,camera,canvas,controls,navigation=null,collisionMeshes=[],requestRender=()=>{},onChange=()=>{},onError=()=>{}}={}){
+export function createRoamController({scene,camera,canvas,controls,navigation=null,collisionMeshes=[],requestRender=()=>{},onChange=()=>{},onPoseChange=()=>{},onError=()=>{}}={}){
   if(!scene||!camera||!canvas||!controls)throw new Error('The roam controller needs scene, camera, canvas and orbit controls.');
   const explorer=makeExplorer();scene.add(explorer.root,explorer.shadow);
   const heldKeys=new Set(),touchActions=new Set(),position=new THREE.Vector3(),lookTarget=new THREE.Vector3(),desiredCamera=new THREE.Vector3(),cameraOffset=new THREE.Vector3(),movement=new THREE.Vector3();
@@ -98,7 +98,11 @@ export function createRoamController({scene,camera,canvas,controls,navigation=nu
   function pressed(action){if(touchActions.has(action))return true;for(const code of heldKeys)if(KEY_ACTIONS[code]===action)return true;return false;}
   function setInput(action,down){if(action==='boost')action='fast';if(!ACTIONS.has(action)||!active)return false;if(action==='fast'){if(mode!=='fly')return false;fastFlight=Boolean(down);notify();requestRender();return true;}down?touchActions.add(action):touchActions.delete(action);requestRender();return true;}
   function rotate(dx,dy){if(!active||!Number.isFinite(dx)||!Number.isFinite(dy))return;yaw-=dx*.004;pitch=clamp(pitch+dy*.004,-.3,1.08);requestRender();}
-  function setAvatarPosition(){explorer.root.position.copy(position);explorer.root.position.y+=.025;explorer.root.rotation.y=facing;explorer.root.updateMatrixWorld(true);}
+  function setAvatarPosition(){
+    explorer.root.position.copy(position);explorer.root.position.y+=.025;
+    explorer.root.rotation.y=facing;explorer.root.updateMatrixWorld(true);
+    onPoseChange(position.x,position.z,yaw);
+  }
   function capture(){return {position:camera.position.clone(),quaternion:camera.quaternion.clone(),up:camera.up.clone(),fov:camera.fov,near:camera.near,far:camera.far,zoom:camera.zoom,target:controls.target.clone(),enabled:controls.enabled,enableDamping:controls.enableDamping};}
   function restore(){
     if(!snapshot)return;
@@ -212,4 +216,172 @@ export function createRoamController({scene,camera,canvas,controls,navigation=nu
   canvas.addEventListener('pointerdown',pointerdown);canvas.addEventListener('pointermove',pointermove);canvas.addEventListener('pointerup',pointerup);canvas.addEventListener('pointercancel',pointerup);canvas.addEventListener('lostpointercapture',pointerup);canvas.addEventListener('contextmenu',contextmenu);
   function dispose(){if(disposed)return;exit();disposed=true;window.removeEventListener('keydown',keydown);window.removeEventListener('keyup',keyup);window.removeEventListener('blur',clearInput);document.removeEventListener('visibilitychange',visibility);document.removeEventListener('focusin',focus);canvas.removeEventListener('pointerdown',pointerdown);canvas.removeEventListener('pointermove',pointermove);canvas.removeEventListener('pointerup',pointerup);canvas.removeEventListener('pointercancel',pointerup);canvas.removeEventListener('lostpointercapture',pointerup);canvas.removeEventListener('contextmenu',contextmenu);scene.remove(explorer.root,explorer.shadow);explorer.dispose();}
   return {get active(){return active;},enter,exit,setMode,update,getState,setInput,rotate,teleport,clearInput,dispose};
+}
+
+// Invert the marker layer's registration from normalized image coordinates to Three.js X/Z.
+function createMinimapProjection(coordinates) {
+  const matrix = coordinates?.sourceImageToThreeXZ;
+  const image = coordinates?.sourceImage;
+  const dimensions = coordinates?.sourceImageDimensions;
+  if (typeof image !== 'string' || !image || !Array.isArray(dimensions) || dimensions.length !== 2 ||
+      !dimensions.every(value => Number.isFinite(value) && value > 0) ||
+      !Array.isArray(matrix) || matrix.length !== 3 ||
+      !matrix.every(row => Array.isArray(row) && row.length === 2 && row.every(Number.isFinite))) return null;
+
+  const [width, height] = dimensions;
+  const [[a, b], [c, d], [originX, originZ]] = matrix;
+  const determinant = a * d - b * c;
+  if (!Number.isFinite(determinant) || Math.abs(determinant) < 1e-10) return null;
+
+  const uX = width * d / determinant, uZ = -width * c / determinant;
+  const vX = -height * b / determinant, vZ = height * a / determinant;
+  return {
+    image, width, height,
+    project(x, z) {
+      const dx = x - originX, dz = z - originZ;
+      return {x: uX * dx + uZ * dz, y: vX * dx + vZ * dz};
+    },
+    bearing(headingRadians) {
+      // The roam controller looks along -Z at zero yaw. Image Y increases downwards.
+      const dx = -Math.sin(headingRadians), dz = -Math.cos(headingRadians);
+      return Math.atan2(uX * dx + uZ * dz, -(vX * dx + vZ * dz)) * 180 / Math.PI;
+    }
+  };
+}
+
+
+const zoomLevels = [1, 1.5, 2, 3, 4, 6, 8];
+const zoomKey = 'duke.map3d.minimapZoom';
+
+function initialZoom() {
+  try {
+    const saved = Number(localStorage.getItem(zoomKey));
+    if (zoomLevels.includes(saved)) return zoomLevels.indexOf(saved);
+  } catch { /* Storage can be unavailable in private browsing. */ }
+  return zoomLevels.indexOf(4);
+}
+
+function cropStart(position, size, span) {
+  // Keep the arrow in view at the edges. Center axes that fit in their entirety.
+  const margin = span * .1;
+  if (size <= span - 2 * margin) return (size - span) / 2;
+  return Math.max(-margin, Math.min(position - span / 2, size - span + margin));
+}
+
+export function createRoamMinimap(stage, coordinateSystem) {
+  const projection = createMinimapProjection(coordinateSystem);
+  if (!projection) return null;
+
+  const frame = document.createElement('div');
+  frame.id = 'roam-minimap';
+  frame.className = 'roam-minimap';
+  frame.hidden = true;
+  frame.setAttribute('role', 'group');
+  const viewport = document.createElement('div');
+  viewport.className = 'roam-minimap-viewport';
+  viewport.setAttribute('role', 'img');
+
+  const map = document.createElement('img');
+  map.className = 'roam-minimap-map';
+  map.alt = '';
+  map.draggable = false;
+  const player = document.createElement('span');
+  player.className = 'roam-minimap-player';
+  const arrow = document.createElement('span');
+  arrow.className = 'roam-minimap-arrow';
+  player.append(arrow);
+  const notice = document.createElement('span');
+  notice.className = 'roam-minimap-notice';
+  viewport.append(map, player, notice);
+  const controls = document.createElement('div');
+  controls.className = 'roam-minimap-zoom';
+  const zoomOut = createZoomButton('out', '−', -1);
+  const zoomIn = createZoomButton('in', '+', 1);
+  controls.append(zoomOut, zoomIn);
+  // Let the focused button handle activation even when Space also means ascend in flight.
+  for (const type of ['keydown', 'keyup']) controls.addEventListener(type, event => {
+    if (event.key === ' ' || event.key === 'Enter') event.stopPropagation();
+  });
+  frame.append(viewport, controls);
+  stage.append(frame);
+
+  const {width, height} = projection;
+  let zoom = initialZoom(), lastZoom;
+  let lastX, lastZ, lastHeading, lastLanguage, imageFailed = false;
+
+  function createZoomButton(direction, symbol, step) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.dataset.minimapZoom = direction;
+    button.textContent = symbol;
+    button.addEventListener('click', event => {
+      zoom += step;
+      try { localStorage.setItem(zoomKey, String(zoomLevels[zoom])); } catch { /* Use this session's zoom. */ }
+      update(lastX, lastZ, lastHeading);
+      if (event.detail) button.blur();
+    });
+    return button;
+  }
+
+  function updateButtons(state) {
+    zoomOut.disabled = state !== 'inside' || zoom === 0;
+    zoomIn.disabled = state !== 'inside' || zoom === zoomLevels.length - 1;
+  }
+
+  function setStatus(state, language) {
+    const en = language === 'en';
+    const status = state === 'outside' ? (en ? 'Outside mapped area' : '已离开底图范围')
+      : state === 'unavailable' ? (en ? 'Map unavailable' : '底图暂未加载') : '';
+    frame.dataset.state = state;
+    frame.setAttribute('aria-label', en ? 'Minimap' : '小地图');
+    viewport.setAttribute('aria-label', status || (en ? 'Your position and heading' : '当前位置和朝向'));
+    zoomOut.title = en ? 'Zoom out minimap' : '缩小小地图';
+    zoomIn.title = en ? 'Zoom in minimap' : '放大小地图';
+    zoomOut.setAttribute('aria-label', zoomOut.title);
+    zoomIn.setAttribute('aria-label', zoomIn.title);
+    notice.textContent = status;
+    notice.hidden = !status;
+    player.hidden = Boolean(status);
+  }
+  map.addEventListener('error', () => {
+    imageFailed = true;
+    setStatus('unavailable', document.documentElement.lang);
+    updateButtons('unavailable');
+  });
+
+  function update(x, z, heading) {
+    const language = document.documentElement.lang;
+    if (!frame.hidden && x === lastX && z === lastZ && heading === lastHeading && language === lastLanguage && zoom === lastZoom) return;
+    frame.hidden = false;
+    if (!map.hasAttribute('src')) map.src = projection.image;
+    const position = projection.project(x, z);
+    const inside = position.x >= 0 && position.x <= width && position.y >= 0 && position.y <= height;
+    const state = imageFailed ? 'unavailable' : inside ? 'inside' : 'outside';
+    const wasInside = frame.dataset.state === 'inside';
+    if (state !== frame.dataset.state || zoom !== lastZoom) updateButtons(state);
+    if (state !== frame.dataset.state || language !== lastLanguage) setStatus(state, language);
+    if (inside && !imageFailed) {
+      if (x !== lastX || z !== lastZ || zoom !== lastZoom || !wasInside) {
+        const span = zoom === 0 ? Math.max(width, height) / .8 : Math.min(width, height) / zoomLevels[zoom];
+        if (zoom !== lastZoom || !wasInside) {
+          map.style.setProperty('--region-width', `${width / span * 100}%`);
+          map.style.setProperty('--region-height', `${height / span * 100}%`);
+        }
+        const left = cropStart(position.x, width, span);
+        const top = cropStart(position.y, height, span);
+        map.style.setProperty('--region-offset', `translate(${-left / width * 100}%, ${-top / height * 100}%)`);
+        player.style.left = `${(position.x - left) / span * 100}%`;
+        player.style.top = `${(position.y - top) / span * 100}%`;
+      }
+      if (heading !== lastHeading || !wasInside)
+        arrow.style.transform = `rotate(${projection.bearing(heading)}deg)`;
+    }
+    lastX = x;
+    lastZ = z;
+    lastHeading = heading;
+    lastLanguage = language;
+    lastZoom = zoom;
+  }
+
+  return {update, hide() { frame.hidden = true; }};
 }
