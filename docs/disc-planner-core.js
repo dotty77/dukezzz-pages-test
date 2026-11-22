@@ -68,8 +68,8 @@ export function validateConfiguration(config,data){
   }
   return [...new Set(problems)];
 }
-// baseValues are equipment totals. All rules read that same snapshot, so
-// a conversion cannot feed itself or amplify another initial-stat conversion.
+// The input already represents the equipment screen, including any initial
+// stat conversions. Skill and Mindscape effects read it without changing it.
 export function applyPanelMechanics(config,baseValues,data){
   const values={...baseValues}, effects=[];
   const agent=data.panelMechanics?.[config.id];
@@ -77,7 +77,8 @@ export function applyPanelMechanics(config,baseValues,data){
   for(const rule of agent.rules){
     if(rule.minCinema&&!(config.cinema>=rule.minCinema))continue;
     const params=rule.parameters[rule.ranks.length===1?rule.ranks[0]:rule.ranks[config.core]];
-    const {group,scope,inputGroup=null}=rule;
+    const {group,inputGroup=null}=rule;
+    const scope=rule.scope==='passive'?'skill':rule.scope; // Older saved data.
     const inputValue=inputGroup===null?null:baseValues[inputGroup];
     const before=values[group];
     if(!Number.isFinite(before)||(inputGroup!==null&&!Number.isFinite(inputValue)))continue;
@@ -93,7 +94,6 @@ export function applyPanelMechanics(config,baseValues,data){
     // floating-point noise before display or comparison to a decimal target.
     bonus=Math.round(bonus*1e6)/1e6;
     const after=Math.round((before+bonus)*1e6)/1e6;
-    if(scope==='passive')values[group]=after;
     effects.push({group,inputGroup,inputValue,before,bonus,after,scope,description,descriptionEn,
       condition:rule.condition,conditionEn:rule.conditionEn,sourceUrl:agent.sourceUrl,
       minCinema:rule.minCinema,modifierCinema:config.cinema>=rule.modifier?.minCinema?rule.modifier.minCinema:undefined});
@@ -101,17 +101,24 @@ export function applyPanelMechanics(config,baseValues,data){
   return {values,effects};
 }
 const panelGroups=[111,121,131,122,123,201,211,231,232,305,312,314,315,316,317,318,319,320,322,323,213,324,325];
-function panelFromProperties(config,data,props,groups=panelGroups){
+// These conversions produce initial equipment stats in the game. They apply
+// only when reconstructing stats from items, never to imported final totals.
+function equipmentConversions(config,data){
+  if(String(config.id)==='1121')return [{input:131,group:121,percent:[40,46,52,60,66,72,80][config.core]}];
+  if(String(config.id)==='1611')return [{input:211,group:201,percent:35}];
+  if(data.agents[config.id].ProfessionType==='Rupture')return [{input:121,group:123,percent:30},{input:111,group:123,percent:10}];
+  return [];
+}
+const conversionGain=(rule,values)=>Math.floor(values[rule.input]*rule.percent/100);
+function equipmentValues(props,groups,conversions){
   const values={};
   for(const g of groups){
     const b=props[g*100+1]||0,r=props[g*100+2]||0,f=props[g*100+3]||0;
     values[g]=g===111?b+Math.ceil(b*r/10000)+f:Math.floor(b*(10000+r)/10000)+f;
   }
-  if(String(config.id)==='1121'&&121 in values)values[121]+=Math.floor(values[131]*[40,46,52,60,66,72,80][config.core]/100);
-  if(String(config.id)==='1611'&&201 in values)values[201]+=Math.floor(values[211]*35/100);
-  if(data.agents[config.id].ProfessionType==='Rupture'&&123 in values)values[123]+=Math.floor(values[121]*3/10)+Math.floor(values[111]/10);
+  for(const rule of conversions)if(rule.group in values)values[rule.group]+=conversionGain(rule,values);
   values[30502]=props[30502]||0;
-  return applyPanelMechanics(config,values,data);
+  return values;
 }
 // Properties before discs and set bonuses. Percentage ATK/HP/DEF rolls scale
 // the corresponding base property, including the character and W-Engine.
@@ -144,7 +151,8 @@ export function calculatePanel(config,data){
     if(d.setId)counts[d.setId]=(counts[d.setId]||0)+1;
   }
   for(const[id,n]of Object.entries(counts))if(n>=2)for(const[k,v]of Object.entries(data.setProps[id]))add(k,v);
-  return {...panelFromProperties(config,data,props),props,counts};
+  const values=equipmentValues(props,panelGroups,equipmentConversions(config,data));
+  return {...applyPanelMechanics(config,values,data),props,counts};
 }
 export function normalizedToConfiguration(agent,data){
   const config={id:String(agent.id),level:sourceNumber(agent.level),promotion:sourceNumber(agent.promotionLevel),core:sourceNumber(agent.coreSkillEnhancement),cinema:sourceNumber(agent.mindscape),
@@ -330,14 +338,9 @@ export function compareDisc(current,target){
 
 // Only these raw groups can affect a target. Other legal substats still occupy
 // slots and receive upgrades in the distribution below.
-function farmGroups(config,data,rows){
+function farmGroups(conversions,rows){
   const groups=new Set(rows.map(row=>row.group));
-  for(const rule of data.panelMechanics?.[config.id]?.rules||[]){
-    if(groups.has(rule.group)&&rule.scope==='passive'&&rule.inputGroup!=null)groups.add(rule.inputGroup);
-  }
-  if(groups.has(123)&&data.agents[config.id].ProfessionType==='Rupture'){groups.add(111);groups.add(121);}
-  if(groups.has(121)&&String(config.id)==='1121')groups.add(131);
-  if(groups.has(201)&&String(config.id)==='1611')groups.add(211);
+  for(const rule of conversions)if(groups.has(rule.group))groups.add(rule.input);
   return groups;
 }
 const farmGap=(row,values)=>Math.max(0,(row.bound==='maximum'?1:-1)*(values[row.group]-row.targetRaw))/Math.max(1,row.targetRaw);
@@ -353,6 +356,7 @@ function comparableDiscTargets(rows,options){
 export function evaluateDiscContributions(config,data,rows=[],options={}){
   const result={},valid=!validateConfiguration(config,data).length;
   const full=valid?calculatePanel(config,data):null;
+  const conversions=valid?equipmentConversions(config,data):[];
   const targets=comparableDiscTargets(rows,options).filter(row=>row.comparable||
     ['initial-reference-unqualified','signature-conditioned'].includes(row.scope??row.panelContext));
   const comparableTargetCount=targets.filter(row=>row.targetRaw>0&&Number.isFinite(full?.values[row.group])).length;
@@ -376,14 +380,11 @@ export function evaluateDiscContributions(config,data,rows=[],options={}){
         closed:Math.max(0,removedGap-currentGap),breakpoint:currentGap<1e-8&&removedGap>1e-8,
         excess:row.bound==='maximum'?Math.max(0,currentGap-removedGap):0});
     }
-    // Both panels use the same character, Core level and Mindscapes, hence
-    // applyPanelMechanics evaluates the same rules in the same order.
-    full.effects.forEach((effect,i)=>{
-      const previous=removed.effects[i];
-      if(effect.scope!=='passive'||!previous||effect.bonus===previous.bonus)return;
-      item.effects.push({group:effect.group,inputGroup:effect.inputGroup,withBonus:effect.bonus,withoutBonus:previous.bonus,
-        withDisc:full.values[effect.group],withoutDisc:removed.values[effect.group],delta:effect.bonus-previous.bonus});
-    });
+    for(const rule of conversions){
+      const withBonus=conversionGain(rule,full.values),withoutBonus=conversionGain(rule,removed.values);
+      if(withBonus!==withoutBonus)item.effects.push({group:rule.group,inputGroup:rule.input,withBonus,withoutBonus,
+        withDisc:full.values[rule.group],withoutDisc:removed.values[rule.group],delta:withBonus-withoutBonus});
+    }
     const tier=r=>r.excess>0?3:r.breakpoint?2:r.closed>0?1:0;
     item.targets.sort((a,b)=>tier(b)-tier(a)||Number(b.group===group)-Number(a.group===group)||
       (b.closed+b.excess)/Math.max(1,b.targetRaw)-(a.closed+a.excess)/Math.max(1,a.targetRaw));
@@ -401,18 +402,19 @@ function choose(n,k){
 // For a given actual main, first choose four distinct legal lines. A disc
 // starting with three lines gains its fourth before its four random upgrades;
 // a four-line start has five upgrades. Marginalise irrelevant lines exactly.
-function farmMainDistribution(config,data,disc,mainId,setId,rows,groups,baselineLoss){
+function farmMainDistribution(config,data,disc,mainId,setId,rows,conversions,baselineLoss){
   const trial={...config,discs:config.discs.map(d=>d.slot===disc.slot?
     {...d,mainId,setId,absent:false,level:15,initial:4,subs:[]}:d)};
   const props=calculatePanel(trial,data).props;
   const legal=Object.keys(data.subBases).map(Number).filter(id=>id!==mainId);
+  const groups=farmGroups(conversions,rows);
   const active=legal.filter(id=>groups.has(Math.floor(id/100)));
   const inactive=legal.length-active.length,selected=[],groupList=[...groups];
   const totals=[{chance:0,gain:0},{chance:0,gain:0}];
   const divisor=choose(legal.length,4);
   function evaluate(mass3,mass4){
     if(!mass3&&!mass4)return;
-    const {values}=panelFromProperties(config,data,props,groupList);
+    const values=equipmentValues(props,groupList,conversions);
     let loss=0;
     for(const row of rows){
       const gap=farmGap(row,values);
@@ -453,6 +455,28 @@ function farmMainDistribution(config,data,disc,mainId,setId,rows,groups,baseline
   return {mainId,initial3:totals[0],initial4:totals[1],chance:Math.min(totals[0].chance,totals[1].chance),gain:Math.min(totals[0].gain,totals[1].gain)};
 }
 
+// A panel target cannot price the damage lost by removing a viable PEN or
+// elemental DMG main. Keep its unmeasured benefit unless a different damage
+// main fills an explicit deficit or its documented condition is unmet.
+const damageMains5=new Set([23103,31503,31603,31703,31803,31903,32303]);
+function farmMainChoices(disc,build,targets,panel,planned,pinMain){
+  const current=Number(disc.mainId),selected=Number(planned?.mainId??current);
+  const recommended=(build.mainStatIds?.[disc.slot]||[]).map(Number);
+  if(disc.slot!==5)return pinMain?[selected]:[...new Set([...recommended,selected])];
+  const conditional=(build.conditionalMainStatIds?.[5]||[]).map(Number);
+  const threshold=id=>build.slot5Guide?.conditions?.[id]?.minPanel;
+  const measured=id=>targets.some(row=>row.group===Math.floor(id/100));
+  let choices=[...new Set([...recommended,...conditional.filter(id=>threshold(id)||measured(id)||(!disc.absent&&id===current))])];
+  const needs=threshold(current);
+  if(!disc.absent&&choices.includes(current)&&damageMains5.has(current)&&!measured(current)&&
+     (!needs||panel[needs.group]>=needs.minimum)){
+    choices=choices.filter(id=>id===current||damageMains5.has(id)&&targets.some(row=>
+      row.group===Math.floor(id/100)&&row.bound!=='maximum'&&panel[row.group]<row.targetRaw));
+  }
+  if(!choices.length&&!disc.absent)choices.push(current);
+  return pinMain?choices.filter(id=>id===selected):choices;
+}
+
 /** Expected fraction of the current normalised panel deficit closed by a
  * single replacement. Compare like-for-like S discs of the selected set.
  * Bounds cover any mixture of three- and four-line starts under uniform
@@ -481,17 +505,26 @@ export function rankFarmSlots(config,data,rows,build,options={},allocation=null)
     return result;
   }
   if(config.discs.every(d=>d.locked)){result.status='locked';return result;}
-  const groups=farmGroups(config,data,constraints);
+  const conversions=equipmentConversions(config,data);
+  const fifth=config.discs.find(d=>d.slot===5&&!d.absent);
+  const wornMinimum=build.slot5Guide?.conditions?.[fifth?.mainId]?.minPanel;
+  const activeMinimum=wornMinimum&&panel[wornMinimum.group]>=wornMinimum.minimum?wornMinimum:null;
   for(const disc of config.discs){
     if(disc.locked)continue;
     const slot=disc.slot,planned=allocation?.configuration?.discs?.find(d=>d.slot===slot);
     const legalMains=Object.keys(data.mainBases[slot]).map(Number);
-    const mainIds=options.pinFarmMains&&planned?[Number(planned.mainId)]:
-      [...new Set([...(build.mainStatIds?.[slot]||[]).map(Number),Number(planned?.mainId??disc.mainId)])];
+    const mainIds=farmMainChoices(disc,build,targets,panel,planned,options.pinFarmMains&&planned);
     const setPlan=build.sets?.[options.planIndex??0];
     const setId=String(planned?.setId||disc.setId||(slot<=4?setPlan?.fourPieceId:setPlan?.twoPieceIds?.[0])||'');
     if(!setId||!owns(data.setProps,setId))continue;
-    const mains=mainIds.filter(id=>legalMains.includes(id)).map(id=>farmMainDistribution(config,data,disc,id,setId,constraints,groups,baselineLoss));
+    const mains=mainIds.filter(id=>legalMains.includes(id)).map(id=>{
+      const min=slot===5?build.slot5Guide?.conditions?.[id]?.minPanel:activeMinimum;
+      if(!min)return farmMainDistribution(config,data,disc,id,setId,constraints,conversions,baselineLoss);
+      // A conditional main may only earn gain from rolls whose resulting build
+      // still meets its requirement, e.g. Yuzuha's 3,000 ATK sharing cap.
+      const guarded=[...constraints,{group:min.group,targetRaw:min.minimum,bound:'minimum',met:true}];
+      return farmMainDistribution(config,data,disc,id,setId,guarded,conversions,baselineLoss);
+    });
     if(!mains.length)continue;
     // Other main stats do not fit this build. Their probability mass counts
     // as a miss when the main stat is random.
@@ -500,11 +533,22 @@ export function rankFarmSlots(config,data,rows,build,options={},allocation=null)
     const gains=[mean('initial3','gain'),mean('initial4','gain')];
     const slotChance=Math.min(...chances),slotChanceMax=Math.max(...chances);
     const tuningKey=(m,key,reference)=>Math.min(m.initial3[key]-reference[0],m.initial4[key]-reference[1]);
-    const main=mains.slice().sort((a,b)=>tuningKey(b,'gain',gains)-tuningKey(a,'gain',gains)||b.gain-a.gain||b.chance-a.chance)[0];
-    result.slots.push({slot,setId,mainId:main.mainId,mains,
+    // Random drops may help with any supported main. Spend a Calibrator on a
+    // documented first choice, or a damage main that fills an explicit deficit.
+    // An ATK benchmark alone cannot rank ATK above a better PEN or DMG main.
+    const top=slot===5?build.slot5Guide?.tiers?.[0]:null;
+    const tunable=mains.filter(({mainId})=>{
+      if(slot!==5)return true;
+      const deficit=damageMains5.has(mainId)&&result.deficits.some(row=>row.group===Math.floor(mainId/100)&&row.bound!=='maximum');
+      const conditionalOnly=build.conditionalMainStatIds?.[5]?.includes(mainId)&&!build.mainStatIds?.[5]?.includes(mainId);
+      if(conditionalOnly&&!build.slot5Guide?.conditions?.[mainId]?.minPanel&&!deficit)return false;
+      return !top?.length||top.includes(mainId)||deficit;
+    });
+    const main=tunable.sort((a,b)=>tuningKey(b,'gain',gains)-tuningKey(a,'gain',gains)||b.gain-a.gain||b.chance-a.chance)[0];
+    result.slots.push({slot,setId,mainId:main?.mainId??null,mains,
       gain:Math.min(...gains),gainMax:Math.max(...gains),randomChance:slotChance/6,randomChanceMax:slotChanceMax/6,slotChance,slotChanceMax,
-      mainChance:main.chance,mainChanceMax:Math.max(main.initial3.chance,main.initial4.chance),
-      mainLift:tuningKey(main,'chance',chances),tuningGain:tuningKey(main,'gain',gains)});
+      mainChance:main?.chance??null,mainChanceMax:main?Math.max(main.initial3.chance,main.initial4.chance):null,
+      mainLift:main?tuningKey(main,'chance',chances):null,tuningGain:main?tuningKey(main,'gain',gains):0});
   }
   if(!result.slots.length){result.status='unknown';result.reason='missing-set';return result;}
   // Treat rounding noise as a tie and prefer a slot already changed by the

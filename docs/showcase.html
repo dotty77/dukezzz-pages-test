@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f5f6fb">
   <title>角色练度 · DUKE</title>
-  <script src="resource-cache.js?v=20261121-pages-disc-profile-1" data-cache-build="b625735c5f39450f1dceb32f30b25a53b17f47beb97bdee0e22f0e9171343988"></script>
+  <script src="resource-cache.js?v=20261121-pages-equipment-scope-1" data-cache-build="607d1639100dd4eddb00f7140d3e471ca66c7e69bd89b28cbc85e9e1f5dc16e7"></script>
   <script src="theme.js?v=20260909-version-3-2-1"></script>
   <link rel="icon" href="assets/brand/duke-patrick-sketch-v1-132.png?v=20261009-logo-1" type="image/png">
   <link rel="stylesheet" href="site-ui.css?v=20260909-version-3-2-1">
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="agents.css?v=20261119-v34-preview-launch-1">
   <link rel="stylesheet" href="site-nav.css?v=20261001-planner-tuning-1">
   <link rel="stylesheet" href="showcase.css?v=20261118-disc-context-score-launch-1">
-<script src="i18n.js?v=20261120-v34-reveal-launch-1"></script><link rel="stylesheet" href="i18n.css?v=20260919-site-refresh-1"><link rel="stylesheet" href="tool-directory.css?v=20261118-reviewed-ui-launch-1"><script defer src="tool-directory.js?v=20261118-reviewed-ui-launch-1"></script><meta name="robots" content="noindex,nofollow"><link rel="stylesheet" href="pages-test.css?v=20261121-pages-disc-profile-1"><script src="pages-test.js?v=20261121-pages-disc-profile-1" defer></script></head>
+<script src="i18n.js?v=20261120-v34-reveal-launch-1"></script><link rel="stylesheet" href="i18n.css?v=20260919-site-refresh-1"><link rel="stylesheet" href="tool-directory.css?v=20261118-reviewed-ui-launch-1"><script defer src="tool-directory.js?v=20261118-reviewed-ui-launch-1"></script><meta name="robots" content="noindex,nofollow"><link rel="stylesheet" href="pages-test.css?v=20261121-pages-equipment-scope-1"><script src="pages-test.js?v=20261121-pages-equipment-scope-1" defer></script></head>
 <body class="tuning-page agents-page showcase-page">
   <header class="site-header">
     <a class="site-brand" href="./" aria-label="DUKE首页"><img class="brand-logo" src="assets/brand/duke-patrick-sketch-v1-132.png?v=20261009-logo-1" width="44" height="44" alt="" aria-hidden="true"><span class="site-brand-copy"><b>DUKE</b><small>绝区零<span aria-hidden="true"> · </span>贝果计划</small></span></a>
@@ -27,21 +27,20 @@
     <nav class="agent-page-switch" aria-label="代理人功能"><a href="agents.html">资料图鉴</a><a href="showcase.html" aria-current="page">角色练度</a><a href="disc-planner.html">驱动盘规划</a><a href="team.html">配队检查</a><a href="materials.html">养成计算</a></nav>
     <section class="showcase-intro"><div><h1>角色练度分析</h1></div><span class="showcase-intro-symbol" aria-hidden="true">✦</span></section>
     <section class="panel showcase-query" aria-label="读取公开展柜">
-      <form id="showcase-form"><label for="showcase-uid">绝区零游戏 UID</label><div class="showcase-input-row"><input id="showcase-uid" type="text" inputmode="numeric" autocomplete="off" maxlength="10" placeholder="输入游戏中的 UID" pattern="[1-9][0-9]{5,9}" required aria-describedby="showcase-query-note"><button id="showcase-query" class="primary-button" type="submit">查询练度</button><button id="showcase-demo" type="button">查看示例</button></div></form>
-      <p id="showcase-query-note" data-i18n-en="Reads only your public showcase through Enka. No account password is needed; game data is unchanged.">仅通过 Enka 读取公开展柜，无需账号密码，不会修改游戏数据。</p>
-      <details class="showcase-instructions"><summary>为什么只查到部分角色？怎么开启展示？</summary><ol><li>在游戏主菜单进入个人主页，编辑代理人展示，放入想查询的角色。</li><li>开启“显示角色详情”。UID 查询只能读取公开展柜，通常最多 8 位。</li><li>更换展示角色或装备后，等待游戏展柜同步。查询结果会显示上游缓存倒计时，到期后可点击“刷新展柜”；到期不保证马上读到游戏内的修改。</li></ol><p>这是公开展柜查询，不会获取你账号里全部角色或 HoYoLAB 的私人战绩。</p><a href="https://enka.network/?zzz" target="_blank" rel="noreferrer">Enka Network ↗</a></details>
+      <form id="showcase-form"><label for="showcase-uid" data-i18n-en="Public showcase UID">公开展柜 UID</label><div class="showcase-input-row"><input id="showcase-uid" type="text" inputmode="numeric" autocomplete="off" maxlength="10" pattern="[1-9][0-9]{5,9}" required aria-describedby="showcase-query-note"><button id="showcase-query" class="primary-button" type="submit">查询练度</button><button id="showcase-demo" type="button">查看示例</button></div></form>
+      <details class="showcase-instructions"><summary data-i18n-en="Showcase settings">展柜设置</summary><p id="showcase-query-note" data-i18n-en="Edit your public showcase on your in-game profile and enable character details. It usually holds up to 8 agents.">在游戏个人主页编辑公开展柜，开启“显示角色详情”，通常最多展示 8 位代理人。</p><a href="https://enka.network/?zzz" target="_blank" rel="noreferrer">Enka Network ↗</a></details>
       <p id="showcase-status" role="status" aria-live="polite"></p>
     </section>
     <div id="showcase-empty" hidden></div>
     <div id="showcase-result" hidden>
-      <div id="showcase-demo-banner" class="demo-banner" hidden><p><strong>虚构练度示例</strong><span data-i18n-en="Fictional data; not a real player.">虚构数据，不对应真实玩家。</span></p></div>
+      <div id="showcase-demo-banner" class="demo-banner" hidden><p><strong data-i18n-en="Fictional example">虚构练度示例</strong></p></div>
       <div class="showcase-profile"><div><h2 id="showcase-nickname"></h2><p id="showcase-profile-info"></p></div><span id="showcase-updated"></span></div>
       <section id="showcase-refresh-panel" class="showcase-refresh-panel" aria-label="展柜刷新" hidden><div><p id="showcase-cache-countdown" class="showcase-cache-countdown" role="timer" aria-live="off"></p><p class="showcase-refresh-note" data-i18n-en="An expired cache may still return unchanged game data. This page does not query automatically.">缓存到期不代表游戏资料已同步；本页不会自动查询。</p><p id="showcase-previous-data" class="showcase-previous-data" hidden>本次查询未成功，下方保留的是上次数据。</p></div><button id="showcase-refresh" type="button" aria-describedby="showcase-cache-countdown">刷新展柜</button></section>
       <nav id="showcase-agents" class="showcase-agent-tabs" aria-label="选择展示角色"></nav>
       <article id="showcase-agent-detail"></article>
     </div>
-    <footer class="agents-footer"><p>公开展柜由 Enka Network 提供，游戏图像与数据 © miHoYo / HoYoverse。词条方案为本站搭配参考。</p><a href="agent-sources.md" target="_blank" rel="noreferrer">资料来源与计算范围 ↗</a></footer>
+    <footer class="agents-footer"><p data-i18n-en="Showcase data from Enka Network. Game artwork and data © miHoYo / HoYoverse.">展柜数据来自 Enka Network。游戏图像与数据 © miHoYo / HoYoverse。</p><a href="agent-sources.md" target="_blank" rel="noreferrer">资料来源与计算范围 ↗</a></footer>
   </main>
-  <script type="module" src="showcase.js?v=20261118-disc-context-score-launch-1"></script>
+  <script type="module" src="showcase.js?v=20261121-equipment-scope-launch-1"></script>
 </body>
 </html>

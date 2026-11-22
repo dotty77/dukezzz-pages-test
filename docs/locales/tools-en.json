@@ -914,7 +914,7 @@
     "穿透二件套收益需结合队伍；多个二件选项只选一组。": "The PEN 2-piece set’s value depends on the team. Choose only one 2-piece option.",
     "上述暴伤转换、核心状态暴击和锐暴均为角色技能机制，未作为无条件加成混入基础装备面板。": "The CRIT DMG conversion, state-dependent Core CRIT bonus, and Laceration are skill mechanics; they are not mixed into base equipment stats as unconditional bonuses.",
     "荆棘玫瑰的暴击增益分别要求初始防御达到1000/1800；主属性选择需结合等级、音擎、套装和队友，不是唯一最优方案。": "Thorned Rose’s CRIT bonuses require 1,000/1,800 initial DEF respectively. Main stat choices depend on level, W-Engine, sets, and teammates; no single universally optimal build is claimed.",
-    "5号穿透率仅作条件备选；需结合队伍减防、穿透和其他增益判断。攻击力词条不作为该防御缩放方案的有效词条。": "Slot 5 PEN Ratio is only a conditional alternative; evaluate team DEF reduction, PEN, and other bonuses. ATK rolls are not useful for this DEF-scaling build.",
+    "5号优先穿透率，电伤和防御也可选。队伍减防会改变穿透的收益。攻击力词条不作为该防御缩放方案的有效词条。": "Prioritize PEN Ratio in slot 5. Electric DMG and DEF are alternatives, and team DEF reduction affects the value of PEN. ATK rolls do not contribute to this DEF-scaling build.",
     "锐暴伤害、锐能自动累积和锐能获得效率不是当前驱动盘可刷的副词条，不加入有效份数统计。": "Laceration DMG, Automatic Sharpness Accumulation, and Sharpness Generation Rate are not currently obtainable Drive Disc substats and do not count toward useful rolls.",
     "这是依据正式技能与套装触发条件整理的机制参考，未验证不同影画、音擎、队伍和敌人下的最优伤害。": "This mechanics reference follows live skills and set activation conditions. Maximum damage across different Mindscapes, W-Engines, teams, and enemies has not been verified.",
     "暴击128.9%限定专武方案；来源另建议计入核心、音擎、队友后靠近200%。": "The 128.9% CRIT Rate reference assumes the signature W-Engine. The source also suggests approaching 200% after Core Skill, W-Engine, and teammate effects.",

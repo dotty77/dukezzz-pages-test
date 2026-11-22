@@ -34,10 +34,7 @@ function checkMain(disc, ds, build) {
   const main = list(disc.mainStats);
   const property = main.length === 1 ? id(main[0]?.propertyId) : null;
   if (property === null || !MAIN_IDS[disc.slot]?.has(property)) return 'unknown';
-  if (disc.slot === 5 && property === 23103) {
-    if (build.role === '命破') return 'ineffective';
-    return ds.mainStatCheck?.matched === true ? 'matched' : 'conditional';
-  }
+  if (disc.slot === 5 && property === 23103 && build.role === '命破') return 'ineffective';
   if (ds.mainStatCheck?.conditional) return 'conditional';
   return ds.mainStatCheck?.matched === true ? 'matched'
     : ds.mainStatCheck?.matched === false ? 'review' : 'unknown';
@@ -141,11 +138,5 @@ export function evaluateArticleRules(agent, build, score, selection) {
     if (typeof reason === 'string' && reason.trim()) basis.push(`当前角色依据：${reason.slice(0, 640)}`);
     if (typeof caution === 'string' && caution.trim() && caution !== reason) basis.push(`角色条件：${caution.slice(0, 640)}`);
   }
-  const fifthAdvice = [
-    '5 号盘要结合角色、音擎、队友与敌人比较；不能仅凭面板，把属性增伤、攻击/生命或穿透率固定排成同一顺序。',
-    '穿透辅助会改变穿透率收益；减防、无视防御与战斗增伤也会影响比较。这里没有完整战斗条件，不使用攻略中的简化阈值自动判优。',
-  ];
-  if (referenceKnown && build.role === '命破') fifthAdvice.push('命破的贯穿伤害不吃敌人防御，穿透率与穿透值不作为贯穿输出的有效属性；具体生命/攻击缩放仍按该角色技能。');
-  else fifthAdvice.push('5 号穿透率即使不在当前参考清单，也先标为需结合队伍；合法属性不直接判为错误。');
-  return {discs: output, basis, fifthAdvice};
+  return {discs: output, basis};
 }

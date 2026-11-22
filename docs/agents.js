@@ -1,5 +1,6 @@
 import portraitAssets from './agent-card-portraits.js?v=20261107-refresh-launch-1';
 import {renderGraduation} from './agent-graduation.js?v=20261107-refresh-launch-1';
+import {renderSlotFiveGuide,renderSlotFiveSources} from './disc-panel-display.js?v=20261121-equipment-scope-launch-1';
 import {betaTabsFor,renderBetaTab} from './agent-beta.js?v=20261120-sunbringer-rev2-launch-1';
 const $ = id => document.getElementById(id);
 const el = (tag, cls = '', text = '') => { const node = document.createElement(tag); node.className = cls; node.textContent = text; return node; };
@@ -31,7 +32,7 @@ const assets = {
   directory:'agent-previews.json?v=20261120-beta345-launch-1',
   details:'agent-details.json?v=20261111-refresh-launch-1',
   equipment:'agent-equipment.json?v=20261111-refresh-launch-1',
-  builds:'agent-builds.json?v=20261111-refresh-launch-1',
+  builds:'agent-builds.json?v=20261121-equipment-scope-launch-1',
   graduation:'agent-graduation.json?v=20261027-agents-launch-1',
   beta:'agent-beta.json?v=20261120-sunbringer-rev2-launch-1',
 };
@@ -610,7 +611,7 @@ function renderDiscs(agent) {
   const frag=new DocumentFragment(),build=builds.agents?.[agent.id] || equipment.agents?.[agent.id]?.build;
   frag.append(sectionTitle('驱动盘搭配','收益随队伍与词条变化。'));
   if(!build){frag.append(note('这位代理人的驱动盘搭配尚待核对。'));return frag;}
-  const planner=el('a','agent-source-note','逐号位规划驱动盘与调律材料 ↗');planner.href=`disc-planner.html?agent=${encodeURIComponent(agent.id)}&v=20260916-english-2`;frag.append(planner);
+  const planner=localized('a','agent-source-note','查看刷盘建议 ↗','View farming advice ↗');planner.href=`disc-planner.html?agent=${encodeURIComponent(agent.id)}#disc-farming`;frag.append(planner);
   frag.append(el('span','agent-recommend-label','机制搭配参考'));
   for(const reason of values(build.reasons || build.notes))frag.append(prose(reason));
   const plans=build.sets || [],planArea=el('div','agent-build-sets');
@@ -628,10 +629,21 @@ function renderDiscs(agent) {
   renderPlan(0);frag.append(planArea,el('h4','','主词条参考'));
   const table=el('table','agent-stats-table'),head=el('thead'),row=el('tr');row.append(el('th','','位置'),el('th','','推荐主词条'));head.append(row);table.append(head);const body=el('tbody');
   const main=Array.isArray(build.mainStats)?build.mainStats:Object.entries(build.mainStats||{}).map(([slot,value])=>({slot,value:values(value).join(' / ')}));
-  for(const entry of main){const r=el('tr'),cell=el('td','',text(entry.value));if(entry.reason)cell.append(el('small','',entry.reason));r.append(el('td','',`${entry.slot} 号位`),cell);body.append(r);}table.append(body);frag.append(table);
+  for(const entry of main){
+    const r=el('tr'),cell=el('td','',text(entry.value));
+    const guide=Number(entry.slot)===5&&renderSlotFiveGuide(build);
+    if(guide)cell.replaceChildren(guide);
+    if(entry.reason)cell.append(el('small','',entry.reason));
+    r.append(el('td','',`${entry.slot} 号位`),cell);body.append(r);
+  }
+  table.append(body);frag.append(table);
   if(build.subStats?.length){const card=el('div','agent-substats');card.append(el('strong','','副词条参考'),document.createTextNode(build.subStats.join(' · ')));frag.append(card);}
   for(const caution of values(build.cautions))frag.append(el('p','agent-source-note',caution));
-  if(build.evidence?.length){const proof=el('details');proof.append(el('summary','agent-source-note','搭配依据'));for(const evidence of build.evidence){if(evidence.name)proof.append(el('h4','',evidence.name));proof.append(prose(evidence.text,evidence.textEn));}frag.append(proof);}
+  if(build.evidence?.length||build.slot5Guide){
+    const proof=el('details');proof.append(el('summary','agent-source-note','搭配依据'),renderSlotFiveSources(build.slot5Guide));
+    for(const evidence of build.evidence||[]){if(evidence.name)proof.append(el('h4','',evidence.name));proof.append(prose(evidence.text,evidence.textEn));}
+    frag.append(proof);
+  }
   return frag;
 }
 function cachedRead(key,read) {

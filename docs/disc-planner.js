@@ -5,29 +5,19 @@ import {mountMiyousheBrowserSync} from './mys-browser-sync.js?v=20261114-canonic
 import {mountHoyolabSync} from './hoyolab-sync.js?v=20261114-canonical-sync-1';
 import {officialToConfiguration} from './official-equipment.js?v=20261118-disc-context-score-launch-1';
 import {scoreEquippedDisc,getDiscScoreProfile,SCORE_RULES,withDiscScoreDefaults} from './disc-score.js?v=20261118-disc-context-score-launch-1';
-import {newConfiguration,normalizedToConfiguration,validateConfiguration,calculatePanel,formatProperty,resolveTargets,compareDisc,inspectDiscRolls,evaluateDiscContributions} from './disc-planner-core.js?v=20261118-disc-context-score-launch-1';
-import {evaluateContext,assessUsable} from './disc-context.js?v=20261027-agents-launch-1';
-import {renderPanelEffects,renderDiscFitScore,discFitMethod,formatPanelValue} from './disc-panel-display.js?v=20261118-reviewed-ui-launch-1';
+import {newConfiguration,normalizedToConfiguration,validateConfiguration,calculatePanel,formatProperty,resolveTargets,inspectDiscRolls,evaluateDiscContributions} from './disc-planner-core.js?v=20261121-equipment-scope-launch-1';
+import {evaluateContext,assessUsable} from './disc-context.js?v=20261121-equipment-scope-launch-1';
+import {renderPanelEffects,renderDiscFitScore,discFitMethod,formatPanelValue,renderSlotFiveGuide,renderSlotFiveSources} from './disc-panel-display.js?v=20261121-equipment-scope-launch-1';
 import {applyPlanningScope} from './disc-scope.js?v=20260913-disc-planner-1';
 const $=id=>document.getElementById(id),el=(tag,cls='',text='')=>{const n=document.createElement(tag);n.className=cls;n.textContent=text;return n;};
-let data,builds,equipment,details,graduation,mechanics,config,alternative='',planIndex=0,team=['',''],tier='small',allocation=null,busy=false,controller,cacheUntil=0,cacheUid='',snapshot=null;
-let planningMode='improve',planningScope='solo',searchTask=null,searchRevision=0,slotReview=null;
-let activeImport=null,preferredAgentId='';
-let planRequested=false,refreshTimer;
-let farmNotice='';
-function queuePlanRefresh(){
-  clearTimeout(refreshTimer);
-  if(planRequested||config.discs.some(d=>d.subs.length))refreshTimer=setTimeout(()=>generate(false),400);
-}
+let data,builds,equipment,details,graduation,mechanics,abilityCatalog,config,alternative='',planIndex=0,team=['',''],tier='small',busy=false,controller,cacheUntil=0,cacheUid='';
+let planningScope='solo',activeImport=null,preferredAgentId='';
+let farmWorker=null,farmTimer,farmResult={status:'unknown'};
 function scrollToDiscSection(id,focus=false){
   const target=document.getElementById(id);if(!target)return;
   if(focus){target.tabIndex=-1;target.focus({preventScroll:true});}
   target.style.scrollMarginTop=`${Math.ceil(document.querySelector('.site-header')?.getBoundingClientRect().height||74)+16}px`;
   target.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});
-}
-function revealSlotResults(){
-  const revision=searchRevision;
-  requestAnimationFrame(()=>{if(revision===searchRevision&&slotReview)scrollToDiscSection('disc-allocation-status',true);});
 }
 function mountBuildSettings(){
   const dialog=$('disc-character'), trigger=$('disc-settings-open');
@@ -80,6 +70,7 @@ function savedConfiguration(value){
   for(const key of ['level','promotion','core','cinema','weaponLevel','weaponBreak','refinement'])result[key]=value[key];
   if(value.level!==60||value.promotion!==6||value.core!==6||value.weaponLevel!==60||value.weaponBreak!==5)return null;
   if(Object.hasOwn(value,'route')){if(!['','critical','anomaly','crit'].includes(value.route))return null;result.route=value.route;}
+  if(value.awakenedAbility===true)result.awakenedAbility=true;
   result.discs=[];
   for(const disc of value.discs){
     if(!object(disc)||!Array.isArray(disc.subs)||disc.subs.length>4||id(disc.setId)===null||typeof disc.locked!=='boolean')return null;
@@ -94,13 +85,14 @@ function savedPlan(value){
   if(!value||typeof value!=='object'||value.schema!=='duke-disc-planner-current-1')return null;
   const configuration=savedConfiguration(value.config);if(!configuration)return null;
   if(!Array.isArray(value.team)||value.team.length!==2||value.team.some(id=>typeof id!=='string'||id!==''&&!Object.hasOwn(details.agents,id)))return null;
-  if(!['usable','small','large'].includes(value.tier)||!['improve','fresh'].includes(value.mode))return null;
+  if(!['usable','small','large'].includes(value.tier))return null;
   const alt=mechanics.agents[configuration.id]?.alternatives?.find(a=>a.id===value.alternative);
   if(typeof value.alternative!=='string'||value.alternative!==''&&!alt)return null;
   const plans=alt?.sets||builds.agents[configuration.id]?.sets||[];
   if(!Number.isInteger(value.planIndex)||value.planIndex<0||value.planIndex>=Math.max(1,plans.length))return null;
   const scope=value.team.some(Boolean)?'team':'solo';if(value.scope!==scope)return null;
-  return {schema:'duke-disc-planner-current-1',config:configuration,team:[...value.team],scope,alternative:value.alternative,tier:value.tier,mode:value.mode,planIndex:value.planIndex};
+  // Older releases require this field when restoring a saved build.
+  return {schema:'duke-disc-planner-current-1',config:configuration,team:[...value.team],scope,alternative:value.alternative,tier:value.tier,mode:'improve',planIndex:value.planIndex};
 }
 function readSavedPlan(){
   try{
@@ -112,7 +104,7 @@ function saveCurrentPlan(){
   if(!planStorageReady)return;
   try{
     const count=currentBuild().sets?.length||1;
-    const value=savedPlan({schema:'duke-disc-planner-current-1',config,team,scope:planningScope,alternative,tier,mode:planningMode,planIndex:Math.min(planIndex,count-1)});
+    const value=savedPlan({schema:'duke-disc-planner-current-1',config,team,scope:planningScope,alternative,tier,planIndex:Math.min(planIndex,count-1)});
     if(!value)return;
     const raw=JSON.stringify(value);if(raw.length>SAVED_PLAN_LIMIT||raw===lastSavedPlan)return;
     localStorage.setItem(SAVED_PLAN_KEY,raw);lastSavedPlan=raw;
@@ -132,7 +124,7 @@ function searchableTeammateField(label,agents,value,onchange,id){
   const entries=[{id:'',name:'未选择'},...agents.map(a=>({id:String(a.id),name:a.name,fullName:a.fullName||''}))];
   let selected=String(value||''),matches=[],optionNodes=[],active=-1,opened=false;
   caption.htmlFor=id;input.id=id;input.type='text';input.autocomplete='off';input.spellcheck=false;
-  input.placeholder='输入名字搜索';input.setAttribute('role','combobox');input.setAttribute('aria-autocomplete','list');
+  input.setAttribute('role','combobox');input.setAttribute('aria-autocomplete','list');
   input.setAttribute('aria-expanded','false');input.setAttribute('aria-controls',`${id}-listbox`);
   list.id=`${id}-listbox`;list.setAttribute('role','listbox');list.setAttribute('aria-label',`${label}候选`);list.hidden=true;
   toggle.tabIndex=-1;toggle.setAttribute('aria-label',`展开${label}候选`);
@@ -184,6 +176,8 @@ function currentBuild(){
   const b=clone(builds.agents[config.id]),alt=mechanics.agents[config.id]?.alternatives?.find(a=>a.id===alternative);
   if(alt){
     b.mainStatIds=alt.mainStatIds;
+    b.conditionalMainStatIds=alt.conditionalMainStatIds;
+    b.slot5Guide=alt.slot5Guide;
     b.effectiveSubstats={...b.effectiveSubstats,primaryIds:alt.primaryIds,secondaryIds:alt.secondaryIds,mode:alt.primaryIds.length?'core-substats':'supplement-only'};
     b.reasons=[alt.label,...alt.conditions];b.alternativeId=alt.id;b.alternativeSource=alt.sourceUrl;
     b.personalDamageSubstatsAreOptional=!!alt.personalDamageSubstatsAreOptional;
@@ -192,40 +186,44 @@ function currentBuild(){
   }
   return withDiscScoreDefaults(b);
 }
-function currentContext(){return evaluateContext({config,team,scope:planningScope,build:currentBuild(),profile:graduation.agents[config.id],agent:details.agents[config.id],details,alternative:mechanics.agents[config.id]?.alternatives?.find(a=>a.id===alternative)});}
+function currentContext(){return evaluateContext({config,team,scope:planningScope,build:currentBuild(),profile:graduation.agents[config.id],agent:details.agents[config.id],details,abilityAgents:abilityCatalog?.agents,alternative:mechanics.agents[config.id]?.alternatives?.find(a=>a.id===alternative)});}
 function checkList(checks){const root=el('div','disc-context-checks');for(const c of checks){const card=el('details',`disc-context-check is-${c.status}`);card.dataset.check=c.id;card.open=c.status==='unmet';card.append(el('summary','',`${c.status==='met'?'✓ 已确认':c.status==='excluded'?'本次不核对':c.status==='unmet'?'需调整':'待确认'} · ${c.label}`),el('p','',c.reason));root.append(card);}return root;}
-function setSearchControls(searching,background=false){$('disc-generate').disabled=searching&&!background;$('disc-compare').disabled=searching&&!background;$('disc-search-cancel').hidden=!searching;}
-function cancelSearch(message=''){
-  clearTimeout(refreshTimer);
-  searchRevision++;
-  if(searchTask){const task=searchTask;searchTask=null;task.worker.terminate();task.reject(new DOMException('搜索已取消','AbortError'));}
-  setSearchControls(false);if(message)$('disc-allocation-status').textContent=message;
+function queueFarmRefresh(){
+  clearTimeout(farmTimer);
+  farmWorker?.terminate();
+  farmWorker=null;
+  let status='calculating';
+  if(validateConfiguration(config,data).length)status='invalid';
+  else if(tier==='usable')status='usable';
+  else if(!config.discs.some(d=>!d.absent&&d.subs.length))status='unknown';
+  farmResult={status};
+  updateFarmView();
+  if(status==='calculating')farmTimer=setTimeout(estimateFarming,250);
 }
-function searchPlan(operation,selected=null,background=false){
-  cancelSearch();setSearchControls(true,background);
-  const revision=searchRevision;
-  return new Promise((resolve,reject)=>{
-    let worker;
-    try{worker=new Worker(new URL('./disc-planner-worker.js?v=20261118-disc-context-score-launch-1',import.meta.url),{type:'module'});}
-    catch(error){setSearchControls(false);reject(error);return;}
-    searchTask={worker,reject,revision};
-    const finish=()=>{worker.terminate();if(searchTask?.revision===revision){searchTask=null;setSearchControls(false);}};
-    worker.onmessage=({data:message})=>{
-      if(revision!==searchRevision){finish();reject(new DOMException('配置已改变','AbortError'));return;}
-      finish();if(message.error)reject(Error(message.error));else resolve(message.result);
-    };
-    worker.onerror=event=>{event.preventDefault();finish();reject(revision===searchRevision?Error('方案搜索未能完成，请刷新页面后重试。'):new DOMException('配置已改变','AbortError'));};
-    try{worker.postMessage({operation,config:clone(config),data,rows:targetRows().rows,build:currentBuild(),allocation:selected,options:{mode:planningMode,scope:planningScope,useReference:true,planIndex,pinFarmMains:!!selected}});}
-    catch(error){finish();reject(error);}
-  });
+function estimateFarming(){
+  let worker;
+  const finish=result=>{
+    if(worker&&worker!==farmWorker)return;
+    worker?.terminate();
+    farmWorker=null;
+    farmResult=result;
+    updateFarmView();
+  };
+  try{
+    worker=new Worker(new URL('./disc-planner-worker.js?v=20261121-equipment-scope-launch-1',import.meta.url),{type:'module'});
+    farmWorker=worker;
+    worker.onmessage=({data:message})=>finish(message.result||{status:'unavailable'});
+    worker.onerror=event=>{event.preventDefault();finish({status:'unavailable'});};
+    worker.onmessageerror=()=>finish({status:'unavailable'});
+    worker.postMessage({operation:'farming',config,data,rows:targetRows().rows,build:currentBuild(),options:{scope:planningScope,useReference:true,planIndex}});
+  }catch{finish({status:'unavailable'});}
 }
-function invalidate(){cancelSearch();allocation=null;slotReview=null;farmNotice='';$('disc-allocation-status').textContent='';$('disc-candidates').replaceChildren();updateTargets();updateSlotGoals();updateDiscScores();saveCurrentPlan();queuePlanRefresh();}
+function invalidate(){updateTargets();updateDiscScores();saveCurrentPlan();queueFarmRefresh();}
 function setAgent(id,imported=null,rememberAgent=true){
-  cancelSearch();planRequested=!!imported;
   if(!data.agents[id])throw Error('该角色尚未收录正式服配装数据');
   if($('disc-slot-dialog').open)$('disc-slot-dialog').close();
   preferredAgentId=rememberAgent?String(id):'';
-  config=maximumPlanningLevels(imported||newConfiguration(id,builds.agents[id],equipment,data));alternative='';planIndex=0;setPlanningTeam([]);snapshot=imported?clone(config):null;allocation=null;slotReview=null;
+  config=maximumPlanningLevels(imported||newConfiguration(id,builds.agents[id],equipment,data));alternative='';planIndex=0;setPlanningTeam([]);
   $('disc-file-status').textContent='';savedPlanStatus();
   const url=new URL(location.href);url.searchParams.set('agent',id);history.replaceState(null,'',url.pathname+url.search+url.hash);
   renderAll();
@@ -245,12 +243,15 @@ function renderConfig(){
   const availability=el('p','disc-note');availability.id='disc-availability';availability.style.gridColumn='1 / -1';target.append(availability);renderAvailability();
   renderTeamControls();
 }
+function changeTeammate(slot,id){
+  const next=[...team];next[slot]=id;
+  setPlanningTeam(next);invalidate();renderTeamControls();renderEvidence();
+}
 function renderTeamControls(){
   const ctx=$('disc-context-controls');ctx.replaceChildren();
-  for(let i=0;i<2;i++)ctx.append(searchableTeammateField(`队友 ${i+1}`,Object.values(details.agents).filter(a=>String(a.id)!==String(config.id)),team[i],v=>{const next=[...team];next[i]=v;setPlanningTeam(next);invalidate();renderTeamControls();renderEvidence();},`disc-teammate-${i+1}`));
+  for(let i=0;i<2;i++)ctx.append(searchableTeammateField(`队友 ${i+1}`,Object.values(details.agents).filter(a=>String(a.id)!==String(config.id)),team[i],v=>changeTeammate(i,v),`disc-teammate-${i+1}`));
   ctx.append(selectField('输出方向（有双路线参考时）',[['','按当前机制方案'],['anomaly','异常路线'],['critical','双暴路线']],config.route||'',v=>{config.route=v;invalidate();}));
-  const scopeNote=$('disc-scope-note');scopeNote.dataset.i18nEn=planningScope==='solo'?'Teammates are optional. Leave both empty to plan your personal build.':'Roster requirements are checked; combat buffs still need their actual triggers.';scopeNote.textContent=planningScope==='solo'?'队友可选；不选时按个人配装规划。':'已按队友核对条件；战斗增益仍需实际触发。';
-  const generate=$('disc-generate');generate.dataset.i18nEn='Plan disc changes';generate.textContent='规划换盘方案';
+  const scopeNote=$('disc-scope-note');scopeNote.hidden=planningScope==='solo';scopeNote.replaceChildren(uiText('span','仅核对队伍条件，战斗增益需另行触发。','Team requirements checked. Combat buffs require their own triggers.'));
 }
 function renderPlans(){
   const root=$('disc-plan-controls'),b=currentBuild(),alts=mechanics.agents[config.id]?.alternatives||[];root.replaceChildren();
@@ -259,26 +260,16 @@ function renderPlans(){
   const p=plans[planIndex]||plans[0];
   if(p){root.append(button('将此套装应用到未保留号位',applySetPlan));if(p.twoPieceIds?.length>1)root.append(selectField('二件套候选',p.twoPieceIds.map(id=>[id,equipment.discs[id]?.name||id]),config.discs[5].setId,v=>{for(const d of config.discs.filter(d=>d.slot>=5&&!d.locked))d.setId=v;invalidate();renderSlots();renderEvidence();}));}
   const notes=$('disc-build-notes');notes.replaceChildren(textList([...(b.reasons||[]),...(p?.conditions||[])]));
-  notes.append(el('p','disc-muted','套装按触发条件推荐；选择顺序不代表所有配队下的伤害排名。四件套和二件套可以放在不同号位，下面可逐盘调整。'));
   if(b.alternativeSource)notes.append(link(b.alternativeSource,'查看此流派原文 ↗'));
 }
 function applySetPlan(){const p=currentBuild().sets?.[planIndex];if(!p)return;for(const d of config.discs)if(!d.locked)d.setId=String(d.slot<=4?p.fourPieceId:p.twoPieceIds?.[0]||'');invalidate();renderPlans();renderSlots();renderEvidence();}
 function renderTiers(){
   const root=$('disc-tier-controls'),moveFocus=root.contains(document.activeElement);root.replaceChildren();
-  for(const [id,title,desc]of [['usable','能用','先匹配套装、主属性和功能条件；不强求每盘固定份数。'],['small','小毕业参考','以逐角色攻略的区间下限规划，核对当前配置条件。'],['large','大毕业参考','以攻略区间上沿作为进阶目标；没有上沿时保留原目标。']]){
+  for(const [id,title]of [['usable','能用'],['small','小毕业参考'],['large','大毕业参考']]){
     const b=button('',()=>{tier=id;renderTiers();invalidate();},'disc-tier');
     b.dataset.tier=id;b.setAttribute('aria-pressed',String(tier===id));b.append(el('strong','',title));root.append(b);
-    if(tier===id){
-      $('disc-tier-description').textContent=desc;
-      if(moveFocus)b.focus({preventScroll:true});
-    }
+    if(tier===id&&moveFocus)b.focus({preventScroll:true});
   }
-}
-function renderStrategy(){
-  $('disc-strategy-controls').replaceChildren(selectField('规划方式',[
-    ['improve','优先保留现有盘'],['fresh','重新规划未锁定号位']
-  ],planningMode,value=>{planningMode=value;invalidate();renderStrategy();},'disc-planning-mode'));
-  $('disc-strategy-note').textContent=planningMode==='improve'?'先检查现有配装；需要补属性时，从更少的换盘号位开始搜索。勾选“保留此盘”的号位始终不变。':'为未锁定号位重新生成目标，用于查看培养方向；已录入的原盘保留，可切回优先保留模式比较。';
 }
 function targetRows(){
   const alt=mechanics.agents[config.id]?.alternatives?.find(a=>a.id===alternative),c={...config};
@@ -286,69 +277,66 @@ function targetRows(){
   const result=resolveTargets(c,details.agents[config.id],graduation.agents[config.id],equipment,data,tier),context=currentContext();
   const scoped=applyPlanningScope({scope:planningScope,context,rows:result.rows.map(r=>({...r,contextBlocked:context.blockedTargetKeys.includes(r.key)}))});return {...result,...scoped};
 }
-function excludedTargetDetails(rows){
-  const box=el('details','disc-source-details disc-excluded-targets');
-  box.append(uiText('summary',`组队参考 · ${rows.length} 项单列`,`Team references (${rows.length})`));
-  for(const row of rows){
-    const line=el('p'),unit=row.unit||'';
-    line.append(el('strong','',row.label||name(row.group)),' ',uiText('span',`${row.target??''}${unit}`,`${row.target??''}${row.group===305?'/s':unit}`),' · ',
-      el('span','',row.scopeExclusionReason||'该目标依赖特定队伍条件。'));
-    if(row.scopeExclusionSource?.sourceUrl){
-      const source=link(row.scopeExclusionSource.sourceUrl,'角色机制依据 ↗');source.dataset.i18nEn='Agent mechanics reference ↗';line.append(' ',source);
-    }
-    box.append(line);
-  }
-  return box;
-}
-function targetGapText(row,panel){
-  const message=(zh,en)=>({zh,en});
-  if(row.applicable===false)return message('当前方案不适用','Not applicable to this build');
-  if(row.scopeExcluded)return message('选择队友后核对','Select teammates to check');
-  if(row.contextBlocked)return message('先核对配队条件','Check team requirements first');
-  if(!row.planning&&row.bound!=='maximum')return message('未列入本次目标','Not part of this target');
-  const reference=!row.comparable,combatReference=['in-combat','unspecified-combat-bonus'].includes(row.scope);
-  if(reference&&row.scope==='initial')return message('目标按核心 F 核定','Target assumes Core F');
-  if(reference&&!combatReference&&!['initial-reference-unqualified','signature-conditioned'].includes(row.scope))
-    return message('参考条件未明确，暂不比较','Reference conditions are unspecified');
-  const current=panel.values[row.group];
-  if(!Number.isFinite(current)||!Number.isFinite(row.targetRaw))return message('暂不能计算','Cannot calculate yet');
-  const property=data.properties[row.group],scale=property.percent?100:property.divisor||1;
-  // Compare at the precision shown in both numeric columns.
-  const delta=Math.round(current*100/scale)-Math.round(row.targetRaw*100/scale);
-  const amount=(Math.abs(delta)/100).toLocaleString('zh-CN',{maximumFractionDigits:2});
-  const zh=property.percent?`${amount} 个百分点`:amount+(row.group===305?'/秒':'');
-  const en=property.percent?`${amount} percentage points`:amount+(row.group===305?'/s':'');
-  if(combatReference){
-    if(delta===0)return message('当前面板等于战斗参考，战斗增益另计','Current stats match the combat reference before combat buffs');
-    return message(`当前面板${delta<0?'低于':'高于'}战斗参考 ${zh}，战斗增益另计`,
-      `Current stats are ${en} ${delta<0?'below':'above'} the combat reference before combat buffs`);
-  }
+const targetNumber = new Intl.NumberFormat('zh-CN', {maximumFractionDigits:2, useGrouping:false});
+const signedGap = new Intl.NumberFormat('zh-CN', {maximumFractionDigits:2, signDisplay:'exceptZero'});
+
+function targetAssessment(row,delta,partial){
+  if(row.applicable===false)return 'inactive';
+  if(row.scopeExcluded||row.contextBlocked)return 'pending';
+  if(!row.planning&&row.bound!=='maximum')return 'inactive';
+  if(delta===null)return 'pending';
+  if(['in-combat','unspecified-combat-bonus'].includes(row.scope))return 'combat';
+  if(!row.comparable&&!['initial-reference-unqualified','signature-conditioned'].includes(row.scope))return 'pending';
   if(row.bound==='maximum'){
-    if(delta>0)return message(reference?`高于参考上限 ${zh}`:`高于上限 ${zh}`,reference?`${en} above the reference ceiling`:`${en} above the ceiling`);
-    if(config.discs.some(d=>inspectDiscRolls(d,data).partial))return message('副属性未填全，上限待核对','Substats are incomplete; the ceiling is unverified');
-    return message(reference?'已录入值未超参考上限':'已录入值未超上限',reference?'Recorded value is within the reference ceiling':'Recorded value is within the ceiling');
+    if(delta>0)return 'over';
+    return partial?'pending':'met';
   }
-  if(reference)return delta<0?message(`低于参考 ${zh}`,`${en} below the reference`):delta>0?message(`高于参考 ${zh}`,`${en} above the reference`):message('与参考相同','Equal to the reference');
-  if(delta<0)return message(`按已录入值还差 ${zh}`,`${en} short based on recorded values`);
-  if(delta>0)return message(`高于目标 ${zh}`,`${en} above the target`);
-  return message('与目标相同','Equal to the target');
+  return delta<0?'short':'met';
 }
-function targetConditions(row,panel){
-  const cell=el('td','disc-target-conditions'),parts=[];
-  if(row.scopeExcluded)parts.push(['队伍条件目标；选好队友后自动核对','Team-dependent target; checked after teammates are selected']);
-  else if(row.comparable)parts.push(['初始 / 场外面板','Initial / out-of-combat stats']);
-  else if(row.scope==='initial')parts.push(['初始 / 场外面板；该目标按核心 F 核定','Initial / out-of-combat stats; this target assumes Core F']);
-  else if(row.scope==='signature-conditioned')parts.push(['专武方案参考；仅作数值对照','Signature W-Engine reference; numeric comparison only']);
-  else if(row.scope==='initial-reference-unqualified')parts.push(['攻略培养参考；原文未详述场内 / 场外','Build-guide reference; in/out-of-combat assumptions are unspecified']);
-  else if(['in-combat','unspecified-combat-bonus'].includes(row.scope))parts.push(['战斗参考；当前估算未计入完整战斗增益','Combat reference; the estimate does not include all combat buffs']);
-  else parts.push(['原攻略未明确比较条件','Comparison conditions are unspecified in the guide']);
-  if(row.contextBlocked&&!row.scopeExcluded)parts.push(['配队前提尚未满足或确认','Team requirements are unmet or unconfirmed']);
-  if(row.applicable===false)parts.push([row.requiresSignature?'当前未装备专武':'当前方案不适用',row.requiresSignature?'Signature W-Engine is not equipped':'Not applicable to this build']);
-  if(String(config.id)==='1611'&&row.key==='critRate')parts.push(['当前值已含暴伤转暴率，未加战斗增益','Current value includes CRIT DMG conversion, without combat buffs']);
-  for(const [zh,en]of parts){if(cell.childNodes.length)cell.append(el('br'));cell.append(uiText('span',zh,en));}
-  const notes=[...new Set([row.configurationNote,row.note,row.scopeExclusionReason].filter(Boolean))];
-  if(notes.length){const more=el('details','disc-source-details');more.append(uiText('summary','条件详情','Condition details'));for(const note of notes)more.append(el('p','',note));cell.append(more);}
-  return cell;
+function targetGap(row,current){
+  if(!Number.isFinite(current)||!Number.isFinite(row.target))return {delta:null,zh:'—',en:'—'};
+  const property=data.properties[row.group],scale=property.percent?100:property.divisor||1;
+  // Subtract the rounded column values so the gap matches what the player sees.
+  const delta=Number(targetNumber.format(current/scale))-Number(targetNumber.format(row.target));
+  const amount=signedGap.format(delta);
+  if(property.percent)return {delta,zh:amount+' 个百分点',en:amount+' pp'};
+  if(row.group===305)return {delta,zh:amount+'/秒',en:amount+'/s'};
+  return {delta,zh:amount,en:amount};
+}
+function targetNotes(rows){
+  // Show rules shared by several stats once, keeping each stat-specific note named.
+  const notes=new Map(),list=el('div','disc-target-notes');
+  for(const row of rows){
+    const add=(zh,en)=>{
+      if(!zh)return;
+      if(!notes.has(zh))notes.set(zh,{en,labels:new Set()});
+      notes.get(zh).labels.add(row.label);
+    };
+    if(row.scopeExcluded)add('选择队友后核对队伍目标。','Team targets require selected teammates.');
+    else if(row.comparable)add('比较场外面板。','Compares out-of-combat stats.');
+    else if(row.scope==='initial')add('场外面板按核心 F 核对。','The out-of-combat target assumes Core F.');
+    else if(row.scope==='signature-conditioned')add('参考值适用于专属音擎。','The benchmark assumes the signature W-Engine.');
+    else if(row.scope==='initial-reference-unqualified')add('攻略未注明场内或场外，以当前面板对照。','The guide does not specify combat conditions. Comparison uses current stats.');
+    else if(['in-combat','unspecified-combat-bonus'].includes(row.scope))add('战斗参考与当前面板的差值未计完整战斗增益。','Combat comparisons use current stats before all combat buffs.');
+    else add('攻略未注明比较条件。','The guide does not specify comparison conditions.');
+    if(row.contextBlocked&&!row.scopeExcluded)add('配队条件尚未满足或确认。','Team requirements are unmet or unconfirmed.');
+    if(row.applicable===false&&row.requiresSignature)add('当前未装备专属音擎。','Signature W-Engine is not equipped.');
+    if(String(config.id)==='1611'&&row.key==='critRate')add('当前值已含暴伤转暴率，战斗增益另计。','Current stats include CRIT DMG conversion before combat buffs.');
+    for(const note of [row.configurationNote,row.note,row.scopeExclusionReason])add(note);
+  }
+  for(const [text,{en,labels}] of notes){
+    const line=el('p');
+    if(labels.size<rows.length){
+      let first=true;
+      for(const label of labels){
+        if(!first)line.append(' / ');
+        line.append(el('strong','',label));first=false;
+      }
+      line.append(' · ');
+    }
+    line.append(en?uiText('span',text,en):el('span','',text));list.append(line);
+  }
+  return list;
 }
 function renderProfileIdentity(){
   const agent=details.agents[config.id],engine=equipment.engines[config.weaponId];
@@ -405,43 +393,74 @@ function renderProfileStats(panel,targets){
 }
 function updateTargets(){
   renderProfileIdentity();
-  const root=$('disc-target-table');root.replaceChildren();const errors=validateConfiguration(config,data);$('disc-validation').textContent=errors.join('；');
-  if(errors.length){renderProfileStats(null);root.append(el('p','disc-warning','请先修正上面的输入，再计算面板。'));return;}
-  const context=currentContext();root.append(checkList(tier==='usable'?assessUsable(config,currentBuild(),data,context):context.checks));
-  const panel=calculatePanel(config,data),targets=targetRows(),table=el('table','disc-table'),thead=el('thead'),tr=el('tr');for(const t of ['属性','当前录入 / 装备估算',tier==='usable'?'后续培养参考（非能用门槛）':'本档参考','距本次目标','条件与口径'])tr.append(el('th','',t));thead.append(tr);table.append(thead);const tbody=el('tbody');
+  const root=$('disc-stat-targets'),overview=$('disc-target-overview'),basisHost=$('disc-target-basis-host');
+  const basisOpen=basisHost.firstElementChild?.open||false;
+  root.replaceChildren();basisHost.replaceChildren();overview.replaceChildren();overview.hidden=true;
+  const errors=validateConfiguration(config,data);
+  $('disc-validation').textContent=errors.join('；');
+  if(errors.length){renderProfileStats(null);return;}
+  const panel=calculatePanel(config,data),targets=targetRows(),rows=targets.rows;
   renderProfileStats(panel,targets);
-  const activeRows=targets.rows;
-  for(const r of activeRows){
-    const row=el('tr'),gap=targetGapText(r,panel);
+  const rollChecks=config.discs.map(d=>inspectDiscRolls(d,data)),partial=rollChecks.filter(r=>r.partial).length;
+  const table=el('table','disc-table disc-target-list'),head=table.createTHead().insertRow(),body=table.createTBody();
+  const columns=[['属性','Stat'],['当前','Now'],[tier==='usable'?'培养参考':'本档参考','Ref.'],['差额','Gap']];
+  for(const [zh,en] of columns){const th=uiText('th',zh,en);th.scope='col';head.append(th);}
+  let reached=0,compared=0;
+  for(const r of rows){
+    const value=panel.values[r.group],gap=targetGap(r,value),state=targetAssessment(r,gap.delta,partial);
+    const row=body.insertRow(),stat=el('th','',r.label);
+    row.dataset.state=state;stat.scope='row';
     if(r.scopeExcluded)row.dataset.teamConditional='true';
-    const value=panel.values[r.group],recorded=Number.isFinite(value)?fmt(r.group,value):'—';
-    const target=(r.bound==='maximum'?'≤ ':'')+r.target;
-    const perSecond=r.group===305,unit=r.unit||'';
-    row.append(el('th','',r.label),
+    if(['short','met','over'].includes(state))compared++;
+    if(state==='met')reached++;
+    const recorded=Number.isFinite(value)?fmt(r.group,value):'—';
+    const target=Number.isFinite(r.target)?(r.bound==='maximum'?'≤ ':'')+r.target.toLocaleString('zh-CN',{maximumFractionDigits:2}):'—';
+    const perSecond=r.group===305,unit=Number.isFinite(r.target)?r.unit||'':'';
+    const gapCell=el('td','disc-target-gap');gapCell.append(uiText('span',gap.zh,gap.en,'disc-target-status'));
+    const reference=el('td');
+    reference.append(uiText('span',target+unit,target+(perSecond&&unit?'/s':unit),'disc-target-value'));
+    if(r.optional)reference.append(' ',uiText('small','可选','optional'));
+    row.append(stat,
       uiText('td',recorded+(perSecond&&Number.isFinite(value)?'/秒':''),recorded+(perSecond&&Number.isFinite(value)?'/s':'')),
-      uiText('td',target+unit+(r.optional?'（可选）':''),target+(perSecond?'/s':unit)+(r.optional?' (optional)':'')),
-      uiText('td',gap.zh,gap.en,'disc-target-gap'),targetConditions(r,panel));
-    tbody.append(row);
+      reference,gapCell);
   }
-  if(!activeRows.length){const row=el('tr');const c=el('td','',planningScope==='solo'?'当前没有已收录的个人数值目标，可先查看主属性、套装与技能培养方向。':'暂缺成熟区间；查看下方技能门槛，不编造数值。');c.colSpan=5;row.append(c);tbody.append(row);}table.append(tbody);const wrap=el('div','disc-table-wrap');wrap.append(table);root.append(wrap);
-  const blanks=config.discs.filter(d=>!inspectDiscRolls(d,data).complete).length;
-  root.append(uiText('p',`${blanks?`${blanks} 张盘为空或未填全副属性，按已录入内容估算。`:''}表中按装备及已收录的常驻核心技能、影画加成估算；音擎被动、四件套战斗效果及队友增益另计。`,
-    `${blanks?`Only recorded stats are included for ${blanks} empty or incomplete disc(s). `:''}Estimates include equipment and the recorded unconditional Core Skill and Mindscape bonuses. W-Engine passives, combat set effects and squad buffs are separate.`,'disc-muted'));
-  root.append(renderPanelEffects(panel.effects));
-  if(config.core!==6)root.append(el('p','disc-warning','当前核心未到F，不能直接套用核心F的阈值；下方提供所选等级技能原文。'));
-  if(equipment.engines[config.weaponId]&&equipment.engines[config.weaponId].profession!==details.agents[config.id].specialty)root.append(el('p','disc-warning','当前音擎特性不匹配：基础属性仍计入，被动不会生效。'));
+  if(compared){
+    overview.append(el('strong','disc-target-count',`${reached} / ${compared}`),uiText('span','项达到参考','at benchmark','disc-target-count-label'));
+    overview.hidden=false;
+  }
+  if(!rows.length){
+    const row=body.insertRow(),cell=uiText('td',planningScope==='solo'?'暂无个人面板目标':'暂无队伍面板目标',planningScope==='solo'?'No personal stat targets':'No team stat targets');cell.colSpan=4;row.append(cell);
+  }
+  const wrap=el('div','disc-table-wrap');wrap.append(table);root.append(wrap);
+  const empty=rollChecks.filter(r=>r.status==='absent').length;
+  const missingZh=[],missingEn=[];
+  if(partial){missingZh.push(`${partial} 张盘的副属性未录全`);missingEn.push(`partial substats on ${partial} ${partial===1?'disc':'discs'}`);}
+  if(empty){missingZh.push(`${empty} 个号位为空`);missingEn.push(`${empty} empty ${empty===1?'slot':'slots'}`);}
+  if(missingZh.length)root.append(uiText('p',`${missingZh.join('，')}，按已录入数值估算。`,`Estimate uses recorded stats (${missingEn.join(', ')}).`,'disc-muted'));
+  if(config.core!==6)root.append(uiText('p','当前核心未到 F，部分目标待核对。','Some targets require Core F.','disc-warning'));
+  if(equipment.engines[config.weaponId]&&equipment.engines[config.weaponId].profession!==details.agents[config.id].specialty)root.append(uiText('p','音擎特性不匹配，被动未生效。','The W-Engine passive requires a matching specialty.','disc-warning'));
+  const context=currentContext(),checks=(tier==='usable'?assessUsable(config,currentBuild(),data,context):context.checks).filter(c=>c.id!=='extra-ability');
+  const basis=el('details','disc-target-basis'),summary=uiText('summary','条件与换算','Conditions & calculations');
+  const unmet=checks.filter(c=>c.status==='unmet').length;
+  if(unmet){
+    const title=uiText('span','条件与换算','Conditions & calculations');
+    summary.replaceChildren(title,' · ',uiText('span',`${unmet} 项需调整`,`${unmet} ${unmet===1?'check':'checks'} to review`,'disc-target-needs-check'));
+    delete summary.dataset.i18nEn;
+  }
+  basis.open=basisOpen;
+  basis.append(summary);
+  if(checks.length)basis.append(checkList(checks));
+  basis.append(renderPanelEffects(panel.effects),targetNotes(rows));
+  basisHost.append(basis);
 }
 function renderRollGuide(){
   const root=$('disc-roll-guide');root.replaceChildren();
-  root.append(el('summary','','词条数量怎么算？查看公式与 S 级数值表'));
-  root.append(el('p','','总份数 = 该项副属性数值 ÷ 单份数值。首次出现算 1 份，之后每追加一次再加 1 份；例如暴击伤害 19.2% ÷ 4.8% = 4 份，对应游戏属性旁的 +3。属性旁的 +3 与驱动盘等级 +3 是两回事。'));
+  root.append(uiText('summary','S 级副词条数值','S-Rank substat values'));
+  root.append(uiText('p','总份数 = 副属性数值 ÷ 单份数值。游戏中的 +3 对应 4 份。','Rolls = substat value ÷ value per roll. An in-game +3 counts as four rolls.'));
   const units=el('dl','disc-roll-units');
   for(const [id,value]of Object.entries(data.subBases)){const pair=el('div');pair.append(el('dt','',name(id)),el('dd','',`${fmt(id,value)} / 份`));units.append(pair);}root.append(units);
-  root.append(el('p','','S 级盘每到 3、6、9、12、15 级有一次成长节点。初始三条盘在 3 级补出第四种副属性，其后才有四次追加；初始四条盘有五次追加。因此满级总份数分别为 3 + 5 = 8、4 + 5 = 9；最多仍只有四种副属性。主属性不计入副属性份数。'));
-  root.append(el('p','','“有效词条”要结合角色、玩法、技能、影画、音擎与配队判断，还要考虑属性上限和转换。“编辑当前盘”中的优先副属性是所选攻略的培养方向。'));
-  root.append(el('p','','换盘规划先算当前六盘，再比较适用的面板目标，把缺口分配到可调整号位。它不会把总份数当作毕业分数，也不要求六张盘各自凑同样多的词条。未填全的盘只计算已录入内容；换盘目标中的“至少几份”是最低要求，其余属性仍未指定。'));
+  root.append(uiText('p','S 级盘每 3 级强化一次。初始三条的满级共 8 份，初始四条的共 9 份。','S-Rank discs gain a roll every three levels. At Lv.15, a three-stat start totals eight rolls and a four-stat start totals nine.'));
   root.append(link('https://www.hoyolab.com/article/34243548','玩家教程：驱动光碟效果与词条介绍 · 第 3.1 节 ↗'));
-  root.append(el('p','disc-muted','此处引用教程的副属性固定数值与成长规则；文中的套装等效词条和队伍权重未用作本站统一评分。'));
 }
 function renderRollSummary(d){
   const count=inspectDiscRolls(d,data),box=el('div','disc-roll-summary');box.dataset.status=count.status;
@@ -450,8 +469,7 @@ function renderRollSummary(d){
   box.append(el('strong','',`已填 ${count.rawTotalRolls??'待核对'} 份 · 本级应有 ${count.expectedTotalRolls??'待核对'} 份`));
   if(count.status==='invalid'){box.append(el('p','disc-warning',count.problems.join('；')||'条数或份数不符合当前盘的成长规则，请核对输入。'));return box;}
   const countDetails=sourceDetails('查看计数明细',[`已填 ${count.recordedTypes} 种 / 应有 ${count.expectedTypes} 种副属性。初始 ${count.initial} 份 + ${count.upgradeNodes} 次成长节点 = ${count.expectedTotalRolls} 份；该等级单项最多 ${count.maxRollsPerStat} 份。`]);countDetails.querySelector('summary').dataset.i18nEn='View roll count details';box.append(countDetails);
-  if(count.complete)countDetails.append(el('p','disc-muted','计数完整：条数与份数符合该等级规则，不表示这张盘已经毕业。'));
-  else box.append(el('p','disc-warning',`尚未填全：总份数少于本级应有份数 ${count.missingRolls} 份${count.missingTypes?`，还缺 ${count.missingTypes} 种副属性`:''}。当前只按已填写数值计算。`));
+  if(!count.complete)box.append(el('p','disc-warning',`尚未填全：总份数少于本级应有份数 ${count.missingRolls} 份${count.missingTypes?`，还缺 ${count.missingTypes} 种副属性`:''}。当前只按已填写数值计算。`));
   return box;
 }
 // Per-agent reference score presentation.
@@ -545,7 +563,6 @@ function renderSlots(){
   updateDiscScores();
   const dialog=$('disc-slot-dialog');
   if(dialog.open)renderSlotDetail(config.discs.find(d=>d.slot===Number(dialog.dataset.slot)));
-  updateSlotGoals();
 }
 function renderSlotDetail(d){
   const root=$('disc-slot-content'),b=currentBuild();
@@ -555,14 +572,18 @@ function renderSlotDetail(d){
   const card=el('article','panel disc-slot');card.dataset.slot=d.slot;card.id='disc-card-'+d.slot;
   const head=el('div','disc-section-head disc-card-toolbar');head.append(checkbox('保留此盘',d.locked,v=>{d.locked=v;invalidate();}));
   card.append(head,renderDiscFace(d,b,currentContributions()[d.slot]));
-  const goal=el('div','disc-slot-goal');goal.id=`disc-slot-goal-${d.slot}`;card.append(goal);
+  const slotFiveGuide=d.slot===5&&renderSlotFiveGuide(b);
+  if(slotFiveGuide){
+    const advice=el('p','disc-slot-main-guide');advice.append(slotFiveGuide);card.append(advice);
+  }
   const editor=el('details','disc-slot-editor');editor.dataset.slot=d.slot;editor.open=editing;editor.append(uiText('summary','编辑当前盘','Edit current disc'));
   if(d.absent)card.append(el('p','disc-warning','展柜未提供此盘。当前不计入面板；下面填写的是待补目标。'),button('加入此号位的目标盘',()=>{d.absent=false;invalidate();renderSlots();}));
   if(d.unsupported)card.append(el('p','disc-warning',d.unsupportedReason||'原盘为非S级或属性资料不一致，未按金盘计算。'),button('改为S级15级空白目标',()=>{d.unsupported=false;delete d.unsupportedReason;delete d.unsupportedReasons;d.absent=false;d.level=15;d.initial=4;d.subs=[];invalidate();renderSlots();}));
   const fields=el('div','disc-slot-fields');fields.append(selectField(`${d.slot}号位套装`,[['','未选择'],...Object.values(equipment.discs).map(s=>[s.id,s.name])],d.setId,v=>{d.setId=v;invalidate();renderSlots();renderEvidence();}));
   const recommended=d.slot<=3?Object.keys(data.mainBases[d.slot]).map(Number):(b.mainStatIds[d.slot]||[]).map(Number),conditional=(b.conditionalMainStatIds?.[d.slot]||[]).map(Number);
   fields.append(selectField(`${d.slot}号位主属性`,Object.keys(data.mainBases[d.slot]).map(id=>[id,`${name(id)} ${fmt(id,data.mainBases[d.slot][id]*4)}${recommended.includes(Number(id))?' · 推荐':conditional.includes(Number(id))?' · 条件备选':''}`]),d.mainId,v=>{d.mainId=Number(v);d.subs=d.subs.filter(s=>Number(s.id)!==d.mainId);invalidate();renderSlots();}),numberField(`${d.slot}号盘等级`,d.level,0,15,v=>{d.level=v;invalidate();renderSlots();}),selectField(`${d.slot}号盘初始副属性`,[...([3,4].includes(d.initial)?[]:[['unknown','未确认 · 请核对原盘']]),[3,'3条 · 满级8份'],[4,'4条 · 满级9份']],[3,4].includes(d.initial)?d.initial:'unknown',v=>{if(v==='unknown')return;d.initial=Number(v);invalidate();renderSlots();}));editor.append(fields);
-  const rec=el('p','disc-slot-recommend',`主属性建议：${recommended.map(id=>name(id)).join(' / ')}。优先副属性：${(b.effectiveSubstats?.primaryIds||[]).filter(id=>Number(id)!==d.mainId).map(id=>name(id)).join('、')||'按循环与功能判断'}。`);editor.append(rec);
+  const mainNote=slotFiveGuide?'':`主属性建议：${recommended.map(id=>name(id)).join(' / ')}。`;
+  const rec=el('p','disc-slot-recommend',`${mainNote}优先副属性：${(b.effectiveSubstats?.primaryIds||[]).filter(id=>Number(id)!==d.mainId).map(id=>name(id)).join('、')||'按循环与功能判断'}。`);editor.append(rec);
   const subgrid=el('div','disc-sub-grid'),conversions=[];
   const feedback=el('p','disc-input-error');feedback.setAttribute('role','alert');editor.append(feedback);
   for(let i=0;i<4;i++){
@@ -584,7 +605,6 @@ function renderSlotDetail(d){
     }subgrid.append(line);
   }
   editor.append(subgrid);if(conversions.length){const conversionDetails=sourceDetails('份数换算',conversions);conversionDetails.querySelector('summary').dataset.i18nEn='Roll calculations';editor.append(conversionDetails);}card.append(editor,renderDiscCountDetails(d));root.append(card);
-  renderSlotGoal(d,goal);
   if(focused)Array.from(editor.querySelectorAll('[aria-label]')).find(field=>field.getAttribute('aria-label')===focused)?.focus({preventScroll:true});
 }
 function farmChance(low,high){
@@ -608,28 +628,22 @@ function farmAction(action,entry){
   body.append(title);
   if(tune){
     const gain=farmChance(entry.tuningGain);
-    body.append(uiText('p',`比只定号位多用 1 个校音器，保守估算平均多补回当前缺口的 ${gain}。`,`Using one Calibrator on top of slot tuning closes an estimated extra ${gain} of your current gap on average (conservative estimate).`));
+    body.append(uiText('p',`定向主属性平均额外补足 ${gain} 缺口（保守估算）。`,`Fixing the main stat closes an extra ${gain} of the gap on average (conservative estimate).`));
   }else{
     const chance=farmChance(entry.randomChance,entry.randomChanceMax);
-    body.append(uiText('p',`估算每张这个套装的随机 S 盘，有 ${chance} 的机会在此号位缩小缺口。`,`Estimated chance per random S-Rank disc from this set to close a gap in this slot: ${chance}.`));
+    body.append(uiText('p',`该套装随机 S 盘改善此号位的概率约 ${chance}。`,`Chance per random S-Rank disc from this set to improve this slot: ${chance}.`));
   }
   row.append(body);return row;
 }
 function renderFarmAdvice(){
-  const root=$('disc-farm-advice'),farm=allocation?.farming;
-  const problems=validateConfiguration(config,data);
-  let status=farm?.status||farmNotice||(config.discs.some(d=>!d.absent&&d.subs.length)?'calculating':'unknown');
-  if(problems.length)status='invalid';
-  else if(tier==='usable')status='usable';
-  else if(allocation?.guidanceOnly)status='no-targets';
-  else if(allocation?.blocked)status='blocked';
+  const root=$('disc-farm-advice'),farm=farmResult,status=farm.status;
   root.replaceChildren();root.hidden=false;
   root.dataset.status=status;
   const heading=uiText('h3','还值得刷吗？','Worth farming?');heading.setAttribute('aria-level','2');root.append(heading);
   if(status==='invalid'){
     const slots=config.discs.filter(d=>inspectDiscRolls(d,data).invalid).map(d=>d.slot);
-    root.append(slots.length?uiText('p',`先核对 ${slots.join('、')} 号盘的装备记录。修正后会自动重算刷盘建议。`,`Check the equipment in slot(s) ${slots.join(', ')}. Farming advice updates when the records are corrected.`):
-      uiText('p','请核对当前角色和音擎的配置，修正后会自动重算。','Check the Agent and W-Engine settings. Farming advice updates when the configuration is corrected.'));
+    root.append(slots.length?uiText('p',`请核对 ${slots.join('、')} 号盘的装备记录。`,`Check the equipment in slot(s) ${slots.join(', ')}.`):
+      uiText('p','请核对角色和音擎配置。','Check the agent and W-Engine settings.'));
     return;
   }
   const compared=(status==='met'?farm?.protected:farm?.deficits)||[];
@@ -640,20 +654,20 @@ function renderFarmAdvice(){
   }
   if(status!=='ready'){
     const text={
-      calculating:['正在估算这组方案的优先号位…','Estimating farming priorities for this build…'],
+      calculating:['正在估算优先刷哪个号位…','Estimating farming priorities for this build…'],
       met:farm?.partial?['按已录入属性，本次面板下限已达到，先保留现有盘。','The recorded stats already meet the target minimums. Keep your discs.']:['已达到本次可比较的面板目标，先保留现有盘和校音器。','Your build meets the comparable targets. Keep your discs and save the Calibrator.'],
       locked:['所有可调整号位都已锁定，先保留校音器。','All eligible slots are locked. Save the Calibrator.'],
-      'no-targets':allocation?.reasonCode==='combat-reference'?['本档目标需要战斗增益。先保留校音器，可点总览中的盘位核对套装与主属性。','These targets depend on combat buffs. Save the Calibrator and select a slot to check its set and main stat.']:['当前条件下没有可比较的面板目标，先按方案选套装与主属性。','There are no comparable stat targets for this setup. Follow the plan’s set and main-stat recommendations.'],
-      blocked:['当前装备或锁定条件限制了换盘方案。请查看换盘建议中的具体原因。','The current equipment or slot locks prevent a plan. See the reason under Recommended changes.'],
-      cancelled:['已取消估算。点击「规划换盘方案」可继续使用当前配装计算。','Estimate cancelled. Select Plan disc changes to calculate again with this build.'],
-      comparing:['正在比较推荐主词条组合…','Comparing recommended main-stat combinations…'],
-      'select-candidate':['选择一个主词条组合，可查看对应的刷盘建议。','Select a main-stat combination to see its farming advice.'],
-      unknown:farm?.reason==='partial-ceiling'?['已录入的面板在参考范围内。补全副属性即可复核上限，再决定是否继续刷。','The recorded stats are within the reference range. Complete the missing substats to check the cap before farming.']:['导入配装，或点总览中的盘位填写属性，即可查看优先刷哪个号位。','Import a build or select a slot to enter its stats and see which disc to farm first.'],
-      'no-gain':['按本次目标，单换一张盘暂未找到能改善的号位。先保留校音器，可参考组合换盘方案。','No single replacement improved the current targets in this model. Save the Calibrator and review the multi-disc plan.'],
+      'no-targets':['当前条件下没有可比较的面板目标，先按角色建议选择套装和主属性。','There are no comparable stat targets for this setup. Follow the agent’s recommended sets and main stats.'],
+      unknown:farm?.reason==='partial-ceiling'?['已录入的面板在参考范围内。补全副属性即可复核上限，再决定是否继续刷。','The recorded stats are within the reference range. Complete the missing substats to check the cap before farming.']:['缺少驱动盘属性，暂无法估算。','Disc stats are needed for an estimate.'],
+      'no-gain':['按本次目标，单换一张盘暂未找到能改善的号位。先保留校音器。','No single replacement improved the current targets in this model. Save the Calibrator.'],
       usable:['能用档先看套装与主属性，暂不需要为面板目标消耗校音器。','For the usable tier, focus on sets and main stats. Save the Calibrator for a stat target.'],
-      unavailable:['本次刷盘估算未完成。点击「规划换盘方案」可重试。','The farming estimate could not finish. Select Plan disc changes to retry.']
+      unavailable:['刷盘建议暂时未能算出。','Farming advice could not be calculated.']
     }[status]||[];
-    root.append(uiText('p',text[0]||'',text[1]||''));return;
+    root.append(uiText('p',text[0]||'',text[1]||''));
+    if(status==='unavailable'){
+      const retry=button('',queueFarmRefresh);retry.append(uiText('span','重新估算','Retry estimate'));root.append(retry);
+    }
+    return;
   }
   if(farm.priority)root.append(farmAction('priority',farm.priority));
   if(farm.tuning)root.append(farmAction('tuning',farm.tuning));
@@ -667,18 +681,15 @@ function renderFarmAdvice(){
     const t=farm.tuning,slot=farmChance(t.slotChance,t.slotChanceMax),main=farmChance(t.mainChance,t.mainChanceMax);
     method.append(uiText('p',`${t.slot}号位只定号位的改善机会约 ${slot}，再定主属性约 ${main}。校音器按能补回多少缺口排序，也计入每次改善的幅度。`,`Slot ${t.slot} has an estimated ${slot} chance of improvement with slot tuning and ${main} with the main stat fixed. The Calibrator ranking accounts for how much each successful disc improves the build.`));
   }
-  const plannedSlot=allocation.slotChanges?.find(change=>change.slot===farm.priority?.slot);
-  if(plannedSlot?.action==='keep')method.append(uiText('p','下方方案保留了这个号位。先刷到合适的替换盘，也能从这个号位补缺口，换上后会重新规划。','The plan below keeps this slot. A good drop here offers another way to close the same gaps. Updating the equipped disc recalculates the plan.'));
   root.append(method);
 }
 function rollPriority(profile,id){
   if(!(profile.weights[id]>0))return 'other';
   return profile.primaryIds.includes(Number(id))?'primary':'secondary';
 }
-function slotDetailButton(slot,action=''){
+function slotDetailButton(slot){
   const control=button('',event=>showProfileSlot(slot,event.currentTarget),'disc-slot-link');
-  control.append(uiText('span',action==='fill'?`补齐 ${slot} 号位`:action==='replace'?`调整 ${slot} 号位`:`${slot}号位`,
-    action==='fill'?`Fill slot ${slot}`:action==='replace'?`Change slot ${slot}`:`Slot ${slot}`));
+  control.append(uiText('span',`${slot}号位`,`Slot ${slot}`));
   control.dataset.detailSlot=slot;
   control.setAttribute('aria-controls','disc-slot-dialog');
   control.setAttribute('aria-haspopup','dialog');
@@ -775,122 +786,16 @@ function renderProfileRolls(build){
     else root.append(el('b','','0'));
   }
 }
-function updateSlotGoals(){
+function updateFarmView(){
   renderFarmAdvice();
-  const priority=allocation?.farming?.status==='ready'?allocation.farming.priority?.slot:null;
+  const priority=farmResult.priority?.slot;
   for(const control of $('disc-slot-index').querySelectorAll('[data-jump-slot]')){
     control.classList.toggle('is-priority',Number(control.dataset.jumpSlot)===priority);
   }
-  const dialog=$('disc-slot-dialog');
-  if(dialog.open){
-    const d=config.discs.find(entry=>entry.slot===Number(dialog.dataset.slot));
-    renderSlotGoal(d,$(`disc-slot-goal-${d.slot}`));
-  }
-}
-function renderSlotGoal(d,root){
-  root.replaceChildren();root.removeAttribute('data-action');
-  const target=allocation?.configuration?.discs?.find(x=>x.slot===d.slot),change=allocation?.slotChanges?.find(x=>x.slot===d.slot);
-  const card=root.closest('.disc-slot'),adjust=!!(target&&!allocation.guidanceOnly&&!allocation.blocked&&!d.locked&&['fill','replace'].includes(change?.action));
-  const farmAlternative=change?.action==='keep'&&[allocation?.farming?.priority?.slot,allocation?.farming?.tuning?.slot].includes(d.slot);
-  card.classList.toggle('is-adjustment',adjust);card.classList.toggle('is-locked',!!d.locked);card.querySelector('.disc-slot-plan-state')?.remove();
-  if(adjust)card.querySelector('.disc-section-head').append(uiText('span','建议调整','Suggested change','disc-slot-plan-state is-adjustment'));
-  else if(d.locked)card.querySelector('.disc-section-head').append(uiText('span','已锁定保留','Locked · keep','disc-slot-plan-state'));
-  else if(target&&change?.action==='keep')card.querySelector('.disc-section-head').append(farmAlternative?uiText('span','原盘可留，有提升再换','Keep until a better drop','disc-slot-plan-state'):uiText('span','本次保留','Keep for this plan','disc-slot-plan-state'));
-  if(allocation?.guidanceOnly){
-    const b=currentBuild(),mainIds=d.slot<=3?Object.keys(data.mainBases[d.slot]).map(Number):b.mainStatIds[d.slot]||[];
-    root.dataset.action='guidance';root.append(el('strong','','本号位的个人培养方向'),el('p','',`主属性参考：${mainIds.map(name).join(' / ')||'待核对'}。`));
-    const priority=b.effectiveSubstats?.primaryIds||[];
-    if(priority.length)root.append(el('p','',`副属性优先方向：${priority.map(name).join('、')}；最终不能与所选主属性重复。`));
-    root.append(el('p','disc-muted',`${d.locked?'保留此盘；':''}当前只给出搭配方向，尚未分配指定词条份数或生成必须更换的盘。`));return;
-  }
-  if(!target)return;
-  root.dataset.action=change?.action||'';
-  if(change?.action==='keep')return;
-  root.append(el('strong','',change?.action==='fill'?'补齐空缺号位':d.locked?'保留当前盘':compareDisc(d,target)?'已录入属性覆盖本号位参考目标':'本号位的换盘目标'));
-  root.append(el('p','',`目标：${equipment.discs[target.setId]?.name||'套装待选'} · ${name(target.mainId)} ${fmt(target.mainId,data.mainBases[target.slot][target.mainId]*4)} · S级15级。${Number(d.mainId)!==Number(target.mainId)?`当前录入主属性为${name(d.mainId)}，这是换主属性后的目标。`:''}`));
-  if(!target.subs.length)root.append(el('p','','当前整体目标不再要求此盘追加指定副属性；仍需符合主属性和套装条件。'));
-  else root.append(textList(target.subs.map(s=>`${name(s.id)}至少 ${s.rolls} 份，共 ${fmt(s.id,data.subBases[s.id]*s.rolls)}`)));
-}
-function renderTargetGuidance(result){
-  slotReview='guidance';const root=$('disc-allocation-status');root.replaceChildren(uiText('p','当前没有可直接比较的数值目标，可先核对套装和各号位的主属性。','There are no directly comparable stat targets for this build. Check the set and main stat for each slot.','disc-result-lead'));
-  root.append(el('p','disc-muted',result.blocked||'先匹配六个号位、套装和主属性，再按适用的个人培养参考规划词条。'));
-  root.append(checkList(assessUsable(config,currentBuild(),data,currentContext())));
-  if(result.excludedRows?.length)root.append(excludedTargetDetails(result.excludedRows));
-  updateSlotGoals();
-}
-function renderAllocationSummary(){
-  const root=$('disc-allocation-status');root.replaceChildren();if(!allocation)return;
-  const count=allocation.changeCount??allocation.changedSlots?.length??0;
-  const retained=allocation.retainedSlots?.length??6-count;
-  const pendingCeiling=allocation.unresolvedRows?.some(r=>r.reasonCode==='incomplete-ceiling')&&allocation.rows.every(r=>r.shortfall===0);
-  const summary=pendingCeiling?`${count===0?'先保留现有盘':`已给出调整 ${count} 个号位的参考方案`}；${allocation.incompleteCeilingSlots.join('、')}号位的副属性尚未完整，上限待核对，暂不判定完成。`:allocation.met&&count===0?'现有配装已覆盖本档参考目标，无需为此目标换盘。':allocation.met?`找到覆盖本档参考目标的方案：调整 ${count} 个号位，保留 ${retained} 个号位。`:`当前搜索尚未找到覆盖全部目标的方案，先展示找到的参考分配：调整 ${count} 个号位。`;
-  const summaryEn=pendingCeiling?`${count===0?'Keep your current discs':`A reference plan changes ${count} slots`}; substats in slots ${allocation.incompleteCeilingSlots.join(', ')} are incomplete, so upper limits remain unverified.`:allocation.met&&count===0?'Your current build covers this tier’s reference targets; no disc changes are needed for them.':allocation.met?`Found a plan covering this tier’s reference targets: change ${count} slots and keep ${retained}.`:`The search has not covered every target; the current reference plan changes ${count} slots.`;
-  root.append(uiText('p',summary,summaryEn,'disc-result-lead'));
-  const changes=(allocation.slotChanges||[]).filter(change=>['fill','replace'].includes(change.action));
-  if(changes.length){
-    const slots=el('div','disc-plan-slots');
-    for(const change of changes)slots.append(slotDetailButton(change.slot,change.action));
-    root.append(slots);
-  }
-  if(planningScope==='solo')root.append(el('p','disc-muted','本次只比较当前代理人的个人配装目标；保留自身辅助技能门槛，特定队伍组成的参考不参与完成判断。队友增益和未核实的战斗效果未自动加入面板。'));
-  if(allocation.excludedRows?.length)root.append(excludedTargetDetails(allocation.excludedRows));
-  if(allocation.provisional)root.append(el('p','disc-muted','本次采用攻略参考口径；请结合配装条件核对，不据此认定实际毕业。'));
-  if(allocation.search?.truncated)root.append(el('p','disc-warning','本次搜索尚未覆盖全部组合，可能还有更合适的方案；这里没有将搜索未找到当成无法达标。'));
-  if(!allocation.met)root.append(textList(allocation.rows.filter(r=>r.shortfall>0).map(r=>`${r.label||name(r.group)}仍差 ${fmt(r.group,r.shortfall)}`)));
-  if(allocation.unresolvedRows?.length)root.append(textList(allocation.unresolvedRows.map(r=>`${r.label||name(r.group)} ${r.target??''}${r.unit||''} 尚未评估：${r.reason}。`)));
-  root.append(sourceDetails('方案计算范围',[allocation.method,'仅比较所列属性目标与当前套装范围；技能循环、全部战斗增益和实战伤害没有统一纳入本次目标，不将这组结果称为最高伤害配装。']));
-}
-function presentAllocation(result){
-  allocation=result;farmNotice='';
-  if(result.guidanceOnly){renderTargetGuidance(result);return;}
-  if(result.blocked){slotReview=null;$('disc-allocation-status').textContent=result.blocked;updateSlotGoals();return;}
-  slotReview='plan';renderAllocationSummary();updateSlotGoals();
-}
-async function generate(scroll=true){
-  planRequested=true;cancelSearch();allocation=null;slotReview=null;farmNotice='calculating';$('disc-candidates').replaceChildren();updateSlotGoals();
-  try{const errors=validateConfiguration(config,data);if(errors.length)throw Error(errors.join('；'));
-    if(tier==='usable'){
-      allocation=null;const checks=assessUsable(config,currentBuild(),data,currentContext());
-      $('disc-allocation-status').replaceChildren(el('p','','能用档先看下面的结构与条件检查。未规定全角色通用的副词条份数；数值功能门槛仍需查看技能依据。'),checkList(checks));slotReview='usable';updateSlotGoals();if(scroll)revealSlotResults();return;
-    }
-    $('disc-allocation-status').textContent=planningMode==='improve'?'正在从现有配装寻找更少换盘的方案…':'正在搜索逐号位目标…';
-    presentAllocation(await searchPlan('generate',null,!scroll));
-    if(scroll)revealSlotResults();
-  }catch(e){if(e.name!=='AbortError'){allocation=null;slotReview=null;farmNotice='unavailable';updateSlotGoals();$('disc-allocation-status').textContent=e.message;}}
-}
-async function showCandidate(candidate){
-  cancelSearch();allocation=candidate;slotReview='plan';planRequested=true;farmNotice='calculating';
-  renderAllocationSummary();updateSlotGoals();
-  if(candidate.farming){revealSlotResults();return;}
-  try{
-    const pending=searchPlan('farming',candidate);
-    revealSlotResults();
-    candidate.farming=await pending;
-    if(allocation===candidate)updateSlotGoals();
-  }catch(error){
-    if(error.name!=='AbortError'&&allocation===candidate){
-      candidate.farming={status:'unavailable'};
-      updateSlotGoals();
-    }
-  }
-}
-async function compare(){
-  cancelSearch();farmNotice='comparing';updateSlotGoals();
-  const box=$('disc-candidates');box.replaceChildren(el('p','','正在从同一套原装备比较推荐主词条组合…'));
-  try{const errors=validateConfiguration(config,data);if(errors.length)throw Error(errors.join('；'));const candidates=await searchPlan('compare');box.replaceChildren();
-    if(!candidates.length){
-      if(!allocation)presentAllocation(await searchPlan('generate'));
-      if(!allocation?.guidanceOnly)box.append(uiText('p','当前条件下暂无法比较。','Comparison is unavailable under the current conditions.'));
-      return;
-    }
-    farmNotice='select-candidate';updateSlotGoals();
-    for(const c of candidates){const row=el('div','disc-candidate'),choices=c.configuration.discs.filter(d=>d.slot>=4).map(d=>`${d.slot}号 ${name(d.mainId)}`).join(' · ');row.append(el('strong','',choices),uiText('span',`${c.met?'覆盖所列参考目标':'尚有参考目标缺口'} · 调整 ${c.changeCount??0} 个号位${c.search?.truncated?' · 部分组合未完成搜索':''}`,`${c.met?'Reference targets covered':'Reference targets still missing'} · Change ${c.changeCount??0} slots${c.search?.truncated?' · Some combinations were not searched':''}`),button('查看这组目标',()=>showCandidate(c)));box.append(row);}
-    if(!allocation&&config.discs.some(d=>!d.absent&&d.subs.length))presentAllocation(await searchPlan('generate',null,true));
-  }catch(e){if(e.name!=='AbortError'){farmNotice='unavailable';updateSlotGoals();box.replaceChildren(el('p','disc-warning',e.message));}}
 }
 function renderEvidence(){
   const root=$('disc-evidence'),a=details.agents[config.id],m=mechanics.agents[config.id]||{},b=currentBuild();root.replaceChildren();
-  root.append(el('p','disc-warning',planningScope==='solo'?'个人配装保留自身技能、影画、音擎及辅助门槛。这里没有模拟只带一名角色出战，也没有把需要队友或战斗触发的效果自动加入面板；相关条件继续在下方说明。':'技能、影画、专武、套装与队友条件分开核对。下列触发句并不表示增益已经加入上方装备面板；条件未能确认时不会按已触发处理。'));
+  root.append(uiText('p','按装备面板估算，技能加成见「条件与换算」。音擎被动、套装战斗效果和队友增益另计。小毕业取攻略区间下限，大毕业取上限。','Estimates follow the equipment screen. See Conditions & calculations for skill bonuses. W-Engine passives, combat set effects and team buffs are evaluated separately. The two reference tiers use the lower and upper guide targets, where available.','disc-muted'));
   const teamOnlyThreshold=r=>planningScope==='solo'&&String(config.id)==='1581'&&(r.key||r.id)==='triple-anomaly-attack-share-cap';
   for(const r of targetRows().thresholds)root.append(sourceDetails(`${teamOnlyThreshold(r)?'组队参考 · 本次不参与 · ':''}${r.title||r.stat}${r.value!=null?' · '+(r.roundedUpInteger??r.value)+(r.unit||''):''}`,[r.condition,r.formula,r.note].filter(Boolean)));
   if(m.reviewNotes?.length)root.append(textList(m.reviewNotes));root.append(textList(b.cautions));
@@ -907,15 +812,16 @@ function renderEvidence(){
   if(activeTeam.length!==new Set(activeTeam).size)root.append(el('p','disc-warning','两位队友重复，请重新选择。'));
   for(const id of activeTeam){const t=details.agents[id];root.append(sourceDetails(`${t.name} · 核心F参考，队友影画与实际等级需另核对`,t.skills.filter(s=>/核心|额外能力/.test(s.name)).map(s=>[`${s.name}\n`,...skillText(s,{core:6,cinema:0})])));}
   root.append(sourceDetails('查看当前角色所有招式依据',a.skills.map(s=>[s.name,' · ',`${s.category}\n`,...skillText(s)])),link(`agents.html#agent=${config.id}`,'打开完整角色资料 ↗'));
-  if(graduation.agents[config.id]?.source?.url)root.append(link(graduation.agents[config.id].source.url,'逐角色攻略原文 ↗'));
-  const guideCount=Object.values(graduation.agents||{}).filter(a=>a.status==='author-reference').length,coverageNote=el('p','disc-muted',`${guideCount}位角色已有作者培养参考；具体条件见对应攻略。测试服资料单独展示。`);coverageNote.dataset.i18nEn=`Guide-author build references cover ${guideCount} agents; see each guide for its assumptions. Beta data is shown separately.`;root.append(coverageNote);
+  const guideUrl=graduation.agents[config.id]?.source?.url;
+  if(guideUrl&&![b.slot5Guide?.sourceUrl,b.slot5Guide?.otherSourceUrl].includes(guideUrl))root.append(link(guideUrl,'逐角色攻略原文 ↗'));
+  root.append(renderSlotFiveSources(b.slot5Guide));
 }
 function skillText(s,context=config){
   const levels=s.levels||s.variants||[];
   if(Array.isArray(levels)&&levels.length){const requested=s.levelType==='核心强化'?context.core+1:12+(context.cinema>=3?2:0)+(context.cinema>=5?2:0),found=levels.find(l=>l.level===requested);if(found)return [`${s.levelType==='核心强化'?`核心${context.core?'ABCDEF'[context.core-1]:'基础'}`:`招式培养12级，影画加成后${requested}级`}：`,found.description||found.text||s.description];return ['当前来源未提供所选等级完整文本；以下为基础说明，精确数值请在完整资料页核对。\n',s.description||''];}
   return [s.description||s.text||'请在完整技能页切换等级查看。'];
 }
-function renderAll(){farmNotice='';renderConfig();renderPlans();renderTiers();renderStrategy();renderRollGuide();renderSlots();updateTargets();renderEvidence();$('disc-candidates').replaceChildren();$('disc-allocation-status').textContent='';saveCurrentPlan();queuePlanRefresh();}
+function renderAll(){renderConfig();renderPlans();renderTiers();renderRollGuide();renderSlots();updateTargets();renderEvidence();saveCurrentPlan();queueFarmRefresh();}
 function setBusy(value){busy=value;$('disc-fetch').disabled=value;$('disc-demo').disabled=value;$('disc-cancel').hidden=!value;}
 // Only this page retains the latest source. Selecting a role starts from a copy of its imported equipment.
 function selectPlannerAgent(id){
@@ -924,7 +830,7 @@ function selectPlannerAgent(id){
   if(imported){
     const plan=activeImport.plan;
     if(plan){
-      setPlanningTeam(plan.team);alternative=plan.alternative;tier=plan.tier;planningMode=plan.mode;planIndex=plan.planIndex;renderAll();
+      setPlanningTeam(plan.team);alternative=plan.alternative;tier=plan.tier;planIndex=plan.planIndex;renderAll();
     }
     setImportStatus(...activeImport.notice);
   }else if(activeImport){
@@ -947,8 +853,8 @@ function consumeShowcase(result,isDemo){
     control.append(image,uiText('span',agent.name,agent.nameEn));control.dataset.agentId=id;
     control.setAttribute('aria-pressed',String(config.id===id));return control;
   });
-  const notice=isDemo?['虚构展柜示例；角色与音擎按60级满突破、核心F规划。','Fictional showcase. Agent and W-Engine target Lv.60 and full promotion, with Core Skill F.']:
-    ['已载入公开配装；角色与音擎按60级满突破、核心F规划，非来源实测等级。','Public build loaded. Agent and W-Engine target Lv.60 and full promotion, with Core Skill F; these are planning levels, not imported measurements.'];
+  const notice=isDemo?['已载入示例配装。','Example build loaded.']:
+    ['已载入公开配装。','Public build loaded.'];
   activeImport={configs,notice};$('disc-showcase-agents').replaceChildren(...buttons);
   const first=isDemo?agents.reduce((best,a)=>(a.discs?.length||0)>(best.discs?.length||0)?a:best):agents[0];
   selectPlannerAgent(!isDemo&&configs.has(preferredAgentId)?preferredAgentId:String(first.id));
@@ -992,9 +898,7 @@ $('disc-uid-form').onsubmit=e=>{e.preventDefault();return readShowcase(false);};
 $('disc-cancel').onclick=()=>{cancelImport();$('disc-import-status').textContent='读取已取消或超时，原方案保留。';};
 $('disc-demo').onclick=()=>readShowcase(true);
 $('disc-reset').onclick=()=>{cancelImport();setAgent(config.id);setImportStatus('已重置当前角色。','Current agent reset.');};
-$('disc-generate').onclick=()=>generate();$('disc-compare').onclick=compare;
-$('disc-search-cancel').onclick=()=>{cancelSearch('搜索已取消，已录入配装保留。');farmNotice='cancelled';updateSlotGoals();$('disc-candidates').replaceChildren();};
-$('disc-export').onclick=()=>{const errors=validateConfiguration(config,data);if(errors.length){$('disc-validation').textContent=errors.join('；');return;}const blob=new Blob([JSON.stringify({schema:'bagel-disc-plan-1',config,team,scope:planningScope,alternative,tier,mode:planningMode},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=el('a');a.href=url;a.download=`${details.agents[config.id].name}-驱动盘方案.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
+$('disc-export').onclick=()=>{const errors=validateConfiguration(config,data);if(errors.length){$('disc-validation').textContent=errors.join('；');return;}const blob=new Blob([JSON.stringify({schema:'bagel-disc-plan-1',config,team,scope:planningScope,alternative,tier,mode:'improve'},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=el('a');a.href=url;a.download=`${details.agents[config.id].name}-驱动盘方案.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
 $('disc-file').onchange=async e=>{
   const file=e.target.files[0];if(!file)return;
   e.target.value='';
@@ -1007,8 +911,8 @@ $('disc-file').onchange=async e=>{
     const imported=maximumPlanningLevels(x.config),errors=validateConfiguration(imported,data);
     if(errors.length)throw Error(errors.join('；'));
     const plan={team:x.team,alternative:mechanics.agents[imported.id]?.alternatives?.some(a=>a.id===x.alternative)?x.alternative:'',
-      tier:['usable','small','large'].includes(x.tier)?x.tier:'small',mode:x.mode==='fresh'?'fresh':'improve',planIndex:0};
-    loadSingleAgent(imported,['已导入方案（不含UID）；角色与音擎按60级满突破、核心F规划，非来源实测等级。','Plan imported without a UID. Agent and W-Engine target Lv.60, full promotion, and Core Skill F; these are planning levels, not imported measurements.'],plan);
+      tier:['usable','small','large'].includes(x.tier)?x.tier:'small',planIndex:0};
+    loadSingleAgent(imported,['已导入方案。','Plan imported.'],plan);
   }catch(error){
     if(controller===request)$('disc-import-status').textContent=`导入失败：${error.message}`;
   }finally{
@@ -1017,8 +921,10 @@ $('disc-file').onchange=async e=>{
   }
 };
 try{
-  const paths=['disc-planner-data.json?v=20261117-disc-panel-launch-1','agent-builds.json?v=20261111-refresh-launch-1','agent-equipment.json?v=20261111-refresh-launch-1','agent-details.json?v=20261111-refresh-launch-1','agent-graduation.json?v=20261027-agents-launch-1','disc-planner-mechanics.json?v=20261027-agents-launch-1'];
-  [data,builds,equipment,details,graduation,mechanics]=await Promise.all(paths.map(async p=>{const r=await fetch(p);if(!r.ok)throw Error(`资料读取失败：${p}`);return r.json();}));
+  const paths=['disc-planner-data.json?v=20261121-equipment-scope-launch-1','agent-builds.json?v=20261121-equipment-scope-launch-1','agent-equipment.json?v=20261111-refresh-launch-1','agent-details.json?v=20261111-refresh-launch-1','agent-graduation.json?v=20261027-agents-launch-1','disc-planner-mechanics.json?v=20261121-equipment-scope-launch-1'];
+  const read=async p=>{const r=await fetch(p);if(!r.ok)throw Error(`资料读取失败：${p}`);return r.json();};
+  const abilities=read('team-abilities.json?v=20261121-equipment-scope-launch-1').catch(()=>null);
+  [data,builds,equipment,details,graduation,mechanics,abilityCatalog]=await Promise.all([...paths.map(read),abilities]);
   const requested=new URL(location.href).searchParams.get('agent'),remembered=readSavedPlan();
   const restore=remembered&&(!Object.hasOwn(data.agents,requested)||requested===remembered.config.id);
   if(restore){
@@ -1026,7 +932,7 @@ try{
   }else if(Object.hasOwn(data.agents,requested))setAgent(requested);
   else setAgent('1611',null,false);
   let transferred=false;
-  try{const raw=sessionStorage.getItem('bagel-disc-planner-handoff');if(raw){sessionStorage.removeItem('bagel-disc-planner-handoff');const a=JSON.parse(raw);if(data.agents[String(a.id)]){tier=['usable','small','large'].includes(a.planningTier)?a.planningTier:'small';loadSingleAgent(normalizedToConfiguration(a,data),['已带入配装（不含UID）；角色与音擎按60级满突破、核心F规划，非来源实测等级。','Build transferred without a UID. Agent and W-Engine target Lv.60 and full promotion, with Core Skill F; these are planning levels, not imported measurements.']);transferred=true;}}}catch{}
+  try{const raw=sessionStorage.getItem('bagel-disc-planner-handoff');if(raw){sessionStorage.removeItem('bagel-disc-planner-handoff');const a=JSON.parse(raw);if(data.agents[String(a.id)]){tier=['usable','small','large'].includes(a.planningTier)?a.planningTier:'small';loadSingleAgent(normalizedToConfiguration(a,data),['已载入展柜配装。','Showcase build loaded.']);transferred=true;}}}catch{}
   planStorageReady=true;if(transferred||Object.hasOwn(data.agents,requested)&&!restore)saveCurrentPlan();
   // Official sync sources mount.
   const importOfficial=(agent,meta)=>{
@@ -1035,7 +941,7 @@ try{
     const errors=validateConfiguration(imported,data);if(errors.length)throw Error(errors.join('；'));
     cancelImport();
     const provider=meta.source==='hoyolab'?'HoYoLAB':'米游社',providerEn=meta.source==='hoyolab'?'HoYoLAB':'Miyoushe';
-    loadSingleAgent(imported,[`已同步${provider}配装；角色与音擎按60级满突破、核心F规划，非来源实测等级。`,`${providerEn} build synced. Agent and W-Engine target Lv.60, full promotion, and Core Skill F; these are planning levels, not imported measurements.`]);
+    loadSingleAgent(imported,[`已同步${provider}配装。`,`${providerEn} build synced.`]);
   };
   if(/^#(?:hoyolab-sync=[0-9a-f]{32}|disc-hoyolab-sync)$/.test(location.hash))$('disc-global-sync').open=true;
   mountHoyolabSync($('disc-hoyolab-sync'),{getAgentId:()=>config.id,getAgentName:id=>details.agents[id]?.name||'',onImport:importOfficial,restoredBuild:!!restore&&!transferred});
@@ -1047,5 +953,8 @@ try{
   mountChina();
   mountBuildSettings();
   // End official sync sources mount.
-  window.discPlanner={getState:()=>({ready:true,agentId:config.id,tier,alternative,busy,mode:planningMode,scope:planningScope,team:[...team],searching:!!searchTask,allocation:allocation?{met:allocation.met,steps:allocation.steps,blocked:allocation.blocked,guidanceOnly:allocation.guidanceOnly,baselineMet:allocation.baselineMet,changedSlots:allocation.changedSlots,retainedSlots:allocation.retainedSlots,search:allocation.search}:null}),getConfiguration:()=>clone(config),getAllocation:()=>allocation?clone(allocation):null};
+  window.discPlanner={
+    getState:()=>({ready:true,agentId:config.id,tier,alternative,busy,scope:planningScope,team:[...team],searching:farmResult.status==='calculating',farmingStatus:farmResult.status}),
+    getConfiguration:()=>clone(config),getFarming:()=>clone(farmResult)
+  };
 }catch(e){$('disc-import-status').textContent=e.message;$('disc-fetch').disabled=true;}

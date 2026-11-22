@@ -30,6 +30,48 @@ function bilingual(tag, zh, en) {
   return node;
 }
 
+export function renderSlotFiveGuide(build) {
+  const tiers = build?.slot5Guide?.tiers;
+  if (!tiers?.length) return null;
+  const conditional = build.conditionalMainStatIds?.[5] || [];
+  function describe(lang) {
+    const labels = ids => ids.map(id => {
+      const group = Math.floor(id / 100);
+      const label = statNames[group]?.[lang] || String(id);
+      return [111, 121, 131].includes(group) ? label + '%' : label;
+    }).join(' / ');
+    const parts = [(lang ? 'Preferred · ' : '首选 ') + labels(tiers[0])];
+    if (tiers.length > 1) parts.push((lang ? 'Alternatives · ' : '备选 ') + tiers.slice(1).map(labels).join(' › '));
+    if (conditional.length) {
+      const choices = conditional.map(id => {
+        const note = build.slot5Guide.conditions?.[id];
+        const when = lang ? note?.textEn : note?.text;
+        return labels([id]) + (when ? (lang ? ' (' + when + ')' : '（' + when + '）') : '');
+      });
+      parts.push((lang ? 'Conditional · ' : '条件备选 ') + choices.join(' / '));
+    }
+    return parts.join(' · ');
+  }
+  return bilingual('span', describe(0), describe(1));
+}
+
+export function renderSlotFiveSources(guide) {
+  const fragment = document.createDocumentFragment();
+  if (!guide) return fragment;
+  const urls = new Set([guide.sourceUrl, guide.otherSourceUrl,
+    ...Object.values(guide.conditions || {}).map(condition => condition.sourceUrl)]);
+  for (const href of urls) {
+    if (!href || !href.startsWith('https://')) continue;
+    const host = new URL(href).hostname.replace(/^www\./, '');
+    const source = {'prydwen.gg':'Prydwen', 'icy-veins.com':'Icy Veins', 'kocpc.com.tw':'KOCPC'}[host] || host;
+    const anchor = bilingual('a', '5 号盘参考 · ' + source + ' ↗', 'Slot 5 guide · ' + source + ' ↗');
+    anchor.href = href; anchor.target = '_blank'; anchor.rel = 'noopener noreferrer';
+    if (fragment.childNodes.length) fragment.append(' · ');
+    fragment.append(anchor);
+  }
+  return fragment;
+}
+
 const discFitParts = {
   substats: ['副词条', 'Substats'],
   main: ['主属性', 'Main stat'],
@@ -129,7 +171,7 @@ export function renderDiscContribution(item) {
     add('panel',item.main.group,item.main.delta,(en,stat,amount)=>`${stat} +${amount}`);
   }
   for(const effect of item.effects){
-    add('passive',effect.group,effect.delta,(en,stat,amount)=>`${en?'Passive conversion · ':'常驻转换 · '}${stat} ${effect.delta>0?'+':''}${amount}`);
+    add('passive',effect.group,effect.delta,(en,stat,amount)=>`${en?'Equipment stat conversion · ':'装备属性换算 · '}${stat} ${effect.delta>0?'+':''}${amount}`);
   }
   if(item.setLoss){
     const pieces=item.setLoss.pieces;
@@ -151,6 +193,13 @@ function effectText(effect, english) {
   const cinema = effect.minCinema || effect.modifierCinema;
   const cinemaLabel = cinema ? (english ? `Mindscape ${cinema} · ` : `影画 ${cinema} · `) : '';
   const condition = english ? effect.conditionEn : effect.condition;
+  if (effect.scope === 'skill') {
+    const source = effect.minCinema
+      ? (english ? `Mindscape ${effect.minCinema}` : `影画 ${effect.minCinema}`)
+      : cinemaLabel + (english ? 'Core Skill' : '核心被动');
+    const scope = english ? ' (separate from equipment stats) · ' : '（装备面板外）· ';
+    return source + scope + input + gain;
+  }
   if (condition) return cinemaLabel + condition + ' · ' + input + gain + ' ' + result;
   if (effect.scope === 'entry') return (english ? 'On entering combat · ' : '进入战场后 · ') + input + gain + ' ' + result;
   if (effect.scope === 'team') return (english ? 'With the required squad condition · ' : '满足队伍条件时 · ') + input + gain + ' ' + result;
