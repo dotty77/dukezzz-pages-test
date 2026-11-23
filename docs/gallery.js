@@ -8,7 +8,7 @@ const number = value => Number(value).toLocaleString('zh-CN');
 const qualities = {1:{name:'C',color:'#35835e'},2:{name:'B',color:'#4178c1'},3:{name:'A',color:'#9463c0'},4:{name:'S',color:'#a97819'},5:{name:'Z',color:'#cf343a'}};
 // Site display categories; keep the original client taxonomy in the catalog data.
 const categoryOverrides = {'4360046':'贵重物品'};
-const state = {items:[], media:{}, metadata:{}, category:'all', rarity:'all', motion:'all', search:'', sort:'quality', favoritesOnly:false, shown:72, selected:null, filtered:[], ready:false};
+const state = {version:null, items:[], media:{}, metadata:{}, category:'all', rarity:'all', motion:'all', search:'', sort:'quality', favoritesOnly:false, shown:72, selected:null, filtered:[], ready:false};
 const favoritesKey = 'bagel-gallery-favorites-v1';
 let favorites = new Set(), storageAvailable = true;
 try { const saved = JSON.parse(localStorage.getItem(favoritesKey) || '[]'); if (Array.isArray(saved)) favorites = new Set(saved.map(String)); } catch { storageAvailable = false; }
@@ -16,11 +16,39 @@ let player = null, mediaGeneration = 0, currentMedia = 'static', mediaAbort = nu
 let intentTimer = 0;
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 
+const collections = {};
+const betaMode = () => state.version === 'beta';
+const localized = (zh, en) => window.DUKE_I18N?.language === 'en' ? en : zh;
+const itemName = item => betaMode() ? localized(item.name, item.nameEn || item.name) : window.DUKE_I18N.t(item.name);
+
+function betaCard(item) {
+  const name = itemName(item);
+  const q = quality(item);
+  const category = localized(item.category, item.categoryEn || item.category);
+  const art = icon(item);
+  const image = art ? `<img class="beta-icon" src="${escape(art)}" alt="" loading="lazy" width="44" height="44">` : '';
+  const favorite = favorites.has(item.id) ? '<span class="favorite-mark" aria-hidden="true">★</span>' : '';
+  return `<button class="item-card beta-card" type="button" data-id="${escape(item.id)}" data-rarity="${escape(item.rarity)}"
+    style="--quality:${q.color}" aria-label="${escape(name)}">${image}<span class="card-copy">
+    <span class="card-meta"><span class="card-rarity">${escape(q.name)}</span><span class="card-category">${escape(category)}</span>${favorite}</span>
+    <b class="card-name">${escape(name)}</b></span></button>`;
+}
+
+function betaCitation(item) {
+  const meta = state.metadata;
+  const label = `Gachabase · ${meta.version} ${localized('测试服', 'Beta')} · D${meta.designRevision} / R${meta.resourceRevision}`;
+  const url = localized(item.source.url, item.source.urlEn || item.source.url);
+  const translation = item.translation || {};
+  const translated = [translation.nameEn === 'duke' && 'name', translation.descriptionEn === 'duke' && 'effect'].filter(Boolean);
+  const note = translated.length && localized(false, true) ? `<p>DUKE translation: ${translated.join(' and ')}.</p>` : '';
+  return `<p><a href="${escape(url)}" target="_blank" rel="noopener noreferrer">${escape(label)} ↗</a></p>${note}`;
+}
+
 function quality(item) { return qualities[item.rarity] || {name:item.rarityLabel || '—',color:'#aebaa7'}; }
 function media(item) { return state.media[item.id] || item.media || {}; }
 function animation(item) { const a = media(item).animation; return a?.src && a.status !== 'pending' ? a : null; }
 function motionStatus(item) { return animation(item) ? 'animated' : media(item).animation?.status === 'pending' || item.hasAnimation || item.displayResource ? 'pending' : 'static'; }
-function icon(item) { const m = media(item); return m.icon || m.thumbnail || item.icon || null; }
+function icon(item) { if (betaMode()) return collections.beta.icons[item.iconKey] || null; const m = media(item); return m.icon || m.thumbnail || item.icon || null; }
 function normalize(item) {
   const originalCategory=plain(item.category || item.categoryName || '其他物资');
   return {...item, id:String(item.id), name:plain(item.name || `物资 ${item.id}`), description:plain(item.description || item.desc), originalCategory, category:categoryOverrides[String(item.id)] || originalCategory, rarity:Number(item.rarity), price:item.price ?? item.value ?? null};
@@ -43,15 +71,16 @@ function updateFilters() {
     (state.rarity === 'all' || String(item.rarity) === state.rarity) &&
     (state.motion === 'all' || motionStatus(item) === state.motion) &&
     (!state.favoritesOnly || favorites.has(item.id)) &&
-    (!state.search || window.DUKE_I18N.matches([item.name,item.description,item.id,item.category,...(item.tags||[])],state.search))
+    (!state.search || window.DUKE_I18N.matches([item.name,item.nameEn,item.description,item.descriptionEn,item.id,item.category,item.categoryEn,...(item.tags||[])],state.search))
   );
-  const byName = (a,b) => window.DUKE_I18N.t(a.name).localeCompare(window.DUKE_I18N.t(b.name),window.DUKE_I18N.language) || a.id.localeCompare(b.id);
+  const byName = (a,b) => itemName(a).localeCompare(itemName(b),window.DUKE_I18N.language) || a.id.localeCompare(b.id);
   state.filtered.sort(state.sort === 'name' ? byName : state.sort === 'price-desc' ? (a,b) => (b.price ?? -1) - (a.price ?? -1) || byName(a,b) : state.sort === 'price-asc' ? (a,b) => (a.price ?? Infinity) - (b.price ?? Infinity) || byName(a,b) : (a,b) => b.rarity - a.rarity || (b.price ?? -1) - (a.price ?? -1) || byName(a,b));
   renderGrid();
 }
 function renderGrid() {
   const visible = state.filtered.slice(0,state.shown);
   $('item-grid').innerHTML = visible.map(item => {
+    if (betaMode()) return betaCard(item);
     const q = quality(item), motion = motionStatus(item);
     return `<button class="item-card" type="button" data-id="${escape(item.id)}" data-rarity="${escape(item.rarity)}" style="--quality:${q.color}" aria-label="查看${escape(item.name)}${motion === 'animated' ? '，含动态展示' : ''}"><div class="card-art"><span class="game-item-tile">${imageMarkup(item)}</span>${favorites.has(item.id)?'<span class="card-favorite" aria-label="已收藏">★</span>':''}${motion === 'animated'?'<span class="card-motion">▷ 动态</span>':''}</div><div class="card-copy"><span class="card-meta"><span class="card-rarity">${escape(q.name)} 级</span><span class="card-category">${escape(item.category)}</span></span><b class="card-name">${escape(item.name)}</b><span class="card-price"><span>${priceText(item)}</span><small>${item.price !== null ? '配置价值' : '未标价值'}</small></span></div></button>`;
   }).join('');
@@ -62,7 +91,7 @@ function renderGrid() {
   $('load-more').textContent = `继续浏览 · 还有 ${state.filtered.length - visible.length} 件 ↓`;
   $('clear-filters').hidden = state.category === 'all' && state.rarity === 'all' && state.motion === 'all' && !state.search && !state.favoritesOnly;
   $('favorites-only').setAttribute('aria-pressed', String(state.favoritesOnly));
-  $('favorites-only').textContent = `${state.favoritesOnly ? '★' : '☆'} 收藏${state.favoritesOnly ? ` ${favorites.size}` : ''}`;
+  $('favorites-only').textContent = `${state.favoritesOnly ? '★' : '☆'} 收藏${state.favoritesOnly ? ` ${state.items.filter(item => favorites.has(item.id)).length}` : ''}`;
 }
 function resetFilters() {
   Object.assign(state, {category:'all',rarity:'all',motion:'all',search:'',favoritesOnly:false,shown:72});
@@ -87,6 +116,10 @@ function renderItemRules(item) {
   element.innerHTML=rules?`<summary>${escape(rules.title)}</summary>${rules.paragraphs.map(text=>`<p class="drop-note">${escape(text)}</p>`).join('')}<p class="drop-footnote"><a href="${escape(rules.sourceUrl)}" target="_blank" rel="noreferrer">${escape(rules.sourceLabel)} ↗</a></p>`:'';
 }
 function renderFacts(item) {
+  if (betaMode()) {
+    $('item-facts').innerHTML = fact('等级', item.level) + fact('物资编号', item.id);
+    return;
+  }
   const fields = [fact('配置价值', item.price !== null ? `${number(item.price)} 齿轮硬币` : '未标明', 'fact-price')];
   if(item.stackMax != null)fields.push(fact('叠加上限',number(item.stackMax)));
   if(item.level != null)fields.push(fact('等级',item.level));
@@ -99,6 +132,7 @@ function renderFacts(item) {
   $('item-facts').innerHTML=fields.join('');
 }
 function sourceMarkup(item) {
+  if (betaMode()) return betaCitation(item);
   const m=media(item), a=animation(item), lines = [];
   lines.push(`客户端版本：${state.metadata.version || '版本待核对'}。物资数值与资源名来自本地配置，中文按配置键与公开文本缓存对应。配置价值不等同于交易报价。`);
   if (item.source)lines.push(typeof item.source === 'string' ? item.source : JSON.stringify(item.source));
@@ -119,8 +153,10 @@ function showItem(id, {updateURL=true} = {}) {
   }
   state.selected=item;$('item-dialog').style.setProperty('--quality',quality(item).color);
   $('item-dialog').dataset.rarity=String(item.rarity);
-  $('item-number').textContent=`物资档案 / ${item.id}`;$('item-title').textContent=item.name;$('item-rarity').textContent=`${quality(item).name} 级`;$('item-category').textContent=item.category;
-  const descriptions=[item.description,item.detailDescription,item.researchDescription].filter(Boolean);
+  $('item-number').textContent=`物资档案 / ${item.id}`;$('item-title').textContent=betaMode() ? itemName(item) : item.name;$('item-rarity').textContent=`${quality(item).name} 级`;$('item-category').textContent=betaMode() ? localized(item.category, item.categoryEn || item.category) : item.category;
+  if (betaMode()) $('item-number').textContent = localized('3.4 测试服', '3.4 Beta') + ' / ' + item.id;
+  const description = betaMode() ? localized(item.description, item.descriptionEn || item.description) : item.description;
+  const descriptions=[description,localized(item.sourceNote, item.sourceNoteEn || item.sourceNote),item.detailDescription,item.researchDescription].filter(Boolean);
   if(!descriptions.length)descriptions.push('当前配置未提供物资说明。');
   $('item-description').replaceChildren(...descriptions.flatMap((text,index)=>{const part=document.createElement('span');part.textContent=text;return index?['\n\n',part]:[part];}));
   let sources=$('item-drop-sources');if(!sources){sources=document.createElement('section');sources.id='item-drop-sources';sources.className='item-drop-sources';sources.setAttribute('aria-label','物资产出来源');$('item-description').after(sources);}sources.hidden=!(item.originalCategory==='门禁卡'||item.originalCategory==='贵重物品'||[13012,14701].includes(item.categoryId)||item.id==='4311022');if(!sources.hidden)renderItemSources(item,sources);else{sources.dataset.item='';sources.replaceChildren();}
@@ -130,7 +166,18 @@ function showItem(id, {updateURL=true} = {}) {
   $('media-dynamic').hidden=!animation(item);
   if(!$('item-dialog').open)$('item-dialog').showModal();
   $('item-dialog').scrollTop=0;
-  setMedia(animation(item) ? 'dynamic' : 'static');
+  $('beta-detail-icon')?.remove();
+  if (betaMode()) {
+    disposeMedia();
+    const art = icon(item);
+    if (art) {
+      const image = document.createElement('img');
+      image.id = 'beta-detail-icon'; image.src = art; image.alt = '';
+      $('item-category').after(image);
+    }
+  } else {
+    setMedia(animation(item) ? 'dynamic' : 'static');
+  }
   updatePreviousNext();
 }
 // Valuables with a TV channel link to it; the wall's manifest loads the first time one is opened.
@@ -183,28 +230,73 @@ async function setMedia(kind) {
   }
 }
 function renderAbout() {
+  if (betaMode()) {
+    const meta = state.metadata;
+    $('about-content').innerHTML = '<dl>' + fact(localized('测试版本','Beta version'),meta.version) +
+      fact(localized('物资数','Items'),state.items.length) + fact(localized('数据来源','Source'),'Gachabase') +
+      fact(localized('修订','Revision'),`D${meta.designRevision} / R${meta.resourceRevision}`) + '</dl>';
+    return;
+  }
   const meta=state.metadata, animated=state.items.filter(i=>animation(i)).length, missing=state.items.filter(i=>!icon(i)).length;
   const notes=meta.notes || meta.coverageNotes || [];
   $('about-content').innerHTML=`<dl>${fact('客户端版本',meta.version || '3.1.0')}${fact('收录物资',`${state.items.length} 件`)}${fact('可播放原始动画',`${animated} 件`)}${fact('图像暂缺',`${missing} 件`)}</dl><h3>收录依据</h3><p>${escape(meta.scope || '以当前正式客户端的迷宫诡域物品配置为依据。不同品质、等级及任务变体保留独立条目。')}</p>${(Array.isArray(notes)?notes:[notes]).map(n=>`<p>${escape(n)}</p>`).join('')}<h3>动态展示</h3><p>标有「动态」的物资使用客户端原始序列帧，点击物资后按需加载。未核实的播放速度会在详情中注明。开启系统「减少动态效果」时，动画由你手动播放。</p><h3>收藏与价值</h3><p>收藏仅保存在当前浏览器。物资数值是客户端的配置价值，实际出售或换取数量以游戏为准。</p><p><a href="research/item-public-sources.md?v=20261021-v33-launch-1" target="_blank" rel="noreferrer">查看公开资料核验 ↗</a> · <a href="research/item-catalog.json?v=20261021-v33-launch-1" target="_blank" rel="noreferrer">查看物资配置记录 ↗</a></p>`;
 }
+function setCollection(version) {
+  const next = collections[version];
+  if (!next || state.version === version) return;
+  state.version = version;
+  state.items = next.items;
+  state.metadata = next.metadata;
+  document.body.dataset.galleryVersion = version;
+  for (const button of $('gallery-versions').querySelectorAll('[data-version]')) {
+    button.setAttribute('aria-pressed', String(button.dataset.version === version));
+  }
+  const beta = betaMode();
+  const versionLabel = beta ? `${next.metadata.version} · 测试服` : `${next.metadata.version || '版本待核对'} · 古怪试炼`;
+  $('version').dataset.i18nEn = beta ? `${next.metadata.version} · Beta` : `${next.metadata.version} · Spooky Trial`;
+  $('version').textContent = versionLabel;
+  $('total-count').textContent = String(next.items.length);
+  const animated = next.items.filter(animation).length;
+  const coverage = $('coverage');
+  coverage.dataset.i18nEn = beta ? `${next.items.length} beta items · Subject to change` : `${next.items.length} items · ${animated} animations`;
+  coverage.textContent = beta ? `测试服物资 ${next.items.length} 件 · 可能调整` : `${next.items.length} 件物资 · ${animated} 件动画`;
+  $('rarity-filter').innerHTML = '<option value="all">全部品质</option>' +
+    [...new Set(next.items.map(i => i.rarity))].sort((a,b) => b-a).map(r => `<option value="${r}">${escape(quality({rarity:r}).name)} 级</option>`).join('');
+  for (const option of $('sort-order').options) {
+    if (option.value.startsWith('price-')) option.hidden = option.disabled = beta;
+  }
+  if (beta && state.sort.startsWith('price-')) state.sort = $('sort-order').value = 'quality';
+  resetFilters();
+  if (!beta) renderFeatured();
+  renderAbout();
+}
+
 async function init() {
   state.ready=false;$('load-error').hidden=true;
   try {
-    const [catalogResponse,mediaResponse]=await Promise.all([fetch('item-catalog.json?v=20261021-v33-launch-1'),fetch('assets/items/manifest.json?v=20261117-team-lazy-beta-launch-1')]);
+    const [catalogResponse,mediaResponse]=await Promise.all([fetch('item-catalog.json?v=20261122-bagel-gear-launch-1'),fetch('assets/items/manifest.json?v=20261117-team-lazy-beta-launch-1')]);
     if(!catalogResponse.ok)throw new Error('物资清单读取失败');
     if(!mediaResponse.ok)throw new Error('物资媒体索引读取失败');
     const catalog=await catalogResponse.json(),mediaData=await mediaResponse.json();
-    state.items=catalog.items.map(normalize);state.metadata=catalog.metadata || catalog.meta || {};state.media=mediaData.items || mediaData;
+    collections.release = {items: catalog.items.map(normalize), metadata: catalog.metadata || catalog.meta || {}};
+    if (catalog.beta?.items?.length) collections.beta = {items: catalog.beta.items.map(normalize), metadata: catalog.beta.metadata, icons: catalog.beta.icons || {}};
+    $('gallery-versions').hidden = !collections.beta;
+    state.media=mediaData.items || mediaData;
     if(Array.isArray(state.media))state.media=Object.fromEntries(state.media.map(i=>[String(i.id),i]));
-    $('version').textContent=`${state.metadata.version || '版本待核对'} · 古怪试炼`;$('total-count').textContent=String(state.items.length);
-    const animated=state.items.filter(i=>animation(i)).length;
-    $('coverage').dataset.i18nEn=`${state.items.length} items · ${animated} animations`;$('coverage').textContent=`${state.items.length} 件物资 · ${animated} 件动画`;
-    $('rarity-filter').innerHTML='<option value="all">全部品质</option>'+[...new Set(state.items.map(i=>i.rarity))].sort((a,b)=>b-a).map(r=>`<option value="${r}">${escape(quality({rarity:r}).name)} 级</option>`).join('');
-    renderCategories();updateFilters();renderFeatured();renderAbout();state.ready=true;
+    state.version=null;state.ready=true;
     syncItemFromURL();
   } catch(error) { $('load-error').hidden=false;$('load-error-message').textContent=error.message;$('coverage').textContent='物资档案暂未载入';$('result-count').textContent='读取失败'; }
 }
 
+$('gallery-versions').addEventListener('click', event => {
+  const button = event.target.closest('[data-version]');
+  if (!button || state.version === button.dataset.version) return;
+  const url = new URL(location.href);
+  if (button.dataset.version === 'beta') url.searchParams.set('version', 'beta'); else url.searchParams.delete('version');
+  url.hash = '';
+  history.pushState(null, '', url);
+  syncItemFromURL();
+});
 $('category-tabs').addEventListener('click',event=>{const b=event.target.closest('[data-category]');if(b){state.category=b.dataset.category;state.shown=72;renderCategories();updateFilters();}});
 $('item-grid').addEventListener('click',event=>{const b=event.target.closest('[data-id]');if(b)showItem(b.dataset.id);});
 $('featured').addEventListener('click',()=>showItem($('featured').dataset.id));
@@ -260,15 +352,30 @@ $('about-open').addEventListener('click',()=>$('about-dialog').showModal());$('a
 for(const id of ['item-dialog','about-dialog'])$(id).addEventListener('click',event=>{if(event.target!==$(id))return;const r=$(id).getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)$(id).close();});
 reducedMotion.addEventListener('change',()=>{if(reducedMotion.matches){player?.pause();playbackControls();}});
 window.addEventListener('pagehide',disposeMedia);
-window.addEventListener('dukelanguagechange',()=>{if(state.ready){updateFilters();updatePreviousNext();}});
-window.addEventListener('pageshow',event=>{if(event.persisted&&$('item-dialog').open&&state.selected)setMedia(currentMedia);});
+window.addEventListener('dukelanguagechange',()=>{if(state.ready){updateFilters();updatePreviousNext();if(betaMode()){
+    renderAbout();
+    if(state.selected && $('item-dialog').open) showItem(state.selected.id,{updateURL:false});
+  }}});
+window.addEventListener('pageshow',event=>{if(event.persisted&&!betaMode()&&$('item-dialog').open&&state.selected)setMedia(currentMedia);});
 function syncItemFromURL() {
   if (!state.ready) return;
-  const id = new URLSearchParams(location.hash.slice(1)).get('item');
+  const url = new URL(location.href);
+  const id = new URLSearchParams(url.hash.slice(1)).get('item');
+  let version = url.searchParams.get('version') === 'beta' && collections.beta ? 'beta' : 'release';
+  if (id && !collections[version].items.some(item => item.id === id)) {
+    const other = version === 'release' ? 'beta' : 'release';
+    if (collections[other]?.items.some(item => item.id === id)) {
+      version = other;
+      if (version === 'beta') url.searchParams.set('version', 'beta'); else url.searchParams.delete('version');
+      history.replaceState(history.state, '', url);
+    }
+  }
+  setCollection(version);
   if (id && state.items.some(item => item.id === id)) {
     if (!$('item-dialog').open || state.selected?.id !== id) showItem(id, {updateURL:false});
   } else if ($('item-dialog').open) $('item-dialog').close();
 }
+window.addEventListener('popstate', syncItemFromURL);
 window.addEventListener('hashchange', syncItemFromURL);
 $('retry-load').addEventListener('click',init);
 window.itemGallery={state,showItem,getPlayback:()=>player?{playing:player.playing,frame:player.frame,count:player.count,fps:player.fps}:null};
