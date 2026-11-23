@@ -29,12 +29,12 @@ const colors = {物理:'#b59b64',火:'#d97657',燎源:'#d97657',冰:'#63acbc',�
 let roster = [], equipment = {}, builds = {}, catalog = {}, selected = null, selectedTab = 'intro', opener = null;
 let version = '', graduation = {}, detailsBytes = 0, detailGeneration = 0, previewDiscNames = {};
 const assets = {
-  directory:'agent-previews.json?v=20261120-beta345-launch-1',
+  directory:'agent-previews.json?v=20261122-agents-events-launch-1',
   details:'agent-details.json?v=20261111-refresh-launch-1',
   equipment:'agent-equipment.json?v=20261111-refresh-launch-1',
   builds:'agent-builds.json?v=20261121-equipment-scope-launch-1',
   graduation:'agent-graduation.json?v=20261027-agents-launch-1',
-  beta:'agent-beta.json?v=20261120-sunbringer-rev2-launch-1',
+  beta:'agent-beta.json?v=20261122-agents-events-launch-1',
 };
 const downloads = new Map(), failures = new Set();
 const dialog = $('agent-dialog');
@@ -104,7 +104,7 @@ async function mediaHash(bytes) {
 }
 async function fetchMediaPart(part,signal) {
   const pack=previewBundles.packs.get(part.bundle),end=part.offset+part.length-1;
-  const response=await fetch(part.bundle,{headers:{Range:`bytes=${part.offset}-${end}`},signal});
+  const response=await fetch(part.bundle+'?v='+pack.sha256,{headers:{Range:`bytes=${part.offset}-${end}`},signal});
   const partial=response.status===206;
   const reject=async message=>{await response.body?.cancel().catch(()=>{});throw new Error(message);};
   if(!partial && response.status!==200)return reject('Media request failed');
@@ -454,6 +454,7 @@ function renderIntro(agent) {
     const sources=el('details','agent-source-fold');sources.append(localized('summary','','官方来源','Official sources'),links,localized('p','agent-source-note',`核对：${agent.updatedAt} · 开放时间以官方公告为准。`,`Checked: ${agent.updatedAt} · Availability follows official announcements.`));frag.append(sources);
     return frag;
   }
+  if(agent.officialArtwork)frag.append(renderArtworkGallery(agent.officialArtwork));
   if(agent.officialDossier)frag.append(renderOfficialDossier(agent));
   if(agent.profile) for(const item of values(agent.profile).filter(item=>!['entity.profile.height','entity.profile.birthday','entity.profile.gender'].includes(item?.sourceField))){if(typeof item==='string')frag.append(prose(item));else {if(item.name||item.title)frag.append(localized('h4','',item.name||item.title,item.nameEn||item.titleEn));frag.append(prose(item.description||item.text,item.descriptionEn||item.textEn));}}
 
@@ -474,6 +475,32 @@ function officialSources(sources) {
   }
   return links;
 }
+function renderArtworkGallery(group) {
+  const fold=el('details','agent-official-art-fold');fold.dataset.officialGallery=group.id;
+  fold.append(localized('summary','',group.title,group.titleEn));
+  let imagesBuilt=false;
+  fold.addEventListener('toggle',()=>{
+    if(!fold.open || imagesBuilt)return;
+    imagesBuilt=true;
+    const hasOriginals=group.pages?.some(page=>page.originalUrl);
+    const grid=hasOriginals ? el('div','agent-wallpaper-grid') : fold;
+    if(hasOriginals)fold.append(grid);
+    for(const page of group.pages || []){
+      const english=window.DUKE_I18N.language==='en';
+      const figure=el('figure','agent-official-art'),img=picture(english && page.srcEn ? page.srcEn : page.src,page.caption);
+      img.loading='lazy';img.dataset.officialImageZh=page.src;if(page.srcEn)img.dataset.officialImageEn=page.srcEn;
+      img.width=Number(english ? page.widthEn || page.width : page.width)||1080;
+      img.height=Number(english ? page.heightEn || page.height : page.height)||2160;
+      figure.append(img,localized('figcaption','',page.caption,page.captionEn));
+      if(page.originalUrl && new URL(page.originalUrl).protocol==='https:'){
+        const link=el('a');link.href=page.originalUrl;link.target='_blank';link.rel='noopener noreferrer';
+        img.alt='';link.append(figure);grid.append(link);
+      }else grid.append(figure);
+    }
+    if(group.source)fold.append(officialSources([group.source]));
+  });
+  return fold;
+}
 function renderOfficialDossier(agent) {
   const dossier=agent.officialDossier,box=el('details','agent-official-art-fold');
   box.dataset.officialDossier=agent.id;
@@ -489,31 +516,7 @@ function renderOfficialDossier(agent) {
     const voices=el('dl','agent-facts');for(const [key,value] of [['中文配音',dossier.voiceActors?.zh],['日文配音',dossier.voiceActors?.ja]])if(value){const row=el('div');row.append(el('dt','',key),el('dd','',value));voices.append(row);}body.append(voices);
 
     if(dossier.media?.length){body.append(renderPreviewMedia(dossier));if(dossier.mediaNote)body.append(prose(dossier.mediaNote,dossier.mediaNoteEn));}
-    for(const group of dossier.artworkGroups || []){
-      const fold=el('details','agent-official-art-fold');fold.dataset.officialGallery=group.id;
-      fold.append(localized('summary','',group.title,group.titleEn));
-      let imagesBuilt=false;
-      fold.addEventListener('toggle',()=>{
-        if(!fold.open || imagesBuilt)return;
-        imagesBuilt=true;
-        const hasOriginals=group.pages?.some(page=>page.originalUrl);
-        const grid=hasOriginals ? el('div','agent-wallpaper-grid') : fold;
-        if(hasOriginals)fold.append(grid);
-        for(const page of group.pages || []){
-          const english=window.DUKE_I18N.language==='en';
-          const figure=el('figure','agent-official-art'),img=picture(english && page.srcEn ? page.srcEn : page.src,page.caption);
-          img.loading='lazy';img.dataset.officialImageZh=page.src;if(page.srcEn)img.dataset.officialImageEn=page.srcEn;
-          img.width=Number(english ? page.widthEn || page.width : page.width)||1080;
-          img.height=Number(english ? page.heightEn || page.height : page.height)||2160;
-          figure.append(img,localized('figcaption','',page.caption,page.captionEn));
-          if(page.originalUrl && new URL(page.originalUrl).protocol==='https:'){
-            const link=el('a');link.href=page.originalUrl;link.target='_blank';link.rel='noopener noreferrer';
-            img.alt='';link.append(figure);grid.append(link);
-          }else grid.append(figure);
-        }
-      });
-      body.append(fold);
-    }
+    for(const group of dossier.artworkGroups || [])body.append(renderArtworkGallery(group));
     body.append(officialSources(dossier.sources || []));box.append(body);
   });
   return box;
@@ -776,7 +779,7 @@ function readHash() {const requested=new URLSearchParams(location.hash.slice(1))
 $('agent-close').onclick=closeAgent;
 dialog.addEventListener('close',()=>{if(!dialog.open){releasePreviewMedia();releasePackedPicturesIn($('agent-dialog-hero'));}});
 window.addEventListener('pagehide',()=>{detailGeneration++;releasePreviewMedia();releasePackedPicturesIn(document);packedImageCache.clear();packedImageBytes=0;});
-window.addEventListener('pageshow',event=>{if(event.persisted){renderGrid();if(selected && dialog.open){const tab=selectedTab;openAgent(selected.id);selectedTab=tab;renderDetail();}}});
+window.addEventListener('pageshow',event=>{if(event.persisted){for(const img of $('agent-version-media').querySelectorAll('img[data-official-image-zh]'))setPictureSource(img,img.dataset.officialImageZh);renderGrid();if(selected && dialog.open){const tab=selectedTab;openAgent(selected.id);selectedTab=tab;renderDetail();}}});
 window.addEventListener('dukelanguagechange',()=>{const img=$('agent-detail-content').querySelector('[data-agent-official-art]');if(img && selected)setPictureSource(img,officialArtPath(selected));for(const img of document.querySelectorAll('img[data-official-image-zh]'))setPictureSource(img,window.DUKE_I18N.language==='en' && img.dataset.officialImageEn ? img.dataset.officialImageEn : img.dataset.officialImageZh);for(const a of document.querySelectorAll('a[data-source-zh]'))a.href=window.DUKE_I18N.language==='en' && a.dataset.sourceEn ? a.dataset.sourceEn : a.dataset.sourceZh;});
 dialog.addEventListener('cancel',e=>{e.preventDefault();closeAgent();});
 dialog.addEventListener('click',e=>{if(e.target!==dialog)return;const box=dialog.getBoundingClientRect();if(e.clientX<box.left||e.clientX>box.right||e.clientY<box.top||e.clientY>box.bottom)closeAgent();});
@@ -785,10 +788,15 @@ try {
   const previewData=await loadArchive('directory'),directory=previewData.directory;
   if(directory?.version!==1 || !Array.isArray(directory.agents))throw new Error('Directory unavailable');
   installPreviewBundles(previewData.assetBundles);
+  if(previewData.versionMedia) {
+    const media=$('agent-version-media');
+    media.append(officialSources([previewData.versionMedia.film]),renderArtworkGallery(previewData.versionMedia.gallery));
+    media.hidden=false;
+  }
   const dossiers=previewData.agents,previews=dossiers.filter(p=>!p.supersededBy);
   previewDiscNames=previewData.previewDiscNames || {};
   version=directory.gameVersion;detailsBytes=directory.detailsBytes;
-  roster=directory.agents.map(agent=>({...agent,beta:directory.beta[agent.id],officialDossier:dossiers.find(p=>p.supersededBy===agent.id)}));
+  roster=directory.agents.map(agent=>({...agent,beta:directory.beta[agent.id],officialDossier:dossiers.find(p=>p.supersededBy===agent.id),officialArtwork:previewData.agentArtwork?.[agent.id]}));
   catalog=Object.fromEntries(roster.map(agent=>[agent.id,agent]));
   for(const agent of previews){
     if(!roster.some(a=>a.id===agent.id || a.name===agent.name || (a.fullName && a.fullName===agent.fullName))){

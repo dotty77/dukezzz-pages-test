@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updatedAt": "2026-11-20",
+ "updatedAt": "2026-11-22",
  "regions": [
   {
    "id": "prod_gf_cn",
@@ -140,12 +140,39 @@
     }
    },
    {
+    "text": "梦现追影第三关「薪火之影」已解锁。",
+    "textEn": "Stage 3 of Dream Manifestation: Chasing Shadows is open.",
+    "from": "2026-11-22T18:00:12+08:00",
+    "until": "2026-12-02T05:59:00+08:00",
+    "source": {
+     "title": "前往活动",
+     "titleEn": "Open event",
+     "url": "https://mhyurl.cn/iaO2IK26H",
+     "urlEn": "https://hoyo.link/5yqHKFHnS"
+    }
+   },
+   {
+    "text": "邀请好友回归或注册，最多可得 340 菲林。1 月 13 日 05:59（UTC+8）截止。",
+    "textEn": "Invite friends to return or register to earn up to 340 Polychromes. Ends Jan 13 at 05:59 (UTC+8).",
+    "until": "2027-01-13T05:59:00+08:00",
+    "source": {
+     "title": "前往活动",
+     "titleEn": "Open event",
+     "url": "https://mhyurl.cn/iaO2IK26H",
+     "urlEn": "https://hoyo.link/5yqHKFHnS"
+    }
+   },
+   {
     "text": "「决战于黎明之前」累计签到 7 天送 480 菲林。版本签到另有 1,840 菲林、10 加密母带、10 邦布券及帕姆主题配饰。",
     "textEn": "Check in for seven days in The Final Battle Before Dawn for 480 Polychromes. Version check-ins also give 1,840 Polychromes, 10 Encrypted Master Tapes, 10 Boopons, and a Pom-Pom accessory."
    },
    {
     "text": "参与「戏梦不知归处」可免费领取邦布帕姆。",
     "textEn": "Play Lost in a Theatrical Dream to claim the Pom-Pom Bangboo."
+   },
+   {
+    "text": "参与游戏内玩法可免费获得佩洛伊斯的影画和音擎进阶材料。",
+    "textEn": "Play in-game activities to earn Pyrois's Mindscapes and W-Engine overclock materials for free."
    }
   ],
   "sources": [

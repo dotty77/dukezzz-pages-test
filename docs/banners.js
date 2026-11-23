@@ -214,6 +214,7 @@ function renderNext() {
     details.open = prevRewardsOpen;
     details.append(el('summary', '', en ? 'Free Robin and event rewards' : '免费知更鸟与版本福利'));
     for (const reward of upcoming.rewards) {
+      if (reward.from && now < Date.parse(reward.from)) continue;
       if (reward.until && now >= Date.parse(reward.until)) continue;
       const text = el('p', 'planner-muted', en ? reward.textEn : reward.text);
       if (reward.source) text.append(' ', sourceLink(reward.source, region !== 'prod_gf_cn'));
@@ -257,7 +258,7 @@ function render() {
 
 async function main() {
   try {
-    const [data, tuning] = await Promise.all([loadJSON('banner-calendar.json?v=20261120-v34-reveal-launch-1'), loadJSON('tuning-catalog.json?v=20261118-reviewed-ui-launch-1')]);
+    const [data, tuning] = await Promise.all([loadJSON('banner-calendar.json?v=20261122-agents-events-launch-1'), loadJSON('tuning-catalog.json?v=20261118-reviewed-ui-launch-1')]);
     calendar = data; catalog = tuning.items;
     region = defaultRegion();
     const select = $('banner-region');

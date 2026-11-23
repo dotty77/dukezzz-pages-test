@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20",
+  "updatedAt": "2026-11-22",
   "scope": "官方已公开的角色档案与预告；开放时间和正式效果以游戏内公告为准。",
   "agents": [
     {
@@ -720,7 +720,7 @@
       "status": "announced",
       "previewNote": "挽昼的三个分身可为敌人积累残痕。触发毁伤可积攒愿火；愿火与喧响值充足时，可发动双重终结技引爆烬痕，以烬灭造成真实伤害。",
       "announcedAt": "2026-10-23T04:00:13Z",
-      "updatedAt": "2026-11-20",
+      "updatedAt": "2026-11-21",
       "icon": "assets/agent-previews/sunbringer/sunbringer-poster.png",
       "artwork": "assets/agent-previews/sunbringer/sunbringer-poster.png",
       "officialArt": "assets/agent-previews/sunbringer/sunbringer-profile-zh.png",
@@ -796,6 +796,14 @@
         }
       ],
       "sources": [
+        {
+          "id": "v34-cn-materials",
+          "title": "养成材料预告 · 国服",
+          "titleEn": "Upgrade material preview · CN",
+          "url": "https://www.miyoushe.com/zzz/article/79694624",
+          "date": "2026-11-21",
+          "featured": true
+        },
         {
           "id": "v34-program",
           "title": "3.4 前瞻总览 · 代理人、音擎与调频时间",
@@ -887,7 +895,7 @@
       "status": "announced",
       "previewNote": "知更鸟可在后台协奏，为全队提供护盾，提高防御力和伤害。她的终结技还能为锋御代理人回复锐能。",
       "announcedAt": "2026-10-09T12:07:09Z",
-      "updatedAt": "2026-11-20",
+      "updatedAt": "2026-11-21",
       "icon": "assets/agent-previews/robin/robin-poster.png",
       "artwork": "assets/agent-previews/robin/robin-poster.png",
       "officialArt": "assets/agent-previews/robin/robin-profile-zh.png",
@@ -919,6 +927,14 @@
         }
       ],
       "sources": [
+        {
+          "id": "v34-cn-materials",
+          "title": "养成材料预告 · 国服",
+          "titleEn": "Upgrade material preview · CN",
+          "url": "https://www.miyoushe.com/zzz/article/79694624",
+          "date": "2026-11-21",
+          "featured": true
+        },
         {
           "id": "v34-program",
           "title": "3.4 前瞻总览 · 代理人、音擎与调频时间",
@@ -3224,8 +3240,8 @@
       },
       {
         "path": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
-        "bytes": 708214,
-        "sha256": "a8ce2a36a3d246b62268157d38bd34ebffa4e255409657462003008f705fa17f"
+        "bytes": 1359984,
+        "sha256": "e9d9a712e4e90657ba281ff22999b224db940cafd0e3f9fd0b2aa6dbfdc0521f"
       }
     ],
     "assets": {
@@ -4225,6 +4241,175 @@
             "sha256": "2c3ed66084c486b1adfc33272bdfb1608d66504fedbabbc54d41032f8f5e8d79"
           }
         ]
+      },
+      "assets/agent-previews/official-20261122/v33-video-archive-01.webp": {
+        "bytes": 59034,
+        "sha256": "6f40a02659947e45ccafe58d3f3da6db6bb42a3d8bb5c8b50ae4fb095ea25b09",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 708214,
+            "length": 59034,
+            "sha256": "6f40a02659947e45ccafe58d3f3da6db6bb42a3d8bb5c8b50ae4fb095ea25b09"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261122/v33-video-archive-02.webp": {
+        "bytes": 42106,
+        "sha256": "8036ac0beb549ed21e998e74ee1b201a4aeda10e57c1df823f283cef2c189ce0",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 767248,
+            "length": 42106,
+            "sha256": "8036ac0beb549ed21e998e74ee1b201a4aeda10e57c1df823f283cef2c189ce0"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261122/v33-video-archive-03.webp": {
+        "bytes": 42622,
+        "sha256": "a1c7cb03694174424c54597c31433d5d78a81a944bc3036326ed3eae3655d6a0",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 809354,
+            "length": 42622,
+            "sha256": "a1c7cb03694174424c54597c31433d5d78a81a944bc3036326ed3eae3655d6a0"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261122/v33-video-archive-04.webp": {
+        "bytes": 39652,
+        "sha256": "71d3fe861a8062ace5c1c91958257b9ffeeb74b465dd32a94d52e3d02680d1d4",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 851976,
+            "length": 39652,
+            "sha256": "71d3fe861a8062ace5c1c91958257b9ffeeb74b465dd32a94d52e3d02680d1d4"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261122/v33-video-archive-05.webp": {
+        "bytes": 60878,
+        "sha256": "27881bcecd227d3670f1cc6d992d90eb7cfa852339d3e5048c60a717c1bdf54e",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 891628,
+            "length": 60878,
+            "sha256": "27881bcecd227d3670f1cc6d992d90eb7cfa852339d3e5048c60a717c1bdf54e"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261122/v33-video-archive-06.webp": {
+        "bytes": 53124,
+        "sha256": "992a8fcd6954b9cff5365cdd8c6a32addbf952e20e0a94b17ded6536c53cc2bc",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 952506,
+            "length": 53124,
+            "sha256": "992a8fcd6954b9cff5365cdd8c6a32addbf952e20e0a94b17ded6536c53cc2bc"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261122/v33-video-archive-07.webp": {
+        "bytes": 50856,
+        "sha256": "24af6b3d893b3bb2c7b1233d96f2cd27c6ba18e4d8e66b712af268b2c11b8f33",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 1005630,
+            "length": 50856,
+            "sha256": "24af6b3d893b3bb2c7b1233d96f2cd27c6ba18e4d8e66b712af268b2c11b8f33"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261122/v33-video-archive-08.webp": {
+        "bytes": 54762,
+        "sha256": "7bc85b01a41f0cc6cee91331dcc034cc9fe27ebe9e6917a04bd44512e80d5c4e",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 1056486,
+            "length": 54762,
+            "sha256": "7bc85b01a41f0cc6cee91331dcc034cc9fe27ebe9e6917a04bd44512e80d5c4e"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261122/v33-video-archive-09.webp": {
+        "bytes": 45490,
+        "sha256": "1c9a5a4e79c32362d1e11773b638a5c658884b6b075de1fe3fc6b3357928f8e2",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 1111248,
+            "length": 45490,
+            "sha256": "1c9a5a4e79c32362d1e11773b638a5c658884b6b075de1fe3fc6b3357928f8e2"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261122/v33-video-archive-10.webp": {
+        "bytes": 58052,
+        "sha256": "8731f9b54c577564fb5078de43daebd01cdecdf08616d7776855d5f5f13c28cf",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 1156738,
+            "length": 58052,
+            "sha256": "8731f9b54c577564fb5078de43daebd01cdecdf08616d7776855d5f5f13c28cf"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261122/v33-video-archive-11.webp": {
+        "bytes": 36054,
+        "sha256": "61a644f574b9d1ebb615453ed41f93c93849c3168d231dd8dc7c6beef544c331",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 1214790,
+            "length": 36054,
+            "sha256": "61a644f574b9d1ebb615453ed41f93c93849c3168d231dd8dc7c6beef544c331"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261122/v33-video-archive-12.webp": {
+        "bytes": 36936,
+        "sha256": "99a1980263bc749ff847dc9444a4d515b2bae381e3943c4485800217e3be48d6",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 1250844,
+            "length": 36936,
+            "sha256": "99a1980263bc749ff847dc9444a4d515b2bae381e3943c4485800217e3be48d6"
+          }
+        ]
+      },
+      "assets/agent-previews/official-20261122/seed-birthday-20261122.webp": {
+        "bytes": 72204,
+        "sha256": "d0d1ce40862172709a550a485ac028fff215e07ef5cb6e563d4aa193d97b0637",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 1287780,
+            "length": 72204,
+            "sha256": "d0d1ce40862172709a550a485ac028fff215e07ef5cb6e563d4aa193d97b0637"
+          }
+        ]
       }
     }
   },
@@ -4236,6 +4421,162 @@
     "34400": {
       "name": "赤翼夜曲",
       "nameEn": "Bloodwing Nocturne"
+    }
+  },
+  "versionMedia": {
+    "film": {
+      "title": "第三季纪念短片 · 新世界前夜",
+      "titleEn": "Season 3 retrospective · The Eve of a New World",
+      "url": "https://www.bilibili.com/video/BV1S4yhzcEgW/",
+      "urlEn": "https://zenless.hoyoverse.com/en-us/news/167409",
+      "date": "2026-11-21"
+    },
+    "gallery": {
+      "id": "v33-video-archive",
+      "title": "3.3「重返天空的旅程」影像档案壁纸 · 12 张",
+      "titleEn": "Journey to the Sky · 12 Version 3.3 Video Archive wallpapers",
+      "source": {
+        "title": "整套壁纸下载 · 官方原文",
+        "titleEn": "Download the wallpaper set · Official post",
+        "url": "https://www.miyoushe.com/zzz/article/79645801",
+        "urlEn": "https://zenless.hoyoverse.com/en-us/news/167369",
+        "date": "2026-11-18"
+      },
+      "pages": [
+        {
+          "id": "v33-video-archive-01",
+          "src": "assets/agent-previews/official-20261122/v33-video-archive-01.webp",
+          "width": 848,
+          "height": 477,
+          "originalUrl": "https://upload-bbs.mihoyo.com/upload/2026/11/18/152039149/d2583f351e62acbc7b17872ad2b0654b_2033942284843759930.png",
+          "caption": "壁纸 01 · 查看原图 ↗",
+          "captionEn": "Wallpaper 01 · Open original ↗"
+        },
+        {
+          "id": "v33-video-archive-02",
+          "src": "assets/agent-previews/official-20261122/v33-video-archive-02.webp",
+          "width": 848,
+          "height": 477,
+          "originalUrl": "https://upload-bbs.mihoyo.com/upload/2026/11/18/152039149/1eb660a2d80caf77b89d00fbf2ee6f3c_4733523708944139569.png",
+          "caption": "壁纸 02 · 查看原图 ↗",
+          "captionEn": "Wallpaper 02 · Open original ↗"
+        },
+        {
+          "id": "v33-video-archive-03",
+          "src": "assets/agent-previews/official-20261122/v33-video-archive-03.webp",
+          "width": 848,
+          "height": 477,
+          "originalUrl": "https://upload-bbs.mihoyo.com/upload/2026/11/18/152039149/4083c538e57c751246cdcd026e87b6b0_3240319805045459501.png",
+          "caption": "壁纸 03 · 查看原图 ↗",
+          "captionEn": "Wallpaper 03 · Open original ↗"
+        },
+        {
+          "id": "v33-video-archive-04",
+          "src": "assets/agent-previews/official-20261122/v33-video-archive-04.webp",
+          "width": 848,
+          "height": 477,
+          "originalUrl": "https://upload-bbs.mihoyo.com/upload/2026/11/18/152039149/54b0b712c6e659cb1ff5a9cab42695a8_7048926711076476866.png",
+          "caption": "壁纸 04 · 查看原图 ↗",
+          "captionEn": "Wallpaper 04 · Open original ↗"
+        },
+        {
+          "id": "v33-video-archive-05",
+          "src": "assets/agent-previews/official-20261122/v33-video-archive-05.webp",
+          "width": 848,
+          "height": 477,
+          "originalUrl": "https://upload-bbs.mihoyo.com/upload/2026/11/18/152039149/42513a964d746f72044aed1540c33c1c_6074920333768158398.png",
+          "caption": "壁纸 05 · 查看原图 ↗",
+          "captionEn": "Wallpaper 05 · Open original ↗"
+        },
+        {
+          "id": "v33-video-archive-06",
+          "src": "assets/agent-previews/official-20261122/v33-video-archive-06.webp",
+          "width": 848,
+          "height": 477,
+          "originalUrl": "https://upload-bbs.mihoyo.com/upload/2026/11/18/152039149/9e9bb9f11bde594afd64215dc120a7e4_1195253730297566232.png",
+          "caption": "壁纸 06 · 查看原图 ↗",
+          "captionEn": "Wallpaper 06 · Open original ↗"
+        },
+        {
+          "id": "v33-video-archive-07",
+          "src": "assets/agent-previews/official-20261122/v33-video-archive-07.webp",
+          "width": 848,
+          "height": 477,
+          "originalUrl": "https://upload-bbs.mihoyo.com/upload/2026/11/18/152039149/bff9c3ed4726c17d312ae9bfba9d23f6_287613033163057027.png",
+          "caption": "壁纸 07 · 查看原图 ↗",
+          "captionEn": "Wallpaper 07 · Open original ↗"
+        },
+        {
+          "id": "v33-video-archive-08",
+          "src": "assets/agent-previews/official-20261122/v33-video-archive-08.webp",
+          "width": 848,
+          "height": 477,
+          "originalUrl": "https://upload-bbs.mihoyo.com/upload/2026/11/18/152039149/00e3d2fe31dca621cce1069e54529323_3708078785086094776.png",
+          "caption": "壁纸 08 · 查看原图 ↗",
+          "captionEn": "Wallpaper 08 · Open original ↗"
+        },
+        {
+          "id": "v33-video-archive-09",
+          "src": "assets/agent-previews/official-20261122/v33-video-archive-09.webp",
+          "width": 848,
+          "height": 477,
+          "originalUrl": "https://upload-bbs.mihoyo.com/upload/2026/11/18/152039149/42582d3e5d67ac13755f3b0181db70e0_2660216780274465549.png",
+          "caption": "壁纸 09 · 查看原图 ↗",
+          "captionEn": "Wallpaper 09 · Open original ↗"
+        },
+        {
+          "id": "v33-video-archive-10",
+          "src": "assets/agent-previews/official-20261122/v33-video-archive-10.webp",
+          "width": 848,
+          "height": 477,
+          "originalUrl": "https://upload-bbs.mihoyo.com/upload/2026/11/18/152039149/6cc385d2e0bb27aa71de9be580b29660_5825014404048652540.png",
+          "caption": "壁纸 10 · 查看原图 ↗",
+          "captionEn": "Wallpaper 10 · Open original ↗"
+        },
+        {
+          "id": "v33-video-archive-11",
+          "src": "assets/agent-previews/official-20261122/v33-video-archive-11.webp",
+          "width": 848,
+          "height": 477,
+          "originalUrl": "https://upload-bbs.mihoyo.com/upload/2026/11/18/152039149/2b511748512e306fcd4ffe800278f6ad_1828814898573991503.png",
+          "caption": "壁纸 11 · 查看原图 ↗",
+          "captionEn": "Wallpaper 11 · Open original ↗"
+        },
+        {
+          "id": "v33-video-archive-12",
+          "src": "assets/agent-previews/official-20261122/v33-video-archive-12.webp",
+          "width": 848,
+          "height": 477,
+          "originalUrl": "https://upload-bbs.mihoyo.com/upload/2026/11/18/152039149/cdb54682f526f0e42cc9881697df8587_768562360492962882.png",
+          "caption": "壁纸 12 · 查看原图 ↗",
+          "captionEn": "Wallpaper 12 · Open original ↗"
+        }
+      ]
+    }
+  },
+  "agentArtwork": {
+    "1461": {
+      "id": "seed-birthday-20261122",
+      "title": "生日贺图 · 再来一次！",
+      "titleEn": "Birthday illustration · One More!",
+      "source": {
+        "title": "席德生日贺图 · 官方原文",
+        "titleEn": "Seed’s birthday illustration · Official post",
+        "url": "https://www.miyoushe.com/zzz/article/79713395",
+        "urlEn": "https://zenless.hoyoverse.com/en-us/news/167412",
+        "date": "2026-11-22"
+      },
+      "pages": [
+        {
+          "id": "seed-birthday-20261122",
+          "src": "assets/agent-previews/official-20261122/seed-birthday-20261122.webp",
+          "width": 582,
+          "height": 900,
+          "originalUrl": "https://upload-os-bbs.hoyolab.com/upload/2026/11/21/0/40606cd028b9bfb4a3cb376378061e15_5108323247685728986.jpeg",
+          "caption": "查看生日贺图原图 ↗",
+          "captionEn": "Open original birthday illustration ↗"
+        }
+      ]
     }
   }
 }

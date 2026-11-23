@@ -98,6 +98,19 @@ function buildCard(plan) {
   skillsWrap.append(skillBox, maxSkills);
   skillsRow.append(el('span', '', '技能'), skillsWrap);
   body.append(rangeRow('等级', levelFrom, levelPromoted.wrap, el('span', '', '→'), levelTo));
+  if (['1601', '1661'].includes(String(agent.gameId || agent.id))) {
+    const guide = el('p', 'planner-muted', bilingual('官方养成指南 · ', 'Official upgrade guide · '));
+    const servers = [
+      [bilingual('国服', 'China'), 'https://act.mihoyo.com/zzz/event/character-builder/index.html?game_biz=nap_cn&mhy_auth_required=1&mhy_presentation_style=fullscreen#/'],
+      [bilingual('国际服', 'Global'), 'https://act.hoyolab.com/zzz/event/character-builder/index.html?hyl_presentation_style=fullscreen#/'],
+    ];
+    for (const [label, url] of servers) {
+      const link = el('a', '', label + ' ↗');
+      link.href = url; link.target = '_blank'; link.rel = 'noopener noreferrer';
+      guide.append(link, ' ');
+    }
+    body.append(guide);
+  }
   if (agent.eventLevelMaterials) {
     const {throughLevel, url, urlEn} = agent.eventLevelMaterials;
     const note = el('p', 'planner-muted', bilingual(
