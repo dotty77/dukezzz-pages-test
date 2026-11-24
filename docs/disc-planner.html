@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f5f6fb">
   <title>驱动盘规划 · DUKE</title>
-  <script src="resource-cache.js?v=20261122-pages-bagel-gear-1" data-cache-build="5a66114562478bd9a84dacc185d41e15ee32dd045dfb288da610433484aed9ec"></script>
+  <script src="resource-cache.js?v=20261124-pages-ui-interactions-1" data-cache-build="563657da433b6ff11bbd1efc3d479ccc024f2811be8165f9a9dc76e5332851e6"></script>
   <script src="theme.js?v=20260909-version-3-2-1"></script>
   <link rel="icon" href="assets/brand/duke-patrick-sketch-v1-132.png?v=20261009-logo-1" type="image/png">
   <link rel="stylesheet" href="site-ui.css?v=20260909-version-3-2-1">
@@ -15,8 +15,8 @@
   <link rel="stylesheet" href="agents.css?v=20261119-v34-preview-launch-1">
   <link rel="stylesheet" href="site-nav.css?v=20261001-planner-tuning-1">
   <link rel="stylesheet" href="showcase.css?v=20261118-disc-context-score-launch-1">
-  <link rel="stylesheet" href="disc-planner.css?v=20261121-equipment-scope-launch-1">
-<script src="i18n.js?v=20261120-v34-reveal-launch-1"></script><link rel="stylesheet" href="i18n.css?v=20260919-site-refresh-1"><link rel="stylesheet" href="tool-directory.css?v=20261118-reviewed-ui-launch-1"><script defer src="tool-directory.js?v=20261118-reviewed-ui-launch-1"></script><meta name="robots" content="noindex,nofollow"><link rel="stylesheet" href="pages-test.css?v=20261122-pages-bagel-gear-1"><script src="pages-test.js?v=20261122-pages-bagel-gear-1" defer></script></head>
+  <link rel="stylesheet" href="disc-planner.css?v=20261124-ui-interactions-launch-1">
+<script src="i18n.js?v=20261124-ui-interactions-launch-1"></script><link rel="stylesheet" href="i18n.css?v=20260919-site-refresh-1"><link rel="stylesheet" href="tool-directory.css?v=20261124-ui-interactions-launch-1"><script defer src="tool-directory.js?v=20261124-ui-interactions-launch-1"></script><meta name="robots" content="noindex,nofollow"><link rel="stylesheet" href="pages-test.css?v=20261124-pages-ui-interactions-1"><script src="pages-test.js?v=20261124-pages-ui-interactions-1" defer></script></head>
 <body class="tuning-page agents-page disc-planner-page">
   <header class="site-header">
     <a class="site-brand" href="./" aria-label="DUKE首页"><img class="brand-logo" src="assets/brand/duke-patrick-sketch-v1-132.png?v=20261009-logo-1" width="44" height="44" alt="" aria-hidden="true"><span class="site-brand-copy"><b>DUKE</b><small>绝区零<span aria-hidden="true"> · </span>贝果计划</small></span></a>
@@ -26,25 +26,21 @@
 
   <main class="agents-main disc-planner-main">
     <nav class="agent-page-switch" aria-label="代理人功能"><a href="agents.html">资料图鉴</a><a href="showcase.html">角色练度</a><a href="disc-planner.html" aria-current="page">驱动盘规划</a><a href="team.html">配队检查</a><a href="materials.html">养成计算</a></nav>
-    <header class="disc-profile-heading disc-import-title"><h1 id="disc-page-title" data-i18n-en="Drive Disc Planner">驱动盘规划</h1></header>
-    <section id="disc-import" class="panel disc-import" aria-labelledby="disc-import-title">
-      <header class="disc-import-head">
-        <h2 id="disc-import-title" data-i18n-en="Import equipment">导入配装</h2>
+    <section id="disc-import" class="disc-import disc-entry" aria-labelledby="disc-page-title">
+      <h1 id="disc-page-title" data-i18n-en="Drive Disc Planner">驱动盘规划</h1>
+      <form id="disc-uid-form">
+        <label><span data-i18n-en="Public showcase UID">公开展柜 UID</span><input id="disc-uid" inputmode="numeric" pattern="[1-9][0-9]{5,9}" maxlength="10" required></label>
+        <button class="primary-button" id="disc-fetch">读取展柜</button><button type="button" id="disc-cancel" hidden>取消</button>
+      </form>
+      <div class="disc-entry-actions">
         <button type="button" id="disc-demo" data-i18n-en="Load example">查看示例</button>
-      </header>
-      <div class="disc-import-body">
-        <div class="disc-import-public">
-          <form id="disc-uid-form">
-            <label><span data-i18n-en="Public showcase UID">公开展柜 UID</span><input id="disc-uid" inputmode="numeric" pattern="[1-9][0-9]{5,9}" maxlength="10" required></label>
-            <button class="primary-button" id="disc-fetch">读取展柜</button><button type="button" id="disc-cancel" hidden>取消</button>
-          </form>
-          <p id="disc-import-status" role="status" aria-live="polite"></p>
-        </div>
-        <div class="disc-import-methods">
-          <details id="disc-global-sync" class="disc-import-method"><summary data-i18n-en="Global servers · HoYoLAB sync">国际服 · HoYoLAB 同步</summary><section id="disc-hoyolab-sync" class="disc-hoyolab-sync"></section></details>
-          <details id="disc-cn-sync" class="disc-cn-fold disc-import-method"><summary data-i18n-en="China servers · Miyoushe sync">国服 · 米游社同步</summary><div id="disc-mys-browser-sync" class="disc-hoyolab-sync"></div></details>
-          <details class="disc-import-method"><summary data-i18n-en="Save or load a plan">保存或载入方案</summary><div class="disc-toolbar"><button id="disc-export" type="button">导出方案</button><label class="disc-file-button">导入方案<input id="disc-file" type="file" accept="application/json,.json"></label></div><p id="disc-file-status" role="status" aria-live="polite"></p></details>
-        </div>
+        <button type="button" id="disc-import-toggle" aria-controls="disc-import-options" aria-expanded="false"><span id="disc-import-title" data-i18n-en="Import options">导入方式</span></button>
+      </div>
+      <p id="disc-import-status" role="status" aria-live="polite"></p>
+      <div id="disc-import-options" class="disc-import-methods" hidden>
+        <details id="disc-global-sync" class="disc-import-method"><summary data-i18n-en="Global servers · HoYoLAB sync">国际服 · HoYoLAB 同步</summary><section id="disc-hoyolab-sync" class="disc-hoyolab-sync"></section></details>
+        <details id="disc-cn-sync" class="disc-cn-fold disc-import-method"><summary data-i18n-en="China servers · Miyoushe sync">国服 · 米游社同步</summary><div id="disc-mys-browser-sync" class="disc-hoyolab-sync"></div></details>
+        <details class="disc-import-method"><summary data-i18n-en="Save or load a plan">保存或载入方案</summary><div class="disc-toolbar"><button id="disc-export" type="button">导出方案</button><label class="disc-file-button">导入方案<input id="disc-file" type="file" accept="application/json,.json"></label></div><p id="disc-file-status" role="status" aria-live="polite"></p></details>
       </div>
     </section>
     <div class="disc-profile-toolbar"><span id="disc-roster-label" class="disc-sr-only" data-i18n-en="Imported agents">已导入的代理人</span><div id="disc-showcase-agents" role="group" aria-labelledby="disc-roster-label"></div></div>
@@ -54,7 +50,10 @@
       <div class="disc-profile-caption">
         <div id="disc-profile-identity"></div>
         <div id="disc-profile-sets"></div>
-        <button id="disc-settings-open" type="button" aria-haspopup="dialog" aria-controls="disc-character" data-i18n-en="Edit build" disabled>调整配装</button>
+        <div class="disc-caption-actions">
+          <button id="disc-farm-jump" type="button" data-disc-section="disc-farming"><span data-i18n-en="Farming advice">刷盘建议</span><span aria-hidden="true">↓</span></button>
+          <button id="disc-settings-open" type="button" aria-haspopup="dialog" aria-controls="disc-character" data-i18n-en="Edit build" disabled>调整配装</button>
+        </div>
       </div>
       <div class="disc-profile-board">
         <fieldset class="disc-profile-switch">
@@ -73,16 +72,28 @@
       </div>
     </section>
 
-    <section id="disc-farming" class="panel disc-farm-panel">
-      <div id="disc-farm-advice" aria-live="polite" hidden></div>
-      <div class="disc-planning-actions">
-        <fieldset class="disc-quick-tier"><legend data-i18n-en="Target tier">培养档位</legend><div id="disc-tier-controls" class="disc-tier-grid"></div></fieldset>
-        <nav class="disc-workflow" aria-labelledby="disc-page-title">
-          <button type="button" data-disc-section="disc-recommendation"><span data-i18n-en="Build targets">培养目标</span></button>
-        </nav>
-      </div>
-    </section>
-
+    <div class="disc-planning-grid">
+      <section id="disc-farming" class="panel disc-farm-panel" aria-labelledby="disc-farm-title">
+        <header class="disc-farm-head">
+          <h2 id="disc-farm-title" data-i18n-en="Worth farming?">还值得刷吗？</h2>
+          <fieldset class="disc-quick-tier"><legend class="disc-sr-only" data-i18n-en="Target tier">培养档位</legend><div id="disc-tier-controls" class="disc-tier-grid"></div></fieldset>
+        </header>
+        <div id="disc-farm-advice" aria-live="polite" hidden></div>
+      </section>
+      <section id="disc-recommendation" class="disc-target-section" aria-labelledby="disc-goal-title">
+        <div class="panel disc-goals-pane">
+          <header class="disc-goal-header">
+            <h2 id="disc-goal-title" data-i18n-en="Build targets">培养目标</h2>
+            <div id="disc-target-overview" hidden></div>
+          </header>
+          <div id="disc-target-table">
+            <div id="disc-stat-targets"></div>
+            <div id="disc-target-basis-host"></div>
+          </div>
+          <p id="disc-validation" role="status" aria-live="polite"></p>
+        </div>
+      </section>
+    </div>
     <dialog id="disc-character" class="disc-config disc-settings-dialog" aria-labelledby="disc-settings-title">
       <header class="disc-settings-head"><h2 id="disc-settings-title" data-i18n-en="Edit build">调整配装</h2><form method="dialog"><button id="disc-settings-close" type="submit" data-i18n-en="Done">完成</button></form></header>
       <div id="disc-config-controls" class="disc-control-grid"></div>
@@ -92,21 +103,11 @@
       <details class="disc-source-details disc-compact-details"><summary data-i18n-en="Set conditions &amp; build notes">套装触发条件与说明</summary><div id="disc-build-notes"></div></details>
       <button id="disc-reset" type="button">重置当前角色</button>
     </dialog>
-    <section id="disc-recommendation" class="disc-target-section" aria-labelledby="disc-goal-title">
-      <div class="panel disc-goals-pane">
-        <header class="disc-goal-header">
-          <h2 id="disc-goal-title" data-i18n-en="Build targets">培养目标</h2>
-          <div id="disc-target-overview" hidden></div>
-        </header>
-        <div id="disc-target-table">
-          <div id="disc-stat-targets"></div>
-          <div id="disc-target-basis-host"></div>
-        </div>
-        <p id="disc-validation" role="status" aria-live="polite"></p>
-      </div>
-    </section>
     <dialog id="disc-slot-dialog" class="disc-settings-dialog" aria-labelledby="disc-slot-title">
       <header class="disc-settings-head"><h2 id="disc-slot-title"></h2><form method="dialog"><button id="disc-slot-close" type="submit" data-i18n-en="Done">完成</button></form></header>
+      <fieldset class="disc-detail-switch"><legend class="disc-sr-only" data-i18n-en="Choose a disc slot">选择驱动盘号位</legend>
+        <div id="disc-detail-slots"></div>
+      </fieldset>
       <div id="disc-slot-content"></div>
       <details id="disc-score-guide" class="disc-score-guide"></details>
       <details id="disc-roll-guide" class="disc-source-details disc-roll-guide"></details>
@@ -114,6 +115,6 @@
     <details id="disc-evidence-panel" class="panel disc-evidence-panel"><summary data-i18n-en="Skills &amp; sources">技能与数据来源</summary><div id="disc-evidence"></div></details>
     <footer class="agents-footer"><a href="disc-planner-sources.md?v=20261121-equipment-scope-launch-1" target="_blank" rel="noreferrer">来源、分档方法与计算范围 ↗</a></footer>
   </main>
-  <script type="module" src="disc-planner.js?v=20261121-equipment-scope-launch-1"></script>
+  <script type="module" src="disc-planner.js?v=20261124-ui-interactions-launch-1"></script>
 </body>
 </html>

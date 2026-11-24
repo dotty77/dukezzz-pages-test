@@ -42,19 +42,30 @@
   margin: 0 8px 8px 0;
   color: var(--directory-active);
 }
+.tool-directory-shortcut {
+  display: none;
+  padding: 3px 5px;
+  border: 1px solid var(--directory-line);
+  border-radius: 4px;
+  color: var(--directory-muted);
+  font: 600 10px/1.1 ui-monospace, Consolas, monospace;
+}
+@media (min-width:1201px) and (pointer:fine) {
+  .site-header .tool-directory-shortcut { display: inline-block; }
+}
 .tool-directory-open { overflow: hidden; }
 dialog.tool-directory {
   box-sizing: border-box;
   position: fixed;
-  inset: 0;
-  width: min(800px, calc(100% - 40px));
+  inset: min(12dvh, 100px) 0 auto;
+  width: min(820px, calc(100% - 40px));
   max-width: none;
   height: fit-content;
-  max-height: calc(100dvh - 40px);
-  margin: auto;
+  max-height: calc(100dvh - min(12dvh, 100px) - 20px);
+  margin: 0 auto;
   padding: 0;
   border: 1px solid var(--directory-line);
-  border-radius: 20px;
+  border-radius: 16px;
   background: var(--directory-paper);
   color: var(--directory-ink);
   box-shadow: 0 24px 100px #070b2238;
@@ -68,16 +79,81 @@ dialog.tool-directory:not([open]) { display: none; }
   position: sticky;
   top: 0;
   z-index: 1;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 21px 24px 17px;
+  gap: 10px;
+  padding: 18px 24px;
   border-bottom: 1px solid var(--directory-line);
   background: var(--directory-paper);
 }
 .tool-directory-bar h2 { color: var(--directory-ink); margin: 0; font-size: 23px; letter-spacing: -.035em; line-height: 1.25; }
 .tool-directory .tool-directory-close { padding: 0; width: 40px; height: 40px; font-size: 25px; font-weight: 400; }
+.tool-directory-filter {
+  grid-column: 1 / -1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0 14px;
+  min-height: 46px;
+  background: var(--directory-tint);
+  border: 1px solid var(--directory-line);
+  border-radius: 8px;
+  color: var(--directory-muted);
+}
+.tool-directory-filter:focus-within { border-color: var(--directory-active); }
+.tool-directory .tool-directory-filter input {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  outline: 0;
+  background: transparent;
+  color: var(--directory-ink);
+  font: inherit;
+  font-size: 16px;
+  font-weight: 500;
+}
+.tool-directory-filter input::placeholder { color: var(--directory-muted); opacity: 1; }
+.tool-directory-search-icon {
+  flex: 0 0 14px;
+  width: 14px;
+  height: 14px;
+  box-sizing: border-box;
+  border: 1.8px solid currentColor;
+  border-radius: 50%;
+  position: relative;
+}
+.tool-directory-search-icon::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  right: -4px;
+  width: 6px;
+  height: 2px;
+  background: currentColor;
+  transform: rotate(45deg);
+}
+.tool-directory-status:not(.is-empty) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+.tool-directory-status.is-empty { margin: 0; padding: 32px 24px; color: var(--directory-muted); text-align: center; }
+.tool-directory-groups[hidden] { display: none; }
 .tool-directory-groups { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; padding: 21px 24px 24px; }
 .tool-directory-group { margin: 0; min-width: 0; }
 .tool-directory-group h3 {
@@ -97,6 +173,18 @@ dialog.tool-directory:not([open]) { display: none; }
   font-weight: 750;
   line-height: 1.2;
 }
+.tool-directory[data-searching] .tool-directory-groups { grid-template-columns: 1fr; gap: 12px; }
+:root .tool-directory[data-searching] .tool-directory-group h3 {
+  min-height: auto;
+  margin-bottom: 3px;
+  padding: 0 10px 5px;
+  background: transparent;
+  color: var(--directory-muted);
+  font-size: 13px;
+  font-weight: 650;
+}
+.tool-directory[data-searching] h3 img { display: none; }
+.tool-directory[data-searching] .tool-directory-group ul { display: block; }
 .tool-directory-group h3 img {
   position: absolute;
   inset: 0 0 0 auto;
@@ -121,7 +209,7 @@ dialog.tool-directory:not([open]) { display: none; }
   align-items: center;
   justify-content: space-between;
   gap: 6px;
-  min-height: 43px;
+  min-height: 44px;
   padding: 8px 10px;
   border-radius: 7px;
   color: var(--directory-ink);
@@ -154,12 +242,13 @@ dialog.tool-directory:not([open]) { display: none; }
   dialog.tool-directory {
     inset: auto 0 0;
     width: 100%;
+    height: min(656px, 90dvh);
     max-height: 90dvh;
     margin: 0;
     border-radius: 18px 18px 0 0;
     padding-bottom: env(safe-area-inset-bottom, 0px);
   }
-  .tool-directory-bar { padding: 10px 16px; }
+  .tool-directory-bar { padding: 10px 16px 12px; gap: 6px; }
   .tool-directory-bar h2 { font-size: 20px; }
   .tool-directory-groups { grid-template-columns: 1fr; gap: 12px; padding: 12px 16px 18px; }
   .tool-directory-group h3 { min-height: 34px; padding: 8px 48px 8px 10px; margin-bottom: 3px; border-radius: 6px; font-size: 14px; align-items: center; }
@@ -168,7 +257,7 @@ dialog.tool-directory:not([open]) { display: none; }
   .tool-directory-group a { min-height: 44px; font-size: 13px; }
   .site-header .tool-directory-trigger { gap: 5px; padding: 0 8px; font-size: 12px; }
   body[data-map] .header-actions .tool-directory-trigger { width: 34px; min-height: 34px; padding: 0; }
-  body[data-map] .header-actions .tool-directory-trigger span:last-child { display: none; }
+  body[data-map] .header-actions .tool-directory-trigger span:nth-child(2) { display: none; }
 }
 @media (max-width: 700px) {
   html.has-tool-directory .agent-page-switch {
@@ -204,4 +293,334 @@ dialog.tool-directory:not([open]) { display: none; }
 @media (min-width: 961px) and (max-width: 1023px) {
   html[lang="en"].has-tool-directory .site-header .preview-badge span { display: none; }
   html[lang="en"].has-tool-directory .site-header .site-header-actions { gap: 6px; }
+}
+
+:root {
+  --press-time: 80ms;
+  --state-time: 150ms;
+  --reveal-time: 190ms;
+  --action-ease: cubic-bezier(.2, 0, 0, 1);
+  --action-accent: var(--accent, #6576ef);
+  --field-hover: color-mix(in srgb, var(--action-accent) 10%, var(--surface-muted, var(--panel2, Canvas)));
+  --field-open: color-mix(in srgb, var(--action-accent) 20%, var(--surface-muted, var(--panel2, Canvas)));
+}
+
+/* Keep a visible press for native controls and controls created after page load. */
+:where(button, input:is([type="button"], [type="submit"], [type="reset"]), [role="button"], [role="tab"], [role="option"], [role="switch"], summary):not(:disabled, [aria-disabled="true"], [tabindex="-1"][id$="-shade"]):active {
+  filter: brightness(.88);
+}
+:where(a[href], button, input, select, textarea, summary, [role="button"], [role="tab"], [role="option"], [role="switch"], [tabindex="0"]):focus-visible {
+  outline: 2px solid var(--action-accent);
+  outline-offset: 2px;
+}
+
+/* Text and file links keep their text in place; choice controls respond on the label. */
+a[href]:not(.agent-card, [aria-disabled="true"]):active {
+  text-decoration-color: currentColor;
+  color: var(--action-accent);
+}
+/* Leave native quick-tap highlighting available even when the finger starts a scroll. */
+@media (pointer: coarse) {
+  a[href], button:enabled, summary, label:has(input:enabled) {
+    -webkit-tap-highlight-color: color-mix(in srgb, var(--action-accent) 18%, transparent);
+  }
+}
+input[type="file"]:enabled::file-selector-button {
+  color: inherit;
+  cursor: pointer;
+}
+input[type="file"]:enabled:active::file-selector-button,
+label:has(> input:is([type="radio"], [type="checkbox"]):enabled):active > span:first-of-type,
+.disc-file-button:has(> input:enabled):active {
+  color: var(--action-accent);
+}
+
+/* Navigation previews the destination while the current page keeps its marker. */
+.site-navigation a[href]:not([aria-current="page"])::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  bottom: 12px;
+  left: calc(50% - 11px);
+  width: 22px;
+  height: 3px;
+  border-radius: 3px;
+  background: currentColor;
+  transform: scaleX(0);
+}
+.site-navigation a[href]:not([aria-current="page"]):is(:focus-visible, :active)::after { transform: scaleX(1); }
+.tool-directory-group a[href]:is(:focus-visible, :active, [data-touch-pressed]) { box-shadow: inset 3px 0 var(--directory-active); }
+
+.tool-directory-group a[data-touch-pressed] {
+  background: var(--directory-tint);
+  color: var(--directory-active);
+  transition-duration: 0s;
+}
+
+:where(p, td, dd, footer) a[href]:is(:focus-visible, :active) {
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
+.disc-file-button:has(> input:focus-visible) {
+  outline: 2px solid var(--action-accent);
+  outline-offset: 2px;
+}
+/* On a framed field the outer surface owns the keyboard focus indicator. */
+:root :is(select, textarea, input:not([type="checkbox"], [type="radio"], [type="range"])):focus-visible {
+  outline-offset: -2px !important;
+}
+:is(.language-switch, .search, .search-field, .wall-search, .tool-directory-filter, .wall-filter, .select-field, .showcase-attribute-option):has(> :is(input, select):focus-visible) {
+  outline: 2px solid var(--action-accent) !important;
+  outline-offset: -2px !important;
+}
+:is(.language-switch, .search, .search-field, .wall-search, .tool-directory-filter, .wall-filter, .select-field, .showcase-attribute-option) > :is(input, select):focus {
+  outline: none !important;
+}
+/* Pointer focus stays functional after the native picker closes. The next keyboard navigation restores the indicator. */
+@media (forced-colors: none) {
+  :root[data-pointer-focus] :is(input, select, textarea, button, summary, a[href], [tabindex], [role="button"]):focus,
+  :root[data-pointer-focus] :is(.language-switch, .search, .search-field, .wall-search, .tool-directory-filter, .wall-filter, .select-field, .disc-file-button, .showcase-attribute-option):focus-within,
+  :root[data-pointer-focus] label > input:is([type="checkbox"], [type="radio"]):focus + span {
+    outline: none !important;
+  }
+}
+@media (forced-colors: active) {
+  :is(.language-switch, .search, .search-field, .wall-search, .tool-directory-filter, .wall-filter, .select-field, .showcase-attribute-option):has(> :is(input, select):focus-visible) {
+    outline-color: Highlight !important;
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  :root select:enabled:hover, :root :is(.language-switch, .select-field, .wall-filter):has(select:enabled:hover) {
+    background-color: var(--field-hover);
+  }
+}
+:root select:enabled:is(:active, :open),
+:root :is(.language-switch, .select-field, .wall-filter):has(select:enabled:is(:active, :open)) {
+  background-color: var(--field-open);
+}
+:root :is(.language-switch, .select-field, .wall-filter) > select:enabled:is(:hover, :active, :open) {
+  background-color: transparent;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .site-navigation a[href]:not([aria-current="page"]):hover::after { transform: scaleX(1); }
+  .tool-directory-group a[href]:hover { box-shadow: inset 3px 0 var(--directory-active); }
+  details > summary:hover::marker { color: var(--action-accent); }
+  :where(p, td, dd, footer) a[href]:hover { text-decoration: underline; text-underline-offset: .2em; }
+}
+/* The directory key is made of four dots; press them together inside the existing hit area. */
+@media (prefers-reduced-motion: no-preference) {
+  .tool-directory-trigger .tool-directory-icon {
+    transition: box-shadow var(--state-time) var(--action-ease);
+  }
+  .tool-directory-trigger:enabled:active .tool-directory-icon {
+    box-shadow: 6px 0, 0 6px, 6px 6px;
+    transition-duration: var(--press-time);
+  }
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .tool-directory-trigger:enabled:hover:not(:active) .tool-directory-icon {
+    box-shadow: 10px 0, 0 10px, 10px 10px;
+  }
+}
+@media (max-width: 700px) {
+  .site-navigation a[href]:not([aria-current="page"])::after { bottom: 2px; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :where(a[href], button, summary, input, textarea, select, [role="button"], [role="tab"], [role="option"], [role="switch"]),
+  :where(label):has(input:is([type="checkbox"], [type="radio"])),
+  :where(label) > input:is([type="checkbox"], [type="radio"]) + span {
+    transition: background-color var(--state-time) var(--action-ease),
+                border-color var(--state-time) var(--action-ease),
+                color var(--state-time) var(--action-ease),
+                filter var(--press-time) var(--action-ease), box-shadow var(--press-time) var(--action-ease);
+  }
+  :is(.primary-button, .oracle-primary, .rotation-button-primary, button[type="submit"]):not(:disabled, [aria-disabled="true"]) {
+    transition: translate var(--press-time) var(--action-ease), box-shadow var(--press-time) var(--action-ease),
+                background-color var(--state-time) var(--action-ease);
+  }
+  :is(.primary-button, .oracle-primary, .rotation-button-primary, button[type="submit"]):not(:disabled, [aria-disabled="true"]):active {
+    translate: 0 1px;
+    box-shadow: inset 0 2px 3px #0003;
+  }
+  #category-tabs button, .materials-mode-switch button, .disc-profile-switch label > span,
+  .agent-page-switch a, .oracle-subnav a, .tool-directory-group a {
+    transition: background-color var(--state-time) var(--action-ease), color var(--state-time) var(--action-ease),
+                border-color var(--state-time) var(--action-ease), box-shadow var(--press-time) var(--action-ease);
+  }
+  .disc-file-button, input[type="file"]::file-selector-button, details > summary::marker {
+    transition: color var(--state-time) var(--action-ease), box-shadow var(--press-time) var(--action-ease);
+  }
+  :root select, .language-switch, .select-field, .wall-filter, .search-field, .wall-search, .tool-directory-filter, .search {
+    transition: background-color var(--state-time) var(--action-ease), border-color var(--state-time) var(--action-ease);
+  }
+  .site-navigation a[href]:not([aria-current="page"])::after {
+    transition: transform var(--state-time) var(--action-ease);
+  }
+  #disc-import-toggle::after, #team-result-toggle::after, .import-guide .guide-chevron {
+    transition: transform var(--state-time) var(--action-ease);
+  }
+  dialog[open] {
+    transition: opacity var(--reveal-time) var(--action-ease);
+    opacity: 1;
+  }
+  @starting-style {
+    dialog[open] { opacity: .45; }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(a[href], button, summary, input, select, textarea, label, [role="button"], [role="tab"], [role="option"], [role="switch"]),
+  .disc-profile-switch label > span, input[type="file"]::file-selector-button, details > summary::marker,
+  #disc-import-toggle::after, #team-result-toggle::after, .import-guide .guide-chevron {
+    transition-duration: 0s !important;
+  }
+}
+
+/* Inventory cards respond through the item inside the frame. */
+.gallery-page button.item-card:is(:hover, :active) {
+  transform: none;
+  translate: none;
+}
+.gallery-page :is(button.item-card, button.featured):not(:disabled, [aria-disabled="true"]):active .game-item-tile {
+  scale: .96;
+}
+
+/* The drive turns inside its fixed slot, keeping the slot number and stats still. */
+.disc-planner-main .disc-orbit button[data-jump-slot]:not(:disabled, [aria-disabled="true"]):active > img {
+  rotate: -6deg;
+}
+#disc-detail-slots .disc-detail-number {
+  transition: background-color var(--state-time) var(--action-ease), border-color var(--state-time) var(--action-ease);
+}
+
+/* A steady strip identifies the pool whose history is open. */
+#tuning-signal-stats button.record-channel-summary {
+  position: relative;
+}
+#tuning-signal-stats button.record-channel-summary::after {
+  content: "";
+  position: absolute;
+  inset: auto 8px 3px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--record-highlight);
+  pointer-events: none;
+  opacity: 0;
+  transform: scaleX(.12);
+  transform-origin: left;
+}
+#tuning-signal-stats button.record-channel-summary:is(:focus-visible, :active):not(:disabled, [aria-disabled="true"], [aria-pressed="true"])::after {
+  opacity: 1;
+  transform: scaleX(.36);
+}
+#tuning-signal-stats button.record-channel-summary[aria-pressed="true"]::after {
+  background: currentColor;
+  opacity: .85;
+  transform: scaleX(1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .gallery-page :is(button.item-card, button.featured):not(:disabled, [aria-disabled="true"], :active):hover .game-item-tile {
+    scale: 1.035;
+  }
+  .disc-planner-main .disc-orbit button[data-jump-slot]:not(:disabled, [aria-disabled="true"], :active):hover > img {
+    rotate: 12deg;
+  }
+  #tuning-signal-stats button.record-channel-summary:not([aria-pressed="true"], :disabled, [aria-disabled="true"]):hover::after {
+    opacity: 1;
+    transform: scaleX(.36);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  #tuning-signal-stats button.record-channel-summary::after {
+    transition: transform var(--reveal-time) var(--action-ease), opacity var(--state-time) var(--action-ease);
+  }
+  .gallery-page :is(button.item-card, button.featured) .game-item-tile {
+    transition: scale var(--state-time) var(--action-ease);
+  }
+  .disc-planner-main .disc-orbit button[data-jump-slot] > img {
+    transition: rotate var(--reveal-time) var(--action-ease);
+  }
+  .gallery-page :is(button.item-card, button.featured):active .game-item-tile,
+  .disc-planner-main .disc-orbit button[data-jump-slot]:active > img {
+    transition-duration: var(--press-time);
+  }
+}
+
+@media (hover: none), (prefers-reduced-motion: reduce) {
+  .agent-grid .agent-card:hover,
+  .agent-grid .agent-card:hover .agent-portrait-frame img { transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-page :is(button.item-card, button.featured) .game-item-tile {
+    scale: none !important;
+  }
+  .disc-planner-main .disc-orbit button[data-jump-slot] > img {
+    rotate: none !important;
+  }
+  #disc-detail-slots .disc-detail-number {
+    transition: none;
+  }
+}
+
+/* Map coordinates and CRTs stay fixed while the controls acknowledge input. */
+#map-stage .map-pick-ring {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  width: 32px;
+  height: 32px;
+  margin: -16px 0 0 -16px;
+  box-sizing: border-box;
+  border: 2px solid #c0ceff;
+  border-radius: 50%;
+  opacity: 0;
+}
+#marker-layer .map-marker {
+  transition: box-shadow var(--state-time, 150ms), background-color var(--state-time, 150ms);
+}
+#marker-layer .marker-icon { position: relative; }
+#map-stage .zoom-tools button:enabled:active,
+.roam-minimap-zoom button:enabled:active,
+.roam-touch button[data-roam-input][aria-pressed="true"],
+.wall-zoom button:enabled:active {
+  box-shadow: inset 0 0 0 2px currentColor;
+  transition-duration: 0s;
+}
+#wall-stage .tv-unit { transition: none; }
+#wall-stage .tv-unit:is(:focus-visible, :active) .tv-chassis {
+  border-color: #c2caff;
+}
+#wall-stage.is-dragging .tv-unit {
+  filter: none;
+}
+#wall-stage.is-dragging .tv-unit .tv-chassis { transition: none; }
+
+@media (hover: hover) and (pointer: fine) {
+  #wall-stage:not(.is-dragging) .tv-unit:hover .tv-chassis { border-color: #a7b3f5; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  #map-stage .map-pick-ring { animation: duke-map-locate 220ms ease-out; }
+  #marker-layer .map-marker.selected .marker-icon::after {
+    content: "";
+    position: absolute;
+    inset: -5px;
+    pointer-events: none;
+    border: 2px solid var(--point-color, #c0ceff);
+    border-radius: 50%;
+    opacity: 0;
+    animation: duke-map-locate 220ms ease-out;
+  }
+  #wall-stage .tv-unit .tv-chassis { transition: border-color var(--state-time, 150ms); }
+}
+@keyframes duke-map-locate {
+  from { opacity: .9; transform: scale(.78); }
+  to { opacity: 0; transform: scale(1.52); }
+}
+@media (prefers-reduced-motion: reduce) {
+  #marker-layer .map-marker { transition: none; }
 }

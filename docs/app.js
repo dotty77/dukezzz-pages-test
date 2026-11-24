@@ -195,7 +195,7 @@ function fitPoints(points){
 }
 function showSide(side){
  if(!['points','routes','sources'].includes(side))return;
- document.querySelectorAll('[data-side]').forEach(b=>b.classList.toggle('active',b.dataset.side===side));
+ document.querySelectorAll('[data-side]').forEach(b=>{const current=b.dataset.side===side;b.classList.toggle('active',current);b.setAttribute('aria-pressed',String(current));});
  for(const id of ['points','routes','sources'])$('side-'+id).hidden=id!==side;
  if(side==='routes')$('side-routes').scrollIntoView({block:'nearest'});
 }
@@ -293,7 +293,16 @@ function renderMap(ctx,state,project,{exporting=false}={}){const img=state.image
  if(!window.mapTools?.clean)drawNavigationPins({ctx,state,project});else state.routeHits=[];
  return {points,hasSketch};
 }
+let selectionRing;
+function placeSelectionRing(ring,q) {
+ ring.style.left=q.x+'px';
+ ring.style.top=q.y+'px';
+}
 function draw(){syncSourceCounts();renderSearchResults();if(!state.images[MAPS[state.map].base])return;ctx.clearRect(0,0,state.w,state.h);const {points,hasSketch}=renderMap(ctx,state,project);
+ if(selectionRing){
+  const hit=state.selected===selectionRing.dataset.pointId&&state.hit.find(entry=>entry.p.id===state.selected);
+  if(hit)placeSelectionRing(selectionRing,hit.q);else{selectionRing.remove();selectionRing=null;}
+ }
  $('visible-count').textContent=`显示 ${points.length} / ${sourceDisplayPoints().length} 个点位`;$('empty-message').hidden=!!window.mapTools?.clean||points.length>0||!!hasSketch||['complete','conditional'].includes(sourceNavigation()?.route?.status);
 }
 function renderFullMapImage(){
@@ -378,6 +387,24 @@ function pointNote(p){
 function selectPoint(id,focus=false){const p=allPoints().find(p=>p.id===id);if(!p)return;if(p.personal&&window.mapTools){if(focus)focusPoint(p);window.mapTools.edit(p);return;}if(state.source2d!=='source')set2DSource('source');if(isClient33(p)&&!state.types.has(p.type)){state.types.add(p.type);renderFilters();}if(isEnemy(p)){state.enemySourceTouched=true;state.enemySource=enemyPool(p);renderFilters();}state.selected=id;document.body.classList.remove('detail-collapsed','filters-open');$('mobile-detail').hidden=false;document.querySelector('.right-panel').scrollTop=0;const type=TYPES[p.enemyClass==='phantom'?'phantom':p.type]||TYPES.custom;const room=state.data[state.map]?.rooms?.find(r=>r.id===id||r.pointId===id);const ob=personal.observations[id]||{present:0,absent:0};const near=sourceDisplayPoints().filter(n=>n.id!==id&&Math.hypot(n.x-p.x,n.y-p.y)<.026);$('detail').innerHTML=`<div class="detail-panel-header"><div class="detail-eyebrow"><span class="type-symbol${p.enemyClass==='phantom'||isClient33(p)?' atlas-type-symbol':''}" style="${p.enemyClass==='phantom'||isClient33(p)?'':'background:'+type[2]}">${p.enemyClass==='phantom'||isClient33(p)?window.DUKEMapSymbols.svg(isClient33(p)?p.type:'phantom'):type[1]}</span><span class="detail-context-label">${esc(p.id)}</span></div><button id="close-detail" class="detail-close-button" type="button" aria-label="关闭点位详情" title="关闭，返回地图工具"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg><span>关闭</span></button></div><h2 class="detail-title" ${p.labelEn?`data-i18n-en="${esc(p.labelEn)}"`:""}>${esc(p.label)}</h2><span class="detail-status ${esc(p.status)}">${STATUS[p.status]||'待核验'}</span><dl class="detail-meta"><dt>区域</dt><dd>${esc(regionName(p.region))}</dd><dt>楼层</dt><dd>${esc(floorName(p))}</dd><dt>图像位置</dt><dd>${(p.x*100).toFixed(2)}%, ${(p.y*100).toFixed(2)}%</dd></dl>${pointNote(p)}${p.status==='fixed_source'?'<p class="small muted" data-i18n-en="A fixed marker does not guarantee a spawn or drop.">固定标记不保证本局刷新或掉落。</p>':''}${room?renderRoom(room):''}${sourceLocationDetails(p)}<div class="detail-buttons">${isClient33(p)?'':`<button class="primary-button" id="add-to-route">${(personal.routes[state.map]||[]).includes(id)?'已在清单 · 点击移除':'＋ 加入访问清单'}</button>`}${p.sourceImage?`<button class="secondary-button" data-source="${p.sourceImage}">查看原图证据 ↗</button>`:''}${p.currentReviewImage&&p.currentReviewImage!==p.sourceImage?`<button class="secondary-button" data-source="${p.currentReviewImage}" data-i18n-en="Compare the new map ↗">查看新版对照 ↗</button>`:''}</div><details class="atlas-detail-more"><summary data-i18n-en="My notes and observations">个人备注与观察</summary><h3>个人备注</h3><textarea id="point-note" placeholder="路线、门禁、出生情况…">${esc(personal.notes[id]||'')}</textarea><button id="save-note" class="text-btn" style="margin-top:8px">保存备注</button><h3>个人观察记录</h3><div class="observation-buttons"><button data-observe="present">本局见到 ＋1</button><button data-observe="absent">本局未见 ＋1</button></div><p class="observation-count">见到 ${ob.present} 次 · 未见 ${ob.absent} 次 <button class="text-btn" id="undo-observe">撤销上次</button></p><p class="small muted">手动记录，仅供个人对照，不自动推算必刷。</p></details>${near.length?`<h3>附近 / 重叠点位</h3><div class="nearby-list">${near.map(n=>isClient33(n)?`<button data-point="${esc(n.id)}"><span class="atlas-type-symbol">${window.DUKEMapSymbols.svg(n.type)}</span><span data-i18n-en="${esc(n.labelEn)}">${esc(n.label)}</span><small>${esc(n.id)}</small></button>`:`<button data-point="${n.id}">${n.id} · ${TYPES[n.type]?.[1]||'点'}</button>`).join('')}</div>`:''}${p.personal?'<button id="delete-personal" class="wide-button" style="margin-top:20px">删除此个人点位</button>':''}`;
  window.dispatchEvent(new CustomEvent('atlasselection',{detail:{map:state.map,point:p}}));
  if(focus){state.types.add(filterType(p));state.statuses.add(p.status);state.floor='all';if(!matchesQuery(p)){state.query='';$('search').value=''}$('floor').value='all';renderFilters();focusPoint(p)}else draw()
+}
+// Only deliberate picks pulse. The transient ring follows the selected marker through redraws.
+function pickMapPoint(id, focus=false) {
+ selectPoint(id,focus);
+ if(state.selected!==id||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ const hit=state.hit.find(entry=>entry.p.id===id);
+ if(!hit)return;
+ const ring=document.createElement('span');
+ ring.className='map-pick-ring';
+ ring.setAttribute('aria-hidden','true');
+ ring.dataset.pointId=id;
+ placeSelectionRing(ring,hit.q);
+ selectionRing?.remove();
+ canvas.after(ring);
+ selectionRing=ring;
+ const finish=()=>{ring.remove();if(selectionRing===ring)selectionRing=null;};
+ const effect=ring.getAnimations()[0];
+ if(effect)effect.finished.then(finish,finish);else finish();
 }
 function renderRoom(room){const contents=room.contents||room.chests||{};return `<h3>门禁房资料</h3><p class="small muted">${esc(room.englishName||room.sourceEnglishName||room.name||'')}<br>${room.cardTier?'门卡等级 '+esc(room.cardTier):''} ${(room.listedCost||room.sourceListedPrice)?'· 图上标价 '+Number(room.listedCost||room.sourceListedPrice).toLocaleString():''}</p><div class="room-contents">${Object.entries(contents).map(([k,v])=>`<div><span>${TYPES[k]?.[0]||esc(k)}</span><b>× ${esc(v)}</b></div>`).join('')}</div><p class="small muted">房间内数量汇总，不能作为每个箱子的精确坐标。${esc(room.note||'')}</p>`}
 const pointFiles = new Map(), baseImages = new Map(), extraLayers = new Map();
@@ -491,11 +518,39 @@ function sync2DSource(){
 // Retain the shared route API; all callers now stay on the reference map.
 function set2DSource(){state.adding=false;canvas.classList.remove('adding');state.source2d='source';state.selected=null;$('mobile-detail').hidden=true;sync2DSource();renderFilters();overview();resize();window.dispatchEvent(new CustomEvent('atlassourcechange',{detail:{source:'source'}}))}
 function setMode(){state.mode='2d';set2DSource(state.source2d)}
-$('mobile-filters').onclick=()=>document.body.classList.toggle('filters-open');$('close-filters').onclick=()=>document.body.classList.remove('filters-open');$('mobile-detail').onclick=()=>document.body.classList.toggle('detail-collapsed');
+const drawerMedia=window.matchMedia('(max-width:570px)');
+const mapSidebar=$('map-sidebar'),drawerShade=$('map-drawer-shade'),filterButton=$('mobile-filters');
+function closeMapDrawer(){
+ document.body.classList.remove('filters-open');
+ syncMapDrawer();
+ filterButton.focus({preventScroll:true});
+}
+function syncMapDrawer(){
+ const open=drawerMedia.matches&&document.body.classList.contains('filters-open');
+ const opening=open&&drawerShade.hidden;
+ const leaving=drawerMedia.matches&&!open&&!drawerShade.hidden&&mapSidebar.contains(document.activeElement);
+ filterButton.setAttribute('aria-expanded',String(open));
+ $('mobile-detail').setAttribute('aria-expanded',String(!$('mobile-detail').hidden&&!document.body.classList.contains('detail-collapsed')));
+ drawerShade.hidden=!open;
+ document.querySelector('.workspace').inert=open;
+ document.querySelector('.right-panel').inert=open;
+ if(opening&&!mapSidebar.contains(document.activeElement))$('close-filters').focus({preventScroll:true});
+ if(leaving)(state.selected?$('mobile-detail'):filterButton).focus({preventScroll:true});
+}
+filterButton.onclick=()=>{showSide('points');document.body.classList.add('filters-open');};
+$('close-filters').onclick=drawerShade.onclick=closeMapDrawer;
+drawerMedia.addEventListener('change',()=>{document.body.classList.remove('filters-open');syncMapDrawer();});
+const mapPanelState=new MutationObserver(syncMapDrawer);
+mapPanelState.observe(document.body,{attributes:true,attributeFilter:['class']});
+mapPanelState.observe($('mobile-detail'),{attributes:true,attributeFilter:['hidden']});
+document.addEventListener('keydown',event=>{
+ if(event.key==='Escape'&&!drawerShade.hidden&&!document.querySelector('dialog[open]')){event.preventDefault();closeMapDrawer();}
+});
+$('mobile-detail').onclick=()=>document.body.classList.toggle('detail-collapsed');
 let drag=null;
 canvas.addEventListener('pointerdown',e=>{if(e.button!==0)return;state.sourceRouteFit=false;drag={x:e.offsetX,y:e.offsetY,tx:state.tx,ty:state.ty,moved:false};canvas.setPointerCapture(e.pointerId)});
 canvas.addEventListener('pointermove',e=>{if(drag){if(Math.hypot(e.offsetX-drag.x,e.offsetY-drag.y)>4)drag.moved=true;state.tx=drag.tx+e.offsetX-drag.x;state.ty=drag.ty+e.offsetY-drag.y;draw();$('tooltip').hidden=true;return}if(!baseReady())return;const p=unproject(e.offsetX,e.offsetY);$('cursor-position').textContent=`图像坐标 ${(p.x*100).toFixed(1)}%, ${(p.y*100).toFixed(1)}%`;const navHit=[...state.routeHits].reverse().find(h=>Math.hypot(h.q.x-e.offsetX,h.q.y-e.offsetY)<h.r);if(navHit){canvas.style.cursor='pointer';$('tooltip').textContent=navHit.label;$('tooltip').style.left=Math.max(8,Math.min(e.offsetX+18,state.w-220))+'px';$('tooltip').style.top=Math.min(e.offsetY+18,state.h-60)+'px';$('tooltip').hidden=false;return}const h=[...state.hit].reverse().find(h=>Math.abs(h.q.x-e.offsetX)<h.r+3&&Math.abs(h.q.y-e.offsetY)<h.r+3);canvas.style.cursor=state.adding?'crosshair':h?'pointer':'grab';if(state.hover!==(h?.p.id||null)){state.hover=h?.p.id||null;draw()}if(h){$('tooltip').innerHTML=esc(h.p.id)+' · <span '+(h.p.personal?'data-i18n-skip':'')+'>'+esc(h.p.label)+'</span> · '+esc(STATUS[h.p.status]);$('tooltip').style.left=Math.max(8,Math.min(e.offsetX+18,state.w-270))+'px';$('tooltip').style.top=Math.min(e.offsetY+18,state.h-55)+'px';$('tooltip').hidden=false}else $('tooltip').hidden=true});
-canvas.addEventListener('pointerup',e=>{if(e.button!==0)return;const moved=drag?.moved;drag=null;if(moved||!baseReady())return;if(state.adding||e.shiftKey){const p=unproject(e.offsetX,e.offsetY);if(p.x<0||p.x>1||p.y<0||p.y>1){toast('请在底图范围内选择位置');return}state.pending=p;$('new-point-dialog').showModal();return}const navHit=[...state.routeHits].reverse().find(h=>Math.hypot(h.q.x-e.offsetX,h.q.y-e.offsetY)<h.r);if(navHit){if(navHit.assault)window.assaultRoutes?.focusMarker?.(navHit.id);else if(navHit.source)selectPoint(navHit.id);else window.sourceRoute2D?.chooseCandidate?.(navHit.role,navHit.id);return}const h=[...state.hit].reverse().find(h=>Math.abs(h.q.x-e.offsetX)<h.r+3&&Math.abs(h.q.y-e.offsetY)<h.r+3);if(h)selectPoint(h.p.id)});
+canvas.addEventListener('pointerup',e=>{if(e.button!==0)return;const moved=drag?.moved;drag=null;if(moved||!baseReady())return;if(state.adding||e.shiftKey){const p=unproject(e.offsetX,e.offsetY);if(p.x<0||p.x>1||p.y<0||p.y>1){toast('请在底图范围内选择位置');return}state.pending=p;$('new-point-dialog').showModal();return}const navHit=[...state.routeHits].reverse().find(h=>Math.hypot(h.q.x-e.offsetX,h.q.y-e.offsetY)<h.r);if(navHit){if(navHit.assault)window.assaultRoutes?.focusMarker?.(navHit.id);else if(navHit.source)pickMapPoint(navHit.id);else window.sourceRoute2D?.chooseCandidate?.(navHit.role,navHit.id);return}const h=[...state.hit].reverse().find(h=>Math.abs(h.q.x-e.offsetX)<h.r+3&&Math.abs(h.q.y-e.offsetY)<h.r+3);if(h)pickMapPoint(h.p.id)});
 canvas.addEventListener('pointercancel',()=>drag=null);canvas.addEventListener('pointerleave',()=>{$('tooltip').hidden=true;if(state.hover){state.hover=null;draw()}});canvas.addEventListener('wheel',e=>{e.preventDefault();zoomAt(Math.exp(-e.deltaY*.0015),e.offsetX,e.offsetY)},{passive:false});
 $('zoom-in').onclick=()=>zoomAt(1.35);$('zoom-out').onclick=()=>zoomAt(1/1.35);$('reset-view').onclick=resetView;$('toggle-labels').onclick=()=>{state.labels=!state.labels;$('toggle-labels').classList.toggle('active',state.labels);$('toggle-labels').setAttribute('aria-pressed',String(state.labels));draw()};
 $('source-route-open').onclick=()=>{showSide('routes');(window.assaultRoutes||window.sourceRoute2D)?.open();if(window.matchMedia('(max-width:570px)').matches)document.body.classList.add('filters-open')};
@@ -520,7 +575,7 @@ function syncLayerButtons(){
 }
 document.querySelectorAll('[data-atlas-layer]').forEach(button=>button.onclick=()=>{applyRegularTypes(LAYERS[button.dataset.atlasLayer]);renderFilters();draw()});
 document.querySelectorAll('[data-map]').forEach(b=>b.onclick=()=>setMap(b.dataset.map));document.querySelectorAll('[data-side]').forEach(b=>b.onclick=()=>showSide(b.dataset.side));
-$('search').oninput=e=>{state.query=e.target.value.trim();draw()};$('search-clear').onclick=()=>{state.query='';$('search').value='';draw();$('search').focus()};$('search').onkeydown=e=>{if(e.key==='Escape'){$('search-clear').click();e.stopPropagation()}else if(e.key==='Enter'&&state.query){const p=visible()[0];if(p){e.preventDefault();selectPoint(p.id,true)}}};$('floor').onchange=e=>{state.floor=e.target.value;draw()};
+$('search').oninput=e=>{state.query=e.target.value.trim();draw()};$('search-clear').onclick=()=>{state.query='';$('search').value='';draw();$('search').focus()};$('search').onkeydown=e=>{if(e.key==='Escape'&&state.query){$('search-clear').click();e.stopPropagation()}else if(e.key==='Enter'&&state.query){const p=visible()[0];if(p){e.preventDefault();pickMapPoint(p.id,true)}}};$('floor').onchange=e=>{state.floor=e.target.value;draw()};
 function finishTypeSelection() {
  syncTypeToggle();syncLayerButtons();
  const selected=allPoints().find(p=>p.id===state.selected);
@@ -553,7 +608,7 @@ $('types-all').onclick=()=>{
 };
 $('status-filters').onclick=e=>{const b=e.target.closest('[data-status]');if(!b)return;const s=b.dataset.status;state.statuses.has(s)?state.statuses.delete(s):state.statuses.add(s);b.classList.toggle('active',state.statuses.has(s));b.setAttribute('aria-pressed',String(state.statuses.has(s)));draw()};
 $('regions').onclick=e=>{const b=e.target.closest('[data-region]');if(!b)return;const r=MAPS[state.map].regions.find(r=>r[0]===b.dataset.region);if(state.source2d!=='source')set2DSource('source');focusPoint({x:r[2],y:r[3]},2.1)};
-document.addEventListener('click',e=>{const source=e.target.closest('[data-source]');if(source)showSource(Number(source.dataset.source));const point=e.target.closest('[data-point]');if(point)selectPoint(point.dataset.point,true)});
+document.addEventListener('click',e=>{const source=e.target.closest('[data-source]');if(source)showSource(Number(source.dataset.source));const point=e.target.closest('[data-point]');if(point)pickMapPoint(point.dataset.point,true)});
 $('detail').addEventListener('click',e=>{const p=allPoints().find(p=>p.id===state.selected);if(e.target.closest('#close-detail')){overview();return}if(!p)return;const id=p.id;
  if(e.target.id==='add-to-route'&&!isClient33(p)){let r=personal.routes[state.map]||=[];if(r.includes(id))personal.routes[state.map]=r.filter(x=>x!==id);else r.push(id);save();renderRoutes();selectPoint(id);draw()}
  if(e.target.id==='save-note'){personal.notes[id]=$('point-note').value;save();draw();toast('备注已保存')}

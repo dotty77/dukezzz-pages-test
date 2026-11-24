@@ -2770,6 +2770,7 @@
     "存在无效或重复盘位；重复盘位不纳入已确认词条。": "Invalid or duplicate slots were found. Duplicate slots are excluded from verified totals.",
     "同一号位有多张驱动盘记录，无法确认实际装备，暂不汇总。": "Multiple discs were reported for this slot. The equipped disc cannot be confirmed, so the slot is excluded from totals.",
     "重复盘位待确认": "Duplicate slot needs verification",
+    "燎源": "Genesis Flare",
     "燎源属性": "Genesis Flare",
     "燎源属性 · 锋御": "Genesis Flare · Armorer",
     "以太属性": "Ether",

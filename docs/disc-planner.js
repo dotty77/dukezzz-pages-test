@@ -39,6 +39,19 @@ function mountBuildSettings(){
   window.addEventListener('hashchange',followLink);
   followLink();
 }
+const importToggle=$('disc-import-toggle'),importOptions=$('disc-import-options');
+function setImportOptions(open){
+  importToggle.setAttribute('aria-expanded',String(open));
+  importOptions.hidden=!open;
+}
+importToggle.addEventListener('click',()=>setImportOptions(importOptions.hidden));
+function followImportLink(){
+  if(/^#(?:disc-(?:visible-import|hoyolab-sync|cn-sync|global-sync|mys-browser-sync|import-options)|(?:miyoushe|hoyolab)-sync=[0-9a-f]{32})$/.test(location.hash))setImportOptions(true);
+  if(/^#(?:disc-(?:global-sync|hoyolab-sync)|hoyolab-sync=)/.test(location.hash))$('disc-global-sync').open=true;
+  if(/^#(?:disc-(?:cn-sync|mys-browser-sync)|miyoushe-sync=)/.test(location.hash))$('disc-cn-sync').open=true;
+}
+followImportLink();
+window.addEventListener('hashchange',followImportLink);
 // Section controls stay on this document even with a site-root <base>.
 for(const control of document.querySelectorAll('[data-disc-section]')){
   control.addEventListener('click',()=>scrollToDiscSection(control.dataset.discSection,true));
@@ -635,22 +648,20 @@ function farmAction(action,entry){
   }
   row.append(body);return row;
 }
+function farmValues(compared){
+  const line=el('p','disc-muted');line.append(uiText('span','当前 → 目标　','Current → target  '));
+  compared.forEach((r,i)=>{if(i)line.append(' · ');line.append(el('span','',name(r.group)),' ',fmt(r.group,r.current),' → ',fmt(r.group,r.targetRaw));});
+  return line;
+}
 function renderFarmAdvice(){
   const root=$('disc-farm-advice'),farm=farmResult,status=farm.status;
   root.replaceChildren();root.hidden=false;
   root.dataset.status=status;
-  const heading=uiText('h3','还值得刷吗？','Worth farming?');heading.setAttribute('aria-level','2');root.append(heading);
   if(status==='invalid'){
     const slots=config.discs.filter(d=>inspectDiscRolls(d,data).invalid).map(d=>d.slot);
     root.append(slots.length?uiText('p',`请核对 ${slots.join('、')} 号盘的装备记录。`,`Check the equipment in slot(s) ${slots.join(', ')}.`):
       uiText('p','请核对角色和音擎配置。','Check the agent and W-Engine settings.'));
     return;
-  }
-  const compared=(status==='met'?farm?.protected:farm?.deficits)||[];
-  if(compared.length){
-    const line=el('p','disc-muted');line.append(uiText('span','当前 → 目标　','Current → target  '));
-    compared.forEach((r,i)=>{if(i)line.append(' · ');line.append(el('span','',name(r.group)),' ',fmt(r.group,r.current),' → ',fmt(r.group,r.targetRaw));});
-    root.append(line);
   }
   if(status!=='ready'){
     const text={
@@ -664,6 +675,12 @@ function renderFarmAdvice(){
       unavailable:['刷盘建议暂时未能算出。','Farming advice could not be calculated.']
     }[status]||[];
     root.append(uiText('p',text[0]||'',text[1]||''));
+    const compared=status==='met'?farm.protected:farm.deficits;
+    if(compared?.length){
+      const detail=el('details','disc-farm-method');
+      detail.append(uiText('summary','面板对照','Stat comparison'),farmValues(compared));
+      root.append(detail);
+    }
     if(status==='unavailable'){
       const retry=button('',queueFarmRefresh);retry.append(uiText('span','重新估算','Retry estimate'));root.append(retry);
     }
@@ -675,6 +692,7 @@ function renderFarmAdvice(){
   if(farm.partial)root.append(uiText('p','部分盘的副属性未录全，按已录入的面板估算。','Some substats are missing. Estimates use the recorded build.','disc-muted'));
   const method=el('details','disc-farm-method');
   method.append(uiText('summary','估算依据','How this is estimated'));
+  if(farm.deficits?.length)method.append(farmValues(farm.deficits));
   method.append(uiText('p','每次只换一张盘，保留其余五张与已达到的门槛。优先刷能平均补回更多目标缺口的号位，校音器优先给锁定主属性后额外收益最大的号位。','Each estimate changes one disc and keeps the other five and their met thresholds. The farm recommendation prioritizes expected gap reduction. The Calibrator goes where choosing the main stat adds the most expected gain.'),
     uiText('p','按目标套装的满级 S 盘估算，假设同一池内的主属性、副属性与强化落点等可能。分别计算初始三条和四条的结果，显示两者范围。','The model uses max-level S-Rank discs from the target set. Eligible main stats, substats and upgrade destinations are assumed equally likely within their respective pools. Ranges span the three- and four-starting-substat cases.'));
   if(farm.tuning){
@@ -696,20 +714,41 @@ function slotDetailButton(slot){
   return control;
 }
 let slotOpener;
+const detailSlots=$('disc-detail-slots');
+for(let slot=1;slot<=6;slot++){
+  const label=el('label'),radio=el('input');
+  radio.type='radio';radio.name='disc-detail-slot';radio.value=String(slot);
+  radio.setAttribute('aria-controls','disc-slot-content');
+  const number=el('span','disc-detail-number',String(slot));
+  number.setAttribute('aria-hidden','true');
+  label.append(radio,number,uiText('span',`${slot}号位`,`Slot ${slot}`,'disc-sr-only'));
+  detailSlots.append(label);
+}
+detailSlots.addEventListener('change',event=>{
+  if(event.target.checked)displayProfileSlot(Number(event.target.value));
+});
 function showProfileSlot(slot,trigger){
-  const dialog=$('disc-slot-dialog'),disc=config.discs.find(entry=>entry.slot===slot);
-  if(!disc||dialog.open)return;
+  const dialog=$('disc-slot-dialog');
+  if(dialog.open)return;
   slotOpener=trigger;
+  displayProfileSlot(slot);
+  dialog.showModal();
+  dialog.scrollTop=0;
+}
+function displayProfileSlot(slot){
+  const dialog=$('disc-slot-dialog'),disc=config.discs.find(entry=>entry.slot===slot);
+  if(!disc)return;
+  for(const guide of dialog.querySelectorAll(':scope > details[open]'))guide.open=false;
+  detailSlots.querySelector('input[value="'+slot+'"]').checked=true;
   dialog.dataset.slot=slot;
   $('disc-slot-title').replaceChildren(uiText('span',`${slot}号驱动盘`,`Drive Disc · Slot ${slot}`));
   renderSlotDetail(disc);
-  dialog.showModal();
   dialog.scrollTop=0;
 }
 $('disc-slot-dialog').addEventListener('close',()=>{
   const dialog=$('disc-slot-dialog');
   if(dialog.open)return;
-  const slot=dialog.dataset.slot;
+  const slot=slotOpener?.dataset.detailSlot||slotOpener?.dataset.jumpSlot||dialog.dataset.slot;
   $('disc-slot-content').replaceChildren();
   delete dialog.dataset.slot;
   for(const guide of dialog.querySelectorAll('details[open]'))guide.open=false;
@@ -789,6 +828,8 @@ function renderProfileRolls(build){
 function updateFarmView(){
   renderFarmAdvice();
   const priority=farmResult.priority?.slot;
+  const label=priority?uiText('span',`优先刷 ${priority} 号位`,`Farm slot ${priority} first`):uiText('span','刷盘建议','Farming advice');
+  $('disc-farm-jump').firstElementChild.replaceWith(label);
   for(const control of $('disc-slot-index').querySelectorAll('[data-jump-slot]')){
     control.classList.toggle('is-priority',Number(control.dataset.jumpSlot)===priority);
   }

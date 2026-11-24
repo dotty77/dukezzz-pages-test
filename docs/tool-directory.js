@@ -11,9 +11,9 @@
       cover: 'assets/tuning/agent-1561.webp',
       links: [
         ['agents.html', '代理人资料', 'Agent directory'],
-        ['showcase.html', '角色练度', 'Agent builds'],
-        ['disc-planner.html', '驱动盘规划', 'Drive Disc planner'],
-        ['team.html', '配队与合轴', 'Teams & rotations'],
+        ['showcase.html', '角色练度', 'Agent builds', '展柜 毕业度 showcase graduation'],
+        ['disc-planner.html', '驱动盘规划', 'Drive Disc planner', '刷盘 换盘 配装 调驱动盘 disc farming'],
+        ['team.html', '配队与合轴', 'Teams & rotations', '合轴跟练 队伍'],
         ['materials.html', '养成计算', 'Material planner']
       ]
     },
@@ -21,8 +21,8 @@
       title: ['调频与资源', 'Signals & resources'],
       cover: 'data:image/webp;base64,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',
       links: [
-        ['tuning.html', '调频记录', 'Signal Search records'],
-        ['tuning.html#target-expectation', '抽卡期望', 'Expected pulls'],
+        ['tuning.html', '调频记录', 'Signal Search records', '抽卡记录 调频统计 抽卡统计 gacha history'],
+        ['tuning.html#target-expectation', '抽卡期望', 'Expected pulls', '保底 概率 pity gacha odds'],
         ['banners.html', '卡池日历', 'Signal calendar'],
         ['oracle.html', '绳匠灵签', 'Proxy fortune']
       ]
@@ -31,11 +31,11 @@
       title: ['探索与图鉴', 'Maps & collections'],
       cover: 'assets/items/webp/870d0447d9cb1730a954d1af.webp',
       links: [
-        ['index.html', '探索地图', 'Exploration map'],
-        ['janus-3d.html', '雅努斯 3D 地图', 'Janus 3D map'],
-        ['suburbs-3d.html', '城郊 3D 地图', 'Suburbs 3D map'],
-        ['gallery.html', '物资图鉴', 'Item collection'],
-        ['tv-wall.html', '电视墙', 'TV wall']
+        ['index.html', '探索地图', 'Exploration map', '搜打撤 贝果计划 2D 地图 operation bagel'],
+        ['janus-3d.html', '雅努斯 3D 地图', 'Janus 3D map', '漫游 搜打撤 roam'],
+        ['suburbs-3d.html', '城郊 3D 地图', 'Suburbs 3D map', '漫游 搜打撤 roam'],
+        ['gallery.html', '物资图鉴', 'Item collection', '搜打撤 武备 蓝图 蓝图图鉴 loot gear'],
+        ['tv-wall.html', '电视墙', 'TV wall', '壁纸 影像 wallpaper']
       ]
     }
   ];
@@ -53,7 +53,12 @@
   const gridIcon = element('span', 'tool-directory-icon');
   gridIcon.setAttribute('aria-hidden', 'true');
   const triggerLabel = element('span');
-  trigger.append(gridIcon, triggerLabel);
+  const shortcut = element('kbd', 'tool-directory-shortcut');
+  const mac = /Mac|iPhone|iPad/.test(navigator.platform);
+  shortcut.textContent = mac ? '⌘ K' : 'Ctrl K';
+  shortcut.setAttribute('aria-hidden', 'true');
+  trigger.setAttribute('aria-keyshortcuts', mac ? 'Meta+K' : 'Control+K');
+  trigger.append(gridIcon, triggerLabel, shortcut);
   actions.prepend(trigger);
 
   const dialog = element('dialog', 'tool-directory');
@@ -67,10 +72,21 @@
   close.type = 'button';
   close.autofocus = true;
   close.textContent = '×';
-  bar.append(title, close);
+  const filter = element('label', 'tool-directory-filter');
+  const searchIcon = element('span', 'tool-directory-search-icon');
+  searchIcon.setAttribute('aria-hidden', 'true');
+  const search = element('input');
+  search.type = 'search';
+  search.autocomplete = 'off';
+  search.spellcheck = false;
+  search.enterKeyHint = 'go';
+  filter.append(searchIcon, search);
+  bar.append(title, close, filter);
+  const status = element('p', 'tool-directory-status');
+  status.setAttribute('role', 'status');
   const nav = element('nav', 'tool-directory-groups');
   nav.setAttribute('aria-labelledby', title.id);
-  dialog.append(bar, nav);
+  dialog.append(bar, nav, status);
   document.body.append(dialog);
 
   function setLanguage() {
@@ -79,16 +95,26 @@
     trigger.setAttribute('aria-label', label);
     trigger.title = label;
     title.textContent = label;
+    search.placeholder = english() ? 'Find a tool' : '搜索工具';
+    search.setAttribute('aria-label', search.placeholder);
     close.setAttribute('aria-label', english() ? 'Close tool directory' : '关闭工具导航');
   }
 
   function populate() {
     const locale = english() ? 1 : 0;
+    const query = search.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    let count = 0;
     const here = new URL(location.href);
     const page = here.pathname.split('/').pop().replace(/\.html$/, '') || 'index';
     const sectionHash = page === 'tuning' && here.hash === '#target-expectation' ? here.hash : '';
     const fragment = document.createDocumentFragment();
     for (const group of groups) {
+      const matches = group.links.filter(link => {
+        const keywords = [...link, ...group.title].join(' ').toLowerCase();
+        return query.every(word => keywords.includes(word));
+      });
+      if (!matches.length) continue;
+      count += matches.length;
       const section = element('section', 'tool-directory-group');
       const heading = element('h3');
       heading.append(group.title[locale]);
@@ -98,7 +124,7 @@
       cover.decoding = 'async';
       heading.append(cover);
       const list = element('ul');
-      for (const [path, zh, en] of group.links) {
+      for (const [path, zh, en] of matches) {
         const link = element('a');
         const destination = new URL(path, document.baseURI);
         if (locale || here.searchParams.has('lang')) destination.searchParams.set('lang', locale ? 'en' : 'zh-CN');
@@ -115,6 +141,12 @@
       fragment.append(section);
     }
     nav.replaceChildren(fragment);
+    dialog.toggleAttribute('data-searching', query.length > 0);
+    status.classList.toggle('is-empty', !count);
+    status.textContent = query.length
+      ? (count ? (locale ? count + (count === 1 ? ' tool' : ' tools') : '找到 ' + count + ' 个工具') : (locale ? 'No tools found' : '没有找到工具'))
+      : '';
+    nav.hidden = count === 0;
   }
 
   setLanguage();
@@ -128,14 +160,51 @@
     else if (item.left < strip.left) switcher.scrollLeft += item.left - strip.left - 4;
   }
   requestAnimationFrame(revealCurrentTab);
-  trigger.addEventListener('click', () => {
-    if (dialog.open) return;
-    populate();
-    dialog.showModal();
-    document.documentElement.classList.add('tool-directory-open');
-  });
-  close.addEventListener('click', () => dialog.close());
   let focusAfterClose = trigger;
+  function openDirectory(focusSearch, opener = trigger) {
+    if (!dialog.open) {
+      focusAfterClose = opener;
+      search.value = '';
+      populate();
+      dialog.showModal();
+      document.documentElement.classList.add('tool-directory-open');
+      trigger.setAttribute('aria-expanded', 'true');
+    }
+    if (focusSearch) search.focus({preventScroll:true});
+  }
+  trigger.setAttribute('aria-expanded', 'false');
+  trigger.addEventListener('click', event => openDirectory(!event.detail || matchMedia('(pointer:fine)').matches));
+  document.addEventListener('keydown', event => {
+    if (!(event.ctrlKey || event.metaKey) || event.altKey || event.shiftKey || event.key.toLowerCase() !== 'k') return;
+    if (event.defaultPrevented || event.isComposing || document.pointerLockElement ||
+        document.querySelector('dialog[open]') || event.target.closest?.('input, textarea, select, [contenteditable]:not([contenteditable="false"])')) return;
+    event.preventDefault();
+    openDirectory(true, document.activeElement === document.body ? trigger : document.activeElement);
+  });
+  search.addEventListener('input', populate);
+  close.addEventListener('click', () => dialog.close());
+  // Some touch browsers wait until release to apply :active to a scrolling link.
+  let touchLink = null;
+  function clearTouchLink() {
+    touchLink?.link.removeAttribute('data-touch-pressed');
+    touchLink = null;
+  }
+  nav.addEventListener('pointerdown', event => {
+    if (event.pointerType !== 'touch') return;
+    clearTouchLink();
+    const link = event.target.closest('a[href]');
+    if (!event.isPrimary || !link) return;
+    touchLink = { link, x: event.clientX, y: event.clientY, id: event.pointerId };
+    link.setAttribute('data-touch-pressed', '');
+  }, { passive: true });
+  nav.addEventListener('pointermove', event => {
+    if (touchLink?.id === event.pointerId && Math.hypot(event.clientX - touchLink.x, event.clientY - touchLink.y) > 8) {
+      clearTouchLink();
+    }
+  }, { passive: true });
+  nav.addEventListener('pointerup', clearTouchLink);
+  nav.addEventListener('pointercancel', clearTouchLink);
+  nav.addEventListener('lostpointercapture', clearTouchLink);
   nav.addEventListener('click', event => {
     const link = event.target.closest('a');
     if (!link || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
@@ -147,15 +216,47 @@
     }
     dialog.close();
   });
-  dialog.addEventListener('keydown', event => event.stopPropagation());
+  dialog.addEventListener('keydown', event => {
+    event.stopPropagation();
+    if (event.isComposing || event.keyCode === 229) return;
+    if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
+      event.preventDefault();
+      search.focus();
+      search.select();
+      return;
+    }
+    if (event.ctrlKey || event.metaKey || event.altKey || event.shiftKey) return;
+    // A native search field consumes Escape to clear its text before the dialog cancels.
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      dialog.close();
+      return;
+    }
+    const links = Array.from(nav.querySelectorAll('a'));
+    if (!links.length) return;
+    const index = links.indexOf(document.activeElement);
+    if (index === -1 && document.activeElement !== search) return;
+    if (event.key === 'Enter' && document.activeElement === search && search.value.trim()) {
+      event.preventDefault();
+      if (links.length === 1) links[0].click();
+      else links[0].focus();
+    } else if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+      event.preventDefault();
+      if (event.key === 'ArrowDown') links[(index + 1) % links.length].focus();
+      else if (index <= 0) search.focus();
+      else links[index - 1].focus();
+    }
+  });
   dialog.addEventListener('click', event => {
     if (event.target !== dialog) return;
     const bounds = dialog.getBoundingClientRect();
     if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
   });
   dialog.addEventListener('close', () => {
+    clearTouchLink();
     document.documentElement.classList.remove('tool-directory-open');
-    focusAfterClose.focus({preventScroll: true});
+    trigger.setAttribute('aria-expanded', 'false');
+    (focusAfterClose?.isConnected ? focusAfterClose : trigger).focus({preventScroll: true});
     focusAfterClose = trigger;
   });
   window.addEventListener('dukelanguagechange', () => {
@@ -165,5 +266,37 @@
   });
   window.addEventListener('pageshow', event => {
     if (event.persisted && dialog.open) dialog.close();
+  });
+})();
+
+/* Native text fields and select pickers can match :focus-visible even after a tap. */
+(() => {
+  const root = document.documentElement;
+  document.addEventListener('pointerdown', () => root.setAttribute('data-pointer-focus', ''), { capture: true, passive: true });
+  document.addEventListener('keydown', event => {
+    if (event.isComposing) return;
+    const target = event.target;
+    const editor = target instanceof Element && (target.isContentEditable || target.matches(
+      'textarea, input:not([type]), input:is([type="text"], [type="search"], [type="url"], [type="email"], [type="number"], [type="password"], [type="tel"])'
+    ));
+    if (editor) {
+      // Editing a clicked field keeps its caret without introducing a keyboard-navigation ring.
+      const navigates = ['Tab', 'Escape', 'F6', 'Enter'].includes(event.key) ||
+        ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') ||
+        (target.getAttribute('role') === 'combobox' && ['ArrowUp', 'ArrowDown'].includes(event.key));
+      if (!navigates) return;
+    }
+    root.removeAttribute('data-pointer-focus');
+  }, true);
+  window.addEventListener('pageshow', event => {
+    if (event.persisted) root.removeAttribute('data-pointer-focus');
+  });
+
+  document.addEventListener('change', event => {
+    const select = event.target;
+    if (!(select instanceof HTMLSelectElement) || select.disabled || !select.isConnected ||
+        !matchMedia('(prefers-reduced-motion: no-preference)').matches) return;
+    const surface = select.closest('.language-switch, .select-field, .wall-filter') || select;
+    surface.animate([{ backgroundColor: 'var(--field-open)' }, {}], { duration: 210, easing: 'ease-out' });
   });
 })();

@@ -297,7 +297,15 @@ $('gallery-versions').addEventListener('click', event => {
   history.pushState(null, '', url);
   syncItemFromURL();
 });
-$('category-tabs').addEventListener('click',event=>{const b=event.target.closest('[data-category]');if(b){state.category=b.dataset.category;state.shown=72;renderCategories();updateFilters();}});
+$('category-tabs').addEventListener('click', event => {
+  const button = event.target.closest('[data-category]');
+  if (!button || button.dataset.category === state.category) return;
+  $('category-tabs').querySelector('[aria-pressed="true"]')?.setAttribute('aria-pressed', 'false');
+  button.setAttribute('aria-pressed', 'true');
+  state.category = button.dataset.category;
+  state.shown = 72;
+  updateFilters();
+});
 $('item-grid').addEventListener('click',event=>{const b=event.target.closest('[data-id]');if(b)showItem(b.dataset.id);});
 $('featured').addEventListener('click',()=>showItem($('featured').dataset.id));
 function warmItem(id) {

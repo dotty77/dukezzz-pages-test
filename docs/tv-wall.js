@@ -239,7 +239,15 @@ function stepFocus(delta) {
   const index=list.findIndex(record=>record.code===state.active?.code);
   // A channel opened by link may sit outside the filter; step into the list from its nearest end.
   const next=index<0 ? list[delta>0 ? 0 : list.length-1] : list[(index+delta+list.length)%list.length];
-  if (next && next!==state.active) openFocus(next);
+  if (!next || next===state.active) return;
+  openFocus(next);
+  if (reduceMotion.matches) return;
+  const channel = $('wall-dialog-channel');
+  for (const effect of channel.getAnimations()) effect.cancel();
+  channel.animate([
+    { opacity: .58, transform: `translateX(${Math.sign(delta)*5}px)` },
+    { opacity: 1, transform: 'translateX(0)' }
+  ], { duration: 150, easing: 'ease-out' });
 }
 // A failed video reports through its error event; only an autoplay block asks for a tap.
 function playFocus() { focusVideo.play().catch(error=>{if(error.name==='NotAllowedError')copy($('wall-dialog-status'),'blocked');}); }

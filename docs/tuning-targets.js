@@ -76,7 +76,15 @@ export function mountExpectation(){
   function select(mindscape,refinement){
     const result=estimateTarget({mindscape,refinement});
     mindscapeSelect.value=mindscape;refinementSelect.value=refinement;
-    $('expectation-total').textContent=number(result.totalExpected);$('expectation-max').textContent=number(result.maxPulls);
+    for (const [id, value] of [['expectation-total', result.totalExpected], ['expectation-max', result.maxPulls]]) {
+      const field = $(id);
+      const formatted = number(value);
+      if (field.textContent === formatted) continue;
+      if (field.textContent && matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+        field.animate([{ opacity: .55 }, { opacity: 1 }], { duration: 180, easing: 'ease-out' });
+      }
+      field.textContent = formatted;
+    }
     $('expectation-detail').textContent=`角色约 ${number(result.characterExpected)} 抽 ＋ 专武约 ${number(result.weaponExpected)} 抽`;
     for(const row of tableBody.rows){
       row.dataset.selected=String(row.dataset.target===result.label);

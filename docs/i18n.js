@@ -114,7 +114,7 @@
     if(loaded)return;if(loading)return loading;
     loading=(async()=>{
       const names=['map-tuning-en','tools-en','game-en'];
-      const data=await Promise.all(names.map(async name=>{const r=await fetch(`locales/${name}.json?v=${name==='tools-en'?'20261120-v34-reveal-launch-1':VERSION}`,{cache:'no-cache'});if(!r.ok)throw Error('English catalog unavailable');return r.json();}));
+      const data=await Promise.all(names.map(async name=>{const r=await fetch(`locales/${name}.json?v=${name==='tools-en'?'20261124-ui-interactions-launch-1':VERSION}`,{cache:'no-cache'});if(!r.ok)throw Error('English catalog unavailable');return r.json();}));
       for(const d of data)register(d);compile();loaded=true;
       window.dispatchEvent(new Event('dukelanguageready'));
     })().finally(()=>{loading=null;});return loading;

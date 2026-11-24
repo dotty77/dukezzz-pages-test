@@ -39,7 +39,7 @@ const assets = {
 const downloads = new Map(), failures = new Set();
 const dialog = $('agent-dialog');
 const text = value => typeof value === 'string' ? value : value == null ? '' : String(value);
-const color = agent => colors[agent.element?.replace('属性','')] || '#8791c9';
+const color = agent => colors[agent.elementKey] || '#8791c9';
 function localized(tag,cls,zh,en) {
   const node=el(tag,cls);setLocalizedText(node,zh,en);return node;
 }
@@ -206,7 +206,7 @@ function renderGrid() {
   releasePackedPicturesIn($('agent-grid'));
   const query = normalizeAgentSearch($('agent-search').value);
   const filtered = roster.filter(a => (!query || a.searchWords.some(word=>word.includes(query)))
-    && (!$('agent-element').value || a.element === $('agent-element').value)
+    && (!$('agent-element').value || a.elementKey === $('agent-element').value)
     && (!$('agent-specialty').value || a.specialty === $('agent-specialty').value)
     && (!$('agent-rank').value || filterRank(a) === $('agent-rank').value)
     && matchesVersion(a,$('agent-version').value));
@@ -243,7 +243,7 @@ function renderGrid() {
   if(!filtered.length) $('agents-status').textContent = roster.length ? '没有符合条件的代理人，试试调整筛选。' : '代理人目录读取失败，请刷新页面重试。';
 }
 function setFilters() {
-  for(const [id,key] of [['agent-element','element'],['agent-specialty','specialty']]) {
+  for(const [id,key] of [['agent-element','elementKey'],['agent-specialty','specialty']]) {
     const entries = [...new Set(roster.map(a=>a[key]).filter(Boolean))];
     for(const entry of entries){const option=el('option','',entry);option.value=entry;$(id).append(option);}
   }
@@ -805,6 +805,7 @@ try {
     }
   }
   for(const agent of roster){
+    agent.elementKey = (agent.element || '').trim().replace(/\s*属性$/, '');
     const words=[agent.name,agent.nameEn,agent.fullName,agent.fullNameEn,agent.englishName,agent.faction,agent.factionEn,
       ...(agent.aliases || []),...(agent.members || []).flatMap(member=>[member.name,member.englishName])];
     agent.searchWords=words.filter(Boolean).map(normalizeAgentSearch);

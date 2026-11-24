@@ -4,7 +4,7 @@ import { openStorage, readImportState, updateAccounts, persistent } from "./tuni
 import { rateLuck } from "./tuning-rating.js?v=20260914-duke-brand-1";
 import { setupLinkImport } from "./tuning-link.js?v=20261118-reviewed-ui-launch-1";
 import { renderGuarantee, loadBannerData } from "./tuning-summary.js?v=20261118-tuning-records-launch-1";
-import { mountExpectation, mountUpPairs, renderUpPairs } from "./tuning-targets.js?v=20261118-reviewed-ui-launch-1";
+import { mountExpectation, mountUpPairs, renderUpPairs } from "./tuning-targets.js?v=20261124-ui-interactions-launch-1";
 import { cloneData } from "./tuning-compat.js?v=20260909-tuning-win11-1";
 import { fetchTuningJSON } from "./tuning-resources.js?v=20260909-tuning-win11-1";
 import { isRngBackup } from "./tuning-rng.js?v=20260911-community-update-1";

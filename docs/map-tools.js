@@ -15,19 +15,43 @@
  const more=document.createElement('button');
  more.id='map-view-toggle';more.type='button';
  more.setAttribute('aria-expanded','false');more.setAttribute('aria-controls','map-view-options');
- const moreLabel=document.createElement('span');moreLabel.dataset.i18nEn='More tools';moreLabel.textContent='更多工具';more.append(moreLabel);
- const viewOptions=document.createElement('div');viewOptions.id='map-view-options';
- const addMarker=bar.querySelector('#map-add-marker');
- while(addMarker.nextSibling)viewOptions.append(addMarker.nextSibling);
+ const moreLabel=document.createElement('span');moreLabel.dataset.i18nEn='Tools';moreLabel.textContent='工具';more.append(moreLabel);
+ const viewOptions=document.createElement('div');viewOptions.id='map-view-options';viewOptions.hidden=true;
+ const toolbar=document.querySelector('.toolbar');
+ const quickActions=document.createElement('div');quickActions.className='map-quick-actions';
+ quickActions.append($('source-route-open'),bar.querySelector('#map-add-marker'));
+ viewOptions.append(quickActions,...$('toolbar-actions').children,...bar.children);
+ $('toolbar-actions').remove();
  bar.append(more,viewOptions);
- more.addEventListener('click',()=>more.setAttribute('aria-expanded',String(more.getAttribute('aria-expanded')!=='true')));
+ toolbar.append(bar);
+ new ResizeObserver(([entry])=>{
+  const wide=entry.contentRect.width>=710;
+  if(wide&&quickActions.parentElement!==bar)more.before(quickActions);
+  if(!wide&&quickActions.parentElement!==viewOptions)viewOptions.prepend(quickActions);
+ }).observe(toolbar);
+ function toggleOptions(open){
+  more.setAttribute('aria-expanded',String(open));
+  viewOptions.hidden=!open;
+ }
+ more.addEventListener('click',()=>toggleOptions(viewOptions.hidden));
  bar.addEventListener('keydown',event=>{
-  if(event.key==='Escape'&&more.offsetWidth&&more.getAttribute('aria-expanded')==='true'){
-   event.stopPropagation();more.setAttribute('aria-expanded','false');more.focus();
+  if(event.key==='Escape'&&!viewOptions.hidden){
+   event.preventDefault();event.stopPropagation();toggleOptions(false);more.focus();
   }
  });
- document.querySelector('.toolbar').after(bar);
- const help=document.createElement('div');help.id='map-tools-help';help.textContent='左键拖动平移 · 右键拖动旋转 · 滚轮缩放';bar.after(help);
+ document.addEventListener('pointerdown',event=>{
+  if(!viewOptions.hidden&&!bar.contains(event.target)&&!event.target.closest('dialog'))toggleOptions(false);
+ });
+ bar.addEventListener('focusout',event=>{
+  if(event.relatedTarget&&!bar.contains(event.relatedTarget)&&!event.relatedTarget.closest('dialog'))toggleOptions(false);
+ });
+ bar.addEventListener('click',event=>{
+  if(event.target.closest('#map-add-marker,#map-sketch-toggle,#source-route-open,#atlas-source-latest,#map-fullscreen')){
+   toggleOptions(false);
+   if(viewOptions.contains(document.activeElement))more.focus({preventScroll:true});
+  }
+ });
+ const help=document.createElement('div');help.id='map-tools-help';help.textContent='左键拖动平移 · 右键拖动旋转 · 滚轮缩放';help.setAttribute('role','status');toolbar.after(help);
  const dialog=document.createElement('dialog');dialog.id='map-marker-dialog';
  dialog.innerHTML=`<form id="map-marker-form"><h2 id="map-marker-title">添加个人标记</h2><p id="map-marker-space" class="small muted"></p><label>名称<input id="map-marker-name" maxlength="80" required placeholder="例如：先去这里"></label><div class="map-marker-grid"><label>类型<select id="map-marker-kind"><option value="custom">个人位置</option><option value="spawn">出生点</option><option value="exit">撤离点</option><option value="electronic">电子保险箱</option><option value="mechanical">机械保险箱</option><option value="gear">武备箱</option></select></label><label>标记颜色<input id="map-marker-color" type="color" value="#ffb65e"></label></div><label id="map-marker-height-label">高度 Y<input id="map-marker-height" type="number" step="any" min="-100000" max="100000"><small>俯视点击无法确定楼层，请按附近点位或高度筛选填写。</small></label><label>备注<textarea id="map-marker-note" maxlength="2000" placeholder="位置说明、路线或注意事项"></textarea></label><p class="small muted">保存在当前浏览器，可通过“备份”导出到其他设备。</p><div class="map-marker-actions"><button id="map-marker-delete" type="button" hidden>删除标记</button><button id="map-marker-move" type="button" hidden>重新选位置</button><button id="map-marker-cancel" type="button">取消</button><button class="primary-button" type="submit">保存标记</button></div></form>`;
  // Dialogs belong to the fullscreen element so they remain visible there.
@@ -183,7 +207,7 @@
   },true);
   a.canvas.addEventListener('pointercancel',()=>gesture=null,true);
  }
- $('map-add-marker').onclick=()=>placement?closePlacement():beginPlacement();$('add-point').onclick=()=>beginPlacement();
+ $('map-add-marker').onclick=()=>placement?closePlacement():beginPlacement();$('add-point').onclick=()=>{beginPlacement();if(placement)document.body.classList.remove('filters-open');};
  $('map-personal-list').onclick=showList;$('map-clean').onclick=()=>{options.clean=!options.clean;atlas.draw();window.nativeMap2D?.draw();sync();};
  $('map-show-personal').onchange=e=>{options.showPersonal=e.target.checked;atlas.draw();window.nativeMap2D?.draw();sync();};
  $('map-rotate-left').onclick=()=>{const a=adapter();if(a?.ready())a.setRotation(a.rotation()-Math.PI/4);};$('map-rotate-right').onclick=()=>{const a=adapter();if(a?.ready())a.setRotation(a.rotation()+Math.PI/4);};$('map-bearing').onclick=()=>adapter()?.setRotation(0);
