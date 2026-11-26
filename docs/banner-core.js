@@ -35,3 +35,52 @@ export function remaining(ms) {
 
 // 'MM-DD HH:MM' straight from the server-time string, so no browser time zone is applied.
 export const serverLabel = text => /^\d{4}-(\d\d)-(\d\d) (\d\d:\d\d)/.exec(text || '')?.slice(1).join(' ').replace(/^(\d\d) (\d\d)/, '$1-$2') || '';
+
+export const REGION_STORAGE = 'duke-banner-region-v1';
+export function preferredRegion(regions) {
+  try {
+    const saved = localStorage.getItem(REGION_STORAGE);
+    if (regions.some(r => r.id === saved)) return saved;
+  } catch { /* Private browsing can disable storage. */ }
+  return -new Date().getTimezoneOffset() / 60 <= -3 ? 'prod_gf_us' : 'prod_gf_cn';
+}
+
+// The two planners share a server preference. Schedule from server instants so
+// a tab left open across reset shows the same event state as a fresh visit.
+export function mountTrainingEvent(box, calendar, regionId) {
+  const event = calendar.trainingEvent;
+  if (!event) return () => {};
+  let timer;
+  function render() {
+    clearTimeout(timer);
+    const region = calendar.regions.find(r => r.id === regionId());
+    const start = serverInstant(event.begin, region?.timezone);
+    const end = serverInstant(event.end, region?.timezone) + 1000;
+    const now = Date.now();
+    box.hidden = !(now >= start && now < end);
+    if (now < end) timer = setTimeout(render, Math.min((now < start ? start : end) - now, 2147483647));
+    if (box.hidden) return;
+    const en = window.DUKE_I18N?.language === 'en';
+    const title = document.createElement('h2');
+    const details = document.createElement('p');
+    const group = document.createElement('div');
+    const link = document.createElement('a');
+    title.textContent = en ? event.titleEn : event.title;
+    const deadline = serverLabel(event.end);
+    details.textContent = en
+      ? `${event.textEn} Ends ${deadline} (${region.labelEn} server time).`
+      : `${event.text}${region.label} ${deadline} 截止。`;
+    link.href = en ? event.urlEn : event.url;
+    link.textContent = en ? 'Event details ↗' : '活动公告 ↗';
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    group.append(title, details);
+    box.replaceChildren(group, link);
+  }
+  window.addEventListener('dukelanguagechange', render);
+  window.addEventListener('storage', e => { if (e.key === REGION_STORAGE || e.key === null) render(); });
+  window.addEventListener('pageshow', render);
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) render(); });
+  render();
+  return render;
+}

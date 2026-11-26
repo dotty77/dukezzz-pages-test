@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-22",
+  "updatedAt": "2026-11-26",
   "scope": "官方已公开的角色档案与预告；开放时间和正式效果以游戏内公告为准。",
   "agents": [
     {
@@ -718,9 +718,9 @@
         "labelEn": "After the December 2 update through January 12, 2027 at 14:59 (server time)."
       },
       "status": "announced",
-      "previewNote": "挽昼的三个分身可为敌人积累残痕。触发毁伤可积攒愿火；愿火与喧响值充足时，可发动双重终结技引爆烬痕，以烬灭造成真实伤害。",
+      "previewNote": "挽昼的三个分身可为敌人积累残痕。触发毁伤可积攒愿火；愿火与喧响值充足时，可发动双重终结技引爆烬痕，以烬灭造成真实伤害。\n额外能力「领袖之证」需要另一位击破、防护或锋御队友。入场或发动指定招式时，全队锋御获得「众愿一心」，提升锐暴伤害。",
       "announcedAt": "2026-10-23T04:00:13Z",
-      "updatedAt": "2026-11-21",
+      "updatedAt": "2026-11-26",
       "icon": "assets/agent-previews/sunbringer/sunbringer-poster.png",
       "artwork": "assets/agent-previews/sunbringer/sunbringer-poster.png",
       "officialArt": "assets/agent-previews/sunbringer/sunbringer-profile-zh.png",
@@ -797,6 +797,49 @@
       ],
       "sources": [
         {
+          "id": "sunbringer-mechanics",
+          "title": "挽昼 · 官方机制与配队",
+          "titleEn": "Sunbringer · Mechanics and team recommendations",
+          "url": "https://www.miyoushe.com/zzz/article/79783315",
+          "urlEn": "https://www.hoyolab.com/article/47568244",
+          "date": "2026-11-26",
+          "featured": true
+        },
+        {
+          "id": "sunbringer-robin-trial",
+          "title": "全息试炼 · 挽昼与知更鸟",
+          "titleEn": "Holographic Trial · Sunbringer & Robin",
+          "url": "https://www.miyoushe.com/zzz/article/79782981",
+          "urlEn": "https://www.hoyolab.com/article/47568017",
+          "date": "2026-11-26",
+          "featured": true
+        },
+        {
+          "id": "sunbringer-demo",
+          "title": "角色展示 · 日陨之前",
+          "titleEn": "Character Demo · Before the Sun Fell",
+          "url": "https://www.miyoushe.com/zzz/article/79766484",
+          "urlEn": "https://www.hoyolab.com/article/47558480",
+          "date": "2026-11-25",
+          "featured": true
+        },
+        {
+          "id": "sunbringer-footage",
+          "title": "代理人未归档影像 · 挽昼",
+          "titleEn": "Unarchived Agent Footage · Sunbringers",
+          "url": "https://www.miyoushe.com/zzz/article/79767280",
+          "urlEn": "https://www.hoyolab.com/article/47558871",
+          "date": "2026-11-25"
+        },
+        {
+          "id": "sunbringer-theater",
+          "title": "焦点剧场 · 以挽昼之名",
+          "titleEn": "Spotlight Theater · In the Name of Sunbringer",
+          "url": "https://www.miyoushe.com/zzz/article/79766659",
+          "urlEn": "https://www.hoyolab.com/article/47558594",
+          "date": "2026-11-25"
+        },
+        {
           "id": "v34-cn-materials",
           "title": "养成材料预告 · 国服",
           "titleEn": "Upgrade material preview · CN",
@@ -867,8 +910,22 @@
         "specialty": "锋御",
         "specialtyEn": "Armorer"
       },
-      "previewNoteEn": "The three Sunbringer incarnations build Gash on enemies. Triggering Maim builds Wishfire. With sufficient Wishfire and Decibels, her dual Ultimate detonates Embermark, dealing True DMG with Emberburst.",
-      "rank": "S"
+      "previewNoteEn": "The three Sunbringer incarnations build Gash on enemies. Triggering Maim builds Wishfire. With sufficient Wishfire and Decibels, her dual Ultimate detonates Embermark, dealing True DMG with Emberburst.\nMark of a Leader requires another Stun, Defense, or Armorer Agent. Entering combat or using a qualifying attack grants all Armorer Agents All Wishes United, increasing their Laceration DMG.",
+      "rank": "S",
+      "officialTeams": [
+        [
+          "robin",
+          "1621"
+        ],
+        [
+          "robin",
+          "1571"
+        ],
+        [
+          "robin",
+          "1361"
+        ]
+      ]
     },
     {
       "id": "robin",
@@ -895,7 +952,7 @@
       "status": "announced",
       "previewNote": "知更鸟可在后台协奏，为全队提供护盾，提高防御力和伤害。她的终结技还能为锋御代理人回复锐能。",
       "announcedAt": "2026-10-09T12:07:09Z",
-      "updatedAt": "2026-11-21",
+      "updatedAt": "2026-11-26",
       "icon": "assets/agent-previews/robin/robin-poster.png",
       "artwork": "assets/agent-previews/robin/robin-poster.png",
       "officialArt": "assets/agent-previews/robin/robin-profile-zh.png",
@@ -927,6 +984,15 @@
         }
       ],
       "sources": [
+        {
+          "id": "sunbringer-robin-trial",
+          "title": "全息试炼 · 挽昼与知更鸟",
+          "titleEn": "Holographic Trial · Sunbringer & Robin",
+          "url": "https://www.miyoushe.com/zzz/article/79782981",
+          "urlEn": "https://www.hoyolab.com/article/47568017",
+          "date": "2026-11-26",
+          "featured": true
+        },
         {
           "id": "v34-cn-materials",
           "title": "养成材料预告 · 国服",
@@ -3090,21 +3156,21 @@
         "rank": "S",
         "kind": "full",
         "source": {
-          "version": "3.4.5 BETA"
+          "version": "3.4.12 CREATOR"
         }
       },
       "robin": {
         "rank": "S",
         "kind": "full",
         "source": {
-          "version": "3.4.5 BETA"
+          "version": "3.4.12 CREATOR"
         }
       },
       "kafka": {
         "rank": "S",
         "kind": "full",
         "source": {
-          "version": "3.4.5 BETA"
+          "version": "3.4.12 CREATOR"
         }
       },
       "1071": {
@@ -4573,6 +4639,32 @@
           "width": 582,
           "height": 900,
           "originalUrl": "https://upload-os-bbs.hoyolab.com/upload/2026/11/21/0/40606cd028b9bfb4a3cb376378061e15_5108323247685728986.jpeg",
+          "caption": "查看生日贺图原图 ↗",
+          "captionEn": "Open original birthday illustration ↗"
+        }
+      ]
+    },
+    "1081": {
+      "id": "billy-birthday-20261125",
+      "title": "生日贺图 · 星徽比利·空中型",
+      "titleEn": "Birthday illustration · Starlight - Billy (Aerial Ver.)",
+      "source": {
+        "id": "billy-birthday",
+        "title": "比利生日贺图 · 官方原文",
+        "titleEn": "Billy's birthday illustration · Official post",
+        "url": "https://www.miyoushe.com/zzz/article/79766864",
+        "urlEn": "https://www.hoyolab.com/article/47558687",
+        "date": "2026-11-25"
+      },
+      "pages": [
+        {
+          "id": "billy-birthday-20261125",
+          "src": "https://upload-bbs.miyoushe.com/upload/2026/11/25/152039148/31dff016f1db888eb944be441fc2365f_937558324784558172.jpg?x-oss-process=image/resize,w_582/format,webp",
+          "srcEn": "https://upload-os-bbs.hoyolab.com/upload/2026/11/24/0/9e30c1edb9aed347cf1ac1e5e0ad8d00_6901878988423412883.jpeg?x-oss-process=image/resize,w_582/format,webp",
+          "width": 582,
+          "height": 900,
+          "originalUrl": "https://upload-bbs.miyoushe.com/upload/2026/11/25/152039148/31dff016f1db888eb944be441fc2365f_937558324784558172.jpg",
+          "originalUrlEn": "https://upload-os-bbs.hoyolab.com/upload/2026/11/24/0/9e30c1edb9aed347cf1ac1e5e0ad8d00_6901878988423412883.jpeg",
           "caption": "查看生日贺图原图 ↗",
           "captionEn": "Open original birthday illustration ↗"
         }

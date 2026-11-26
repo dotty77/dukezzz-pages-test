@@ -1,5 +1,11 @@
 # 代理人资料来源
 
+## 2026-11-26 创作者服预览
+
+- 挽昼、知更鸟与卡芙卡的面板、各级技能倍率、核心和六档影画取自 3.4.12 创作者服 D/R 20822864 的中英文原文。三个角色的专属音擎与两套驱动盘仍各自注明数据来源。[创作者服修订记录](https://zzz.gachabase.net/changelog/creator?branch=creator&lang=zh-CN)
+- 挽昼两种形态的第四段普攻都注明短时间无敌。「整备」在终结技说明中注明不可叠加，英文为 Tune-Up。[挽昼](https://zzz.gachabase.net/agents/1601/sunbringer/creator/3.4.12/20822864/20822864?lang=en)
+- 知更鸟更新「星耀时刻」和「幕后协奏」的触发说明。卡芙卡一影的「掣电」无视 15% 全属性伤害抗性，六影的「宣叙」及其触发的「掣电」无视 30% 防御，「宣叙」的额外异常积蓄效率为 45%。[知更鸟](https://zzz.gachabase.net/agents/1661/robin/creator/3.4.12/20822864/20822864?lang=zh-CN) · [卡芙卡](https://zzz.gachabase.net/agents/1651/kafka/creator/3.4.12/20822864/20822864?lang=zh-CN)
+
 ## 2026-11-22 测试服资料核对
 
 - 挽昼发动终结技「此行，共赴前路」时若已有旗令，会将其转为愿核。若没有旗令且命中失衡敌人，会获得「整备」，使下一次获得的旗令转为愿核。六影改为入场额外获得一次「整备」。此两项英文说明按本修订中文翻译。[挽昼中文修订差异](https://zzz.gachabase.net/diff/agents/1601/sunbringer?prev=beta_3.4.5_20708764&cur=beta_3.4.5_20713015&lang=zh-CN)

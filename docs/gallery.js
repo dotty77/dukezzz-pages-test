@@ -34,9 +34,13 @@ function betaCard(item) {
     <b class="card-name">${escape(name)}</b></span></button>`;
 }
 
+function previewEdition(meta) {
+  return meta.branch === 'creator' ? localized('创作者预览', 'Creator Preview') : localized('测试服', 'Beta');
+}
+
 function betaCitation(item) {
   const meta = state.metadata;
-  const label = `Gachabase · ${meta.version} ${localized('测试服', 'Beta')} · D${meta.designRevision} / R${meta.resourceRevision}`;
+  const label = `Gachabase · ${meta.version} ${previewEdition(meta)} · D${meta.designRevision} / R${meta.resourceRevision}`;
   const url = localized(item.source.url, item.source.urlEn || item.source.url);
   const translation = item.translation || {};
   const translated = [translation.nameEn === 'duke' && 'name', translation.descriptionEn === 'duke' && 'effect'].filter(Boolean);
@@ -154,7 +158,7 @@ function showItem(id, {updateURL=true} = {}) {
   state.selected=item;$('item-dialog').style.setProperty('--quality',quality(item).color);
   $('item-dialog').dataset.rarity=String(item.rarity);
   $('item-number').textContent=`物资档案 / ${item.id}`;$('item-title').textContent=betaMode() ? itemName(item) : item.name;$('item-rarity').textContent=`${quality(item).name} 级`;$('item-category').textContent=betaMode() ? localized(item.category, item.categoryEn || item.category) : item.category;
-  if (betaMode()) $('item-number').textContent = localized('3.4 测试服', '3.4 Beta') + ' / ' + item.id;
+  if (betaMode()) $('item-number').textContent = previewEdition(state.metadata) + ' / ' + item.id;
   const description = betaMode() ? localized(item.description, item.descriptionEn || item.description) : item.description;
   const descriptions=[description,localized(item.sourceNote, item.sourceNoteEn || item.sourceNote),item.detailDescription,item.researchDescription].filter(Boolean);
   if(!descriptions.length)descriptions.push('当前配置未提供物资说明。');
@@ -232,7 +236,7 @@ async function setMedia(kind) {
 function renderAbout() {
   if (betaMode()) {
     const meta = state.metadata;
-    $('about-content').innerHTML = '<dl>' + fact(localized('测试版本','Beta version'),meta.version) +
+    $('about-content').innerHTML = '<dl>' + fact(previewEdition(meta),meta.version) +
       fact(localized('物资数','Items'),state.items.length) + fact(localized('数据来源','Source'),'Gachabase') +
       fact(localized('修订','Revision'),`D${meta.designRevision} / R${meta.resourceRevision}`) + '</dl>';
     return;
@@ -252,14 +256,14 @@ function setCollection(version) {
     button.setAttribute('aria-pressed', String(button.dataset.version === version));
   }
   const beta = betaMode();
-  const versionLabel = beta ? `${next.metadata.version} · 测试服` : `${next.metadata.version || '版本待核对'} · 古怪试炼`;
-  $('version').dataset.i18nEn = beta ? `${next.metadata.version} · Beta` : `${next.metadata.version} · Spooky Trial`;
+  const versionLabel = beta ? `${next.metadata.version} · ${next.metadata.branch === 'creator' ? '创作者预览' : '测试服'}` : `${next.metadata.version || '版本待核对'} · 古怪试炼`;
+  $('version').dataset.i18nEn = beta ? `${next.metadata.version} · ${next.metadata.branch === 'creator' ? 'Creator Preview' : 'Beta'}` : `${next.metadata.version} · Spooky Trial`;
   $('version').textContent = versionLabel;
   $('total-count').textContent = String(next.items.length);
   const animated = next.items.filter(animation).length;
   const coverage = $('coverage');
-  coverage.dataset.i18nEn = beta ? `${next.items.length} beta items · Subject to change` : `${next.items.length} items · ${animated} animations`;
-  coverage.textContent = beta ? `测试服物资 ${next.items.length} 件 · 可能调整` : `${next.items.length} 件物资 · ${animated} 件动画`;
+  coverage.dataset.i18nEn = beta ? `${next.items.length} preview items · Subject to change` : `${next.items.length} items · ${animated} animations`;
+  coverage.textContent = beta ? `预览物资 ${next.items.length} 件 · 可能调整` : `${next.items.length} 件物资 · ${animated} 件动画`;
   $('rarity-filter').innerHTML = '<option value="all">全部品质</option>' +
     [...new Set(next.items.map(i => i.rarity))].sort((a,b) => b-a).map(r => `<option value="${r}">${escape(quality({rarity:r}).name)} 级</option>`).join('');
   for (const option of $('sort-order').options) {
@@ -274,7 +278,7 @@ function setCollection(version) {
 async function init() {
   state.ready=false;$('load-error').hidden=true;
   try {
-    const [catalogResponse,mediaResponse]=await Promise.all([fetch('item-catalog.json?v=20261122-bagel-gear-launch-1'),fetch('assets/items/manifest.json?v=20261117-team-lazy-beta-launch-1')]);
+    const [catalogResponse,mediaResponse]=await Promise.all([fetch('item-catalog.json?v=20261126-creator-events-launch-1'),fetch('assets/items/manifest.json?v=20261117-team-lazy-beta-launch-1')]);
     if(!catalogResponse.ok)throw new Error('物资清单读取失败');
     if(!mediaResponse.ok)throw new Error('物资媒体索引读取失败');
     const catalog=await catalogResponse.json(),mediaData=await mediaResponse.json();

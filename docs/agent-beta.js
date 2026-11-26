@@ -6,6 +6,17 @@ function setText(node,text,textEn){
   node.textContent=text??'';
 }
 export const betaTabs=[['beta','测试服概览'],['beta-skills','技能与倍率'],['beta-cinema','测试服影画'],['beta-engine','测试服音擎']];
+function isCreator(source) {
+  return source?.branch === 'creator' || /\bCREATOR$/i.test(source?.version || '');
+}
+export function previewLabel(data, en=false) {
+  const version = String(data?.source?.version || '').match(/\d+\.\d+(?:\.\d+)?/)?.[0];
+  let label;
+  if (isCreator(data?.source)) label = en ? 'Creator preview' : '创作者服资料';
+  else if (data?.kind === 'changes') label = en ? 'Beta changes' : '测试服变化';
+  else label = en ? 'Beta data' : '测试服资料';
+  return [version, label].filter(Boolean).join(' ');
+}
 function link(source,label='Gachabase 原文',labelEn='Gachabase source',languageFromQuery=false){
   const a=el('a','agent-beta-link',`${label} ↗`,`${labelEn} ↗`);
   for(const [key,value,lang]of [['sourceZh',source?.url,'zh-CN'],['sourceEn',languageFromQuery?source?.url:source?.urlEn,'en']]){
@@ -30,22 +41,23 @@ function statsTable(stats,captionText='测试服面板数据',captionEn='Beta st
   table.append(body);return table;
 }
 function sourceNote(data){
-  const box=el('div','agent-beta-warning'),source=data.source||{},version=String(source.version||'').replace(/\s*BETA\s*$/i,'').trim();
+  const box=el('div','agent-beta-warning'),source=data.source||{},version=String(source.version||'').replace(/\s*(?:BETA|CREATOR)\s*$/i,'').trim();
+  const creator=isCreator(source);
   const revisions=[source.revision!=null?`D ${source.revision}`:'',source.resourceRevision!=null?`R ${source.resourceRevision}`:''].filter(Boolean);
   const label=['Gachabase',...revisions].join(' · '),details=el('details','agent-beta-story');
-  box.append(el('strong','',`${version?version+' ':''}测试服 · 可能变动`,`${version?version+' ':''}Beta · Subject to change`));
+  box.append(el('strong','',`${version?version+' ':''}${creator?'创作者服':'测试服'} · 可能变动`,`${version?version+' ':''}${creator?'Creator preview':'Beta'} · Subject to change`));
   details.append(el('summary','','来源与修订','Source and revision'),paragraph(label+(source.checkedAt?` · 核对：${source.checkedAt}`:''),'agent-beta-version',label+(source.checkedAt?` · Checked: ${source.checkedAt}`:'')),link(source));
-  if(source.changelogUrl)details.append(document.createTextNode(' · '),link({url:source.changelogUrl},'测试服更新日志','Beta changelog',true));
+  if(source.changelogUrl)details.append(document.createTextNode(' · '),link({url:source.changelogUrl},creator?'创作者服更新日志':'测试服更新日志',creator?'Creator changelog':'Beta changelog',true));
   box.append(details);return box;
 }
 function renderOverview(data){
   const frag=new DocumentFragment(),facts=el('dl','agent-facts');
-  for(const [label,labelEn,value,valueEn]of [['测试评级','Beta Rank',data.rank,data.rank],['测试属性','Beta Attribute',data.element,data.elementEn],['测试特性','Beta Specialty',data.specialty,data.specialtyEn],['测试阵营','Beta Faction',data.faction,data.factionEn]]){
+  for(const [label,labelEn,value,valueEn]of [['评级','Rank',data.rank,data.rank],['属性','Attribute',data.element,data.elementEn],['特性','Specialty',data.specialty,data.specialtyEn],['阵营','Faction',data.faction,data.factionEn]]){
     if(!value)continue;const row=el('div');row.append(el('dt','',label,labelEn),el('dd','',value,valueEn));facts.append(row);
   }
-  frag.append(facts,el('h3','','测试服面板','Beta stat panel'));
+  frag.append(facts,el('h3','','角色面板','Agent stats'));
   frag.append(paragraph(data.kind==='full'?'60 级 / 最高突破 / 核心 F；不含装备、影画及战斗增益，核心百分比加成另列。':data.statsContext||'数值口径见各项备注。','agent-section-note',data.kind==='full'?'Level 60 / Max Promotion / Core F. Excludes gear, Mindscapes and combat buffs; percentage Core bonuses are listed separately.':data.statsContextEn||'See each stat’s notes.'));
-  if(data.stats?.length)frag.append(statsTable(data.stats));
+  if(data.stats?.length)frag.append(statsTable(data.stats,'角色面板数据','Agent stat panel'));
   if(data.notes?.length){
     const list=el('ul','agent-beta-notes');
     for(const [i,text]of data.notes.entries()){
@@ -106,7 +118,7 @@ function renderSkills(data){
   return frag;
 }
 function renderCinema(data){
-  const frag=new DocumentFragment();frag.append(el('h3','','测试服影画','Beta Mindscapes'),paragraph('影画未计入基础面板。','agent-section-note','Mindscapes are excluded from the base panel.'));
+  const frag=new DocumentFragment();frag.append(el('h3','','意象影画','Mindscapes'),paragraph('影画未计入基础面板。','agent-section-note','Mindscapes are excluded from the base panel.'));
   const grid=el('div','agent-cinema-grid');
   for(const entry of data.cinema||[]){
     const card=el('article','agent-cinema'),heading=el('div','agent-cinema-heading');
@@ -146,6 +158,7 @@ function renderEngine(data){
   frag.append(card);return frag;
 }
 export function betaTabsFor(data){
+  if(isCreator(data?.source))return [['beta','创作者服概览','Creator overview'],['beta-skills','技能与倍率'],['beta-cinema','意象影画','Mindscapes'],['beta-engine','测试服音擎'],['beta-discs','测试服驱动盘']];
   return data?.kind==='changes' ? [['beta','测试服变化']] : [...betaTabs,['beta-discs','测试服驱动盘']];
 }
 function renderChanges(data){

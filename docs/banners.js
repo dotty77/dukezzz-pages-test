@@ -1,17 +1,11 @@
 import {$, el, picture, loadJSON} from './agent-picker.js?v=20261107-refresh-launch-1';
-import {currentState, timeline, remaining, serverLabel, serverInstant} from './banner-core.js?v=20261001-planner-1';
+import {currentState, timeline, remaining, serverLabel, serverInstant, REGION_STORAGE, preferredRegion, mountTrainingEvent} from './banner-core.js?v=20261126-creator-events-launch-1';
 
-const STORE_REGION = 'duke-banner-region-v1';
 let calendar, catalog, region;
 const phaseName = phase => `${phase.version} ${phase.half}`;
 const tzLabel = tz => `UTC${tz >= 0 ? '+' : ''}${tz}`;
 const item = id => catalog[id] || {name: id};
 const line = (label, value, strong = false) => { const p = el('p'); p.append(el('span', '', label), el(strong ? 'strong' : 'span', '', value)); return p; };
-
-function defaultRegion() {
-  try { const saved = localStorage.getItem(STORE_REGION); if (calendar.regions.some(r => r.id === saved)) return saved; } catch { /* use the guess */ }
-  return -new Date().getTimezoneOffset() / 60 <= -3 ? 'prod_gf_us' : 'prod_gf_cn';
-}
 
 function tags(banner) {
   const wrap = el('div', 'banner-tags');
@@ -258,13 +252,14 @@ function render() {
 
 async function main() {
   try {
-    const [data, tuning] = await Promise.all([loadJSON('banner-calendar.json?v=20261122-agents-events-launch-1'), loadJSON('tuning-catalog.json?v=20261118-reviewed-ui-launch-1')]);
+    const [data, tuning] = await Promise.all([loadJSON('banner-calendar.json?v=20261126-creator-events-launch-1'), loadJSON('tuning-catalog.json?v=20261118-reviewed-ui-launch-1')]);
     calendar = data; catalog = tuning.items;
-    region = defaultRegion();
+    region = preferredRegion(calendar.regions);
     const select = $('banner-region');
     select.replaceChildren(...calendar.regions.map(r => { const option = el('option', '', r.label); option.value = r.id; return option; }));
     select.value = region;
-    select.addEventListener('change', () => { region = select.value; try { localStorage.setItem(STORE_REGION, region); } catch { /* not saved */ } render(); });
+    const updateTrainingEvent = mountTrainingEvent($('training-event'), calendar, () => region);
+    select.addEventListener('change', () => { region = select.value; try { localStorage.setItem(REGION_STORAGE, region); } catch { /* not saved */ } updateTrainingEvent(); render(); });
     render();
     setInterval(() => { if (!document.hidden) render(); }, 30000);
     document.addEventListener('visibilitychange', () => { if (!document.hidden) render(); });

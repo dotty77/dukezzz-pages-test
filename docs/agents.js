@@ -1,7 +1,7 @@
 import portraitAssets from './agent-card-portraits.js?v=20261107-refresh-launch-1';
 import {renderGraduation} from './agent-graduation.js?v=20261107-refresh-launch-1';
 import {renderSlotFiveGuide,renderSlotFiveSources} from './disc-panel-display.js?v=20261121-equipment-scope-launch-1';
-import {betaTabsFor,renderBetaTab} from './agent-beta.js?v=20261120-sunbringer-rev2-launch-1';
+import {betaTabsFor,previewLabel,renderBetaTab} from './agent-beta.js?v=20261126-creator-events-launch-1';
 const $ = id => document.getElementById(id);
 const el = (tag, cls = '', text = '') => { const node = document.createElement(tag); node.className = cls; node.textContent = text; return node; };
 const tabs = [['intro','角色介绍'],['graduation','毕业面板'],['skills','技能'],['cinema','影画'],['engine','专属音擎'],['discs','驱动盘']];
@@ -10,8 +10,6 @@ const rankLabel = agent => agent.rank ? `${agent.rank} 级` : '';
 const filterRank = agent => agent.rank || agent.beta?.rank || '';
 const previewFilter = 'official-preview';
 const betaFilter = 'beta';
-const betaVersion = agent => String(agent.beta?.source?.version || '').match(/\d+\.\d+(?:\.\d+)?/)?.[0] || '';
-const betaLabel = agent => `${betaVersion(agent) ? betaVersion(agent)+' ' : ''}${agent.beta?.kind==='changes' ? '测试服变化' : '测试服资料'}`;
 const bilingual = (tag,cls,zh,en) => {const node=el(tag,cls,zh);node.dataset.i18nEn=en;return node;};
 // Archive links use X.Y.0, while preview dossiers may store X.Y.
 function debutVersion(value) {
@@ -29,12 +27,12 @@ const colors = {物理:'#b59b64',火:'#d97657',燎源:'#d97657',冰:'#63acbc',�
 let roster = [], equipment = {}, builds = {}, catalog = {}, selected = null, selectedTab = 'intro', opener = null;
 let version = '', graduation = {}, detailsBytes = 0, detailGeneration = 0, previewDiscNames = {};
 const assets = {
-  directory:'agent-previews.json?v=20261122-agents-events-launch-1',
+  directory:'agent-previews.json?v=20261126-creator-events-launch-1',
   details:'agent-details.json?v=20261111-refresh-launch-1',
   equipment:'agent-equipment.json?v=20261111-refresh-launch-1',
   builds:'agent-builds.json?v=20261121-equipment-scope-launch-1',
   graduation:'agent-graduation.json?v=20261027-agents-launch-1',
-  beta:'agent-beta.json?v=20261122-agents-events-launch-1',
+  beta:'agent-beta.json?v=20261126-creator-events-launch-1',
 };
 const downloads = new Map(), failures = new Set();
 const dialog = $('agent-dialog');
@@ -163,6 +161,9 @@ function releasePackedPicturesIn(container) {
 }
 function setPictureSource(node,path,property='src') {
   releasePackedPicture(node);
+  if(/^https:\/\/(?:upload-bbs\.miyoushe\.com|upload-os-bbs\.hoyolab\.com)\/upload\/[\w/-]+\.(?:png|jpe?g|webp)(?:\?x-oss-process=image\/resize,w_\d{1,4}\/format,webp)?$/.test(path || '')){
+    node.referrerPolicy='no-referrer';node.hidden=false;node[property]=path;return;
+  }
   if(!/^assets\/[\w/-]+\.(?:webp|png|jpe?g|gif)$/.test(path || '')){node.removeAttribute(property);return;}
   if(!previewBundles?.assets[path]){node[property]=path;return;}
   node.removeAttribute(property);node.hidden=false;
@@ -234,7 +235,7 @@ function renderGrid() {
     if(agent.officialPreview)badges.append(el('span','agent-version-badge agent-preview-badge',agent.availability?.badge || '官方预告 · 资料先览'));
     else if(agent.introducedVersion==='3.3.0')badges.append(el('span','agent-version-badge',agent.availability?.status==='announced' ? '3.3 下期 · 11月11日开放' : '3.3 新增'));
     else if(agent.introducedVersion==='3.2.0')badges.append(el('span','agent-version-badge',agent.availability?.status==='announced' ? '3.2 下期 · 资料先览' : '3.2 新增'));
-    if(agent.beta)badges.append(bilingual('span','agent-version-badge agent-beta-badge',betaLabel(agent),`${betaVersion(agent)} ${agent.beta?.kind==='changes' ? 'Beta changes' : 'Beta data'}`.trim()));
+    if(agent.beta)badges.append(bilingual('span','agent-version-badge agent-beta-badge',previewLabel(agent.beta),previewLabel(agent.beta,true)));
     if(badges.childElementCount)card.append(badges);
     card.addEventListener('click', e => { if(!e.ctrlKey && !e.metaKey && !e.shiftKey && e.button===0){e.preventDefault();opener=card;history.pushState(null,'',card.href);openAgent(agent.id);} });
     return card;
@@ -321,14 +322,14 @@ function openAgent(id) {
   const meta=el('div','agent-meta');
   for(const value of [rankLabel(agent),agent.element,agent.specialty].filter(Boolean))meta.append(el('span','',value));
   info.append(el('p','agent-detail-kicker',agent.faction||'新艾利都 · 代理人档案'),title,meta);
-  if(agent.officialPreview){meta.append(el('span','agent-version-label agent-preview-badge','官方预告'));if(agent.beta)meta.append(bilingual('span','agent-version-label agent-beta-badge',betaLabel(agent),`${betaVersion(agent)} ${agent.beta?.kind==='changes' ? 'Beta changes' : 'Beta data'}`.trim()));}
+  if(agent.officialPreview){meta.append(el('span','agent-version-label agent-preview-badge','官方预告'));if(agent.beta)meta.append(bilingual('span','agent-version-label agent-beta-badge',previewLabel(agent.beta),previewLabel(agent.beta,true)));}
   else if(agent.introducedVersion==='3.3.0')meta.append(el('span','agent-version-label',agent.availability?.label || '3.3 新增'));
   else if(agent.introducedVersion==='3.2.0')meta.append(el('span','agent-version-label',agent.availability?.label || '3.2 新增'));
   releasePackedPicturesIn(hero);
   hero.replaceChildren(portrait(agent,'agent-detail-portrait'),info);
   if(agent.portrait)hero.append(picture(agent.portrait,'','agent-detail-art'));
-  $('agent-detail-tabs').replaceChildren(...currentTabs.map(([key,label])=>{
-    const button=el('button','',label);button.type='button';button.id=`agent-tab-${key}`;button.dataset.tab=key;button.setAttribute('role','tab');button.setAttribute('aria-controls','agent-detail-content');
+  $('agent-detail-tabs').replaceChildren(...currentTabs.map(([key,label,labelEn])=>{
+    const button=localized('button','',label,labelEn);button.type='button';button.id=`agent-tab-${key}`;button.dataset.tab=key;button.setAttribute('role','tab');button.setAttribute('aria-controls','agent-detail-content');
     button.onclick=()=>selectTab(key);
     button.onkeydown=e=>{
       const index=currentTabs.findIndex(([k])=>k===key);
@@ -440,8 +441,8 @@ function renderIntro(agent) {
       status.append(localized('p','agent-role-engine',`专属音擎：${e.name} · ${e.rank}级 · ${e.specialty}`,english));
     }
     // Official team suggestions come from the mechanics post; they are a recommendation, not a game rule.
-    if(agent.officialTeams?.length){const list=el('ul','agent-role-teams');for(const team of agent.officialTeams){const row=el('li');[agent.name,...team.map(id=>catalog[id]?.name||id)].forEach((name,index)=>{if(index)row.append(' + ');row.append(el('span','',name));});list.append(row);}status.append(el('h5','agent-role-title','官方推荐配队'),list);}
-    if(agent.beta){const button=bilingual('button','agent-beta-open',`查看 ${betaLabel(agent)}`,`View ${betaVersion(agent)} beta data`);button.type='button';button.onclick=()=>{selectTab('beta');$('agent-tab-beta').focus();};status.append(button);}
+    if(agent.officialTeams?.length)status.append(renderOfficialTeams(agent,agent.officialTeams));
+    if(agent.beta){const button=bilingual('button','agent-beta-open',`查看 ${previewLabel(agent.beta)}`,`View ${previewLabel(agent.beta,true)}`);button.type='button';button.onclick=()=>{selectTab('beta');$('agent-tab-beta').focus();};status.append(button);}
     frag.append(status);
     if(agent.media?.length)frag.append(renderPreviewMedia(agent));
     if(agent.officialArt){
@@ -493,13 +494,28 @@ function renderArtworkGallery(group) {
       img.height=Number(english ? page.heightEn || page.height : page.height)||2160;
       figure.append(img,localized('figcaption','',page.caption,page.captionEn));
       if(page.originalUrl && new URL(page.originalUrl).protocol==='https:'){
-        const link=el('a');link.href=page.originalUrl;link.target='_blank';link.rel='noopener noreferrer';
+        const link=el('a');link.dataset.sourceZh=page.originalUrl;
+        if(page.originalUrlEn && new URL(page.originalUrlEn).protocol==='https:')link.dataset.sourceEn=page.originalUrlEn;
+        link.href=english && link.dataset.sourceEn ? link.dataset.sourceEn : page.originalUrl;link.target='_blank';link.rel='noopener noreferrer';
         img.alt='';link.append(figure);grid.append(link);
       }else grid.append(figure);
     }
     if(group.source)fold.append(officialSources([group.source]));
   });
   return fold;
+}
+function renderOfficialTeams(lead,teams) {
+  const group=new DocumentFragment(),list=el('ul','agent-role-teams');
+  for(const team of teams){
+    const row=el('li');
+    for(const member of [lead,...team.map(id=>catalog[id]||{name:id})]){
+      if(row.childNodes.length)row.append(' + ');
+      row.append(localized('span','',member.name,member.nameEn || member.englishName));
+    }
+    list.append(row);
+  }
+  group.append(localized('h5','agent-role-title','官方推荐配队','Official team recommendations'),list);
+  return group;
 }
 function renderOfficialDossier(agent) {
   const dossier=agent.officialDossier,box=el('details','agent-official-art-fold');
@@ -512,7 +528,7 @@ function renderOfficialDossier(agent) {
     const body=el('div','agent-preview-notice');
     if(dossier.role)body.append(prose(dossier.role,dossier.roleEn));
     if(dossier.roleTags?.length){const list=el('ul','agent-role-tags');for(const [i,tag] of dossier.roleTags.entries())list.append(localized('li','',tag,dossier.roleTagsEn?.[i]));body.append(el('h5','agent-role-title','官方定位'),list);}
-    if(dossier.officialTeams?.length){const list=el('ul','agent-role-teams');for(const team of dossier.officialTeams){const row=el('li');[agent,...team.map(id=>catalog[id]||{name:id})].forEach((member,index)=>{if(index)row.append(' + ');row.append(localized('span','',member.name,member.nameEn));});list.append(row);}body.append(el('h5','agent-role-title','官方推荐配队'),list);}
+    if(dossier.officialTeams?.length)body.append(renderOfficialTeams(agent,dossier.officialTeams));
     const voices=el('dl','agent-facts');for(const [key,value] of [['中文配音',dossier.voiceActors?.zh],['日文配音',dossier.voiceActors?.ja]])if(value){const row=el('div');row.append(el('dt','',key),el('dd','',value));voices.append(row);}body.append(voices);
 
     if(dossier.media?.length){body.append(renderPreviewMedia(dossier));if(dossier.mediaNote)body.append(prose(dossier.mediaNote,dossier.mediaNoteEn));}
@@ -797,13 +813,13 @@ try {
   previewDiscNames=previewData.previewDiscNames || {};
   version=directory.gameVersion;detailsBytes=directory.detailsBytes;
   roster=directory.agents.map(agent=>({...agent,beta:directory.beta[agent.id],officialDossier:dossiers.find(p=>p.supersededBy===agent.id),officialArtwork:previewData.agentArtwork?.[agent.id]}));
-  catalog=Object.fromEntries(roster.map(agent=>[agent.id,agent]));
   for(const agent of previews){
     if(!roster.some(a=>a.id===agent.id || a.name===agent.name || (a.fullName && a.fullName===agent.fullName))){
       roster.push({...agent,officialPreview:true,factionEn:agent.factionEn || directory.previewFactionsEn[agent.id],
         thumbnail:directory.thumbnails[agent.id],beta:directory.beta[agent.id]});
     }
   }
+  catalog=Object.fromEntries(roster.map(agent=>[agent.id,agent]));
   for(const agent of roster){
     agent.elementKey = (agent.element || '').trim().replace(/\s*属性$/, '');
     const words=[agent.name,agent.nameEn,agent.fullName,agent.fullNameEn,agent.englishName,agent.faction,agent.factionEn,
