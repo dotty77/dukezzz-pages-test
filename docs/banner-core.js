@@ -47,8 +47,7 @@ export function preferredRegion(regions) {
 
 // The two planners share a server preference. Schedule from server instants so
 // a tab left open across reset shows the same event state as a fresh visit.
-export function mountTrainingEvent(box, calendar, regionId) {
-  const event = calendar.trainingEvent;
+export function mountServerEvent(box, calendar, regionId, event) {
   if (!event) return () => {};
   let timer;
   function render() {
@@ -83,4 +82,8 @@ export function mountTrainingEvent(box, calendar, regionId) {
   document.addEventListener('visibilitychange', () => { if (!document.hidden) render(); });
   render();
   return render;
+}
+
+export function mountTrainingEvent(box, calendar, regionId) {
+  return mountServerEvent(box, calendar, regionId, calendar.trainingEvent);
 }

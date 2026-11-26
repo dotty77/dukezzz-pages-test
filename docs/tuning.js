@@ -13,7 +13,7 @@ import { mountTuningWorkspace } from "./tuning-simple.js?v=20261118-reviewed-ui-
 
 // reviewed:tuning-records-core.js
 import { analyzeAccount, POOL_META } from "./tuning-core.js?v=20260914-duke-brand-1";
-import { serverInstant, timeline } from "./banner-core.js?v=20261126-creator-events-launch-1";
+import { serverInstant, timeline } from "./banner-core.js?v=20261126-agent-calendar-rev2-launch-1";
 import { guaranteeState, signalOutcomes } from "./tuning-summary.js?v=20261118-tuning-records-launch-1";
 var channelOrder = ["2", "3", "102", "103", "1", "5"];
 var specialLabels = { "102": "独家重映", "103": "音擎回响" };
@@ -1748,7 +1748,7 @@ async function initialize() {
     recordView = mountTuningRecords($("tuning-signal-stats"));
     recordWalletView = mountRecordWallet($("tuning-records-wallet"));
     render();
-    void fetchTuningJSON("banner-calendar.json?v=20261126-creator-events-launch-1").then((value) => {
+    void fetchTuningJSON("banner-calendar.json?v=20261126-agent-calendar-rev2-launch-1").then((value) => {
       calendar = value;
       updateRecordView();
     }).catch(() => {

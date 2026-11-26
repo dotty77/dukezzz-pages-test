@@ -1,5 +1,5 @@
 import {$, el, picture, loadJSON} from './agent-picker.js?v=20261107-refresh-launch-1';
-import {currentState, timeline, remaining, serverLabel, serverInstant, REGION_STORAGE, preferredRegion, mountTrainingEvent} from './banner-core.js?v=20261126-creator-events-launch-1';
+import {currentState, timeline, remaining, serverLabel, serverInstant, REGION_STORAGE, preferredRegion, mountServerEvent} from './banner-core.js?v=20261126-agent-calendar-rev2-launch-1';
 
 let calendar, catalog, region;
 const phaseName = phase => `${phase.version} ${phase.half}`;
@@ -252,14 +252,22 @@ function render() {
 
 async function main() {
   try {
-    const [data, tuning] = await Promise.all([loadJSON('banner-calendar.json?v=20261126-creator-events-launch-1'), loadJSON('tuning-catalog.json?v=20261118-reviewed-ui-launch-1')]);
+    const [data, tuning] = await Promise.all([loadJSON('banner-calendar.json?v=20261126-agent-calendar-rev2-launch-1'), loadJSON('tuning-catalog.json?v=20261118-reviewed-ui-launch-1')]);
     calendar = data; catalog = tuning.items;
     region = preferredRegion(calendar.regions);
     const select = $('banner-region');
     select.replaceChildren(...calendar.regions.map(r => { const option = el('option', '', r.label); option.value = r.id; return option; }));
     select.value = region;
-    const updateTrainingEvent = mountTrainingEvent($('training-event'), calendar, () => region);
-    select.addEventListener('change', () => { region = select.value; try { localStorage.setItem(REGION_STORAGE, region); } catch { /* not saved */ } updateTrainingEvent(); render(); });
+    const training = $('training-event');
+    const updateEvents = (calendar.rewardReminders || []).map(event => {
+      const notice = el('aside', 'panel planner-intro');
+      notice.dataset.rewardReminder = event.id;
+      notice.setAttribute('data-i18n-skip', '');
+      training.before(notice);
+      return mountServerEvent(notice, calendar, () => region, event);
+    });
+    updateEvents.push(mountServerEvent(training, calendar, () => region, calendar.trainingEvent));
+    select.addEventListener('change', () => { region = select.value; try { localStorage.setItem(REGION_STORAGE, region); } catch { /* not saved */ } updateEvents.forEach(update => update()); render(); });
     render();
     setInterval(() => { if (!document.hidden) render(); }, 30000);
     document.addEventListener('visibilitychange', () => { if (!document.hidden) render(); });

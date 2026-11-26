@@ -797,6 +797,15 @@
       ],
       "sources": [
         {
+          "id": "sunbringer-for-display-only",
+          "title": "不可售影像 · 挽昼",
+          "titleEn": "For Display Only · Sunbringer",
+          "url": "https://www.miyoushe.com/zzz/article/79786911",
+          "urlEn": "https://www.hoyolab.com/article/47570417",
+          "date": "2026-11-26",
+          "featured": true
+        },
+        {
           "id": "sunbringer-mechanics",
           "title": "挽昼 · 官方机制与配队",
           "titleEn": "Sunbringer · Mechanics and team recommendations",
@@ -984,6 +993,15 @@
         }
       ],
       "sources": [
+        {
+          "id": "robin-unarchived-footage",
+          "title": "代理人未归档影像 · 知更鸟篇",
+          "titleEn": "Unarchived Agent Footage · Robin",
+          "url": "https://www.miyoushe.com/zzz/article/79786913",
+          "urlEn": "https://www.hoyolab.com/article/47570535",
+          "date": "2026-11-26",
+          "featured": true
+        },
         {
           "id": "sunbringer-robin-trial",
           "title": "全息试炼 · 挽昼与知更鸟",
@@ -3198,7 +3216,7 @@
         "rank": "S",
         "kind": "changes",
         "source": {
-          "version": "3.4.5 BETA"
+          "version": "3.4.12 CREATOR"
         }
       },
       "1391": {

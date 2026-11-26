@@ -12,7 +12,8 @@ function isCreator(source) {
 export function previewLabel(data, en=false) {
   const version = String(data?.source?.version || '').match(/\d+\.\d+(?:\.\d+)?/)?.[0];
   let label;
-  if (isCreator(data?.source)) label = en ? 'Creator preview' : '创作者服资料';
+  if (isCreator(data?.source) && data?.kind === 'changes') label = en ? 'Creator preview changes' : '创作者服变化';
+  else if (isCreator(data?.source)) label = en ? 'Creator preview' : '创作者服资料';
   else if (data?.kind === 'changes') label = en ? 'Beta changes' : '测试服变化';
   else label = en ? 'Beta data' : '测试服资料';
   return [version, label].filter(Boolean).join(' ');
@@ -138,7 +139,7 @@ function equipmentHeading(data){
 }
 function renderEngine(data){
   const frag=new DocumentFragment(),engine=data.engine;
-  frag.append(el('h3','','测试服音擎','Beta W-Engine'));
+  frag.append(isCreator(engine?.source) ? el('h3','','创作者服音擎','Creator preview W-Engine') : el('h3','','测试服音擎','Beta W-Engine'));
   if(!engine){frag.append(paragraph('源站暂缺本修订的专属音擎资料。','agent-section-note','The source has no signature W-Engine data for this revision.'));return frag;}
   if(engine.nameSource)frag.append(paragraph(`名称由${engine.nameSource.label}确认。`,'agent-section-note',`Name confirmed by the ${engine.nameSource.labelEn}.`));
   const card=el('article','agent-equipment-card');card.append(equipmentHeading(engine));
@@ -158,17 +159,18 @@ function renderEngine(data){
   frag.append(card);return frag;
 }
 export function betaTabsFor(data){
-  if(isCreator(data?.source))return [['beta','创作者服概览','Creator overview'],['beta-skills','技能与倍率'],['beta-cinema','意象影画','Mindscapes'],['beta-engine','测试服音擎'],['beta-discs','测试服驱动盘']];
+  if(isCreator(data?.source) && data?.kind==='changes')return [['beta','创作者服变化','Creator preview changes']];
+  if(isCreator(data?.source))return [['beta','创作者服概览','Creator overview'],['beta-skills','技能与倍率'],['beta-cinema','意象影画','Mindscapes'],['beta-engine','专属音擎','Signature W-Engine'],['beta-discs','测试服驱动盘']];
   return data?.kind==='changes' ? [['beta','测试服变化']] : [...betaTabs,['beta-discs','测试服驱动盘']];
 }
 function renderChanges(data){
   const frag=new DocumentFragment();
-  frag.append(el('h3','','本轮测试服变化','Changes in this beta'));if(data.previousVersion)frag.append(paragraph(`对比 ${data.previousVersion}。`,'agent-section-note',`Compared with ${data.previousVersion}.`));
+  frag.append(isCreator(data.source) ? el('h3','','创作者服变化','Creator preview changes') : el('h3','','本轮测试服变化','Changes in this beta'));if(data.previousVersion)frag.append(paragraph(`对比 ${data.previousVersion}。`,'agent-section-note',`Compared with ${data.previousVersion}.`));
   if(data.noNetChange){
     frag.append(paragraph('最新修订与旧测试修订一致，无净变化。','agent-prose','The latest and previous beta records match; no net change remains.'));
   }
   if(data.potentialLevels?.length){
-    frag.append(el('h3','','测试服潜能','Beta Potential'));
+    frag.append(isCreator(data.source) ? el('h3','','创作者服潜能','Creator preview Potentials') : el('h3','','测试服潜能','Beta Potential'));
     const content=el('div'),update=level=>{const entry=data.potentialLevels.find(x=>x.level===level);content.replaceChildren();if(!entry)return;
       content.append(el('h4','',entry.name||entry.label,entry.nameEn||entry.labelEn));if(entry.context)content.append(paragraph(entry.context,'agent-section-note agent-beta-source-mismatch',entry.contextEn));content.append(paragraph(entry.description||'源站未提供此阶独立能力说明；招式变化见下方。','agent-prose',entry.descriptionEn||'The source has no separate ability description for this stage; see move changes below.'));};
     const selected=data.potentialLevels.at(-1).level;

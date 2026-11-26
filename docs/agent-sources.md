@@ -1,5 +1,11 @@
 # 代理人资料来源
 
+## 2026-11-26 创作者服 D/R 20855865
+
+- 挽昼支援突击、核心和二影已按创作者服中英文原文更新，知更鸟的技能和影画已复核。[挽昼](https://zzz.gachabase.net/agents/1601/sunbringer/creator/3.4.12/20855865/20855865?lang=zh-CN) · [知更鸟](https://zzz.gachabase.net/agents/1661/robin/creator/3.4.12/20855865/20855865?lang=zh-CN)
+- 卡芙卡中文核心 F 异常精通提升 90 点，全队紊乱对未失衡目标的特殊失衡易伤加成为 35%，对已失衡目标的易伤倍率保底为 135%。专属音擎叠影 1 满三层增伤 35%。对应英文数值分别为 84、40%、140% 和 30%，页面保留两份原文。[卡芙卡核心](https://zzz.gachabase.net/agents/1651/kafka/creator/3.4.12/20855865/20855865?lang=zh-CN) · [蛛蜕遗歌](https://zzz.gachabase.net/w-engines/14165/requiem-araneae/creator/3.4.12/20855865/20855865?lang=zh-CN)
+- 薇薇安潜能 II 至 VI 的异常积蓄效率依次为 11%、17%、23%、29%、35%，异放伤害比例依次提升 20%、31%、42%、53%、65%。中文的全队每层增伤和紊乱增伤为 7% 和 15%，英文为 8% 和 25%。[薇薇安中文](https://zzz.gachabase.net/agents/1331/vivian/creator/3.4.12/20855865/20855865?lang=zh-CN) · [英文](https://zzz.gachabase.net/agents/1331/vivian/creator/3.4.12/20855865/20855865?lang=en)
+
 ## 2026-11-26 创作者服预览
 
 - 挽昼、知更鸟与卡芙卡的面板、各级技能倍率、核心和六档影画取自 3.4.12 创作者服 D/R 20822864 的中英文原文。三个角色的专属音擎与两套驱动盘仍各自注明数据来源。[创作者服修订记录](https://zzz.gachabase.net/changelog/creator?branch=creator&lang=zh-CN)
