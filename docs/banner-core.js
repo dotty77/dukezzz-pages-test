@@ -53,8 +53,11 @@ export function mountServerEvent(box, calendar, regionId, event) {
   function render() {
     clearTimeout(timer);
     const region = calendar.regions.find(r => r.id === regionId());
-    const start = serverInstant(event.begin, region?.timezone);
-    const end = serverInstant(event.end, region?.timezone) + 1000;
+    const timezone = event.timezone ?? region?.timezone;
+    const start = event.noticeDate
+      ? serverInstant(event.noticeDate + ' 00:00:00', timezone)
+      : serverInstant(event.begin, timezone);
+    const end = serverInstant(event.end, timezone) + 1000;
     const now = Date.now();
     box.hidden = !(now >= start && now < end);
     if (now < end) timer = setTimeout(render, Math.min((now < start ? start : end) - now, 2147483647));
@@ -65,7 +68,8 @@ export function mountServerEvent(box, calendar, regionId, event) {
     const group = document.createElement('div');
     const link = document.createElement('a');
     title.textContent = en ? event.titleEn : event.title;
-    const deadline = serverLabel(event.end);
+    const localEnd = new Date(end - 1000 + region.timezone * 3600000).toISOString();
+    const deadline = serverLabel(localEnd.replace('T', ' '));
     details.textContent = en
       ? `${event.textEn} Ends ${deadline} (${region.labelEn} server time).`
       : `${event.text}${region.label} ${deadline} 截止。`;

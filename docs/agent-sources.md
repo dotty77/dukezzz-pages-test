@@ -1,6 +1,12 @@
 # 代理人资料来源
 
-## 2026-11-26 创作者服 D/R 20855865
+## 2026-11-27 创作者服 D/R 20888497
+
+- 挽昼「执旌·聚锋」的中英文简述均写明长按普攻消耗愿火。支援突击消耗残痕须由挽昼在场操作且愿火未满。核心和二影的英文已写明造成毁伤伤害可积攒烬痕。[挽昼中文](https://zzz.gachabase.net/agents/1601/sunbringer/creator/3.4.12/20888497/20888497?lang=zh-CN) · [英文](https://zzz.gachabase.net/agents/1601/sunbringer/creator/3.4.12/20888497/20888497?lang=en)
+- 卡芙卡核心 F 的中英文数值现均为异常精通 +90、未失衡加成 35%、失衡易伤倍率保底 135%。额外能力只计算初始能量自动回复超出 1.2 的部分，每满 0.12 点增加 10 点异常掌控，上限 140 点。专属音擎三层时的自身增伤从叠影 1 的 35% 到叠影 5 的 56%。[卡芙卡](https://zzz.gachabase.net/agents/1651/kafka/creator/3.4.12/20888497/20888497?lang=zh-CN) · [蛛蜕遗歌](https://zzz.gachabase.net/w-engines/14165/requiem-araneae/creator/3.4.12/20888497/20888497?lang=en)
+- 薇薇安潜能 II 至 VI 的中英文数值现均为全队每层增伤 7%、紊乱增伤 15%。潜能 I 的源数据仍无独立能力说明。知更鸟的面板、技能与影画按同一创作者服修订核对。[薇薇安](https://zzz.gachabase.net/agents/1331/vivian/creator/3.4.12/20888497/20888497?lang=en) · [知更鸟](https://zzz.gachabase.net/agents/1661/robin/creator/3.4.12/20888497/20888497?lang=zh-CN)
+
+## 2026-11-26 创作者服历史修订 D/R 20855865
 
 - 挽昼支援突击、核心和二影已按创作者服中英文原文更新，知更鸟的技能和影画已复核。[挽昼](https://zzz.gachabase.net/agents/1601/sunbringer/creator/3.4.12/20855865/20855865?lang=zh-CN) · [知更鸟](https://zzz.gachabase.net/agents/1661/robin/creator/3.4.12/20855865/20855865?lang=zh-CN)
 - 卡芙卡中文核心 F 异常精通提升 90 点，全队紊乱对未失衡目标的特殊失衡易伤加成为 35%，对已失衡目标的易伤倍率保底为 135%。专属音擎叠影 1 满三层增伤 35%。对应英文数值分别为 84、40%、140% 和 30%，页面保留两份原文。[卡芙卡核心](https://zzz.gachabase.net/agents/1651/kafka/creator/3.4.12/20855865/20855865?lang=zh-CN) · [蛛蜕遗歌](https://zzz.gachabase.net/w-engines/14165/requiem-araneae/creator/3.4.12/20855865/20855865?lang=zh-CN)

@@ -78,7 +78,19 @@ function renderOverview(data){
 }
 function skillMoves(moves,level){
   const frag=new DocumentFragment();
-  for(const move of moves||[]){const selected=move.descriptionsByLevel?.find(x=>x.level===level)||move,section=el('section','agent-beta-move');section.append(el('h4','',move.name,move.nameEn));if(move.context)section.append(paragraph(move.context,'agent-section-note',move.contextEn));section.append(paragraph(selected.description,'agent-prose',selected.descriptionEn));frag.append(section);}
+  for(const move of moves||[]){
+    const selected=move.descriptionsByLevel?.find(x=>x.level===level)||move;
+    const section=el('section','agent-beta-move');
+    section.append(el('h4','',move.name,move.nameEn));
+    if(move.context)section.append(paragraph(move.context,'agent-section-note',move.contextEn));
+    const full=paragraph(selected.description,'agent-prose',selected.descriptionEn);
+    if(move.briefDescription){
+      const details=el('details','agent-beta-story');
+      details.append(el('summary','','完整技能说明','Full skill description'),full);
+      section.append(paragraph(move.briefDescription,'agent-prose',move.briefDescriptionEn),details);
+    }else section.append(full);
+    frag.append(section);
+  }
   return frag;
 }
 function levelControl(labelText,labelEn,options,selected,onchange){

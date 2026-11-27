@@ -278,7 +278,7 @@ function setCollection(version) {
 async function init() {
   state.ready=false;$('load-error').hidden=true;
   try {
-    const [catalogResponse,mediaResponse]=await Promise.all([fetch('item-catalog.json?v=20261126-agent-calendar-rev2-launch-1'),fetch('assets/items/manifest.json?v=20261117-team-lazy-beta-launch-1')]);
+    const [catalogResponse,mediaResponse]=await Promise.all([fetch('item-catalog.json?v=20261127-creator-archive-launch-1'),fetch('assets/items/manifest.json?v=20261117-team-lazy-beta-launch-1')]);
     if(!catalogResponse.ok)throw new Error('物资清单读取失败');
     if(!mediaResponse.ok)throw new Error('物资媒体索引读取失败');
     const catalog=await catalogResponse.json(),mediaData=await mediaResponse.json();

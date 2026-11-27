@@ -1,5 +1,5 @@
 import {$, el, picture, loadJSON} from './agent-picker.js?v=20261107-refresh-launch-1';
-import {currentState, timeline, remaining, serverLabel, serverInstant, REGION_STORAGE, preferredRegion, mountServerEvent} from './banner-core.js?v=20261126-agent-calendar-rev2-launch-1';
+import {currentState, timeline, remaining, serverLabel, serverInstant, REGION_STORAGE, preferredRegion, mountServerEvent} from './banner-core.js?v=20261127-creator-archive-launch-1';
 
 let calendar, catalog, region;
 const phaseName = phase => `${phase.version} ${phase.half}`;
@@ -252,7 +252,7 @@ function render() {
 
 async function main() {
   try {
-    const [data, tuning] = await Promise.all([loadJSON('banner-calendar.json?v=20261126-agent-calendar-rev2-launch-1'), loadJSON('tuning-catalog.json?v=20261118-reviewed-ui-launch-1')]);
+    const [data, tuning] = await Promise.all([loadJSON('banner-calendar.json?v=20261127-creator-archive-launch-1'), loadJSON('tuning-catalog.json?v=20261118-reviewed-ui-launch-1')]);
     calendar = data; catalog = tuning.items;
     region = preferredRegion(calendar.regions);
     const select = $('banner-region');

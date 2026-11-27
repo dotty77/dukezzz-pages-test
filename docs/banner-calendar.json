@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updatedAt": "2026-11-26",
+ "updatedAt": "2026-11-27",
  "regions": [
   {
    "id": "prod_gf_cn",
@@ -56,6 +56,18 @@
    "end": "2026-12-01 03:59:59",
    "url": "https://zenless.hoyoverse.com/zh-cn/news/166963",
    "urlEn": "https://zenless.hoyoverse.com/en-us/news/166963"
+  },
+  {
+   "id": "v33-deadly-assault-phase-3",
+   "title": "3.3 第三期危局强袭战",
+   "titleEn": "Deadly Assault · Version 3.3 Phase III",
+   "text": "本期截止时间已调整。",
+   "textEn": "The challenge deadline has changed.",
+   "noticeDate": "2026-11-18",
+   "end": "2026-12-02 03:59:59",
+   "timezone": 8,
+   "url": "https://www.miyoushe.com/zzz/article/79038118",
+   "urlEn": "https://www.hoyolab.com/article/47150315"
   }
  ],
  "trainingEvent": {

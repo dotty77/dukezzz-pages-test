@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-26",
+  "updatedAt": "2026-11-27",
   "scope": "官方已公开的角色档案与预告；开放时间和正式效果以游戏内公告为准。",
   "agents": [
     {
@@ -686,7 +686,21 @@
             }
           ]
         }
-      ]
+      ],
+      "cinemaNotices": {
+        "1": {
+          "text": "官方勘误：一影「双份浓缩」的部分描述有误，实际效果正常，预计于 3.4 修正文案。",
+          "textEn": "Official correction: Part of the description of M1, “Double Espresso,” is incorrect. The effect works as intended. The text fix is scheduled for Version 3.4.",
+          "source": {
+            "id": "severian-m1-correction",
+            "title": "3.3 已知问题公告",
+            "titleEn": "Version 3.3 known issues",
+            "url": "https://www.miyoushe.com/zzz/article/79038118",
+            "date": "2026-11-25",
+            "urlEn": "https://www.hoyolab.com/article/47150315"
+          }
+        }
+      }
     },
     {
       "id": "sunbringer",
@@ -796,6 +810,15 @@
         }
       ],
       "sources": [
+        {
+          "id": "sunbringer-final-journey",
+          "title": "挽昼动画短片 · 最后的旅途",
+          "titleEn": "Sunbringer Animated Short Film · The Final Journey",
+          "url": "https://www.miyoushe.com/zzz/article/79798783",
+          "date": "2026-11-27",
+          "urlEn": "https://www.hoyolab.com/article/47576910",
+          "featured": true
+        },
         {
           "id": "sunbringer-for-display-only",
           "title": "不可售影像 · 挽昼",
@@ -993,6 +1016,15 @@
         }
       ],
       "sources": [
+        {
+          "id": "robin-gameplay-details",
+          "title": "代理人机制介绍 · 知更鸟篇",
+          "titleEn": "Agent Gameplay Details · Robin",
+          "url": "https://www.miyoushe.com/zzz/article/79799171",
+          "date": "2026-11-27",
+          "urlEn": "https://www.hoyolab.com/article/47577198",
+          "featured": true
+        },
         {
           "id": "robin-unarchived-footage",
           "title": "代理人未归档影像 · 知更鸟篇",
@@ -4636,7 +4668,16 @@
           "captionEn": "Wallpaper 12 · Open original ↗"
         }
       ]
-    }
+    },
+    "downloads": [
+      {
+        "id": "bangboo-travel-day1",
+        "title": "布梦游记 DAY1 · 透卡下载",
+        "titleEn": "Bangboo travel series, Day 1 · Download transparent cards (Chinese post)",
+        "url": "https://www.miyoushe.com/zzz/article/79803065",
+        "date": "2026-11-27"
+      }
+    ]
   },
   "agentArtwork": {
     "1461": {
