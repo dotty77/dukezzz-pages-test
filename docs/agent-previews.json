@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27",
+  "updatedAt": "2026-11-28",
   "scope": "官方已公开的角色档案与预告；开放时间和正式效果以游戏内公告为准。",
   "agents": [
     {
@@ -734,7 +734,7 @@
       "status": "announced",
       "previewNote": "挽昼的三个分身可为敌人积累残痕。触发毁伤可积攒愿火；愿火与喧响值充足时，可发动双重终结技引爆烬痕，以烬灭造成真实伤害。\n额外能力「领袖之证」需要另一位击破、防护或锋御队友。入场或发动指定招式时，全队锋御获得「众愿一心」，提升锐暴伤害。",
       "announcedAt": "2026-10-23T04:00:13Z",
-      "updatedAt": "2026-11-26",
+      "updatedAt": "2026-11-28",
       "icon": "assets/agent-previews/sunbringer/sunbringer-poster.png",
       "artwork": "assets/agent-previews/sunbringer/sunbringer-poster.png",
       "officialArt": "assets/agent-previews/sunbringer/sunbringer-profile-zh.png",
@@ -810,6 +810,15 @@
         }
       ],
       "sources": [
+        {
+          "id": "triple-threat",
+          "title": "挽昼 EP · Triple Threat",
+          "titleEn": "Sunbringer EP · Triple Threat",
+          "url": "https://www.miyoushe.com/zzz/article/79816837",
+          "urlEn": "https://www.hoyolab.com/article/47586861",
+          "date": "2026-11-28",
+          "featured": true
+        },
         {
           "id": "sunbringer-final-journey",
           "title": "挽昼动画短片 · 最后的旅途",
@@ -984,7 +993,7 @@
       "status": "announced",
       "previewNote": "知更鸟可在后台协奏，为全队提供护盾，提高防御力和伤害。她的终结技还能为锋御代理人回复锐能。",
       "announcedAt": "2026-10-09T12:07:09Z",
-      "updatedAt": "2026-11-26",
+      "updatedAt": "2026-11-28",
       "icon": "assets/agent-previews/robin/robin-poster.png",
       "artwork": "assets/agent-previews/robin/robin-poster.png",
       "officialArt": "assets/agent-previews/robin/robin-profile-zh.png",
@@ -1016,6 +1025,15 @@
         }
       ],
       "sources": [
+        {
+          "id": "cosmic-beat",
+          "title": "知更鸟时装 · 银河律动",
+          "titleEn": "Robin Outfit · Cosmic Beat",
+          "url": "https://www.miyoushe.com/zzz/article/79817096",
+          "urlEn": "https://www.hoyolab.com/article/47586987",
+          "date": "2026-11-28",
+          "featured": true
+        },
         {
           "id": "robin-gameplay-details",
           "title": "代理人机制介绍 · 知更鸟篇",
@@ -1109,7 +1127,32 @@
         "specialtyEn": "Defense"
       },
       "previewNoteEn": "Robin performs her Concerto from off-field, shields the squad and increases its DEF and damage. Her Ultimate also restores Sharpness for Armorer Agents.",
-      "rank": "S"
+      "rank": "S",
+      "artworkGroups": [
+        {
+          "id": "robin-cosmic-beat",
+          "title": "时装图集 · 银河律动",
+          "titleEn": "Outfit gallery · Cosmic Beat",
+          "pages": [
+            {
+              "caption": "时装画报",
+              "captionEn": "Fashion editorial",
+              "src": "assets/agent-previews/official-records-20261128/robin-costume-1-zh.webp",
+              "srcEn": "assets/agent-previews/official-records-20261128/robin-costume-1-en.webp",
+              "width": 1080,
+              "height": 1769
+            },
+            {
+              "caption": "服装细节",
+              "captionEn": "Outfit details",
+              "src": "assets/agent-previews/official-records-20261128/robin-costume-2-zh.webp",
+              "srcEn": "assets/agent-previews/official-records-20261128/robin-costume-2-en.webp",
+              "width": 1080,
+              "height": 1670
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "kafka",
@@ -1251,6 +1294,93 @@
           "titleEn": "Miyoushe · Norma and Eous (Chinese original)",
           "url": "https://www.miyoushe.com/zzz/article/79517921",
           "date": "2026-11-12"
+        }
+      ]
+    },
+    {
+      "id": "cecilia",
+      "name": "塞西莉亚",
+      "nameEn": "Cecilia",
+      "fullName": "塞西莉亚·罗蕾",
+      "englishName": "Cecilia Lorei",
+      "faction": "妄想天使",
+      "factionEn": "Angels of Delusion",
+      "element": "风属性",
+      "specialty": "支援",
+      "description": "妄想天使的歌手，希望用歌声陪伴新艾利都重新启程。",
+      "descriptionEn": "A singer with the Angels of Delusion who hopes her songs can help New Eridu begin again.",
+      "voiceActors": {
+        "zh": "井琉",
+        "ja": "菊池由梨奈"
+      },
+      "aliases": [
+        "塞西莉亞",
+        "塞西莉亞·羅蕾"
+      ],
+      "status": "announced",
+      "availability": {
+        "status": "announced",
+        "badge": "官方预告"
+      },
+      "announcedAt": "2026-11-28T02:00:22+00:00",
+      "updatedAt": "2026-11-28",
+      "portraitLayout": "poster",
+      "icon": "assets/agent-previews/official-records-20261128/cecilia-face.webp",
+      "artwork": "assets/agent-previews/official-records-20261128/cecilia-art.webp",
+      "officialArt": "assets/agent-previews/official-records-20261128/cecilia-zh.webp",
+      "officialArtEn": "assets/agent-previews/official-records-20261128/cecilia-en.webp",
+      "sources": [
+        {
+          "id": "cecilia",
+          "title": "代理人档案丨塞西莉亚",
+          "titleEn": "Agent Record | Cecilia",
+          "url": "https://www.miyoushe.com/zzz/article/79814860",
+          "urlEn": "https://www.hoyolab.com/article/47585996",
+          "date": "2026-11-28",
+          "featured": true
+        }
+      ]
+    },
+    {
+      "id": "hugie",
+      "name": "休琪",
+      "nameEn": "Hugie",
+      "fullName": "休琪·赫蒙德",
+      "englishName": "Hugie Hermond",
+      "faction": "丽都时报",
+      "factionEn": "Ridu Times",
+      "element": "冰属性",
+      "specialty": "命破",
+      "description": "《丽都时报》的记者，擅长用抢眼的标题为报道争取点击量。",
+      "descriptionEn": "A Ridu Times reporter with a knack for headlines that get clicks.",
+      "voiceActors": {
+        "zh": "Sakula小舞",
+        "ja": "铃代纱弓"
+      },
+      "aliases": [
+        "休琪·赫蒙德"
+      ],
+      "status": "announced",
+      "availability": {
+        "status": "announced",
+        "badge": "官方预告"
+      },
+      "announcedAt": "2026-11-28T03:00:13+00:00",
+      "updatedAt": "2026-11-28",
+      "portraitLayout": "poster",
+      "icon": "assets/agent-previews/official-records-20261128/hugie-face.webp",
+      "artwork": "assets/agent-previews/official-records-20261128/hugie-art.webp",
+      "officialArt": "assets/agent-previews/official-records-20261128/hugie-zh.webp",
+      "officialArtEn": "assets/agent-previews/official-records-20261128/hugie-en.webp",
+      "sources": [
+        {
+          "id": "hugie",
+          "title": "（炸）代理人档案丨休琪",
+          "titleEn": "(Catchy) Agent Record | Hugie",
+          "url": "https://www.miyoushe.com/zzz/article/79815799",
+          "urlEn": "https://www.hoyolab.com/article/47586385",
+          "date": "2026-11-28",
+          "featured": true
         }
       ]
     }
@@ -3356,8 +3486,8 @@
       },
       {
         "path": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
-        "bytes": 1359984,
-        "sha256": "e9d9a712e4e90657ba281ff22999b224db940cafd0e3f9fd0b2aa6dbfdc0521f"
+        "bytes": 8697888,
+        "sha256": "34960164b651b787ed411f99041ad4e33e49fc5d5f370f1af23eebbf8eb966bf"
       }
     ],
     "assets": {
@@ -4524,6 +4654,162 @@
             "offset": 1287780,
             "length": 72204,
             "sha256": "d0d1ce40862172709a550a485ac028fff215e07ef5cb6e563d4aa193d97b0637"
+          }
+        ]
+      },
+      "assets/agent-previews/official-records-20261128/cecilia-face.webp": {
+        "bytes": 63012,
+        "sha256": "482fef9a2213a9a6ea64d13b58df9a46360e605279aa1358696dda8f3bb922f9",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 1359984,
+            "length": 63012,
+            "sha256": "482fef9a2213a9a6ea64d13b58df9a46360e605279aa1358696dda8f3bb922f9"
+          }
+        ]
+      },
+      "assets/agent-previews/official-records-20261128/cecilia-art.webp": {
+        "bytes": 241832,
+        "sha256": "755fd29eb6739df7c5e0d64b23cf328e3e4a08ee5f1e3871b5304e0e45e9d58b",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 1422996,
+            "length": 241832,
+            "sha256": "755fd29eb6739df7c5e0d64b23cf328e3e4a08ee5f1e3871b5304e0e45e9d58b"
+          }
+        ]
+      },
+      "assets/agent-previews/official-records-20261128/cecilia-zh.webp": {
+        "bytes": 1322948,
+        "sha256": "c50f5db37485d1b7a2b5acf616ceb5c2ae70de7d3f1e012a5899a99b619720e2",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 1664828,
+            "length": 1322948,
+            "sha256": "c50f5db37485d1b7a2b5acf616ceb5c2ae70de7d3f1e012a5899a99b619720e2"
+          }
+        ]
+      },
+      "assets/agent-previews/official-records-20261128/cecilia-en.webp": {
+        "bytes": 1049080,
+        "sha256": "efd4970f37df3582aa224492b41bc4ce9bd6ef05a70f7b14fffbc6e1d68b5a1f",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 2987776,
+            "length": 1049080,
+            "sha256": "efd4970f37df3582aa224492b41bc4ce9bd6ef05a70f7b14fffbc6e1d68b5a1f"
+          }
+        ]
+      },
+      "assets/agent-previews/official-records-20261128/hugie-face.webp": {
+        "bytes": 66922,
+        "sha256": "f229a9532f8b089001132140d4f0bc8133c6acdb6185a030b6f452fe8d5abad0",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 4036856,
+            "length": 66922,
+            "sha256": "f229a9532f8b089001132140d4f0bc8133c6acdb6185a030b6f452fe8d5abad0"
+          }
+        ]
+      },
+      "assets/agent-previews/official-records-20261128/hugie-art.webp": {
+        "bytes": 208606,
+        "sha256": "37a1f1bcd809e4cdcdf9c6f9be0025a2aa4e5accbfdb1681f25d2b27bfad733e",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 4103778,
+            "length": 208606,
+            "sha256": "37a1f1bcd809e4cdcdf9c6f9be0025a2aa4e5accbfdb1681f25d2b27bfad733e"
+          }
+        ]
+      },
+      "assets/agent-previews/official-records-20261128/hugie-zh.webp": {
+        "bytes": 1426136,
+        "sha256": "40340af2a843f86d18f69f385cfcec70e9c9478997860b8b4c10d63012a8d2d3",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 4312384,
+            "length": 1426136,
+            "sha256": "40340af2a843f86d18f69f385cfcec70e9c9478997860b8b4c10d63012a8d2d3"
+          }
+        ]
+      },
+      "assets/agent-previews/official-records-20261128/hugie-en.webp": {
+        "bytes": 1013968,
+        "sha256": "29b5c2ecc728014d3599f0a363d000ddbf08bf2795f8290ef7bf1c99fdda9df2",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 5738520,
+            "length": 1013968,
+            "sha256": "29b5c2ecc728014d3599f0a363d000ddbf08bf2795f8290ef7bf1c99fdda9df2"
+          }
+        ]
+      },
+      "assets/agent-previews/official-records-20261128/robin-costume-1-zh.webp": {
+        "bytes": 609402,
+        "sha256": "3abf30f6f57c828721da27131f7d118b8ab56aa39a0ba3156c6e9a0c8faca48b",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 6752488,
+            "length": 609402,
+            "sha256": "3abf30f6f57c828721da27131f7d118b8ab56aa39a0ba3156c6e9a0c8faca48b"
+          }
+        ]
+      },
+      "assets/agent-previews/official-records-20261128/robin-costume-1-en.webp": {
+        "bytes": 441118,
+        "sha256": "b8ab3b29c97e0ecdcb095317ec361ca7234a98dd333a807cf10ef8c30830126a",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 7361890,
+            "length": 441118,
+            "sha256": "b8ab3b29c97e0ecdcb095317ec361ca7234a98dd333a807cf10ef8c30830126a"
+          }
+        ]
+      },
+      "assets/agent-previews/official-records-20261128/robin-costume-2-zh.webp": {
+        "bytes": 504994,
+        "sha256": "966142312874ca5215b25590828a934f3213fb321d46e0ca259c1a18b1aa1dcd",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 7803008,
+            "length": 504994,
+            "sha256": "966142312874ca5215b25590828a934f3213fb321d46e0ca259c1a18b1aa1dcd"
+          }
+        ]
+      },
+      "assets/agent-previews/official-records-20261128/robin-costume-2-en.webp": {
+        "bytes": 389886,
+        "sha256": "87689acb97a699b4271669e7e5972f0b94720161ee918c0173bdb843d325a49c",
+        "mimeType": "image/webp",
+        "parts": [
+          {
+            "bundle": "assets/agent-previews/bundles/severian-wallpapers-20261118.bin",
+            "offset": 8308002,
+            "length": 389886,
+            "sha256": "87689acb97a699b4271669e7e5972f0b94720161ee918c0173bdb843d325a49c"
           }
         ]
       }

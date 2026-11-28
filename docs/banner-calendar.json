@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updatedAt": "2026-11-27",
+ "updatedAt": "2026-11-28",
  "regions": [
   {
    "id": "prod_gf_cn",
@@ -47,15 +47,46 @@
    "urlEn": "https://zenless.hoyoverse.com/en-us/news/165980"
   },
   {
+   "id": "v33-event-rewards",
+   "title": "限时活动领奖",
+   "titleEn": "Limited-time event rewards",
+   "end": "2026-11-30 03:59:59",
+   "entries": [
+    {
+     "begin": "2026-11-11 10:00:00",
+     "text": "跛脚乌鸦奇踪记",
+     "textEn": "Trails of the Hobbling Crow",
+     "url": "https://zenless.hoyoverse.com/zh-cn/news/167270",
+     "urlEn": "https://zenless.hoyoverse.com/en-us/news/167270"
+    },
+    {
+     "begin": "2026-11-16 10:00:00",
+     "text": "修复吧！漂流画集",
+     "textEn": "Repair! Drifting Art",
+     "url": "https://zenless.hoyoverse.com/zh-cn/news/167283",
+     "urlEn": "https://zenless.hoyoverse.com/en-us/news/167283"
+    }
+   ]
+  },
+  {
    "id": "v33-check-ins",
    "title": "3.3 七日签到领奖",
    "titleEn": "Version 3.3 check-in rewards",
-   "text": "两项活动各累计签到 7 天：「全新放送」领 10 张加密母带，「『嗯呢』从天降」领 10 张邦布券。",
-   "textEn": "Check in for 7 days in each event: All-New Program awards 10 Encrypted Master Tapes, and “En-Nah” Into Your Lap awards 10 Boopons.",
-   "begin": "2026-11-11 10:00:00",
    "end": "2026-12-01 03:59:59",
    "url": "https://zenless.hoyoverse.com/zh-cn/news/166963",
-   "urlEn": "https://zenless.hoyoverse.com/en-us/news/166963"
+   "urlEn": "https://zenless.hoyoverse.com/en-us/news/166963",
+   "entries": [
+    {
+     "confirmedOpenAt": "2026-10-21T03:00:00Z",
+     "text": "全新放送（3.3 更新后）· 10 张加密母带",
+     "textEn": "All-New Program (after the 3.3 update) · 10 Encrypted Master Tapes"
+    },
+    {
+     "begin": "2026-11-11 10:00:00",
+     "text": "「嗯呢」从天降（11 月 11 日起）· 10 张邦布券",
+     "textEn": "“En-Nah” Into Your Lap (from Nov 11) · 10 Boopons"
+    }
+   ]
   },
   {
    "id": "v33-deadly-assault-phase-3",

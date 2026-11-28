@@ -2,8 +2,8 @@
   "author": "@KELZERO",
   "albumUrl": "https://imgur.com/a/cTlwhvc",
   "albumTitle": "ZZZ Operation Bagel Treasure Map (last updated 2026-11-11)",
-  "albumUpdatedDate": "2026-11-11",
-  "retrievedDate": "2026-11-11",
+  "albumUpdatedDate": "2026-11-20",
+  "retrievedDate": "2026-11-28",
   "reviewStatus": "local_review",
   "gameVersionVerified": false,
   "images": [
@@ -13,23 +13,29 @@
       "title": "城郊 · 古怪卜卜箱（作者参考）",
       "titleEn": "Suburbs · Spookies Carrot Containers (author reference)",
       "path": "assets/map-sources/kelzero-20261111/spooky-containers-suburbs.png",
-      "url": "https://i.imgur.com/fnwrFVX.png",
+      "url": "https://i.imgur.com/rQqpLlQ.png",
       "sourceUrl": "https://imgur.com/a/cTlwhvc",
-      "date": "2026-11-05",
+      "date": "2026-11-20",
       "albumAddedDate": "2026-11-11",
-      "reviewedDate": "2026-11-11",
-      "dateBasis": "Nov 5 is printed on the image; added to the author album Nov 11. Community evidence, not a per-run spawn guarantee.",
+      "reviewedDate": "2026-11-28",
+      "dateBasis": "Recolor dated Nov 20 in the author’s album changelog; previousRevision records the earlier point reference.",
       "width": 1805,
       "height": 1426,
       "originalName": null,
-      "sha256": "cc042c97fd5f14db71387c627626fc369432b8da01a37433b4f19850c0375c2f",
+      "sha256": "54b426b650bce706700c97c2290004159535b227aec7bd0c94a5fdbd5893260e",
       "author": "@KELZERO",
       "albumIndex": 13,
       "archived": false,
       "reusesEvidenceId": null,
       "eventVersion": "3.3",
       "eventName": "古怪试炼",
-      "eventNameEn": "Spooky Trials"
+      "eventNameEn": "Spooky Trials",
+      "previousRevision": {
+        "url": "https://i.imgur.com/fnwrFVX.png",
+        "sourceUrl": "https://imgur.com/a/cTlwhvc",
+        "date": "2026-11-05",
+        "sha256": "cc042c97fd5f14db71387c627626fc369432b8da01a37433b4f19850c0375c2f"
+      }
     },
     {
       "id": 39,
@@ -94,17 +100,25 @@
       "title": "雅努斯 · 古怪卜卜箱（作者参考）",
       "titleEn": "Janus · Spookies Carrot Containers (author reference)",
       "path": "assets/map-sources/kelzero-20261106/spooky-containers-janus.png",
-      "url": "https://i.redd.it/31tvld3fjxzh1.png",
-      "sourceUrl": "https://www.reddit.com/r/EnigmaLabyrinthZZZ/comments/1xp55db/spooky_carrot_containers_locations/",
-      "date": "2026-11-06",
-      "dateBasis": "date printed by author; community observation, not a spawn guarantee",
+      "url": "https://i.imgur.com/YkaRZEL.png",
+      "sourceUrl": "https://imgur.com/a/cTlwhvc",
+      "date": "2026-11-20",
+      "dateBasis": "Recolor dated Nov 20 in the author’s album changelog; previousRevision records the earlier point reference.",
       "width": 1616,
       "height": 1629,
       "originalName": null,
-      "sha256": "ba148803c4b1b999cd95ddaa0cb9b62e93b1322defccdcd6e3b8065b8b6ba0a4",
+      "sha256": "1ec7353fbc3c43165d893f20f0712286e7abb9d7bd963b2782bd08a5a26be09c",
       "author": "@KELZERO",
       "archived": false,
-      "reusesEvidenceId": null
+      "reusesEvidenceId": null,
+      "previousRevision": {
+        "url": "https://i.redd.it/31tvld3fjxzh1.png",
+        "sourceUrl": "https://www.reddit.com/r/EnigmaLabyrinthZZZ/comments/1xp55db/spooky_carrot_containers_locations/",
+        "date": "2026-11-06",
+        "sha256": "ba148803c4b1b999cd95ddaa0cb9b62e93b1322defccdcd6e3b8065b8b6ba0a4"
+      },
+      "albumIndex": 14,
+      "reviewedDate": "2026-11-28"
     },
     {
       "id": 23,
@@ -623,6 +637,7 @@
     }
   ],
   "summary": [
+    "11 月 20 日，作者调整两张古怪卜卜箱参考图的背景配色，使标记更清楚。",
     "11 月 11 日相册新增双地图古怪卜卜箱图；城郊补充作者依据，雅努斯图与 11 月 6 日已收录图像素相同。仅适用 3.3 古怪试炼期间。",
     "作者 10 月 26 日修订雅努斯公文包；11 月 6 日补充古怪卜卜箱参考图。",
     "保留旧证据、编号与坐标；作者观察不等于每局刷新或掉落保证。"
@@ -634,7 +649,7 @@
     "作者近期未见的敌人保留原记录与待核实状态，不据此认定客户端删除。"
   ],
   "reviewEvidence": "research/map-update-20261021.json",
-  "latestSupplementDate": "2026-11-11",
+  "latestSupplementDate": "2026-11-20",
   "authorReview20261111": {
     "map": "suburbs",
     "sourceImage": 43,

@@ -1,6 +1,6 @@
 import {$, el, picture, toast, loadJSON, mountPicker, availabilityBadge, availabilityLabel, elementBase} from './agent-picker.js?v=20261107-refresh-launch-1';
 import {BREAKPOINTS, MAX_LEVEL, MAX_SKILL, MAX_CORE, defaultPlan, normalizePlan, planCost, totalCost} from './cultivation-core.js?v=20261107-refresh-launch-1';
-import {preferredRegion, mountTrainingEvent} from './banner-core.js?v=20261127-creator-archive-launch-1';
+import {preferredRegion, mountTrainingEvent} from './banner-core.js?v=20261128-official-agents-launch-1';
 
 const STORE_PLANS = 'duke-cultivation-plans-v1';
 const STORE_BETA_PLANS = 'duke-cultivation-beta-plans-v1';
@@ -382,6 +382,6 @@ window.addEventListener('dukelanguagechange', () => {
   if (data) { mountAgentPicker(); renderModeControls(); renderAll(); renderModeError(); }
 });
 main();
-loadJSON('banner-calendar.json?v=20261127-creator-archive-launch-1')
+loadJSON('banner-calendar.json?v=20261128-official-agents-launch-1')
   .then(calendar => mountTrainingEvent($('training-event'), calendar, () => preferredRegion(calendar.regions)))
   .catch(error => console.warn('Training event unavailable', error));

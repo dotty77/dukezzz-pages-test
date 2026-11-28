@@ -65,7 +65,7 @@ async function loadCommunityBoss(){
  state.communityBoss=await communityBossModule.loadCommunityBossPoints();
 }
 async function loadAuthorUpdate(){
- const [manifest,layer]=await Promise.all(['research/kelzero-20261011.json?v=20261111-refresh-launch-1','research/kelzero-enemies-20261011.json?v=20261021-map-launch-1'].map(async path=>{const r=await fetch(path);if(!r.ok)throw Error('新版作者地图读取失败');return r.json()}));
+ const [manifest,layer]=await Promise.all(['research/kelzero-20261011.json?v=20261128-official-agents-launch-1','research/kelzero-enemies-20261011.json?v=20261021-map-launch-1'].map(async path=>{const r=await fetch(path);if(!r.ok)throw Error('新版作者地图读取失败');return r.json()}));
  state.authorSources=manifest.images;
  for(const map of ['janus','suburbs']){
   const points=layer.maps[map].points;
@@ -366,7 +366,7 @@ function renderSources(){
  const current=state.authorSources.filter(s=>s.map===state.map&&!s.archived);const archived=state.authorSources.filter(s=>s.map===state.map&&s.archived);
  $('source-links').innerHTML=current.map(s=>`<button class="source-button" data-source="${s.id}" ${s.titleEn?`data-i18n-en="${esc(s.titleEn)}"`:''}>${esc(s.title)} ↗</button>`).join('')+`<details class="atlas-filter-more"><summary data-i18n-en="Earlier source maps">早期资料图</summary>${archived.map(s=>`<button class="source-button" data-source="${s.id}" data-i18n-en="${esc(s.titleEn)} · ${esc(s.date)}">${esc(s.title)} · ${esc(s.date)} ↗</button>`).join('')}${MAPS[state.map].source.map(i=>`<button class="source-button" data-source="${i}">${esc(SOURCE_LABELS[i])} ↗</button>`).join('')}</details>`;
 }
-function showSource(i){const source=state.authorSources.find(s=>s.id===i);$('source-title').textContent=source?source.title+' · @KELZERO · '+source.date:'资料图 '+i+' · '+SOURCE_LABELS[i];if(source?.titleEn)$('source-title').setAttribute('data-i18n-en',source.titleEn+' · @KELZERO · '+source.date);else $('source-title').removeAttribute('data-i18n-en');$('source-image').src=source?source.path:`assets/source-${i}.png`;$('source-dialog').showModal()}
+function showSource(i){const source=state.authorSources.find(s=>s.id===i);$('source-title').textContent=source?source.title+' · @KELZERO · '+source.date:'资料图 '+i+' · '+SOURCE_LABELS[i];if(source?.titleEn)$('source-title').setAttribute('data-i18n-en',source.titleEn+' · @KELZERO · '+source.date);else $('source-title').removeAttribute('data-i18n-en');$('source-image').src=source?(source.previousRevision?`${source.path}?v=${source.sha256.slice(0,12)}`:source.path):`assets/source-${i}.png`;$('source-dialog').showModal()}
 
 function overviewMetrics(){
  const points=allPoints(),boxes=points.filter(p=>['electronic','mechanical','gear'].includes(p.type));

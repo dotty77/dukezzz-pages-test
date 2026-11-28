@@ -27,7 +27,7 @@ const colors = {物理:'#b59b64',火:'#d97657',燎源:'#d97657',冰:'#63acbc',�
 let roster = [], equipment = {}, builds = {}, catalog = {}, selected = null, selectedTab = 'intro', opener = null;
 let version = '', graduation = {}, detailsBytes = 0, detailGeneration = 0, previewDiscNames = {};
 const assets = {
-  directory:'agent-previews.json?v=20261127-creator-archive-launch-1',
+  directory:'agent-previews.json?v=20261128-official-agents-launch-1',
   details:'agent-details.json?v=20261111-refresh-launch-1',
   equipment:'agent-equipment.json?v=20261111-refresh-launch-1',
   builds:'agent-builds.json?v=20261121-equipment-scope-launch-1',
@@ -230,7 +230,7 @@ function renderGrid() {
     card.style.setProperty('--agent-color', color(agent)); card.setAttribute('aria-label', `查看${agent.name}的资料`);
     const img = portrait(agent,'agent-card-portrait');
     if(filterRank(agent)){const rank=el('span','agent-card-rank',filterRank(agent));if(!agent.rank)rank.title='稀有度来自测试服数据';card.append(rank);}
-    card.append(img,localized('h3','',agent.name,agent.nameEn),el('p','',[agent.element,agent.specialty].filter(Boolean).join(' · ') || '战斗资料待公布'),el('p','agent-card-faction',agent.faction || '代理人档案'));
+    card.append(img,localized('h3','',agent.name,agent.nameEn),el('p','',[agent.element,agent.specialty].filter(Boolean).join(' · ') || '战斗资料待公布'),localized('p','agent-card-faction',agent.faction || '代理人档案',agent.factionEn));
     const badges = el('div','archive-card-badges');
     if(agent.officialPreview)badges.append(el('span','agent-version-badge agent-preview-badge',agent.availability?.badge || '官方预告 · 资料先览'));
     else if(agent.introducedVersion==='3.3.0')badges.append(el('span','agent-version-badge',agent.availability?.status==='announced' ? '3.3 下期 · 11月11日开放' : '3.3 新增'));
@@ -321,7 +321,7 @@ function openAgent(id) {
   const info=el('div'); const title=localized('h2','',agent.name,agent.nameEn);title.id='agent-detail-name';
   const meta=el('div','agent-meta');
   for(const value of [rankLabel(agent),agent.element,agent.specialty].filter(Boolean))meta.append(el('span','',value));
-  info.append(el('p','agent-detail-kicker',agent.faction||'新艾利都 · 代理人档案'),title,meta);
+  info.append(localized('p','agent-detail-kicker',agent.faction||'新艾利都 · 代理人档案',agent.factionEn),title,meta);
   if(agent.officialPreview){meta.append(el('span','agent-version-label agent-preview-badge','官方预告'));if(agent.beta)meta.append(bilingual('span','agent-version-label agent-beta-badge',previewLabel(agent.beta),previewLabel(agent.beta,true)));}
   else if(agent.introducedVersion==='3.3.0')meta.append(el('span','agent-version-label',agent.availability?.label || '3.3 新增'));
   else if(agent.introducedVersion==='3.2.0')meta.append(el('span','agent-version-label',agent.availability?.label || '3.2 新增'));
@@ -347,7 +347,7 @@ function openAgent(id) {
   if(!dialog.open){dialog.showModal();$('agent-close').focus({preventScroll:true});}
   dialog.scrollTop=0;
 }
-function sectionTitle(title,description) {const fragment=new DocumentFragment();fragment.append(el('h3','',title));if(description)fragment.append(note(description));return fragment;}
+function sectionTitle(title,description,descriptionEn) {const fragment=new DocumentFragment();fragment.append(el('h3','',title));if(description)fragment.append(localized('p','agent-section-note',description,descriptionEn));return fragment;}
 function officialArtPath(agent) {return window.DUKE_I18N.language==='en' && agent.officialArtEn ? agent.officialArtEn : agent.officialArt;}
 function renderPreviewArtwork(agent) {
   const box=el('section','agent-preview-artwork'),figure=el('figure'),image=picture(agent.artwork || agent.media?.[0]?.poster,`${agent.name}${agent.portraitLayout==='poster' ? '官方角色图' : '官方立绘'}`);
@@ -419,17 +419,18 @@ function renderPreviewMedia(agent) {
 function renderIntro(agent) {
   const frag=new DocumentFragment();
   if(agent.officialPreview && agent.artwork)frag.append(renderPreviewArtwork(agent));
-  frag.append(sectionTitle('角色介绍',agent.fullName && agent.fullName!==agent.name ? agent.fullName : ''));
+  frag.append(sectionTitle('角色介绍',agent.fullName && agent.fullName!==agent.name ? agent.fullName : '',agent.fullNameEn || agent.englishName));
   const card=el('div','agent-prose-card');card.append(prose(agent.description || '这位代理人的介绍资料暂未收录。',agent.descriptionEn));frag.append(card);
   if(agent.descriptionSource)frag.append(localized('p','agent-source-note',agent.descriptionSource,agent.descriptionSourceEn));
   const facts=el('dl','agent-facts');
-  for(const [key,value,valueEn] of [['所属阵营',agent.faction],['身份',agent.role],['英文名',agent.englishName],['属性',agent.element],['特性',agent.specialty],['稀有度',rankLabel(agent)],['收录版本',agent.introducedVersion],['开放说明',agent.availability?.label,agent.availability?.labelEn],['中文配音',agent.voiceActors?.zh],['日文配音',agent.voiceActors?.ja],['生日',agent.birthday],['身高',agent.height],['性别',agent.gender]]) {
+  for(const [key,value,valueEn] of [['所属阵营',agent.faction,agent.factionEn],['身份',agent.role,agent.roleEn],['英文名',agent.englishName],['属性',agent.element],['特性',agent.specialty],['稀有度',rankLabel(agent)],['收录版本',agent.introducedVersion],['开放说明',agent.availability?.label,agent.availability?.labelEn],['中文配音',agent.voiceActors?.zh],['日文配音',agent.voiceActors?.ja],['生日',agent.birthday],['身高',agent.height],['性别',agent.gender]]) {
     if(!value)continue;const item=el('div');item.append(el('dt','',key),localized('dd','',value,valueEn));facts.append(item);
   }
   frag.append(facts);
   if(agent.officialPreview){
     const status=el('div','agent-preview-notice');
-    status.append(el('h4','','官方已公开资料'),prose(agent.previewNote,agent.previewNoteEn));
+    status.append(el('h4','','官方已公开资料'));
+    if(agent.previewNote)status.append(prose(agent.previewNote,agent.previewNoteEn));
     const featured=(agent.sources || []).filter(source=>source.featured);
     if(featured.length)status.append(officialSources(featured));
 
@@ -444,6 +445,7 @@ function renderIntro(agent) {
     if(agent.officialTeams?.length)status.append(renderOfficialTeams(agent,agent.officialTeams));
     if(agent.beta){const button=bilingual('button','agent-beta-open',`查看 ${previewLabel(agent.beta)}`,`View ${previewLabel(agent.beta,true)}`);button.type='button';button.onclick=()=>{selectTab('beta');$('agent-tab-beta').focus();};status.append(button);}
     frag.append(status);
+    for(const group of agent.artworkGroups || [])frag.append(renderArtworkGallery(group));
     if(agent.media?.length)frag.append(renderPreviewMedia(agent));
     if(agent.officialArt){
       const fold=el('details','agent-official-art-fold'),figure=el('figure','agent-official-art');
@@ -452,6 +454,7 @@ function renderIntro(agent) {
       fold.append(el('summary','','查看官方完整档案图'),figure);frag.append(fold);
     }
     const links=officialSources((agent.sources || []).filter(source=>!source.featured));
+    if(!links.childElementCount)return frag;
     const sources=el('details','agent-source-fold');sources.append(localized('summary','','官方来源','Official sources'),links,localized('p','agent-source-note',`核对：${agent.updatedAt} · 开放时间以官方公告为准。`,`Checked: ${agent.updatedAt} · Availability follows official announcements.`));frag.append(sources);
     return frag;
   }

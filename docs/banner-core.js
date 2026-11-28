@@ -54,31 +54,47 @@ export function mountServerEvent(box, calendar, regionId, event) {
     clearTimeout(timer);
     const region = calendar.regions.find(r => r.id === regionId());
     const timezone = event.timezone ?? region?.timezone;
-    const start = event.noticeDate
-      ? serverInstant(event.noticeDate + ' 00:00:00', timezone)
-      : serverInstant(event.begin, timezone);
     const end = serverInstant(event.end, timezone) + 1000;
     const now = Date.now();
-    box.hidden = !(now >= start && now < end);
-    if (now < end) timer = setTimeout(render, Math.min((now < start ? start : end) - now, 2147483647));
+    const entries = event.entries || [event];
+    const starts = entries.map(entry => entry.confirmedOpenAt
+      ? Date.parse(entry.confirmedOpenAt)
+      : serverInstant(entry.noticeDate ? entry.noticeDate + ' 00:00:00' : entry.begin, timezone));
+    const active = entries.filter((_, index) => now >= starts[index]);
+    box.hidden = !(active.length && now < end);
+    if (now < end) {
+      const nextChange = Math.min(end, ...starts.filter(start => start > now));
+      timer = setTimeout(render, Math.min(nextChange - now, 2147483647));
+    }
     if (box.hidden) return;
     const en = window.DUKE_I18N?.language === 'en';
     const title = document.createElement('h2');
     const details = document.createElement('p');
     const group = document.createElement('div');
-    const link = document.createElement('a');
     title.textContent = en ? event.titleEn : event.title;
     const localEnd = new Date(end - 1000 + region.timezone * 3600000).toISOString();
     const deadline = serverLabel(localEnd.replace('T', ' '));
-    details.textContent = en
-      ? `${event.textEn} Ends ${deadline} (${region.labelEn} server time).`
-      : `${event.text}${region.label} ${deadline} 截止。`;
-    link.href = en ? event.urlEn : event.url;
-    link.textContent = en ? 'Event details ↗' : '活动公告 ↗';
-    link.target = '_blank';
-    link.rel = 'noopener noreferrer';
+    function sourceLink(entry, label) {
+      const link = document.createElement('a');
+      link.href = en ? entry.urlEn : entry.url;
+      link.textContent = label;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      return link;
+    }
+    active.forEach((entry, index) => {
+      if (index) details.append(' / ');
+      const label = en ? entry.textEn : entry.text;
+      details.append(event.entries && entry.url ? sourceLink(entry, label) : label);
+    });
+    if (event.entries) details.append(' · ');
+    else if (en) details.append(' ');
+    details.append(en
+      ? `Ends ${deadline} (${region.labelEn} server time).`
+      : `${region.label} ${deadline} 截止。`);
     group.append(title, details);
-    box.replaceChildren(group, link);
+    box.replaceChildren(group);
+    if (event.url) box.append(sourceLink(event, en ? 'Event details ↗' : '活动公告 ↗'));
   }
   window.addEventListener('dukelanguagechange', render);
   window.addEventListener('storage', e => { if (e.key === REGION_STORAGE || e.key === null) render(); });
